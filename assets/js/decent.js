@@ -31,7 +31,7 @@ function subsystems() {
 }
 
 function draw_subs() {
-    let host, i, subs, s, html;
+    let j, subs, s, i, cards, fn, html, host, card;
     host = document.getElementById("subs");
     if (!host) {
         return 0;
@@ -41,10 +41,39 @@ function draw_subs() {
     i = 0;
     while ((i < subs.length)) {
         s = subs[i];
-        html = (html + (((("<div class=\"sub-card\"><code>" + String(s.name)) + "</code><p>") + String(s.what)) + "</p></div>"));
+        html = (html + (((((("<div class=\"sub-card\" data-name=\"" + String(s.name)) + "\"><code>") + String(s.name)) + "</code><p>") + String(s.what)) + "</p></div>"));
         i = (i + 1);
     }
     host.innerHTML = html;
+    cards = document.querySelectorAll(".sub-card");
+    fn = Reflect["set"];
+    j = 0;
+    while ((j < cards.length)) {
+        card = cards[j];
+        card.addEventListener("click", sub_card_click);
+        j = (j + 1);
+    }
+    return 0;
+}
+
+function sub_card_click(ev) {
+    let archSection, target, nameEl, desc, descs, name, descEl;
+    target = ev.currentTarget;
+    name = target.getAttribute("data-name");
+    archSection = document.getElementById("arch-canvas");
+    if (archSection) {
+        archSection.scrollIntoView();
+    }
+    descs = arch_descriptions();
+    desc = descs[name];
+    if (desc) {
+        nameEl = document.getElementById("arch-name");
+        descEl = document.getElementById("arch-desc");
+        nameEl.textContent = name;
+        descEl.textContent = desc;
+    }
+    window.archHighlight = name;
+    draw_arch();
     return 0;
 }
 
@@ -58,7 +87,7 @@ function hex2(n) {
 }
 
 function mesh_build() {
-    let ang, count, nd, i, nodes;
+    let nodes, nd, i, ang, count;
     nodes = [];
     count = 14;
     i = 0;
@@ -77,7 +106,7 @@ function mesh_build() {
 }
 
 function mesh_render() {
-    let b, on_path, dpr, path, k, nd, n, xor, nodes, a, canvas, size, i, j, ctx;
+    let size, path, j, ctx, b, on_path, nd, i, k, nodes, canvas, xor, a, n, dpr;
     canvas = document.getElementById("dht-canvas");
     if (!canvas) {
         return 0;
@@ -165,7 +194,7 @@ function index_in(arr, v) {
 }
 
 function bitxor(a, b) {
-    let result, place, abit, bbit;
+    let abit, result, place, bbit;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -182,7 +211,7 @@ function bitxor(a, b) {
 }
 
 function mesh_route() {
-    let current, guard, cur_id, best_d, j, n, d, nodes, src, cand, best, path, target;
+    let cur_id, n, path, current, d, best_d, j, cand, nodes, target, best, guard, src;
     nodes = window.meshNodes;
     n = nodes.length;
     src = Math.floor((Math.random() * n));
@@ -222,7 +251,7 @@ function mesh_route() {
 }
 
 function mesh_status(path, target) {
-    let el, hops;
+    let hops, el;
     el = document.getElementById("dht-status");
     if (!el) {
         return 0;
@@ -237,7 +266,7 @@ function heb_concepts() {
 }
 
 function heb_init() {
-    let nodes, names, ang, nd, n, i;
+    let ang, i, n, names, nodes, nd;
     names = heb_concepts();
     nodes = [];
     n = names.length;
@@ -294,7 +323,7 @@ function heb_reinforce(a, b) {
 }
 
 function heb_sweep() {
-    let w, j, i, n, nodes;
+    let j, nodes, n, w, i;
     nodes = window.hebNodes;
     n = nodes.length;
     i = 0;
@@ -320,7 +349,7 @@ function heb_sweep() {
 }
 
 function heb_render() {
-    let w, ctx, dpr, j, sel, nodes, a, canvas, n, size, b, i, nd;
+    let i, a, j, w, b, sel, nd, dpr, canvas, nodes, ctx, size, n;
     canvas = document.getElementById("heb-canvas");
     if (!canvas) {
         return 0;
@@ -383,7 +412,7 @@ function heb_render() {
 }
 
 function heb_click(ev) {
-    let canvas, i, nd, hit, dy, sel, dx, nodes, my, n, mx, rect;
+    let my, n, mx, nd, dx, nodes, rect, dy, sel, hit, canvas, i;
     canvas = document.getElementById("heb-canvas");
     rect = canvas.getBoundingClientRect();
     mx = (ev.clientX - rect.left);
@@ -437,7 +466,7 @@ function raft_init() {
 }
 
 function raft_leader() {
-    let nodes, i, nd;
+    let nodes, nd, i;
     nodes = window.raftNodes;
     i = 0;
     while ((i < nodes.length)) {
@@ -453,7 +482,7 @@ function raft_leader() {
 }
 
 function raft_count_up() {
-    let nodes, c, i;
+    let i, nodes, c;
     nodes = window.raftNodes;
     c = 0;
     i = 0;
@@ -467,7 +496,7 @@ function raft_count_up() {
 }
 
 function raft_step() {
-    let needed, nd, nodes, c, votes, leader, i, cand, newterm, lt;
+    let needed, lt, newterm, c, nd, votes, i, nodes, leader, cand;
     nodes = window.raftNodes;
     leader = raft_leader();
     if ((leader >= 0)) {
@@ -508,7 +537,7 @@ function raft_step() {
 }
 
 function raft_pick_up() {
-    let k, nodes, tries;
+    let tries, k, nodes;
     nodes = window.raftNodes;
     tries = 0;
     while ((tries < 20)) {
@@ -522,7 +551,7 @@ function raft_pick_up() {
 }
 
 function raft_partition() {
-    let b, nodes, a;
+    let b, a, nodes;
     nodes = window.raftNodes;
     a = nodes[3];
     b = nodes[4];
@@ -546,7 +575,7 @@ function raft_partition() {
 }
 
 function raft_render() {
-    let label, k, lines, i, shown, host, nodes, html, logel, out, nd, cls;
+    let shown, host, i, cls, nd, html, nodes, lines, out, k, label, logel;
     host = document.getElementById("raft-nodes");
     if (!host) {
         return 0;
@@ -589,9 +618,331 @@ function raft_log(msg) {
     return 0;
 }
 
+function draw_stats() {
+    let lb, v, stats, host, i, html, labels;
+    host = document.getElementById("stats-banner");
+    if (!host) {
+        return 0;
+    }
+    stats = [];
+    stats.push("17");
+    stats.push("~30k");
+    stats.push("0");
+    stats.push("1");
+    labels = [];
+    labels.push("subsystems");
+    labels.push("lines of Ernos");
+    labels.push("platform dependencies");
+    labels.push("single binary");
+    html = "";
+    i = 0;
+    while ((i < stats.length)) {
+        v = stats[i];
+        lb = labels[i];
+        html = (html + (((("<div class=\"stat-item\"><span class=\"stat-num\">" + String(v)) + "</span><span class=\"stat-label\">") + String(lb)) + "</span></div>"));
+        i = (i + 1);
+    }
+    host.innerHTML = html;
+    return 0;
+}
+
+function arch_descriptions() {
+    let d, fn;
+    d = new_obj();
+    fn = Reflect["set"];
+    fn.call(Reflect, d, "decent_id", "Cryptographic identity — Ed25519 keypairs, W3C DIDs, and capability-based delegation. The foundation everything else trusts.");
+    fn.call(Reflect, d, "decent_net", "P2P networking — Noise-protocol encrypted handshakes, Kademlia DHT for peer discovery, and NAT-traversal relays.");
+    fn.call(Reflect, d, "decent_relay", "Relay infrastructure — circuit relays and hole-punching helpers for peers behind restrictive NATs.");
+    fn.call(Reflect, d, "decent_store", "Content-addressed storage with BLAKE3 hashing, automatic deduplication, and CRDT-based sync.");
+    fn.call(Reflect, d, "decent_name", "Decentralised naming — a .decent registry resolved via DHT, mapping human-readable names to DIDs.");
+    fn.call(Reflect, d, "decent_consensus", "Raft consensus — leader election, replicated log, term-based voting, and state rollback.");
+    fn.call(Reflect, d, "decent_money", "HD wallets, a UTXO ledger, Proof-of-Stake consensus, and a hybrid AMM/orderbook DEX.");
+    fn.call(Reflect, d, "decent_msg", "End-to-end encrypted direct and group messaging using Signal-style ratchets.");
+    fn.call(Reflect, d, "decent_social", "Federated publishing over Nostr and ActivityPub — your posts live where you choose.");
+    fn.call(Reflect, d, "decent_ai", "Local inference, embeddings, speech-to-text, and TTS — all on-device, no cloud.");
+    fn.call(Reflect, d, "decent_agent", "A ReAct agent with tiered memory, Hebbian learning, and an observer gate for reflective reasoning.");
+    fn.call(Reflect, d, "decent_search", "A distributed crawler with BM25 + PageRank ranking — web search without a search engine.");
+    fn.call(Reflect, d, "decent_anon", "Onion routing and a mixnet for traffic-analysis resistance — metadata privacy by design.");
+    return d;
+}
+
+function draw_arch() {
+    let leftMargin, modGap, mh, layerMods, lw, modName, highlight, ctx, rightMargin, layerColor, totalH, modW, colors, startY, li, ly, modCount, mi, mx, gap, my, mods, region, layerCount, modsStr, cw, canvas, dpr, lx, ch, layerLabels, r, lh, mr, regions;
+    canvas = document.getElementById("arch-canvas");
+    if (!canvas) {
+        return 0;
+    }
+    dpr = (window.devicePixelRatio || 1);
+    cw = 700;
+    ch = 420;
+    canvas.width = (cw * dpr);
+    canvas.height = (ch * dpr);
+    canvas.style.width = (String(cw) + "px");
+    canvas.style.height = (String(ch) + "px");
+    ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cw, ch);
+    colors = [];
+    colors.push("rgba(124,140,255,0.35)");
+    colors.push("rgba(79,240,196,0.30)");
+    colors.push("rgba(43,191,155,0.30)");
+    colors.push("rgba(245,196,94,0.25)");
+    colors.push("rgba(255,138,107,0.25)");
+    colors.push("rgba(124,140,255,0.25)");
+    colors.push("rgba(255,107,129,0.25)");
+    layerLabels = [];
+    layerLabels.push("Crypto");
+    layerLabels.push("Network");
+    layerLabels.push("Storage");
+    layerLabels.push("Consensus");
+    layerLabels.push("Comms");
+    layerLabels.push("Intelligence");
+    layerLabels.push("Privacy");
+    layerMods = [];
+    layerMods.push("decent_id");
+    layerMods.push("decent_net,decent_relay");
+    layerMods.push("decent_store,decent_name");
+    layerMods.push("decent_consensus,decent_money");
+    layerMods.push("decent_msg,decent_social");
+    layerMods.push("decent_ai,decent_agent,decent_search");
+    layerMods.push("decent_anon");
+    highlight = (window.archHighlight || "");
+    lh = 48;
+    gap = 4;
+    leftMargin = 90;
+    rightMargin = 20;
+    layerCount = 7;
+    totalH = ((layerCount * lh) + ((layerCount - 1) * gap));
+    startY = ((ch - 30) - totalH);
+    regions = [];
+    li = 0;
+    while ((li < layerCount)) {
+        ly = (startY + (((layerCount - 1) - li) * (lh + gap)));
+        lx = leftMargin;
+        lw = ((cw - leftMargin) - rightMargin);
+        layerColor = colors[li];
+        ctx.beginPath();
+        r = 10;
+        ctx.moveTo((lx + r), ly);
+        ctx.lineTo(((lx + lw) - r), ly);
+        ctx.quadraticCurveTo((lx + lw), ly, (lx + lw), (ly + r));
+        ctx.lineTo((lx + lw), ((ly + lh) - r));
+        ctx.quadraticCurveTo((lx + lw), (ly + lh), ((lx + lw) - r), (ly + lh));
+        ctx.lineTo((lx + r), (ly + lh));
+        ctx.quadraticCurveTo(lx, (ly + lh), lx, ((ly + lh) - r));
+        ctx.lineTo(lx, (ly + r));
+        ctx.quadraticCurveTo(lx, ly, (lx + r), ly);
+        ctx.closePath();
+        ctx.fillStyle = layerColor;
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255,255,255,0.08)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.fillStyle = "#515d75";
+        ctx.font = "11px JetBrains Mono, monospace";
+        ctx.textAlign = "right";
+        ctx.fillText(layerLabels[li], (lx - 10), ((ly + (lh / 2)) + 4));
+        modsStr = layerMods[li];
+        mods = modsStr.split(",");
+        modCount = mods.length;
+        modGap = 8;
+        modW = ((lw - ((modCount + 1) * modGap)) / modCount);
+        mi = 0;
+        while ((mi < modCount)) {
+            mx = ((lx + modGap) + (mi * (modW + modGap)));
+            my = (ly + 8);
+            mh = (lh - 16);
+            modName = mods[mi].trim();
+            region = new_obj();
+            region.x = mx;
+            region.y = my;
+            region.w = modW;
+            region.h = mh;
+            region.name = modName;
+            regions.push(region);
+            ctx.beginPath();
+            mr = 6;
+            ctx.moveTo((mx + mr), my);
+            ctx.lineTo(((mx + modW) - mr), my);
+            ctx.quadraticCurveTo((mx + modW), my, (mx + modW), (my + mr));
+            ctx.lineTo((mx + modW), ((my + mh) - mr));
+            ctx.quadraticCurveTo((mx + modW), (my + mh), ((mx + modW) - mr), (my + mh));
+            ctx.lineTo((mx + mr), (my + mh));
+            ctx.quadraticCurveTo(mx, (my + mh), mx, ((my + mh) - mr));
+            ctx.lineTo(mx, (my + mr));
+            ctx.quadraticCurveTo(mx, my, (mx + mr), my);
+            ctx.closePath();
+            if ((modName === highlight)) {
+                ctx.fillStyle = "rgba(79,240,196,0.35)";
+                ctx.strokeStyle = "#4ff0c4";
+                ctx.lineWidth = 2;
+            } else {
+                ctx.fillStyle = "rgba(15,20,32,0.7)";
+                ctx.strokeStyle = "rgba(255,255,255,0.12)";
+                ctx.lineWidth = 1;
+            }
+            ctx.fill();
+            ctx.stroke();
+            if ((modName === highlight)) {
+                ctx.fillStyle = "#4ff0c4";
+            } else {
+                ctx.fillStyle = "#b7c2d6";
+            }
+            ctx.font = "11px JetBrains Mono, monospace";
+            ctx.textAlign = "center";
+            ctx.fillText(modName, (mx + (modW / 2)), ((my + (mh / 2)) + 4));
+            mi = (mi + 1);
+        }
+        li = (li + 1);
+    }
+    window.archRegions = regions;
+    return 0;
+}
+
+function arch_click(ev) {
+    let desc, mx, nameEl, scaleY, descEl, scaleX, rect, i, canvas, my, regions, descs, r;
+    canvas = document.getElementById("arch-canvas");
+    rect = canvas.getBoundingClientRect();
+    mx = (ev.clientX - rect.left);
+    my = (ev.clientY - rect.top);
+    scaleX = (700 / rect.width);
+    scaleY = (420 / rect.height);
+    mx = (mx * scaleX);
+    my = (my * scaleY);
+    regions = window.archRegions;
+    if (!regions) {
+        return 0;
+    }
+    i = 0;
+    while ((i < regions.length)) {
+        r = regions[i];
+        if ((mx >= r.x)) {
+            if ((mx <= (r.x + r.w))) {
+                if ((my >= r.y)) {
+                    if ((my <= (r.y + r.h))) {
+                        window.archHighlight = r.name;
+                        draw_arch();
+                        descs = arch_descriptions();
+                        desc = descs[r.name];
+                        nameEl = document.getElementById("arch-name");
+                        descEl = document.getElementById("arch-desc");
+                        nameEl.textContent = r.name;
+                        if (desc) {
+                            descEl.textContent = desc;
+                        } else {
+                            descEl.textContent = "No description available.";
+                        }
+                        return 0;
+                    }
+                }
+            }
+        }
+        i = (i + 1);
+    }
+    return 0;
+}
+
+function draw_flow() {
+    let label, stages, i, host, sub, html, stageDescs, stageLabels, desc;
+    host = document.getElementById("flow-vis");
+    if (!host) {
+        return 0;
+    }
+    stages = [];
+    stages.push("decent_id");
+    stages.push("decent_net");
+    stages.push("decent_msg");
+    stages.push("decent_store");
+    stages.push("decent_msg");
+    stageLabels = [];
+    stageLabels.push("Identity");
+    stageLabels.push("Route");
+    stageLabels.push("Encrypt");
+    stageLabels.push("Store");
+    stageLabels.push("Deliver");
+    stageDescs = [];
+    stageDescs.push("Alice signs with her Ed25519 key");
+    stageDescs.push("DHT locates Bob's nearest peer");
+    stageDescs.push("Message encrypted end-to-end");
+    stageDescs.push("Stored on-path for offline pickup");
+    stageDescs.push("Bob decrypts with his key");
+    html = "";
+    i = 0;
+    while ((i < stages.length)) {
+        label = stageLabels[i];
+        desc = stageDescs[i];
+        sub = stages[i];
+        if ((i > 0)) {
+            html = (html + "<div class=\"flow-arrow\">→</div>");
+        }
+        html = (html + (((((((((("<div class=\"flow-stage\" data-idx=\"" + String(i)) + "\"><div class=\"flow-stage-num\">") + String((i + 1))) + "</div><div class=\"flow-stage-label\">") + String(label)) + "</div><div class=\"flow-stage-desc\">") + String(desc)) + "</div><code class=\"flow-stage-sub\">") + String(sub)) + "</code></div>"));
+        i = (i + 1);
+    }
+    host.innerHTML = html;
+    return 0;
+}
+
+function flow_play() {
+    let i, stages;
+    stages = document.querySelectorAll(".flow-stage");
+    i = 0;
+    while ((i < stages.length)) {
+        stages[i].classList.remove("active");
+        i = (i + 1);
+    }
+    flow_activate(0);
+    return 0;
+}
+
+function flow_activate(idx) {
+    let next, cb, stages;
+    stages = document.querySelectorAll(".flow-stage");
+    if ((idx >= stages.length)) {
+        return 0;
+    }
+    stages[idx].classList.add("active");
+    next = (idx + 1);
+    if ((next < stages.length)) {
+        cb = flow_next_factory(next);
+        window.setTimeout(cb, 600);
+    }
+    return 0;
+}
+
+function flow_next_factory(idx) {
+    let callback, wrapper, fn;
+    fn = Reflect["set"];
+    wrapper = new_obj();
+    fn.call(Reflect, wrapper, "idx", idx);
+    callback = make_flow_cb(wrapper);
+    return callback;
+}
+
+function make_flow_cb(wrapper) {
+    let fn;
+    fn = Function("wrapper", "return function(){ flow_activate(wrapper.idx); }");
+    return fn(wrapper);
+}
+
+function flow_ev(ev) {
+    flow_play();
+    return 0;
+}
+
 function main() {
-    let rb, hc;
+    let ac, rb, hc;
+    draw_stats();
     draw_subs();
+    if (document.getElementById("arch-canvas")) {
+        window.archHighlight = "";
+        draw_arch();
+        ac = document.getElementById("arch-canvas");
+        ac.addEventListener("click", arch_click);
+    }
+    draw_flow();
+    if (document.getElementById("flow-play")) {
+        document.getElementById("flow-play").addEventListener("click", flow_ev);
+    }
     if (document.getElementById("dht-canvas")) {
         mesh_build();
         mesh_render();

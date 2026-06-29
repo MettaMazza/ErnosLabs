@@ -17,13 +17,14 @@
 
   <nav class="nav">
     <div class="wrap nav__in">
-      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
       <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
       <div class="nav__links" id="navlinks">
         <a href="ernosplain.html">ErnosPlain</a>
         <a href="sftom.html">Fold Theory</a>
         <a href="ernosdecent.html">ErnosDecent</a>
         <a href="library.html">Library</a>
+        <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">Download ↗</a>
       </div>
     </div>
   </nav>
@@ -38,6 +39,29 @@
         real subsystems, running live in your browser.</p>
     </div>
   </header>
+
+  <!-- STATS BANNER -->
+  <section class="section" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="stats-banner reveal" id="stats-banner"></div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE DIAGRAM -->
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow">architecture</p>
+      <h2>The stack — one program, seven layers</h2>
+      <p class="lead" style="margin-bottom:26px">Every subsystem is built from cryptographic primitives up — no platform dependencies. Click any module to learn more.</p>
+      <div class="arch-layout reveal">
+        <canvas id="arch-canvas" width="700" height="420"></canvas>
+        <div class="arch-detail" id="arch-detail">
+          <h3 id="arch-name">—</h3>
+          <p id="arch-desc">Click a module in the diagram</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- DHT / MESH -->
   <section class="section" style="padding-top:10px">
@@ -79,6 +103,18 @@
           <div class="demo-actions"><button class="btn btn--ghost" id="heb-sweep">↻ Consolidation sweep (decay)</button></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOL FLOW ANIMATION -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">in action</p>
+      <h2>Sending a message — no server needed</h2>
+      <p class="lead" style="margin-bottom:26px">Watch a message flow through the stack: identity, routing, encryption, storage, and delivery — with no company in the middle.</p>
+      <div class="flow-vis reveal" id="flow-vis"></div>
+      <div class="demo-actions" style="margin-top:18px"><button class="btn btn--primary" id="flow-play">▶ Send the message</button></div>
     </div>
   </section>
 

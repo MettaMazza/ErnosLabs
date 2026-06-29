@@ -1252,16 +1252,33 @@ define ep_emit with s:
     buf.push(s)
     return 0
 
-# run_thunk + run_safely give us a JS-level try/catch (via the Function
-# constructor) since ErnosPlain has no try/on. Native exceptions from arbitrary
-# user code are caught and returned as { ok:false, error }.
+# run_safely wraps ep_run to catch native JS exceptions.
+# We stash the error handler on window and invoke it via the global mechanism
+# since ErnosPlain has no try/on.
 define run_thunk:
     return ep_run(window.epSrc)
 
 define run_safely with src:
     set window.epSrc to src
-    set wrapper to Reflect.construct(window.Function and ["fn", "try{return fn();}catch(e){return {ok:false,output:'',error:String((e&&e.message)||e)};}"])
-    return wrapper(run_thunk)
+    set window.epRunErr to false
+    set old_handler to window.onerror
+    set window.onerror to run_err_handler
+    set result to ep_run(src)
+    set window.onerror to old_handler
+    if window.epRunErr:
+        set err_r to JSON.parse("{}")
+        set err_r.ok to false
+        set err_r.output to ""
+        set err_r.error to window.epRunErr
+        return err_r
+    return result
+
+define run_err_handler with msg and url and line and col and err:
+    if err:
+        set window.epRunErr to err.message || msg
+    else:
+        set window.epRunErr to msg
+    return true
 
 define ep_run with src:
     set res to JSON.parse("{}")

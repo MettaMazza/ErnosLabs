@@ -37,7 +37,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let out, mins;
+    let mins, out;
     mins = read_minutes(w.words);
     out = (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">");
     out = (out + (((("<span class=\"card__tag\">" + String(fmt_words(w.words))) + " · ~") + String(mins)) + " min</span>"));
@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let ernos, i, html, cat, last, w, cards, works;
+    let ernos, w, last, html, cards, cat, i, works;
     works = catalog();
     last = "";
     ernos = "";
@@ -89,7 +89,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, works, i;
+    let works, w, i;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rtitle, url, w, toc0, rd, doc;
+    let w, doc, url, rtitle, rd, toc0;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -129,7 +129,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let doc, html;
+    let html, doc;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let i, toc, h, cls, out, links, heads;
+    let out, heads, toc, i, h, cls, links;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let q, esc, marks, re, count, hl, doc;
+    let re, count, doc, q, hl, marks, esc;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -231,7 +231,9 @@ function do_search(ev) {
 
 function stop_tts() {
     let btn;
-    if (window.speechSynthesis) {
+    if (window.kokoroTTS) {
+        window.kokoroTTS.stop();
+    } else if (window.speechSynthesis) {
         window.speechSynthesis.cancel();
     }
     window.ttsOn = false;
@@ -243,32 +245,72 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let u, text, btn, doc;
-    if (!window.speechSynthesis) {
-        return 0;
-    }
+    let doc, voice, btn, voice_sel, u, text;
     if (window.ttsOn) {
         stop_tts();
         return 0;
     }
     doc = document.getElementById("doc");
     text = doc.textContent;
-    if ((text.length > 9000)) {
-        text = text.slice(0, 9000);
+    if ((text.length > 15000)) {
+        text = text.slice(0, 15000);
     }
-    u = Reflect.construct(window.SpeechSynthesisUtterance, [text]);
-    u.rate = 1;
-    u.onend = tts_ended;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(u);
     window.ttsOn = true;
     btn = document.getElementById("tts");
     btn.textContent = "■ Stop";
+    if (window.kokoroTTS) {
+        voice_sel = document.getElementById("voice-select");
+        voice = "af_heart";
+        if (voice_sel) {
+            voice = voice_sel.value;
+        }
+        window.kokoroTTS.speak(text, voice);
+    } else if (window.speechSynthesis) {
+        u = Reflect.construct(window.SpeechSynthesisUtterance, [text]);
+        u.rate = 1;
+        u.onend = tts_ended;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+    }
     return 0;
 }
 
 function tts_ended(ev) {
     stop_tts();
+    return 0;
+}
+
+function tts_status_handler(status, detail) {
+    let el;
+    el = document.getElementById("tts-status");
+    if (el) {
+        el.textContent = detail;
+    }
+    if ((status === "done")) {
+        stop_tts();
+    }
+    return 0;
+}
+
+function build_voice_selector() {
+    let html, i, container, voices, v;
+    container = document.getElementById("voice-container");
+    if (!container) {
+        return 0;
+    }
+    if (!window.kokoroTTS) {
+        return 0;
+    }
+    voices = window.kokoroTTS.getVoices();
+    html = "<select class=\"r-btn\" id=\"voice-select\" aria-label=\"Voice\">";
+    i = 0;
+    while ((i < voices.length)) {
+        v = voices[i];
+        html = (html + (((("<option value=\"" + String(v.id)) + "\">") + String(v.name)) + "</option>"));
+        i = (i + 1);
+    }
+    html = (html + "</select>");
+    container.innerHTML = html;
     return 0;
 }
 
@@ -281,6 +323,10 @@ function main() {
     document.getElementById("font-down").addEventListener("click", font_smaller);
     document.getElementById("search").addEventListener("input", do_search);
     document.getElementById("tts").addEventListener("click", toggle_tts);
+    if (window.kokoroTTS) {
+        window.kokoroTTS.setOnStatusChange(tts_status_handler);
+        build_voice_selector();
+    }
     return 0;
 }
 
