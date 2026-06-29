@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let p, guard, orbit;
+    let orbit, p, guard;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let bits, p, orbit, i;
+    let p, orbit, bits, i;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_down, d_up, g, cov;
+    let cov, g, d_down, d_up;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let cx, x, q, rad, p, y, html, cy, n, orbit, val, info, rq, ctx, rp, canvas, g, i, dpr, ang, seq, bits, size;
+    let rp, y, ctx, val, x, info, g, q, bits, orbit, p, ang, html, cy, size, seq, dpr, rad, rq, canvas, cx, n, i;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let i, out;
+    let out, i;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let match, html, c, diff, measured, clbl, hh, g, host, head;
+    let hh, diff, g, head, clbl, measured, match, c, host, html;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let host, secs, html, tag, i, s, tagtxt;
+    let host, tagtxt, html, s, i, secs, tag;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let host, agree_tau, meas_tau_e, pred_mu_e, meas_mu_e, pred_tau_e, agree_mu, html;
+    let pred_mu_e, meas_mu_e, pred_tau_e, meas_tau_e, agree_mu, agree_tau, host, html;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -353,6 +353,94 @@ function draw_element137() {
     return 0;
 }
 
+function el_symbols() {
+    return "H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og".split(" ");
+}
+
+function el_pred() {
+    return ["Uue", "Ubn", "Ubu", "Ubb", "Ubt", "Ubq", "Ubp", "Sh", "Ubs", "Ubo", "Ube", "Utn", "Utu", "Utb", "Utt", "Utq", "Utp", "Uth", "Uts"];
+}
+
+function draw_ptable() {
+    let sym, z, ends, cls, starts, pred, p, html, closures, len, cells, host, s, syms, e;
+    host = document.getElementById("ptable");
+    if (!host) {
+        return 0;
+    }
+    syms = el_symbols();
+    pred = el_pred();
+    starts = [1, 3, 11, 19, 37, 55, 87, 119];
+    ends = [2, 10, 18, 36, 54, 86, 118, 137];
+    closures = [2, 10, 18, 36, 54, 86, 118, 168];
+    html = "<div class=\"ptable\">";
+    p = 0;
+    while ((p < 8)) {
+        s = starts[p];
+        e = ends[p];
+        len = ((ends[p] - starts[p]) + 1);
+        html = (html + "<div class=\"pt-row\">");
+        html = (html + (((("<span class=\"pt-plabel\">period " + String((p + 1))) + "<em>") + String(len)) + " wide</em></span>"));
+        html = (html + "<div class=\"pt-cells\">");
+        z = s;
+        while ((z <= e)) {
+            sym = "";
+            cls = "pt-known";
+            if ((z <= 118)) {
+                sym = syms[(z - 1)];
+            } else {
+                sym = pred[(z - 119)];
+                cls = "pt-pred";
+            }
+            if ((z === 126)) {
+                cls = "pt-smith";
+            }
+            if ((z === 137)) {
+                cls = "pt-end";
+            }
+            html = (html + (((((((((("<button class=\"pt-cell " + String(cls)) + "\" data-z=\"") + String(z)) + "\" data-sym=\"") + String(sym)) + "\"><span class=\"pt-z\">") + String(z)) + "</span><span class=\"pt-sym\">") + String(sym)) + "</span></button>"));
+            z = (z + 1);
+        }
+        html = (html + "</div></div>");
+        p = (p + 1);
+    }
+    html = (html + "</div>");
+    html = (html + "<div class=\"pt-legend\"><span class=\"pt-key pt-known\">confirmed · 1–118</span><span class=\"pt-key pt-pred\">predicted · 119–137</span><span class=\"pt-key pt-smith\">Smithium · 126</span><span class=\"pt-key pt-end\">the wall · 137</span></div>");
+    html = (html + "<div class=\"pt-info\" id=\"pt-info\">The periods run 2, 8, 8, 18, 18, 32, 32 — then a 50-wide eighth period that the fold cuts short at <b>Z = 137 = ⌊1/α⌋</b>. Click any element.</div>");
+    host.innerHTML = html;
+    cells = host.querySelectorAll(".pt-cell");
+    for (const cc of cells) {
+        cc.addEventListener("click", pt_click);
+    }
+    return 0;
+}
+
+function pt_click(ev) {
+    let z, status, info, note, sym;
+    z = Number(ev.currentTarget.getAttribute("data-z"));
+    sym = ev.currentTarget.getAttribute("data-sym");
+    info = document.getElementById("pt-info");
+    status = "confirmed element";
+    note = "";
+    if ((z > 118)) {
+        status = "predicted superheavy";
+    }
+    if ((z === 126)) {
+        status = "Smithium — the forced island of stability";
+        note = " The fold forces a magic-number shell closure at Z = 126: the next genuinely long-lived superheavy.";
+    }
+    if ((z === 137)) {
+        status = "the last element";
+        note = " At Z = 137 = ⌊1/α⌋ the 1s electron's Bohr velocity reaches the speed of light. No neutral atom can exist beyond it.";
+    }
+    info.innerHTML = ((((((("<b class=\"pt-info-sym\">" + String(sym)) + "</b> &nbsp; Z = ") + String(z)) + " &nbsp;·&nbsp; ") + String(status)) + ".") + String(note));
+    return 0;
+}
+
+function ptable_ev(ev) {
+    draw_ptable();
+    return 0;
+}
+
 function orbit_showcase() {
     window.showcaseQueue = [7, 31, 127];
     window.showcaseIdx = 0;
@@ -361,7 +449,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let queue, q_val, idx, qe, pe;
+    let queue, q_val, pe, qe, idx;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -381,7 +469,7 @@ function showcase_next() {
 }
 
 function g_xor(a, b) {
-    let place, result;
+    let result, place;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -413,7 +501,7 @@ function clamp_heap(x) {
 }
 
 function sub_solve(n) {
-    let w, win, i, m;
+    let i, m, win, w;
     win = [];
     i = 0;
     while ((i <= n)) {
@@ -434,7 +522,7 @@ function sub_solve(n) {
 }
 
 function draw_sub() {
-    let vcls, win, w, i, n, movetxt, m, disagree, mloss, html, oloss, verdict, cls, host, strip;
+    let strip, movetxt, i, verdict, w, html, mloss, disagree, host, cls, oloss, n, vcls, win, m;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -499,7 +587,7 @@ function nim_key(a, b, c) {
 }
 
 function nim_win(a, b, c, memo) {
-    let na, nb, nc, cached, result, k;
+    let k, cached, na, nc, nb, result;
     k = nim_key(a, b, c);
     cached = memo[k];
     if (cached) {
@@ -536,7 +624,7 @@ function nim_win(a, b, c, memo) {
 }
 
 function draw_nim() {
-    let a, host, disagree, movetxt, j, ta, b, nimsum, w, tc, memo, orc, verdict, tb, i, vcls, kk, rg, states, c, html;
+    let w, tc, c, vcls, nimsum, disagree, j, html, rg, tb, memo, host, a, verdict, movetxt, kk, i, states, b, ta, orc;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -621,6 +709,7 @@ function main() {
     draw_census();
     draw_leptons();
     draw_element137();
+    draw_ptable();
     if (document.getElementById("sub-n")) {
         document.getElementById("sub-go").addEventListener("click", sub_ev);
         document.getElementById("sub-n").addEventListener("input", sub_ev);

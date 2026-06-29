@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let d, c, out, sstart, start, n, word, i;
+    let sstart, word, out, i, start, d, c, n;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let ta, lines, g, layer, src, i, gutter;
+    let gutter, src, g, i, ta, layer, lines;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let ta, layer, gutter;
+    let layer, ta, gutter;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let val, sp, epp, ta;
+    let sp, epp, ta, val;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let host, exs, e, btn, i;
+    let btn, host, exs, i, e;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let src, ta, t1, ms, t0, status, out, r, reflow;
+    let r, ms, reflow, out, t0, src, ta, status, t1;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -311,7 +311,7 @@ function term_init() {
 }
 
 function term_print(text, cls) {
-    let log, line;
+    let line, log;
     log = document.getElementById("term-log");
     line = document.createElement("div");
     line.className = ("term-line " + cls);
@@ -322,7 +322,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let src, inp, r, sp, epp, val;
+    let inp, src, sp, epp, val, r;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -361,7 +361,7 @@ function term_keydown(ev) {
 }
 
 function main() {
-    let ta, exs, first;
+    let ta, first, exs;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");

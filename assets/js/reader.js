@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let last, w, cards, i, ernos, html, cat, works;
+    let html, works, w, last, i, cat, cards, ernos;
     works = catalog();
     last = "";
     ernos = "";
@@ -89,7 +89,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, i, works;
+    let i, works, w;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let toc0, doc, url, w, rd, rtitle;
+    let w, doc, rtitle, toc0, url, rd;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let toc, heads, h, out, i, cls, links;
+    let heads, links, i, out, h, toc, cls;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let doc, hl, marks, re, esc, q, count;
+    let re, esc, hl, doc, q, marks, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +245,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let btn, voice, text, u, doc, voice_sel;
+    let doc, text, voice, u, btn, voice_sel;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -293,7 +293,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let container, i, v, html, voices;
+    let voices, html, i, v, container;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

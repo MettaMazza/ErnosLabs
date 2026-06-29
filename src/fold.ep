@@ -346,6 +346,79 @@ define draw_element137:
     set host.innerHTML to html
     return 0
 
+# ---- the full periodic table, forced to close at 137 --------------------
+
+define el_symbols:
+    return "H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og".split(" ")
+
+define el_pred:
+    return ["Uue", "Ubn", "Ubu", "Ubb", "Ubt", "Ubq", "Ubp", "Sh", "Ubs", "Ubo", "Ube", "Utn", "Utu", "Utb", "Utt", "Utq", "Utp", "Uth", "Uts"]
+
+define draw_ptable:
+    set host to document.getElementById("ptable")
+    if not host:
+        return 0
+    set syms to el_symbols()
+    set pred to el_pred()
+    set starts to [1, 3, 11, 19, 37, 55, 87, 119]
+    set ends to [2, 10, 18, 36, 54, 86, 118, 137]
+    set closures to [2, 10, 18, 36, 54, 86, 118, 168]
+    set html to "<div class=\"ptable\">"
+    set p to 0
+    repeat while p < 8:
+        set s to get_list(starts and p)
+        set e to get_list(ends and p)
+        set len to get_list(ends and p) - get_list(starts and p) + 1
+        set html to html + "<div class=\"pt-row\">"
+        set html to html + f"<span class=\"pt-plabel\">period {p + 1}<em>{len} wide</em></span>"
+        set html to html + "<div class=\"pt-cells\">"
+        set z to s
+        repeat while z <= e:
+            set sym to ""
+            set cls to "pt-known"
+            if z <= 118:
+                set sym to get_list(syms and z - 1)
+            else:
+                set sym to get_list(pred and z - 119)
+                set cls to "pt-pred"
+            if z equals 126:
+                set cls to "pt-smith"
+            if z equals 137:
+                set cls to "pt-end"
+            set html to html + f"<button class=\"pt-cell {cls}\" data-z=\"{z}\" data-sym=\"{sym}\"><span class=\"pt-z\">{z}</span><span class=\"pt-sym\">{sym}</span></button>"
+            set z to z + 1
+        set html to html + "</div></div>"
+        set p to p + 1
+    set html to html + "</div>"
+    set html to html + "<div class=\"pt-legend\"><span class=\"pt-key pt-known\">confirmed · 1–118</span><span class=\"pt-key pt-pred\">predicted · 119–137</span><span class=\"pt-key pt-smith\">Smithium · 126</span><span class=\"pt-key pt-end\">the wall · 137</span></div>"
+    set html to html + "<div class=\"pt-info\" id=\"pt-info\">The periods run 2, 8, 8, 18, 18, 32, 32 — then a 50-wide eighth period that the fold cuts short at <b>Z = 137 = ⌊1/α⌋</b>. Click any element.</div>"
+    set host.innerHTML to html
+    set cells to host.querySelectorAll(".pt-cell")
+    for each cc in cells:
+        cc.addEventListener("click" and pt_click)
+    return 0
+
+define pt_click with ev:
+    set z to Number(ev.currentTarget.getAttribute("data-z"))
+    set sym to ev.currentTarget.getAttribute("data-sym")
+    set info to document.getElementById("pt-info")
+    set status to "confirmed element"
+    set note to ""
+    if z > 118:
+        set status to "predicted superheavy"
+    if z equals 126:
+        set status to "Smithium — the forced island of stability"
+        set note to " The fold forces a magic-number shell closure at Z = 126: the next genuinely long-lived superheavy."
+    if z equals 137:
+        set status to "the last element"
+        set note to " At Z = 137 = ⌊1/α⌋ the 1s electron's Bohr velocity reaches the speed of light. No neutral atom can exist beyond it."
+    set info.innerHTML to f"<b class=\"pt-info-sym\">{sym}</b> &nbsp; Z = {z} &nbsp;·&nbsp; {status}.{note}"
+    return 0
+
+define ptable_ev with ev:
+    draw_ptable()
+    return 0
+
 # ---- Orbit showcase (auto-animated on page load) ----
 define orbit_showcase:
     set window.showcaseQueue to [7, 31, 127]
@@ -567,6 +640,7 @@ define main:
     draw_census()
     draw_leptons()
     draw_element137()
+    draw_ptable()
     if document.getElementById("sub-n"):
         document.getElementById("sub-go").addEventListener("click" and sub_ev)
         document.getElementById("sub-n").addEventListener("input" and sub_ev)
