@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let sstart, i, d, n, word, out, start, c;
+    let start, out, c, sstart, n, i, d, word;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let ta, g, lines, gutter, src, layer, i;
+    let layer, src, lines, g, i, gutter, ta;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let val, epp, sp, ta;
+    let epp, sp, ta, val;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let e, btn, i, host, exs;
+    let btn, e, host, exs, i;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -236,7 +236,19 @@ function pick_example(ev) {
     e = exs[idx];
     set_code(e.code);
     mark_active(ev.currentTarget);
-    run_code();
+    clear_output();
+    return 0;
+}
+
+function clear_output() {
+    let out, status;
+    out = document.getElementById("output");
+    out.classList.remove("err");
+    out.textContent = "▶  Press Run to execute.";
+    status = document.getElementById("run-status");
+    if (status) {
+        status.textContent = "";
+    }
     return 0;
 }
 
@@ -251,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let status, src, ta, ms, out, r, reflow, t0, t1;
+    let ms, src, t0, reflow, ta, out, r, t1, status;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -287,8 +299,69 @@ function run_code_ev(ev) {
     return 0;
 }
 
+function term_init() {
+    let inp;
+    inp = document.getElementById("term-input");
+    if (!inp) {
+        return 0;
+    }
+    ep_repl_reset();
+    inp.addEventListener("keydown", term_keydown);
+    return 0;
+}
+
+function term_print(text, cls) {
+    let log, line;
+    log = document.getElementById("term-log");
+    line = document.createElement("div");
+    line.className = ("term-line " + cls);
+    line.textContent = text;
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+    return 0;
+}
+
+function term_keydown(ev) {
+    let sp, val, inp, src, r, epp;
+    inp = document.getElementById("term-input");
+    if ((ev.key === "Enter")) {
+        if (ev.shiftKey) {
+            return 0;
+        }
+        ev.preventDefault();
+        src = inp.value;
+        if ((src.trim() === "")) {
+            return 0;
+        }
+        term_print(("› " + src), "term-in");
+        inp.value = "";
+        r = ep_repl(src);
+        if (r.ok) {
+            if ((r.output !== "")) {
+                term_print(r.output, "term-out");
+            } else {
+                term_print("ok", "term-dim");
+            }
+        } else {
+            term_print(("✗ " + r.error), "term-err");
+        }
+        return 0;
+    }
+    if ((ev.key === "Tab")) {
+        ev.preventDefault();
+        sp = inp.selectionStart;
+        epp = inp.selectionEnd;
+        val = inp.value;
+        inp.value = ((val.slice(0, sp) + "    ") + val.slice(epp));
+        inp.selectionStart = (sp + 4);
+        inp.selectionEnd = (sp + 4);
+        return 0;
+    }
+    return 0;
+}
+
 function main() {
-    let exs, ta, first;
+    let ta, exs, first;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");
@@ -302,7 +375,8 @@ function main() {
     if (first) {
         first.classList.add("active");
     }
-    run_code();
+    clear_output();
+    term_init();
     return 0;
 }
 

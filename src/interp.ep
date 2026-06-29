@@ -1319,5 +1319,57 @@ define ep_run with src:
         set res.error to false
     return res
 
+# ---- REPL: evaluate a line in a PERSISTENT environment ------------------
+# State (variables, functions) carries across calls via window.epReplEnv.
+# A trailing bare expression prints its value, like a real REPL.
+
+define ep_repl_reset:
+    set window.epReplEnv to env_new(false)
+    return 0
+
+define ep_repl with src:
+    set res to JSON.parse("{}")
+    set window.epOut to []
+    set window.epErr to false
+    if not window.epReplEnv:
+        set window.epReplEnv to env_new(false)
+    set genv to window.epReplEnv
+    set lines to tokenize(src)
+    set P to JSON.parse("{}")
+    set P.lines to lines
+    set P.pos to 0
+    set program to parse_block(P and 0)
+    set n to program.length
+    # hoist function definitions first
+    set i to 0
+    repeat while i < n:
+        set st to get_list(program and i)
+        if st.kind equals "define":
+            exec_stmt(st and genv)
+        set i to i + 1
+    # run the rest; the final bare expression prints its value
+    set i to 0
+    repeat while i < n:
+        set st to get_list(program and i)
+        if st.kind != "define":
+            if i equals n - 1:
+                if st.kind equals "expr":
+                    set v to eval_expr(st.expr and genv)
+                    if not window.epErr:
+                        ep_emit(to_display(v))
+                else:
+                    exec_stmt(st and genv)
+            else:
+                exec_stmt(st and genv)
+        set i to i + 1
+    set res.output to window.epOut.join("\n")
+    if window.epErr:
+        set res.ok to false
+        set res.error to window.epErr
+    else:
+        set res.ok to true
+        set res.error to false
+    return res
+
 define has_var with e and name:
     return Object.prototype.hasOwnProperty.call(e.vars and name)

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=dfd44666">
+  <link rel="stylesheet" href="assets/css/site.css?v=13a5f734">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -90,6 +90,24 @@
             <div class="pg__label"><span>output</span></div>
             <pre class="output" id="output"></pre>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPL TERMINAL -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">Live REPL</p>
+      <h2>A console of your own</h2>
+      <p class="lead" style="margin-bottom:20px">A persistent session — set a variable or define a function on one line,
+        use it on the next. <span style="color:var(--ink-3)">Enter runs · Shift+Enter for a new line · Tab indents.</span></p>
+      <div class="term reveal">
+        <div class="term__log" id="term-log"></div>
+        <div class="term__row">
+          <span class="term__prompt">›</span>
+          <textarea class="term__input" id="term-input" rows="2" spellcheck="false" autocomplete="off" placeholder="2 plus 2        (then press Enter)"></textarea>
         </div>
       </div>
     </div>
@@ -219,8 +237,8 @@
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · This page is written in ErnosPlain</div>
   </footer>
 
-  <script src="assets/js/interp.js?v=0ae2626c"></script>
-  <script src="assets/js/site.js?v=bde9c240"></script>
-  <script src="assets/js/playground.js?v=546303b9"></script>
+  <script src="assets/js/interp.js?v=7b6946df"></script>
+  <script src="assets/js/site.js?v=c0216595"></script>
+  <script src="assets/js/playground.js?v=58ec700a"></script>
 </body>
 </html>

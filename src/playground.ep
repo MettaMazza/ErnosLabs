@@ -201,7 +201,16 @@ define pick_example with ev:
     set e to get_list(exs and idx)
     set_code(e.code)
     mark_active(ev.currentTarget)
-    run_code()
+    clear_output()
+    return 0
+
+define clear_output:
+    set out to document.getElementById("output")
+    out.classList.remove("err")
+    set out.textContent to "▶  Press Run to execute."
+    set status to document.getElementById("run-status")
+    if status:
+        set status.textContent to ""
     return 0
 
 define mark_active with el:
@@ -246,6 +255,58 @@ define run_code_ev with ev:
     run_code()
     return 0
 
+# ---- live REPL terminal --------------------------------------------------
+# A persistent session: define a function or set a variable, then use it on a
+# later line. Enter runs; Shift+Enter inserts a newline; Tab indents.
+
+define term_init:
+    set inp to document.getElementById("term-input")
+    if not inp:
+        return 0
+    ep_repl_reset()
+    inp.addEventListener("keydown" and term_keydown)
+    return 0
+
+define term_print with text and cls:
+    set log to document.getElementById("term-log")
+    set line to document.createElement("div")
+    set line.className to "term-line " + cls
+    set line.textContent to text
+    log.appendChild(line)
+    set log.scrollTop to log.scrollHeight
+    return 0
+
+define term_keydown with ev:
+    set inp to document.getElementById("term-input")
+    if ev.key equals "Enter":
+        if ev.shiftKey:
+            return 0
+        ev.preventDefault()
+        set src to inp.value
+        if src.trim() equals "":
+            return 0
+        term_print("› " + src and "term-in")
+        set inp.value to ""
+        set r to ep_repl(src)
+        if r.ok:
+            if r.output != "":
+                term_print(r.output and "term-out")
+            else:
+                term_print("ok" and "term-dim")
+        else:
+            term_print("✗ " + r.error and "term-err")
+        return 0
+    if ev.key equals "Tab":
+        ev.preventDefault()
+        set sp to inp.selectionStart
+        set epp to inp.selectionEnd
+        set val to inp.value
+        set inp.value to val.slice(0 and sp) + "    " + val.slice(epp)
+        set inp.selectionStart to sp + 4
+        set inp.selectionEnd to sp + 4
+        return 0
+    return 0
+
 # ---- boot ----------------------------------------------------------------
 
 define main:
@@ -261,5 +322,6 @@ define main:
     set first to document.querySelector(".ex-btn")
     if first:
         first.classList.add("active")
-    run_code()
+    clear_output()
+    term_init()
     return 0

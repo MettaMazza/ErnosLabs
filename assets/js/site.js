@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let h, canvas, w, dpr, ctx;
+    let w, dpr, canvas, h, ctx;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let i, dx, dist, nodes, h, b, w, a, n, count, j, dy, alpha, ctx;
+    let h, n, a, dx, j, nodes, alpha, dist, dy, i, b, count, ctx, w;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, density, reduce;
+    let canvas, reduce, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let burger, path, href, links;
+    let href, links, path, burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -170,7 +170,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, opts, IO, els, args;
+    let obs, args, els, opts, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -190,7 +190,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);

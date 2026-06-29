@@ -91,105 +91,64 @@
       }
       const selectedVoice = voice || DEFAULT_VOICE;
 
-      // For long texts, use streaming if available
-      if (text.length > 2000 && tts.stream) {
-        await speakStreaming(tts, text, selectedVoice);
-      } else {
-        // Short text — generate all at once
-        const audio = await tts.generate(text.slice(0, 5000), {
-          voice: selectedVoice,
-        });
-
+      // Speak in sentence-sized chunks so audio starts sooner and long texts
+      // don't exhaust memory.
+      const chunks = chunkText(text.slice(0, 6000));
+      let spoke = false;
+      for (const chunk of chunks) {
         if (abortController.signal.aborted) return;
-
-        const audioData = audio.toWav ? audio.toWav() : audio;
-        await playAudioData(audioData);
+        const raw = await tts.generate(chunk, { voice: selectedVoice });
+        if (abortController.signal.aborted) return;
+        spoke = (await playRaw(raw)) || spoke;
+      }
+      // If Kokoro produced no playable samples, fall back so the user hears something.
+      if (!spoke && !abortController.signal.aborted) {
+        return speakBrowser(text);
       }
     } catch (err) {
       if (!abortController.signal.aborted) {
-        console.warn("Kokoro generation error:", err);
-        setStatus("error", "Voice generation failed");
+        console.warn("Kokoro generation error — falling back to browser voice:", err);
+        return speakBrowser(text);
       }
     } finally {
       playing = false;
-      if (!abortController.signal.aborted) {
+      if (abortController && !abortController.signal.aborted) {
         setStatus("done", "Finished");
       }
     }
   }
 
-  async function speakStreaming(tts, text, voice) {
-    // Break text into sentences for pseudo-streaming
-    const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+  // Split text into ~280-character sentence groups.
+  function chunkText(text) {
+    const sentences = text.match(/[^.!?\n]+[.!?]*\s*/g) || [text];
     const chunks = [];
-    let current = "";
-
+    let cur = "";
     for (const s of sentences) {
-      current += s;
-      if (current.length >= 300) {
-        chunks.push(current.trim());
-        current = "";
-      }
+      cur += s;
+      if (cur.length >= 280) { chunks.push(cur.trim()); cur = ""; }
     }
-    if (current.trim()) chunks.push(current.trim());
-
-    for (const chunk of chunks) {
-      if (abortController.signal.aborted) return;
-
-      const audio = await tts.generate(chunk, { voice });
-      if (abortController.signal.aborted) return;
-
-      const audioData = audio.toWav ? audio.toWav() : audio;
-      await playAudioData(audioData);
-    }
+    if (cur.trim()) chunks.push(cur.trim());
+    return chunks.length ? chunks : [text];
   }
 
-  function playAudioData(audioData) {
-    return new Promise((resolve, reject) => {
-      if (!currentAudioCtx || abortController.signal.aborted) {
-        resolve();
-        return;
-      }
-
-      // audioData might be a Blob, ArrayBuffer, or Float32Array
-      if (audioData instanceof Blob) {
-        audioData.arrayBuffer().then((buf) => {
-          decodeAndPlay(buf, resolve, reject);
-        });
-      } else if (audioData instanceof ArrayBuffer) {
-        decodeAndPlay(audioData, resolve, reject);
-      } else if (audioData.buffer) {
-        // Float32Array or similar
-        if (currentAudioCtx.state === "suspended") { currentAudioCtx.resume(); }
-        const buffer = currentAudioCtx.createBuffer(1, audioData.length, 24000);
-        buffer.getChannelData(0).set(audioData);
-        const source = currentAudioCtx.createBufferSource();
-        source.buffer = buffer;
-        source.connect(currentAudioCtx.destination);
-        currentSource = source;
-        source.onended = resolve;
-        source.start();
-      } else {
-        resolve();
-      }
+  // Play a kokoro-js RawAudio (Float32 samples + sample rate) directly through
+  // Web Audio. Returns true if it actually played samples.
+  function playRaw(raw) {
+    return new Promise((resolve) => {
+      if (!currentAudioCtx || !raw || abortController.signal.aborted) { resolve(false); return; }
+      const samples = raw.audio || raw.data || (raw instanceof Float32Array ? raw : null);
+      const rate = raw.sampling_rate || raw.samplingRate || 24000;
+      if (!samples || !samples.length) { resolve(false); return; }
+      if (currentAudioCtx.state === "suspended") { currentAudioCtx.resume(); }
+      const buffer = currentAudioCtx.createBuffer(1, samples.length, rate);
+      buffer.getChannelData(0).set(samples);
+      const node = currentAudioCtx.createBufferSource();
+      node.buffer = buffer;
+      node.connect(currentAudioCtx.destination);
+      currentSource = node;
+      node.onended = () => resolve(true);
+      node.start();
     });
-  }
-
-  function decodeAndPlay(arrayBuffer, resolve, reject) {
-    currentAudioCtx.decodeAudioData(
-      arrayBuffer,
-      (buffer) => {
-        if (abortController.signal.aborted) { resolve(); return; }
-        if (currentAudioCtx.state === "suspended") { currentAudioCtx.resume(); }
-        const source = currentAudioCtx.createBufferSource();
-        source.buffer = buffer;
-        source.connect(currentAudioCtx.destination);
-        currentSource = source;
-        source.onended = resolve;
-        source.start();
-      },
-      reject
-    );
   }
 
   function speakBrowser(text) {

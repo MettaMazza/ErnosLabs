@@ -335,6 +335,20 @@ pre {
 @keyframes out-flash { 0% { box-shadow: 0 0 0 2px var(--glow) inset; } 100% { box-shadow: 0 0 0 0 transparent inset; } }
 .output.flash { animation: out-flash .55s var(--ease); }
 
+/* live REPL terminal */
+.term { background: #040a0c; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; font-family: var(--font-mono); }
+.term__log { padding: 16px 18px; max-height: 280px; min-height: 90px; overflow-y: auto; font-size: .88rem; line-height: 1.6; }
+.term__log:empty::before { content: "the session is empty — type below and press Enter"; color: var(--ink-3); }
+.term-line { white-space: pre-wrap; word-break: break-word; }
+.term-line.term-in { color: var(--ink-1); }
+.term-line.term-out { color: var(--glow); }
+.term-line.term-err { color: var(--bad); }
+.term-line.term-dim { color: var(--ink-3); }
+.term__row { display: flex; align-items: flex-start; gap: 10px; border-top: 1px solid var(--line); padding: 12px 18px; }
+.term__prompt { color: var(--glow); font-weight: 600; padding-top: 3px; }
+.term__input { flex: 1; background: transparent; border: 0; outline: none; resize: vertical; color: #d6e2f0; font-family: var(--font-mono); font-size: .9rem; line-height: 1.55; min-height: 2.6em; tab-size: 4; }
+.term__input::placeholder { color: var(--ink-3); }
+
 /* language comparison (ErnosPlain vs the rest) */
 .compare { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: start; }
 .compare__col { background: var(--bg-0); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
