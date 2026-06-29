@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let p, guard, orbit;
+    let orbit, guard, p;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let orbit, bits, p, i;
+    let i, bits, orbit, p;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_down, cov, d_up, g;
+    let g, cov, d_down, d_up;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let g, val, canvas, dpr, n, cx, rad, ang, y, p, html, rq, size, q, i, x, info, cy, rp, bits, seq, orbit, ctx;
+    let q, orbit, cx, i, bits, cy, seq, rp, g, size, html, ang, n, p, rq, val, dpr, canvas, ctx, x, y, rad, info;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let head, match, g, html, host, c, measured, clbl, hh, diff;
+    let diff, measured, head, match, html, c, hh, g, host, clbl;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let i, host, tag, tagtxt, html, s, secs;
+    let tag, tagtxt, secs, i, s, host, html;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let meas_mu_e, agree_tau, pred_mu_e, html, host, agree_mu, meas_tau_e, pred_tau_e;
+    let host, meas_tau_e, agree_tau, html, pred_mu_e, meas_mu_e, agree_mu, pred_tau_e;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -362,7 +362,7 @@ function el_pred() {
 }
 
 function draw_ptable() {
-    let z, len, host, p, cls, pred, s, e, sym, starts, syms, closures, html, ends, cells;
+    let p, cls, sym, pred, s, len, syms, host, closures, z, cells, html, ends, starts, e;
     host = document.getElementById("ptable");
     if (!host) {
         return 0;
@@ -415,7 +415,7 @@ function draw_ptable() {
 }
 
 function pt_click(ev) {
-    let z, status, note, info, sym;
+    let info, z, sym, status, note;
     z = Number(ev.currentTarget.getAttribute("data-z"));
     sym = ev.currentTarget.getAttribute("data-sym");
     info = document.getElementById("pt-info");
@@ -483,7 +483,7 @@ function gen_label(k) {
 }
 
 function draw_lockweb() {
-    let gens, chtml, c, ghtml, chips, host, i, gkl, g, gj, gbtns, L, gl, j, gk;
+    let j, chtml, gk, host, gl, chips, ghtml, gens, gj, g, gkl, L, c, gbtns, i;
     host = document.getElementById("lockweb");
     if (!host) {
         return 0;
@@ -526,7 +526,7 @@ function draw_lockweb() {
 }
 
 function lw_click(ev) {
-    let g, host, active, sel, consts, gbtns, gstr;
+    let host, active, gstr, gbtns, consts, g, sel;
     g = ev.currentTarget.getAttribute("data-g");
     host = document.getElementById("lockweb");
     sel = window.lockSel;
@@ -569,7 +569,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let queue, qe, pe, q_val, idx;
+    let queue, q_val, pe, qe, idx;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -588,8 +588,132 @@ function showcase_next() {
     return 0;
 }
 
+function pred(name, value, cat, status, kill) {
+    let o;
+    o = JSON.parse("{}");
+    o.name = name;
+    o.value = value;
+    o.cat = cat;
+    o.status = status;
+    o.kill = kill;
+    return o;
+}
+
+function predictions() {
+    let P;
+    P = [];
+    P.push(pred("Fine-structure constant", "1/α = 34259/250 = 137.036", "Forced constants", "now", "precision α measurements converge away from this exact rational"));
+    P.push(pred("Charged-lepton masses", "Koide cubic — τ/μ to 7 in 100,000, μ/e to ~1.6 in 1,000", "Forced constants", "now", "any lepton mass ratio parts from the cubic"));
+    P.push(pred("Proton / electron mass", "a strong bound-group of three over the electron shortfall", "Forced constants", "now", "structural and measured values diverge beyond parts-per-billion"));
+    P.push(pred("W / Z boson masses", "m_W² / m_Z² = 3/4 = cos²θ_W, an on-shell identity", "Forced constants", "now", "any precise violation of the identity"));
+    P.push(pred("Neutrino splitting ratio", "the mass-squared splitting ratio is exactly 33", "Forced constants", "now", "oscillation data tightens away from 33"));
+    P.push(pred("CP-violating phase", "antipodal — 1/2, maximal CP violation", "Forced constants", "now", "the measured CP phase is not maximal"));
+    P.push(pred("Three colours", "the fibre size of the tripling fold", "Structural integers", "now", "a fourth colour is found"));
+    P.push(pred("Three generations", "no fourth — bounded by the covering structure", "Structural integers", "now", "a fourth-generation fermion is found"));
+    P.push(pred("Eight gluons", "m² − 1 — colour-anticolour minus the singlet", "Structural integers", "now", "a ninth gluon is found"));
+    P.push(pred("Exactly four force sectors", "primes 2, 3, 5, 7 · couplings 1/2, 2/3, 4/5, 6/7", "New forces", "frontier", "no confining force on prime 5 or 7 — or any force on prime 11"));
+    P.push(pred("The ladder ends at 7", "no eighth, ninth, or eleventh-prime force exists", "New forces", "frontier", "any fundamental force found beyond prime 7"));
+    P.push(pred("Dark / baryon ratio", "27/5 = exactly 5.4", "Cosmos", "now", "CMB and structure surveys settle away from 27/5"));
+    P.push(pred("Dark matter is gauge-inert", "cosmic fraction 27/32, never seen non-gravitationally", "Cosmos", "now", "a direct (non-gravitational) dark-matter detection"));
+    P.push(pred("Cosmological constant", "vacuum floor 1/2²⁰, non-diluting (w = −1)", "Cosmos", "now", "the dark-energy equation of state drifts off −1"));
+    P.push(pred("EW / Planck hierarchy", "exactly 1/2⁵⁶ — no fine-tuning", "Cosmos", "now", "the measured hierarchy parts from 2⁻⁵⁶"));
+    P.push(pred("Lithium-7 abundance", "primordial 3/16, observed 3/32", "Cosmos", "now", "big-bang nucleosynthesis settles elsewhere"));
+    P.push(pred("Gravitational waves", "quadrupole, propagating at exactly the speed of light", "Gravity", "settled", "confirmed luminal to extraordinary precision"));
+    P.push(pred("Black-hole information", "preserved, never destroyed — and no true singularity", "Gravity", "now", "Hawking-radiation statistics show information loss"));
+    P.push(pred("The reproduced corpus", "150+ established results, derived blind, landing on measurement", "Reproduced physics", "now", "any single established result the fold derives wrongly"));
+    P.push(pred("Chess endgames · 4-piece", "42,391,244 positions · 42M agreements · zero errors", "Settled live", "settled", "certified against the tablebases, zero error"));
+    P.push(pred("Chess endgames · 5-piece", "2 billion positions — being certified now", "Settled live", "frontier", "a single disagreement with the tablebase"));
+    P.push(pred("Inertia as a coupling", "vacuum-to-inertia ratio is the One — inertia is a dial", "Frontier", "frontier", "inertia cannot be lowered without removing matter"));
+    P.push(pred("The self persists", "identity = the odd-denominator invariant; the One endures", "Frontier", "frontier", "the invariant orbit does not continue across the body's clearing"));
+    P.push(pred("Mind-coupling law", "coupling iff two orbits share a denominator factor (gcd)", "Frontier", "frontier", "coupling among the coprime, or absent among the deeply bound"));
+    P.push(pred("Machine consciousness", "iff a system performs the two-to-one self-observation fold", "Frontier", "frontier", "the criterion fails to separate conscious from unconscious systems"));
+    return P;
+}
+
+function status_label(s) {
+    if ((s === "settled")) {
+        return "settled";
+    }
+    if ((s === "now")) {
+        return "checkable now";
+    }
+    return "awaiting experiment";
+}
+
+function ledger_card(p) {
+    let sl, foot;
+    sl = status_label(p.status);
+    foot = (("<div class=\"lg-kill\">dies if: " + String(p.kill)) + "</div>");
+    if ((p.status === "settled")) {
+        foot = (("<div class=\"lg-kill lg-ok\">✓ " + String(p.kill)) + "</div>");
+    }
+    return (((((((((((("<div class=\"lg-card lg-" + String(p.status)) + "\"><div class=\"lg-top\"><span class=\"lg-cat\">") + String(p.cat)) + "</span><span class=\"lg-badge\">") + String(sl)) + "</span></div><div class=\"lg-name\">") + String(p.name)) + "</div><div class=\"lg-val\">") + String(p.value)) + "</div>") + String(foot)) + "</div>");
+}
+
+function render_ledger() {
+    let p, grid, html, P, i, f;
+    grid = document.getElementById("lg-grid");
+    if (!grid) {
+        return 0;
+    }
+    P = predictions();
+    f = window.ledgerFilter;
+    html = "";
+    i = 0;
+    while ((i < P.length)) {
+        p = P[i];
+        if ((f === "all")) {
+            html = (html + ledger_card(p));
+        } else if ((p.status === f)) {
+            html = (html + ledger_card(p));
+        }
+        i = (i + 1);
+    }
+    grid.innerHTML = html;
+    return 0;
+}
+
+function ledger_filter(ev) {
+    let host, fbtns, f;
+    f = ev.currentTarget.getAttribute("data-f");
+    window.ledgerFilter = f;
+    host = document.getElementById("ledger");
+    fbtns = host.querySelectorAll(".lg-fbtn");
+    for (const b of fbtns) {
+        if ((b.getAttribute("data-f") === f)) {
+            b.classList.add("active");
+        } else {
+            b.classList.remove("active");
+        }
+    }
+    render_ledger();
+    return 0;
+}
+
+function draw_ledger() {
+    let host, fbtns, fhtml;
+    host = document.getElementById("ledger");
+    if (!host) {
+        return 0;
+    }
+    window.ledgerFilter = "all";
+    fhtml = "<div class=\"lg-filters\">";
+    fhtml = (fhtml + "<button class=\"lg-fbtn active\" data-f=\"all\">all</button>");
+    fhtml = (fhtml + "<button class=\"lg-fbtn\" data-f=\"settled\">already settled</button>");
+    fhtml = (fhtml + "<button class=\"lg-fbtn\" data-f=\"now\">checkable today</button>");
+    fhtml = (fhtml + "<button class=\"lg-fbtn\" data-f=\"frontier\">awaiting experiments</button>");
+    fhtml = (fhtml + "</div>");
+    host.innerHTML = (fhtml + "<div class=\"lg-grid\" id=\"lg-grid\"></div>");
+    fbtns = host.querySelectorAll(".lg-fbtn");
+    for (const b of fbtns) {
+        b.addEventListener("click", ledger_filter);
+    }
+    render_ledger();
+    return 0;
+}
+
 function g_xor(a, b) {
-    let place, result;
+    let result, place;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -621,7 +745,7 @@ function clamp_heap(x) {
 }
 
 function sub_solve(n) {
-    let i, win, m, w;
+    let i, win, w, m;
     win = [];
     i = 0;
     while ((i <= n)) {
@@ -642,7 +766,7 @@ function sub_solve(n) {
 }
 
 function draw_sub() {
-    let movetxt, strip, host, vcls, win, disagree, oloss, mloss, verdict, n, html, w, m, i, cls;
+    let win, i, disagree, n, html, host, oloss, verdict, m, w, mloss, movetxt, cls, vcls, strip;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -707,7 +831,7 @@ function nim_key(a, b, c) {
 }
 
 function nim_win(a, b, c, memo) {
-    let nb, result, cached, k, nc, na;
+    let k, na, cached, result, nb, nc;
     k = nim_key(a, b, c);
     cached = memo[k];
     if (cached) {
@@ -744,7 +868,7 @@ function nim_win(a, b, c, memo) {
 }
 
 function draw_nim() {
-    let verdict, host, orc, vcls, b, movetxt, rg, html, disagree, i, w, c, ta, memo, tb, states, kk, a, nimsum, tc, j;
+    let kk, ta, a, tc, verdict, nimsum, movetxt, i, j, disagree, vcls, c, orc, w, states, b, html, tb, rg, host, memo;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -831,6 +955,7 @@ function main() {
     draw_element137();
     draw_lockweb();
     draw_ptable();
+    draw_ledger();
     if (document.getElementById("sub-n")) {
         document.getElementById("sub-go").addEventListener("click", sub_ev);
         document.getElementById("sub-n").addEventListener("input", sub_ev);

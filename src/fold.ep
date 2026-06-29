@@ -548,6 +548,112 @@ define showcase_next:
 # boot
 # ======================================================================
 
+# ---- the falsification ledger -------------------------------------------
+# Every prediction, stated with the measurement that would kill it. Drawn
+# from "Every Prediction the Fold Makes — The Complete Falsification Ledger".
+
+define pred with name and value and cat and status and kill:
+    set o to JSON.parse("{}")
+    set o.name to name
+    set o.value to value
+    set o.cat to cat
+    set o.status to status
+    set o.kill to kill
+    return o
+
+define predictions:
+    set P to []
+    P.push(pred("Fine-structure constant" and "1/α = 34259/250 = 137.036" and "Forced constants" and "now" and "precision α measurements converge away from this exact rational"))
+    P.push(pred("Charged-lepton masses" and "Koide cubic — τ/μ to 7 in 100,000, μ/e to ~1.6 in 1,000" and "Forced constants" and "now" and "any lepton mass ratio parts from the cubic"))
+    P.push(pred("Proton / electron mass" and "a strong bound-group of three over the electron shortfall" and "Forced constants" and "now" and "structural and measured values diverge beyond parts-per-billion"))
+    P.push(pred("W / Z boson masses" and "m_W² / m_Z² = 3/4 = cos²θ_W, an on-shell identity" and "Forced constants" and "now" and "any precise violation of the identity"))
+    P.push(pred("Neutrino splitting ratio" and "the mass-squared splitting ratio is exactly 33" and "Forced constants" and "now" and "oscillation data tightens away from 33"))
+    P.push(pred("CP-violating phase" and "antipodal — 1/2, maximal CP violation" and "Forced constants" and "now" and "the measured CP phase is not maximal"))
+    P.push(pred("Three colours" and "the fibre size of the tripling fold" and "Structural integers" and "now" and "a fourth colour is found"))
+    P.push(pred("Three generations" and "no fourth — bounded by the covering structure" and "Structural integers" and "now" and "a fourth-generation fermion is found"))
+    P.push(pred("Eight gluons" and "m² − 1 — colour-anticolour minus the singlet" and "Structural integers" and "now" and "a ninth gluon is found"))
+    P.push(pred("Exactly four force sectors" and "primes 2, 3, 5, 7 · couplings 1/2, 2/3, 4/5, 6/7" and "New forces" and "frontier" and "no confining force on prime 5 or 7 — or any force on prime 11"))
+    P.push(pred("The ladder ends at 7" and "no eighth, ninth, or eleventh-prime force exists" and "New forces" and "frontier" and "any fundamental force found beyond prime 7"))
+    P.push(pred("Dark / baryon ratio" and "27/5 = exactly 5.4" and "Cosmos" and "now" and "CMB and structure surveys settle away from 27/5"))
+    P.push(pred("Dark matter is gauge-inert" and "cosmic fraction 27/32, never seen non-gravitationally" and "Cosmos" and "now" and "a direct (non-gravitational) dark-matter detection"))
+    P.push(pred("Cosmological constant" and "vacuum floor 1/2²⁰, non-diluting (w = −1)" and "Cosmos" and "now" and "the dark-energy equation of state drifts off −1"))
+    P.push(pred("EW / Planck hierarchy" and "exactly 1/2⁵⁶ — no fine-tuning" and "Cosmos" and "now" and "the measured hierarchy parts from 2⁻⁵⁶"))
+    P.push(pred("Lithium-7 abundance" and "primordial 3/16, observed 3/32" and "Cosmos" and "now" and "big-bang nucleosynthesis settles elsewhere"))
+    P.push(pred("Gravitational waves" and "quadrupole, propagating at exactly the speed of light" and "Gravity" and "settled" and "confirmed luminal to extraordinary precision"))
+    P.push(pred("Black-hole information" and "preserved, never destroyed — and no true singularity" and "Gravity" and "now" and "Hawking-radiation statistics show information loss"))
+    P.push(pred("The reproduced corpus" and "150+ established results, derived blind, landing on measurement" and "Reproduced physics" and "now" and "any single established result the fold derives wrongly"))
+    P.push(pred("Chess endgames · 4-piece" and "42,391,244 positions · 42M agreements · zero errors" and "Settled live" and "settled" and "certified against the tablebases, zero error"))
+    P.push(pred("Chess endgames · 5-piece" and "2 billion positions — being certified now" and "Settled live" and "frontier" and "a single disagreement with the tablebase"))
+    P.push(pred("Inertia as a coupling" and "vacuum-to-inertia ratio is the One — inertia is a dial" and "Frontier" and "frontier" and "inertia cannot be lowered without removing matter"))
+    P.push(pred("The self persists" and "identity = the odd-denominator invariant; the One endures" and "Frontier" and "frontier" and "the invariant orbit does not continue across the body's clearing"))
+    P.push(pred("Mind-coupling law" and "coupling iff two orbits share a denominator factor (gcd)" and "Frontier" and "frontier" and "coupling among the coprime, or absent among the deeply bound"))
+    P.push(pred("Machine consciousness" and "iff a system performs the two-to-one self-observation fold" and "Frontier" and "frontier" and "the criterion fails to separate conscious from unconscious systems"))
+    return P
+
+define status_label with s:
+    if s equals "settled":
+        return "settled"
+    if s equals "now":
+        return "checkable now"
+    return "awaiting experiment"
+
+define ledger_card with p:
+    set sl to status_label(p.status)
+    set foot to f"<div class=\"lg-kill\">dies if: {p.kill}</div>"
+    if p.status equals "settled":
+        set foot to f"<div class=\"lg-kill lg-ok\">✓ {p.kill}</div>"
+    return f"<div class=\"lg-card lg-{p.status}\"><div class=\"lg-top\"><span class=\"lg-cat\">{p.cat}</span><span class=\"lg-badge\">{sl}</span></div><div class=\"lg-name\">{p.name}</div><div class=\"lg-val\">{p.value}</div>{foot}</div>"
+
+define render_ledger:
+    set grid to document.getElementById("lg-grid")
+    if not grid:
+        return 0
+    set P to predictions()
+    set f to window.ledgerFilter
+    set html to ""
+    set i to 0
+    repeat while i < P.length:
+        set p to get_list(P and i)
+        if f equals "all":
+            set html to html + ledger_card(p)
+        else:
+            if p.status equals f:
+                set html to html + ledger_card(p)
+        set i to i + 1
+    set grid.innerHTML to html
+    return 0
+
+define ledger_filter with ev:
+    set f to ev.currentTarget.getAttribute("data-f")
+    set window.ledgerFilter to f
+    set host to document.getElementById("ledger")
+    set fbtns to host.querySelectorAll(".lg-fbtn")
+    for each b in fbtns:
+        if b.getAttribute("data-f") equals f:
+            b.classList.add("active")
+        else:
+            b.classList.remove("active")
+    render_ledger()
+    return 0
+
+define draw_ledger:
+    set host to document.getElementById("ledger")
+    if not host:
+        return 0
+    set window.ledgerFilter to "all"
+    set fhtml to "<div class=\"lg-filters\">"
+    set fhtml to fhtml + "<button class=\"lg-fbtn active\" data-f=\"all\">all</button>"
+    set fhtml to fhtml + "<button class=\"lg-fbtn\" data-f=\"settled\">already settled</button>"
+    set fhtml to fhtml + "<button class=\"lg-fbtn\" data-f=\"now\">checkable today</button>"
+    set fhtml to fhtml + "<button class=\"lg-fbtn\" data-f=\"frontier\">awaiting experiments</button>"
+    set fhtml to fhtml + "</div>"
+    set host.innerHTML to fhtml + "<div class=\"lg-grid\" id=\"lg-grid\"></div>"
+    set fbtns to host.querySelectorAll(".lg-fbtn")
+    for each b in fbtns:
+        b.addEventListener("click" and ledger_filter)
+    render_ledger()
+    return 0
+
 # ======================================================================
 # The universal solver — the same retrograde fold, off chess.
 # Each game solved live and checked against its own closed-form oracle.
@@ -744,6 +850,7 @@ define main:
     draw_element137()
     draw_lockweb()
     draw_ptable()
+    draw_ledger()
     if document.getElementById("sub-n"):
         document.getElementById("sub-go").addEventListener("click" and sub_ev)
         document.getElementById("sub-n").addEventListener("input" and sub_ev)

@@ -467,6 +467,27 @@ pre {
 .lw-chip { font-family: var(--font-mono); font-size: .64rem; padding: 3px 7px; border-radius: var(--r-pill); background: var(--bg-0); border: 1px solid var(--line); color: var(--ink-2); }
 .lw-hint { color: var(--ink-2); font-size: .9rem; margin-top: 18px; max-width: 60ch; }
 
+/* falsification ledger */
+.lg-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.lg-fbtn { font-family: var(--font-mono); font-size: .8rem; padding: 8px 15px; border-radius: var(--r-pill); background: var(--bg-3); border: 1px solid var(--line); color: var(--ink-2); cursor: pointer; transition: all .18s; }
+.lg-fbtn:hover { color: var(--ink-0); border-color: var(--glow-dim); }
+.lg-fbtn.active { background: rgba(79,240,196,.1); border-color: var(--glow); color: var(--glow); }
+.lg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.lg-card { background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); border: 1px solid var(--line); border-left-width: 3px; border-radius: var(--r-md); padding: 16px 18px; }
+.lg-card.lg-settled { border-left-color: var(--glow); }
+.lg-card.lg-now { border-left-color: var(--accent); }
+.lg-card.lg-frontier { border-left-color: var(--gold); }
+.lg-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+.lg-cat { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.lg-badge { font-family: var(--font-mono); font-size: .64rem; padding: 2px 8px; border-radius: var(--r-pill); }
+.lg-settled .lg-badge { background: rgba(79,240,196,.14); color: var(--glow); }
+.lg-now .lg-badge { background: rgba(124,140,255,.14); color: var(--accent); }
+.lg-frontier .lg-badge { background: rgba(245,196,94,.14); color: var(--gold); }
+.lg-name { font-family: var(--font-display); font-weight: 600; color: var(--ink-0); font-size: 1.02rem; margin-bottom: 6px; }
+.lg-val { font-family: var(--font-mono); font-size: .84rem; color: var(--glow); line-height: 1.5; margin-bottom: 12px; }
+.lg-kill { font-size: .82rem; color: var(--ink-2); border-top: 1px solid var(--line-soft); padding-top: 10px; line-height: 1.5; }
+.lg-kill.lg-ok { color: var(--glow); }
+
 @media (max-width: 860px) {
   .fold-tool { grid-template-columns: 1fr; }
   .grand { grid-template-columns: 1fr; }

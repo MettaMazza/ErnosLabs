@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let i, c, n, start, d, sstart, out, word;
+    let d, word, start, n, c, sstart, out, i;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let lines, g, ta, src, layer, i, gutter;
+    let lines, gutter, src, g, ta, i, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let ta, layer, gutter;
+    let gutter, layer, ta;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let ta, epp, val, sp;
+    let sp, epp, val, ta;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let exs, e, btn, host, i;
+    let host, e, i, btn, exs;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let t1, status, t0, ta, out, ms, reflow, r, src;
+    let out, ms, reflow, t0, src, status, r, t1, ta;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -322,7 +322,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let r, epp, src, sp, inp, val;
+    let inp, r, epp, val, src, sp;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -361,7 +361,7 @@ function term_keydown(ev) {
 }
 
 function main() {
-    let exs, ta, first;
+    let ta, exs, first;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");
