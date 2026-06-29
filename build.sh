@@ -29,8 +29,31 @@ for f in "$SRC"/*.ep; do
   fi
 done
 
-if [ "$fail" -eq 0 ]; then
-  echo "[+] build ok — $count module(s) emitted"
-else
+if [ "$fail" -ne 0 ]; then
   echo "[-] build failed"; exit 1
 fi
+echo "[+] build ok — $count module(s) emitted"
+
+# --- cache-busting: stamp a content hash on every asset reference in the HTML
+# so a fresh deploy is fetched immediately instead of a stale cached copy.
+echo "[*] stamping cache-busting versions on asset references"
+python3 - "$ROOT" <<'PY'
+import sys, os, re, hashlib, glob
+root = sys.argv[1]
+def short_hash(path):
+    with open(path, "rb") as fh:
+        return hashlib.sha1(fh.read()).hexdigest()[:8]
+assets = [os.path.relpath(p, root) for p in
+          glob.glob(os.path.join(root, "assets/js/*.js")) +
+          glob.glob(os.path.join(root, "assets/css/*.css"))]
+for html in glob.glob(os.path.join(root, "*.html")):
+    s = open(html, encoding="utf-8").read()
+    orig = s
+    for asset in assets:
+        h = short_hash(os.path.join(root, asset))
+        s = re.sub(re.escape(asset) + r'(\?v=[0-9a-f]+)?', asset + '?v=' + h, s)
+    if s != orig:
+        open(html, "w", encoding="utf-8").write(s)
+        print("    stamped " + os.path.basename(html))
+PY
+echo "[+] done"

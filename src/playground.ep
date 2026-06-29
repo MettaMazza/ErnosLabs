@@ -1,7 +1,9 @@
 # ErnosLabs — ErnosPlain playground UI
 # Component: src/playground.ep  (compiled to assets/js/playground.js)
 # Depends on interp.js (run_safely) loaded before it.
-# Wires the editor, run button, output console, and example gallery.
+# A syntax-highlighted editor (highlight layer behind a transparent textarea),
+# line numbers, an example gallery, and a Run button that visibly reacts every
+# time (flash + run counter + timing).
 
 define ex with name and blurb and code:
     set e to JSON.parse("{}")
@@ -12,13 +14,168 @@ define ex with name and blurb and code:
 
 define examples:
     set list to []
-    list.push(ex("Hello" and "Plain-English operators, conditionals." and "define main:\n    set a to 10\n    set b to 20\n    set result to a plus b multiplied by 2\n    display \"The result is:\"\n    display result\n    if result is greater than 30:\n        display \"...and it is greater than thirty.\"\n    else:\n        display \"...and it is small.\"\n    return 0"))
-    list.push(ex("Factorial" and "Recursion with a returning value." and "define factorial with n:\n    if n is less than 2:\n        return 1\n    return n times factorial(n minus 1)\n\ndefine main:\n    display \"5! =\"\n    display factorial(5)\n    return 0"))
+    list.push(ex("Hello world" and "The classic, in plain English." and "# Your first ErnosPlain program.\n# Press Run — the output appears on the right.\ndefine main:\n    display \"Hello, world!\"\n    return 0"))
+    list.push(ex("Greeting" and "Functions, text, f-strings." and "define greet with name returning Str:\n    return f\"Hello, {name}!\"\n\ndefine main:\n    display greet(\"Maria\")\n    display greet(\"world\")\n    return 0"))
+    list.push(ex("Factorial" and "Recursion with a return value." and "define factorial with n:\n    if n is less than 2:\n        return 1\n    return n times factorial(n minus 1)\n\ndefine main:\n    display \"5! =\"\n    display factorial(5)\n    return 0"))
     list.push(ex("Fibonacci" and "Recursion + a counting loop." and "define fib with n:\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\ndefine main:\n    set i to 0\n    repeat while i <= 12:\n        display fib(i)\n        set i to i + 1\n    return 0"))
     list.push(ex("FizzBuzz" and "else-if chains and modulo." and "define main:\n    set i to 1\n    repeat while i <= 20:\n        if i % 15 == 0:\n            display \"FizzBuzz\"\n        else if i % 3 == 0:\n            display \"Fizz\"\n        else if i % 5 == 0:\n            display \"Buzz\"\n        else:\n            display i\n        set i to i + 1\n    return 0"))
     list.push(ex("Primes" and "Nested loops, booleans." and "define is_prime with n:\n    if n < 2:\n        return false\n    set d to 2\n    repeat while d * d <= n:\n        if n % d == 0:\n            return false\n        set d to d + 1\n    return true\n\ndefine main:\n    display \"primes up to 40:\"\n    set i to 2\n    repeat while i <= 40:\n        if is_prime(i):\n            display i\n        set i to i + 1\n    return 0"))
     list.push(ex("Lists" and "Lists, for-each, f-strings." and "define main:\n    set nums to [3, 1, 4, 1, 5, 9, 2, 6]\n    set total to 0\n    set biggest to 0\n    for each x in nums:\n        set total to total + x\n        if x is greater than biggest:\n            set biggest to x\n    display f\"count: {length_list(nums)}\"\n    display f\"sum:   {total}\"\n    display f\"max:   {biggest}\"\n    return 0"))
     return list
+
+# ---- syntax highlighting -------------------------------------------------
+
+define hl_esc with s:
+    set s to s.split("&").join("&amp;")
+    set s to s.split("<").join("&lt;")
+    set s to s.split(">").join("&gt;")
+    return s
+
+define hl_span with cls and text:
+    return "<span class=\"" + cls + "\">" + hl_esc(text) + "</span>"
+
+define hl_is_kw with w:
+    set kws to " define set to as returning with return if else while repeat for each in display and or not also plus minus times divided by modulo is greater less than equals true false structure field choice variant check create given of "
+    return kws.indexOf(" " + w + " ") >= 0
+
+define hl_is_digit with c:
+    if c >= "0":
+        if c <= "9":
+            return true
+    return false
+
+define hl_is_word with c:
+    if c equals "_":
+        return true
+    set lc to c.toLowerCase()
+    if lc >= "a":
+        if lc <= "z":
+            return true
+    return hl_is_digit(c)
+
+# Turn source into highlighted HTML (preserving all whitespace).
+define hl with src:
+    set n to src.length
+    set out to ""
+    set i to 0
+    repeat while i < n:
+        set c to src.charAt(i)
+        if c equals "#":
+            set start to i
+            repeat while i < n:
+                if src.charAt(i) equals "\n":
+                    break
+                set i to i + 1
+            set out to out + hl_span("tok-com" and src.slice(start and i))
+        else:
+            if c equals "\"":
+                set start to i
+                set i to i + 1
+                repeat while i < n:
+                    set d to src.charAt(i)
+                    if d equals "\\":
+                        set i to i + 2
+                    else:
+                        set i to i + 1
+                        if d equals "\"":
+                            break
+                set out to out + hl_span("tok-str" and src.slice(start and i))
+            else:
+                if hl_is_digit(c):
+                    set start to i
+                    repeat while i < n:
+                        set d to src.charAt(i)
+                        if hl_is_digit(d):
+                            set i to i + 1
+                        else:
+                            if d equals ".":
+                                set i to i + 1
+                            else:
+                                break
+                    set out to out + hl_span("tok-num" and src.slice(start and i))
+                else:
+                    if hl_is_word(c):
+                        set start to i
+                        repeat while i < n:
+                            if hl_is_word(src.charAt(i)):
+                                set i to i + 1
+                            else:
+                                break
+                        set word to src.slice(start and i)
+                        if word equals "f":
+                            if src.charAt(i) equals "\"":
+                                set sstart to i
+                                set i to i + 1
+                                repeat while i < n:
+                                    set d to src.charAt(i)
+                                    if d equals "\\":
+                                        set i to i + 2
+                                    else:
+                                        set i to i + 1
+                                        if d equals "\"":
+                                            break
+                                set out to out + hl_span("tok-str" and "f" + src.slice(sstart and i))
+                            else:
+                                set out to out + hl_word(word)
+                        else:
+                            set out to out + hl_word(word)
+                    else:
+                        set out to out + hl_esc(c)
+                        set i to i + 1
+    return out
+
+define hl_word with w:
+    if hl_is_kw(w):
+        return hl_span("tok-kw" and w)
+    return hl_esc(w)
+
+# ---- editor (highlight layer + gutter sync) ------------------------------
+
+define editor_update:
+    set ta to document.getElementById("code")
+    set layer to document.getElementById("code-hl")
+    set gutter to document.getElementById("gutter")
+    set src to ta.value
+    set layer.innerHTML to hl(src) + "\n"
+    set lines to src.split("\n")
+    set g to ""
+    set i to 0
+    repeat while i < lines.length:
+        set g to g + to_str(i + 1) + "\n"
+        set i to i + 1
+    set gutter.textContent to g
+    editor_scroll()
+    return 0
+
+define editor_scroll:
+    set ta to document.getElementById("code")
+    set layer to document.getElementById("code-hl")
+    set gutter to document.getElementById("gutter")
+    set layer.scrollTop to ta.scrollTop
+    set layer.scrollLeft to ta.scrollLeft
+    set gutter.scrollTop to ta.scrollTop
+    return 0
+
+define editor_keydown with ev:
+    if ev.key equals "Tab":
+        ev.preventDefault()
+        set ta to document.getElementById("code")
+        set sp to ta.selectionStart
+        set epp to ta.selectionEnd
+        set val to ta.value
+        set ta.value to val.slice(0 and sp) + "    " + val.slice(epp)
+        set ta.selectionStart to sp + 4
+        set ta.selectionEnd to sp + 4
+        editor_update()
+    return 0
+
+define set_code with code:
+    set ta to document.getElementById("code")
+    set ta.value to code
+    editor_update()
+    return 0
+
+# ---- gallery -------------------------------------------------------------
 
 define render_gallery:
     set host to document.getElementById("examples")
@@ -42,8 +199,7 @@ define pick_example with ev:
     set idx to Number(ev.currentTarget.getAttribute("data-idx"))
     set exs to examples()
     set e to get_list(exs and idx)
-    set ta to document.getElementById("code")
-    set ta.value to e.code
+    set_code(e.code)
     mark_active(ev.currentTarget)
     run_code()
     return 0
@@ -55,40 +211,55 @@ define mark_active with el:
     el.classList.add("active")
     return 0
 
+# ---- run -----------------------------------------------------------------
+
 define run_code:
     set ta to document.getElementById("code")
     set src to ta.value
     set out to document.getElementById("output")
     set status to document.getElementById("run-status")
+    set t0 to window.performance.now()
     set r to run_safely(src)
+    set t1 to window.performance.now()
+    set ms to Math.round((t1 - t0) * 100) / 100
+    set window.epRunCount to window.epRunCount + 1
     if r.ok:
         out.classList.remove("err")
         if r.output equals "":
-            set out.textContent to "(no output — did you call display?)"
+            set out.textContent to "(ran clean — no output. Did you call display?)"
         else:
             set out.textContent to r.output
-        set status.textContent to "ran clean"
         status.classList.remove("err")
+        set status.textContent to f"✓ ran in {ms} ms · run {window.epRunCount}"
     else:
         out.classList.add("err")
         set out.textContent to "✗ " + r.error
-        set status.textContent to "error"
         status.classList.add("err")
-    return 0
-
-define main:
-    render_gallery()
-    document.getElementById("run").addEventListener("click" and run_code_ev)
-    # load the first example and run it
-    set exs to examples()
-    set ta to document.getElementById("code")
-    set ta.value to get_list(exs and 0).code
-    set first to document.querySelector(".ex-btn")
-    if first:
-        first.classList.add("active")
-    run_code()
+        set status.textContent to f"✗ error · run {window.epRunCount}"
+    # visibly flash the output so each run is obvious even with identical output
+    out.classList.remove("flash")
+    set reflow to out.offsetWidth
+    out.classList.add("flash")
     return 0
 
 define run_code_ev with ev:
+    run_code()
+    return 0
+
+# ---- boot ----------------------------------------------------------------
+
+define main:
+    set window.epRunCount to 0
+    render_gallery()
+    set ta to document.getElementById("code")
+    ta.addEventListener("input" and editor_update)
+    ta.addEventListener("scroll" and editor_scroll)
+    ta.addEventListener("keydown" and editor_keydown)
+    document.getElementById("run").addEventListener("click" and run_code_ev)
+    set exs to examples()
+    set_code(get_list(exs and 0).code)
+    set first to document.querySelector(".ex-btn")
+    if first:
+        first.classList.add("active")
     run_code()
     return 0

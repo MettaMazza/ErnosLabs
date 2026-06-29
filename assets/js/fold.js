@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let orbit, bits, p, i;
+    let bits, p, orbit, i;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -59,7 +59,7 @@ function fold_bits(p0, q) {
 }
 
 function depth_for(x) {
-    let v, d;
+    let d, v;
     d = 0;
     v = 1;
     while ((v < x)) {
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_up, cov, d_down, g;
+    let d_down, g, d_up, cov;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let dpr, rp, orbit, ctx, rq, bits, i, val, ang, x, info, q, cx, cy, seq, g, canvas, size, p, rad, n, html, y;
+    let canvas, n, val, info, size, seq, rq, bits, x, ang, cx, ctx, rp, q, dpr, g, i, rad, p, html, orbit, y, cy;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let out, i;
+    let i, out;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let match, head, html, diff, hh, host, g, clbl, measured, c;
+    let html, diff, match, c, clbl, hh, measured, g, host, head;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let s, tag, host, secs, html, i, tagtxt;
+    let s, host, tag, html, secs, i, tagtxt;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let html, host, pred_mu_e, agree_tau, pred_tau_e, meas_tau_e, agree_mu, meas_mu_e;
+    let meas_mu_e, host, agree_mu, pred_tau_e, pred_mu_e, meas_tau_e, agree_tau, html;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -361,7 +361,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let q_val, pe, qe, idx, queue;
+    let queue, idx, qe, pe, q_val;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -381,7 +381,7 @@ function showcase_next() {
 }
 
 function main() {
-    let fp, gc;
+    let gc, fp;
     fp = document.getElementById("fold-p");
     if (fp) {
         document.getElementById("fold-run").addEventListener("click", fold_ev);

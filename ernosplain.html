@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=dfd44666">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -74,7 +74,13 @@
         <div class="pg__main">
           <div class="pg__editor-wrap">
             <div class="pg__label"><span>your program · .ep</span></div>
-            <textarea id="code" spellcheck="false" autocomplete="off"></textarea>
+            <div class="editor">
+              <div class="editor__gutter" id="gutter" aria-hidden="true"></div>
+              <div class="editor__code">
+                <pre class="editor__hl" id="code-hl" aria-hidden="true"></pre>
+                <textarea id="code" class="editor__ta" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off"></textarea>
+              </div>
+            </div>
             <div class="pg__bar" style="margin-top:12px">
               <button class="btn btn--primary" id="run">▶ Run</button>
               <span class="run-status" id="run-status"></span>
@@ -213,8 +219,8 @@
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · This page is written in ErnosPlain</div>
   </footer>
 
-  <script src="assets/js/interp.js"></script>
-  <script src="assets/js/site.js"></script>
-  <script src="assets/js/playground.js"></script>
+  <script src="assets/js/interp.js?v=0ae2626c"></script>
+  <script src="assets/js/site.js?v=bde9c240"></script>
+  <script src="assets/js/playground.js?v=546303b9"></script>
 </body>
 </html>
