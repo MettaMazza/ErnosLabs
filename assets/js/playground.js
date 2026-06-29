@@ -22,7 +22,7 @@ function examples() {
 }
 
 function render_gallery() {
-    let i, host, e, exs, btn;
+    let e, i, exs, host, btn;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -44,7 +44,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let idx, exs, e, ta;
+    let exs, e, idx, ta;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -66,7 +66,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let out, status, src, r, ta;
+    let r, ta, status, out, src;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -91,7 +91,7 @@ function run_code() {
 }
 
 function main() {
-    let ta, exs, first;
+    let exs, ta, first;
     render_gallery();
     document.getElementById("run").addEventListener("click", run_code_ev);
     exs = examples();

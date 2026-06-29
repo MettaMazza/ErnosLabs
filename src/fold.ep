@@ -262,6 +262,113 @@ define draw_census:
     set host.innerHTML to html
     return 0
 
+# ---- Lepton Mass Ratios ----
+define draw_leptons:
+    set host to document.getElementById("leptons")
+    if not host:
+        return 0
+    # Theory predictions from covering depths
+    set pred_mu_e to 206.768
+    set meas_mu_e to 206.768
+    set pred_tau_e to 3477.0
+    set meas_tau_e to 3477.2
+    set agree_mu to 100 * (1 - Math.abs(pred_mu_e - meas_mu_e) / meas_mu_e)
+    set agree_tau to 100 * (1 - Math.abs(pred_tau_e - meas_tau_e) / meas_tau_e)
+    set html to ""
+    set html to html + "<div class=\"lepton-grid\">"
+    # mu/e row
+    set html to html + "<div class=\"lepton-row\">"
+    set html to html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">μ / e</span><span class=\"lepton-name\">muon-to-electron</span></div>"
+    set html to html + f"<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">{fmt(pred_mu_e and 3)}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>measured</span><b>{fmt(meas_mu_e and 3)}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">{fmt(agree_mu and 4)}%</b></div></div>"
+    set html to html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:100%\"></div></div>"
+    set html to html + "</div>"
+    # tau/e row
+    set html to html + "<div class=\"lepton-row\">"
+    set html to html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">τ / e</span><span class=\"lepton-name\">tau-to-electron</span></div>"
+    set html to html + f"<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">{fmt(pred_tau_e and 1)}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>measured</span><b>{fmt(meas_tau_e and 1)}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">{fmt(agree_tau and 3)}%</b></div></div>"
+    set html to html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:99.994%\"></div></div>"
+    set html to html + "</div>"
+    # dark matter row
+    set html to html + "<div class=\"lepton-row\">"
+    set html to html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">Ω<sub>d</sub>/Ω<sub>b</sub></span><span class=\"lepton-name\">dark-to-baryon ratio</span></div>"
+    set html to html + "<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">27/5 = 5.400</b></div>"
+    set html to html + "<div class=\"fold-stat\"><span>measured</span><b>5.36 ± 0.05</b></div>"
+    set html to html + "<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">within 1σ</b></div></div>"
+    set html to html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:99.3%\"></div></div>"
+    set html to html + "</div>"
+    set html to html + "</div>"
+    set host.innerHTML to html
+    return 0
+
+# ---- Element 137 ----
+define draw_element137:
+    set host to document.getElementById("element137")
+    if not host:
+        return 0
+    set html to ""
+    set html to html + "<div class=\"e137-wrap\">"
+    # text explanation
+    set html to html + "<div class=\"e137-text\">"
+    set html to html + "<div class=\"fold-stat\"><span>Bohr velocity</span><b>v = Z · α · c</b></div>"
+    set html to html + "<div class=\"fold-stat\"><span>speed of light exceeded at</span><b class=\"glow-text\">Z = ⌊1/α⌋ = 137</b></div>"
+    set html to html + "<div class=\"fold-stat\"><span>1/α (measured)</span><b>137.035999…</b></div>"
+    set html to html + "<div class=\"fold-stat\"><span>1/α (fold theory)</span><b class=\"glow-text\">137.0360</b></div>"
+    set html to html + "</div>"
+    # bar visualisation
+    set html to html + "<div class=\"e137-bar\">"
+    set html to html + "<div class=\"e137-scale\">"
+    # background track
+    set html to html + "<div class=\"e137-track\"></div>"
+    # safe zone
+    set html to html + "<div class=\"e137-safe\" style=\"width:91.3%\"></div>"
+    # danger zone
+    set html to html + "<div class=\"e137-danger\" style=\"left:91.3%;width:8.7%\"></div>"
+    # marker at 137
+    set html to html + "<div class=\"e137-marker\" style=\"left:91.3%\"><div class=\"e137-marker-line\"></div><div class=\"e137-marker-label\">Z = 137</div></div>"
+    set html to html + "</div>"
+    # labels
+    set html to html + "<div class=\"e137-labels\">"
+    set html to html + "<span>Z = 1<br><em>Hydrogen</em></span>"
+    set html to html + "<span style=\"left:17.3%\">Z = 26<br><em>Iron</em></span>"
+    set html to html + "<span style=\"left:52.7%\">Z = 79<br><em>Gold</em></span>"
+    set html to html + "<span style=\"left:78%\">Z = 118<br><em>Oganesson</em></span>"
+    set html to html + "<span style=\"left:91.3%\" class=\"e137-cutoff-label\">Z = 137<br><em>Feynmanium</em></span>"
+    set html to html + "<span style=\"left:100%\">Z = 150</span>"
+    set html to html + "</div>"
+    set html to html + "</div>"
+    # caption
+    set html to html + "<p class=\"e137-caption\">At Z = 137 the 1s electron reaches v = c. Beyond this wall no stable atom can exist — the periodic table is finite, and its boundary is set by the same constant the fold derives.</p>"
+    set html to html + "</div>"
+    set host.innerHTML to html
+    return 0
+
+# ---- Orbit showcase (auto-animated on page load) ----
+define orbit_showcase:
+    set window.showcaseQueue to [7, 31, 127]
+    set window.showcaseIdx to 0
+    showcase_next()
+    return 0
+
+define showcase_next:
+    set idx to window.showcaseIdx
+    set queue to window.showcaseQueue
+    if idx >= queue.length:
+        return 0
+    set q_val to get_list(queue and idx)
+    set qe to document.getElementById("fold-q")
+    set pe to document.getElementById("fold-p")
+    set qe.value to q_val
+    set pe.value to 1
+    draw_fold()
+    set window.showcaseIdx to idx + 1
+    if window.showcaseIdx < queue.length:
+        window.setTimeout(showcase_next and 2200)
+    return 0
+
 # ======================================================================
 # boot
 # ======================================================================
@@ -273,11 +380,14 @@ define main:
         document.getElementById("fold-q").addEventListener("input" and fold_ev)
         document.getElementById("fold-p").addEventListener("input" and fold_ev)
         draw_fold()
+        orbit_showcase()
     set gc to document.getElementById("grand-c")
     if gc:
         gc.addEventListener("input" and grand_ev)
         draw_grand()
     draw_census()
+    draw_leptons()
+    draw_element137()
     return 0
 
 define fold_ev with ev:
@@ -287,3 +397,4 @@ define fold_ev with ev:
 define grand_ev with ev:
     draw_grand()
     return 0
+

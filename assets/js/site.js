@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, dpr, h, ctx, canvas;
+    let h, dpr, w, ctx, canvas;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let h, b, dx, i, ctx, dy, a, nodes, dist, alpha, w, n, j, count;
+    let w, h, count, a, dx, dy, n, i, alpha, j, ctx, dist, nodes, b;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, reduce, density;
+    let reduce, canvas, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let links, burger, path, href;
+    let href, path, burger, links;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -170,7 +170,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, IO, args, obs, opts;
+    let obs, opts, els, IO, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {

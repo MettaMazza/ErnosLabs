@@ -17,13 +17,14 @@
 
   <nav class="nav">
     <div class="wrap nav__in">
-      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
       <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
       <div class="nav__links" id="navlinks">
         <a href="ernosplain.html">ErnosPlain</a>
         <a href="sftom.html">Fold Theory</a>
         <a href="ernosdecent.html">ErnosDecent</a>
         <a href="library.html">Library</a>
+        <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">Download ↗</a>
       </div>
     </div>
   </nav>
@@ -38,6 +39,58 @@
         with zero free continuous parameters. The maths below is real and runs here in your browser.</p>
     </div>
   </header>
+
+  <!-- THE AXIOM -->
+  <section class="section" style="padding-top:0;padding-bottom:40px">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l reveal">Foundation</p>
+      <h2 class="reveal">The Axiom</h2>
+      <p class="lead reveal" style="margin-bottom:32px">Every structure in the theory grows from a single seed and a single rule.
+        No infinities are assumed — only the positive rationals, and one operation on them.</p>
+
+      <div class="grid grid--3 axiom-grid">
+        <div class="card axiom-card reveal">
+          <div class="axiom-icon">𝟙</div>
+          <h3>The One</h3>
+          <p>A single unit of action — the indivisible quantum. No zero, no negatives, no transcendentals.
+            Everything is built from counting and ratio.</p>
+        </div>
+        <div class="card axiom-card reveal">
+          <div class="axiom-icon">⤮</div>
+          <h3>The Fold</h3>
+          <p>Double and cast out the whole. The simplest nonlinear map on (0,1] — and the binary shift
+            that makes number theory physical.</p>
+        </div>
+        <div class="card axiom-card reveal">
+          <div class="axiom-icon">↺</div>
+          <h3>The Orbit</h3>
+          <p>Every rational falls into a periodic cycle. The period — the multiplicative order of 2 mod q —
+            is the structure that encodes the physics.</p>
+        </div>
+      </div>
+
+      <div class="card axiom-eq-card reveal mt-m">
+        <p class="eyebrow" style="margin-bottom:14px">The equation</p>
+        <div class="axiom-eq-row">
+          <div class="axiom-eq-block">
+            <div class="big-eq" style="font-size:1.4rem">f(x) = {2x} <span style="color:var(--ink-2);font-size:.9rem">&nbsp;on (0,1]</span></div>
+            <p style="color:var(--ink-2);font-size:.88rem;margin-top:10px">where {·} = fractional part</p>
+          </div>
+          <div class="axiom-eq-sep" aria-hidden="true"></div>
+          <div class="axiom-eq-block">
+            <div class="axiom-eq-label">Rational input</div>
+            <div class="axiom-eq-result">p/q&ensp;→&ensp;periodic orbit</div>
+          </div>
+          <div class="axiom-eq-sep" aria-hidden="true"></div>
+          <div class="axiom-eq-block">
+            <div class="axiom-eq-label">Period</div>
+            <div class="axiom-eq-result">ord₂(q) = multiplicative order of 2 mod q</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOLD VISUALIZER -->
   <section class="section" style="padding-top:20px">
@@ -58,6 +111,63 @@
           <div id="fold-info"></div>
           <p style="color:var(--ink-3);font-size:.82rem;margin-top:18px">Try q = 7 (period 3), q = 31 (period 5), q = 127 (period 7).
             Mersenne denominators 2ⁿ−1 give period exactly n — the same depths that set the physical scales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DERIVATION -->
+  <section class="section" style="padding-top:0;padding-bottom:40px">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l reveal">Step by step</p>
+      <h2 class="reveal">The Derivation</h2>
+      <p class="lead reveal" style="margin-bottom:32px">Five steps from one axiom to the measured constants. No fitting, no free parameters — only logic.</p>
+
+      <div class="derivation-steps">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Periodic orbits</h3>
+            <p>The fold map produces periodic orbits for all rationals p/q.
+              The period is <code>ord₂(q)</code> — the multiplicative order of 2 modulo q.
+              This is pure number theory, not physics — yet.</p>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Mersenne depths</h3>
+            <p>Mersenne denominators q = 2ⁿ−1 give period <em>exactly n</em>.
+              These are the <strong style="color:var(--gold)">scale-setting depths</strong> — the rungs of the physical ladder.
+              d₋ = 5 and d₊ = 7 are the two that matter.</p>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Three inputs</h3>
+            <p>The theory has exactly three inputs: the <strong style="color:var(--glow)">One</strong> (= ℏ, Planck's quantum),
+              the base <em>b = 2</em> (binary — the simplest doubling), and the colour count <em>c</em>.</p>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>c = 3 is forced</h3>
+            <p><em>c = 3</em> is the <strong style="color:var(--glow)">only</strong> integer that yields the measured
+              fine-structure constant 1/α = 137.036. No other value works. The single discrete input
+              is locked by experiment — leaving zero free continuous parameters.</p>
+          </div>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>Everything follows</h3>
+            <p>All other constants are now determined: the lepton mass ratios, the dark-to-baryon fraction 27/5,
+              the proton scale at 2<sup>127/2</sup>, the closure of the periodic table at Z = 137.
+              Nothing is tuned — everything is <em>derived</em>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -104,6 +214,32 @@
       <p style="color:var(--ink-2);font-size:.9rem;margin-top:26px">The full theory derives the charged-lepton mass
         ratios, the dark-to-baryon ratio (27/5), a periodic table that closes at element 137 = 1/α, and solves chess
         and Nim with the same retrograde fold — 1,058 machine-checked proofs in all. <em>Check it.</em></p>
+    </div>
+  </section>
+
+  <!-- LEPTON MASS RATIOS -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l reveal">Derived, not fitted</p>
+      <h2 class="reveal">Lepton mass ratios</h2>
+      <p class="lead reveal" style="margin-bottom:32px">The fold theory derives the charged-lepton mass ratios from
+        the covering depths alone — no Yukawa couplings, no mass matrices, no free parameters. The predictions match
+        experiment to parts-per-million.</p>
+      <div id="leptons" class="reveal"></div>
+    </div>
+  </section>
+
+  <!-- ELEMENT 137 -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l reveal">The periodic table closes</p>
+      <h2 class="reveal">Element 137</h2>
+      <p class="lead reveal" style="margin-bottom:32px">The fine-structure constant sets a hard wall on chemistry.
+        At atomic number Z &gt; 137 = ⌊1/α⌋, the innermost electron must orbit faster than light. The periodic table
+        doesn't stretch to infinity — it ends exactly where the fold says it must.</p>
+      <div id="element137" class="reveal"></div>
     </div>
   </section>
 
