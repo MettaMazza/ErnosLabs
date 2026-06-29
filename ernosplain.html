@@ -45,6 +45,19 @@
     </div>
   </header>
 
+  <!-- STATS BANNER -->
+  <section class="section" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="stats-banner reveal">
+        <div class="stat-item"><span class="stat-num">~40k</span><span class="stat-label">lines (Rust + self-hosted)</span></div>
+        <div class="stat-item"><span class="stat-num">5.8k</span><span class="stat-label">compiler, in ErnosPlain</span></div>
+        <div class="stat-item"><span class="stat-num">51/51</span><span class="stat-label">conformance tests</span></div>
+        <div class="stat-item"><span class="stat-num">9</span><span class="stat-label">codegen backends</span></div>
+        <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">stdlib modules</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PLAYGROUND -->
   <section class="section" style="padding-top:20px">
     <div class="wrap">
@@ -76,11 +89,71 @@
     </div>
   </section>
 
+  <!-- COMPARISON -->
+  <section class="section" style="padding-top:8px">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">Why plain English</p>
+      <h2>The same function, three languages</h2>
+      <p class="lead" style="margin-bottom:26px">ErnosPlain compiles to the same machine code as C — it just doesn't
+        make you read like a machine to get there.</p>
+      <div class="compare reveal">
+        <div class="compare__col is-ep">
+          <div class="compare__head">ErnosPlain <span class="tag">reads aloud</span></div>
+          <pre><span class="tok-kw">define</span> <span class="tok-fn">factorial</span> <span class="tok-kw">with</span> n <span class="tok-kw">returning</span> Int:
+    <span class="tok-kw">if</span> n <span class="tok-kw">is less than</span> <span class="tok-num">2</span>:
+        <span class="tok-kw">return</span> <span class="tok-num">1</span>
+    <span class="tok-kw">return</span> n <span class="tok-kw">times</span> <span class="tok-fn">factorial</span>(n <span class="tok-kw">minus</span> <span class="tok-num">1</span>)</pre>
+        </div>
+        <div class="compare__col">
+          <div class="compare__head">Rust <span class="tag">symbols</span></div>
+          <pre>fn factorial(n: u64) -&gt; u64 {
+    if n &lt; 2 { 1 }
+    else { n * factorial(n - 1) }
+}</pre>
+        </div>
+        <div class="compare__col">
+          <div class="compare__head">C <span class="tag">symbols</span></div>
+          <pre>unsigned long factorial(
+        unsigned long n) {
+    if (n &lt; 2) return 1;
+    return n * factorial(n - 1);
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">Under the hood</p>
+      <h2>From plain English to native code</h2>
+      <p class="lead" style="margin-bottom:24px">No interpreter at runtime, no VM. Every <code>.ep</code> file walks
+        the full compiler pipeline down to an optimised native binary.</p>
+      <div class="pipeline reveal">
+        <span class="pipe-step is-edge">source .ep</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">lexer</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">parser</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">type inference</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">borrow checker</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">optimizer</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">C codegen</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">clang -O2</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step is-edge">native binary</span>
+      </div>
+      <p style="color:var(--ink-2);font-size:.9rem;margin-top:22px">The compiler that does all this is written
+        <strong style="color:var(--ink-0)">in ErnosPlain itself</strong> — it compiles its own source. The playground
+        above is the same idea in miniature: an ErnosPlain interpreter, authored in ErnosPlain, running in your browser.</p>
+    </div>
+  </section>
+
   <!-- SYNTAX TOUR -->
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <hr class="divider">
-      <h2 class="mt-l">A two-minute tour</h2>
+      <h2 class="mt-l">A tour of the language</h2>
       <div class="grid grid--2 mt-m">
         <div class="card reveal">
           <span class="card__tag">Variables &amp; functions</span>
@@ -99,6 +172,28 @@
     <span class="tok-kw">else</span>:
         <span class="tok-kw">display</span> <span class="tok-str">"odd"</span>
     <span class="tok-kw">set</span> i <span class="tok-kw">to</span> i <span class="tok-kw">plus</span> <span class="tok-num">1</span></pre>
+        </div>
+        <div class="card reveal">
+          <span class="card__tag">Structures</span>
+          <pre style="margin-top:12px"><span class="tok-kw">define structure</span> <span class="tok-fn">Point</span>:
+    <span class="tok-kw">field</span> x <span class="tok-kw">as</span> Int
+    <span class="tok-kw">field</span> y <span class="tok-kw">as</span> Int
+
+<span class="tok-kw">set</span> p <span class="tok-kw">to create</span> <span class="tok-fn">Point</span>:
+    x <span class="tok-kw">is</span> <span class="tok-num">3</span>
+    y <span class="tok-kw">is</span> <span class="tok-num">4</span></pre>
+        </div>
+        <div class="card reveal">
+          <span class="card__tag">Choice &amp; pattern matching</span>
+          <pre style="margin-top:12px"><span class="tok-kw">define choice</span> <span class="tok-fn">Shape</span>:
+    <span class="tok-kw">variant</span> Circle <span class="tok-kw">with</span> r <span class="tok-kw">as</span> Int
+    <span class="tok-kw">variant</span> Square <span class="tok-kw">with</span> s <span class="tok-kw">as</span> Int
+
+<span class="tok-kw">check</span> shape:
+    <span class="tok-kw">if</span> Circle <span class="tok-kw">with</span> r:
+        <span class="tok-kw">return</span> r <span class="tok-kw">times</span> r
+    <span class="tok-kw">if</span> Square <span class="tok-kw">with</span> s:
+        <span class="tok-kw">return</span> s <span class="tok-kw">times</span> s</pre>
         </div>
       </div>
       <p style="color:var(--ink-2);font-size:.9rem;margin-top:20px">
