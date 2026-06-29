@@ -1,0 +1,11 @@
+# Ernos Labs — static deploy. The site is prebuilt: src/*.ep is compiled to
+# assets/js/*.js by build.sh before deploying (Netlify does not run the Ernos
+# compiler), so there is no build step here — just publish the repo root.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ErnosDecent — the internet you can hold in your own hands</title>
+  <meta name="description" content="One program that replaces internet infrastructure — identity, money, storage, messaging, AI — owned by no one. Drive its subsystems here.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7irqE8L3RleHQ+PC9zdmc+">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <a href="ernosplain.html">ErnosPlain</a>
+        <a href="sftom.html">Fold Theory</a>
+        <a href="ernosdecent.html">ErnosDecent</a>
+        <a href="library.html">Library</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="section" style="padding-bottom:30px">
+    <div class="wrap">
+      <p class="eyebrow reveal">The platform</p>
+      <h1 class="reveal">ErnosDecent</h1>
+      <p class="lead reveal mt-s">One program you run on your own computer that replaces the internet's
+        infrastructure: identity, money, storage, messaging, publishing, search, AI — with
+        <strong style="color:var(--ink-0)">no company in the middle</strong>. Owned by no one. Below, three of its
+        real subsystems, running live in your browser.</p>
+    </div>
+  </header>
+
+  <!-- DHT / MESH -->
+  <section class="section" style="padding-top:10px">
+    <div class="wrap">
+      <p class="eyebrow">decent_net</p>
+      <h2>The mesh finds anything</h2>
+      <p class="lead" style="margin-bottom:26px">Peers organise into a Kademlia DHT. To locate a key, a node hops
+        toward whichever peer is <em>closest in XOR distance</em> to the target — reaching it in a handful of hops,
+        with no directory and no server.</p>
+      <div class="demo-row reveal">
+        <canvas id="dht-canvas" class="demo-canvas" width="380" height="380"></canvas>
+        <div class="demo-side">
+          <h3>XOR-distance routing</h3>
+          <p style="color:var(--ink-2)">Each node holds a random id. A lookup greedily walks the address space toward
+            the target. Run it a few times — the path changes, the hop count stays tiny.</p>
+          <div class="demo-status" id="dht-status">—</div>
+          <div class="demo-actions"><button class="btn btn--primary" id="dht-route">▶ Run a lookup</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEBBIAN -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">decent_agent</p>
+      <h2>A memory that learns by association</h2>
+      <p class="lead" style="margin-bottom:26px">The agent's fourth memory tier is a Hebbian graph: concepts that
+        fire together wire together. Click two concepts to co-activate them — the synapse strengthens toward 1.
+        Run a consolidation sweep and unused links decay by 5%; survivors above 0.99 become permanent (gold).</p>
+      <div class="demo-row reveal">
+        <canvas id="heb-canvas" class="demo-canvas" width="380" height="380"></canvas>
+        <div class="demo-side">
+          <h3>Synaptic reinforcement</h3>
+          <p style="color:var(--ink-2)">Weights use the real fixed-point rule from <code>decent_agent</code>:
+            <code>w ← w + 0.1·(1−w)</code> on co-activation, <code>w ← 0.95·w</code> on each sweep. Click any two
+            nodes; repeat to thicken the bond.</p>
+          <div class="demo-actions"><button class="btn btn--ghost" id="heb-sweep">↻ Consolidation sweep (decay)</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAFT -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">decent_consensus</p>
+      <h2>Agreement without a boss</h2>
+      <p class="lead" style="margin-bottom:26px">Five nodes keep a replicated log in sync with Raft. When there's no
+        leader, a node times out, becomes a candidate, and wins if it gathers a majority. Cut the network and watch a
+        minority stall — safety over availability.</p>
+      <div class="reveal">
+        <div class="raft-nodes" id="raft-nodes"></div>
+        <div class="demo-actions" style="margin-bottom:18px">
+          <button class="btn btn--primary" id="raft-step">▶ Step the protocol</button>
+          <button class="btn btn--ghost" id="raft-part">⚡ Partition / heal</button>
+        </div>
+        <pre class="raft-log" id="raft-log"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSYSTEMS -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <h2 class="mt-l">The whole stack</h2>
+      <p class="lead" style="margin-bottom:26px">Seventeen subsystems, ~30,000 lines of Ernos, built from cryptographic
+        primitives up — no platform dependencies. A sample:</p>
+      <div class="subs" id="subs"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">The internet you can hold in your own hands.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="ernosplain.html">ErnosPlain</a><a href="sftom.html">Fold Theory</a><a href="library.html">Library</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · These demos are written in ErnosPlain</div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/decent.js"></script>
+</body>
+</html>

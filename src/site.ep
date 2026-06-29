@@ -1,0 +1,182 @@
+# ErnosLabs — shared site shell
+# Component: src/site.ep  (compiled to assets/js/site.js via build.sh)
+# Authored in ErnosPlain. Provides: animated mesh background, mobile nav,
+# scroll-reveal, and active-nav highlighting. Loaded on every page.
+
+# ---- small helpers -------------------------------------------------------
+
+define new_obj:
+    return JSON.parse("{}")
+
+define rand_between with lo and hi:
+    return lo + Math.random() * (hi - lo)
+
+# ---- animated mesh background -------------------------------------------
+# A field of slow-drifting nodes; nearby nodes are joined by fading links.
+# State lives on `window` so the requestAnimationFrame callback can re-read it.
+
+define mesh_make_nodes with count and w and h:
+    set nodes to []
+    set i to 0
+    repeat while i < count:
+        set n to new_obj()
+        set n.x to Math.random() * w
+        set n.y to Math.random() * h
+        set n.vx to rand_between(0 - 0.18 and 0.18)
+        set n.vy to rand_between(0 - 0.18 and 0.18)
+        nodes.push(n)
+        set i to i + 1
+    return nodes
+
+define mesh_resize:
+    set canvas to window.ernCanvas
+    if not canvas:
+        return 0
+    set dpr to window.devicePixelRatio || 1
+    set w to window.innerWidth
+    set h to window.innerHeight
+    set canvas.width to w * dpr
+    set canvas.height to h * dpr
+    set ctx to window.ernCtx
+    ctx.setTransform(dpr and 0 and 0 and dpr and 0 and 0)
+    set window.ernW to w
+    set window.ernH to h
+    return 0
+
+define mesh_frame:
+    set ctx to window.ernCtx
+    set nodes to window.ernNodes
+    set w to window.ernW
+    set h to window.ernH
+    if not ctx:
+        return 0
+    ctx.clearRect(0 and 0 and w and h)
+
+    # advance + draw nodes
+    set count to nodes.length
+    set i to 0
+    repeat while i < count:
+        set n to get_list(nodes and i)
+        set n.x to n.x + n.vx
+        set n.y to n.y + n.vy
+        if n.x < 0:
+            set n.x to w
+        if n.x > w:
+            set n.x to 0
+        if n.y < 0:
+            set n.y to h
+        if n.y > h:
+            set n.y to 0
+        ctx.beginPath()
+        ctx.arc(n.x and n.y and 1.4 and 0 and 6.2832)
+        set ctx.fillStyle to "rgba(79,240,196,0.55)"
+        ctx.fill()
+        set i to i + 1
+
+    # draw links between near nodes
+    set i to 0
+    repeat while i < count:
+        set a to get_list(nodes and i)
+        set j to i + 1
+        repeat while j < count:
+            set b to get_list(nodes and j)
+            set dx to a.x - b.x
+            set dy to a.y - b.y
+            set dist to Math.sqrt(dx * dx + dy * dy)
+            if dist < 130:
+                set alpha to (1 - dist / 130) * 0.22
+                ctx.beginPath()
+                ctx.moveTo(a.x and a.y)
+                ctx.lineTo(b.x and b.y)
+                set ctx.strokeStyle to f"rgba(124,140,255,{alpha})"
+                set ctx.lineWidth to 1
+                ctx.stroke()
+            set j to j + 1
+        set i to i + 1
+
+    window.requestAnimationFrame(mesh_frame)
+    return 0
+
+define mesh_init:
+    set canvas to document.getElementById("mesh")
+    if not canvas:
+        return 0
+    set reduce to window.matchMedia("(prefers-reduced-motion: reduce)")
+    set window.ernCanvas to canvas
+    set window.ernCtx to canvas.getContext("2d")
+    mesh_resize()
+    set density to Math.round(window.ernW * window.ernH / 22000)
+    if density > 80:
+        set density to 80
+    if density < 24:
+        set density to 24
+    set window.ernNodes to mesh_make_nodes(density and window.ernW and window.ernH)
+    window.addEventListener("resize" and mesh_resize)
+    if reduce.matches:
+        mesh_frame()
+        return 0
+    window.requestAnimationFrame(mesh_frame)
+    return 0
+
+# ---- mobile nav ----------------------------------------------------------
+
+define nav_toggle with ev:
+    set links to document.getElementById("navlinks")
+    if links:
+        links.classList.toggle("open")
+    return 0
+
+define nav_init:
+    set burger to document.getElementById("burger")
+    if burger:
+        burger.addEventListener("click" and nav_toggle)
+    # highlight the current page's nav link
+    set path to window.location.pathname
+    set links to document.querySelectorAll(".nav__links a")
+    for each a in links:
+        set href to a.getAttribute("href")
+        if href:
+            if path.indexOf(href) >= 0:
+                a.classList.add("active")
+    return 0
+
+# ---- scroll reveal -------------------------------------------------------
+
+define reveal_cb with entries and observer:
+    for each e in entries:
+        if e.isIntersecting:
+            set el to e.target
+            el.classList.add("in")
+            observer.unobserve(el)
+    return 0
+
+define reveal_init:
+    set els to document.querySelectorAll(".reveal")
+    set IO to window.IntersectionObserver
+    if not IO:
+        for each el in els:
+            el.classList.add("in")
+        return 0
+    set opts to new_obj()
+    set opts.threshold to 0.12
+    set args to [reveal_cb, opts]
+    set obs to Reflect.construct(IO and args)
+    for each el in els:
+        obs.observe(el)
+    return 0
+
+# ---- footer year + boot --------------------------------------------------
+
+define year_init:
+    set y to document.getElementById("year")
+    if y:
+        set d to Reflect.construct(window.Date and [])
+        set y.textContent to d.getFullYear()
+    return 0
+
+define main:
+    mesh_init()
+    nav_init()
+    reveal_init()
+    year_init()
+    return 0

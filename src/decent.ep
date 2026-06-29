@@ -1,0 +1,559 @@
+# ErnosLabs — ErnosDecent interactive demos
+# Component: src/decent.ep  (compiled to assets/js/decent.js via build.sh)
+# Three client-side demos of real ErnosDecent subsystems:
+#   1. DHT / mesh router  — Kademlia XOR-distance routing over a peer graph
+#   2. Hebbian memory     — synaptic weights strengthen on co-activation, decay on sweep
+#   3. Raft consensus     — leader election + heartbeats across 5 nodes
+# Plus the subsystem overview. Authored in ErnosPlain.
+
+define new_obj:
+    return JSON.parse("{}")
+
+# ======================================================================
+# Subsystem overview
+# ======================================================================
+
+define sub with name and what:
+    set s to new_obj()
+    set s.name to name
+    set s.what to what
+    return s
+
+define subsystems:
+    set l to []
+    l.push(sub("decent_id" and "Cryptographic identity — Ed25519 keys, W3C DIDs, capability delegation."))
+    l.push(sub("decent_net" and "P2P networking — Noise handshakes, Kademlia DHT, NAT-traversal relays."))
+    l.push(sub("decent_money" and "HD wallets, a UTXO ledger, Proof-of-Stake, and a hybrid AMM/orderbook DEX."))
+    l.push(sub("decent_store" and "Content-addressed storage with BLAKE3, dedup, and CRDT sync."))
+    l.push(sub("decent_msg" and "End-to-end encrypted direct and group messaging."))
+    l.push(sub("decent_social" and "Federated publishing over Nostr and ActivityPub."))
+    l.push(sub("decent_consensus" and "Raft — leader election, replicated log, state rollback."))
+    l.push(sub("decent_anon" and "Onion routing and a mixnet for traffic-analysis resistance."))
+    l.push(sub("decent_ai" and "Local inference, embeddings, speech-to-text, and TTS."))
+    l.push(sub("decent_agent" and "A ReAct agent with tiered + Hebbian memory and an observer gate."))
+    l.push(sub("decent_search" and "A distributed crawler with BM25 + PageRank ranking."))
+    l.push(sub("decent_name" and "Decentralised names — a .decent registry resolved via the DHT."))
+    return l
+
+define draw_subs:
+    set host to document.getElementById("subs")
+    if not host:
+        return 0
+    set subs to subsystems()
+    set html to ""
+    set i to 0
+    repeat while i < subs.length:
+        set s to get_list(subs and i)
+        set html to html + f"<div class=\"sub-card\"><code>{s.name}</code><p>{s.what}</p></div>"
+        set i to i + 1
+    set host.innerHTML to html
+    return 0
+
+# ======================================================================
+# 1. DHT / mesh router
+# ======================================================================
+
+define hex2 with n:
+    set s to n.toString(16)
+    if s.length < 2:
+        return "0" + s
+    return s
+
+define mesh_build:
+    set nodes to []
+    set count to 14
+    set i to 0
+    repeat while i < count:
+        set nd to new_obj()
+        set nd.id to Math.floor(Math.random() * 256)
+        set ang to 6.2831853 * i / count
+        set nd.x to 190 + 150 * Math.cos(ang)
+        set nd.y to 190 + 150 * Math.sin(ang)
+        nodes.push(nd)
+        set i to i + 1
+    set window.meshNodes to nodes
+    set window.meshPath to []
+    return 0
+
+define mesh_render:
+    set canvas to document.getElementById("dht-canvas")
+    if not canvas:
+        return 0
+    set nodes to window.meshNodes
+    set dpr to window.devicePixelRatio || 1
+    set size to 380
+    set canvas.width to size * dpr
+    set canvas.height to size * dpr
+    set canvas.style.width to f"{size}px"
+    set canvas.style.height to f"{size}px"
+    set ctx to canvas.getContext("2d")
+    ctx.setTransform(dpr and 0 and 0 and dpr and 0 and 0)
+    ctx.clearRect(0 and 0 and size and size)
+    set n to nodes.length
+
+    # faint links between near-by (low XOR) peers
+    set i to 0
+    repeat while i < n:
+        set a to get_list(nodes and i)
+        set j to i + 1
+        repeat while j < n:
+            set b to get_list(nodes and j)
+            set xor to bitxor(a.id and b.id)
+            if xor < 64:
+                ctx.beginPath()
+                ctx.moveTo(a.x and a.y)
+                ctx.lineTo(b.x and b.y)
+                set ctx.strokeStyle to "rgba(124,140,255,0.18)"
+                set ctx.lineWidth to 1
+                ctx.stroke()
+            set j to j + 1
+        set i to i + 1
+
+    # the active route path
+    set path to window.meshPath
+    if path.length > 1:
+        ctx.beginPath()
+        set k to 0
+        repeat while k < path.length:
+            set nd to get_list(nodes and get_list(path and k))
+            if k equals 0:
+                ctx.moveTo(nd.x and nd.y)
+            else:
+                ctx.lineTo(nd.x and nd.y)
+            set k to k + 1
+        set ctx.strokeStyle to "rgba(79,240,196,0.95)"
+        set ctx.lineWidth to 2.4
+        ctx.stroke()
+
+    # nodes
+    set i to 0
+    repeat while i < n:
+        set nd to get_list(nodes and i)
+        set on_path to index_in(path and i) >= 0
+        ctx.beginPath()
+        ctx.arc(nd.x and nd.y and 13 and 0 and 6.2832)
+        if on_path:
+            set ctx.fillStyle to "#4ff0c4"
+        else:
+            set ctx.fillStyle to "#161d2c"
+        ctx.fill()
+        set ctx.strokeStyle to "rgba(124,140,255,0.55)"
+        set ctx.lineWidth to 1
+        ctx.stroke()
+        set ctx.fillStyle to "#b7c2d6"
+        set ctx.font to "10px JetBrains Mono, monospace"
+        ctx.fillText(hex2(nd.id) and nd.x - 8 and nd.y + 3)
+        set i to i + 1
+    return 0
+
+define index_in with arr and v:
+    set i to 0
+    repeat while i < arr.length:
+        if get_list(arr and i) equals v:
+            return i
+        set i to i + 1
+    return 0 - 1
+
+# XOR distance without the ^ operator (the lexer has no bitwise xor): compare
+# bits of a and b, summing place values where they differ.
+define bitxor with a and b:
+    set result to 0
+    set place to 1
+    repeat while a > 0 || b > 0:
+        set abit to a % 2
+        set bbit to b % 2
+        if abit != bbit:
+            set result to result + place
+        set a to Math.floor(a / 2)
+        set b to Math.floor(b / 2)
+        set place to place * 2
+    return result
+
+# Greedy Kademlia route: from a random node, hop to whichever peer is closest
+# (smallest XOR) to the target id, until we can get no closer.
+define mesh_route:
+    set nodes to window.meshNodes
+    set n to nodes.length
+    set src to Math.floor(Math.random() * n)
+    set target to get_list(nodes and Math.floor(Math.random() * n)).id
+    set path to []
+    path.push(src)
+    set current to src
+    set guard to 0
+    repeat while guard < 32:
+        set cur_id to get_list(nodes and current).id
+        set best_d to bitxor(cur_id and target)
+        set best to current
+        set j to 0
+        repeat while j < n:
+            set cand to get_list(nodes and j).id
+            set d to bitxor(cand and target)
+            if d < best_d:
+                set best_d to d
+                set best to j
+            set j to j + 1
+        if best equals current:
+            set window.meshPath to path
+            mesh_render()
+            mesh_status(path and target)
+            return 0
+        path.push(best)
+        set current to best
+        set guard to guard + 1
+    set window.meshPath to path
+    mesh_render()
+    mesh_status(path and target)
+    return 0
+
+define mesh_status with path and target:
+    set el to document.getElementById("dht-status")
+    if not el:
+        return 0
+    set hops to path.length - 1
+    set el.innerHTML to f"FIND_NODE → target <b>0x{hex2(target)}</b> · resolved in <b>{hops}</b> hop(s) via XOR distance"
+    return 0
+
+# ======================================================================
+# 2. Hebbian memory graph
+# ======================================================================
+# Fixed-point weights scaled by 1,000,000 (as in decent_agent/memory.ep).
+# Reinforce: w += 0.1*(1-w). Decay sweep: w *= 0.95, prune below 0.01,
+# promote to permanent at >= 0.99.
+
+define heb_concepts:
+    return ["identity", "ledger", "DHT", "consensus", "AI", "storage", "messaging", "privacy"]
+
+define heb_init:
+    set names to heb_concepts()
+    set nodes to []
+    set n to names.length
+    set i to 0
+    repeat while i < n:
+        set nd to new_obj()
+        set nd.name to get_list(names and i)
+        set ang to 6.2831853 * i / n - 1.5707963
+        set nd.x to 190 + 140 * Math.cos(ang)
+        set nd.y to 175 + 140 * Math.sin(ang)
+        nodes.push(nd)
+        set i to i + 1
+    set window.hebNodes to nodes
+    set window.hebW to new_obj()
+    set window.hebSel to 0 - 1
+    return 0
+
+define heb_key with a and b:
+    if a < b:
+        return f"{a}-{b}"
+    return f"{b}-{a}"
+
+define heb_get with a and b:
+    set k to heb_key(a and b)
+    set w to get_list(window.hebW and k)
+    if w:
+        return w
+    return 0
+
+define heb_set with a and b and v:
+    set fn to get_list(Reflect and "set")
+    fn.call(Reflect and window.hebW and heb_key(a and b) and v)
+    return 0
+
+define heb_reinforce with a and b:
+    set w to heb_get(a and b)
+    if w equals 0:
+        set w to 0.1
+    else:
+        set w to w + 0.1 * (1 - w)
+    heb_set(a and b and w)
+    return 0
+
+define heb_sweep:
+    set nodes to window.hebNodes
+    set n to nodes.length
+    set i to 0
+    repeat while i < n:
+        set j to i + 1
+        repeat while j < n:
+            set w to heb_get(i and j)
+            if w > 0:
+                if w < 0.99:
+                    set w to w * 0.95
+                    if w < 0.01:
+                        set w to 0
+                    heb_set(i and j and w)
+            set j to j + 1
+        set i to i + 1
+    heb_render()
+    return 0
+
+define heb_render:
+    set canvas to document.getElementById("heb-canvas")
+    if not canvas:
+        return 0
+    set nodes to window.hebNodes
+    set n to nodes.length
+    set dpr to window.devicePixelRatio || 1
+    set size to 380
+    set canvas.width to size * dpr
+    set canvas.height to size * dpr
+    set canvas.style.width to f"{size}px"
+    set canvas.style.height to f"{size}px"
+    set ctx to canvas.getContext("2d")
+    ctx.setTransform(dpr and 0 and 0 and dpr and 0 and 0)
+    ctx.clearRect(0 and 0 and size and size)
+
+    # edges weighted by synaptic strength
+    set i to 0
+    repeat while i < n:
+        set a to get_list(nodes and i)
+        set j to i + 1
+        repeat while j < n:
+            set w to heb_get(i and j)
+            if w > 0:
+                set b to get_list(nodes and j)
+                ctx.beginPath()
+                ctx.moveTo(a.x and a.y)
+                ctx.lineTo(b.x and b.y)
+                if w >= 0.99:
+                    set ctx.strokeStyle to f"rgba(245,196,94,{0.4 + 0.6 * w})"
+                else:
+                    set ctx.strokeStyle to f"rgba(79,240,196,{0.15 + 0.7 * w})"
+                set ctx.lineWidth to 1 + 6 * w
+                ctx.stroke()
+            set j to j + 1
+        set i to i + 1
+
+    # concept nodes
+    set sel to window.hebSel
+    set i to 0
+    repeat while i < n:
+        set nd to get_list(nodes and i)
+        ctx.beginPath()
+        ctx.arc(nd.x and nd.y and 16 and 0 and 6.2832)
+        if i equals sel:
+            set ctx.fillStyle to "#7c8cff"
+        else:
+            set ctx.fillStyle to "#1d2638"
+        ctx.fill()
+        set ctx.strokeStyle to "rgba(79,240,196,0.6)"
+        ctx.stroke()
+        set ctx.fillStyle to "#eef3fb"
+        set ctx.font to "11px Inter, sans-serif"
+        set ctx.textAlign to "center"
+        ctx.fillText(nd.name and nd.x and nd.y + 30)
+        set i to i + 1
+    return 0
+
+define heb_click with ev:
+    set canvas to document.getElementById("heb-canvas")
+    set rect to canvas.getBoundingClientRect()
+    set mx to ev.clientX - rect.left
+    set my to ev.clientY - rect.top
+    set nodes to window.hebNodes
+    set n to nodes.length
+    set hit to 0 - 1
+    set i to 0
+    repeat while i < n:
+        set nd to get_list(nodes and i)
+        set dx to nd.x - mx
+        set dy to nd.y - my
+        if dx * dx + dy * dy < 360:
+            set hit to i
+        set i to i + 1
+    if hit < 0:
+        return 0
+    set sel to window.hebSel
+    if sel < 0:
+        set window.hebSel to hit
+    else:
+        if sel equals hit:
+            set window.hebSel to 0 - 1
+        else:
+            heb_reinforce(sel and hit)
+            set window.hebSel to 0 - 1
+    heb_render()
+    return 0
+
+# ======================================================================
+# 3. Raft consensus
+# ======================================================================
+
+define raft_init:
+    set nodes to []
+    set i to 0
+    repeat while i < 5:
+        set nd to new_obj()
+        set nd.id to i
+        set nd.state to "follower"
+        set nd.term to 0
+        set nd.up to true
+        nodes.push(nd)
+        set i to i + 1
+    set window.raftNodes to nodes
+    set window.raftLog to []
+    raft_log("cluster started — 5 followers, no leader")
+    return 0
+
+define raft_leader:
+    set nodes to window.raftNodes
+    set i to 0
+    repeat while i < nodes.length:
+        set nd to get_list(nodes and i)
+        if nd.state equals "leader":
+            if nd.up:
+                return i
+        set i to i + 1
+    return 0 - 1
+
+define raft_count_up:
+    set nodes to window.raftNodes
+    set c to 0
+    set i to 0
+    repeat while i < nodes.length:
+        if get_list(nodes and i).up:
+            set c to c + 1
+        set i to i + 1
+    return c
+
+define raft_step:
+    set nodes to window.raftNodes
+    set leader to raft_leader()
+    if leader >= 0:
+        set lt to get_list(nodes and leader)
+        raft_log(f"leader N{leader} (term {lt.term}) → heartbeat to followers")
+        raft_render()
+        return 0
+    # elect: a random up-node becomes candidate, bumps term, gathers votes
+    set cand to raft_pick_up()
+    if cand < 0:
+        raft_log("no nodes up — cluster unavailable")
+        raft_render()
+        return 0
+    set c to get_list(nodes and cand)
+    set newterm to c.term + 1
+    set i to 0
+    repeat while i < nodes.length:
+        set nd to get_list(nodes and i)
+        if nd.up:
+            set nd.term to newterm
+            set nd.state to "follower"
+        set i to i + 1
+    set c.state to "candidate"
+    set votes to raft_count_up()
+    set needed to 3
+    raft_log(f"N{cand} times out → candidate, term {newterm}, requests votes")
+    if votes >= needed:
+        set c.state to "leader"
+        raft_log(f"N{cand} wins {votes}/5 votes → LEADER for term {newterm}")
+    else:
+        raft_log(f"only {votes}/5 reachable — no majority, retry")
+    raft_render()
+    return 0
+
+define raft_pick_up:
+    set nodes to window.raftNodes
+    set tries to 0
+    repeat while tries < 20:
+        set k to Math.floor(Math.random() * nodes.length)
+        if get_list(nodes and k).up:
+            return k
+        set tries to tries + 1
+    return 0 - 1
+
+define raft_partition:
+    set nodes to window.raftNodes
+    # toggle the two highest nodes' reachability
+    set a to get_list(nodes and 3)
+    set b to get_list(nodes and 4)
+    if a.up:
+        set a.up to false
+        set b.up to false
+        if a.state equals "leader":
+            set a.state to "follower"
+        if b.state equals "leader":
+            set b.state to "follower"
+        raft_log("partition! N3 and N4 isolated from the cluster")
+    else:
+        set a.up to true
+        set b.up to true
+        raft_log("partition healed — N3 and N4 rejoin")
+    raft_render()
+    return 0
+
+define raft_render:
+    set host to document.getElementById("raft-nodes")
+    if not host:
+        return 0
+    set nodes to window.raftNodes
+    set html to ""
+    set i to 0
+    repeat while i < nodes.length:
+        set nd to get_list(nodes and i)
+        set cls to nd.state
+        if not nd.up:
+            set cls to "down"
+        set label to nd.state
+        if not nd.up:
+            set label to "unreachable"
+        set html to html + f"<div class=\"raft-node {cls}\"><div class=\"rn-id\">N{nd.id}</div><div class=\"rn-state\">{label}</div><div class=\"rn-term\">term {nd.term}</div></div>"
+        set i to i + 1
+    set host.innerHTML to html
+    # log
+    set logel to document.getElementById("raft-log")
+    set lines to window.raftLog
+    set out to ""
+    set k to lines.length - 1
+    set shown to 0
+    repeat while k >= 0:
+        if shown < 6:
+            set out to out + get_list(lines and k) + "\n"
+            set shown to shown + 1
+        set k to k - 1
+    set logel.textContent to out
+    return 0
+
+define raft_log with msg:
+    window.raftLog.push(msg)
+    return 0
+
+# ======================================================================
+# boot
+# ======================================================================
+
+define main:
+    draw_subs()
+    if document.getElementById("dht-canvas"):
+        mesh_build()
+        mesh_render()
+        set rb to document.getElementById("dht-route")
+        if rb:
+            rb.addEventListener("click" and route_ev)
+        mesh_route()
+    if document.getElementById("heb-canvas"):
+        heb_init()
+        heb_render()
+        set hc to document.getElementById("heb-canvas")
+        hc.addEventListener("click" and heb_click)
+        document.getElementById("heb-sweep").addEventListener("click" and sweep_ev)
+    if document.getElementById("raft-nodes"):
+        raft_init()
+        raft_render()
+        document.getElementById("raft-step").addEventListener("click" and raft_step_ev)
+        document.getElementById("raft-part").addEventListener("click" and raft_part_ev)
+    return 0
+
+define route_ev with ev:
+    mesh_route()
+    return 0
+
+define sweep_ev with ev:
+    heb_sweep()
+    return 0
+
+define raft_step_ev with ev:
+    raft_step()
+    return 0
+
+define raft_part_ev with ev:
+    raft_partition()
+    return 0

@@ -1,0 +1,1306 @@
+# ErnosLabs — ErnosPlain interpreter, written in ErnosPlain
+# Component: src/interp.ep  (compiled to assets/js/interp.js via build.sh)
+# A faithful tree-walk interpreter for a procedural subset of ErnosPlain:
+#   define/with/returning, set ... to, if/else if/else, while, repeat while,
+#   for each ... in, return, display, arithmetic (symbolic + plain-English),
+#   comparisons, and also / or else / not, lists, strings + f-strings,
+#   function calls and recursion, closures (given), and a handful of builtins.
+# Exposes: ep_run(src) -> { ok, output, error }
+# The language interpreting itself, in the browser.
+
+# ======================================================================
+# Tokenizer
+# ======================================================================
+
+define tok with kind and val:
+    set t to JSON.parse("{}")
+    set t.kind to kind
+    set t.val to val
+    return t
+
+define is_digit with c:
+    if c >= "0":
+        if c <= "9":
+            return true
+    return false
+
+define is_alpha with c:
+    if c equals "_":
+        return true
+    set lc to c.toLowerCase()
+    if lc >= "a":
+        if lc <= "z":
+            return true
+    return false
+
+define is_alnum with c:
+    if is_alpha(c):
+        return true
+    return is_digit(c)
+
+# Tokenize a single line's content (comments already implied by caller scan).
+define lex_line with line and toks:
+    set i to 0
+    set n to line.length
+    repeat while i < n:
+        set c to line.charAt(i)
+        if c equals " ":
+            set i to i + 1
+        else:
+            if c equals "#":
+                return 0
+            else:
+                if c equals "\"":
+                    set j to i + 1
+                    set buf to ""
+                    repeat while j < n:
+                        set d to line.charAt(j)
+                        if d equals "\\":
+                            set e to line.charAt(j + 1)
+                            if e equals "n":
+                                set buf to buf + "\n"
+                            else:
+                                if e equals "t":
+                                    set buf to buf + "\t"
+                                else:
+                                    set buf to buf + e
+                            set j to j + 2
+                        else:
+                            if d equals "\"":
+                                set j to j + 1
+                                return lex_after_string(line and toks and buf and j and false)
+                            else:
+                                set buf to buf + d
+                                set j to j + 1
+                    return lex_after_string(line and toks and buf and j and false)
+                else:
+                    if c equals "f":
+                        if line.charAt(i + 1) equals "\"":
+                            set res to lex_fstring(line and toks and i + 2 and n)
+                            set i to res
+                        else:
+                            set i to lex_ident(line and toks and i and n)
+                    else:
+                        if is_digit(c):
+                            set i to lex_number(line and toks and i and n)
+                        else:
+                            if is_alpha(c):
+                                set i to lex_ident(line and toks and i and n)
+                            else:
+                                set i to lex_symbol(line and toks and i and n and c)
+    return 0
+
+# helper: continue lexing the rest of a line after a plain string literal
+define lex_after_string with line and toks and buf and j and dummy:
+    toks.push(tok("STR" and buf))
+    lex_line(line.slice(j) and toks)
+    return 0
+
+define lex_fstring with line and toks and start and n:
+    # read until closing quote; produce an FSTR token with the raw inner text
+    set j to start
+    set buf to ""
+    repeat while j < n:
+        set d to line.charAt(j)
+        if d equals "\\":
+            set e to line.charAt(j + 1)
+            if e equals "n":
+                set buf to buf + "\n"
+            else:
+                set buf to buf + e
+            set j to j + 2
+        else:
+            if d equals "\"":
+                toks.push(tok("FSTR" and buf))
+                return j + 1
+            else:
+                set buf to buf + d
+                set j to j + 1
+    toks.push(tok("FSTR" and buf))
+    return j
+
+define lex_number with line and toks and start and n:
+    set j to start
+    set buf to ""
+    set seen_dot to false
+    repeat while j < n:
+        set d to line.charAt(j)
+        if is_digit(d):
+            set buf to buf + d
+            set j to j + 1
+        else:
+            if d equals ".":
+                if seen_dot:
+                    toks.push(tok("NUM" and buf))
+                    return j
+                set seen_dot to true
+                set buf to buf + d
+                set j to j + 1
+            else:
+                toks.push(tok("NUM" and buf))
+                return j
+    toks.push(tok("NUM" and buf))
+    return j
+
+define lex_ident with line and toks and start and n:
+    set j to start
+    set buf to ""
+    repeat while j < n:
+        set d to line.charAt(j)
+        if is_alnum(d):
+            set buf to buf + d
+            set j to j + 1
+        else:
+            toks.push(tok("ID" and buf))
+            return j
+    toks.push(tok("ID" and buf))
+    return j
+
+define lex_symbol with line and toks and start and n and c:
+    set two to line.slice(start and start + 2)
+    if two equals "<=":
+        toks.push(tok("OP" and "<="))
+        return start + 2
+    if two equals ">=":
+        toks.push(tok("OP" and ">="))
+        return start + 2
+    if two equals "==":
+        toks.push(tok("OP" and "=="))
+        return start + 2
+    if two equals "!=":
+        toks.push(tok("OP" and "!="))
+        return start + 2
+    if two equals "&&":
+        toks.push(tok("OP" and "&&"))
+        return start + 2
+    if two equals "||":
+        toks.push(tok("OP" and "||"))
+        return start + 2
+    if c equals "(":
+        toks.push(tok("LP" and c))
+        return start + 1
+    if c equals ")":
+        toks.push(tok("RP" and c))
+        return start + 1
+    if c equals "[":
+        toks.push(tok("LB" and c))
+        return start + 1
+    if c equals "]":
+        toks.push(tok("RB" and c))
+        return start + 1
+    if c equals ",":
+        toks.push(tok("COMMA" and c))
+        return start + 1
+    if c equals ":":
+        toks.push(tok("COLON" and c))
+        return start + 1
+    if c equals ".":
+        toks.push(tok("DOT" and c))
+        return start + 1
+    toks.push(tok("OP" and c))
+    return start + 1
+
+# Collapse plain-English multi-word operators into OP tokens.
+define word_op2 with a and b:
+    if a equals "divided":
+        if b equals "by":
+            return "/"
+    if a equals "multiplied":
+        if b equals "by":
+            return "*"
+    if a equals "and":
+        if b equals "also":
+            return "&&"
+    if a equals "or":
+        if b equals "else":
+            return "||"
+    return ""
+
+define word_op1 with a:
+    if a equals "plus":
+        return "+"
+    if a equals "minus":
+        return "-"
+    if a equals "times":
+        return "*"
+    if a equals "modulo":
+        return "%"
+    if a equals "equals":
+        return "=="
+    return ""
+
+# match a run of IDs starting at index i against comparison phrases; returns
+# an object {op, len} or len 0.
+define match_phrase with toks and i:
+    set r to JSON.parse("{}")
+    set r.op to ""
+    set r.len to 0
+    set v0 to phrase_val(toks and i)
+    set v1 to phrase_val(toks and i + 1)
+    set v2 to phrase_val(toks and i + 2)
+    set v3 to phrase_val(toks and i + 3)
+    set v4 to phrase_val(toks and i + 4)
+    set v5 to phrase_val(toks and i + 5)
+    if v0 equals "is":
+        if v1 equals "greater":
+            if v2 equals "than":
+                if v3 equals "or":
+                    if v4 equals "equal":
+                        if v5 equals "to":
+                            set r.op to ">="
+                            set r.len to 6
+                            return r
+                set r.op to ">"
+                set r.len to 3
+                return r
+        if v1 equals "less":
+            if v2 equals "than":
+                if v3 equals "or":
+                    if v4 equals "equal":
+                        if v5 equals "to":
+                            set r.op to "<="
+                            set r.len to 6
+                            return r
+                set r.op to "<"
+                set r.len to 3
+                return r
+        if v1 equals "not":
+            if v2 equals "equal":
+                if v3 equals "to":
+                    set r.op to "!="
+                    set r.len to 4
+                    return r
+        if v1 equals "equal":
+            if v2 equals "to":
+                set r.op to "=="
+                set r.len to 3
+                return r
+    return r
+
+define phrase_val with toks and i:
+    if i >= toks.length:
+        return ""
+    set t to get_list(toks and i)
+    if t.kind equals "ID":
+        return t.val
+    return ""
+
+define collapse_ops with toks:
+    set out to []
+    set i to 0
+    set n to toks.length
+    repeat while i < n:
+        set t to get_list(toks and i)
+        if t.kind equals "ID":
+            set ph to match_phrase(toks and i)
+            if ph.len > 0:
+                out.push(tok("OP" and ph.op))
+                set i to i + ph.len
+            else:
+                set nxt to phrase_val(toks and i + 1)
+                set w2 to word_op2(t.val and nxt)
+                if w2 != "":
+                    out.push(tok("OP" and w2))
+                    set i to i + 2
+                else:
+                    set w1 to word_op1(t.val)
+                    if w1 != "":
+                        out.push(tok("OP" and w1))
+                        set i to i + 1
+                    else:
+                        out.push(t)
+                        set i to i + 1
+        else:
+            out.push(t)
+            set i to i + 1
+    return out
+
+# Build a token stream of lines, each line = {indent, toks}.
+define tokenize with src:
+    set norm to src.replace(Reflect.construct(window.RegExp and ["\r", "g"]) and "")
+    set raw to norm.split("\n")
+    set lines to []
+    set i to 0
+    repeat while i < raw.length:
+        set line to get_list(raw and i)
+        set trimmed to line.trim()
+        if trimmed equals "":
+            set i to i + 1
+        else:
+            if trimmed.startsWith("#"):
+                set i to i + 1
+            else:
+                set indent to count_indent(line)
+                set toks to []
+                lex_line(line and toks)
+                set toks to collapse_ops(toks)
+                if toks.length > 0:
+                    set ln to JSON.parse("{}")
+                    set ln.indent to indent
+                    set ln.toks to toks
+                    lines.push(ln)
+                set i to i + 1
+    return lines
+
+define count_indent with line:
+    set i to 0
+    set spaces to 0
+    repeat while i < line.length:
+        set c to line.charAt(i)
+        if c equals " ":
+            set spaces to spaces + 1
+            set i to i + 1
+        else:
+            if c equals "\t":
+                set spaces to spaces + 4
+                set i to i + 1
+            else:
+                return spaces
+    return spaces
+
+# ======================================================================
+# Parser  — produces a block = array of statement nodes.
+# Uses a shared cursor object { lines, pos }.
+# ======================================================================
+
+define node with kind:
+    set nd to JSON.parse("{}")
+    set nd.kind to kind
+    return nd
+
+define cur_line with P:
+    if P.pos >= P.lines.length:
+        return false
+    return get_list(P.lines and P.pos)
+
+# Parse a block of statements at exactly `indent`. Returns array of nodes.
+define parse_block with P and indent:
+    set stmts to []
+    repeat while true:
+        set ln to cur_line(P)
+        if not ln:
+            return stmts
+        if ln.indent < indent:
+            return stmts
+        if ln.indent > indent:
+            # skip stray over-indented line defensively
+            return stmts
+        set stmt to parse_stmt(P and indent)
+        if stmt:
+            stmts.push(stmt)
+    return stmts
+
+define parse_stmt with P and indent:
+    set ln to cur_line(P)
+    set toks to ln.toks
+    set head to get_list(toks and 0)
+    set kw to head.val
+
+    if kw equals "set":
+        return parse_set(P and ln)
+    if kw equals "display":
+        return parse_display(P and ln)
+    if kw equals "return":
+        return parse_return(P and ln)
+    if kw equals "if":
+        return parse_if(P and indent)
+    if kw equals "while":
+        return parse_while(P and indent and ln and 1)
+    if kw equals "repeat":
+        return parse_while(P and indent and ln and 2)
+    if kw equals "for":
+        return parse_for(P and indent and ln)
+    if kw equals "define":
+        return parse_define(P and indent and ln)
+    # bare expression statement (e.g. a function call)
+    set ts to new_stream(toks)
+    set ex to parse_expr(ts)
+    set nd to node("expr")
+    set nd.expr to ex
+    return advance_ret(P and nd)
+
+define advance_ret with P and nd:
+    set P.pos to P.pos + 1
+    return nd
+
+define parse_set with P and ln:
+    set toks to ln.toks
+    # set NAME [as TYPE] to EXPR   |   set OBJ . FIELD to EXPR
+    set i to 1
+    set target_name to get_list(toks and i).val
+    set i to i + 1
+    set is_field to false
+    set field to ""
+    if i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "DOT":
+            set is_field to true
+            set field to get_list(toks and i + 1).val
+            set i to i + 2
+    # skip optional "as TYPE"
+    if i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "ID":
+            if t.val equals "as":
+                set i to i + 2
+    # expect "to"
+    set t to get_list(toks and i)
+    if t.val equals "to":
+        set i to i + 1
+    set rest to slice_toks(toks and i)
+    set ts to new_stream(rest)
+    set ex to parse_expr(ts)
+    set nd to node("set")
+    set nd.name to target_name
+    set nd.is_field to is_field
+    set nd.field to field
+    set nd.expr to ex
+    set P.pos to P.pos + 1
+    return nd
+
+define parse_display with P and ln:
+    set rest to slice_toks(ln.toks and 1)
+    set ts to new_stream(rest)
+    set ex to parse_expr(ts)
+    set nd to node("display")
+    set nd.expr to ex
+    set P.pos to P.pos + 1
+    return nd
+
+define parse_return with P and ln:
+    set rest to slice_toks(ln.toks and 1)
+    set nd to node("return")
+    if rest.length equals 0:
+        set nd.expr to false
+    else:
+        set ts to new_stream(rest)
+        set nd.expr to parse_expr(ts)
+    set P.pos to P.pos + 1
+    return nd
+
+define parse_if with P and indent:
+    set ln to cur_line(P)
+    set toks to ln.toks
+    # condition tokens between "if" and trailing ":"
+    set cond_toks to cond_slice(toks and 1)
+    set ts to new_stream(cond_toks)
+    set cond to parse_expr(ts)
+    set P.pos to P.pos + 1
+    set body to parse_block(P and indent + 4)
+    set nd to node("if")
+    set nd.cond to cond
+    set nd.body to body
+    set nd.elifs to []
+    set nd.els to false
+    # else if / else chains at same indent
+    repeat while true:
+        set nx to cur_line(P)
+        if not nx:
+            return nd
+        if nx.indent != indent:
+            return nd
+        set h to get_list(nx.toks and 0).val
+        if h equals "else":
+            set second to phrase_val(nx.toks and 1)
+            if second equals "if":
+                set ct to cond_slice(nx.toks and 2)
+                set ts2 to new_stream(ct)
+                set econd to parse_expr(ts2)
+                set P.pos to P.pos + 1
+                set ebody to parse_block(P and indent + 4)
+                set pair to JSON.parse("{}")
+                set pair.cond to econd
+                set pair.body to ebody
+                nd.elifs.push(pair)
+            else:
+                set P.pos to P.pos + 1
+                set nd.els to parse_block(P and indent + 4)
+                return nd
+        else:
+            return nd
+    return nd
+
+define parse_while with P and indent and ln and skip:
+    set cond_toks to cond_slice(ln.toks and skip)
+    set ts to new_stream(cond_toks)
+    set cond to parse_expr(ts)
+    set P.pos to P.pos + 1
+    set body to parse_block(P and indent + 4)
+    set nd to node("while")
+    set nd.cond to cond
+    set nd.body to body
+    return nd
+
+define parse_for with P and indent and ln:
+    # for each NAME in EXPR :
+    set toks to ln.toks
+    set name to get_list(toks and 2).val
+    # find "in"
+    set i to 3
+    repeat while i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "ID":
+            if t.val equals "in":
+                set i to i + 1
+                return parse_for_tail(P and indent and toks and name and i)
+        set i to i + 1
+    set P.pos to P.pos + 1
+    return false
+
+define parse_for_tail with P and indent and toks and name and i:
+    set rest to cond_slice(toks and i)
+    set ts to new_stream(rest)
+    set iter to parse_expr(ts)
+    set P.pos to P.pos + 1
+    set body to parse_block(P and indent + 4)
+    set nd to node("foreach")
+    set nd.var to name
+    set nd.iter to iter
+    set nd.body to body
+    return nd
+
+define parse_define with P and indent and ln:
+    # define NAME [with P1 and P2 ...] [returning TYPE] :
+    set toks to ln.toks
+    set name to get_list(toks and 1).val
+    set params to []
+    set i to 2
+    if i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "ID":
+            if t.val equals "with":
+                set i to i + 1
+                set i to read_params(toks and i and params)
+    set P.pos to P.pos + 1
+    set body to parse_block(P and indent + 4)
+    set nd to node("define")
+    set nd.name to name
+    set nd.params to params
+    set nd.body to body
+    return nd
+
+define read_params with toks and i and params:
+    repeat while i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "COLON":
+            return i
+        if t.kind equals "ID":
+            if t.val equals "returning":
+                return i
+            if t.val equals "and":
+                set i to i + 1
+            else:
+                if t.val equals "as":
+                    set i to i + 2
+                else:
+                    params.push(t.val)
+                    set i to i + 1
+        else:
+            set i to i + 1
+    return i
+
+# ---- token-slice helpers --------------------------------------------------
+
+define slice_toks with toks and frm:
+    set out to []
+    set i to frm
+    repeat while i < toks.length:
+        out.push(get_list(toks and i))
+        set i to i + 1
+    return out
+
+# slice from `frm` up to (not including) a trailing COLON
+define cond_slice with toks and frm:
+    set out to []
+    set i to frm
+    repeat while i < toks.length:
+        set t to get_list(toks and i)
+        if t.kind equals "COLON":
+            return out
+        out.push(t)
+        set i to i + 1
+    return out
+
+# ======================================================================
+# Expression parser (Pratt-style precedence) over a token stream.
+# ======================================================================
+
+define new_stream with toks:
+    set s to JSON.parse("{}")
+    set s.toks to toks
+    set s.pos to 0
+    return s
+
+define st_peek with s:
+    if s.pos >= s.toks.length:
+        return false
+    return get_list(s.toks and s.pos)
+
+define st_next with s:
+    set t to st_peek(s)
+    set s.pos to s.pos + 1
+    return t
+
+define parse_expr with s:
+    return parse_or(s)
+
+define parse_or with s:
+    set left to parse_and(s)
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return left
+        if t.kind equals "OP":
+            if t.val equals "||":
+                st_next(s)
+                set right to parse_and(s)
+                set left to bin("||" and left and right)
+            else:
+                return left
+        else:
+            return left
+    return left
+
+define parse_and with s:
+    set left to parse_cmp(s)
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return left
+        if t.kind equals "OP":
+            if t.val equals "&&":
+                st_next(s)
+                set right to parse_cmp(s)
+                set left to bin("&&" and left and right)
+            else:
+                return left
+        else:
+            return left
+    return left
+
+define parse_cmp with s:
+    set left to parse_add(s)
+    set t to st_peek(s)
+    if not t:
+        return left
+    if t.kind equals "OP":
+        if is_cmp(t.val):
+            st_next(s)
+            set right to parse_add(s)
+            return bin(t.val and left and right)
+    return left
+
+define is_cmp with op:
+    if op equals "<":
+        return true
+    if op equals ">":
+        return true
+    if op equals "<=":
+        return true
+    if op equals ">=":
+        return true
+    if op equals "==":
+        return true
+    if op equals "!=":
+        return true
+    return false
+
+define parse_add with s:
+    set left to parse_mul(s)
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return left
+        if t.kind equals "OP":
+            if t.val equals "+":
+                st_next(s)
+                set left to bin("+" and left and parse_mul(s))
+            else:
+                if t.val equals "-":
+                    st_next(s)
+                    set left to bin("-" and left and parse_mul(s))
+                else:
+                    return left
+        else:
+            return left
+    return left
+
+define parse_mul with s:
+    set left to parse_unary(s)
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return left
+        if t.kind equals "OP":
+            if t.val equals "*":
+                st_next(s)
+                set left to bin("*" and left and parse_unary(s))
+            else:
+                if t.val equals "/":
+                    st_next(s)
+                    set left to bin("/" and left and parse_unary(s))
+                else:
+                    if t.val equals "%":
+                        st_next(s)
+                        set left to bin("%" and left and parse_unary(s))
+                    else:
+                        return left
+        else:
+            return left
+    return left
+
+define parse_unary with s:
+    set t to st_peek(s)
+    if t:
+        if t.kind equals "OP":
+            if t.val equals "-":
+                st_next(s)
+                set nd to node("neg")
+                set nd.expr to parse_unary(s)
+                return nd
+        if t.kind equals "ID":
+            if t.val equals "not":
+                st_next(s)
+                set nd to node("not")
+                set nd.expr to parse_unary(s)
+                return nd
+    return parse_postfix(s)
+
+define parse_postfix with s:
+    set base to parse_primary(s)
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return base
+        if t.kind equals "LP":
+            st_next(s)
+            set args to parse_args(s)
+            set nd to node("call")
+            set nd.callee to base
+            set nd.args to args
+            set base to nd
+        else:
+            return base
+    return base
+
+define parse_args with s:
+    set args to []
+    set t to st_peek(s)
+    if t:
+        if t.kind equals "RP":
+            st_next(s)
+            return args
+    args.push(parse_expr(s))
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            return args
+        if t.kind equals "RP":
+            st_next(s)
+            return args
+        if t.kind equals "COMMA":
+            st_next(s)
+            args.push(parse_expr(s))
+        else:
+            if t.kind equals "ID":
+                if t.val equals "and":
+                    st_next(s)
+                    args.push(parse_expr(s))
+                else:
+                    return args
+            else:
+                return args
+    return args
+
+define parse_primary with s:
+    set t to st_next(s)
+    if not t:
+        return node("nil")
+    if t.kind equals "NUM":
+        set nd to node("num")
+        set nd.val to Number(t.val)
+        return nd
+    if t.kind equals "STR":
+        set nd to node("str")
+        set nd.val to t.val
+        return nd
+    if t.kind equals "FSTR":
+        set nd to node("fstr")
+        set nd.val to t.val
+        return nd
+    if t.kind equals "LP":
+        set inner to parse_expr(s)
+        st_next(s)
+        return inner
+    if t.kind equals "LB":
+        return parse_list(s)
+    if t.kind equals "ID":
+        if t.val equals "true":
+            set nd to node("bool")
+            set nd.val to true
+            return nd
+        if t.val equals "false":
+            set nd to node("bool")
+            set nd.val to false
+            return nd
+        set nd to node("var")
+        set nd.name to t.val
+        return nd
+    return node("nil")
+
+define parse_list with s:
+    set items to []
+    set t to st_peek(s)
+    if t:
+        if t.kind equals "RB":
+            st_next(s)
+            set nd to node("list")
+            set nd.items to items
+            return nd
+    items.push(parse_expr(s))
+    repeat while true:
+        set t to st_peek(s)
+        if not t:
+            set nd to node("list")
+            set nd.items to items
+            return nd
+        if t.kind equals "RB":
+            st_next(s)
+            set nd to node("list")
+            set nd.items to items
+            return nd
+        if t.kind equals "COMMA":
+            st_next(s)
+            items.push(parse_expr(s))
+        else:
+            st_next(s)
+    set nd to node("list")
+    set nd.items to items
+    return nd
+
+define bin with op and l and r:
+    set nd to node("bin")
+    set nd.op to op
+    set nd.left to l
+    set nd.right to r
+    return nd
+
+# ======================================================================
+# Evaluator
+# ======================================================================
+
+define env_new with parent:
+    set e to JSON.parse("{}")
+    set e.vars to JSON.parse("{}")
+    set e.parent to parent
+    return e
+
+define env_get with e and name:
+    set cur to e
+    repeat while cur:
+        if Object.prototype.hasOwnProperty.call(cur.vars and name):
+            return get_list(cur.vars and name)
+        set cur to cur.parent
+    throw_err(f"undefined name: {name}")
+    return false
+
+define env_set with e and name and val:
+    # assign in the scope that already defines it, else define locally
+    set cur to e
+    repeat while cur:
+        if Object.prototype.hasOwnProperty.call(cur.vars and name):
+            set_prop(cur.vars and name and val)
+            return 0
+        set cur to cur.parent
+    set_prop(e.vars and name and val)
+    return 0
+
+define set_prop with obj and key and val:
+    set fn to get_list(Reflect and "set")
+    fn.call(Reflect and obj and key and val)
+    return 0
+
+# Record a runtime error (first one wins). No exceptions in ErnosPlain, so we
+# flag it and let the exec loops unwind by checking window.epErr.
+define throw_err with msg:
+    if not window.epErr:
+        set window.epErr to msg
+    return false
+
+# A signal object for `return` unwinding.
+define make_return with val:
+    set r to JSON.parse("{}")
+    set r.is_return to true
+    set r.val to val
+    return r
+
+# Execute a block; returns either a return-signal object or false.
+define exec_block with stmts and e:
+    set i to 0
+    repeat while i < stmts.length:
+        if window.epErr:
+            return false
+        set st to get_list(stmts and i)
+        set sig to exec_stmt(st and e)
+        if sig:
+            return sig
+        set i to i + 1
+    return false
+
+define exec_stmt with st and e:
+    set k to st.kind
+    if k equals "set":
+        set v to eval_expr(st.expr and e)
+        if st.is_field:
+            set obj to env_get(e and st.name)
+            set_prop(obj and st.field and v)
+        else:
+            env_set(e and st.name and v)
+        return false
+    if k equals "display":
+        set v to eval_expr(st.expr and e)
+        ep_emit(to_display(v))
+        return false
+    if k equals "return":
+        if st.expr:
+            return make_return(eval_expr(st.expr and e))
+        return make_return(false)
+    if k equals "expr":
+        eval_expr(st.expr and e)
+        return false
+    if k equals "if":
+        return exec_if(st and e)
+    if k equals "while":
+        return exec_while(st and e)
+    if k equals "foreach":
+        return exec_foreach(st and e)
+    if k equals "define":
+        set fn to JSON.parse("{}")
+        set fn.is_fn to true
+        set fn.params to st.params
+        set fn.body to st.body
+        set fn.closure to e
+        env_set(e and st.name and fn)
+        return false
+    return false
+
+define exec_if with st and e:
+    if truthy(eval_expr(st.cond and e)):
+        return exec_block(st.body and env_new(e))
+    set i to 0
+    repeat while i < st.elifs.length:
+        set pair to get_list(st.elifs and i)
+        if truthy(eval_expr(pair.cond and e)):
+            return exec_block(pair.body and env_new(e))
+        set i to i + 1
+    if st.els:
+        return exec_block(st.els and env_new(e))
+    return false
+
+define exec_while with st and e:
+    set guard to 0
+    repeat while truthy(eval_expr(st.cond and e)):
+        set sig to exec_block(st.body and env_new(e))
+        if sig:
+            return sig
+        set guard to guard + 1
+        if guard > 1000000:
+            throw_err("loop exceeded 1,000,000 iterations (stopped)")
+    return false
+
+define exec_foreach with st and e:
+    set seq to eval_expr(st.iter and e)
+    set i to 0
+    repeat while i < seq.length:
+        set inner to env_new(e)
+        env_set(inner and st.var and get_list(seq and i))
+        set sig to exec_block(st.body and inner)
+        if sig:
+            return sig
+        set i to i + 1
+    return false
+
+define eval_expr with x and e:
+    set k to x.kind
+    if k equals "num":
+        return x.val
+    if k equals "str":
+        return x.val
+    if k equals "bool":
+        return x.val
+    if k equals "nil":
+        return false
+    if k equals "fstr":
+        return eval_fstring(x.val and e)
+    if k equals "var":
+        return env_get(e and x.name)
+    if k equals "list":
+        set arr to []
+        set i to 0
+        repeat while i < x.items.length:
+            arr.push(eval_expr(get_list(x.items and i) and e))
+            set i to i + 1
+        return arr
+    if k equals "neg":
+        return 0 - eval_expr(x.expr and e)
+    if k equals "not":
+        if truthy(eval_expr(x.expr and e)):
+            return false
+        return true
+    if k equals "bin":
+        return eval_bin(x and e)
+    if k equals "call":
+        return eval_call(x and e)
+    return false
+
+define eval_bin with x and e:
+    set op to x.op
+    if op equals "&&":
+        if truthy(eval_expr(x.left and e)):
+            return eval_expr(x.right and e)
+        return false
+    if op equals "||":
+        set l to eval_expr(x.left and e)
+        if truthy(l):
+            return l
+        return eval_expr(x.right and e)
+    set a to eval_expr(x.left and e)
+    set b to eval_expr(x.right and e)
+    if op equals "+":
+        if typeof_str(a) equals "string":
+            return a + to_display(b)
+        if typeof_str(b) equals "string":
+            return to_display(a) + b
+        return a + b
+    if op equals "-":
+        return a - b
+    if op equals "*":
+        return a * b
+    if op equals "/":
+        return a / b
+    if op equals "%":
+        return a % b
+    if op equals "<":
+        return a < b
+    if op equals ">":
+        return a > b
+    if op equals "<=":
+        return a <= b
+    if op equals ">=":
+        return a >= b
+    if op equals "==":
+        return a == b
+    if op equals "!=":
+        return a != b
+    return false
+
+define typeof_str with v:
+    set s to Object.prototype.toString.call(v)
+    if s equals "[object String]":
+        return "string"
+    if s equals "[object Number]":
+        return "number"
+    if s equals "[object Array]":
+        return "array"
+    if s equals "[object Boolean]":
+        return "boolean"
+    return "other"
+
+define eval_call with x and e:
+    set callee to x.callee
+    # evaluate argument values
+    set args to []
+    set i to 0
+    repeat while i < x.args.length:
+        args.push(eval_expr(get_list(x.args and i) and e))
+        set i to i + 1
+    if callee.kind equals "var":
+        set name to callee.name
+        set b to builtin_call(name and args)
+        if b.handled:
+            return b.val
+        set fn to env_get(e and name)
+        return call_fn(fn and args)
+    set fnv to eval_expr(callee and e)
+    return call_fn(fnv and args)
+
+define call_fn with fn and args:
+    if not fn.is_fn:
+        throw_err("attempt to call a non-function")
+    set local to env_new(fn.closure)
+    set i to 0
+    repeat while i < fn.params.length:
+        set pname to get_list(fn.params and i)
+        env_set(local and pname and get_list(args and i))
+        set i to i + 1
+    set sig to exec_block(fn.body and local)
+    if sig:
+        return sig.val
+    return false
+
+# ---- f-string interpolation ----------------------------------------------
+# Replaces {expr} with the evaluated value. Expr is lexed + parsed fresh.
+define eval_fstring with raw and e:
+    set out to ""
+    set i to 0
+    set n to raw.length
+    repeat while i < n:
+        set c to raw.charAt(i)
+        if c equals "{":
+            set j to i + 1
+            set inner to ""
+            repeat while j < n:
+                set d to raw.charAt(j)
+                if d equals "}":
+                    set j to j + 1
+                    return fstr_tail(raw and e and out and inner and j and n)
+                set inner to inner + d
+                set j to j + 1
+            set out to out + "{" + inner
+            return out
+        else:
+            set out to out + c
+            set i to i + 1
+    return out
+
+define fstr_tail with raw and e and out and inner and j and n:
+    set toks to []
+    lex_line(inner and toks)
+    set toks to collapse_ops(toks)
+    set s to new_stream(toks)
+    set val to eval_expr(parse_expr(s) and e)
+    set out to out + to_display(val)
+    return out + eval_fstring(raw.slice(j) and e)
+
+# ======================================================================
+# Builtins + value display
+# ======================================================================
+
+define result_pair with handled and val:
+    set r to JSON.parse("{}")
+    set r.handled to handled
+    set r.val to val
+    return r
+
+define builtin_call with name and args:
+    if name equals "create_list":
+        return result_pair(true and [])
+    if name equals "append_list":
+        get_list(args and 0).push(get_list(args and 1))
+        return result_pair(true and true)
+    if name equals "get_list":
+        return result_pair(true and get_list(get_list(args and 0) and get_list(args and 1)))
+    if name equals "set_list":
+        set lst to get_list(args and 0)
+        set_prop(lst and get_list(args and 1) and get_list(args and 2))
+        return result_pair(true and true)
+    if name equals "length_list":
+        return result_pair(true and get_list(args and 0).length)
+    if name equals "length":
+        return result_pair(true and get_list(args and 0).length)
+    if name equals "string_length":
+        return result_pair(true and get_list(args and 0).length)
+    if name equals "char_at":
+        return result_pair(true and get_list(args and 0).charAt(get_list(args and 1)))
+    if name equals "to_text":
+        return result_pair(true and to_display(get_list(args and 0)))
+    if name equals "concat":
+        return result_pair(true and to_display(get_list(args and 0)) + to_display(get_list(args and 1)))
+    if name equals "uppercase":
+        return result_pair(true and get_list(args and 0).toUpperCase())
+    if name equals "lowercase":
+        return result_pair(true and get_list(args and 0).toLowerCase())
+    if name equals "absolute":
+        return result_pair(true and Math.abs(get_list(args and 0)))
+    if name equals "floor":
+        return result_pair(true and Math.floor(get_list(args and 0)))
+    return result_pair(false and false)
+
+define truthy with v:
+    if v:
+        return true
+    return false
+
+define to_display with v:
+    set tp to typeof_str(v)
+    if tp equals "string":
+        return v
+    if tp equals "boolean":
+        if v:
+            return "true"
+        return "false"
+    if tp equals "array":
+        return "[" + arr_join(v) + "]"
+    return String(v)
+
+define arr_join with arr:
+    set out to ""
+    set i to 0
+    repeat while i < arr.length:
+        if i > 0:
+            set out to out + ", "
+        set out to out + to_display(get_list(arr and i))
+        set i to i + 1
+    return out
+
+# ======================================================================
+# Public entry point
+# ======================================================================
+
+define ep_emit with s:
+    set buf to window.epOut
+    buf.push(s)
+    return 0
+
+# run_thunk + run_safely give us a JS-level try/catch (via the Function
+# constructor) since ErnosPlain has no try/on. Native exceptions from arbitrary
+# user code are caught and returned as { ok:false, error }.
+define run_thunk:
+    return ep_run(window.epSrc)
+
+define run_safely with src:
+    set window.epSrc to src
+    set wrapper to Reflect.construct(window.Function and ["fn", "try{return fn();}catch(e){return {ok:false,output:'',error:String((e&&e.message)||e)};}"])
+    return wrapper(run_thunk)
+
+define ep_run with src:
+    set res to JSON.parse("{}")
+    set window.epOut to []
+    set window.epErr to false
+    set lines to tokenize(src)
+    set P to JSON.parse("{}")
+    set P.lines to lines
+    set P.pos to 0
+    set program to parse_block(P and 0)
+    set genv to env_new(false)
+    # first pass: hoist function definitions so call-before-define works
+    set i to 0
+    repeat while i < program.length:
+        set st to get_list(program and i)
+        if st.kind equals "define":
+            exec_stmt(st and genv)
+        set i to i + 1
+    # run top-level statements (and call main if defined and not already run)
+    set i to 0
+    set ran_main to false
+    repeat while i < program.length:
+        set st to get_list(program and i)
+        if st.kind != "define":
+            exec_stmt(st and genv)
+        set i to i + 1
+    # if there is a main() and no top-level calls produced output, call it
+    if has_var(genv and "main"):
+        if window.epOut.length equals 0:
+            set fn to env_get(genv and "main")
+            call_fn(fn and [])
+    set res.output to window.epOut.join("\n")
+    if window.epErr:
+        set res.ok to false
+        set res.error to window.epErr
+    else:
+        set res.ok to true
+        set res.error to false
+    return res
+
+define has_var with e and name:
+    return Object.prototype.hasOwnProperty.call(e.vars and name)

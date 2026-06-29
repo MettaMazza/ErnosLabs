@@ -1,0 +1,249 @@
+# ErnosLabs — Library reader
+# Component: src/reader.ep  (compiled to assets/js/reader.js via build.sh)
+# Depends on md.js (md_render, md_headings, md_rx) loaded before it.
+# Builds the catalog, fetches a work's markdown on demand, renders it with a
+# table of contents, font controls, in-text search, and read-aloud (TTS).
+
+# ---- catalog -------------------------------------------------------------
+
+define make_work with id and file and title and sub and words and collection:
+    set w to JSON.parse("{}")
+    set w.id to id
+    set w.file to file
+    set w.title to title
+    set w.sub to sub
+    set w.words to words
+    set w.collection to collection
+    return w
+
+define catalog:
+    set works to []
+    works.push(make_work("a-mind-is-born" and "a-mind-is-born.md" and "A Mind Is Born" and "Book One — the origin novel. A childhood in 1990s Glasgow, reading as survival." and 251522 and "lastmind"))
+    works.push(make_work("behind-the-mask" and "behind-the-mask.md" and "Behind the Mask" and "Vol I · The Devil They Call God — the 400-year debt-money mechanism." and 281246 and "lastmind"))
+    works.push(make_work("behind-the-performance" and "behind-the-performance.md" and "Behind the Performance" and "Vol II · The Demon They Call the State — the political class as operating layer." and 536662 and "lastmind"))
+    works.push(make_work("behind-the-blessed" and "behind-the-blessed.md" and "Behind the Blessed" and "Vol III · The Demon They Call the Church — institutional capture of faith." and 318151 and "lastmind"))
+    works.push(make_work("behind-the-knowing" and "behind-the-knowing.md" and "Behind the Knowing" and "Vol IV · The Demon They Call Consensus — press, academia, the knowledge apparatus." and 192588 and "lastmind"))
+    works.push(make_work("behind-the-synthesis" and "behind-the-synthesis.md" and "Behind the Synthesis" and "Vol V · The Devil, the Demons & the Masks — the unifying framework." and 30331 and "lastmind"))
+    works.push(make_work("ernosdecent-book" and "ernosdecent-book.md" and "ErnosDecent: Owned by No One" and "The plain-language book — what to build instead, in everyday words." and 64487 and "ernos"))
+    return works
+
+define read_minutes with words:
+    return Math.ceil(words / 220)
+
+define fmt_words with words:
+    if words >= 1000:
+        return f"{Math.round(words / 1000)}k words"
+    return f"{words} words"
+
+# ---- catalog rendering ---------------------------------------------------
+
+define work_card_html with w:
+    set mins to read_minutes(w.words)
+    set out to f"<button class=\"card work-card reveal in\" data-id=\"{w.id}\">"
+    set out to out + f"<span class=\"card__tag\">{fmt_words(w.words)} · ~{mins} min</span>"
+    set out to out + f"<h3>{w.title}</h3>"
+    set out to out + f"<p>{w.sub}</p>"
+    set out to out + "<span class=\"go\">Read →</span></button>"
+    return out
+
+define render_catalog:
+    set works to catalog()
+    set last to ""
+    set ernos to ""
+    set i to 0
+    repeat while i < works.length:
+        set w to get_list(works and i)
+        if w.collection equals "lastmind":
+            set last to last + work_card_html(w)
+        else:
+            set ernos to ernos + work_card_html(w)
+        set i to i + 1
+    set html to "<div class=\"section\" style=\"padding-top:40px\"><div class=\"wrap\">"
+    set html to html + "<p class=\"eyebrow\">The writing</p><h1>The Library</h1>"
+    set html to html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud. Nothing to download.</p>"
+    set html to html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>"
+    set html to html + "<div class=\"grid grid--2\">" + last + "</div>"
+    set html to html + "<h2 style=\"margin-top:64px\">ErnosDecent</h2>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">The constructive counterpart — what to build instead.</p>"
+    set html to html + "<div class=\"grid grid--2\">" + ernos + "</div>"
+    set html to html + "</div></div>"
+    set cat to document.getElementById("catalog")
+    set cat.innerHTML to html
+    # wire the cards
+    set cards to document.querySelectorAll(".work-card")
+    for each c in cards:
+        c.addEventListener("click" and open_from_event)
+    return 0
+
+define open_from_event with ev:
+    set id to ev.currentTarget.getAttribute("data-id")
+    open_work(id)
+    return 0
+
+# ---- opening a work ------------------------------------------------------
+
+define find_work with id:
+    set works to catalog()
+    set i to 0
+    repeat while i < works.length:
+        set w to get_list(works and i)
+        if w.id equals id:
+            return w
+        set i to i + 1
+    return false
+
+define open_work with id:
+    set w to find_work(id)
+    if not w:
+        return 0
+    set window.curWork to w
+    # show reader, hide catalog
+    document.getElementById("catalog").classList.add("hidden")
+    set rd to document.getElementById("reader")
+    rd.classList.remove("hidden")
+    set rtitle to document.getElementById("reader-title")
+    set rtitle.textContent to w.title
+    set doc to document.getElementById("doc")
+    set doc.innerHTML to "<p class=\"loading\">Loading " + w.title + "…</p>"
+    set toc0 to document.getElementById("toc")
+    set toc0.innerHTML to ""
+    window.scrollTo(0 and 0)
+    set url to "content/library/" + w.file
+    fetch(url).then(resp_text).then(render_doc)
+    return 0
+
+define resp_text with resp:
+    return resp.text()
+
+define render_doc with text:
+    set doc to document.getElementById("doc")
+    set html to md_render(text)
+    set window.docHtml to html
+    set doc.innerHTML to html
+    build_toc(text)
+    apply_font()
+    return 0
+
+define build_toc with text:
+    set heads to md_headings(text)
+    set toc to document.getElementById("toc")
+    if heads.length < 2:
+        set toc.innerHTML to ""
+        return 0
+    set out to "<div class=\"toc__title\">Contents</div>"
+    set i to 0
+    repeat while i < heads.length:
+        set h to get_list(heads and i)
+        set cls to f"toc__lvl{h.level}"
+        set out to out + f"<a class=\"toc__link {cls}\" data-target=\"{h.id}\">{h.text}</a>"
+        set i to i + 1
+    set toc.innerHTML to out
+    set links to toc.querySelectorAll(".toc__link")
+    for each a in links:
+        a.addEventListener("click" and toc_jump)
+    return 0
+
+define toc_jump with ev:
+    set id to ev.currentTarget.getAttribute("data-target")
+    set el to document.getElementById(id)
+    if el:
+        el.scrollIntoView()
+    return 0
+
+define back_to_catalog with ev:
+    stop_tts()
+    document.getElementById("reader").classList.add("hidden")
+    document.getElementById("catalog").classList.remove("hidden")
+    window.scrollTo(0 and 0)
+    return 0
+
+# ---- font controls -------------------------------------------------------
+
+define apply_font:
+    set doc to document.getElementById("doc")
+    set doc.style.fontSize to f"{window.readerFont}px"
+    return 0
+
+define font_bigger with ev:
+    set window.readerFont to window.readerFont + 1
+    apply_font()
+    return 0
+
+define font_smaller with ev:
+    set window.readerFont to window.readerFont - 1
+    apply_font()
+    return 0
+
+# ---- in-text search ------------------------------------------------------
+
+define regex_escape with s:
+    return s.replace(md_rx("[.*+?^${}()|\\[\\]\\\\]" and "g") and "\\$&")
+
+define do_search with ev:
+    set q to document.getElementById("search").value
+    set doc to document.getElementById("doc")
+    set count to document.getElementById("search-count")
+    if q equals "":
+        set doc.innerHTML to window.docHtml
+        set count.textContent to ""
+        return 0
+    if q.length < 2:
+        return 0
+    set esc to regex_escape(q)
+    set re to md_rx(esc + "(?![^<]*>)" and "gi")
+    set hl to window.docHtml.replace(re and "<mark>$&</mark>")
+    set doc.innerHTML to hl
+    set marks to doc.querySelectorAll("mark")
+    set count.textContent to f"{marks.length} matches"
+    if marks.length > 0:
+        get_list(marks and 0).scrollIntoView()
+    return 0
+
+# ---- read-aloud (Web Speech) ---------------------------------------------
+
+define stop_tts:
+    if window.speechSynthesis:
+        window.speechSynthesis.cancel()
+    set window.ttsOn to false
+    set btn to document.getElementById("tts")
+    if btn:
+        set btn.textContent to "▶ Read aloud"
+    return 0
+
+define toggle_tts with ev:
+    if not window.speechSynthesis:
+        return 0
+    if window.ttsOn:
+        stop_tts()
+        return 0
+    set doc to document.getElementById("doc")
+    set text to doc.textContent
+    if text.length > 9000:
+        set text to text.slice(0 and 9000)
+    set u to Reflect.construct(window.SpeechSynthesisUtterance and [text])
+    set u.rate to 1
+    set u.onend to tts_ended
+    window.speechSynthesis.cancel()
+    window.speechSynthesis.speak(u)
+    set window.ttsOn to true
+    set btn to document.getElementById("tts")
+    set btn.textContent to "■ Stop"
+    return 0
+
+define tts_ended with ev:
+    stop_tts()
+    return 0
+
+# ---- boot ----------------------------------------------------------------
+
+define main:
+    set window.readerFont to 19
+    set window.ttsOn to false
+    render_catalog()
+    document.getElementById("back").addEventListener("click" and back_to_catalog)
+    document.getElementById("font-up").addEventListener("click" and font_bigger)
+    document.getElementById("font-down").addEventListener("click" and font_smaller)
+    document.getElementById("search").addEventListener("input" and do_search)
+    document.getElementById("tts").addEventListener("click" and toggle_tts)
+    return 0

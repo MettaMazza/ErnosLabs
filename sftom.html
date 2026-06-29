@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Smithian Fold — a theory of everything from one move</title>
+  <meta name="description" content="One axiom — the One — and one move, the fold. From it the constants of nature fall out with zero free parameters. Explore it interactively.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7il5A8L3RleHQ+PC9zdmc+">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <a href="ernosplain.html">ErnosPlain</a>
+        <a href="sftom.html">Fold Theory</a>
+        <a href="ernosdecent.html">ErnosDecent</a>
+        <a href="library.html">Library</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="section" style="padding-bottom:30px">
+    <div class="wrap">
+      <p class="eyebrow reveal">The theory of everything</p>
+      <h1 class="reveal">The Smithian Fold</h1>
+      <p class="lead reveal mt-s">Start with one thing — <em>the One</em>, a unit of action. Allow one move — the
+        <strong style="color:var(--ink-0)">fold</strong>: double a magnitude and cast out the whole. No negatives,
+        no zero, no transcendentals. From this alone, the constants of nature are <em>derived, not fitted</em> —
+        with zero free continuous parameters. The maths below is real and runs here in your browser.</p>
+    </div>
+  </header>
+
+  <!-- FOLD VISUALIZER -->
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow">The one move</p>
+      <h2>The fold map</h2>
+      <p class="lead" style="margin-bottom:26px">Pick a fraction p/q in (0,1]. Fold it — <code>fold(x) = 2x, cast out the whole</code> —
+        again and again. Rational numbers fall into closed <strong style="color:var(--ink-0)">periodic orbits</strong>;
+        the period is the multiplicative order of 2 mod q. This is where the structure lives.</p>
+      <div class="fold-tool reveal">
+        <canvas id="fold-canvas" width="360" height="360"></canvas>
+        <div>
+          <div class="fold-controls">
+            <div class="fold-field"><label for="fold-p">numerator p</label><input id="fold-p" type="number" value="1" min="1"></div>
+            <div class="fold-field"><label for="fold-q">denominator q</label><input id="fold-q" type="number" value="7" min="2"></div>
+            <button class="btn btn--ghost" id="fold-run">Fold</button>
+          </div>
+          <div id="fold-info"></div>
+          <p style="color:var(--ink-3);font-size:.82rem;margin-top:18px">Try q = 7 (period 3), q = 31 (period 5), q = 127 (period 7).
+            Mersenne denominators 2ⁿ−1 give period exactly n — the same depths that set the physical scales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAND LOCK -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">Zero free parameters</p>
+      <h2>The grand lock</h2>
+      <p class="lead" style="margin-bottom:26px">Give the theory one integer — the colour count <em>c</em> — and the
+        fine-structure constant is forced. Move the slider: only at <strong style="color:var(--glow)">c = 3</strong>
+        does <code>1/α</code> land on the measured value. Nothing was tuned.</p>
+      <div class="grand reveal">
+        <div>
+          <label class="fold-field" for="grand-c" style="display:block">
+            <span style="font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">colour count c = <span class="grand-cval" id="grand-c-label">3</span></span>
+          </label>
+          <input class="grand-slider" id="grand-c" type="range" min="2" max="6" step="1" value="3">
+          <div id="grand-out" style="margin-top:18px"></div>
+        </div>
+        <div>
+          <div id="grand-alpha"></div>
+          <p style="color:var(--ink-3);font-size:.82rem;margin-top:20px">The depths d₋ = 5 and d₊ = 7 are the smallest
+            powers of two covering c³ = 27 and c⁴ = 81. They are forced by c, not chosen — and 7 is the same depth that
+            fixes the proton scale at 2<sup>127/2</sup>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICLE CENSUS -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">A closed census</p>
+      <h2>The prime sectors</h2>
+      <p class="lead" style="margin-bottom:26px">Forces live on prime sectors. Each prime p gives coupling
+        <code>(p−1)/p</code> and exactly <code>p²−1</code> carriers. Sectors 2 and 3 are the forces we know
+        (8 carriers = the colour gluons). Sectors 5 and 7 are <strong style="color:var(--gold)">predicted</strong> —
+        and the confining ladder ends at 7. Any force on prime 11 would falsify the theory.</p>
+      <div class="census" id="census"></div>
+      <p style="color:var(--ink-2);font-size:.9rem;margin-top:26px">The full theory derives the charged-lepton mass
+        ratios, the dark-to-baryon ratio (27/5), a periodic table that closes at element 137 = 1/α, and solves chess
+        and Nim with the same retrograde fold — 1,058 machine-checked proofs in all. <em>Check it.</em></p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">One axiom. One move. Zero free parameters.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="ernosplain.html">ErnosPlain</a><a href="ernosdecent.html">ErnosDecent</a><a href="library.html">Library</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · The fold maths runs in ErnosPlain</div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/fold.js"></script>
+</body>
+</html>

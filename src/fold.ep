@@ -1,0 +1,289 @@
+# ErnosLabs — Smithian Fold engine + visualizers
+# Component: src/fold.ep  (compiled to assets/js/fold.js via build.sh)
+# Reimplements the core of SFTOM (sftoe/core.py, grand_lock.py, particle_census.py)
+# in ErnosPlain: the fold map fold(x)=2x mod 1 on (0,1], periodic orbits, the
+# "grand lock" derivation of constants (1/alpha = 137.036, zero free parameters),
+# and the prime-sector particle census. Drives three interactive tools.
+
+# ---- rational helpers ----------------------------------------------------
+
+define gcd with a and b:
+    repeat while b != 0:
+        set t to b
+        set b to a % b
+        set a to t
+    return a
+
+# Orbit of p/q under the doubling map, returned as an array of integer
+# numerators (denominator q). Domain is (0,1]: a remainder of 0 maps to q (=1).
+# Stops on the first repeated value, so dyadic (pre-periodic) inputs that fall
+# into the fixed point at 1 terminate cleanly instead of running forever.
+define fold_orbit with p0 and q:
+    set orbit to []
+    set p to p0 % q
+    if p equals 0:
+        set p to q
+    set guard to 0
+    repeat while true:
+        if orbit.indexOf(p) >= 0:
+            return orbit
+        orbit.push(p)
+        set p to (2 * p) % q
+        if p equals 0:
+            set p to q
+        set guard to guard + 1
+        if guard > 4096:
+            return orbit
+    return orbit
+
+# orbit length (for odd q this equals the multiplicative order of 2 mod q)
+define fold_period with p0 and q:
+    set orbit to fold_orbit(p0 and q)
+    return orbit.length
+
+# binary itinerary: each fold doubles; the bit records whether 2x exceeded 1.
+define fold_bits with p0 and q:
+    set orbit to fold_orbit(p0 and q)
+    set bits to ""
+    set i to 0
+    repeat while i < orbit.length:
+        set p to get_list(orbit and i)
+        if 2 * p > q:
+            set bits to bits + "1"
+        else:
+            set bits to bits + "0"
+        set i to i + 1
+    return bits
+
+# ---- the grand lock: constants from {One, b=2, c=colours} ----------------
+
+# smallest d with 2^d >= x  (the "covering depth")
+define depth_for with x:
+    set d to 0
+    set v to 1
+    repeat while v < x:
+        set v to v * 2
+        set d to d + 1
+    return d
+
+define grand with c:
+    set g to JSON.parse("{}")
+    set g.c to c
+    set d_down to depth_for(c * c * c)
+    set d_up to depth_for(c * c * c * c)
+    set cov to 2 * d_down * d_down * d_down
+    set g.d_down to d_down
+    set g.d_up to d_up
+    set g.cov to cov
+    # 1/alpha = 2^d_up + c^2 * (cov+1)/cov
+    set g.inv_alpha to Math.pow(2 and d_up) + c * c * (cov + 1) / cov
+    set g.alpha to 1 / g.inv_alpha
+    set g.dark_ratio to 27 / 5
+    set g.dark_fraction to 27 / 32
+    return g
+
+# ---- particle census: prime sectors --------------------------------------
+
+define sector with prime and name and role and known:
+    set s to JSON.parse("{}")
+    set s.prime to prime
+    set s.name to name
+    set s.role to role
+    set s.coupling_num to prime - 1
+    set s.coupling_den to prime
+    set s.carriers to prime * prime - 1
+    set s.known to known
+    return s
+
+define sectors:
+    set list to []
+    list.push(sector(2 and "Sector 2" and "Electromagnetic-class — coupling 1/2" and true))
+    list.push(sector(3 and "Sector 3" and "Strong-class — 8 carriers = colour gluons" and true))
+    list.push(sector(5 and "Sector 5 (Smith)" and "Predicted — 24 Smithion carriers" and false))
+    list.push(sector(7 and "Sector 7 (Smith)" and "Predicted — 48 carriers; the ladder ends here" and false))
+    return list
+
+# ======================================================================
+# Visualizers
+# ======================================================================
+
+define fmt with x and places:
+    return Number(x).toFixed(places)
+
+# ---- Fold Visualizer ----
+define draw_fold:
+    set canvas to document.getElementById("fold-canvas")
+    if not canvas:
+        return 0
+    set q to Math.round(Number(document.getElementById("fold-q").value))
+    set p to Math.round(Number(document.getElementById("fold-p").value))
+    if q < 2:
+        set q to 2
+    if p < 1:
+        set p to 1
+    if p >= q:
+        set p to q - 1
+    set g to gcd(p and q)
+    set rp to p / g
+    set rq to q / g
+    set orbit to fold_orbit(rp and rq)
+    set bits to fold_bits(rp and rq)
+
+    set dpr to window.devicePixelRatio || 1
+    set size to 360
+    set canvas.width to size * dpr
+    set canvas.height to size * dpr
+    set canvas.style.width to f"{size}px"
+    set canvas.style.height to f"{size}px"
+    set ctx to canvas.getContext("2d")
+    ctx.setTransform(dpr and 0 and 0 and dpr and 0 and 0)
+    ctx.clearRect(0 and 0 and size and size)
+    set cx to size / 2
+    set cy to size / 2
+    set rad to size / 2 - 36
+
+    # unit circle
+    ctx.beginPath()
+    ctx.arc(cx and cy and rad and 0 and 6.2832)
+    set ctx.strokeStyle to "rgba(124,140,255,0.35)"
+    set ctx.lineWidth to 1
+    ctx.stroke()
+
+    # orbit polygon
+    set n to orbit.length
+    ctx.beginPath()
+    set i to 0
+    repeat while i < n:
+        set val to get_list(orbit and i) / rq
+        set ang to 6.2831853 * val - 1.5707963
+        set x to cx + rad * Math.cos(ang)
+        set y to cy + rad * Math.sin(ang)
+        if i equals 0:
+            ctx.moveTo(x and y)
+        else:
+            ctx.lineTo(x and y)
+        set i to i + 1
+    if n > 1:
+        ctx.closePath()
+    set ctx.strokeStyle to "rgba(79,240,196,0.85)"
+    set ctx.lineWidth to 1.6
+    ctx.stroke()
+
+    # points
+    set i to 0
+    repeat while i < n:
+        set val to get_list(orbit and i) / rq
+        set ang to 6.2831853 * val - 1.5707963
+        set x to cx + rad * Math.cos(ang)
+        set y to cy + rad * Math.sin(ang)
+        ctx.beginPath()
+        ctx.arc(x and y and 4 and 0 and 6.2832)
+        if i equals 0:
+            set ctx.fillStyle to "#f5c45e"
+        else:
+            set ctx.fillStyle to "#4ff0c4"
+        ctx.fill()
+        set i to i + 1
+
+    # readout
+    set seq to fold_seq_text(orbit and rq)
+    set info to document.getElementById("fold-info")
+    set html to f"<div class=\"fold-stat\"><span>fraction</span><b>{rp}/{rq}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>period</span><b>{n}</b></div>"
+    set html to html + f"<div class=\"fold-stat\"><span>binary</span><b class=\"mono\">.{bits}…</b></div>"
+    set html to html + f"<div class=\"fold-seq\">{seq}</div>"
+    set info.innerHTML to html
+    return 0
+
+define fold_seq_text with orbit and q:
+    set out to ""
+    set i to 0
+    repeat while i < orbit.length:
+        if i > 0:
+            set out to out + " → "
+        set out to out + f"{get_list(orbit and i)}/{q}"
+        set i to i + 1
+    return out + " → ↺"
+
+# ---- Grand Lock ----
+define draw_grand:
+    set c to Math.round(Number(document.getElementById("grand-c").value))
+    set g to grand(c)
+    set clbl to document.getElementById("grand-c-label")
+    set clbl.textContent to c
+    set measured to 137.035999
+    set diff to Math.abs(g.inv_alpha - measured)
+    set match to "—"
+    if c equals 3:
+        set match to "✓ matches measurement"
+    set host to document.getElementById("grand-out")
+    set html to ""
+    set html to html + grand_row("colours (c)" and to_text_num(c) and "the one input you move")
+    set html to html + grand_row("depth d₋ for c³" and to_text_num(g.d_down) and f"smallest 2^d ≥ {c*c*c}")
+    set html to html + grand_row("depth d₊ for c⁴" and to_text_num(g.d_up) and f"smallest 2^d ≥ {c*c*c*c}")
+    set html to html + grand_row("covering cov = 2·d₋³" and to_text_num(g.cov) and "")
+    set host.innerHTML to html
+    # the headline
+    set head to document.getElementById("grand-alpha")
+    set hh to f"<div class=\"big-eq\">1/α = 2<sup>{g.d_up}</sup> + {c}²·({g.cov}+1)/{g.cov} = <b class=\"glow-text\">{fmt(g.inv_alpha and 4)}</b></div>"
+    set hh to hh + f"<div class=\"eq-cmp\">measured: 137.035999 &nbsp;·&nbsp; {match}</div>"
+    set hh to hh + f"<div class=\"eq-cmp\">dark : baryon = 27/5 = {fmt(g.dark_ratio and 1)}</div>"
+    set head.innerHTML to hh
+    return 0
+
+define grand_row with label and val and note:
+    return f"<div class=\"g-row\"><span>{label}</span><b>{val}</b><em>{note}</em></div>"
+
+define to_text_num with n:
+    return "" + n
+
+# ---- Particle Census ----
+define draw_census:
+    set host to document.getElementById("census")
+    if not host:
+        return 0
+    set secs to sectors()
+    set html to ""
+    set i to 0
+    repeat while i < secs.length:
+        set s to get_list(secs and i)
+        set tag to "known"
+        set tagtxt to "observed"
+        if not s.known:
+            set tag to "pred"
+            set tagtxt to "predicted"
+        set html to html + f"<div class=\"sector {tag}\">"
+        set html to html + f"<div class=\"sector__p\">p = {s.prime}</div>"
+        set html to html + f"<h4>{s.name}</h4>"
+        set html to html + f"<p>{s.role}</p>"
+        set html to html + f"<div class=\"sector__nums\"><span>coupling <b>{s.coupling_num}/{s.coupling_den}</b></span><span>carriers <b>{s.carriers}</b></span><span class=\"pill {tag}\">{tagtxt}</span></div>"
+        set html to html + "</div>"
+        set i to i + 1
+    set host.innerHTML to html
+    return 0
+
+# ======================================================================
+# boot
+# ======================================================================
+
+define main:
+    set fp to document.getElementById("fold-p")
+    if fp:
+        document.getElementById("fold-run").addEventListener("click" and fold_ev)
+        document.getElementById("fold-q").addEventListener("input" and fold_ev)
+        document.getElementById("fold-p").addEventListener("input" and fold_ev)
+        draw_fold()
+    set gc to document.getElementById("grand-c")
+    if gc:
+        gc.addEventListener("input" and grand_ev)
+        draw_grand()
+    draw_census()
+    return 0
+
+define fold_ev with ev:
+    draw_fold()
+    return 0
+
+define grand_ev with ev:
+    draw_grand()
+    return 0

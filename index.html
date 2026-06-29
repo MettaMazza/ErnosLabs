@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ernos Labs — work you can use, not just read about</title>
+  <meta name="description" content="A language, a decentralized platform, a theory of everything, and a body of writing — all built by Maria Smith, all runnable in your browser.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5SuPC90ZXh0Pjwvc3ZnPg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <a href="ernosplain.html">ErnosPlain</a>
+        <a href="sftom.html">Fold Theory</a>
+        <a href="ernosdecent.html">ErnosDecent</a>
+        <a href="library.html">Library</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="section" style="padding-top:clamp(70px,12vw,140px)">
+    <div class="wrap">
+      <p class="eyebrow reveal">The work is on disk. It runs. Audit it.</p>
+      <h1 class="reveal" style="max-width:16ch">Work you can <span class="glow-text">use</span>, not just read about.</h1>
+      <p class="lead reveal mt-s">A programming language, a peer-to-peer platform that replaces internet
+        infrastructure, a single-axiom theory of everything, and a body of writing — built by
+        <strong style="color:var(--ink-0)">Maria Smith</strong>. Everything here is interactive: run it,
+        poke it, read it, in your browser.</p>
+      <div class="mt-m reveal" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn btn--primary" href="ernosplain.html">Try the language →</a>
+        <a class="btn btn--ghost" href="sftom.html">Explore the theory</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PILLARS -->
+  <section class="section" id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid grid--2">
+
+        <a class="card pillar reveal" href="ernosplain.html">
+          <div class="pillar__glyph">⌨︎</div>
+          <span class="card__tag">The language</span>
+          <h3>ErnosPlain</h3>
+          <p>A compiled, memory-safe language that reads like plain English — and is self-hosting.
+             Write code in the browser and run it on an interpreter that is <em>itself</em> written in ErnosPlain.</p>
+          <span class="go">Open the playground →</span>
+        </a>
+
+        <a class="card pillar reveal" href="sftom.html">
+          <div class="pillar__glyph">◐</div>
+          <span class="card__tag">The theory</span>
+          <h3>The Smithian Fold</h3>
+          <p>One axiom — the One — and one move: the fold. From it, the constants of nature fall out
+             with zero free parameters. Watch <code>1/α = 137.036</code> assemble itself.</p>
+          <span class="go">Explore the fold →</span>
+        </a>
+
+        <a class="card pillar reveal" href="ernosdecent.html">
+          <div class="pillar__glyph">⬡</div>
+          <span class="card__tag">The platform</span>
+          <h3>ErnosDecent</h3>
+          <p>One program that replaces internet infrastructure — identity, money, storage, messaging,
+             AI — owned by no one. Drive a live mock node, watch a mesh route and a cluster reach consensus.</p>
+          <span class="go">Run a node →</span>
+        </a>
+
+        <a class="card pillar reveal" href="library.html">
+          <div class="pillar__glyph">❦</div>
+          <span class="card__tag">The writing</span>
+          <h3>The Library</h3>
+          <p>The five-volume <em>Last Mind</em>, the novel <em>A Mind Is Born</em>, and the ErnosDecent
+             book — a full reader with search, chapters, and read-aloud. Hundreds of thousands of words.</p>
+          <span class="go">Enter the library →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH STRIP -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <div class="grid grid--3 mt-l">
+        <div class="reveal">
+          <p class="eyebrow">Built in the open</p>
+          <p>Every page on this site is written in <strong style="color:var(--ink-0)">ErnosPlain</strong> and
+             compiled to the browser by the Ernos compiler — the same toolchain the projects use.</p>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">No backend</p>
+          <p>Everything runs client-side. Nothing phones home, nothing is owned by a platform. Host it
+             anywhere static.</p>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Yours to check</p>
+          <p>Claims come with the working artifact behind them. Don't take it on faith — run it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div>
+        <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:36ch">A language, a platform, a theory, and a body of work — by Maria Smith.</p>
+      </div>
+      <div class="foot__cols">
+        <div class="foot__col">
+          <h4>Projects</h4>
+          <a href="ernosplain.html">ErnosPlain</a>
+          <a href="sftom.html">Fold Theory</a>
+          <a href="ernosdecent.html">ErnosDecent</a>
+          <a href="library.html">Library</a>
+        </div>
+        <div class="foot__col">
+          <h4>Principle</h4>
+          <a href="#work">Use, don't just read</a>
+          <a href="#work">Owned by no one</a>
+          <a href="#work">Check it yourself</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">
+      © <span id="year">2026</span> Maria Smith · Built in ErnosPlain
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

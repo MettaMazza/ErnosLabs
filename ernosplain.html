@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ErnosPlain — the language that reads like English</title>
+  <meta name="description" content="A compiled, memory-safe, self-hosting language with plain-English syntax. Write code and run it in your browser, on an interpreter written in ErnosPlain itself.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7ijKjvuI48L3RleHQ+PC9zdmc+">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <a href="ernosplain.html">ErnosPlain</a>
+        <a href="sftom.html">Fold Theory</a>
+        <a href="ernosdecent.html">ErnosDecent</a>
+        <a href="library.html">Library</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="section" style="padding-bottom:40px">
+    <div class="wrap">
+      <p class="eyebrow reveal">The language</p>
+      <h1 class="reveal">ErnosPlain</h1>
+      <p class="lead reveal mt-s">Code that reads like instructions, not cryptic symbols — yet compiles to
+        C and runs at native speed. Statically typed, memory-safe, and <strong style="color:var(--ink-0)">self-hosting</strong>:
+        its compiler is written in itself.</p>
+      <div class="grid grid--4 mt-l">
+        <div class="card reveal"><span class="card__tag">Syntax</span><h3>Plain English</h3><p><code>define add with a and b:</code> — no braces, no semicolons.</p></div>
+        <div class="card reveal"><span class="card__tag">Speed</span><h3>Compiles to C</h3><p>Emitted C, then <code>clang -O2</code>. No runtime tax.</p></div>
+        <div class="card reveal"><span class="card__tag">Safety</span><h3>Owned &amp; checked</h3><p>Type inference + a borrow checker catch errors before they run.</p></div>
+        <div class="card reveal"><span class="card__tag">Proof</span><h3>Self-hosting</h3><p>The compiler compiles itself. 51/51 conformance tests pass.</p></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PLAYGROUND -->
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow">Run it</p>
+      <h2>The playground</h2>
+      <p class="lead" style="margin-bottom:6px">Edit the code and press Run. This isn't a video — it's a real ErnosPlain
+        interpreter executing in your browser.</p>
+      <p style="color:var(--ink-2);font-size:.92rem;margin-bottom:28px">
+        And here's the twist: that interpreter is <em>itself written in ErnosPlain</em>, compiled to the browser by the
+        Ernos compiler. The language is running itself.</p>
+
+      <div class="pg">
+        <div class="pg__gallery" id="examples"></div>
+        <div class="pg__main">
+          <div class="pg__editor-wrap">
+            <div class="pg__label"><span>your program · .ep</span></div>
+            <textarea id="code" spellcheck="false" autocomplete="off"></textarea>
+            <div class="pg__bar" style="margin-top:12px">
+              <button class="btn btn--primary" id="run">▶ Run</button>
+              <span class="run-status" id="run-status"></span>
+            </div>
+          </div>
+          <div>
+            <div class="pg__label"><span>output</span></div>
+            <pre class="output" id="output"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYNTAX TOUR -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <h2 class="mt-l">A two-minute tour</h2>
+      <div class="grid grid--2 mt-m">
+        <div class="card reveal">
+          <span class="card__tag">Variables &amp; functions</span>
+          <pre style="margin-top:12px"><span class="tok-kw">define</span> <span class="tok-fn">greet</span> <span class="tok-kw">with</span> name <span class="tok-kw">returning</span> Str:
+    <span class="tok-kw">return</span> <span class="tok-str">f"Hello, {name}"</span>
+
+<span class="tok-kw">set</span> who <span class="tok-kw">to</span> <span class="tok-str">"world"</span>
+<span class="tok-kw">display</span> <span class="tok-fn">greet</span>(who)</pre>
+        </div>
+        <div class="card reveal">
+          <span class="card__tag">Choices &amp; loops</span>
+          <pre style="margin-top:12px"><span class="tok-kw">set</span> i <span class="tok-kw">to</span> <span class="tok-num">1</span>
+<span class="tok-kw">repeat while</span> i <span class="tok-kw">is less than</span> <span class="tok-num">5</span>:
+    <span class="tok-kw">if</span> i <span class="tok-op">%</span> <span class="tok-num">2</span> <span class="tok-kw">equals</span> <span class="tok-num">0</span>:
+        <span class="tok-kw">display</span> <span class="tok-str">"even"</span>
+    <span class="tok-kw">else</span>:
+        <span class="tok-kw">display</span> <span class="tok-str">"odd"</span>
+    <span class="tok-kw">set</span> i <span class="tok-kw">to</span> i <span class="tok-kw">plus</span> <span class="tok-num">1</span></pre>
+        </div>
+      </div>
+      <p style="color:var(--ink-2);font-size:.9rem;margin-top:20px">
+        The playground supports a procedural subset (variables, functions, recursion, conditionals, loops, lists,
+        strings, f-strings). The full language adds structures, choice/pattern-matching, traits, closures, a borrow
+        checker, 24 stdlib modules, and FFI — all compiled to native binaries.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><span class="mark"></span> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">ErnosPlain — a language you can read aloud.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="sftom.html">Fold Theory</a><a href="ernosdecent.html">ErnosDecent</a><a href="library.html">Library</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · This page is written in ErnosPlain</div>
+  </footer>
+
+  <script src="assets/js/interp.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/playground.js"></script>
+</body>
+</html>

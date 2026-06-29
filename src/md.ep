@@ -1,0 +1,225 @@
+# ErnosLabs — minimal Markdown renderer
+# Component: src/md.ep  (compiled to assets/js/md.js via build.sh)
+# Pure library (no main): exposes md_render(src) -> HTML string and
+# md_headings(src) -> array of {level, text, id} for building a table of contents.
+# Authored in ErnosPlain.
+
+define md_rx with pat and flags:
+    return Reflect.construct(window.RegExp and [pat, flags])
+
+define md_escape with s:
+    set s to s.replace(md_rx("&" and "g") and "&amp;")
+    set s to s.replace(md_rx("<" and "g") and "&lt;")
+    set s to s.replace(md_rx(">" and "g") and "&gt;")
+    return s
+
+# Inline span formatting: code, links, bold, italic. Escapes HTML first.
+define md_inline with s:
+    set s to md_escape(s)
+    set s to s.replace(md_rx("`([^`]+)`" and "g") and "<code>$1</code>")
+    set s to s.replace(md_rx("\\[([^\\]]+)\\]\\(([^)]+)\\)" and "g") and "<a href=\"$2\" target=\"_blank\" rel=\"noopener\">$1</a>")
+    set s to s.replace(md_rx("\\*\\*([^*]+)\\*\\*" and "g") and "<strong>$1</strong>")
+    set s to s.replace(md_rx("__([^_]+)__" and "g") and "<strong>$1</strong>")
+    set s to s.replace(md_rx("\\*([^*]+)\\*" and "g") and "<em>$1</em>")
+    return s
+
+# Count leading '#' to determine heading level (0 = not a heading).
+define md_heading_level with line:
+    set lvl to 0
+    repeat while lvl < line.length:
+        if line.charAt(lvl) equals "#":
+            set lvl to lvl + 1
+        else:
+            return lvl
+    return lvl
+
+# Turn a heading's text into a URL-safe slug for anchor ids.
+define md_slug with text:
+    set s to text.toLowerCase()
+    set s to s.replace(md_rx("[^a-z0-9 ]+" and "g") and "")
+    set s to s.trim()
+    set s to s.replace(md_rx(" +" and "g") and "-")
+    return s
+
+define md_is_hr with line:
+    set t to line.trim()
+    if t equals "---":
+        return true
+    if t equals "***":
+        return true
+    if t equals "___":
+        return true
+    return false
+
+# Block-level render. Returns an HTML string.
+define md_render with src:
+    set norm to src.replace(md_rx("\r" and "g") and "")
+    set lines to norm.split("\n")
+    set n to lines.length
+    set out to ""
+    set i to 0
+    set in_code to false
+    set code_buf to ""
+    set para to ""
+    set in_list to false
+    set list_tag to "ul"
+
+    repeat while i < n:
+        set line to get_list(lines and i)
+
+        # fenced code blocks
+        if line.trim().startsWith("```"):
+            if in_code:
+                set out to out + "<pre><code>" + md_escape(code_buf) + "</code></pre>"
+                set in_code to false
+                set code_buf to ""
+            else:
+                # flush any open paragraph/list first
+                if para != "":
+                    set out to out + "<p>" + md_inline(para) + "</p>"
+                    set para to ""
+                if in_list:
+                    set out to out + "</" + list_tag + ">"
+                    set in_list to false
+                set in_code to true
+            set i to i + 1
+        else:
+            if in_code:
+                set code_buf to code_buf + line + "\n"
+                set i to i + 1
+            else:
+                set trimmed to line.trim()
+                set hlvl to md_heading_level(line)
+
+                # blank line -> close paragraph / list
+                if trimmed equals "":
+                    if para != "":
+                        set out to out + "<p>" + md_inline(para) + "</p>"
+                        set para to ""
+                    if in_list:
+                        set out to out + "</" + list_tag + ">"
+                        set in_list to false
+                    set i to i + 1
+                else:
+                    if md_is_hr(line):
+                        if para != "":
+                            set out to out + "<p>" + md_inline(para) + "</p>"
+                            set para to ""
+                        set out to out + "<hr>"
+                        set i to i + 1
+                    else:
+                        if hlvl >= 1:
+                            if hlvl <= 6:
+                                if line.charAt(hlvl) equals " ":
+                                    if para != "":
+                                        set out to out + "<p>" + md_inline(para) + "</p>"
+                                        set para to ""
+                                    if in_list:
+                                        set out to out + "</" + list_tag + ">"
+                                        set in_list to false
+                                    set htext to line.slice(hlvl + 1).trim()
+                                    set hid to md_slug(htext)
+                                    set tag to f"h{hlvl}"
+                                    set out to out + f"<{tag} id=\"{hid}\">" + md_inline(htext) + f"</{tag}>"
+                                    set i to i + 1
+                                else:
+                                    set para to md_para_add(para and line)
+                                    set i to i + 1
+                            else:
+                                set para to md_para_add(para and line)
+                                set i to i + 1
+                        else:
+                            if trimmed.startsWith("> "):
+                                if para != "":
+                                    set out to out + "<p>" + md_inline(para) + "</p>"
+                                    set para to ""
+                                set out to out + "<blockquote>" + md_inline(trimmed.slice(2)) + "</blockquote>"
+                                set i to i + 1
+                            else:
+                                if md_is_list_item(trimmed):
+                                    if para != "":
+                                        set out to out + "<p>" + md_inline(para) + "</p>"
+                                        set para to ""
+                                    set ordered to md_is_ordered(trimmed)
+                                    set want to "ul"
+                                    if ordered:
+                                        set want to "ol"
+                                    if in_list:
+                                        if list_tag != want:
+                                            set out to out + "</" + list_tag + ">"
+                                            set out to out + "<" + want + ">"
+                                            set list_tag to want
+                                    else:
+                                        set out to out + "<" + want + ">"
+                                        set list_tag to want
+                                        set in_list to true
+                                    set out to out + "<li>" + md_inline(md_list_text(trimmed)) + "</li>"
+                                    set i to i + 1
+                                else:
+                                    set para to md_para_add(para and line)
+                                    set i to i + 1
+
+    # final flush
+    if para != "":
+        set out to out + "<p>" + md_inline(para) + "</p>"
+    if in_list:
+        set out to out + "</" + list_tag + ">"
+    if in_code:
+        set out to out + "<pre><code>" + md_escape(code_buf) + "</code></pre>"
+    return out
+
+define md_para_add with para and line:
+    if para equals "":
+        return line.trim()
+    return para + " " + line.trim()
+
+define md_is_list_item with t:
+    if t.startsWith("- "):
+        return true
+    if t.startsWith("* "):
+        return true
+    if t.startsWith("+ "):
+        return true
+    return md_is_ordered(t)
+
+# "12. text" -> ordered list item
+define md_is_ordered with t:
+    set m to t.match(md_rx("^[0-9]+\\. " and ""))
+    if m:
+        return true
+    return false
+
+define md_list_text with t:
+    if md_is_ordered(t):
+        return t.replace(md_rx("^[0-9]+\\. " and "") and "")
+    return t.slice(2)
+
+# Extract headings for a table of contents.
+define md_headings with src:
+    set norm to src.replace(md_rx("\r" and "g") and "")
+    set lines to norm.split("\n")
+    set n to lines.length
+    set heads to []
+    set i to 0
+    set in_code to false
+    repeat while i < n:
+        set line to get_list(lines and i)
+        if line.trim().startsWith("```"):
+            if in_code:
+                set in_code to false
+            else:
+                set in_code to true
+        else:
+            if not in_code:
+                set lvl to md_heading_level(line)
+                if lvl >= 1:
+                    if lvl <= 4:
+                        if line.charAt(lvl) equals " ":
+                            set htext to line.slice(lvl + 1).trim()
+                            set h to JSON.parse("{}")
+                            set h.level to lvl
+                            set h.text to htext
+                            set h.id to md_slug(htext)
+                            heads.push(h)
+        set i to i + 1
+    return heads

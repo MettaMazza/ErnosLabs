@@ -1,0 +1,94 @@
+# ErnosLabs — ErnosPlain playground UI
+# Component: src/playground.ep  (compiled to assets/js/playground.js)
+# Depends on interp.js (run_safely) loaded before it.
+# Wires the editor, run button, output console, and example gallery.
+
+define ex with name and blurb and code:
+    set e to JSON.parse("{}")
+    set e.name to name
+    set e.blurb to blurb
+    set e.code to code
+    return e
+
+define examples:
+    set list to []
+    list.push(ex("Hello" and "Plain-English operators, conditionals." and "define main:\n    set a to 10\n    set b to 20\n    set result to a plus b multiplied by 2\n    display \"The result is:\"\n    display result\n    if result is greater than 30:\n        display \"...and it is greater than thirty.\"\n    else:\n        display \"...and it is small.\"\n    return 0"))
+    list.push(ex("Factorial" and "Recursion with a returning value." and "define factorial with n:\n    if n is less than 2:\n        return 1\n    return n times factorial(n minus 1)\n\ndefine main:\n    display \"5! =\"\n    display factorial(5)\n    return 0"))
+    list.push(ex("Fibonacci" and "Recursion + a counting loop." and "define fib with n:\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\ndefine main:\n    set i to 0\n    repeat while i <= 12:\n        display fib(i)\n        set i to i + 1\n    return 0"))
+    list.push(ex("FizzBuzz" and "else-if chains and modulo." and "define main:\n    set i to 1\n    repeat while i <= 20:\n        if i % 15 == 0:\n            display \"FizzBuzz\"\n        else if i % 3 == 0:\n            display \"Fizz\"\n        else if i % 5 == 0:\n            display \"Buzz\"\n        else:\n            display i\n        set i to i + 1\n    return 0"))
+    list.push(ex("Primes" and "Nested loops, booleans." and "define is_prime with n:\n    if n < 2:\n        return false\n    set d to 2\n    repeat while d * d <= n:\n        if n % d == 0:\n            return false\n        set d to d + 1\n    return true\n\ndefine main:\n    display \"primes up to 40:\"\n    set i to 2\n    repeat while i <= 40:\n        if is_prime(i):\n            display i\n        set i to i + 1\n    return 0"))
+    list.push(ex("Lists" and "Lists, for-each, f-strings." and "define main:\n    set nums to [3, 1, 4, 1, 5, 9, 2, 6]\n    set total to 0\n    set biggest to 0\n    for each x in nums:\n        set total to total + x\n        if x is greater than biggest:\n            set biggest to x\n    display f\"count: {length_list(nums)}\"\n    display f\"sum:   {total}\"\n    display f\"max:   {biggest}\"\n    return 0"))
+    return list
+
+define render_gallery:
+    set host to document.getElementById("examples")
+    set exs to examples()
+    set i to 0
+    repeat while i < exs.length:
+        set e to get_list(exs and i)
+        set btn to document.createElement("button")
+        btn.setAttribute("class" and "ex-btn")
+        btn.setAttribute("data-idx" and to_str(i))
+        set btn.innerHTML to f"<strong>{e.name}</strong><span>{e.blurb}</span>"
+        btn.addEventListener("click" and pick_example)
+        host.appendChild(btn)
+        set i to i + 1
+    return 0
+
+define to_str with n:
+    return "" + n
+
+define pick_example with ev:
+    set idx to Number(ev.currentTarget.getAttribute("data-idx"))
+    set exs to examples()
+    set e to get_list(exs and idx)
+    set ta to document.getElementById("code")
+    set ta.value to e.code
+    mark_active(ev.currentTarget)
+    run_code()
+    return 0
+
+define mark_active with el:
+    set all to document.querySelectorAll(".ex-btn")
+    for each b in all:
+        b.classList.remove("active")
+    el.classList.add("active")
+    return 0
+
+define run_code:
+    set ta to document.getElementById("code")
+    set src to ta.value
+    set out to document.getElementById("output")
+    set status to document.getElementById("run-status")
+    set r to run_safely(src)
+    if r.ok:
+        out.classList.remove("err")
+        if r.output equals "":
+            set out.textContent to "(no output — did you call display?)"
+        else:
+            set out.textContent to r.output
+        set status.textContent to "ran clean"
+        status.classList.remove("err")
+    else:
+        out.classList.add("err")
+        set out.textContent to "✗ " + r.error
+        set status.textContent to "error"
+        status.classList.add("err")
+    return 0
+
+define main:
+    render_gallery()
+    document.getElementById("run").addEventListener("click" and run_code_ev)
+    # load the first example and run it
+    set exs to examples()
+    set ta to document.getElementById("code")
+    set ta.value to get_list(exs and 0).code
+    set first to document.querySelector(".ex-btn")
+    if first:
+        first.classList.add("active")
+    run_code()
+    return 0
+
+define run_code_ev with ev:
+    run_code()
+    return 0
