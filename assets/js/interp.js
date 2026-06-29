@@ -39,7 +39,7 @@ function is_alnum(c) {
 }
 
 function lex_line(line, toks) {
-    let n, d, j, e, i, res, c, buf;
+    let c, j, buf, res, d, e, n, i;
     i = 0;
     n = line.length;
     while ((i < n)) {
@@ -97,7 +97,7 @@ function lex_after_string(line, toks, buf, j, dummy) {
 }
 
 function lex_fstring(line, toks, start, n) {
-    let j, e, d, buf;
+    let e, d, j, buf;
     j = start;
     buf = "";
     while ((j < n)) {
@@ -123,7 +123,7 @@ function lex_fstring(line, toks, start, n) {
 }
 
 function lex_number(line, toks, start, n) {
-    let buf, j, seen_dot, d;
+    let buf, seen_dot, d, j;
     j = start;
     buf = "";
     seen_dot = false;
@@ -150,7 +150,7 @@ function lex_number(line, toks, start, n) {
 }
 
 function lex_ident(line, toks, start, n) {
-    let d, buf, j;
+    let buf, j, d;
     j = start;
     buf = "";
     while ((j < n)) {
@@ -270,7 +270,7 @@ function word_op1(a) {
 }
 
 function match_phrase(toks, i) {
-    let v2, v1, r, v0, v3, v4, v5;
+    let v5, v3, r, v2, v1, v0, v4;
     r = JSON.parse("{}");
     r.op = "";
     r.len = 0;
@@ -346,7 +346,7 @@ function phrase_val(toks, i) {
 }
 
 function collapse_ops(toks) {
-    let ph, n, nxt, w2, out, w1, i, t;
+    let out, n, t, ph, i, w2, w1, nxt;
     out = [];
     i = 0;
     n = toks.length;
@@ -383,7 +383,7 @@ function collapse_ops(toks) {
 }
 
 function tokenize(src) {
-    let line, ln, raw, norm, trimmed, lines, i, toks, indent;
+    let lines, raw, line, trimmed, ln, norm, i, toks, indent;
     norm = src.replace(Reflect.construct(window.RegExp, ["\r", "g"]), "");
     raw = norm.split("\n");
     lines = [];
@@ -413,7 +413,7 @@ function tokenize(src) {
 }
 
 function count_indent(line) {
-    let i, c, spaces;
+    let i, spaces, c;
     i = 0;
     spaces = 0;
     while ((i < line.length)) {
@@ -446,7 +446,7 @@ function cur_line(P) {
 }
 
 function parse_block(P, indent) {
-    let ln, stmts, stmt;
+    let stmt, stmts, ln;
     stmts = [];
     while (true) {
         ln = cur_line(P);
@@ -468,7 +468,7 @@ function parse_block(P, indent) {
 }
 
 function parse_stmt(P, indent) {
-    let toks, nd, ex, head, kw, ln, ts;
+    let head, kw, ex, nd, toks, ln, ts;
     ln = cur_line(P);
     toks = ln.toks;
     head = toks[0];
@@ -510,7 +510,7 @@ function advance_ret(P, nd) {
 }
 
 function parse_set(P, ln) {
-    let ex, nd, field, rest, toks, is_field, t, target_name, ts, i;
+    let ts, ex, field, target_name, toks, rest, nd, t, is_field, i;
     toks = ln.toks;
     i = 1;
     target_name = toks[i].val;
@@ -550,7 +550,7 @@ function parse_set(P, ln) {
 }
 
 function parse_display(P, ln) {
-    let rest, ex, ts, nd;
+    let ts, nd, rest, ex;
     rest = slice_toks(ln.toks, 1);
     ts = new_stream(rest);
     ex = parse_expr(ts);
@@ -561,7 +561,7 @@ function parse_display(P, ln) {
 }
 
 function parse_return(P, ln) {
-    let ts, rest, nd;
+    let nd, ts, rest;
     rest = slice_toks(ln.toks, 1);
     nd = node("return");
     if ((rest.length === 0)) {
@@ -575,7 +575,7 @@ function parse_return(P, ln) {
 }
 
 function parse_if(P, indent) {
-    let second, econd, ts, cond_toks, nx, ebody, cond, pair, h, ln, ct, nd, ts2, toks, body;
+    let toks, nd, body, nx, ln, ts, second, ts2, ebody, cond, h, pair, ct, cond_toks, econd;
     ln = cur_line(P);
     toks = ln.toks;
     cond_toks = cond_slice(toks, 1);
@@ -622,7 +622,7 @@ function parse_if(P, indent) {
 }
 
 function parse_while(P, indent, ln, skip) {
-    let cond_toks, ts, nd, cond, body;
+    let nd, ts, cond_toks, cond, body;
     cond_toks = cond_slice(ln.toks, skip);
     ts = new_stream(cond_toks);
     cond = parse_expr(ts);
@@ -635,7 +635,7 @@ function parse_while(P, indent, ln, skip) {
 }
 
 function parse_for(P, indent, ln) {
-    let toks, i, name, t;
+    let name, t, i, toks;
     toks = ln.toks;
     name = toks[2].val;
     i = 3;
@@ -654,7 +654,7 @@ function parse_for(P, indent, ln) {
 }
 
 function parse_for_tail(P, indent, toks, name, i) {
-    let iter, nd, rest, ts, body;
+    let iter, ts, body, nd, rest;
     rest = cond_slice(toks, i);
     ts = new_stream(rest);
     iter = parse_expr(ts);
@@ -668,7 +668,7 @@ function parse_for_tail(P, indent, toks, name, i) {
 }
 
 function parse_define(P, indent, ln) {
-    let toks, i, params, name, t, body, nd;
+    let body, nd, toks, i, name, params, t;
     toks = ln.toks;
     name = toks[1].val;
     params = [];
@@ -718,7 +718,7 @@ function read_params(toks, i, params) {
 }
 
 function slice_toks(toks, frm) {
-    let out, i;
+    let i, out;
     out = [];
     i = frm;
     while ((i < toks.length)) {
@@ -729,7 +729,7 @@ function slice_toks(toks, frm) {
 }
 
 function cond_slice(toks, frm) {
-    let out, i, t;
+    let t, i, out;
     out = [];
     i = frm;
     while ((i < toks.length)) {
@@ -770,7 +770,7 @@ function parse_expr(s) {
 }
 
 function parse_or(s) {
-    let left, right, t;
+    let left, t, right;
     left = parse_and(s);
     while (true) {
         t = st_peek(s);
@@ -793,7 +793,7 @@ function parse_or(s) {
 }
 
 function parse_and(s) {
-    let t, left, right;
+    let left, t, right;
     left = parse_cmp(s);
     while (true) {
         t = st_peek(s);
@@ -816,7 +816,7 @@ function parse_and(s) {
 }
 
 function parse_cmp(s) {
-    let right, left, t;
+    let left, right, t;
     left = parse_add(s);
     t = st_peek(s);
     if (!t) {
@@ -880,7 +880,7 @@ function parse_add(s) {
 }
 
 function parse_mul(s) {
-    let t, left;
+    let left, t;
     left = parse_unary(s);
     while (true) {
         t = st_peek(s);
@@ -932,7 +932,7 @@ function parse_unary(s) {
 }
 
 function parse_postfix(s) {
-    let args, t, base, nd;
+    let args, base, t, nd;
     base = parse_primary(s);
     while (true) {
         t = st_peek(s);
@@ -954,7 +954,7 @@ function parse_postfix(s) {
 }
 
 function parse_args(s) {
-    let args, t;
+    let t, args;
     args = [];
     t = st_peek(s);
     if (t) {
@@ -991,7 +991,7 @@ function parse_args(s) {
 }
 
 function parse_primary(s) {
-    let t, nd, inner;
+    let inner, t, nd;
     t = st_next(s);
     if (!t) {
         return node("nil");
@@ -1038,7 +1038,7 @@ function parse_primary(s) {
 }
 
 function parse_list(s) {
-    let nd, t, items;
+    let t, items, nd;
     items = [];
     t = st_peek(s);
     if (t) {
@@ -1142,7 +1142,7 @@ function make_return(val) {
 }
 
 function exec_block(stmts, e) {
-    let st, i, sig;
+    let sig, st, i;
     i = 0;
     while ((i < stmts.length)) {
         if (window.epErr) {
@@ -1159,7 +1159,7 @@ function exec_block(stmts, e) {
 }
 
 function exec_stmt(st, e) {
-    let obj, k, fn, v;
+    let fn, obj, k, v;
     k = st.kind;
     if ((k === "set")) {
         v = eval_expr(st.expr, e);
@@ -1208,7 +1208,7 @@ function exec_stmt(st, e) {
 }
 
 function exec_if(st, e) {
-    let i, pair;
+    let pair, i;
     if (truthy(eval_expr(st.cond, e))) {
         return exec_block(st.body, env_new(e));
     }
@@ -1243,7 +1243,7 @@ function exec_while(st, e) {
 }
 
 function exec_foreach(st, e) {
-    let seq, sig, i, inner;
+    let sig, seq, i, inner;
     seq = eval_expr(st.iter, e);
     i = 0;
     while ((i < seq.length)) {
@@ -1259,7 +1259,7 @@ function exec_foreach(st, e) {
 }
 
 function eval_expr(x, e) {
-    let k, arr, i;
+    let arr, i, k;
     k = x.kind;
     if ((k === "num")) {
         return x.val;
@@ -1307,7 +1307,7 @@ function eval_expr(x, e) {
 }
 
 function eval_bin(x, e) {
-    let op, b, a, l;
+    let a, op, l, b;
     op = x.op;
     if ((op === "&&")) {
         if (truthy(eval_expr(x.left, e))) {
@@ -1385,7 +1385,7 @@ function typeof_str(v) {
 }
 
 function eval_call(x, e) {
-    let callee, args, i, fn, name, b, fnv;
+    let callee, name, fnv, args, i, b, fn;
     callee = x.callee;
     args = [];
     i = 0;
@@ -1407,7 +1407,7 @@ function eval_call(x, e) {
 }
 
 function call_fn(fn, args) {
-    let local, i, pname, sig;
+    let i, pname, local, sig;
     if (!fn.is_fn) {
         throw_err("attempt to call a non-function");
     }
@@ -1426,7 +1426,7 @@ function call_fn(fn, args) {
 }
 
 function eval_fstring(raw, e) {
-    let inner, i, n, out, c, d, j;
+    let j, inner, out, d, i, n, c;
     out = "";
     i = 0;
     n = raw.length;
@@ -1574,34 +1574,14 @@ function run_thunk() {
 }
 
 function run_safely(src) {
-    let err_r, old_handler, result;
+    let wrapper;
     window.epSrc = src;
-    window.epRunErr = false;
-    old_handler = window.onerror;
-    window.onerror = run_err_handler;
-    result = ep_run(src);
-    window.onerror = old_handler;
-    if (window.epRunErr) {
-        err_r = JSON.parse("{}");
-        err_r.ok = false;
-        err_r.output = "";
-        err_r.error = window.epRunErr;
-        return err_r;
-    }
-    return result;
-}
-
-function run_err_handler(msg, url, line, col, err) {
-    if (err) {
-        window.epRunErr = (err.message || msg);
-    } else {
-        window.epRunErr = msg;
-    }
-    return true;
+    wrapper = Reflect.construct(window.Function, ["fn", "try{return fn();}catch(e){return {ok:false,output:'',error:String((e&&e.message)||e)};}"]);
+    return wrapper(run_thunk);
 }
 
 function ep_run(src) {
-    let lines, genv, ran_main, program, P, i, fn, st, res;
+    let genv, program, lines, fn, res, st, P, ran_main, i;
     res = JSON.parse("{}");
     window.epOut = [];
     window.epErr = false;

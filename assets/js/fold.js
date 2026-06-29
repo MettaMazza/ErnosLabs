@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let p, bits, i, orbit;
+    let orbit, i, bits, p;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -59,7 +59,7 @@ function fold_bits(p0, q) {
 }
 
 function depth_for(x) {
-    let d, v;
+    let v, d;
     d = 0;
     v = 1;
     while ((v < x)) {
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_up, d_down, cov, g;
+    let d_up, cov, g, d_down;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let x, bits, info, cy, ang, rad, g, orbit, seq, p, q, rq, val, y, html, ctx, dpr, n, canvas, rp, size, cx, i;
+    let canvas, cx, x, html, ang, size, rad, bits, cy, orbit, dpr, rq, seq, q, p, g, n, i, info, rp, ctx, val, y;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let i, out;
+    let out, i;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let c, g, measured, match, host, html, clbl, diff, head, hh;
+    let measured, match, host, diff, clbl, c, html, head, g, hh;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let tagtxt, i, tag, html, s, secs, host;
+    let s, secs, host, tagtxt, tag, i, html;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -277,109 +277,6 @@ function draw_census() {
     return 0;
 }
 
-function draw_leptons() {
-    let pred_tau_e, html, meas_tau_e, agree_mu, pred_mu_e, agree_tau, meas_mu_e, host;
-    host = document.getElementById("leptons");
-    if (!host) {
-        return 0;
-    }
-    pred_mu_e = 206.768;
-    meas_mu_e = 206.768;
-    pred_tau_e = 3477;
-    meas_tau_e = 3477.2;
-    agree_mu = (100 * (1 - (Math.abs((pred_mu_e - meas_mu_e)) / meas_mu_e)));
-    agree_tau = (100 * (1 - (Math.abs((pred_tau_e - meas_tau_e)) / meas_tau_e)));
-    html = "";
-    html = (html + "<div class=\"lepton-grid\">");
-    html = (html + "<div class=\"lepton-row\">");
-    html = (html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">μ / e</span><span class=\"lepton-name\">muon-to-electron</span></div>");
-    html = (html + (("<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">" + String(fmt(pred_mu_e, 3))) + "</b></div>"));
-    html = (html + (("<div class=\"fold-stat\"><span>measured</span><b>" + String(fmt(meas_mu_e, 3))) + "</b></div>"));
-    html = (html + (("<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">" + String(fmt(agree_mu, 4))) + "%</b></div></div>"));
-    html = (html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:100%\"></div></div>");
-    html = (html + "</div>");
-    html = (html + "<div class=\"lepton-row\">");
-    html = (html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">τ / e</span><span class=\"lepton-name\">tau-to-electron</span></div>");
-    html = (html + (("<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">" + String(fmt(pred_tau_e, 1))) + "</b></div>"));
-    html = (html + (("<div class=\"fold-stat\"><span>measured</span><b>" + String(fmt(meas_tau_e, 1))) + "</b></div>"));
-    html = (html + (("<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">" + String(fmt(agree_tau, 3))) + "%</b></div></div>"));
-    html = (html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:99.994%\"></div></div>");
-    html = (html + "</div>");
-    html = (html + "<div class=\"lepton-row\">");
-    html = (html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">Ω<sub>d</sub>/Ω<sub>b</sub></span><span class=\"lepton-name\">dark-to-baryon ratio</span></div>");
-    html = (html + "<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">27/5 = 5.400</b></div>");
-    html = (html + "<div class=\"fold-stat\"><span>measured</span><b>5.36 ± 0.05</b></div>");
-    html = (html + "<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">within 1σ</b></div></div>");
-    html = (html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:99.3%\"></div></div>");
-    html = (html + "</div>");
-    html = (html + "</div>");
-    host.innerHTML = html;
-    return 0;
-}
-
-function draw_element137() {
-    let host, html;
-    host = document.getElementById("element137");
-    if (!host) {
-        return 0;
-    }
-    html = "";
-    html = (html + "<div class=\"e137-wrap\">");
-    html = (html + "<div class=\"e137-text\">");
-    html = (html + "<div class=\"fold-stat\"><span>Bohr velocity</span><b>v = Z · α · c</b></div>");
-    html = (html + "<div class=\"fold-stat\"><span>speed of light exceeded at</span><b class=\"glow-text\">Z = ⌊1/α⌋ = 137</b></div>");
-    html = (html + "<div class=\"fold-stat\"><span>1/α (measured)</span><b>137.035999…</b></div>");
-    html = (html + "<div class=\"fold-stat\"><span>1/α (fold theory)</span><b class=\"glow-text\">137.0360</b></div>");
-    html = (html + "</div>");
-    html = (html + "<div class=\"e137-bar\">");
-    html = (html + "<div class=\"e137-scale\">");
-    html = (html + "<div class=\"e137-track\"></div>");
-    html = (html + "<div class=\"e137-safe\" style=\"width:91.3%\"></div>");
-    html = (html + "<div class=\"e137-danger\" style=\"left:91.3%;width:8.7%\"></div>");
-    html = (html + "<div class=\"e137-marker\" style=\"left:91.3%\"><div class=\"e137-marker-line\"></div><div class=\"e137-marker-label\">Z = 137</div></div>");
-    html = (html + "</div>");
-    html = (html + "<div class=\"e137-labels\">");
-    html = (html + "<span>Z = 1<br><em>Hydrogen</em></span>");
-    html = (html + "<span style=\"left:17.3%\">Z = 26<br><em>Iron</em></span>");
-    html = (html + "<span style=\"left:52.7%\">Z = 79<br><em>Gold</em></span>");
-    html = (html + "<span style=\"left:78%\">Z = 118<br><em>Oganesson</em></span>");
-    html = (html + "<span style=\"left:91.3%\" class=\"e137-cutoff-label\">Z = 137<br><em>Feynmanium</em></span>");
-    html = (html + "<span style=\"left:100%\">Z = 150</span>");
-    html = (html + "</div>");
-    html = (html + "</div>");
-    html = (html + "<p class=\"e137-caption\">At Z = 137 the 1s electron reaches v = c. Beyond this wall no stable atom can exist — the periodic table is finite, and its boundary is set by the same constant the fold derives.</p>");
-    html = (html + "</div>");
-    host.innerHTML = html;
-    return 0;
-}
-
-function orbit_showcase() {
-    window.showcaseQueue = [7, 31, 127];
-    window.showcaseIdx = 0;
-    showcase_next();
-    return 0;
-}
-
-function showcase_next() {
-    let queue, qe, idx, pe, q_val;
-    idx = window.showcaseIdx;
-    queue = window.showcaseQueue;
-    if ((idx >= queue.length)) {
-        return 0;
-    }
-    q_val = queue[idx];
-    qe = document.getElementById("fold-q");
-    pe = document.getElementById("fold-p");
-    qe.value = q_val;
-    pe.value = 1;
-    draw_fold();
-    window.showcaseIdx = (idx + 1);
-    if ((window.showcaseIdx < queue.length)) {
-        window.setTimeout(showcase_next, 2200);
-    }
-    return 0;
-}
-
 function main() {
     let gc, fp;
     fp = document.getElementById("fold-p");
@@ -388,7 +285,6 @@ function main() {
         document.getElementById("fold-q").addEventListener("input", fold_ev);
         document.getElementById("fold-p").addEventListener("input", fold_ev);
         draw_fold();
-        orbit_showcase();
     }
     gc = document.getElementById("grand-c");
     if (gc) {
@@ -396,8 +292,6 @@ function main() {
         draw_grand();
     }
     draw_census();
-    draw_leptons();
-    draw_element137();
     return 0;
 }
 
