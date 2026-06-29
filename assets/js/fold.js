@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let guard, p, orbit;
+    let guard, orbit, p;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let p, bits, i, orbit;
+    let orbit, bits, p, i;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -59,7 +59,7 @@ function fold_bits(p0, q) {
 }
 
 function depth_for(x) {
-    let d, v;
+    let v, d;
     d = 0;
     v = 1;
     while ((v < x)) {
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_up, d_down, cov, g;
+    let d_up, cov, d_down, g;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let x, bits, info, cy, ang, rad, g, orbit, seq, p, q, rq, val, y, html, ctx, dpr, n, canvas, rp, size, cx, i;
+    let dpr, rp, orbit, ctx, rq, bits, i, val, ang, x, info, q, cx, cy, seq, g, canvas, size, p, rad, n, html, y;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let i, out;
+    let out, i;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let c, g, measured, match, host, html, clbl, diff, head, hh;
+    let match, head, html, diff, hh, host, g, clbl, measured, c;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let tagtxt, i, tag, html, s, secs, host;
+    let s, tag, host, secs, html, i, tagtxt;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let pred_tau_e, html, meas_tau_e, agree_mu, pred_mu_e, agree_tau, meas_mu_e, host;
+    let html, host, pred_mu_e, agree_tau, pred_tau_e, meas_tau_e, agree_mu, meas_mu_e;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -361,7 +361,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let queue, qe, idx, pe, q_val;
+    let q_val, pe, qe, idx, queue;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -381,7 +381,7 @@ function showcase_next() {
 }
 
 function main() {
-    let gc, fp;
+    let fp, gc;
     fp = document.getElementById("fold-p");
     if (fp) {
         document.getElementById("fold-run").addEventListener("click", fold_ev);

@@ -63,6 +63,13 @@
   async function speak(text, voice) {
     stop(); // stop any current playback
 
+    // Create the AudioContext NOW, synchronously inside the user's click, so the
+    // browser permits playback. Created later (after the model await) it starts
+    // "suspended" and produces no sound — the usual cause of silent TTS.
+    try {
+      currentAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    } catch (e) { currentAudioCtx = null; }
+
     const tts = await loadModel();
 
     if (!tts) {
@@ -75,7 +82,13 @@
     setStatus("speaking", "Speaking…");
 
     try {
-      currentAudioCtx = new AudioContext();
+      // Resume in case the context was suspended while the model loaded.
+      if (currentAudioCtx && currentAudioCtx.state === "suspended") {
+        try { await currentAudioCtx.resume(); } catch (e) {}
+      }
+      if (!currentAudioCtx) {
+        try { currentAudioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {}
+      }
       const selectedVoice = voice || DEFAULT_VOICE;
 
       // For long texts, use streaming if available
@@ -147,6 +160,7 @@
         decodeAndPlay(audioData, resolve, reject);
       } else if (audioData.buffer) {
         // Float32Array or similar
+        if (currentAudioCtx.state === "suspended") { currentAudioCtx.resume(); }
         const buffer = currentAudioCtx.createBuffer(1, audioData.length, 24000);
         buffer.getChannelData(0).set(audioData);
         const source = currentAudioCtx.createBufferSource();
@@ -166,6 +180,7 @@
       arrayBuffer,
       (buffer) => {
         if (abortController.signal.aborted) { resolve(); return; }
+        if (currentAudioCtx.state === "suspended") { currentAudioCtx.resume(); }
         const source = currentAudioCtx.createBufferSource();
         source.buffer = buffer;
         source.connect(currentAudioCtx.destination);
