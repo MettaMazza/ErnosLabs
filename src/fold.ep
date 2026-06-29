@@ -373,6 +373,185 @@ define showcase_next:
 # boot
 # ======================================================================
 
+# ======================================================================
+# The universal solver — the same retrograde fold, off chess.
+# Each game solved live and checked against its own closed-form oracle.
+# ======================================================================
+
+define g_xor with a and b:
+    set result to 0
+    set place to 1
+    repeat while a > 0 || b > 0:
+        if (a % 2) != (b % 2):
+            set result to result + place
+        set a to Math.floor(a / 2)
+        set b to Math.floor(b / 2)
+        set place to place * 2
+    return result
+
+define g_setkv with obj and k and v:
+    set fn to get_list(Reflect and "set")
+    fn.call(Reflect and obj and k and v)
+    return 0
+
+define clamp_heap with x:
+    if x < 0:
+        return 0
+    if x > 9:
+        return 9
+    return x
+
+# Subtraction game: remove 1, 2 or 3; last to move wins. win[i] = mover wins.
+define sub_solve with n:
+    set win to []
+    set i to 0
+    repeat while i <= n:
+        set w to false
+        set m to 1
+        repeat while m <= 3:
+            if m <= i:
+                if not get_list(win and i - m):
+                    set w to true
+            set m to m + 1
+        win.push(w)
+        set i to i + 1
+    return win
+
+define draw_sub:
+    set host to document.getElementById("sub-out")
+    if not host:
+        return 0
+    set n to Math.round(Number(document.getElementById("sub-n").value))
+    if n < 0:
+        set n to 0
+    if n > 60:
+        set n to 60
+    set win to sub_solve(n)
+    set w to get_list(win and n)
+    set movetxt to "none — this is a losing position"
+    if w:
+        set m to 1
+        repeat while m <= 3:
+            if m <= n:
+                if not get_list(win and n - m):
+                    set movetxt to f"take {m}, leaving {n - m}"
+            set m to m + 1
+    set disagree to 0
+    set i to 0
+    repeat while i <= n:
+        set oloss to (i % 4) equals 0
+        set mloss to not get_list(win and i)
+        if oloss != mloss:
+            set disagree to disagree + 1
+        set i to i + 1
+    set strip to ""
+    set i to 0
+    repeat while i <= n:
+        set cls to "g-n"
+        if not get_list(win and i):
+            set cls to "g-p"
+        set strip to strip + f"<span class=\"g-cell {cls}\">{i}</span>"
+        set i to i + 1
+    set verdict to "WIN for the player to move"
+    set vcls to "g-win"
+    if not w:
+        set verdict to "LOSS for the player to move"
+        set vcls to "g-loss"
+    set html to f"<div class=\"g-verdict {vcls}\">n = {n} — {verdict}</div>"
+    set html to html + f"<div class=\"g-move\">best move: <b>{movetxt}</b></div>"
+    set html to html + f"<div class=\"g-strip\">{strip}</div>"
+    set html to html + f"<div class=\"g-oracle\">retrograde fold vs oracle (loss ⟺ n mod 4 = 0): <b>{n + 1}</b> positions solved, <b class=\"g-zero\">{disagree}</b> disagreements</div>"
+    set host.innerHTML to html
+    return 0
+
+# Nim: remove any amount from one of three heaps; last to move wins.
+define nim_key with a and b and c:
+    return f"{a}_{b}_{c}"
+
+define nim_win with a and b and c and memo:
+    set k to nim_key(a and b and c)
+    set cached to get_list(memo and k)
+    if cached:
+        return cached equals 2
+    set result to false
+    set na to 0
+    repeat while na < a:
+        if not nim_win(na and b and c and memo):
+            set result to true
+        set na to na + 1
+    set nb to 0
+    repeat while nb < b:
+        if not nim_win(a and nb and c and memo):
+            set result to true
+        set nb to nb + 1
+    set nc to 0
+    repeat while nc < c:
+        if not nim_win(a and b and nc and memo):
+            set result to true
+        set nc to nc + 1
+    if result:
+        g_setkv(memo and k and 2)
+    else:
+        g_setkv(memo and k and 1)
+    return result
+
+define draw_nim:
+    set host to document.getElementById("nim-out")
+    if not host:
+        return 0
+    set a to clamp_heap(Math.round(Number(document.getElementById("nim-a").value)))
+    set b to clamp_heap(Math.round(Number(document.getElementById("nim-b").value)))
+    set c to clamp_heap(Math.round(Number(document.getElementById("nim-c").value)))
+    set nimsum to g_xor(g_xor(a and b) and c)
+    set w to nimsum != 0
+    set movetxt to "none — this is a losing position"
+    if w:
+        set ta to g_xor(a and nimsum)
+        set tb to g_xor(b and nimsum)
+        set tc to g_xor(c and nimsum)
+        if ta < a:
+            set movetxt to f"heap A: {a} → {ta}"
+        else:
+            if tb < b:
+                set movetxt to f"heap B: {b} → {tb}"
+            else:
+                set movetxt to f"heap C: {c} → {tc}"
+    set memo to JSON.parse("{}")
+    set disagree to 0
+    set states to 0
+    set i to 0
+    repeat while i <= 6:
+        set j to 0
+        repeat while j <= 6:
+            set kk to 0
+            repeat while kk <= 6:
+                set rg to nim_win(i and j and kk and memo)
+                set orc to g_xor(g_xor(i and j) and kk) != 0
+                if rg != orc:
+                    set disagree to disagree + 1
+                set states to states + 1
+                set kk to kk + 1
+            set j to j + 1
+        set i to i + 1
+    set verdict to "WIN for the player to move"
+    set vcls to "g-win"
+    if not w:
+        set verdict to "LOSS for the player to move"
+        set vcls to "g-loss"
+    set html to f"<div class=\"g-verdict {vcls}\">heaps ({a}, {b}, {c}) — {verdict}</div>"
+    set html to html + f"<div class=\"g-move\">nim-sum {a} ⊕ {b} ⊕ {c} = <b>{nimsum}</b> · move: <b>{movetxt}</b></div>"
+    set html to html + f"<div class=\"g-oracle\">retrograde fold vs Sprague-Grundy (loss ⟺ nim-sum 0): <b>{states}</b> positions solved, <b class=\"g-zero\">{disagree}</b> disagreements</div>"
+    set host.innerHTML to html
+    return 0
+
+define sub_ev with ev:
+    draw_sub()
+    return 0
+
+define nim_ev with ev:
+    draw_nim()
+    return 0
+
 define main:
     set fp to document.getElementById("fold-p")
     if fp:
@@ -388,6 +567,16 @@ define main:
     draw_census()
     draw_leptons()
     draw_element137()
+    if document.getElementById("sub-n"):
+        document.getElementById("sub-go").addEventListener("click" and sub_ev)
+        document.getElementById("sub-n").addEventListener("input" and sub_ev)
+        draw_sub()
+    if document.getElementById("nim-a"):
+        document.getElementById("nim-go").addEventListener("click" and nim_ev)
+        document.getElementById("nim-a").addEventListener("input" and nim_ev)
+        document.getElementById("nim-b").addEventListener("input" and nim_ev)
+        document.getElementById("nim-c").addEventListener("input" and nim_ev)
+        draw_nim()
     return 0
 
 define fold_ev with ev:

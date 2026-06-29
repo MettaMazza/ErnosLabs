@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let guard, p, orbit;
+    let p, guard, orbit;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let orbit, i, p, bits;
+    let bits, p, orbit, i;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let g, cov, d_down, d_up;
+    let d_down, d_up, g, cov;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let rq, canvas, ctx, i, orbit, q, html, rp, seq, bits, n, p, g, rad, x, cy, size, cx, val, ang, y, info, dpr;
+    let cx, x, q, rad, p, y, html, cy, n, orbit, val, info, rq, ctx, rp, canvas, g, i, dpr, ang, seq, bits, size;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let out, i;
+    let i, out;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let host, hh, html, measured, diff, head, c, g, clbl, match;
+    let match, html, c, diff, measured, clbl, hh, g, host, head;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let secs, i, tagtxt, s, html, tag, host;
+    let host, secs, html, tag, i, s, tagtxt;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let host, pred_mu_e, pred_tau_e, html, meas_tau_e, meas_mu_e, agree_mu, agree_tau;
+    let host, agree_tau, meas_tau_e, pred_mu_e, meas_mu_e, pred_tau_e, agree_mu, html;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -361,7 +361,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let qe, queue, idx, q_val, pe;
+    let queue, q_val, idx, qe, pe;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -377,6 +377,229 @@ function showcase_next() {
     if ((window.showcaseIdx < queue.length)) {
         window.setTimeout(showcase_next, 2200);
     }
+    return 0;
+}
+
+function g_xor(a, b) {
+    let place, result;
+    result = 0;
+    place = 1;
+    while (((a > 0) || (b > 0))) {
+        if (((a % 2) !== (b % 2))) {
+            result = (result + place);
+        }
+        a = Math.floor((a / 2));
+        b = Math.floor((b / 2));
+        place = (place * 2);
+    }
+    return result;
+}
+
+function g_setkv(obj, k, v) {
+    let fn;
+    fn = Reflect["set"];
+    fn.call(Reflect, obj, k, v);
+    return 0;
+}
+
+function clamp_heap(x) {
+    if ((x < 0)) {
+        return 0;
+    }
+    if ((x > 9)) {
+        return 9;
+    }
+    return x;
+}
+
+function sub_solve(n) {
+    let w, win, i, m;
+    win = [];
+    i = 0;
+    while ((i <= n)) {
+        w = false;
+        m = 1;
+        while ((m <= 3)) {
+            if ((m <= i)) {
+                if (!win[(i - m)]) {
+                    w = true;
+                }
+            }
+            m = (m + 1);
+        }
+        win.push(w);
+        i = (i + 1);
+    }
+    return win;
+}
+
+function draw_sub() {
+    let vcls, win, w, i, n, movetxt, m, disagree, mloss, html, oloss, verdict, cls, host, strip;
+    host = document.getElementById("sub-out");
+    if (!host) {
+        return 0;
+    }
+    n = Math.round(Number(document.getElementById("sub-n").value));
+    if ((n < 0)) {
+        n = 0;
+    }
+    if ((n > 60)) {
+        n = 60;
+    }
+    win = sub_solve(n);
+    w = win[n];
+    movetxt = "none — this is a losing position";
+    if (w) {
+        m = 1;
+        while ((m <= 3)) {
+            if ((m <= n)) {
+                if (!win[(n - m)]) {
+                    movetxt = ((("take " + String(m)) + ", leaving ") + String((n - m)));
+                }
+            }
+            m = (m + 1);
+        }
+    }
+    disagree = 0;
+    i = 0;
+    while ((i <= n)) {
+        oloss = ((i % 4) === 0);
+        mloss = !win[i];
+        if ((oloss !== mloss)) {
+            disagree = (disagree + 1);
+        }
+        i = (i + 1);
+    }
+    strip = "";
+    i = 0;
+    while ((i <= n)) {
+        cls = "g-n";
+        if (!win[i]) {
+            cls = "g-p";
+        }
+        strip = (strip + (((("<span class=\"g-cell " + String(cls)) + "\">") + String(i)) + "</span>"));
+        i = (i + 1);
+    }
+    verdict = "WIN for the player to move";
+    vcls = "g-win";
+    if (!w) {
+        verdict = "LOSS for the player to move";
+        vcls = "g-loss";
+    }
+    html = (((((("<div class=\"g-verdict " + String(vcls)) + "\">n = ") + String(n)) + " — ") + String(verdict)) + "</div>");
+    html = (html + (("<div class=\"g-move\">best move: <b>" + String(movetxt)) + "</b></div>"));
+    html = (html + (("<div class=\"g-strip\">" + String(strip)) + "</div>"));
+    html = (html + (((("<div class=\"g-oracle\">retrograde fold vs oracle (loss ⟺ n mod 4 = 0): <b>" + String((n + 1))) + "</b> positions solved, <b class=\"g-zero\">") + String(disagree)) + "</b> disagreements</div>"));
+    host.innerHTML = html;
+    return 0;
+}
+
+function nim_key(a, b, c) {
+    return ((((String(a) + "_") + String(b)) + "_") + String(c));
+}
+
+function nim_win(a, b, c, memo) {
+    let na, nb, nc, cached, result, k;
+    k = nim_key(a, b, c);
+    cached = memo[k];
+    if (cached) {
+        return (cached === 2);
+    }
+    result = false;
+    na = 0;
+    while ((na < a)) {
+        if (!nim_win(na, b, c, memo)) {
+            result = true;
+        }
+        na = (na + 1);
+    }
+    nb = 0;
+    while ((nb < b)) {
+        if (!nim_win(a, nb, c, memo)) {
+            result = true;
+        }
+        nb = (nb + 1);
+    }
+    nc = 0;
+    while ((nc < c)) {
+        if (!nim_win(a, b, nc, memo)) {
+            result = true;
+        }
+        nc = (nc + 1);
+    }
+    if (result) {
+        g_setkv(memo, k, 2);
+    } else {
+        g_setkv(memo, k, 1);
+    }
+    return result;
+}
+
+function draw_nim() {
+    let a, host, disagree, movetxt, j, ta, b, nimsum, w, tc, memo, orc, verdict, tb, i, vcls, kk, rg, states, c, html;
+    host = document.getElementById("nim-out");
+    if (!host) {
+        return 0;
+    }
+    a = clamp_heap(Math.round(Number(document.getElementById("nim-a").value)));
+    b = clamp_heap(Math.round(Number(document.getElementById("nim-b").value)));
+    c = clamp_heap(Math.round(Number(document.getElementById("nim-c").value)));
+    nimsum = g_xor(g_xor(a, b), c);
+    w = (nimsum !== 0);
+    movetxt = "none — this is a losing position";
+    if (w) {
+        ta = g_xor(a, nimsum);
+        tb = g_xor(b, nimsum);
+        tc = g_xor(c, nimsum);
+        if ((ta < a)) {
+            movetxt = ((("heap A: " + String(a)) + " → ") + String(ta));
+        } else if ((tb < b)) {
+            movetxt = ((("heap B: " + String(b)) + " → ") + String(tb));
+        } else {
+            movetxt = ((("heap C: " + String(c)) + " → ") + String(tc));
+        }
+    }
+    memo = JSON.parse("{}");
+    disagree = 0;
+    states = 0;
+    i = 0;
+    while ((i <= 6)) {
+        j = 0;
+        while ((j <= 6)) {
+            kk = 0;
+            while ((kk <= 6)) {
+                rg = nim_win(i, j, kk, memo);
+                orc = (g_xor(g_xor(i, j), kk) !== 0);
+                if ((rg !== orc)) {
+                    disagree = (disagree + 1);
+                }
+                states = (states + 1);
+                kk = (kk + 1);
+            }
+            j = (j + 1);
+        }
+        i = (i + 1);
+    }
+    verdict = "WIN for the player to move";
+    vcls = "g-win";
+    if (!w) {
+        verdict = "LOSS for the player to move";
+        vcls = "g-loss";
+    }
+    html = (((((((((("<div class=\"g-verdict " + String(vcls)) + "\">heaps (") + String(a)) + ", ") + String(b)) + ", ") + String(c)) + ") — ") + String(verdict)) + "</div>");
+    html = (html + (((((((((("<div class=\"g-move\">nim-sum " + String(a)) + " ⊕ ") + String(b)) + " ⊕ ") + String(c)) + " = <b>") + String(nimsum)) + "</b> · move: <b>") + String(movetxt)) + "</b></div>"));
+    html = (html + (((("<div class=\"g-oracle\">retrograde fold vs Sprague-Grundy (loss ⟺ nim-sum 0): <b>" + String(states)) + "</b> positions solved, <b class=\"g-zero\">") + String(disagree)) + "</b> disagreements</div>"));
+    host.innerHTML = html;
+    return 0;
+}
+
+function sub_ev(ev) {
+    draw_sub();
+    return 0;
+}
+
+function nim_ev(ev) {
+    draw_nim();
     return 0;
 }
 
@@ -398,6 +621,18 @@ function main() {
     draw_census();
     draw_leptons();
     draw_element137();
+    if (document.getElementById("sub-n")) {
+        document.getElementById("sub-go").addEventListener("click", sub_ev);
+        document.getElementById("sub-n").addEventListener("input", sub_ev);
+        draw_sub();
+    }
+    if (document.getElementById("nim-a")) {
+        document.getElementById("nim-go").addEventListener("click", nim_ev);
+        document.getElementById("nim-a").addEventListener("input", nim_ev);
+        document.getElementById("nim-b").addEventListener("input", nim_ev);
+        document.getElementById("nim-c").addEventListener("input", nim_ev);
+        draw_nim();
+    }
     return 0;
 }
 

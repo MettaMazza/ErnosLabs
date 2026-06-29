@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let start, out, c, sstart, n, i, d, word;
+    let d, c, out, sstart, start, n, word, i;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let layer, src, lines, g, i, gutter, ta;
+    let ta, lines, g, layer, src, i, gutter;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let epp, sp, ta, val;
+    let val, sp, epp, ta;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let btn, e, host, exs, i;
+    let host, exs, e, btn, i;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -230,7 +230,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let idx, exs, e;
+    let exs, idx, e;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -241,7 +241,7 @@ function pick_example(ev) {
 }
 
 function clear_output() {
-    let out, status;
+    let status, out;
     out = document.getElementById("output");
     out.classList.remove("err");
     out.textContent = "▶  Press Run to execute.";
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let ms, src, t0, reflow, ta, out, r, t1, status;
+    let src, ta, t1, ms, t0, status, out, r, reflow;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -322,7 +322,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let sp, val, inp, src, r, epp;
+    let src, inp, r, sp, epp, val;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {

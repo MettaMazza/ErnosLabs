@@ -408,6 +408,23 @@ pre {
 .pill.known { background: rgba(79,240,196,.12); color: var(--glow); }
 .pill.pred { background: rgba(245,196,94,.14); color: var(--gold); }
 
+/* universal game solver */
+.game-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.game-controls label { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.game-controls input { width: 70px; background: var(--bg-0); border: 1px solid var(--line); color: var(--ink-0); border-radius: var(--r-sm); padding: 8px 10px; font-family: var(--font-mono); }
+.game-controls input:focus { outline: none; border-color: var(--glow-dim); }
+.g-verdict { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; padding: 10px 14px; border-radius: var(--r-sm); }
+.g-verdict.g-win { background: rgba(79,240,196,.1); color: var(--glow); }
+.g-verdict.g-loss { background: rgba(255,107,129,.1); color: var(--bad); }
+.g-move { color: var(--ink-1); font-size: .9rem; margin: 10px 0; }
+.g-move b { color: var(--ink-0); font-family: var(--font-mono); }
+.g-strip { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 0; }
+.g-cell { font-family: var(--font-mono); font-size: .72rem; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 5px; }
+.g-cell.g-n { background: var(--bg-3); color: var(--ink-2); }
+.g-cell.g-p { background: rgba(255,107,129,.18); color: #ffb3bf; }
+.g-oracle { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-2); margin-top: 10px; }
+.g-oracle b { color: var(--ink-0); } .g-oracle .g-zero { color: var(--glow); }
+
 @media (max-width: 860px) {
   .fold-tool { grid-template-columns: 1fr; }
   .grand { grid-template-columns: 1fr; }

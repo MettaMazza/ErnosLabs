@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let w, i, ernos, last, html, works, cat, cards;
+    let last, w, cards, i, ernos, html, cat, works;
     works = catalog();
     last = "";
     ernos = "";
@@ -89,7 +89,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let i, w, works;
+    let w, i, works;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rtitle, w, rd, doc, toc0, url;
+    let toc0, doc, url, w, rd, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let h, heads, i, cls, toc, out, links;
+    let toc, heads, h, out, i, cls, links;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -164,7 +164,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let id, el;
+    let el, id;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let marks, esc, doc, q, hl, re, count;
+    let doc, hl, marks, re, esc, q, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +245,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let voice_sel, u, text, doc, btn, voice;
+    let btn, voice, text, u, doc, voice_sel;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -293,7 +293,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let voices, container, html, i, v;
+    let container, i, v, html, voices;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

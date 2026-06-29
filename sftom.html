@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=13a5f734">
+  <link rel="stylesheet" href="assets/css/site.css?v=d6858e59">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -243,6 +243,42 @@
     </div>
   </section>
 
+  <!-- UNIVERSAL GAME SOLVER -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l reveal">The engine was never about chess</p>
+      <h2 class="reveal">The universal solver</h2>
+      <p class="lead reveal" style="margin-bottom:26px">The same retrograde fold that solved a chess endgame solves any finite
+        game — exactly. Here it is on two classics, each solved live and checked against its own independent closed-form
+        oracle. <strong style="color:var(--glow)">Zero disagreements.</strong></p>
+      <div class="grid grid--2 reveal">
+        <div class="card">
+          <span class="card__tag">Subtraction game</span>
+          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Remove 1, 2 or 3 from the heap; last to move
+            wins. Oracle: a position loses exactly when n is divisible by 4.</p>
+          <div class="game-controls"><label for="sub-n">heap n</label>
+            <input id="sub-n" type="number" value="17" min="0" max="60">
+            <button class="btn btn--ghost" id="sub-go">Solve</button></div>
+          <div id="sub-out" style="margin-top:16px"></div>
+        </div>
+        <div class="card">
+          <span class="card__tag">Nim — three heaps</span>
+          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Remove any amount from one heap; last to move
+            wins. Oracle: Sprague-Grundy — a position loses exactly when the nim-sum (XOR) is zero.</p>
+          <div class="game-controls"><label>heaps</label>
+            <input id="nim-a" type="number" value="3" min="0" max="9">
+            <input id="nim-b" type="number" value="5" min="0" max="9">
+            <input id="nim-c" type="number" value="7" min="0" max="9">
+            <button class="btn btn--ghost" id="nim-go">Solve</button></div>
+          <div id="nim-out" style="margin-top:16px"></div>
+        </div>
+      </div>
+      <p style="color:var(--ink-3);font-size:.82rem;margin-top:20px">Both panels run the retrograde fold in your browser
+        and compare every position to the closed-form oracle. The chess campaign was the same engine on a bigger board.</p>
+    </div>
+  </section>
+
   <footer class="foot">
     <div class="wrap foot__in">
       <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
@@ -253,7 +289,7 @@
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · The fold maths runs in ErnosPlain</div>
   </footer>
 
-  <script src="assets/js/site.js?v=c0216595"></script>
-  <script src="assets/js/fold.js?v=4b7604f8"></script>
+  <script src="assets/js/site.js?v=2f3a6101"></script>
+  <script src="assets/js/fold.js?v=4ee2903f"></script>
 </body>
 </html>
