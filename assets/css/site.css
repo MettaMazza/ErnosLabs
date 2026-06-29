@@ -451,6 +451,22 @@ pre {
 .pt-info { margin-top: 16px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 18px; color: var(--ink-1); font-size: .92rem; line-height: 1.6; }
 .pt-info b { color: var(--ink-0); } .pt-info-sym { font-family: var(--font-display); font-size: 1.2rem; color: var(--glow); }
 
+/* the grand-lock web */
+.lw-gens { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.lw-lab { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-right: 4px; }
+.lw-gen { font-family: var(--font-mono); font-size: .92rem; padding: 10px 18px; border-radius: var(--r-pill); background: var(--bg-3); border: 1px solid var(--line); color: var(--ink-1); cursor: pointer; transition: all .18s; }
+.lw-gen:hover { border-color: var(--glow-dim); color: var(--ink-0); }
+.lw-gen.active { background: var(--glow); color: #04130e; border-color: var(--glow); box-shadow: 0 0 22px -6px rgba(79,240,196,.7); }
+.lw-consts { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.lw-const { background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px; transition: opacity .2s, border-color .2s, box-shadow .2s, transform .2s; }
+.lw-const.dim { opacity: .28; }
+.lw-const.lit { border-color: var(--glow); box-shadow: 0 0 24px -8px rgba(79,240,196,.6); transform: translateY(-2px); }
+.lw-name { font-family: var(--font-display); font-weight: 600; color: var(--ink-0); font-size: .98rem; }
+.lw-val { font-family: var(--font-mono); color: var(--glow); font-size: 1.05rem; margin: 4px 0 10px; }
+.lw-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+.lw-chip { font-family: var(--font-mono); font-size: .64rem; padding: 3px 7px; border-radius: var(--r-pill); background: var(--bg-0); border: 1px solid var(--line); color: var(--ink-2); }
+.lw-hint { color: var(--ink-2); font-size: .9rem; margin-top: 18px; max-width: 60ch; }
+
 @media (max-width: 860px) {
   .fold-tool { grid-template-columns: 1fr; }
   .grand { grid-template-columns: 1fr; }

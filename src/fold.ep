@@ -419,6 +419,108 @@ define ptable_ev with ev:
     draw_ptable()
     return 0
 
+# ---- the grand lock: the constants are one object -----------------------
+# Data from grand_lock.py: each constant and the generators {b=2,c=3,d-,d+}
+# it is built from. Move one generator and a whole family of constants moves.
+
+define lc with name and value and gens:
+    set o to JSON.parse("{}")
+    set o.name to name
+    set o.value to value
+    set o.gens to gens
+    return o
+
+define lock_constants:
+    set L to []
+    L.push(lc("1 / α" and "137.036" and ["b", "c", "dd", "du"]))
+    L.push(lc("Planck exponent" and "127/2" and ["b", "c", "du"]))
+    L.push(lc("quark up I₂" and "1/383" and ["b", "c", "du"]))
+    L.push(lc("quark down I₂" and "1/95" and ["b", "c", "dd"]))
+    L.push(lc("lepton e₃" and "1/485" and ["c", "dd"]))
+    L.push(lc("dark / baryon" and "27/5" and ["c", "dd"]))
+    L.push(lc("dark fraction" and "27/32" and ["b", "c", "dd"]))
+    L.push(lc("Hubble ratio" and "13/12" and ["b", "c"]))
+    L.push(lc("Λ floor" and "1/2²⁰" and ["b", "c", "dd"]))
+    L.push(lc("half-One coupling" and "1/2" and ["b"]))
+    return L
+
+define gen_label with k:
+    if k equals "b":
+        return "b = 2"
+    if k equals "c":
+        return "c = 3"
+    if k equals "dd":
+        return "d₋ = 5"
+    if k equals "du":
+        return "d₊ = 7"
+    return k
+
+define draw_lockweb:
+    set host to document.getElementById("lockweb")
+    if not host:
+        return 0
+    set window.lockSel to ""
+    set gens to ["b", "c", "dd", "du"]
+    set ghtml to "<div class=\"lw-gens\"><span class=\"lw-lab\">the generators</span>"
+    set i to 0
+    repeat while i < gens.length:
+        set g to get_list(gens and i)
+        set gl to gen_label(g)
+        set ghtml to ghtml + f"<button class=\"lw-gen\" data-g=\"{g}\">{gl}</button>"
+        set i to i + 1
+    set ghtml to ghtml + "</div>"
+    set L to lock_constants()
+    set chtml to "<div class=\"lw-consts\">"
+    set i to 0
+    repeat while i < L.length:
+        set c to get_list(L and i)
+        set chips to ""
+        set j to 0
+        repeat while j < c.gens.length:
+            set gk to get_list(c.gens and j)
+            set gkl to gen_label(gk)
+            set chips to chips + f"<span class=\"lw-chip\">{gkl}</span>"
+            set j to j + 1
+        set gj to c.gens.join(",")
+        set chtml to chtml + f"<div class=\"lw-const\" data-gens=\"{gj}\"><div class=\"lw-name\">{c.name}</div><div class=\"lw-val\">{c.value}</div><div class=\"lw-chips\">{chips}</div></div>"
+        set i to i + 1
+    set chtml to chtml + "</div>"
+    set host.innerHTML to ghtml + chtml + "<p class=\"lw-hint\">Click a generator — every constant built from it lights up. Move that one number and the whole family moves. The constants of nature are not independent; they are one object.</p>"
+    set gbtns to host.querySelectorAll(".lw-gen")
+    for each b in gbtns:
+        b.addEventListener("click" and lw_click)
+    return 0
+
+define lw_click with ev:
+    set g to ev.currentTarget.getAttribute("data-g")
+    set host to document.getElementById("lockweb")
+    set sel to window.lockSel
+    if sel equals g:
+        set window.lockSel to ""
+    else:
+        set window.lockSel to g
+    set active to window.lockSel
+    set gbtns to host.querySelectorAll(".lw-gen")
+    for each b in gbtns:
+        if b.getAttribute("data-g") equals active:
+            b.classList.add("active")
+        else:
+            b.classList.remove("active")
+    set consts to host.querySelectorAll(".lw-const")
+    for each cc in consts:
+        set gstr to cc.getAttribute("data-gens")
+        if active equals "":
+            cc.classList.remove("dim")
+            cc.classList.remove("lit")
+        else:
+            if gstr.split(",").indexOf(active) >= 0:
+                cc.classList.add("lit")
+                cc.classList.remove("dim")
+            else:
+                cc.classList.add("dim")
+                cc.classList.remove("lit")
+    return 0
+
 # ---- Orbit showcase (auto-animated on page load) ----
 define orbit_showcase:
     set window.showcaseQueue to [7, 31, 127]
@@ -640,6 +742,7 @@ define main:
     draw_census()
     draw_leptons()
     draw_element137()
+    draw_lockweb()
     draw_ptable()
     if document.getElementById("sub-n"):
         document.getElementById("sub-go").addEventListener("click" and sub_ev)
