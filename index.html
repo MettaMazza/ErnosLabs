@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=77b33ad2">
+  <link rel="stylesheet" href="assets/css/site.css?v=97e50a7a">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -19,6 +19,11 @@
   <nav class="nav">
     <div class="wrap nav__in">
       <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+      <div class="navplayer" id="navplayer">
+        <button class="navplayer__btn" id="np-toggle" aria-label="Play or pause read-aloud">▶</button>
+        <div class="navplayer__bar"><div class="navplayer__fill" id="np-fill"></div></div>
+        <span class="navplayer__status" id="np-status">Listen</span>
+      </div>
       <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
       <div class="nav__links" id="navlinks">
         <a href="ernosplain.html">ErnosPlain</a>
@@ -146,6 +151,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=fbfd0c45"></script>
+  <script src="assets/js/kokoro-tts.js?v=d85c1213"></script>
+
+  <script src="assets/js/site.js?v=241d1a6f"></script>
 </body>
 </html>

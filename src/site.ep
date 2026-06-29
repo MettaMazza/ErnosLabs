@@ -174,9 +174,96 @@ define year_init:
         set y.textContent to d.getFullYear()
     return 0
 
+# ---- global read-aloud player (in the nav, on every page) ----------------
+
+define narration_text:
+    # Library reader: read the open document if there is one.
+    set doc to document.getElementById("doc")
+    if doc:
+        set dt to doc.textContent
+        if dt:
+            if dt.length > 60:
+                return dt
+    # Otherwise narrate the page's prose: headings + paragraphs (no nav/footer).
+    set parts to []
+    set nodes to document.querySelectorAll("header h1, header p, section h2, section h3, section p")
+    set i to 0
+    repeat while i < nodes.length:
+        set n to get_list(nodes and i)
+        set cls to n.className
+        if cls.indexOf("eyebrow") < 0:
+            set txt to n.textContent
+            if txt:
+                if txt.length > 2:
+                    parts.push(txt)
+        set i to i + 1
+    return parts.join(". ")
+
+define np_toggle with ev:
+    if not window.kokoroTTS:
+        return 0
+    set st to window.kokoroTTS.toggle(narration_text() and "af_heart")
+    set btn to document.getElementById("np-toggle")
+    if st equals "paused":
+        set btn.textContent to "▶"
+    else:
+        set btn.textContent to "⏸"
+    return 0
+
+define np_progress with info:
+    set fill to document.getElementById("np-fill")
+    if not fill:
+        return 0
+    set status to document.getElementById("np-status")
+    set btn to document.getElementById("np-toggle")
+    set pct to Math.round(info.fraction * 100)
+    set ph to info.phase
+    if ph equals "loading":
+        set status.textContent to "loading voice…"
+        fill.classList.add("np-indet")
+        set fill.style.width to "100%"
+    else:
+        fill.classList.remove("np-indet")
+    if ph equals "buffering":
+        set status.textContent to "buffering…"
+        fill.classList.add("np-indet")
+        set fill.style.width to "100%"
+    if ph equals "speaking":
+        set status.textContent to f"{info.current} / {info.total}"
+        set btn.textContent to "⏸"
+        set fill.style.width to f"{pct}%"
+    if ph equals "paused":
+        set status.textContent to "paused"
+        set btn.textContent to "▶"
+    if ph equals "done":
+        set status.textContent to "done"
+        set btn.textContent to "▶"
+        set fill.style.width to "0%"
+    if ph equals "idle":
+        set status.textContent to "Listen"
+        set btn.textContent to "▶"
+        set fill.style.width to "0%"
+    if ph equals "fallback":
+        set status.textContent to "browser voice"
+    return 0
+
+define player_init:
+    set btn to document.getElementById("np-toggle")
+    if not btn:
+        return 0
+    if not window.kokoroTTS:
+        set status to document.getElementById("np-status")
+        if status:
+            set status.textContent to "voice unavailable"
+        return 0
+    btn.addEventListener("click" and np_toggle)
+    window.kokoroTTS.setOnProgress(np_progress)
+    return 0
+
 define main:
     mesh_init()
     nav_init()
     reveal_init()
     year_init()
+    player_init()
     return 0

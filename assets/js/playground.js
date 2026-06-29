@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let d, word, start, n, c, sstart, out, i;
+    let n, d, c, out, i, sstart, start, word;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let lines, gutter, src, g, ta, i, layer;
+    let gutter, g, i, src, layer, lines, ta;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let gutter, layer, ta;
+    let ta, layer, gutter;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let sp, epp, val, ta;
+    let epp, sp, ta, val;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let host, e, i, btn, exs;
+    let i, e, exs, host, btn;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -230,7 +230,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let exs, e, idx;
+    let e, idx, exs;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let out, ms, reflow, t0, src, status, r, t1, ta;
+    let src, out, ta, t1, status, ms, r, reflow, t0;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -311,7 +311,7 @@ function term_init() {
 }
 
 function term_print(text, cls) {
-    let line, log;
+    let log, line;
     log = document.getElementById("term-log");
     line = document.createElement("div");
     line.className = ("term-line " + cls);
@@ -322,7 +322,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let inp, r, epp, val, src, sp;
+    let inp, epp, src, r, sp, val;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {

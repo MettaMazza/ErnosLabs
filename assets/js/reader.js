@@ -37,7 +37,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let mins, out;
+    let out, mins;
     mins = read_minutes(w.words);
     out = (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">");
     out = (out + (((("<span class=\"card__tag\">" + String(fmt_words(w.words))) + " · ~") + String(mins)) + " min</span>"));
@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let html, i, w, cat, ernos, works, cards, last;
+    let w, cards, ernos, last, html, cat, works, i;
     works = catalog();
     last = "";
     ernos = "";
@@ -89,7 +89,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, works, i;
+    let i, works, w;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rtitle, toc0, url, rd, doc, w;
+    let rd, doc, toc0, w, url, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let i, h, links, toc, out, heads, cls;
+    let toc, i, cls, out, links, h, heads;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let esc, re, hl, marks, q, doc, count;
+    let hl, marks, count, doc, q, esc, re;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +245,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let voice, btn, text, voice_sel, u, doc;
+    let voice_sel, text, doc, voice, btn, u;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -293,7 +293,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let v, container, html, voices, i;
+    let container, voices, i, html, v;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

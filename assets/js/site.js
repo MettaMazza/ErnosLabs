@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let ctx, h, dpr, canvas, w;
+    let canvas, ctx, w, h, dpr;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let h, a, j, count, dist, dy, i, b, w, n, ctx, alpha, nodes, dx;
+    let a, b, h, j, nodes, alpha, n, ctx, w, dist, dy, count, dx, i;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, canvas, density;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let href, links, burger, path;
+    let burger, href, path, links;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -170,7 +170,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let IO, els, args, obs, opts;
+    let obs, IO, els, opts, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -190,7 +190,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -199,11 +199,122 @@ function year_init() {
     return 0;
 }
 
+function narration_text() {
+    let n, i, txt, nodes, dt, cls, parts, doc;
+    doc = document.getElementById("doc");
+    if (doc) {
+        dt = doc.textContent;
+        if (dt) {
+            if ((dt.length > 60)) {
+                return dt;
+            }
+        }
+    }
+    parts = [];
+    nodes = document.querySelectorAll("header h1, header p, section h2, section h3, section p");
+    i = 0;
+    while ((i < nodes.length)) {
+        n = nodes[i];
+        cls = n.className;
+        if ((cls.indexOf("eyebrow") < 0)) {
+            txt = n.textContent;
+            if (txt) {
+                if ((txt.length > 2)) {
+                    parts.push(txt);
+                }
+            }
+        }
+        i = (i + 1);
+    }
+    return parts.join(". ");
+}
+
+function np_toggle(ev) {
+    let btn, st;
+    if (!window.kokoroTTS) {
+        return 0;
+    }
+    st = window.kokoroTTS.toggle(narration_text(), "af_heart");
+    btn = document.getElementById("np-toggle");
+    if ((st === "paused")) {
+        btn.textContent = "▶";
+    } else {
+        btn.textContent = "⏸";
+    }
+    return 0;
+}
+
+function np_progress(info) {
+    let fill, btn, pct, ph, status;
+    fill = document.getElementById("np-fill");
+    if (!fill) {
+        return 0;
+    }
+    status = document.getElementById("np-status");
+    btn = document.getElementById("np-toggle");
+    pct = Math.round((info.fraction * 100));
+    ph = info.phase;
+    if ((ph === "loading")) {
+        status.textContent = "loading voice…";
+        fill.classList.add("np-indet");
+        fill.style.width = "100%";
+    } else {
+        fill.classList.remove("np-indet");
+    }
+    if ((ph === "buffering")) {
+        status.textContent = "buffering…";
+        fill.classList.add("np-indet");
+        fill.style.width = "100%";
+    }
+    if ((ph === "speaking")) {
+        status.textContent = ((String(info.current) + " / ") + String(info.total));
+        btn.textContent = "⏸";
+        fill.style.width = (String(pct) + "%");
+    }
+    if ((ph === "paused")) {
+        status.textContent = "paused";
+        btn.textContent = "▶";
+    }
+    if ((ph === "done")) {
+        status.textContent = "done";
+        btn.textContent = "▶";
+        fill.style.width = "0%";
+    }
+    if ((ph === "idle")) {
+        status.textContent = "Listen";
+        btn.textContent = "▶";
+        fill.style.width = "0%";
+    }
+    if ((ph === "fallback")) {
+        status.textContent = "browser voice";
+    }
+    return 0;
+}
+
+function player_init() {
+    let status, btn;
+    btn = document.getElementById("np-toggle");
+    if (!btn) {
+        return 0;
+    }
+    if (!window.kokoroTTS) {
+        status = document.getElementById("np-status");
+        if (status) {
+            status.textContent = "voice unavailable";
+        }
+        return 0;
+    }
+    btn.addEventListener("click", np_toggle);
+    window.kokoroTTS.setOnProgress(np_progress);
+    return 0;
+}
+
 function main() {
     mesh_init();
     nav_init();
     reveal_init();
     year_init();
+    player_init();
     return 0;
 }
 

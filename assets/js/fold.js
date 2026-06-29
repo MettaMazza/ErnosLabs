@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let orbit, guard, p;
+    let orbit, p, guard;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let i, bits, orbit, p;
+    let i, p, orbit, bits;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let g, cov, d_down, d_up;
+    let d_up, d_down, g, cov;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let q, orbit, cx, i, bits, cy, seq, rp, g, size, html, ang, n, p, rq, val, dpr, canvas, ctx, x, y, rad, info;
+    let html, ang, rp, p, rq, dpr, bits, ctx, n, g, y, x, cx, seq, q, val, cy, info, rad, canvas, i, size, orbit;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let out, i;
+    let i, out;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let diff, measured, head, match, html, c, hh, g, host, clbl;
+    let clbl, c, match, head, host, hh, html, g, measured, diff;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let tag, tagtxt, secs, i, s, host, html;
+    let tag, secs, html, s, host, i, tagtxt;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let host, meas_tau_e, agree_tau, html, pred_mu_e, meas_mu_e, agree_mu, pred_tau_e;
+    let meas_tau_e, agree_tau, agree_mu, host, pred_mu_e, meas_mu_e, html, pred_tau_e;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -318,7 +318,7 @@ function draw_leptons() {
 }
 
 function draw_element137() {
-    let host, html;
+    let html, host;
     host = document.getElementById("element137");
     if (!host) {
         return 0;
@@ -362,7 +362,7 @@ function el_pred() {
 }
 
 function draw_ptable() {
-    let p, cls, sym, pred, s, len, syms, host, closures, z, cells, html, ends, starts, e;
+    let ends, sym, host, z, s, pred, cells, len, e, syms, cls, starts, p, html, closures;
     host = document.getElementById("ptable");
     if (!host) {
         return 0;
@@ -415,7 +415,7 @@ function draw_ptable() {
 }
 
 function pt_click(ev) {
-    let info, z, sym, status, note;
+    let sym, note, status, info, z;
     z = Number(ev.currentTarget.getAttribute("data-z"));
     sym = ev.currentTarget.getAttribute("data-sym");
     info = document.getElementById("pt-info");
@@ -483,7 +483,7 @@ function gen_label(k) {
 }
 
 function draw_lockweb() {
-    let j, chtml, gk, host, gl, chips, ghtml, gens, gj, g, gkl, L, c, gbtns, i;
+    let gbtns, c, gl, host, ghtml, gj, gkl, gens, chips, i, j, L, chtml, gk, g;
     host = document.getElementById("lockweb");
     if (!host) {
         return 0;
@@ -526,7 +526,7 @@ function draw_lockweb() {
 }
 
 function lw_click(ev) {
-    let host, active, gstr, gbtns, consts, g, sel;
+    let g, host, gbtns, consts, sel, gstr, active;
     g = ev.currentTarget.getAttribute("data-g");
     host = document.getElementById("lockweb");
     sel = window.lockSel;
@@ -569,7 +569,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let queue, q_val, pe, qe, idx;
+    let q_val, qe, pe, idx, queue;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -651,7 +651,7 @@ function ledger_card(p) {
 }
 
 function render_ledger() {
-    let p, grid, html, P, i, f;
+    let P, f, html, i, p, grid;
     grid = document.getElementById("lg-grid");
     if (!grid) {
         return 0;
@@ -674,7 +674,7 @@ function render_ledger() {
 }
 
 function ledger_filter(ev) {
-    let host, fbtns, f;
+    let fbtns, host, f;
     f = ev.currentTarget.getAttribute("data-f");
     window.ledgerFilter = f;
     host = document.getElementById("ledger");
@@ -691,7 +691,7 @@ function ledger_filter(ev) {
 }
 
 function draw_ledger() {
-    let host, fbtns, fhtml;
+    let fhtml, fbtns, host;
     host = document.getElementById("ledger");
     if (!host) {
         return 0;
@@ -713,7 +713,7 @@ function draw_ledger() {
 }
 
 function g_xor(a, b) {
-    let result, place;
+    let place, result;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -745,7 +745,7 @@ function clamp_heap(x) {
 }
 
 function sub_solve(n) {
-    let i, win, w, m;
+    let i, win, m, w;
     win = [];
     i = 0;
     while ((i <= n)) {
@@ -766,7 +766,7 @@ function sub_solve(n) {
 }
 
 function draw_sub() {
-    let win, i, disagree, n, html, host, oloss, verdict, m, w, mloss, movetxt, cls, vcls, strip;
+    let html, win, m, n, vcls, disagree, movetxt, mloss, strip, cls, i, host, verdict, oloss, w;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -831,7 +831,7 @@ function nim_key(a, b, c) {
 }
 
 function nim_win(a, b, c, memo) {
-    let k, na, cached, result, nb, nc;
+    let nc, result, nb, na, cached, k;
     k = nim_key(a, b, c);
     cached = memo[k];
     if (cached) {
@@ -868,7 +868,7 @@ function nim_win(a, b, c, memo) {
 }
 
 function draw_nim() {
-    let kk, ta, a, tc, verdict, nimsum, movetxt, i, j, disagree, vcls, c, orc, w, states, b, html, tb, rg, host, memo;
+    let orc, host, movetxt, b, tc, a, memo, disagree, states, tb, kk, verdict, nimsum, vcls, ta, c, j, html, w, i, rg;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -936,7 +936,7 @@ function nim_ev(ev) {
 }
 
 function main() {
-    let gc, fp;
+    let fp, gc;
     fp = document.getElementById("fold-p");
     if (fp) {
         document.getElementById("fold-run").addEventListener("click", fold_ev);
