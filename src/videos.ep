@@ -1,0 +1,78 @@
+# ErnosLabs — Videos page
+# Component: src/videos.ep  (compiled to assets/js/videos.js via build.sh)
+# Renders a grid of the channel's videos (baked into assets/js/videos-data.js
+# from the YouTube RSS feed at build time — no API key, no CORS). Clicking a
+# thumbnail plays it in the featured player. Privacy-friendly nocookie embeds.
+
+define yt_thumb with id:
+    return f"https://i.ytimg.com/vi/{id}/hqdefault.jpg"
+
+define esc with s:
+    set t to s
+    set t to t.split("&").join("&amp;")
+    set t to t.split("<").join("&lt;")
+    set t to t.split(">").join("&gt;")
+    return t
+
+define play_video with id and title:
+    set frame to document.getElementById("video-player")
+    if frame:
+        set frame.src to f"https://www.youtube-nocookie.com/embed/{id}?rel=0&autoplay=1"
+    set t to document.getElementById("video-title")
+    if t:
+        set t.textContent to title
+    window.scrollTo(0 and 0)
+    return 0
+
+define vid_click with ev:
+    set el to ev.currentTarget
+    set idx to el.getAttribute("data-idx")
+    set vids to window.ERNOS_VIDEOS
+    set v to get_list(vids and idx)
+    if v:
+        play_video(v.id and v.title)
+    return 0
+
+define render_videos:
+    set grid to document.getElementById("video-grid")
+    if not grid:
+        return 0
+    set vids to window.ERNOS_VIDEOS
+    if not vids:
+        set grid.innerHTML to "<p class=\"lead\">Couldn't load the latest videos right now — watch them on the channel.</p>"
+        return 0
+    set html to ""
+    set i to 0
+    repeat while i < vids.length:
+        set v to get_list(vids and i)
+        set thumb to yt_thumb(v.id)
+        set cap to esc(v.title)
+        set html to html + f"<button class=\"video-card reveal in\" data-idx=\"{i}\">"
+        set html to html + f"<span class=\"video-thumb\"><img loading=\"lazy\" src=\"{thumb}\" alt=\"\"><span class=\"video-play\">▶</span></span>"
+        set html to html + f"<span class=\"video-cap\">{cap}</span>"
+        set html to html + "</button>"
+        set i to i + 1
+    set grid.innerHTML to html
+    set cards to document.querySelectorAll(".video-card")
+    for each c in cards:
+        c.addEventListener("click" and vid_click)
+    return 0
+
+define videos_init:
+    render_videos()
+    # feature the latest upload in the player (no autoplay until clicked)
+    set vids to window.ERNOS_VIDEOS
+    if vids:
+        if vids.length > 0:
+            set v0 to get_list(vids and 0)
+            set frame to document.getElementById("video-player")
+            if frame:
+                set frame.src to f"https://www.youtube-nocookie.com/embed/{v0.id}?rel=0"
+            set t to document.getElementById("video-title")
+            if t:
+                set t.textContent to v0.title
+    return 0
+
+define main:
+    videos_init()
+    return 0

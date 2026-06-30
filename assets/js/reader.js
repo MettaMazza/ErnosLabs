@@ -55,7 +55,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let fold, last, ernos, cat, w, html, cards, i, works;
+    let works, w, i, ernos, fold, html, cat, last, cards;
     works = catalog();
     last = "";
     ernos = "";
@@ -102,7 +102,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, i, works;
+    let i, w, works;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -116,7 +116,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let doc, toc0, rtitle, w, rd, dl, url;
+    let toc0, dl, url, w, rd, rtitle, doc;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -146,7 +146,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let html, doc;
+    let doc, html;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -157,7 +157,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let links, toc, i, heads, h, cls, out;
+    let cls, toc, links, heads, out, i, h;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -181,7 +181,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let el, id;
+    let id, el;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -222,7 +222,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let q, doc, esc, re, marks, hl, count;
+    let esc, doc, q, re, marks, hl, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -262,7 +262,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let u, voice_sel, text, btn, doc, voice;
+    let btn, voice, doc, voice_sel, text, u;
     if (window.ttsOn) {
         stop_tts();
         return 0;

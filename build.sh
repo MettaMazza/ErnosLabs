@@ -68,6 +68,43 @@ PY
 emit_demo "$DEMOS/rpg_battle_system.ep" "$OUT/rpg.js" "epRpgBattle"
 if [ "$fail" -ne 0 ]; then echo "[-] demo build failed"; exit 1; fi
 
+# --- videos: bake the channel's latest uploads from the YouTube RSS feed
+# (no API key, no client-side CORS). Falls back to the existing list on failure.
+CHANNEL_ID="UCv7ij795G5z8ebW9ew5Ca5w"
+echo "[*] fetching YouTube uploads feed"
+if curl -s --max-time 20 "https://www.youtube.com/feeds/videos.xml?channel_id=$CHANNEL_ID" -o "$OUT/.feed.xml" \
+   && [ -s "$OUT/.feed.xml" ] && grep -q '<yt:videoId>' "$OUT/.feed.xml"; then
+  python3 - "$OUT/.feed.xml" "$OUT/videos-data.js" <<'PY'
+import sys, re, json, html
+xml = open(sys.argv[1], encoding="utf-8").read()
+vids = []
+for e in re.findall(r'<entry>(.*?)</entry>', xml, re.S):
+    vid = re.search(r'<yt:videoId>([^<]+)</yt:videoId>', e)
+    if not vid:
+        continue
+    title = re.search(r'<title>(.*?)</title>', e, re.S)
+    pub = re.search(r'<published>([^<]+)</published>', e)
+    vids.append({
+        "id": vid.group(1),
+        "title": html.unescape(title.group(1).strip()) if title else "",
+        "published": pub.group(1)[:10] if pub else "",
+    })
+out = "// Auto-generated from the YouTube channel RSS at build time. Do not hand-edit.\n"
+out += "window.ERNOS_VIDEOS = " + json.dumps(vids, ensure_ascii=False) + ";\n"
+open(sys.argv[2], "w", encoding="utf-8").write(out)
+print(f"    {len(vids)} videos -> assets/js/videos-data.js")
+PY
+  rm -f "$OUT/.feed.xml"
+else
+  rm -f "$OUT/.feed.xml"
+  if [ -f "$OUT/videos-data.js" ]; then
+    echo "    feed fetch failed — keeping existing videos-data.js"
+  else
+    echo "    feed fetch failed — writing empty list"
+    echo 'window.ERNOS_VIDEOS = [];' > "$OUT/videos-data.js"
+  fi
+fi
+
 # --- cache-busting: stamp a content hash on every asset reference in the HTML
 # so a fresh deploy is fetched immediately instead of a stale cached copy.
 echo "[*] stamping cache-busting versions on asset references"
