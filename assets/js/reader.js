@@ -41,7 +41,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let out, mins;
+    let mins, out;
     mins = read_minutes(w.words);
     out = "<div class=\"work-item\">";
     out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
@@ -55,7 +55,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let works, w, i, ernos, fold, html, cat, last, cards;
+    let ernos, fold, cat, cards, last, html, i, w, works;
     works = catalog();
     last = "";
     ernos = "";
@@ -102,7 +102,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let i, w, works;
+    let w, works, i;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -116,7 +116,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let toc0, dl, url, w, rd, rtitle, doc;
+    let rd, rtitle, doc, toc0, url, w, dl;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -146,7 +146,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let doc, html;
+    let html, doc;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -157,7 +157,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let cls, toc, links, heads, out, i, h;
+    let cls, toc, i, out, heads, links, h;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -181,7 +181,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let id, el;
+    let el, id;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -222,7 +222,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let esc, doc, q, re, marks, hl, count;
+    let re, marks, hl, doc, q, esc, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -262,7 +262,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let btn, voice, doc, voice_sel, text, u;
+    let text, doc, voice, u, btn, voice_sel;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -310,7 +310,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let html, voices, container, i, v;
+    let voices, i, container, v, html;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

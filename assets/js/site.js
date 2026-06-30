@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let h, dpr, ctx, w, canvas;
+    let w, ctx, canvas, dpr, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let alpha, i, j, b, w, ctx, dx, h, dy, n, nodes, dist, count, a;
+    let alpha, j, b, i, nodes, dx, ctx, n, w, dy, a, count, h, dist;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, canvas, reduce;
+    let density, reduce, canvas;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -176,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, opts, els, IO, args;
+    let args, IO, els, opts, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -196,7 +196,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -206,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let i, txt, cls, nodes, doc, dt, parts, n;
+    let dt, nodes, doc, n, i, cls, parts, txt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -251,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let btn, pct, status, fill, ph;
+    let status, btn, ph, fill, pct;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

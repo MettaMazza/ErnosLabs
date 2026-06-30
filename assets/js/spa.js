@@ -47,15 +47,63 @@
     });
   }
 
+  // --- prefetch + cache: warm every page (HTML + its scripts) so the first
+  // click to a page is instant instead of a cold fetch + serial script load. ---
+  const pageCache = new Map();   // origin+pathname -> html text
+  const warmed = new Set();      // script srcs already prefetched
+
+  function cacheKey(url) {
+    try { const u = new URL(url, location.href); return u.origin + u.pathname; }
+    catch (e) { return url; }
+  }
+
+  async function getHtml(url) {
+    const key = cacheKey(url);
+    if (pageCache.has(key)) return pageCache.get(key);
+    const res = await fetch(url, { credentials: "same-origin" });
+    if (!res.ok) throw new Error("status " + res.status);
+    const html = await res.text();
+    pageCache.set(key, html);
+    return html;
+  }
+
+  function warmScripts(doc) {
+    pageScripts(doc).forEach(function (src) {
+      if (warmed.has(src)) return;
+      warmed.add(src);
+      const l = document.createElement("link");
+      l.rel = "prefetch"; l.as = "script"; l.href = src;
+      document.head.appendChild(l);
+    });
+  }
+
+  async function prefetch(url) {
+    const key = cacheKey(url);
+    if (pageCache.has(key)) return;
+    try {
+      const html = await getHtml(url);
+      warmScripts(new DOMParser().parseFromString(html, "text/html"));
+    } catch (e) { /* best-effort */ }
+  }
+
+  function prefetchAll() {
+    const seen = new Set();
+    document.querySelectorAll("a[href]").forEach(function (a) {
+      if (!isInternalLink(a)) return;
+      const key = cacheKey(a.href);
+      if (seen.has(key) || key === cacheKey(location.href)) return;
+      seen.add(key);
+      prefetch(a.href);
+    });
+  }
+
   let navToken = 0;
 
   async function navigate(url, push) {
     const my = ++navToken;
     let html;
     try {
-      const res = await fetch(url, { credentials: "same-origin" });
-      if (!res.ok) throw new Error("status " + res.status);
-      html = await res.text();
+      html = await getHtml(url); // cached after first fetch / prefetch
     } catch (e) {
       location.href = url; // fall back to a full navigation
       return;
@@ -107,4 +155,13 @@
   window.addEventListener("popstate", function () {
     navigate(location.href, false);
   });
+
+  // Warm every linked page once the browser is idle (tiny payloads), and on
+  // hover as a backstop, so navigation is effectively instant.
+  document.addEventListener("pointerover", function (e) {
+    const a = e.target.closest ? e.target.closest("a") : null;
+    if (a && isInternalLink(a)) prefetch(a.href);
+  });
+  if (window.requestIdleCallback) requestIdleCallback(prefetchAll, { timeout: 3000 });
+  else setTimeout(prefetchAll, 1500);
 })();
