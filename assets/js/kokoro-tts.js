@@ -70,9 +70,13 @@
     const sentences = text.match(/[^.!?\n]+[.!?]*\s*/g) || [text];
     const chunks = [];
     let cur = "";
+    // First chunk is short so the very first audio arrives fast; later chunks
+    // are larger for efficiency. The generator runs ahead continuously, so once
+    // playback starts there's always more audio ready.
     for (const s of sentences) {
       cur += s;
-      if (cur.length >= 220) { chunks.push(cur.trim()); cur = ""; }
+      const limit = chunks.length === 0 ? 70 : 170;
+      if (cur.length >= limit) { chunks.push(cur.trim()); cur = ""; }
     }
     if (cur.trim()) chunks.push(cur.trim());
     return chunks.length ? chunks : [text];

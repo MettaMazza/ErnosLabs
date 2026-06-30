@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let i, nodes, n;
+    let n, nodes, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, dpr, h, ctx, canvas;
+    let dpr, w, canvas, ctx, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let count, w, a, dist, i, b, j, dy, alpha, ctx, h, n, dx, nodes;
+    let i, dy, h, w, j, a, b, ctx, nodes, dx, dist, count, n, alpha;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let burger, href, links, path;
+    let burger, links, href, path;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -170,7 +170,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, els, args, opts, IO;
+    let args, opts, obs, els, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -190,7 +190,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -200,7 +200,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let txt, dt, nodes, doc, n, cls, parts, i;
+    let dt, parts, cls, txt, nodes, n, i, doc;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -230,7 +230,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let btn, st;
+    let st, btn;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -245,7 +245,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let pct, ph, status, btn, fill;
+    let ph, pct, btn, fill, status;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
