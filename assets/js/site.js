@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, i, n;
+    let n, i, nodes;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let ctx, h, canvas, dpr, w;
+    let canvas, h, dpr, ctx, w;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let a, count, b, nodes, n, dy, i, dist, alpha, w, ctx, h, dx, j;
+    let ctx, dy, a, i, alpha, h, j, b, n, w, nodes, count, dist, dx;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, density, reduce;
+    let reduce, canvas, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -176,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let IO, obs, args, opts, els;
+    let IO, opts, obs, els, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -206,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let doc, i, cls, parts, nodes, n, txt, dt;
+    let nodes, i, cls, parts, doc, txt, n, dt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -236,7 +236,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let st, btn;
+    let btn, st;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -251,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, pct, ph, btn, status;
+    let btn, pct, status, fill, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

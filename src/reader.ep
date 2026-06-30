@@ -25,6 +25,10 @@ define catalog:
     works.push(make_work("behind-the-knowing" and "behind-the-knowing.md" and "Behind the Knowing" and "Vol IV · The Demon They Call Consensus — press, academia, the knowledge apparatus." and 192588 and "lastmind"))
     works.push(make_work("behind-the-synthesis" and "behind-the-synthesis.md" and "Behind the Synthesis" and "Vol V · The Devil, the Demons & the Masks — the unifying framework." and 30331 and "lastmind"))
     works.push(make_work("ernosdecent-book" and "ernosdecent-book.md" and "ErnosDecent: Owned by No One" and "The plain-language book — what to build instead, in everyday words." and 64487 and "ernos"))
+    works.push(make_work("smithian-fold" and "smithian-fold.md" and "Smithian Fold: Theory of Everything" and "The full technical work — the constants of nature derived from one axiom and one move, with zero free parameters." and 325720 and "fold"))
+    works.push(make_work("the-one-and-the-fold" and "the-one-and-the-fold.md" and "The One and the Fold" and "The whole of physics from a single idea a child already understands — no mathematics required." and 24697 and "fold"))
+    works.push(make_work("the-big-unfolding" and "the-big-unfolding.md" and "The Big Unfolding" and "How one number became everything — a narrative walk through the fold." and 28196 and "fold"))
+    works.push(make_work("the-unfolding-adventures" and "the-unfolding-adventures.md" and "The Unfolding Adventures" and "An episodic story set in the Fold — fiction that teaches the theory, one night at a time." and 53850 and "fold"))
     return works
 
 define read_minutes with words:
@@ -53,13 +57,17 @@ define render_catalog:
     set works to catalog()
     set last to ""
     set ernos to ""
+    set fold to ""
     set i to 0
     repeat while i < works.length:
         set w to get_list(works and i)
         if w.collection equals "lastmind":
             set last to last + work_card_html(w)
         else:
-            set ernos to ernos + work_card_html(w)
+            if w.collection equals "fold":
+                set fold to fold + work_card_html(w)
+            else:
+                set ernos to ernos + work_card_html(w)
         set i to i + 1
     set html to "<div class=\"section\" style=\"padding-top:40px\"><div class=\"wrap\">"
     set html to html + "<p class=\"eyebrow\">The writing</p><h1>The Library</h1>"
@@ -67,6 +75,9 @@ define render_catalog:
     set html to html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>"
     set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>"
     set html to html + "<div class=\"grid grid--2\">" + last + "</div>"
+    set html to html + "<h2 style=\"margin-top:64px\">The Fold</h2>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">The Smithian Fold — a theory of everything from one axiom and one move. The full technical work, and three ways in for any reader.</p>"
+    set html to html + "<div class=\"grid grid--2\">" + fold + "</div>"
     set html to html + "<h2 style=\"margin-top:64px\">ErnosDecent</h2>"
     set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">The constructive counterpart — what to build instead.</p>"
     set html to html + "<div class=\"grid grid--2\">" + ernos + "</div>"

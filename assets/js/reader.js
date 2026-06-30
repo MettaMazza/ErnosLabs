@@ -22,6 +22,10 @@ function catalog() {
     works.push(make_work("behind-the-knowing", "behind-the-knowing.md", "Behind the Knowing", "Vol IV · The Demon They Call Consensus — press, academia, the knowledge apparatus.", 192588, "lastmind"));
     works.push(make_work("behind-the-synthesis", "behind-the-synthesis.md", "Behind the Synthesis", "Vol V · The Devil, the Demons & the Masks — the unifying framework.", 30331, "lastmind"));
     works.push(make_work("ernosdecent-book", "ernosdecent-book.md", "ErnosDecent: Owned by No One", "The plain-language book — what to build instead, in everyday words.", 64487, "ernos"));
+    works.push(make_work("smithian-fold", "smithian-fold.md", "Smithian Fold: Theory of Everything", "The full technical work — the constants of nature derived from one axiom and one move, with zero free parameters.", 325720, "fold"));
+    works.push(make_work("the-one-and-the-fold", "the-one-and-the-fold.md", "The One and the Fold", "The whole of physics from a single idea a child already understands — no mathematics required.", 24697, "fold"));
+    works.push(make_work("the-big-unfolding", "the-big-unfolding.md", "The Big Unfolding", "How one number became everything — a narrative walk through the fold.", 28196, "fold"));
+    works.push(make_work("the-unfolding-adventures", "the-unfolding-adventures.md", "The Unfolding Adventures", "An episodic story set in the Fold — fiction that teaches the theory, one night at a time.", 53850, "fold"));
     return works;
 }
 
@@ -37,7 +41,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let mins, out;
+    let out, mins;
     mins = read_minutes(w.words);
     out = "<div class=\"work-item\">";
     out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
@@ -51,15 +55,18 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let html, w, works, i, ernos, cat, cards, last;
+    let fold, last, ernos, cat, w, html, cards, i, works;
     works = catalog();
     last = "";
     ernos = "";
+    fold = "";
     i = 0;
     while ((i < works.length)) {
         w = works[i];
         if ((w.collection === "lastmind")) {
             last = (last + work_card_html(w));
+        } else if ((w.collection === "fold")) {
+            fold = (fold + work_card_html(w));
         } else {
             ernos = (ernos + work_card_html(w));
         }
@@ -71,6 +78,9 @@ function render_catalog() {
     html = (html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>");
     html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>");
     html = (((html + "<div class=\"grid grid--2\">") + last) + "</div>");
+    html = (html + "<h2 style=\"margin-top:64px\">The Fold</h2>");
+    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">The Smithian Fold — a theory of everything from one axiom and one move. The full technical work, and three ways in for any reader.</p>");
+    html = (((html + "<div class=\"grid grid--2\">") + fold) + "</div>");
     html = (html + "<h2 style=\"margin-top:64px\">ErnosDecent</h2>");
     html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">The constructive counterpart — what to build instead.</p>");
     html = (((html + "<div class=\"grid grid--2\">") + ernos) + "</div>");
@@ -106,7 +116,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let toc0, rd, dl, w, doc, url, rtitle;
+    let doc, toc0, rtitle, w, rd, dl, url;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -136,7 +146,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let doc, html;
+    let html, doc;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -147,7 +157,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let cls, toc, out, heads, h, links, i;
+    let links, toc, i, heads, h, cls, out;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -212,7 +222,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let hl, re, marks, q, esc, doc, count;
+    let q, doc, esc, re, marks, hl, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -252,7 +262,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let u, doc, btn, voice_sel, text, voice;
+    let u, voice_sel, text, btn, doc, voice;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -300,7 +310,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let i, container, html, voices, v;
+    let html, voices, container, i, v;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
