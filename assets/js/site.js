@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, n, i;
+    let n, i, nodes;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let canvas, w, ctx, dpr, h;
+    let w, ctx, dpr, h, canvas;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let ctx, w, dist, h, n, j, b, dy, count, nodes, alpha, i, a, dx;
+    let n, count, ctx, nodes, dy, alpha, h, dist, dx, w, i, b, a, j;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, density, canvas;
+    let canvas, density, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -176,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, opts, IO, obs, args;
+    let els, IO, opts, obs, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -196,7 +196,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -206,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let cls, parts, txt, doc, n, nodes, dt, i;
+    let doc, dt, i, cls, txt, parts, nodes, n;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -251,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, pct, status, ph, btn;
+    let btn, pct, ph, fill, status;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -261,9 +261,15 @@ function np_progress(info) {
     pct = Math.round((info.fraction * 100));
     ph = info.phase;
     if ((ph === "loading")) {
-        status.textContent = "loading voice…";
-        fill.classList.add("np-indet");
         btn.classList.add("np-load");
+        if ((info.total > 0)) {
+            status.textContent = (("loading voice… " + String(pct)) + "%");
+            fill.classList.remove("np-indet");
+            fill.style.width = (String(pct) + "%");
+        } else {
+            status.textContent = "loading voice…";
+            fill.classList.add("np-indet");
+        }
     } else {
         fill.classList.remove("np-indet");
     }
@@ -302,7 +308,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let status, btn;
+    let btn, status;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

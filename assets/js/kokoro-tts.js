@@ -83,14 +83,39 @@
   }
 
   // ---- model + audio -----------------------------------------------------
+  const STALL_MS = 45000; // give up only if NO download progress for this long
+
   async function loadModel() {
     if (ttsInstance) return ttsInstance;
     if (loading) { while (loading) await sleep(80); return ttsInstance; }
     loading = true;
+    emit("loading", 0, 0);
     setStatus("loading", "Loading the voice (first time ~80 MB)…");
     try {
       const { KokoroTTS } = await import("https://cdn.jsdelivr.net/npm/kokoro-js@1.1.1/+esm");
-      ttsInstance = await KokoroTTS.from_pretrained(MODEL_ID, { dtype: "q8", device: "wasm" });
+      // Report real download progress so the bar moves and never looks frozen.
+      // transformers.js fires this per file; the big model file dominates the wait.
+      let lastTick = Date.now();
+      let settled = false;
+      const onDl = (p) => {
+        lastTick = Date.now();
+        if (p && (p.status === "progress" || p.status === "download") && p.total) {
+          emit("loading", p.loaded || 0, p.total);
+          const pct = Math.round(((p.loaded || 0) / p.total) * 100);
+          setStatus("loading", `Loading the voice — ${pct}%`);
+        }
+      };
+      const load = KokoroTTS.from_pretrained(MODEL_ID, { dtype: "q8", device: "wasm", progress_callback: onDl })
+        .then((r) => { settled = true; ttsInstance = r; loading = false; return r; }); // if it finishes after a stall fallback, the next click uses it
+      // Watchdog: only abort if the download truly stalls (no bytes for STALL_MS),
+      // so a slow-but-steady connection is never cut off mid-load.
+      const watchdog = new Promise((_, rej) => {
+        const iv = setInterval(() => {
+          if (settled) { clearInterval(iv); return; }
+          if (Date.now() - lastTick > STALL_MS) { clearInterval(iv); rej(new Error("voice load stalled — no progress")); }
+        }, 2000);
+      });
+      ttsInstance = await Promise.race([load, watchdog]);
       loading = false;
       setStatus("ready", "Voice ready");
       return ttsInstance;

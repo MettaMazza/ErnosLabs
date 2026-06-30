@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let orbit, p, guard;
+    let guard, orbit, p;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let i, orbit, bits, p;
+    let orbit, i, p, bits;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -59,7 +59,7 @@ function fold_bits(p0, q) {
 }
 
 function depth_for(x) {
-    let v, d;
+    let d, v;
     d = 0;
     v = 1;
     while ((v < x)) {
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_up, g, cov, d_down;
+    let g, cov, d_up, d_down;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let seq, p, g, size, info, html, y, x, val, orbit, dpr, rad, rq, cy, canvas, bits, ctx, n, cx, rp, ang, q, i;
+    let info, ctx, cx, ang, x, orbit, n, rp, i, html, val, seq, g, q, p, dpr, rq, cy, size, canvas, y, bits, rad;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -200,7 +200,7 @@ function draw_fold() {
 }
 
 function fold_seq_text(orbit, q) {
-    let out, i;
+    let i, out;
     out = "";
     i = 0;
     while ((i < orbit.length)) {
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let hh, c, diff, head, clbl, html, measured, host, match, g;
+    let g, c, hh, html, clbl, host, head, measured, diff, match;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let host, i, s, secs, tag, html, tagtxt;
+    let html, tag, i, host, s, tagtxt, secs;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let html, pred_mu_e, agree_mu, agree_tau, meas_mu_e, host, pred_tau_e, meas_tau_e;
+    let meas_mu_e, pred_tau_e, pred_mu_e, host, meas_tau_e, agree_mu, html, agree_tau;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -362,7 +362,7 @@ function el_pred() {
 }
 
 function draw_ptable() {
-    let pred, cls, e, z, sym, syms, starts, s, host, html, cells, closures, ends, p, len;
+    let html, closures, len, sym, starts, cls, pred, cells, e, s, syms, z, host, ends, p;
     host = document.getElementById("ptable");
     if (!host) {
         return 0;
@@ -415,7 +415,7 @@ function draw_ptable() {
 }
 
 function pt_click(ev) {
-    let info, z, status, note, sym;
+    let note, info, status, z, sym;
     z = Number(ev.currentTarget.getAttribute("data-z"));
     sym = ev.currentTarget.getAttribute("data-sym");
     info = document.getElementById("pt-info");
@@ -483,7 +483,7 @@ function gen_label(k) {
 }
 
 function draw_lockweb() {
-    let gl, gbtns, i, gkl, host, L, ghtml, j, c, chips, gk, gj, gens, chtml, g;
+    let gens, ghtml, chtml, gk, gbtns, c, j, L, gj, host, chips, g, gkl, gl, i;
     host = document.getElementById("lockweb");
     if (!host) {
         return 0;
@@ -526,7 +526,7 @@ function draw_lockweb() {
 }
 
 function lw_click(ev) {
-    let host, g, active, gbtns, gstr, consts, sel;
+    let g, host, sel, consts, active, gbtns, gstr;
     g = ev.currentTarget.getAttribute("data-g");
     host = document.getElementById("lockweb");
     sel = window.lockSel;
@@ -569,7 +569,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let pe, idx, qe, q_val, queue;
+    let idx, qe, pe, q_val, queue;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -651,7 +651,7 @@ function ledger_card(p) {
 }
 
 function render_ledger() {
-    let p, grid, f, P, html, i;
+    let i, html, p, P, grid, f;
     grid = document.getElementById("lg-grid");
     if (!grid) {
         return 0;
@@ -674,7 +674,7 @@ function render_ledger() {
 }
 
 function ledger_filter(ev) {
-    let host, fbtns, f;
+    let f, host, fbtns;
     f = ev.currentTarget.getAttribute("data-f");
     window.ledgerFilter = f;
     host = document.getElementById("ledger");
@@ -691,7 +691,7 @@ function ledger_filter(ev) {
 }
 
 function draw_ledger() {
-    let fbtns, host, fhtml;
+    let host, fbtns, fhtml;
     host = document.getElementById("ledger");
     if (!host) {
         return 0;
@@ -745,7 +745,7 @@ function clamp_heap(x) {
 }
 
 function sub_solve(n) {
-    let m, w, win, i;
+    let win, i, w, m;
     win = [];
     i = 0;
     while ((i <= n)) {
@@ -766,7 +766,7 @@ function sub_solve(n) {
 }
 
 function draw_sub() {
-    let verdict, win, strip, n, w, i, vcls, mloss, html, host, cls, movetxt, oloss, m, disagree;
+    let movetxt, m, disagree, oloss, strip, vcls, host, mloss, w, n, cls, win, html, verdict, i;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -831,7 +831,7 @@ function nim_key(a, b, c) {
 }
 
 function nim_win(a, b, c, memo) {
-    let na, nc, nb, k, result, cached;
+    let cached, result, na, nc, k, nb;
     k = nim_key(a, b, c);
     cached = memo[k];
     if (cached) {
@@ -868,7 +868,7 @@ function nim_win(a, b, c, memo) {
 }
 
 function draw_nim() {
-    let kk, a, j, orc, verdict, disagree, i, html, vcls, b, ta, w, tb, rg, host, tc, states, c, nimsum, movetxt, memo;
+    let host, b, verdict, kk, html, a, w, nimsum, c, movetxt, memo, disagree, i, ta, rg, vcls, tb, states, j, tc, orc;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -936,7 +936,7 @@ function nim_ev(ev) {
 }
 
 function tokens(n) {
-    let s, i;
+    let i, s;
     s = "";
     i = 0;
     while ((i < n)) {
@@ -978,7 +978,7 @@ function sub_start(ev) {
 }
 
 function sub_render() {
-    let host, h, html, k, dis, takes;
+    let dis, html, k, takes, h, host;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -1043,7 +1043,7 @@ function nim_total(H) {
 }
 
 function nim_best(a, b, c) {
-    let tb, ta, s, bi, tc, bv;
+    let s, bi, bv, tb, tc, ta;
     s = g_xor(g_xor(a, b), c);
     if ((s !== 0)) {
         ta = g_xor(a, s);
@@ -1071,7 +1071,7 @@ function nim_best(a, b, c) {
 }
 
 function nim_start(ev) {
-    let a, b, c;
+    let c, b, a;
     a = clamp_heap(Math.round(Number(document.getElementById("nim-a").value)));
     b = clamp_heap(Math.round(Number(document.getElementById("nim-b").value)));
     c = clamp_heap(Math.round(Number(document.getElementById("nim-c").value)));
@@ -1083,7 +1083,7 @@ function nim_start(ev) {
 }
 
 function nim_render() {
-    let nm, host, h, names, takes, H, html, i;
+    let nm, i, host, H, names, html, takes, h;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -1116,7 +1116,7 @@ function nim_render() {
 }
 
 function nim_take_ev(ev) {
-    let enm, hi, H, cur, amt, ei, mv, sel, eamt, names;
+    let mv, ei, sel, hi, cur, names, H, eamt, amt, enm;
     if (window.nimOver) {
         return 0;
     }

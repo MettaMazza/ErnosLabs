@@ -223,9 +223,14 @@ define np_progress with info:
     set pct to Math.round(info.fraction * 100)
     set ph to info.phase
     if ph equals "loading":
-        set status.textContent to "loading voice…"
-        fill.classList.add("np-indet")
         btn.classList.add("np-load")
+        if info.total > 0:
+            set status.textContent to f"loading voice… {pct}%"
+            fill.classList.remove("np-indet")
+            set fill.style.width to f"{pct}%"
+        else:
+            set status.textContent to "loading voice…"
+            fill.classList.add("np-indet")
     else:
         fill.classList.remove("np-indet")
     if ph equals "buffering":
