@@ -206,7 +206,7 @@ define narration_text:
 define np_toggle with ev:
     if not window.kokoroTTS:
         return 0
-    set st to window.kokoroTTS.toggle(narration_text() and "am_fable")
+    set st to window.kokoroTTS.toggle(narration_text() and "bm_fable")
     set btn to document.getElementById("np-toggle")
     if st equals "paused":
         set btn.textContent to "▶"

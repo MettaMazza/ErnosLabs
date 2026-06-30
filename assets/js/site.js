@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let i, nodes, n;
+    let nodes, n, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, dpr, canvas, h, ctx;
+    let dpr, w, h, ctx, canvas;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let a, alpha, n, count, w, nodes, ctx, h, i, dy, b, dx, dist, j;
+    let dy, j, dist, a, w, b, ctx, nodes, n, h, dx, alpha, i, count;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, canvas, reduce;
+    let canvas, density, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -148,7 +148,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let links, path, href;
+    let path, links, href;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -176,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, obs, opts, args, IO;
+    let obs, els, args, opts, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -196,7 +196,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -206,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let parts, nodes, txt, doc, dt, cls, n, i;
+    let nodes, dt, parts, doc, i, cls, txt, n;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -236,11 +236,11 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let st, btn;
+    let btn, st;
     if (!window.kokoroTTS) {
         return 0;
     }
-    st = window.kokoroTTS.toggle(narration_text(), "am_fable");
+    st = window.kokoroTTS.toggle(narration_text(), "bm_fable");
     btn = document.getElementById("np-toggle");
     if ((st === "paused")) {
         btn.textContent = "▶";
@@ -251,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let pct, status, ph, fill, btn;
+    let btn, pct, status, ph, fill;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

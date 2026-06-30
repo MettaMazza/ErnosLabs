@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let i, w, cat, ernos, cards, last, works, html;
+    let works, last, cards, ernos, i, w, cat, html;
     works = catalog();
     last = "";
     ernos = "";
@@ -89,7 +89,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let i, w, works;
+    let w, works, i;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let doc, rd, url, toc0, w, rtitle;
+    let rd, toc0, doc, w, rtitle, url;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let links, out, cls, heads, h, toc, i;
+    let out, cls, links, heads, toc, i, h;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -164,7 +164,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let el, id;
+    let id, el;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let q, doc, count, esc, re, hl, marks;
+    let re, q, esc, hl, doc, count, marks;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +245,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let u, text, btn, doc, voice_sel, voice;
+    let voice_sel, voice, u, text, btn, doc;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -260,7 +260,7 @@ function toggle_tts(ev) {
     btn.textContent = "■ Stop";
     if (window.kokoroTTS) {
         voice_sel = document.getElementById("voice-select");
-        voice = "am_fable";
+        voice = "bm_fable";
         if (voice_sel) {
             voice = voice_sel.value;
         }
@@ -293,7 +293,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let container, i, v, html, voices;
+    let container, voices, i, v, html;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

@@ -18,9 +18,12 @@
 (function () {
   "use strict";
 
-  // Bake your Kokoro server URL here once it's live (or use setEndpoint at runtime).
-  const KOKORO_ENDPOINT = "";
-  const DEFAULT_VOICE = "am_fable";
+  // Default endpoint: Maria's local Kokoro server (serve_local.py on :8880).
+  // When it's running, read-aloud uses the real local Fable voice instantly.
+  // When it's not (any other visitor), the fetch fails fast and we fall back to
+  // the browser voice. Override with setEndpoint()/window.KOKORO_ENDPOINT.
+  const KOKORO_ENDPOINT = "http://localhost:8880";
+  const DEFAULT_VOICE = "bm_fable";
   const FIRST_TIMEOUT_MS = 60000; // first request may wake a cold server
   const GEN_TIMEOUT_MS = 30000;   // subsequent requests
 
@@ -279,14 +282,14 @@
 
   function getVoices() {
     return [
-      { id: "am_fable", name: "Fable (male)" },
+      { id: "bm_fable", name: "Fable (British male)" },
+      { id: "bm_george", name: "George (British male)" },
+      { id: "bf_emma", name: "Emma (British female)" },
       { id: "af_heart", name: "Heart (female)" },
       { id: "af_bella", name: "Bella (female)" },
       { id: "af_sarah", name: "Sarah (female)" },
       { id: "am_michael", name: "Michael (male)" },
-      { id: "am_adam", name: "Adam (male)" },
-      { id: "bf_emma", name: "Emma (British female)" },
-      { id: "bm_george", name: "George (British male)" },
+      { id: "am_fenrir", name: "Fenrir (male)" },
     ];
   }
 
