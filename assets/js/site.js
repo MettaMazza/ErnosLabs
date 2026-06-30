@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, n, i;
+    let nodes, i, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, w, h, ctx, canvas;
+    let ctx, h, canvas, dpr, w;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let dy, j, dist, a, w, b, ctx, nodes, n, h, dx, alpha, i, count;
+    let a, count, b, nodes, n, dy, i, dist, alpha, w, ctx, h, dx, j;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -148,7 +148,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let path, links, href;
+    let links, href, path;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -176,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, els, args, opts, IO;
+    let IO, obs, args, opts, els;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -206,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let nodes, dt, parts, doc, i, cls, txt, n;
+    let doc, i, cls, parts, nodes, n, txt, dt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -236,7 +236,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let btn, st;
+    let st, btn;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -251,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let btn, pct, status, ph, fill;
+    let fill, pct, ph, btn, status;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -308,7 +308,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let status, btn;
+    let btn, status;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

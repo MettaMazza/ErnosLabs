@@ -356,6 +356,20 @@ pre {
 @keyframes out-flash { 0% { box-shadow: 0 0 0 2px var(--glow) inset; } 100% { box-shadow: 0 0 0 0 transparent inset; } }
 .output.flash { animation: out-flash .55s var(--ease); }
 
+/* library download buttons */
+.work-item { display: flex; flex-direction: column; }
+.work-item .work-card { flex: 1; width: 100%; }
+.work-dl {
+  align-self: flex-start; margin-top: 10px;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 14px; font-size: .82rem; font-weight: 500;
+  color: var(--ink-1); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: rgba(255,255,255,.02); transition: all .18s var(--ease);
+}
+.work-dl:hover { color: var(--ink-0); border-color: var(--glow); background: rgba(79,240,196,.06); }
+#reader-dl { text-decoration: none; }
+
 /* demo game console */
 .game { display: flex; flex-direction: column; gap: 14px; }
 .game__bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }

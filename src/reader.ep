@@ -39,11 +39,14 @@ define fmt_words with words:
 
 define work_card_html with w:
     set mins to read_minutes(w.words)
-    set out to f"<button class=\"card work-card reveal in\" data-id=\"{w.id}\">"
+    set out to "<div class=\"work-item\">"
+    set out to out + f"<button class=\"card work-card reveal in\" data-id=\"{w.id}\">"
     set out to out + f"<span class=\"card__tag\">{fmt_words(w.words)} · ~{mins} min</span>"
     set out to out + f"<h3>{w.title}</h3>"
     set out to out + f"<p>{w.sub}</p>"
     set out to out + "<span class=\"go\">Read →</span></button>"
+    set out to out + f"<a class=\"work-dl\" href=\"content/library/{w.file}\" download>⬇ Download</a>"
+    set out to out + "</div>"
     return out
 
 define render_catalog:
@@ -60,7 +63,7 @@ define render_catalog:
         set i to i + 1
     set html to "<div class=\"section\" style=\"padding-top:40px\"><div class=\"wrap\">"
     set html to html + "<p class=\"eyebrow\">The writing</p><h1>The Library</h1>"
-    set html to html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud. Nothing to download.</p>"
+    set html to html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud, or download the full text.</p>"
     set html to html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>"
     set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>"
     set html to html + "<div class=\"grid grid--2\">" + last + "</div>"
@@ -104,6 +107,9 @@ define open_work with id:
     rd.classList.remove("hidden")
     set rtitle to document.getElementById("reader-title")
     set rtitle.textContent to w.title
+    set dl to document.getElementById("reader-dl")
+    if dl:
+        set dl.href to "content/library/" + w.file
     set doc to document.getElementById("doc")
     set doc.innerHTML to "<p class=\"loading\">Loading " + w.title + "…</p>"
     set toc0 to document.getElementById("toc")

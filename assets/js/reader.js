@@ -39,16 +39,19 @@ function fmt_words(words) {
 function work_card_html(w) {
     let mins, out;
     mins = read_minutes(w.words);
-    out = (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">");
+    out = "<div class=\"work-item\">";
+    out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
     out = (out + (((("<span class=\"card__tag\">" + String(fmt_words(w.words))) + " · ~") + String(mins)) + " min</span>"));
     out = (out + (("<h3>" + String(w.title)) + "</h3>"));
     out = (out + (("<p>" + String(w.sub)) + "</p>"));
     out = (out + "<span class=\"go\">Read →</span></button>");
+    out = (out + (("<a class=\"work-dl\" href=\"content/library/" + String(w.file)) + "\" download>⬇ Download</a>"));
+    out = (out + "</div>");
     return out;
 }
 
 function render_catalog() {
-    let works, last, cards, ernos, i, w, cat, html;
+    let html, w, works, i, ernos, cat, cards, last;
     works = catalog();
     last = "";
     ernos = "";
@@ -64,7 +67,7 @@ function render_catalog() {
     }
     html = "<div class=\"section\" style=\"padding-top:40px\"><div class=\"wrap\">";
     html = (html + "<p class=\"eyebrow\">The writing</p><h1>The Library</h1>");
-    html = (html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud. Nothing to download.</p>");
+    html = (html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud, or download the full text.</p>");
     html = (html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>");
     html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>");
     html = (((html + "<div class=\"grid grid--2\">") + last) + "</div>");
@@ -89,7 +92,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, works, i;
+    let w, i, works;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -103,7 +106,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rd, toc0, doc, w, rtitle, url;
+    let toc0, rd, dl, w, doc, url, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -114,6 +117,10 @@ function open_work(id) {
     rd.classList.remove("hidden");
     rtitle = document.getElementById("reader-title");
     rtitle.textContent = w.title;
+    dl = document.getElementById("reader-dl");
+    if (dl) {
+        dl.href = ("content/library/" + w.file);
+    }
     doc = document.getElementById("doc");
     doc.innerHTML = (("<p class=\"loading\">Loading " + w.title) + "…</p>");
     toc0 = document.getElementById("toc");
@@ -140,7 +147,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let out, cls, links, heads, toc, i, h;
+    let cls, toc, out, heads, h, links, i;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -164,7 +171,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let id, el;
+    let el, id;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -205,7 +212,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let re, q, esc, hl, doc, count, marks;
+    let hl, re, marks, q, esc, doc, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +252,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let voice_sel, voice, u, text, btn, doc;
+    let u, doc, btn, voice_sel, text, voice;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -293,7 +300,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let container, voices, i, v, html;
+    let i, container, html, voices, v;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
