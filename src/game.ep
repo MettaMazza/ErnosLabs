@@ -1,0 +1,45 @@
+# ErnosLabs — demo game runner
+# Component: src/game.ep  (compiled to assets/js/game.js via build.sh)
+# Runs the real rpg_battle_system.ep demo (compiled to JS by the same Ernos
+# compiler) on the page. The battle logs each line with display/console.log;
+# we capture those lines and paint them into the on-page console, so visitors
+# watch a full trait-dispatched, choice-enum battle play out — a different
+# result every run, since damage and criticals are randomised.
+
+define rpg_capture with line:
+    set buf to window.epRpgLines
+    if buf:
+        buf.push(line)
+    return 0
+
+define rpg_run with ev:
+    set out to document.getElementById("rpg-out")
+    if not out:
+        return 0
+    if not window.epRpgBattle:
+        set out.textContent to "Battle engine not loaded."
+        return 0
+    # fresh capture buffer
+    set lines to []
+    set window.epRpgLines to lines
+    # redirect the battle's output, run it (synchronous), then restore
+    set window.epRpgOrig to console.log
+    set console.log to rpg_capture
+    window.epRpgBattle()
+    set console.log to window.epRpgOrig
+    set out.textContent to lines.join("\n")
+    set out.scrollTop to 0
+    set btn to document.getElementById("rpg-go")
+    if btn:
+        set btn.textContent to "⚔ Fight again"
+    return 0
+
+define rpg_init:
+    set btn to document.getElementById("rpg-go")
+    if btn:
+        btn.addEventListener("click" and rpg_run)
+    return 0
+
+define main:
+    rpg_init()
+    return 0

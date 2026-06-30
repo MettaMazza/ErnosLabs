@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=75a84858">
+  <link rel="stylesheet" href="assets/css/site.css?v=bef4a9fa">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -116,6 +116,30 @@
           <span class="term__prompt">›</span>
           <textarea class="term__input" id="term-input" rows="2" spellcheck="false" autocomplete="off" placeholder="2 plus 2        (then press Enter)"></textarea>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO GAME -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">A real program</p>
+      <h2>Play a demo: the RPG battle</h2>
+      <p class="lead" style="margin-bottom:8px">This isn't a toy. It's one of ErnosPlain's shipped demos —
+        <code>rpg_battle_system.ep</code>, 362 lines — compiled to JavaScript by the very same Ernos compiler that
+        builds it to native C. It exercises the hard parts of the language at once: <strong style="color:var(--ink-0)">structs</strong>,
+        a <strong style="color:var(--ink-0)">trait</strong> with implementations for three types, a
+        <strong style="color:var(--ink-0)">choice enum</strong> wrapping them, and <strong style="color:var(--ink-0)">dynamic
+        dispatch</strong> over a mixed party.</p>
+      <p style="color:var(--ink-2);font-size:.92rem;margin-bottom:24px">Hit Fight — a party of two takes on two monsters.
+        Damage and 20% criticals are randomised, so every battle plays out differently. Run it a few times.</p>
+      <div class="game reveal">
+        <div class="game__bar">
+          <button class="btn btn--primary" id="rpg-go">⚔ Fight</button>
+          <a class="btn btn--ghost" href="demos/rpg_battle_system.ep" target="_blank" rel="noopener">Read the source ↗</a>
+        </div>
+        <pre class="game__out" id="rpg-out">Press <strong>Fight</strong> to run the battle. The same code compiles to native C — here it's running as JavaScript, in your browser.</pre>
       </div>
     </div>
   </section>
@@ -246,10 +270,12 @@
 
   </div>
 
-  <script src="assets/js/interp.js?v=bf6118e3"></script>
+  <script src="assets/js/interp.js?v=cf8e6f59"></script>
   <script src="assets/js/spa.js?v=4ccb1218"></script>
   <script src="assets/js/kokoro-tts.js?v=6b5ccbf0"></script>
-  <script src="assets/js/site.js?v=a50e9d87"></script>
-  <script src="assets/js/playground.js?v=bc629180"></script>
+  <script src="assets/js/site.js?v=6921c035"></script>
+  <script src="assets/js/playground.js?v=8c0f6d5e"></script>
+  <script src="assets/js/rpg.js?v=7a64e5b7"></script>
+  <script src="assets/js/game.js?v=6ef511dc"></script>
 </body>
 </html>

@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let i, c, word, n, d, out, start, sstart;
+    let out, c, start, word, d, i, sstart, n;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let g, i, lines, gutter, layer, ta, src;
+    let g, lines, src, gutter, i, ta, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let val, ta, epp, sp;
+    let val, epp, sp, ta;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let btn, exs, e, host, i;
+    let i, host, exs, e, btn;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -241,7 +241,7 @@ function pick_example(ev) {
 }
 
 function clear_output() {
-    let out, status;
+    let status, out;
     out = document.getElementById("output");
     out.classList.remove("err");
     out.textContent = "▶  Press Run to execute.";
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let r, status, src, out, reflow, t1, ms, ta, t0;
+    let out, src, r, ta, status, t0, t1, ms, reflow;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -313,7 +313,7 @@ function term_init() {
 }
 
 function term_print(text, cls) {
-    let log, line;
+    let line, log;
     log = document.getElementById("term-log");
     line = document.createElement("div");
     line.className = ("term-line " + cls);
@@ -324,7 +324,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let epp, inp, trimmed, val, sp, src, r;
+    let epp, val, inp, src, trimmed, r, sp;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -369,7 +369,7 @@ function term_keydown(ev) {
 }
 
 function term_command(cmd) {
-    let log, low;
+    let low, log;
     low = cmd.toLowerCase();
     if ((low === "/save")) {
         term_save();
@@ -469,7 +469,7 @@ function term_help(level) {
 }
 
 function term_save() {
-    let blob, a, lines, opts, url, code;
+    let code, blob, opts, url, lines, a;
     lines = window.epHistory;
     if ((lines.length === 0)) {
         term_print("Nothing to save yet — write some ErnosPlain first.", "term-dim");
@@ -492,7 +492,7 @@ function term_save() {
 }
 
 function main() {
-    let exs, ta, first;
+    let first, ta, exs;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");
