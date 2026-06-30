@@ -227,7 +227,7 @@ define toggle_tts with ev:
     set btn.textContent to "■ Stop"
     if window.kokoroTTS:
         set voice_sel to document.getElementById("voice-select")
-        set voice to "af_heart"
+        set voice to "am_fable"
         if voice_sel:
             set voice to voice_sel.value
         window.kokoroTTS.speak(text and voice)
