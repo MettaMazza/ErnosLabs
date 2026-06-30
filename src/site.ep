@@ -130,10 +130,14 @@ define nav_init:
     set burger to document.getElementById("burger")
     if burger:
         burger.addEventListener("click" and nav_toggle)
-    # highlight the current page's nav link
+    return 0
+
+# highlight the current page's nav link (re-run on every SPA page change)
+define nav_highlight:
     set path to window.location.pathname
     set links to document.querySelectorAll(".nav__links a")
     for each a in links:
+        a.classList.remove("active")
         set href to a.getAttribute("href")
         if href:
             if path.indexOf(href) >= 0:
@@ -264,10 +268,17 @@ define player_init:
     window.kokoroTTS.setOnProgress(np_progress)
     return 0
 
+# Per-page setup — safe to re-run after the SPA swaps page content. Does NOT
+# touch the mesh, the player, or the playing audio (those persist across pages).
+define site_page_init:
+    nav_highlight()
+    reveal_init()
+    year_init()
+    return 0
+
 define main:
     mesh_init()
     nav_init()
-    reveal_init()
-    year_init()
     player_init()
+    site_page_init()
     return 0

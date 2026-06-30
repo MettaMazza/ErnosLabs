@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let n, nodes, i;
+    let i, nodes, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, w, canvas, ctx, h;
+    let canvas, h, dpr, w, ctx;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let i, dy, h, w, j, a, b, ctx, nodes, dx, dist, count, n, alpha;
+    let nodes, b, a, dx, count, n, dist, h, ctx, dy, alpha, i, w, j;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, reduce, density;
+    let reduce, canvas, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,14 +139,20 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let burger, links, href, path;
+    let burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
     }
+    return 0;
+}
+
+function nav_highlight() {
+    let href, path, links;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
+        a.classList.remove("active");
         href = a.getAttribute("href");
         if (href) {
             if ((path.indexOf(href) >= 0)) {
@@ -170,7 +176,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let args, opts, obs, els, IO;
+    let IO, obs, els, opts, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -190,7 +196,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let d, y;
+    let y, d;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -200,7 +206,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let dt, parts, cls, txt, nodes, n, i, doc;
+    let nodes, doc, cls, dt, parts, i, txt, n;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -245,7 +251,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let ph, pct, btn, fill, status;
+    let ph, btn, pct, status, fill;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -296,7 +302,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let btn, status;
+    let status, btn;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;
@@ -313,12 +319,18 @@ function player_init() {
     return 0;
 }
 
+function site_page_init() {
+    nav_highlight();
+    reveal_init();
+    year_init();
+    return 0;
+}
+
 function main() {
     mesh_init();
     nav_init();
-    reveal_init();
-    year_init();
     player_init();
+    site_page_init();
     return 0;
 }
 

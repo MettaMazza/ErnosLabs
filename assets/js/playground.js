@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let out, d, i, n, c, sstart, word, start;
+    let i, c, word, n, d, out, start, sstart;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let g, i, layer, gutter, src, lines, ta;
+    let g, i, lines, gutter, layer, ta, src;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let ta, val, epp, sp;
+    let val, ta, epp, sp;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let exs, btn, host, i, e;
+    let btn, exs, e, host, i;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let out, t1, r, t0, ta, src, status, reflow, ms;
+    let r, status, src, out, reflow, t1, ms, ta, t0;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -324,7 +324,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let val, epp, src, inp, r, trimmed, sp;
+    let epp, inp, trimmed, val, sp, src, r;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -369,7 +369,7 @@ function term_keydown(ev) {
 }
 
 function term_command(cmd) {
-    let low, log;
+    let log, low;
     low = cmd.toLowerCase();
     if ((low === "/save")) {
         term_save();
@@ -469,7 +469,7 @@ function term_help(level) {
 }
 
 function term_save() {
-    let url, a, opts, lines, code, blob;
+    let blob, a, lines, opts, url, code;
     lines = window.epHistory;
     if ((lines.length === 0)) {
         term_print("Nothing to save yet — write some ErnosPlain first.", "term-dim");
@@ -492,7 +492,7 @@ function term_save() {
 }
 
 function main() {
-    let first, exs, ta;
+    let exs, ta, first;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");
