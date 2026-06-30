@@ -37,7 +37,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let mins, out;
+    let out, mins;
     mins = read_minutes(w.words);
     out = (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">");
     out = (out + (((("<span class=\"card__tag\">" + String(fmt_words(w.words))) + " · ~") + String(mins)) + " min</span>"));
@@ -48,7 +48,7 @@ function work_card_html(w) {
 }
 
 function render_catalog() {
-    let i, w, last, works, html, cards, cat, ernos;
+    let i, w, works, cards, last, ernos, html, cat;
     works = catalog();
     last = "";
     ernos = "";
@@ -103,7 +103,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rd, rtitle, doc, url, w, toc0;
+    let rd, doc, rtitle, w, toc0, url;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -140,7 +140,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let toc, out, i, h, links, heads, cls;
+    let i, links, h, cls, heads, out, toc;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -205,7 +205,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let q, esc, re, hl, doc, marks, count;
+    let re, esc, count, q, doc, hl, marks;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -245,7 +245,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let text, doc, voice_sel, voice, u, btn;
+    let doc, voice_sel, text, u, voice, btn;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -293,7 +293,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let html, v, container, voices, i;
+    let container, voices, i, v, html;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;

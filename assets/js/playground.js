@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let i, start, out, c, n, d, sstart, word;
+    let n, c, sstart, d, out, word, i, start;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let layer, lines, i, src, gutter, g, ta;
+    let src, g, i, ta, gutter, layer, lines;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let layer, gutter, ta;
+    let gutter, ta, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let val, ta, epp, sp;
+    let sp, epp, val, ta;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let exs, e, host, i, btn;
+    let e, exs, host, i, btn;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -230,7 +230,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let exs, idx, e;
+    let exs, e, idx;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let status, t0, src, r, reflow, out, t1, ms, ta;
+    let t1, out, src, status, ta, t0, r, ms, reflow;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -306,12 +306,14 @@ function term_init() {
         return 0;
     }
     ep_repl_reset();
+    window.epHistory = [];
     inp.addEventListener("keydown", term_keydown);
+    term_print("New to code? Type  /help  to start learning — or just try:  2 plus 2", "term-dim");
     return 0;
 }
 
 function term_print(text, cls) {
-    let log, line;
+    let line, log;
     log = document.getElementById("term-log");
     line = document.createElement("div");
     line.className = ("term-line " + cls);
@@ -322,7 +324,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let epp, src, sp, inp, r, val;
+    let val, sp, inp, src, trimmed, r, epp;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -335,6 +337,12 @@ function term_keydown(ev) {
         }
         term_print(("› " + src), "term-in");
         inp.value = "";
+        trimmed = src.trim();
+        if ((trimmed.charAt(0) === "/")) {
+            term_command(trimmed);
+            return 0;
+        }
+        window.epHistory.push(src);
         r = ep_repl(src);
         if (r.ok) {
             if ((r.output !== "")) {
@@ -360,8 +368,131 @@ function term_keydown(ev) {
     return 0;
 }
 
+function term_command(cmd) {
+    let low, log;
+    low = cmd.toLowerCase();
+    if ((low === "/save")) {
+        term_save();
+        return 0;
+    }
+    if ((low === "/clear")) {
+        log = document.getElementById("term-log");
+        log.innerHTML = "";
+        return 0;
+    }
+    if ((low.indexOf("newbie") >= 0)) {
+        term_help("newbie");
+        return 0;
+    }
+    if ((low.indexOf("vibing") >= 0)) {
+        term_help("vibing");
+        return 0;
+    }
+    if ((low.indexOf("pro") >= 0)) {
+        term_help("pro");
+        return 0;
+    }
+    if ((low.indexOf("help") >= 0)) {
+        term_help_menu();
+        return 0;
+    }
+    term_print("Unknown command. Type /help to see what's available.", "term-dim");
+    return 0;
+}
+
+function term_help_menu() {
+    let t;
+    t = "ErnosPlain help — pick the level that fits you:\n";
+    t = (t + "  /help newbie   first time ever — the gentlest steps\n");
+    t = (t + "  /help vibing   you've got the basics — build small things\n");
+    t = (t + "  /help pro      recursion, structures, the whole language\n\n");
+    t = (t + "Other commands:\n");
+    t = (t + "  /save          download everything you've typed as a .ep file\n");
+    t = (t + "  /clear         clear this console");
+    term_print(t, "term-help");
+    return 0;
+}
+
+function term_help(level) {
+    let t;
+    if ((level === "newbie")) {
+        t = "NEWBIE — your very first program\n";
+        t = (t + "A program is just a list of instructions. Type these one line at a time\n");
+        t = (t + "and press Enter after each:\n\n");
+        t = (t + "  display \"Hello!\"          shows some text\n");
+        t = (t + "  set age to 10             remembers a number called age\n");
+        t = (t + "  display age               shows it back\n");
+        t = (t + "  display age plus 5        simple maths\n");
+        t = (t + "  set name to \"Sam\"\n");
+        t = (t + "  display f\"Hi {name}!\"      puts a value inside text\n\n");
+        t = (t + "Remember: 'display' shows things, 'set X to Y' remembers things.\n");
+        t = (t + "When that clicks, type  /help vibing");
+        term_print(t, "term-help");
+        return 0;
+    }
+    if ((level === "vibing")) {
+        t = "VIBING — making things happen\n";
+        t = (t + "Functions package up steps so you can reuse them:\n\n");
+        t = (t + "  define double with n:\n");
+        t = (t + "      return n times 2\n");
+        t = (t + "  double(21)                gives 42\n\n");
+        t = (t + "Loops repeat work:\n");
+        t = (t + "  set i to 1\n");
+        t = (t + "  repeat while i is less than 4:\n");
+        t = (t + "      display i\n");
+        t = (t + "      set i to i plus 1\n\n");
+        t = (t + "Lists hold many values:\n");
+        t = (t + "  set xs to [3, 1, 2]\n");
+        t = (t + "  display length_list(xs)\n\n");
+        t = (t + "(Shift+Enter makes a new line; Tab indents.) Ready for more? /help pro");
+        term_print(t, "term-help");
+        return 0;
+    }
+    if ((level === "pro")) {
+        t = "PRO — the full shape of the language\n";
+        t = (t + "Recursion — a function that calls itself:\n\n");
+        t = (t + "  define fib with n:\n");
+        t = (t + "      if n is less than 2:\n");
+        t = (t + "          return n\n");
+        t = (t + "      return fib(n minus 1) plus fib(n minus 2)\n\n");
+        t = (t + "Structures group data; choices + check do pattern matching:\n");
+        t = (t + "  define structure Point:\n");
+        t = (t + "      field x as Int\n");
+        t = (t + "      field y as Int\n\n");
+        t = (t + "The full compiler also has traits, closures (given x: ...), a borrow\n");
+        t = (t + "checker, 24 stdlib modules and FFI — all compiled to native code.\n");
+        t = (t + "Type /save to keep what you've written.");
+        term_print(t, "term-help");
+        return 0;
+    }
+    return 0;
+}
+
+function term_save() {
+    let lines, code, blob, a, url, opts;
+    lines = window.epHistory;
+    if ((lines.length === 0)) {
+        term_print("Nothing to save yet — write some ErnosPlain first.", "term-dim");
+        return 0;
+    }
+    code = (("# Saved from the Ernos Labs REPL\n\n" + lines.join("\n")) + "\n");
+    opts = JSON.parse("{}");
+    opts.type = "text/plain";
+    blob = Reflect.construct(window.Blob, [[code], opts]);
+    url = window.URL.createObjectURL(blob);
+    a = document.createElement("a");
+    a.href = url;
+    a.download = "my-program.ep";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+    term_print("✓ Saved your session as my-program.ep", "term-out");
+    return 0;
+}
+
 function main() {
-    let first, exs, ta;
+    let ta, exs, first;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");
