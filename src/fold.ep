@@ -833,6 +833,184 @@ define nim_ev with ev:
     draw_nim()
     return 0
 
+# ---- PLAYABLE games: you vs the fold engine -----------------------------
+
+define tokens with n:
+    set s to ""
+    set i to 0
+    repeat while i < n:
+        set s to s + "<span class=\"gtok\"></span>"
+        set i to i + 1
+    return s
+
+# Subtraction: the fold's optimal take (move to a losing position if it can).
+define sub_best with h:
+    set win to sub_solve(h)
+    set k to 1
+    repeat while k <= 3:
+        if k <= h:
+            if not get_list(win and h - k):
+                return k
+        set k to k + 1
+    return 1
+
+define sub_start with ev:
+    set n to Math.round(Number(document.getElementById("sub-n").value))
+    if n < 1:
+        set n to 1
+    if n > 30:
+        set n to 30
+    set window.subHeap to n
+    set window.subOver to false
+    set window.subMsg to "Your move — take 1, 2 or 3. Whoever takes the last token wins."
+    sub_render()
+    return 0
+
+define sub_render:
+    set host to document.getElementById("sub-out")
+    if not host:
+        return 0
+    set h to window.subHeap
+    set html to f"<div class=\"play-heap\">{tokens(h)}</div>"
+    set html to html + f"<div class=\"play-count\">{h} token(s) left</div>"
+    set html to html + "<div class=\"play-btns\">"
+    set k to 1
+    repeat while k <= 3:
+        set dis to ""
+        if k > h:
+            set dis to " disabled"
+        if window.subOver:
+            set dis to " disabled"
+        set html to html + f"<button class=\"btn btn--ghost sub-take\" data-k=\"{k}\"{dis}>take {k}</button>"
+        set k to k + 1
+    set html to html + "<button class=\"btn btn--primary\" id=\"sub-new\">New game</button></div>"
+    set html to html + f"<div class=\"play-msg\">{window.subMsg}</div>"
+    set host.innerHTML to html
+    set takes to host.querySelectorAll(".sub-take")
+    for each b in takes:
+        b.addEventListener("click" and sub_take_ev)
+    document.getElementById("sub-new").addEventListener("click" and sub_start)
+    return 0
+
+define sub_take_ev with ev:
+    if window.subOver:
+        return 0
+    set k to Number(ev.currentTarget.getAttribute("data-k"))
+    set window.subHeap to window.subHeap - k
+    if window.subHeap <= 0:
+        set window.subHeap to 0
+        set window.subOver to true
+        set window.subMsg to "🏆 You took the last token — you win!"
+        sub_render()
+        return 0
+    set e to sub_best(window.subHeap)
+    set window.subHeap to window.subHeap - e
+    if window.subHeap <= 0:
+        set window.subHeap to 0
+        set window.subOver to true
+        set window.subMsg to f"You took {k}, the fold took {e} — and the last token. The fold wins. (From a start that isn't a multiple of 4, perfect play beats it — try again.)"
+        sub_render()
+        return 0
+    set window.subMsg to f"You took {k}; the fold took {e}. Your move."
+    sub_render()
+    return 0
+
+# Nim: the fold's optimal move (make the nim-sum zero; else take 1 from largest).
+define nim_total with H:
+    return get_list(H and 0) + get_list(H and 1) + get_list(H and 2)
+
+define nim_best with a and b and c:
+    set s to g_xor(g_xor(a and b) and c)
+    if s != 0:
+        set ta to g_xor(a and s)
+        if ta < a:
+            return [0, a - ta]
+        set tb to g_xor(b and s)
+        if tb < b:
+            return [1, b - tb]
+        set tc to g_xor(c and s)
+        return [2, c - tc]
+    set bi to 0
+    set bv to a
+    if b > bv:
+        set bi to 1
+        set bv to b
+    if c > bv:
+        set bi to 2
+        set bv to c
+    return [bi, 1]
+
+define nim_start with ev:
+    set a to clamp_heap(Math.round(Number(document.getElementById("nim-a").value)))
+    set b to clamp_heap(Math.round(Number(document.getElementById("nim-b").value)))
+    set c to clamp_heap(Math.round(Number(document.getElementById("nim-c").value)))
+    set window.nimHeaps to [a, b, c]
+    set window.nimOver to false
+    set window.nimMsg to "Your move — take any number from one heap. Last to take wins."
+    nim_render()
+    return 0
+
+define nim_render:
+    set host to document.getElementById("nim-out")
+    if not host:
+        return 0
+    set H to window.nimHeaps
+    set names to ["A", "B", "C"]
+    set html to ""
+    set i to 0
+    repeat while i < 3:
+        set h to get_list(H and i)
+        set nm to get_list(names and i)
+        set html to html + f"<div class=\"nim-row\"><span class=\"nim-name\">{nm}</span><div class=\"play-heap\">{tokens(h)}</div><span class=\"nim-cnt\">{h}</span>"
+        if not window.nimOver:
+            if h > 0:
+                set html to html + f"<input class=\"nim-amt\" type=\"number\" min=\"1\" max=\"{h}\" value=\"1\" data-h=\"{i}\"><button class=\"btn btn--ghost nim-take\" data-h=\"{i}\">take</button>"
+        set html to html + "</div>"
+        set i to i + 1
+    set html to html + f"<div class=\"play-msg\">{window.nimMsg}</div>"
+    set html to html + "<button class=\"btn btn--primary\" id=\"nim-new\">New game</button>"
+    set host.innerHTML to html
+    set takes to host.querySelectorAll(".nim-take")
+    for each b in takes:
+        b.addEventListener("click" and nim_take_ev)
+    document.getElementById("nim-new").addEventListener("click" and nim_start)
+    return 0
+
+define nim_take_ev with ev:
+    if window.nimOver:
+        return 0
+    set hi to Number(ev.currentTarget.getAttribute("data-h"))
+    set H to window.nimHeaps
+    set cur to get_list(H and hi)
+    set sel to document.querySelector(f".nim-amt[data-h=\"{hi}\"]")
+    set amt to 1
+    if sel:
+        set amt to Math.round(Number(sel.value))
+    if amt < 1:
+        set amt to 1
+    if amt > cur:
+        set amt to cur
+    g_setkv(H and hi and cur - amt)
+    set names to ["A", "B", "C"]
+    if nim_total(H) equals 0:
+        set window.nimOver to true
+        set window.nimMsg to "🏆 You took the last token — you win!"
+        nim_render()
+        return 0
+    set mv to nim_best(get_list(H and 0) and get_list(H and 1) and get_list(H and 2))
+    set ei to get_list(mv and 0)
+    set eamt to get_list(mv and 1)
+    g_setkv(H and ei and get_list(H and ei) - eamt)
+    set enm to get_list(names and ei)
+    if nim_total(H) equals 0:
+        set window.nimOver to true
+        set window.nimMsg to f"The fold took {eamt} from heap {enm} — the last token. The fold wins."
+        nim_render()
+        return 0
+    set window.nimMsg to f"The fold took {eamt} from heap {enm}. Your move."
+    nim_render()
+    return 0
+
 define main:
     set fp to document.getElementById("fold-p")
     if fp:
@@ -852,15 +1030,11 @@ define main:
     draw_ptable()
     draw_ledger()
     if document.getElementById("sub-n"):
-        document.getElementById("sub-go").addEventListener("click" and sub_ev)
-        document.getElementById("sub-n").addEventListener("input" and sub_ev)
-        draw_sub()
+        document.getElementById("sub-go").addEventListener("click" and sub_start)
+        sub_start(false)
     if document.getElementById("nim-a"):
-        document.getElementById("nim-go").addEventListener("click" and nim_ev)
-        document.getElementById("nim-a").addEventListener("input" and nim_ev)
-        document.getElementById("nim-b").addEventListener("input" and nim_ev)
-        document.getElementById("nim-c").addEventListener("input" and nim_ev)
-        draw_nim()
+        document.getElementById("nim-go").addEventListener("click" and nim_start)
+        nim_start(false)
     return 0
 
 define fold_ev with ev:

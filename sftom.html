@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=12128300">
+  <link rel="stylesheet" href="assets/css/site.css?v=75a84858">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -279,29 +279,29 @@
     <div class="wrap">
       <hr class="divider">
       <p class="eyebrow mt-l reveal">The engine was never about chess</p>
-      <h2 class="reveal">The universal solver</h2>
-      <p class="lead reveal" style="margin-bottom:26px">The same retrograde fold that solved a chess endgame solves any finite
-        game — exactly. Here it is on two classics, each solved live and checked against its own independent closed-form
-        oracle. <strong style="color:var(--glow)">Zero disagreements.</strong></p>
+      <h2 class="reveal">Play the fold</h2>
+      <p class="lead reveal" style="margin-bottom:26px">The same retrograde fold that solved a chess endgame plays any
+        finite game perfectly. Take it on at two classics below — you move first, and it never makes a mistake, so you
+        can only beat it from a winning start, and only with perfect play.</p>
       <div class="grid grid--2 reveal">
         <div class="card">
           <span class="card__tag">Subtraction game</span>
-          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Remove 1, 2 or 3 from the heap; last to move
-            wins. Oracle: a position loses exactly when n is divisible by 4.</p>
-          <div class="game-controls"><label for="sub-n">heap n</label>
-            <input id="sub-n" type="number" value="17" min="0" max="60">
-            <button class="btn btn--ghost" id="sub-go">Solve</button></div>
+          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Take 1, 2 or 3 from the heap, turns alternating.
+            Last to take wins. You can only win if the start is <em>not</em> a multiple of 4 — and you play perfectly.</p>
+          <div class="game-controls"><label for="sub-n">start heap</label>
+            <input id="sub-n" type="number" value="17" min="1" max="30">
+            <button class="btn btn--ghost" id="sub-go">New game</button></div>
           <div id="sub-out" style="margin-top:16px"></div>
         </div>
         <div class="card">
           <span class="card__tag">Nim — three heaps</span>
-          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Remove any amount from one heap; last to move
-            wins. Oracle: Sprague-Grundy — a position loses exactly when the nim-sum (XOR) is zero.</p>
-          <div class="game-controls"><label>heaps</label>
+          <p style="color:var(--ink-2);font-size:.9rem;margin:8px 0 14px">Take any number from one heap, turns
+            alternating. Last to take wins. You can only win when the starting nim-sum (XOR) is <em>not</em> zero.</p>
+          <div class="game-controls"><label>start heaps</label>
             <input id="nim-a" type="number" value="3" min="0" max="9">
             <input id="nim-b" type="number" value="5" min="0" max="9">
             <input id="nim-c" type="number" value="7" min="0" max="9">
-            <button class="btn btn--ghost" id="nim-go">Solve</button></div>
+            <button class="btn btn--ghost" id="nim-go">New game</button></div>
           <div id="nim-out" style="margin-top:16px"></div>
         </div>
       </div>
@@ -335,7 +335,7 @@
 
   <script src="assets/js/kokoro-tts.js?v=619171ff"></script>
 
-  <script src="assets/js/site.js?v=2fc159c3"></script>
-  <script src="assets/js/fold.js?v=3b2a5380"></script>
+  <script src="assets/js/site.js?v=dcd0ad42"></script>
+  <script src="assets/js/fold.js?v=508cc174"></script>
 </body>
 </html>
