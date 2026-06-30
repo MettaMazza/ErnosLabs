@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seed Vault — Engraving Calculator</title>
+<style>
+  :root {
+    --bg: #0a0a0c;
+    --surface: #141418;
+    --border: #2a2a32;
+    --text: #e0e0e4;
+    --muted: #8888a0;
+    --accent: #c9a84c;
+    --accent-dim: #6b5a2e;
+    --critical: #c94c4c;
+    --important: #4c8ec9;
+    --ok: #4cc96b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .input-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-section h2 {
+    font-size: 1rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .input-group input, .input-group select {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .unit-hint {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  .calc-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 0.75rem;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .calc-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .results {
+    display: none;
+    margin-top: 1.5rem;
+  }
+
+  .results.visible { display: block; }
+
+  .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .card .value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .card .label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+  }
+
+  .slab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .slab-table th {
+    background: var(--bg);
+    color: var(--accent);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .slab-table td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .slab-table tr:last-child td { border-bottom: none; }
+
+  .priority-critical { color: var(--critical); font-weight: 600; }
+  .priority-important { color: var(--important); }
+
+  .surfaces-needed {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .fits { color: var(--ok); }
+  .tight { color: var(--accent); }
+  .multi { color: var(--critical); }
+
+  .total-row td {
+    font-weight: 700;
+    border-top: 2px solid var(--accent-dim);
+    color: var(--accent);
+  }
+
+  .notes {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .notes strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .input-grid { grid-template-columns: 1fr; }
+    .summary-cards { grid-template-columns: 1fr; }
+    body { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Seed Vault</h1>
+  <p class="subtitle">Engraving Surface Calculator</p>
+
+  <div class="input-section">
+    <h2>Your Engraving Surface</h2>
+    <div class="input-grid">
+      <div class="input-group">
+        <label>Surface Width</label>
+        <input type="number" id="width" value="600" min="50" step="10">
+        <span class="unit-hint">millimetres</span>
+      </div>
+      <div class="input-group">
+        <label>Surface Height</label>
+        <input type="number" id="height" value="400" min="50" step="10">
+        <span class="unit-hint">millimetres</span>
+      </div>
+      <div class="input-group">
+        <label>Character Height</label>
+        <select id="fontSize">
+          <option value="2">2mm — micro (magnifier needed)</option>
+          <option value="3">3mm — dense (arm's length)</option>
+          <option value="5" selected>5mm — standard (close range)</option>
+          <option value="8">8mm — large (few paces)</option>
+          <option value="12">12mm — monumental (distance)</option>
+          <option value="16">16mm — display</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculate()">Calculate</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="summary-cards">
+      <div class="card">
+        <div class="value" id="charCapacity">—</div>
+        <div class="label">Characters per surface</div>
+      </div>
+      <div class="card">
+        <div class="value" id="totalSurfaces">—</div>
+        <div class="label">Total surfaces needed</div>
+      </div>
+      <div class="card">
+        <div class="value" id="linesPerSurface">—</div>
+        <div class="label">Lines per surface</div>
+      </div>
+    </div>
+
+    <table class="slab-table">
+      <thead>
+        <tr>
+          <th>Slab</th>
+          <th>Content</th>
+          <th>Characters</th>
+          <th>Priority</th>
+          <th>Surfaces</th>
+        </tr>
+      </thead>
+      <tbody id="slabBody"></tbody>
+    </table>
+
+    <div class="notes" id="notes"></div>
+  </div>
+</div>
+
+<script>
+const SLABS = [
+  { id: 1, name: "The Rosetta", file: "01_The_Rosetta.md", chars: 7222, priority: "CRITICAL", desc: "Decoder + fire" },
+  { id: 2, name: "Survival", file: "02_Survival_Fire_Measure.md", chars: 5183, priority: "CRITICAL", desc: "Measure + energy + mechanics" },
+  { id: 3, name: "The Body", file: "03_The_Body.md", chars: 6252, priority: "CRITICAL", desc: "Emergency medicine" },
+  { id: 4, name: "The Soil", file: "04_The_Soil.md", chars: 4397, priority: "CRITICAL", desc: "Food production" },
+  { id: 5, name: "Warning + Within", file: "05_The_Warning_and_Within.md", chars: 7614, priority: "CRITICAL", desc: "Captures + Hermetic + Tablet" },
+  { id: 6, name: "The Matter", file: "06_The_Matter.md", chars: 4903, priority: "IMPORTANT", desc: "Materials" },
+  { id: 7, name: "The Build", file: "07_The_Build.md", chars: 5103, priority: "IMPORTANT", desc: "Construction + knots + wheels" },
+  { id: 8, name: "The Signal", file: "08_The_Signal.md", chars: 4408, priority: "IMPORTANT", desc: "Communication + maps" },
+  { id: 9, name: "The Sky", file: "09_The_Sky.md", chars: 4414, priority: "IMPORTANT", desc: "Navigation + weather" },
+];
+
+function calculate() {
+  const w = parseFloat(document.getElementById("width").value);
+  const h = parseFloat(document.getElementById("height").value);
+  const fs = parseFloat(document.getElementById("fontSize").value);
+
+  const charWidth = fs * 0.6;
+  const lineHeight = fs * 1.5;
+
+  const charsPerLine = Math.floor(w / charWidth);
+  const linesPerSurface = Math.floor(h / lineHeight);
+  const capacity = charsPerLine * linesPerSurface;
+
+  document.getElementById("charCapacity").textContent = capacity.toLocaleString();
+  document.getElementById("linesPerSurface").textContent = linesPerSurface;
+
+  let totalSurfaces = 0;
+  let tbody = "";
+
+  SLABS.forEach(slab => {
+    const needed = Math.ceil(slab.chars / capacity);
+    totalSurfaces += needed;
+
+    const prClass = slab.priority === "CRITICAL" ? "priority-critical" : "priority-important";
+    const fitClass = needed === 1 ? "fits" : needed === 2 ? "tight" : "multi";
+    const fitLabel = needed === 1 ? "1 surface" : needed + " surfaces";
+
+    tbody += "<tr>";
+    tbody += "<td>" + slab.id + "</td>";
+    tbody += "<td>" + slab.name + "<br><span style='font-size:0.75rem;color:#8888a0'>" + slab.desc + "</span></td>";
+    tbody += "<td>" + slab.chars.toLocaleString() + "</td>";
+    tbody += "<td class='" + prClass + "'>" + slab.priority + "</td>";
+    tbody += "<td class='surfaces-needed " + fitClass + "'>" + fitLabel + "</td>";
+    tbody += "</tr>";
+  });
+
+  const totalChars = SLABS.reduce((s, sl) => s + sl.chars, 0);
+  tbody += "<tr class='total-row'>";
+  tbody += "<td></td><td>TOTAL</td>";
+  tbody += "<td>" + totalChars.toLocaleString() + "</td>";
+  tbody += "<td></td>";
+  tbody += "<td class='surfaces-needed'>" + totalSurfaces + " surfaces</td>";
+  tbody += "</tr>";
+
+  document.getElementById("slabBody").innerHTML = tbody;
+  document.getElementById("totalSurfaces").textContent = totalSurfaces;
+  document.getElementById("results").classList.add("visible");
+
+  // Notes
+  let notes = "";
+  notes += "<strong>Your surface:</strong> " + w + "mm x " + h + "mm at " + fs + "mm character height<br>";
+  notes += "<strong>Characters per line:</strong> " + charsPerLine + "<br>";
+  notes += "<strong>Lines per surface:</strong> " + linesPerSurface + "<br>";
+  notes += "<strong>Usable area:</strong> " + (charsPerLine * charWidth).toFixed(0) + "mm x " + (linesPerSurface * lineHeight).toFixed(0) + "mm";
+  notes += " (" + ((charsPerLine * charWidth * linesPerSurface * lineHeight) / (w * h) * 100).toFixed(0) + "% of surface used)<br><br>";
+
+  if (capacity > 10000) {
+    notes += "At this size and font, you have generous capacity. Consider increasing font size for better long-distance readability or adding diagram space alongside text.";
+  } else if (capacity > 5000) {
+    notes += "Good density. Most slabs fit on a single surface. The two largest (Rosetta and Warning+Within) may be tight — verify by test-engraving a sample paragraph first.";
+  } else if (capacity > 2000) {
+    notes += "Moderate density. Most slabs will need to be split across two surfaces. Split at ALL CAPS section headers — never mid-paragraph.";
+  } else {
+    notes += "Low density. Each slab will span multiple surfaces. Consider the 5 CRITICAL slabs only, or increase surface size / decrease font size.";
+  }
+
+  document.getElementById("notes").innerHTML = notes;
+}
+
+// Auto-calculate on load
+calculate();
+</script>
+</body>
+</html>

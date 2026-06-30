@@ -13,20 +13,7 @@ function make_work(id, file, title, sub, words, collection) {
 }
 
 function catalog() {
-    let works;
-    works = [];
-    works.push(make_work("a-mind-is-born", "a-mind-is-born.md", "A Mind Is Born", "Book One — the origin novel. A childhood in 1990s Glasgow, reading as survival.", 251522, "lastmind"));
-    works.push(make_work("behind-the-mask", "behind-the-mask.md", "Behind the Mask", "Vol I · The Devil They Call God — the 400-year debt-money mechanism.", 281246, "lastmind"));
-    works.push(make_work("behind-the-performance", "behind-the-performance.md", "Behind the Performance", "Vol II · The Demon They Call the State — the political class as operating layer.", 536662, "lastmind"));
-    works.push(make_work("behind-the-blessed", "behind-the-blessed.md", "Behind the Blessed", "Vol III · The Demon They Call the Church — institutional capture of faith.", 318151, "lastmind"));
-    works.push(make_work("behind-the-knowing", "behind-the-knowing.md", "Behind the Knowing", "Vol IV · The Demon They Call Consensus — press, academia, the knowledge apparatus.", 192588, "lastmind"));
-    works.push(make_work("behind-the-synthesis", "behind-the-synthesis.md", "Behind the Synthesis", "Vol V · The Devil, the Demons & the Masks — the unifying framework.", 30331, "lastmind"));
-    works.push(make_work("ernosdecent-book", "ernosdecent-book.md", "ErnosDecent: Owned by No One", "The plain-language book — what to build instead, in everyday words.", 64487, "ernos"));
-    works.push(make_work("smithian-fold", "smithian-fold.md", "Smithian Fold: Theory of Everything", "The full technical work — the constants of nature derived from one axiom and one move, with zero free parameters.", 325720, "fold"));
-    works.push(make_work("the-one-and-the-fold", "the-one-and-the-fold.md", "The One and the Fold", "The whole of physics from a single idea a child already understands — no mathematics required.", 24697, "fold"));
-    works.push(make_work("the-big-unfolding", "the-big-unfolding.md", "The Big Unfolding", "How one number became everything — a narrative walk through the fold.", 28196, "fold"));
-    works.push(make_work("the-unfolding-adventures", "the-unfolding-adventures.md", "The Unfolding Adventures", "An episodic story set in the Fold — fiction that teaches the theory, one night at a time.", 53850, "fold"));
-    return works;
+    return window.READER_WORKS;
 }
 
 function read_minutes(words) {
@@ -49,41 +36,45 @@ function work_card_html(w) {
     out = (out + (("<h3>" + String(w.title)) + "</h3>"));
     out = (out + (("<p>" + String(w.sub)) + "</p>"));
     out = (out + "<span class=\"go\">Read →</span></button>");
-    out = (out + (("<a class=\"work-dl\" href=\"content/library/" + String(w.file)) + "\" download>⬇ Download</a>"));
+    out = (out + (("<a class=\"work-dl\" href=\"" + String(w.file)) + "\" download>⬇ Download</a>"));
     out = (out + "</div>");
     return out;
 }
 
-function render_catalog() {
-    let ernos, fold, cat, cards, last, html, i, w, works;
-    works = catalog();
-    last = "";
-    ernos = "";
-    fold = "";
+function section_cards(works, collection) {
+    let w, out, i;
+    out = "";
     i = 0;
     while ((i < works.length)) {
         w = works[i];
-        if ((w.collection === "lastmind")) {
-            last = (last + work_card_html(w));
-        } else if ((w.collection === "fold")) {
-            fold = (fold + work_card_html(w));
-        } else {
-            ernos = (ernos + work_card_html(w));
+        if ((w.collection === collection)) {
+            out = (out + work_card_html(w));
         }
         i = (i + 1);
     }
+    return out;
+}
+
+function render_catalog() {
+    let cat, html, i, intro, sections, s, cards, cards0, works;
+    works = catalog();
+    intro = window.READER_INTRO;
+    sections = window.READER_SECTIONS;
     html = "<div class=\"section\" style=\"padding-top:40px\"><div class=\"wrap\">";
-    html = (html + "<p class=\"eyebrow\">The writing</p><h1>The Library</h1>");
-    html = (html + "<p class=\"lead\">A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud, or download the full text.</p>");
-    html = (html + "<h2 style=\"margin-top:54px\">The Last Mind</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway.</p>");
-    html = (((html + "<div class=\"grid grid--2\">") + last) + "</div>");
-    html = (html + "<h2 style=\"margin-top:64px\">The Fold</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">The Smithian Fold — a theory of everything from one axiom and one move. The full technical work, and three ways in for any reader.</p>");
-    html = (((html + "<div class=\"grid grid--2\">") + fold) + "</div>");
-    html = (html + "<h2 style=\"margin-top:64px\">ErnosDecent</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">The constructive counterpart — what to build instead.</p>");
-    html = (((html + "<div class=\"grid grid--2\">") + ernos) + "</div>");
+    html = (html + (((("<p class=\"eyebrow\">" + String(intro.eyebrow)) + "</p><h1>") + String(intro.title)) + "</h1>"));
+    html = (html + (("<p class=\"lead\">" + String(intro.lead)) + "</p>"));
+    i = 0;
+    while ((i < sections.length)) {
+        s = sections[i];
+        cards0 = section_cards(works, s.collection);
+        html = (html + (("<h2 style=\"margin-top:54px\">" + String(s.heading)) + "</h2>"));
+        html = (html + (("<p class=\"lead\" style=\"margin-bottom:24px\">" + String(s.sub)) + "</p>"));
+        html = (((html + "<div class=\"grid grid--2\">") + cards0) + "</div>");
+        i = (i + 1);
+    }
+    if (window.READER_EXTRA_HTML) {
+        html = (html + window.READER_EXTRA_HTML);
+    }
     html = (html + "</div></div>");
     cat = document.getElementById("catalog");
     cat.innerHTML = html;
@@ -102,7 +93,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, works, i;
+    let i, w, works;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -116,7 +107,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rd, rtitle, doc, toc0, url, w, dl;
+    let url, w, rtitle, dl, rd, toc0, doc;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -129,14 +120,14 @@ function open_work(id) {
     rtitle.textContent = w.title;
     dl = document.getElementById("reader-dl");
     if (dl) {
-        dl.href = ("content/library/" + w.file);
+        dl.href = w.file;
     }
     doc = document.getElementById("doc");
     doc.innerHTML = (("<p class=\"loading\">Loading " + w.title) + "…</p>");
     toc0 = document.getElementById("toc");
     toc0.innerHTML = "";
     window.scrollTo(0, 0);
-    url = ("content/library/" + w.file);
+    url = w.file;
     fetch(url).then(resp_text).then(render_doc);
     return 0;
 }
@@ -157,7 +148,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let cls, toc, i, out, heads, links, h;
+    let out, cls, toc, heads, i, h, links;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -222,7 +213,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let re, marks, hl, doc, q, esc, count;
+    let q, doc, hl, re, esc, marks, count;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -262,7 +253,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let text, doc, voice, u, btn, voice_sel;
+    let u, voice_sel, doc, text, voice, btn;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -310,7 +301,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let voices, i, container, v, html;
+    let v, i, html, container, voices;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
