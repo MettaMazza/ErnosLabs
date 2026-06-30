@@ -22,6 +22,7 @@
   let playing = false;
   let paused = false;
   let session = null;        // identity token for the active play() call
+  let ticker = null;         // progress interval
   let onStatusChange = null; // (status, detail)
   let onProgress = null;     // ({ phase, current, total, fraction })
 
@@ -111,8 +112,15 @@
     const samples = raw.audio || raw.data || (raw instanceof Float32Array ? raw : null);
     const rate = raw.sampling_rate || raw.samplingRate || 24000;
     if (!samples || !samples.length) return null;
-    const buf = audioCtx.createBuffer(1, samples.length, rate);
-    buf.getChannelData(0).set(samples);
+    // Trim leading/trailing near-silence so segments butt up gaplessly.
+    const thr = 0.006;
+    let end = samples.length;
+    while (end > 1 && Math.abs(samples[end - 1]) < thr) end--;
+    let start = 0;
+    while (start < end - 1 && Math.abs(samples[start]) < thr) start++;
+    const trimmed = samples.subarray(start, end);
+    const buf = audioCtx.createBuffer(1, trimmed.length, rate);
+    buf.getChannelData(0).set(trimmed);
     return buf;
   }
 
@@ -147,36 +155,56 @@
     const chunks = chunkText(clean);
     const total = chunks.length;
     const ready = new Array(total).fill(null); // AudioBuffer | "error" | null
-    let playIdx = 0;
     const v = voice || DEFAULT_VOICE;
-    setStatus("speaking", "Speaking…");
 
-    // generator: stay LOOKAHEAD ahead of playback
+    // GENERATOR — synthesise every chunk as fast as it can.
     (async function gen() {
-      let g = 0;
-      while (g < total && session === my) {
-        while (g > playIdx + LOOKAHEAD && session === my) await sleep(40);
-        if (session !== my) return;
-        try {
-          const raw = await tts.generate(chunks[g], { voice: v });
-          ready[g] = session === my ? rawToBuffer(raw) : null;
-        } catch (e) { ready[g] = "error"; }
-        g++;
+      for (let g = 0; g < total && session === my; g++) {
+        try { const raw = await tts.generate(chunks[g], { voice: v }); ready[g] = session === my ? rawToBuffer(raw) : null; }
+        catch (e) { ready[g] = "error"; }
       }
     })();
 
-    // playback consumer
-    for (playIdx = 0; playIdx < total; playIdx++) {
-      if (session !== my) return;
-      while (paused && session === my) await sleep(90);
-      while (ready[playIdx] === null && session === my) { emit("buffering", playIdx, total); await sleep(60); }
-      if (session !== my) return;
-      while (paused && session === my) await sleep(90);
-      emit("speaking", playIdx + 1, total);
-      if (ready[playIdx] !== "error") await playBuffer(ready[playIdx], my);
-      ready[playIdx] = null; // free memory
-    }
-    if (session === my) { playing = false; emit("done", total, total); setStatus("done", "Finished"); }
+    // SCHEDULER — place each ready buffer back-to-back on the audio clock, so
+    // playback is gapless even though generation arrives over time.
+    const segStart = new Array(total).fill(-1);
+    let clock = 0, started = false, scheduled = 0, endClock = 0;
+    (async function sched() {
+      for (let i = 0; i < total; i++) {
+        if (session !== my) return;
+        while (ready[i] === null && session === my) await sleep(35);
+        if (session !== my) return;
+        const buf = ready[i];
+        ready[i] = null;
+        if (buf === "error" || !buf) { segStart[i] = clock; scheduled = i + 1; continue; }
+        if (!started) { clock = audioCtx.currentTime + 0.12; started = true; }
+        else { clock = Math.max(clock, audioCtx.currentTime + 0.02); }
+        const node = audioCtx.createBufferSource();
+        node.buffer = buf; node.connect(audioCtx.destination);
+        try { node.start(clock); } catch (e) {}
+        segStart[i] = clock;
+        clock += buf.duration;
+        endClock = clock;
+        scheduled = i + 1;
+      }
+    })();
+
+    // PROGRESS TICKER — drives the loading bar from the audio clock.
+    if (ticker) clearInterval(ticker);
+    ticker = setInterval(() => {
+      if (session !== my) { clearInterval(ticker); ticker = null; return; }
+      if (paused) { emit("paused", 0, total); return; }
+      if (!started) { emit("loading", 0, total); return; }
+      const now = audioCtx.currentTime;
+      if (now < segStart[0]) { emit("buffering", 0, total); return; }
+      let cur = 0;
+      for (let i = 0; i < scheduled; i++) if (segStart[i] >= 0 && now >= segStart[i]) cur = i;
+      if (cur >= scheduled - 1 && scheduled < total && now >= endClock - 0.06) { emit("buffering", cur + 1, total); return; }
+      if (scheduled >= total && now >= endClock) {
+        clearInterval(ticker); ticker = null; playing = false; emit("done", total, total); setStatus("done", "Finished"); return;
+      }
+      emit("speaking", cur + 1, total);
+    }, 140);
   }
 
   function speakBrowser(text, token) {
@@ -205,6 +233,7 @@
   function stop() {
     session = null;
     playing = false; paused = false;
+    if (ticker) { clearInterval(ticker); ticker = null; }
     if (currentSource) { try { currentSource.stop(); } catch (e) {} currentSource = null; }
     if (audioCtx) { try { audioCtx.close(); } catch (e) {} audioCtx = null; }
     if (window.speechSynthesis) window.speechSynthesis.cancel();

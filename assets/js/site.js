@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let n, nodes, i;
+    let nodes, i, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let canvas, ctx, w, h, dpr;
+    let canvas, h, w, ctx, dpr;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let a, b, h, j, nodes, alpha, n, ctx, w, dist, dy, count, dx, i;
+    let ctx, alpha, n, w, h, dist, count, b, nodes, i, a, dy, j, dx;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, canvas, reduce;
+    let canvas, reduce, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function nav_init() {
-    let burger, href, path, links;
+    let links, path, href, burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -170,7 +170,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, IO, els, opts, args;
+    let opts, args, obs, IO, els;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -200,7 +200,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let n, i, txt, nodes, dt, cls, parts, doc;
+    let n, dt, txt, cls, nodes, i, parts, doc;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -245,7 +245,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, btn, pct, ph, status;
+    let status, pct, fill, ph, btn;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -257,32 +257,36 @@ function np_progress(info) {
     if ((ph === "loading")) {
         status.textContent = "loading voice…";
         fill.classList.add("np-indet");
-        fill.style.width = "100%";
+        btn.classList.add("np-load");
     } else {
         fill.classList.remove("np-indet");
     }
     if ((ph === "buffering")) {
         status.textContent = "buffering…";
         fill.classList.add("np-indet");
-        fill.style.width = "100%";
+        btn.classList.add("np-load");
     }
     if ((ph === "speaking")) {
         status.textContent = ((String(info.current) + " / ") + String(info.total));
         btn.textContent = "⏸";
+        btn.classList.remove("np-load");
         fill.style.width = (String(pct) + "%");
     }
     if ((ph === "paused")) {
         status.textContent = "paused";
         btn.textContent = "▶";
+        btn.classList.remove("np-load");
     }
     if ((ph === "done")) {
         status.textContent = "done";
         btn.textContent = "▶";
+        btn.classList.remove("np-load");
         fill.style.width = "0%";
     }
     if ((ph === "idle")) {
         status.textContent = "Listen";
         btn.textContent = "▶";
+        btn.classList.remove("np-load");
         fill.style.width = "0%";
     }
     if ((ph === "fallback")) {
@@ -292,7 +296,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let status, btn;
+    let btn, status;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

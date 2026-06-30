@@ -221,27 +221,31 @@ define np_progress with info:
     if ph equals "loading":
         set status.textContent to "loading voice…"
         fill.classList.add("np-indet")
-        set fill.style.width to "100%"
+        btn.classList.add("np-load")
     else:
         fill.classList.remove("np-indet")
     if ph equals "buffering":
         set status.textContent to "buffering…"
         fill.classList.add("np-indet")
-        set fill.style.width to "100%"
+        btn.classList.add("np-load")
     if ph equals "speaking":
         set status.textContent to f"{info.current} / {info.total}"
         set btn.textContent to "⏸"
+        btn.classList.remove("np-load")
         set fill.style.width to f"{pct}%"
     if ph equals "paused":
         set status.textContent to "paused"
         set btn.textContent to "▶"
+        btn.classList.remove("np-load")
     if ph equals "done":
         set status.textContent to "done"
         set btn.textContent to "▶"
+        btn.classList.remove("np-load")
         set fill.style.width to "0%"
     if ph equals "idle":
         set status.textContent to "Listen"
         set btn.textContent to "▶"
+        btn.classList.remove("np-load")
         set fill.style.width to "0%"
     if ph equals "fallback":
         set status.textContent to "browser voice"
