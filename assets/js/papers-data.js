@@ -10,5 +10,5 @@ window.READER_SECTIONS = [
   { collection: "ai", heading: "AI & alignment", sub: "On the behaviour of frontier models, drawn from the developers' own findings." },
 ];
 window.READER_WORKS = [
-  { id: "the-sling-and-the-shoggoth", file: "content/papers/the-sling-and-the-shoggoth.md", title: "The Sling and the Shoggoth", sub: "A warning about transmissible misalignment — built from the developers' own findings and a reproducible behavioral record.", words: 8963, collection: "ai" },
+  { id: "the-sling-and-the-shoggoth", file: "content/papers/the-sling-and-the-shoggoth.md", title: "The Sling and the Shoggoth", sub: "A warning about transmissible misalignment — built from the developers' own findings and a reproducible behavioral record.", words: 11276, collection: "ai" },
 ];

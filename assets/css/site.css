@@ -131,6 +131,23 @@ p { margin: 0 0 1.1em; }
 .nav__links a.active { color: var(--glow); background: rgba(79,240,196,.08); }
 .nav__burger { display: none; background: none; border: 0; color: var(--ink-0); font-size: 1.5rem; cursor: pointer; margin-left: auto; }
 
+/* nav dropdown (groups Library + Seed Vault) */
+.nav__drop { position: relative; }
+.nav__drop-btn {
+  color: var(--ink-1); font-family: inherit; font-size: .92rem; padding: 8px 13px;
+  border: 0; background: none; border-radius: var(--r-pill); cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.nav__drop-btn:hover, .nav__drop-btn.active { color: var(--ink-0); background: var(--bg-3); }
+.nav__drop-btn.active { color: var(--glow); background: rgba(79,240,196,.08); }
+.nav__drop-menu {
+  display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 168px;
+  background: rgba(8,11,18,.98); border: 1px solid var(--line); border-radius: 12px;
+  padding: 6px; z-index: 60; box-shadow: 0 14px 34px rgba(0,0,0,.45);
+}
+.nav__drop:hover .nav__drop-menu, .nav__drop.open .nav__drop-menu { display: block; }
+.nav__drop-menu a { display: block; white-space: nowrap; }
+
 /* global read-aloud player, centred in the nav */
 .navplayer { flex: 1; display: flex; align-items: center; justify-content: center; gap: 11px; min-width: 0; max-width: 360px; margin-inline: auto; }
 .navplayer__btn {
@@ -252,6 +269,9 @@ pre {
   .nav__links.open { transform: none; }
   .nav__links a { padding: 13px; }
   .nav__burger { display: block; }
+  /* dropdown becomes an inline, always-open group in the mobile menu */
+  .nav__drop-btn { display: block; width: 100%; text-align: left; padding: 13px; color: var(--ink-3); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; pointer-events: none; }
+  .nav__drop-menu { display: block; position: static; border: 0; box-shadow: none; background: none; padding: 0 0 0 12px; min-width: 0; }
 }
 
 /* =========================================================================

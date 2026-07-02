@@ -126,10 +126,27 @@ define nav_toggle with ev:
         links.classList.toggle("open")
     return 0
 
+define drop_toggle with ev:
+    ev.stopPropagation()
+    set d to document.getElementById("nav-writing")
+    if d:
+        d.classList.toggle("open")
+    return 0
+
+define drop_close with ev:
+    set d to document.getElementById("nav-writing")
+    if d:
+        d.classList.remove("open")
+    return 0
+
 define nav_init:
     set burger to document.getElementById("burger")
     if burger:
         burger.addEventListener("click" and nav_toggle)
+    set dbtn to document.getElementById("nav-writing-btn")
+    if dbtn:
+        dbtn.addEventListener("click" and drop_toggle)
+    document.addEventListener("click" and drop_close)
     return 0
 
 # highlight the current page's nav link (re-run on every SPA page change)
@@ -142,6 +159,13 @@ define nav_highlight:
         if href:
             if path.indexOf(href) >= 0:
                 a.classList.add("active")
+    # reflect an active submenu item on the dropdown button
+    set dbtn to document.getElementById("nav-writing-btn")
+    if dbtn:
+        dbtn.classList.remove("active")
+        set act to document.querySelector(".nav__drop-menu a.active")
+        if act:
+            dbtn.classList.add("active")
     return 0
 
 # ---- scroll reveal -------------------------------------------------------

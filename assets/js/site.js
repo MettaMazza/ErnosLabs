@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, n, i;
+    let i, nodes, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let ctx, dpr, h, w, canvas;
+    let canvas, ctx, w, dpr, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let dist, w, nodes, a, j, b, dy, n, i, ctx, h, dx, alpha, count;
+    let h, dist, w, j, dx, dy, alpha, n, nodes, ctx, a, i, count, b;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, density, canvas;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -138,17 +138,41 @@ function nav_toggle(ev) {
     return 0;
 }
 
-function nav_init() {
-    let burger;
-    burger = document.getElementById("burger");
-    if (burger) {
-        burger.addEventListener("click", nav_toggle);
+function drop_toggle(ev) {
+    let d;
+    ev.stopPropagation();
+    d = document.getElementById("nav-writing");
+    if (d) {
+        d.classList.toggle("open");
     }
     return 0;
 }
 
+function drop_close(ev) {
+    let d;
+    d = document.getElementById("nav-writing");
+    if (d) {
+        d.classList.remove("open");
+    }
+    return 0;
+}
+
+function nav_init() {
+    let dbtn, burger;
+    burger = document.getElementById("burger");
+    if (burger) {
+        burger.addEventListener("click", nav_toggle);
+    }
+    dbtn = document.getElementById("nav-writing-btn");
+    if (dbtn) {
+        dbtn.addEventListener("click", drop_toggle);
+    }
+    document.addEventListener("click", drop_close);
+    return 0;
+}
+
 function nav_highlight() {
-    let href, path, links;
+    let dbtn, path, href, links, act;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -158,6 +182,14 @@ function nav_highlight() {
             if ((path.indexOf(href) >= 0)) {
                 a.classList.add("active");
             }
+        }
+    }
+    dbtn = document.getElementById("nav-writing-btn");
+    if (dbtn) {
+        dbtn.classList.remove("active");
+        act = document.querySelector(".nav__drop-menu a.active");
+        if (act) {
+            dbtn.classList.add("active");
         }
     }
     return 0;
@@ -176,7 +208,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, opts, IO, args, els;
+    let args, IO, opts, els, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -196,7 +228,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let d, y;
+    let y, d;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -206,7 +238,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let txt, parts, dt, nodes, doc, cls, n, i;
+    let cls, nodes, txt, i, parts, dt, n, doc;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -251,7 +283,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let status, ph, pct, btn, fill;
+    let status, btn, ph, pct, fill;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
