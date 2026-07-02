@@ -28,7 +28,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let out, mins;
+    let mins, out;
     mins = read_minutes(w.words);
     out = "<div class=\"work-item\">";
     out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
@@ -56,7 +56,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let cards0, sections, i, works, html, intro, s, cards, cat;
+    let sections, intro, cards, cards0, i, works, cat, html, s;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -93,7 +93,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let w, i, works;
+    let works, i, w;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -107,12 +107,13 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let rtitle, dl, doc, toc0, url, rd, w;
+    let doc, dl, toc0, url, w, rd, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
     }
     window.curWork = w;
+    window.history.replaceState(null, "", ("#" + id));
     document.getElementById("catalog").classList.add("hidden");
     rd = document.getElementById("reader");
     rd.classList.remove("hidden");
@@ -148,7 +149,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let out, heads, i, h, cls, links, toc;
+    let heads, links, out, cls, i, toc, h;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -185,7 +186,30 @@ function back_to_catalog(ev) {
     stop_tts();
     document.getElementById("reader").classList.add("hidden");
     document.getElementById("catalog").classList.remove("hidden");
+    window.history.replaceState(null, "", window.location.pathname);
     window.scrollTo(0, 0);
+    return 0;
+}
+
+function copy_link(ev) {
+    let btn;
+    btn = document.getElementById("copy-link");
+    if (window.navigator.clipboard) {
+        window.navigator.clipboard.writeText(window.location.href);
+        if (btn) {
+            btn.textContent = "✓ Copied";
+            window.setTimeout(reset_copy_label, 1600);
+        }
+    }
+    return 0;
+}
+
+function reset_copy_label() {
+    let btn;
+    btn = document.getElementById("copy-link");
+    if (btn) {
+        btn.textContent = "🔗 Copy link";
+    }
     return 0;
 }
 
@@ -213,7 +237,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let marks, re, doc, hl, esc, count, q;
+    let marks, count, q, esc, hl, re, doc;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -253,7 +277,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let text, u, btn, doc, voice, voice_sel;
+    let btn, doc, text, voice_sel, voice, u;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -301,7 +325,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let voices, html, container, i, v;
+    let i, v, html, container, voices;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
@@ -323,6 +347,7 @@ function build_voice_selector() {
 }
 
 function main() {
+    let clink, hash;
     window.readerFont = 19;
     window.ttsOn = false;
     render_catalog();
@@ -331,9 +356,19 @@ function main() {
     document.getElementById("font-down").addEventListener("click", font_smaller);
     document.getElementById("search").addEventListener("input", do_search);
     document.getElementById("tts").addEventListener("click", toggle_tts);
+    clink = document.getElementById("copy-link");
+    if (clink) {
+        clink.addEventListener("click", copy_link);
+    }
     if (window.kokoroTTS) {
         window.kokoroTTS.setOnStatusChange(tts_status_handler);
         build_voice_selector();
+    }
+    hash = window.location.hash;
+    if (hash) {
+        if ((hash.length > 1)) {
+            open_work(hash.slice(1));
+        }
     }
     return 0;
 }

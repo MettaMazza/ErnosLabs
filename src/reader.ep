@@ -103,6 +103,8 @@ define open_work with id:
     if not w:
         return 0
     set window.curWork to w
+    # give this work its own shareable URL (…/page.html#work-id)
+    window.history.replaceState(null and "" and ("#" + id))
     # show reader, hide catalog
     document.getElementById("catalog").classList.add("hidden")
     set rd to document.getElementById("reader")
@@ -163,7 +165,24 @@ define back_to_catalog with ev:
     stop_tts()
     document.getElementById("reader").classList.add("hidden")
     document.getElementById("catalog").classList.remove("hidden")
+    window.history.replaceState(null and "" and window.location.pathname)
     window.scrollTo(0 and 0)
+    return 0
+
+# copy the current work's shareable link to the clipboard
+define copy_link with ev:
+    set btn to document.getElementById("copy-link")
+    if window.navigator.clipboard:
+        window.navigator.clipboard.writeText(window.location.href)
+        if btn:
+            set btn.textContent to "✓ Copied"
+            window.setTimeout(reset_copy_label and 1600)
+    return 0
+
+define reset_copy_label:
+    set btn to document.getElementById("copy-link")
+    if btn:
+        set btn.textContent to "🔗 Copy link"
     return 0
 
 # ---- font controls -------------------------------------------------------
@@ -288,9 +307,17 @@ define main:
     document.getElementById("font-down").addEventListener("click" and font_smaller)
     document.getElementById("search").addEventListener("input" and do_search)
     document.getElementById("tts").addEventListener("click" and toggle_tts)
+    set clink to document.getElementById("copy-link")
+    if clink:
+        clink.addEventListener("click" and copy_link)
     # Kokoro TTS integration
     if window.kokoroTTS:
         window.kokoroTTS.setOnStatusChange(tts_status_handler)
         build_voice_selector()
+    # deep link: open the work named in the URL hash (…/page.html#work-id)
+    set hash to window.location.hash
+    if hash:
+        if hash.length > 1:
+            open_work(hash.slice(1))
     return 0
 
