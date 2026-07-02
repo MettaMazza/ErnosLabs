@@ -264,7 +264,7 @@ Player.prototype.heal = function(amount) {
 };
 Player.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, roll, new_hp;
+    let roll, new_hp, dmg;
     roll = ep_random_int(1, 100);
     dmg = self.atk;
     if ((roll > 80)) {
@@ -311,7 +311,7 @@ Companion.prototype.heal = function(amount) {
 };
 Companion.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, new_hp;
+    let new_hp, dmg;
     dmg = self.atk;
     console.log((((((("🪄  " + String(self.name)) + " shoots a magic bolt at ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -352,7 +352,7 @@ Monster.prototype.heal = function(amount) {
 };
 Monster.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg;
+    let dmg, new_hp;
     dmg = (self.atk + ep_random_int((0 - 2), 2));
     console.log((((((((("👹  [" + String(self.species)) + "] ") + String(self.name)) + " claws ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let len, count, member, i;
+    let member, i, len, count;
     count = 0;
     len = team.length;
     i = 0;
@@ -379,7 +379,7 @@ function count_alive(team) {
 }
 
 function get_first_alive(team) {
-    let i, fallback, len, member;
+    let fallback, i, member, len;
     len = team.length;
     i = 0;
     while ((i < len)) {
@@ -394,7 +394,7 @@ function get_first_alive(team) {
 }
 
 function display_team_status(team_name, team) {
-    let member, i, len;
+    let i, member, len;
     console.log((("--- " + String(team_name)) + " Status ---"));
     len = team.length;
     i = 0;
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let hero_ref, enemy, orc, hero_struct, round, goblin_struct, goblin, healer_struct, party_len, party_idx, enemies, member, i, orc_struct, ok, party, enemy_len, healer, r, target, hero;
+    let party, enemy_len, party_idx, round, ok, goblin_struct, healer, party_len, enemies, orc_struct, hero_struct, goblin, enemy, member, r, i, healer_struct, hero, orc, hero_ref, target;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");
