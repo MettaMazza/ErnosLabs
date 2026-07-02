@@ -40,7 +40,7 @@ function vid_click(ev) {
 }
 
 function render_videos() {
-    let vids, html, v, cards, grid, i, cap, thumb;
+    let thumb, cards, v, grid, html, cap, vids, i;
     grid = document.getElementById("video-grid");
     if (!grid) {
         return 0;
@@ -71,7 +71,7 @@ function render_videos() {
 }
 
 function videos_init() {
-    let t, vids, v0, frame;
+    let frame, vids, t, v0;
     render_videos();
     vids = window.ERNOS_VIDEOS;
     if (vids) {
