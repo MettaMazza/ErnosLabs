@@ -10,7 +10,7 @@ function rpg_capture(line) {
 }
 
 function rpg_run(ev) {
-    let out, btn, lines;
+    let btn, out, lines;
     out = document.getElementById("rpg-out");
     if (!out) {
         return 0;

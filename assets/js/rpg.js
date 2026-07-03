@@ -264,7 +264,7 @@ Player.prototype.heal = function(amount) {
 };
 Player.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, new_hp, roll;
+    let new_hp, dmg, roll;
     roll = ep_random_int(1, 100);
     dmg = self.atk;
     if ((roll > 80)) {
@@ -352,7 +352,7 @@ Monster.prototype.heal = function(amount) {
 };
 Monster.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg;
+    let dmg, new_hp;
     dmg = (self.atk + ep_random_int((0 - 2), 2));
     console.log((((((((("👹  [" + String(self.species)) + "] ") + String(self.name)) + " claws ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let i, count, len, member;
+    let i, count, member, len;
     count = 0;
     len = team.length;
     i = 0;
@@ -379,7 +379,7 @@ function count_alive(team) {
 }
 
 function get_first_alive(team) {
-    let i, fallback, member, len;
+    let len, i, member, fallback;
     len = team.length;
     i = 0;
     while ((i < len)) {
@@ -394,7 +394,7 @@ function get_first_alive(team) {
 }
 
 function display_team_status(team_name, team) {
-    let member, len, i;
+    let len, member, i;
     console.log((("--- " + String(team_name)) + " Status ---"));
     len = team.length;
     i = 0;
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let party_len, enemy, ok, hero, orc_struct, round, member, hero_ref, r, enemy_len, party, goblin_struct, goblin, enemies, target, i, orc, hero_struct, party_idx, healer_struct, healer;
+    let enemy, healer_struct, party, enemies, target, member, ok, orc_struct, hero_ref, hero, hero_struct, party_len, orc, round, party_idx, r, i, healer, enemy_len, goblin_struct, goblin;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");

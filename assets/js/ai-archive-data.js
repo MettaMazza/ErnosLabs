@@ -2,7 +2,7 @@
 // exposed by deploy/ai-archive/start.sh) — set the endpoint with archiveSetBase()
 // or bake ARCHIVE_BASE_DEFAULT below. `path` is the file/dir on the archive.
 // `repo` is kept only as provenance (where the weights originally came from).
-window.ARCHIVE_BASE_DEFAULT = ""; // e.g. "https://xxxx.trycloudflare.com" — the tunnel URL
+window.ARCHIVE_BASE_DEFAULT = "https://marias-mac-studio-1.tail36a593.ts.net"; // the source machine (Tailscale funnel)
 // Point the site at your archive machine from the browser console (persists here):
 window.archiveSetBase = function (url) {
   try { localStorage.setItem("ernosArchiveBase", (url || "").replace(/\/+$/, "")); } catch (e) {}

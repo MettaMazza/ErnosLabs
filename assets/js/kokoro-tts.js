@@ -22,9 +22,9 @@
   // When it's running, read-aloud uses the real local Fable voice instantly.
   // When it's not (any other visitor), the fetch fails fast and we fall back to
   // the browser voice. Override with setEndpoint()/window.KOKORO_ENDPOINT.
-  const KOKORO_ENDPOINT = "http://localhost:8880";
+  const KOKORO_ENDPOINT = "https://marias-mac-studio-1.tail36a593.ts.net";
   const DEFAULT_VOICE = "bm_fable";
-  const FIRST_TIMEOUT_MS = 60000; // first request may wake a cold server
+  const FIRST_TIMEOUT_MS = 12000; // if the source machine is offline, fall back to the browser voice quickly
   const GEN_TIMEOUT_MS = 30000;   // subsequent requests
 
   let audioCtx = null;
