@@ -377,6 +377,11 @@ pre {
 .output.flash { animation: out-flash .55s var(--ease); }
 
 /* AI archive */
+.ai-status { margin: 22px 0 8px; padding: 12px 16px; border-radius: 10px; font-size: .92rem; color: var(--ink-2); border: 1px solid var(--line); background: rgba(255,255,255,.02); }
+.ai-status.is-online { color: var(--ink-1); border-color: rgba(79,240,196,.4); background: rgba(79,240,196,.06); }
+.ai-status.is-offline { color: var(--ink-1); border-color: rgba(255,107,129,.4); background: rgba(255,107,129,.06); }
+.ai-status strong { color: var(--ink-0); }
+.btn.is-off { opacity: .5; cursor: not-allowed; pointer-events: none; }
 .ai-runners { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .ai-runner { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.02); text-decoration: none; transition: border-color .18s var(--ease), background .18s var(--ease); }
 .ai-runner:hover { border-color: var(--glow); background: rgba(79,240,196,.05); }

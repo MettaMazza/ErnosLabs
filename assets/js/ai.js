@@ -9,6 +9,24 @@ function esc(s) {
     return t;
 }
 
+function archive_base() {
+    let b;
+    b = "";
+    if (window.localStorage) {
+        b = window.localStorage.getItem("ernosArchiveBase");
+    }
+    if (!b) {
+        b = window.ARCHIVE_BASE_DEFAULT;
+    }
+    if (!b) {
+        return "";
+    }
+    while (((b.length > 0) && b.endsWith("/"))) {
+        b = b.slice(0, (b.length - 1));
+    }
+    return b;
+}
+
 function runner_html(r) {
     let out;
     out = (("<a class=\"ai-runner\" href=\"" + String(r.url)) + "\" target=\"_blank\" rel=\"noopener\">");
@@ -17,25 +35,32 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let out, hf;
-    hf = ("https://huggingface.co/" + m.repo);
+    let href, label, ab, out;
+    ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
     out = (out + (((("<p class=\"ai-fmt\">" + String(esc(m.fmt))) + " · ") + String(esc(m.license))) + "</p>"));
     out = (out + (("<p class=\"ai-desc\">" + String(esc(m.desc))) + "</p>"));
     out = (out + (((((("<div class=\"ai-run\"><span class=\"ai-run__label\">Run with <a href=\"" + String(m.runner.url)) + "\" target=\"_blank\" rel=\"noopener\">") + String(m.runner.name)) + "</a></span><code>") + String(esc(m.cmd))) + "</code></div>"));
     out = (out + "<div class=\"ai-card__actions\">");
-    out = (out + (("<a class=\"btn btn--primary\" href=\"" + String(hf)) + "\" target=\"_blank\" rel=\"noopener\">Download ↗</a>"));
-    if (m.mirror) {
-        out = (out + (("<a class=\"work-dl\" href=\"" + String(m.mirror)) + "\">⬇ Mirror</a>"));
+    if ((ab === "")) {
+        out = (out + "<span class=\"btn btn--primary is-off\">Archive offline</span>");
+    } else {
+        href = ((ab + "/") + m.path);
+        label = "⬇ Download";
+        if (m.dir) {
+            href = (href + "/");
+            label = "⬇ Browse &amp; download";
+        }
+        out = (out + (((("<a class=\"btn btn--primary\" href=\"" + String(href)) + "\">") + String(label)) + "</a>"));
     }
-    out = (out + (("<span class=\"ai-src\">" + String(esc(m.repo))) + "</span>"));
+    out = (out + (("<span class=\"ai-src\">from " + String(esc(m.repo))) + "</span>"));
     out = (out + "</div></div>");
     return out;
 }
 
 function section_html(key) {
-    let models, out, m, i;
+    let i, out, models, m;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -50,26 +75,34 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let runners, host, s, sec, intro, cards, stats, html, j, sections;
+    let sec, stats, html, cards, s, j, host, runners, sections, ab, intro;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
     }
+    window.__ab = archive_base();
+    ab = window.__ab;
     intro = window.AI_INTRO;
     stats = window.AI_STATS;
-    html = "<header class=\"section\" style=\"padding-bottom:24px\"><div class=\"wrap\">";
+    html = "<header class=\"section\" style=\"padding-bottom:20px\"><div class=\"wrap\">";
     html = (html + (("<p class=\"eyebrow reveal\">" + String(intro.eyebrow)) + "</p>"));
     html = (html + (("<h1 class=\"reveal\">" + String(intro.title)) + "</h1>"));
     html = (html + (("<p class=\"lead reveal mt-s\">" + String(intro.lead)) + "</p>"));
-    html = (html + "<div class=\"stats-banner reveal mt-l\">");
+    html = (html + "<div id=\"ai-status\" class=\"ai-status\">Checking the archive…</div>");
+    html = (html + "<div class=\"stats-banner reveal\">");
     html = (html + (("<div class=\"stat-item\"><span class=\"stat-num\">" + String(stats.count)) + "</span><span class=\"stat-label\">models preserved</span></div>"));
     html = (html + (("<div class=\"stat-item\"><span class=\"stat-num\">" + String(stats.size)) + "</span><span class=\"stat-label\">of open weights</span></div>"));
-    html = (html + "<div class=\"stat-item\"><span class=\"stat-num\">Free</span><span class=\"stat-label\">no account, no gate</span></div>");
+    html = (html + "<div class=\"stat-item\"><span class=\"stat-num\">Self-hosted</span><span class=\"stat-label\">from the source machine</span></div>");
     html = (html + "</div></div></header>");
     runners = window.AI_RUNNERS;
     html = (html + "<section class=\"section\" style=\"padding-top:8px\"><div class=\"wrap\">");
     html = (html + "<p class=\"eyebrow\">Run them yourself</p><h2>The open-source programs</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">Every model here runs on free, open software. Grab the one for the format and follow its readme.</p>");
+    html = (html + "<p class=\"lead\" style=\"margin-bottom:24px\">Every model here runs on free, open software. Grab the one for the format.");
+    if ((ab === "")) {
+        html = (html + "</p>");
+    } else {
+        html = (html + ((" They are also mirrored on the archive — <a href=\"" + String(ab)) + "/programs/\" style=\"color:var(--ink-0)\">browse programs ↗</a>.</p>"));
+    }
     html = (html + "<div class=\"ai-runners\">");
     j = 0;
     while ((j < runners.length)) {
@@ -100,14 +133,50 @@ function render_ai() {
     html = (html + "</div></div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>");
-    html = (html + "<p class=\"lead\">Downloads resolve to each model's canonical open source. That is not preservation — hosts gate, rename, and remove models (Stable Diffusion 1.5 is already gone from its original home). Real preservation is redundancy: mirror these weights to the Internet Archive, seed them as torrents, keep copies on cold drives. If you download one, keep it. If you can host one, mirror it. The whole point is that no one owns it and no one can pull it.</p>");
+    html = (html + "<p class=\"lead\">These weights are served straight from the source machine — not from Hugging Face or GitHub, so they outlive any of those going down or pulling a model. That means a download works when the machine is online. Real permanence is redundancy: if you pull a model, keep it; if you can host one, mirror it; seed it to others. The whole point is that no one owns it and no one can quietly delete it.</p>");
     html = (html + "</div></section>");
     host.innerHTML = html;
     return 0;
 }
 
+function status_set(cls, msg) {
+    let el;
+    el = document.getElementById("ai-status");
+    if (el) {
+        el.className = cls;
+        el.innerHTML = msg;
+    }
+    return 0;
+}
+
+function status_ok(resp) {
+    if (resp.ok) {
+        status_set("ai-status is-online", "🟢 <strong>Archive online</strong> — downloads come straight from the source machine.");
+    } else {
+        status_fail(resp);
+    }
+    return 0;
+}
+
+function status_fail(err) {
+    status_set("ai-status is-offline", "🔴 <strong>The source machine is offline right now.</strong> Downloads resume when it's back — or use the build-it-yourself script below.");
+    return 0;
+}
+
+function check_status() {
+    let ab;
+    ab = window.__ab;
+    if ((ab === "")) {
+        status_set("ai-status", "⚙ The archive endpoint isn't set yet — it appears here once the source machine is serving.");
+        return 0;
+    }
+    fetch((ab + "/ping")).then(status_ok).catch(status_fail);
+    return 0;
+}
+
 function main() {
     render_ai();
+    check_status();
     return 0;
 }
 

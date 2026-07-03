@@ -1,7 +1,8 @@
 # ErnosLabs — The AI Archive page
 # Component: src/ai.ep (compiled to assets/js/ai.js via build.sh)
-# Renders the model catalog from window.AI_* (ai-archive-data.js): a preservation
-# archive of open model weights with the open-source code to run each one.
+# Renders the model catalog from window.AI_* (ai-archive-data.js). Downloads
+# point at the SOURCE MACHINE (window.ARCHIVE_BASE_DEFAULT or localStorage via
+# archiveSetBase) — no Hugging Face. A live status line pings the archive server.
 
 define esc with s:
     set t to s
@@ -10,23 +11,41 @@ define esc with s:
     set t to t.split(">").join("&gt;")
     return t
 
+define archive_base:
+    set b to ""
+    if window.localStorage:
+        set b to window.localStorage.getItem("ernosArchiveBase")
+    if not b:
+        set b to window.ARCHIVE_BASE_DEFAULT
+    if not b:
+        return ""
+    repeat while b.length > 0 and also b.endsWith("/"):
+        set b to b.slice(0 and b.length - 1)
+    return b
+
 define runner_html with r:
     set out to f"<a class=\"ai-runner\" href=\"{r.url}\" target=\"_blank\" rel=\"noopener\">"
     set out to out + f"<strong>{r.name}</strong><span>{r.what}</span></a>"
     return out
 
 define model_card_html with m:
-    set hf to "https://huggingface.co/" + m.repo
+    set ab to window.__ab
     set out to "<div class=\"ai-card reveal in\">"
     set out to out + f"<div class=\"ai-card__top\"><h3>{esc(m.name)}</h3><span class=\"ai-size\">{m.size}</span></div>"
     set out to out + f"<p class=\"ai-fmt\">{esc(m.fmt)} · {esc(m.license)}</p>"
     set out to out + f"<p class=\"ai-desc\">{esc(m.desc)}</p>"
     set out to out + f"<div class=\"ai-run\"><span class=\"ai-run__label\">Run with <a href=\"{m.runner.url}\" target=\"_blank\" rel=\"noopener\">{m.runner.name}</a></span><code>{esc(m.cmd)}</code></div>"
     set out to out + "<div class=\"ai-card__actions\">"
-    set out to out + f"<a class=\"btn btn--primary\" href=\"{hf}\" target=\"_blank\" rel=\"noopener\">Download ↗</a>"
-    if m.mirror:
-        set out to out + f"<a class=\"work-dl\" href=\"{m.mirror}\">⬇ Mirror</a>"
-    set out to out + f"<span class=\"ai-src\">{esc(m.repo)}</span>"
+    if ab equals "":
+        set out to out + "<span class=\"btn btn--primary is-off\">Archive offline</span>"
+    else:
+        set href to ab + "/" + m.path
+        set label to "⬇ Download"
+        if m.dir:
+            set href to href + "/"
+            set label to "⬇ Browse &amp; download"
+        set out to out + f"<a class=\"btn btn--primary\" href=\"{href}\">{label}</a>"
+    set out to out + f"<span class=\"ai-src\">from {esc(m.repo)}</span>"
     set out to out + "</div></div>"
     return out
 
@@ -45,23 +64,30 @@ define render_ai:
     set host to document.getElementById("ai-content")
     if not host:
         return 0
+    set window.__ab to archive_base()
+    set ab to window.__ab
     set intro to window.AI_INTRO
     set stats to window.AI_STATS
-    set html to "<header class=\"section\" style=\"padding-bottom:24px\"><div class=\"wrap\">"
+    set html to "<header class=\"section\" style=\"padding-bottom:20px\"><div class=\"wrap\">"
     set html to html + f"<p class=\"eyebrow reveal\">{intro.eyebrow}</p>"
     set html to html + f"<h1 class=\"reveal\">{intro.title}</h1>"
     set html to html + f"<p class=\"lead reveal mt-s\">{intro.lead}</p>"
-    set html to html + "<div class=\"stats-banner reveal mt-l\">"
+    set html to html + "<div id=\"ai-status\" class=\"ai-status\">Checking the archive…</div>"
+    set html to html + "<div class=\"stats-banner reveal\">"
     set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.count}</span><span class=\"stat-label\">models preserved</span></div>"
     set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.size}</span><span class=\"stat-label\">of open weights</span></div>"
-    set html to html + "<div class=\"stat-item\"><span class=\"stat-num\">Free</span><span class=\"stat-label\">no account, no gate</span></div>"
+    set html to html + "<div class=\"stat-item\"><span class=\"stat-num\">Self-hosted</span><span class=\"stat-label\">from the source machine</span></div>"
     set html to html + "</div></div></header>"
 
     # runners
     set runners to window.AI_RUNNERS
     set html to html + "<section class=\"section\" style=\"padding-top:8px\"><div class=\"wrap\">"
     set html to html + "<p class=\"eyebrow\">Run them yourself</p><h2>The open-source programs</h2>"
-    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">Every model here runs on free, open software. Grab the one for the format and follow its readme.</p>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">Every model here runs on free, open software. Grab the one for the format."
+    if ab equals "":
+        set html to html + "</p>"
+    else:
+        set html to html + f" They are also mirrored on the archive — <a href=\"{ab}/programs/\" style=\"color:var(--ink-0)\">browse programs ↗</a>.</p>"
     set html to html + "<div class=\"ai-runners\">"
     set j to 0
     repeat while j < runners.length:
@@ -96,12 +122,40 @@ define render_ai:
     # preservation note
     set html to html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">"
     set html to html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>"
-    set html to html + "<p class=\"lead\">Downloads resolve to each model's canonical open source. That is not preservation — hosts gate, rename, and remove models (Stable Diffusion 1.5 is already gone from its original home). Real preservation is redundancy: mirror these weights to the Internet Archive, seed them as torrents, keep copies on cold drives. If you download one, keep it. If you can host one, mirror it. The whole point is that no one owns it and no one can pull it.</p>"
+    set html to html + "<p class=\"lead\">These weights are served straight from the source machine — not from Hugging Face or GitHub, so they outlive any of those going down or pulling a model. That means a download works when the machine is online. Real permanence is redundancy: if you pull a model, keep it; if you can host one, mirror it; seed it to others. The whole point is that no one owns it and no one can quietly delete it.</p>"
     set html to html + "</div></section>"
 
     set host.innerHTML to html
     return 0
 
+# ---- live status --------------------------------------------------------
+define status_set with cls and msg:
+    set el to document.getElementById("ai-status")
+    if el:
+        set el.className to cls
+        set el.innerHTML to msg
+    return 0
+
+define status_ok with resp:
+    if resp.ok:
+        status_set("ai-status is-online" and "🟢 <strong>Archive online</strong> — downloads come straight from the source machine.")
+    else:
+        status_fail(resp)
+    return 0
+
+define status_fail with err:
+    status_set("ai-status is-offline" and "🔴 <strong>The source machine is offline right now.</strong> Downloads resume when it's back — or use the build-it-yourself script below.")
+    return 0
+
+define check_status:
+    set ab to window.__ab
+    if ab equals "":
+        status_set("ai-status" and "⚙ The archive endpoint isn't set yet — it appears here once the source machine is serving.")
+        return 0
+    fetch(ab + "/ping").then(status_ok).catch(status_fail)
+    return 0
+
 define main:
     render_ai()
+    check_status()
     return 0
