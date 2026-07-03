@@ -35,7 +35,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let i, models, out, m;
+    let models, out, m, i;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -50,7 +50,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let runners, intro, stats, html, cards, sections, s, j, sec, host;
+    let runners, host, s, sec, intro, cards, stats, html, j, sections;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -89,6 +89,15 @@ function render_ai() {
         s = (s + 1);
     }
     html = (html + "</div></section>");
+    html = (html + "<section class=\"section\" style=\"padding-top:0\"><div class=\"wrap\">");
+    html = (html + "<hr class=\"divider\" style=\"margin:34px 0 26px\"><p class=\"eyebrow\">Roll your own</p><h2>Build your own archive</h2>");
+    html = (html + "<p class=\"lead\" style=\"margin-bottom:18px\">This whole library was built with one open script. Take it, edit the model list and the drive path, and make your own preservation copy. Free to use and change.</p>");
+    html = (html + "<div class=\"ai-run\" style=\"max-width:640px\"><span class=\"ai-run__label\">One-time setup, then run it</span>");
+    html = (html + "<code>pip install huggingface_hub\npython3 download_archive.py</code></div>");
+    html = (html + "<div class=\"ai-card__actions\" style=\"margin-top:16px\">");
+    html = (html + "<a class=\"btn btn--primary\" href=\"tools/download_archive.py\" download>⬇ Download the script</a>");
+    html = (html + "<a class=\"work-dl\" href=\"tools/download_archive.py\" target=\"_blank\" rel=\"noopener\">View the code</a>");
+    html = (html + "</div></div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>");
     html = (html + "<p class=\"lead\">Downloads resolve to each model's canonical open source. That is not preservation — hosts gate, rename, and remove models (Stable Diffusion 1.5 is already gone from its original home). Real preservation is redundancy: mirror these weights to the Internet Archive, seed them as torrents, keep copies on cold drives. If you download one, keep it. If you can host one, mirror it. The whole point is that no one owns it and no one can pull it.</p>");

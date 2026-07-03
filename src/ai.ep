@@ -82,6 +82,17 @@ define render_ai:
         set s to s + 1
     set html to html + "</div></section>"
 
+    # build-your-own tool
+    set html to html + "<section class=\"section\" style=\"padding-top:0\"><div class=\"wrap\">"
+    set html to html + "<hr class=\"divider\" style=\"margin:34px 0 26px\"><p class=\"eyebrow\">Roll your own</p><h2>Build your own archive</h2>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:18px\">This whole library was built with one open script. Take it, edit the model list and the drive path, and make your own preservation copy. Free to use and change.</p>"
+    set html to html + "<div class=\"ai-run\" style=\"max-width:640px\"><span class=\"ai-run__label\">One-time setup, then run it</span>"
+    set html to html + "<code>pip install huggingface_hub\npython3 download_archive.py</code></div>"
+    set html to html + "<div class=\"ai-card__actions\" style=\"margin-top:16px\">"
+    set html to html + "<a class=\"btn btn--primary\" href=\"tools/download_archive.py\" download>⬇ Download the script</a>"
+    set html to html + "<a class=\"work-dl\" href=\"tools/download_archive.py\" target=\"_blank\" rel=\"noopener\">View the code</a>"
+    set html to html + "</div></div></section>"
+
     # preservation note
     set html to html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">"
     set html to html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>"
