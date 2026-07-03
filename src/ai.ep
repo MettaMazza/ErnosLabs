@@ -35,16 +35,18 @@ define model_card_html with m:
     set out to out + f"<p class=\"ai-fmt\">{esc(m.fmt)} · {esc(m.license)}</p>"
     set out to out + f"<p class=\"ai-desc\">{esc(m.desc)}</p>"
     set out to out + f"<div class=\"ai-run\"><span class=\"ai-run__label\">Run with <a href=\"{m.runner.url}\" target=\"_blank\" rel=\"noopener\">{m.runner.name}</a></span><code>{esc(m.cmd)}</code></div>"
-    set out to out + "<div class=\"ai-card__actions\">"
+    set hf to "https://huggingface.co/" + m.repo
+    # Default to the original source (always works); swap to the source machine
+    # when the archive pings online. So: your machine when up, redirect when down.
+    set machine to ""
     if ab equals "":
-        set out to out + "<span class=\"btn btn--primary is-off\">Archive offline</span>"
+        set machine to ""
     else:
-        set href to ab + "/" + m.path
-        set label to "⬇ Download"
+        set machine to ab + "/" + m.path
         if m.dir:
-            set href to href + "/"
-            set label to "⬇ Browse &amp; download"
-        set out to out + f"<a class=\"btn btn--primary\" href=\"{href}\">{label}</a>"
+            set machine to machine + "/"
+    set out to out + "<div class=\"ai-card__actions\">"
+    set out to out + f"<a class=\"btn btn--primary ai-dl\" href=\"{hf}\" data-machine=\"{machine}\">⬇ Download</a>"
     set out to out + f"<span class=\"ai-src\">from {esc(m.repo)}</span>"
     set out to out + "</div></div>"
     return out
@@ -69,11 +71,11 @@ define render_ai:
     set intro to window.AI_INTRO
     set stats to window.AI_STATS
     set html to "<header class=\"section\" style=\"padding-bottom:20px\"><div class=\"wrap\">"
-    set html to html + f"<p class=\"eyebrow reveal\">{intro.eyebrow}</p>"
-    set html to html + f"<h1 class=\"reveal\">{intro.title}</h1>"
-    set html to html + f"<p class=\"lead reveal mt-s\">{intro.lead}</p>"
+    set html to html + f"<p class=\"eyebrow\">{intro.eyebrow}</p>"
+    set html to html + f"<h1>{intro.title}</h1>"
+    set html to html + f"<p class=\"lead mt-s\">{intro.lead}</p>"
     set html to html + "<div id=\"ai-status\" class=\"ai-status\">Checking the archive…</div>"
-    set html to html + "<div class=\"stats-banner reveal\">"
+    set html to html + "<div class=\"stats-banner\">"
     set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.count}</span><span class=\"stat-label\">models preserved</span></div>"
     set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.size}</span><span class=\"stat-label\">of open weights</span></div>"
     set html to html + "<div class=\"stat-item\"><span class=\"stat-num\">Self-hosted</span><span class=\"stat-label\">from the source machine</span></div>"
@@ -136,21 +138,31 @@ define status_set with cls and msg:
         set el.innerHTML to msg
     return 0
 
+# swap every Download link from the fallback source to the source machine
+define use_machine:
+    set links to document.querySelectorAll(".ai-dl")
+    for each a in links:
+        set mu to a.getAttribute("data-machine")
+        if mu:
+            set a.href to mu
+    return 0
+
 define status_ok with resp:
     if resp.ok:
+        use_machine()
         status_set("ai-status is-online" and "🟢 <strong>Archive online</strong> — downloads come straight from the source machine.")
     else:
         status_fail(resp)
     return 0
 
 define status_fail with err:
-    status_set("ai-status is-offline" and "🔴 <strong>The source machine is offline right now.</strong> Downloads resume when it's back — or use the build-it-yourself script below.")
+    status_set("ai-status is-offline" and "🔴 <strong>The source machine is offline.</strong> Downloads fall back to the original open source for now.")
     return 0
 
 define check_status:
     set ab to window.__ab
     if ab equals "":
-        status_set("ai-status" and "⚙ The archive endpoint isn't set yet — it appears here once the source machine is serving.")
+        status_set("ai-status" and "Downloads use each model's original open source. When the archive machine is online, they switch to serving straight from it.")
         return 0
     fetch(ab + "/ping").then(status_ok).catch(status_fail)
     return 0

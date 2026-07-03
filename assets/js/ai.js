@@ -35,32 +35,32 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let href, label, ab, out;
+    let out, ab, hf, machine;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
     out = (out + (((("<p class=\"ai-fmt\">" + String(esc(m.fmt))) + " · ") + String(esc(m.license))) + "</p>"));
     out = (out + (("<p class=\"ai-desc\">" + String(esc(m.desc))) + "</p>"));
     out = (out + (((((("<div class=\"ai-run\"><span class=\"ai-run__label\">Run with <a href=\"" + String(m.runner.url)) + "\" target=\"_blank\" rel=\"noopener\">") + String(m.runner.name)) + "</a></span><code>") + String(esc(m.cmd))) + "</code></div>"));
-    out = (out + "<div class=\"ai-card__actions\">");
+    hf = ("https://huggingface.co/" + m.repo);
+    machine = "";
     if ((ab === "")) {
-        out = (out + "<span class=\"btn btn--primary is-off\">Archive offline</span>");
+        machine = "";
     } else {
-        href = ((ab + "/") + m.path);
-        label = "⬇ Download";
+        machine = ((ab + "/") + m.path);
         if (m.dir) {
-            href = (href + "/");
-            label = "⬇ Browse &amp; download";
+            machine = (machine + "/");
         }
-        out = (out + (((("<a class=\"btn btn--primary\" href=\"" + String(href)) + "\">") + String(label)) + "</a>"));
     }
+    out = (out + "<div class=\"ai-card__actions\">");
+    out = (out + (((("<a class=\"btn btn--primary ai-dl\" href=\"" + String(hf)) + "\" data-machine=\"") + String(machine)) + "\">⬇ Download</a>"));
     out = (out + (("<span class=\"ai-src\">from " + String(esc(m.repo))) + "</span>"));
     out = (out + "</div></div>");
     return out;
 }
 
 function section_html(key) {
-    let i, out, models, m;
+    let out, m, models, i;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let sec, stats, html, cards, s, j, host, runners, sections, ab, intro;
+    let cards, stats, intro, sec, s, html, host, j, ab, sections, runners;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -85,11 +85,11 @@ function render_ai() {
     intro = window.AI_INTRO;
     stats = window.AI_STATS;
     html = "<header class=\"section\" style=\"padding-bottom:20px\"><div class=\"wrap\">";
-    html = (html + (("<p class=\"eyebrow reveal\">" + String(intro.eyebrow)) + "</p>"));
-    html = (html + (("<h1 class=\"reveal\">" + String(intro.title)) + "</h1>"));
-    html = (html + (("<p class=\"lead reveal mt-s\">" + String(intro.lead)) + "</p>"));
+    html = (html + (("<p class=\"eyebrow\">" + String(intro.eyebrow)) + "</p>"));
+    html = (html + (("<h1>" + String(intro.title)) + "</h1>"));
+    html = (html + (("<p class=\"lead mt-s\">" + String(intro.lead)) + "</p>"));
     html = (html + "<div id=\"ai-status\" class=\"ai-status\">Checking the archive…</div>");
-    html = (html + "<div class=\"stats-banner reveal\">");
+    html = (html + "<div class=\"stats-banner\">");
     html = (html + (("<div class=\"stat-item\"><span class=\"stat-num\">" + String(stats.count)) + "</span><span class=\"stat-label\">models preserved</span></div>"));
     html = (html + (("<div class=\"stat-item\"><span class=\"stat-num\">" + String(stats.size)) + "</span><span class=\"stat-label\">of open weights</span></div>"));
     html = (html + "<div class=\"stat-item\"><span class=\"stat-num\">Self-hosted</span><span class=\"stat-label\">from the source machine</span></div>");
@@ -149,8 +149,21 @@ function status_set(cls, msg) {
     return 0;
 }
 
+function use_machine() {
+    let links, mu;
+    links = document.querySelectorAll(".ai-dl");
+    for (const a of links) {
+        mu = a.getAttribute("data-machine");
+        if (mu) {
+            a.href = mu;
+        }
+    }
+    return 0;
+}
+
 function status_ok(resp) {
     if (resp.ok) {
+        use_machine();
         status_set("ai-status is-online", "🟢 <strong>Archive online</strong> — downloads come straight from the source machine.");
     } else {
         status_fail(resp);
@@ -159,7 +172,7 @@ function status_ok(resp) {
 }
 
 function status_fail(err) {
-    status_set("ai-status is-offline", "🔴 <strong>The source machine is offline right now.</strong> Downloads resume when it's back — or use the build-it-yourself script below.");
+    status_set("ai-status is-offline", "🔴 <strong>The source machine is offline.</strong> Downloads fall back to the original open source for now.");
     return 0;
 }
 
@@ -167,7 +180,7 @@ function check_status() {
     let ab;
     ab = window.__ab;
     if ((ab === "")) {
-        status_set("ai-status", "⚙ The archive endpoint isn't set yet — it appears here once the source machine is serving.");
+        status_set("ai-status", "Downloads use each model's original open source. When the archive machine is online, they switch to serving straight from it.");
         return 0;
     }
     fetch((ab + "/ping")).then(status_ok).catch(status_fail);

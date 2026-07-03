@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let i, nodes, n;
+    let nodes, i, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, canvas, ctx, dpr, h;
+    let h, canvas, ctx, dpr, w;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let dy, h, w, i, j, dx, a, b, n, alpha, nodes, ctx, count, dist;
+    let dx, dy, ctx, nodes, h, i, count, a, j, w, b, dist, alpha, n;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, reduce, canvas;
+    let canvas, density, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -158,7 +158,7 @@ function drop_close(ev) {
 }
 
 function nav_init() {
-    let burger, dbtn;
+    let dbtn, burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -172,7 +172,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let href, path, links, act, dbtn;
+    let href, dbtn, links, act, path;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -208,7 +208,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, IO, obs, args, opts;
+    let opts, args, obs, IO, els;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -238,7 +238,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let i, dt, nodes, parts, txt, n, cls, doc;
+    let i, dt, doc, parts, n, nodes, cls, txt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -268,7 +268,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let st, btn;
+    let btn, st;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -283,7 +283,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let btn, fill, pct, status, ph;
+    let status, ph, fill, btn, pct;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -340,7 +340,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let btn, status;
+    let status, btn;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;
