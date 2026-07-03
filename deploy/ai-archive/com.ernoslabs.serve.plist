@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Auto-start the Ernos serve server on login and keep it alive.
+     Install:  cp this to ~/Library/LaunchAgents/  &&  launchctl load it. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ernoslabs.serve</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/mettamazza/.ernos/kokoro-venv/bin/python</string>
+        <string>/Users/mettamazza/Desktop/ErnosLabs/deploy/ai-archive/serve_ernos.py</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>ARCHIVE_ROOT</key>
+        <string>/Volumes/One Touch/ernos-archive</string>
+        <key>SITE_ROOT</key>
+        <string>/Users/mettamazza/Desktop/ErnosLabs</string>
+        <key>PORT</key>
+        <string>8899</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/ernos-serve.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/ernos-serve.log</string>
+</dict>
+</plist>
