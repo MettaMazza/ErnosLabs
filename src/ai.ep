@@ -1,0 +1,96 @@
+# ErnosLabs — The AI Archive page
+# Component: src/ai.ep (compiled to assets/js/ai.js via build.sh)
+# Renders the model catalog from window.AI_* (ai-archive-data.js): a preservation
+# archive of open model weights with the open-source code to run each one.
+
+define esc with s:
+    set t to s
+    set t to t.split("&").join("&amp;")
+    set t to t.split("<").join("&lt;")
+    set t to t.split(">").join("&gt;")
+    return t
+
+define runner_html with r:
+    set out to f"<a class=\"ai-runner\" href=\"{r.url}\" target=\"_blank\" rel=\"noopener\">"
+    set out to out + f"<strong>{r.name}</strong><span>{r.what}</span></a>"
+    return out
+
+define model_card_html with m:
+    set hf to "https://huggingface.co/" + m.repo
+    set out to "<div class=\"ai-card reveal in\">"
+    set out to out + f"<div class=\"ai-card__top\"><h3>{esc(m.name)}</h3><span class=\"ai-size\">{m.size}</span></div>"
+    set out to out + f"<p class=\"ai-fmt\">{esc(m.fmt)} · {esc(m.license)}</p>"
+    set out to out + f"<p class=\"ai-desc\">{esc(m.desc)}</p>"
+    set out to out + f"<div class=\"ai-run\"><span class=\"ai-run__label\">Run with <a href=\"{m.runner.url}\" target=\"_blank\" rel=\"noopener\">{m.runner.name}</a></span><code>{esc(m.cmd)}</code></div>"
+    set out to out + "<div class=\"ai-card__actions\">"
+    set out to out + f"<a class=\"btn btn--primary\" href=\"{hf}\" target=\"_blank\" rel=\"noopener\">Download ↗</a>"
+    if m.mirror:
+        set out to out + f"<a class=\"work-dl\" href=\"{m.mirror}\">⬇ Mirror</a>"
+    set out to out + f"<span class=\"ai-src\">{esc(m.repo)}</span>"
+    set out to out + "</div></div>"
+    return out
+
+define section_html with key:
+    set models to window.AI_MODELS
+    set out to ""
+    set i to 0
+    repeat while i < models.length:
+        set m to get_list(models and i)
+        if m.cat equals key:
+            set out to out + model_card_html(m)
+        set i to i + 1
+    return out
+
+define render_ai:
+    set host to document.getElementById("ai-content")
+    if not host:
+        return 0
+    set intro to window.AI_INTRO
+    set stats to window.AI_STATS
+    set html to "<header class=\"section\" style=\"padding-bottom:24px\"><div class=\"wrap\">"
+    set html to html + f"<p class=\"eyebrow reveal\">{intro.eyebrow}</p>"
+    set html to html + f"<h1 class=\"reveal\">{intro.title}</h1>"
+    set html to html + f"<p class=\"lead reveal mt-s\">{intro.lead}</p>"
+    set html to html + "<div class=\"stats-banner reveal mt-l\">"
+    set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.count}</span><span class=\"stat-label\">models preserved</span></div>"
+    set html to html + f"<div class=\"stat-item\"><span class=\"stat-num\">{stats.size}</span><span class=\"stat-label\">of open weights</span></div>"
+    set html to html + "<div class=\"stat-item\"><span class=\"stat-num\">Free</span><span class=\"stat-label\">no account, no gate</span></div>"
+    set html to html + "</div></div></header>"
+
+    # runners
+    set runners to window.AI_RUNNERS
+    set html to html + "<section class=\"section\" style=\"padding-top:8px\"><div class=\"wrap\">"
+    set html to html + "<p class=\"eyebrow\">Run them yourself</p><h2>The open-source programs</h2>"
+    set html to html + "<p class=\"lead\" style=\"margin-bottom:24px\">Every model here runs on free, open software. Grab the one for the format and follow its readme.</p>"
+    set html to html + "<div class=\"ai-runners\">"
+    set j to 0
+    repeat while j < runners.length:
+        set html to html + runner_html(get_list(runners and j))
+        set j to j + 1
+    set html to html + "</div></div></section>"
+
+    # model sections
+    set sections to window.AI_SECTIONS
+    set html to html + "<section class=\"section\" style=\"padding-top:0\"><div class=\"wrap\">"
+    set s to 0
+    repeat while s < sections.length:
+        set sec to get_list(sections and s)
+        set cards to section_html(sec.key)
+        set html to html + f"<hr class=\"divider\" style=\"margin:34px 0 26px\"><h2>{sec.heading}</h2>"
+        set html to html + f"<p class=\"lead\" style=\"margin-bottom:24px\">{sec.sub}</p>"
+        set html to html + "<div class=\"ai-grid\">" + cards + "</div>"
+        set s to s + 1
+    set html to html + "</div></section>"
+
+    # preservation note
+    set html to html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">"
+    set html to html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>"
+    set html to html + "<p class=\"lead\">Downloads resolve to each model's canonical open source. That is not preservation — hosts gate, rename, and remove models (Stable Diffusion 1.5 is already gone from its original home). Real preservation is redundancy: mirror these weights to the Internet Archive, seed them as torrents, keep copies on cold drives. If you download one, keep it. If you can host one, mirror it. The whole point is that no one owns it and no one can pull it.</p>"
+    set html to html + "</div></section>"
+
+    set host.innerHTML to html
+    return 0
+
+define main:
+    render_ai()
+    return 0

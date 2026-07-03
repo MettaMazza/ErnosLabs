@@ -14,7 +14,7 @@ function esc(s) {
 }
 
 function play_video(id, title) {
-    let t, frame;
+    let frame, t;
     frame = document.getElementById("video-player");
     if (frame) {
         frame.src = (("https://www.youtube-nocookie.com/embed/" + String(id)) + "?rel=0&autoplay=1");
@@ -28,7 +28,7 @@ function play_video(id, title) {
 }
 
 function vid_click(ev) {
-    let idx, vids, v, el;
+    let vids, el, v, idx;
     el = ev.currentTarget;
     idx = el.getAttribute("data-idx");
     vids = window.ERNOS_VIDEOS;
@@ -40,7 +40,7 @@ function vid_click(ev) {
 }
 
 function render_videos() {
-    let vids, html, cap, grid, i, v, thumb, cards;
+    let i, v, html, grid, cap, vids, thumb, cards;
     grid = document.getElementById("video-grid");
     if (!grid) {
         return 0;
@@ -71,7 +71,7 @@ function render_videos() {
 }
 
 function videos_init() {
-    let vids, t, frame, v0;
+    let vids, v0, frame, t;
     render_videos();
     vids = window.ERNOS_VIDEOS;
     if (vids) {

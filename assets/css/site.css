@@ -376,6 +376,25 @@ pre {
 @keyframes out-flash { 0% { box-shadow: 0 0 0 2px var(--glow) inset; } 100% { box-shadow: 0 0 0 0 transparent inset; } }
 .output.flash { animation: out-flash .55s var(--ease); }
 
+/* AI archive */
+.ai-runners { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.ai-runner { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.02); text-decoration: none; transition: border-color .18s var(--ease), background .18s var(--ease); }
+.ai-runner:hover { border-color: var(--glow); background: rgba(79,240,196,.05); }
+.ai-runner strong { color: var(--ink-0); font-size: .98rem; }
+.ai-runner span { color: var(--ink-2); font-size: .84rem; }
+.ai-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
+.ai-card { display: flex; flex-direction: column; gap: 10px; padding: 20px; border: 1px solid var(--line); border-radius: var(--r-md); background: rgba(255,255,255,.02); }
+.ai-card__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ai-card__top h3 { font-size: 1.08rem; }
+.ai-size { flex: none; font-family: var(--font-mono); font-size: .8rem; color: var(--glow); background: rgba(79,240,196,.08); padding: 3px 9px; border-radius: 999px; }
+.ai-fmt { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-3); margin: -4px 0 0; }
+.ai-desc { color: var(--ink-2); font-size: .9rem; line-height: 1.5; margin: 0; flex: 1; }
+.ai-run { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+.ai-run__label { font-size: .82rem; color: var(--ink-3); }
+.ai-run code { display: block; font-family: var(--font-mono); font-size: .78rem; color: #bdf5e4; background: #040a0c; border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; overflow-x: auto; white-space: pre; }
+.ai-card__actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.ai-src { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-3); word-break: break-all; }
+
 /* seed vault — engraving calculator embed */
 .seed-calc { width: 100%; height: 680px; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; display: block; }
 

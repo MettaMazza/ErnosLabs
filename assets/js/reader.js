@@ -56,7 +56,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let works, cards, cards0, s, html, intro, i, cat, sections;
+    let cards, html, cat, i, works, intro, s, cards0, sections;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -93,7 +93,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let works, i, w;
+    let w, works, i;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -107,7 +107,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let doc, rtitle, rd, url, w, dl, toc0;
+    let rd, dl, doc, toc0, url, w, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -138,7 +138,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let html, doc;
+    let doc, html;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -149,7 +149,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let toc, links, i, out, h, cls, heads;
+    let out, i, h, cls, links, heads, toc;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -237,7 +237,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let re, q, doc, count, hl, esc, marks;
+    let hl, count, re, doc, q, esc, marks;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -277,7 +277,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let doc, u, text, voice, voice_sel, btn;
+    let doc, btn, voice, text, voice_sel, u;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -325,7 +325,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let container, i, html, v, voices;
+    let html, i, voices, v, container;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
@@ -347,7 +347,7 @@ function build_voice_selector() {
 }
 
 function main() {
-    let hash, clink;
+    let clink, hash;
     window.readerFont = 19;
     window.ttsOn = false;
     render_catalog();

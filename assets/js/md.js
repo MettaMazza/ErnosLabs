@@ -59,7 +59,7 @@ function md_is_hr(line) {
 }
 
 function md_render(src) {
-    let want, trimmed, lines, line, hid, out, norm, n, htext, tag, in_code, i, hlvl, code_buf, para, in_list, list_tag, ordered;
+    let norm, in_code, out, htext, tag, want, ordered, para, trimmed, code_buf, n, hlvl, in_list, line, i, list_tag, lines, hid;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;
@@ -221,7 +221,7 @@ function md_list_text(t) {
 }
 
 function md_headings(src) {
-    let in_code, n, i, line, htext, h, norm, lines, heads, lvl;
+    let heads, n, lvl, in_code, h, line, htext, norm, lines, i;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;

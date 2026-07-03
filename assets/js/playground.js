@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let i, out, start, d, c, n, sstart, word;
+    let d, out, sstart, c, n, i, word, start;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let gutter, layer, src, lines, g, i, ta;
+    let src, g, ta, gutter, lines, i, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let ta, layer, gutter;
+    let ta, gutter, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let val, sp, ta, epp;
+    let ta, epp, val, sp;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let host, exs, i, btn, e;
+    let btn, exs, e, host, i;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -230,7 +230,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let idx, e, exs;
+    let exs, idx, e;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let ta, src, out, status, reflow, t0, t1, ms, r;
+    let status, reflow, ta, out, r, src, ms, t1, t0;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -324,7 +324,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let src, inp, sp, epp, val, r, trimmed;
+    let src, r, epp, val, inp, trimmed, sp;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -469,7 +469,7 @@ function term_help(level) {
 }
 
 function term_save() {
-    let opts, code, blob, a, lines, url;
+    let blob, a, lines, opts, code, url;
     lines = window.epHistory;
     if ((lines.length === 0)) {
         term_print("Nothing to save yet — write some ErnosPlain first.", "term-dim");
