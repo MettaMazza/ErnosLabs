@@ -30,9 +30,14 @@ define subsystems:
     l.push(sub("decent_consensus" and "Raft — leader election, replicated log, state rollback."))
     l.push(sub("decent_anon" and "Onion routing and a mixnet for traffic-analysis resistance."))
     l.push(sub("decent_ai" and "Local inference, embeddings, speech-to-text, and TTS."))
-    l.push(sub("decent_agent" and "A ReAct agent with tiered + Hebbian memory and an observer gate."))
+    l.push(sub("decent_agent" and "A ReAct agent — 9 guarded tools, tiered + Hebbian memory, a fail-closed observer audit, a provider router, and a Socratic tutor mode."))
     l.push(sub("decent_search" and "A distributed crawler with BM25 + PageRank ranking."))
     l.push(sub("decent_name" and "Decentralised names — a .decent registry resolved via the DHT."))
+    l.push(sub("decent_pool" and "Resource pooling — bandwidth tiers, a compute job queue, the symbiotic mesh."))
+    l.push(sub("decent_media" and "Voice and video — Opus + VP8 over the mesh, no media server."))
+    l.push(sub("decent_host" and "Decentralised hosting — publish sites and apps straight from nodes."))
+    l.push(sub("decent_web" and "The node's own dashboard — a full web UI served from the daemon."))
+    l.push(sub("decent_cli" and "The local control client — drive every subsystem from the terminal."))
     return l
 
 define draw_subs:
@@ -554,14 +559,16 @@ define draw_stats:
         return 0
     set stats to []
     stats.push("17")
-    stats.push("~30k")
+    stats.push("~43k")
+    stats.push("94")
     stats.push("0")
     stats.push("1")
     set labels to []
-    labels.push("subsystems")
-    labels.push("lines of Ernos")
+    labels.push("subsystems · 103 modules")
+    labels.push("lines of Ernos (30.3k source + 12.7k tests)")
+    labels.push("per-subsystem test suites")
     labels.push("platform dependencies")
-    labels.push("single binary")
+    labels.push("single binary — v1.0.0-beta")
     set html to ""
     set i to 0
     repeat while i < stats.length:

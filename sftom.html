@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Smithian Fold — a theory of everything from one move</title>
-  <meta name="description" content="One axiom — the One — and one move, the fold. From it the constants of nature fall out with zero free parameters. Explore it interactively.">
+  <meta name="description" content="Zero free parameters, zero axioms, one fold. The foundation proves itself, and the constants of nature are forced from it — machine-checked, explorable here.">
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7il5A8L3RleHQ+PC9zdmc+">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,40 +49,43 @@
     <div class="wrap">
       <p class="eyebrow reveal">The theory of everything</p>
       <h1 class="reveal">The Smithian Fold</h1>
-      <p class="lead reveal mt-s">Start with one thing — <em>the One</em>, a unit of action. Allow one move — the
-        <strong style="color:var(--ink-0)">fold</strong>: double a magnitude and cast out the whole. No negatives,
-        no zero, no transcendentals. From this alone, the constants of nature are <em>derived, not fitted</em> —
-        with zero free continuous parameters. The maths below is real and runs here in your browser.</p>
+      <p class="lead reveal mt-s"><strong style="color:var(--ink-0)">Zero free parameters. Zero axioms. One fold.</strong>
+        Given only that there is <em>not nothing</em>, the One, its domain, and its fold are forced — and from them
+        the constants of nature are <em>derived, not fitted</em>. No number is chosen. The starting point is not even
+        assumed: the foundation proves itself, and the proof is machine-checked. The maths below is real and runs
+        here in your browser.</p>
     </div>
   </header>
 
-  <!-- THE AXIOM -->
+  <!-- THE FOUNDATION: THE AXIOM IS A THEOREM -->
   <section class="section" style="padding-top:0;padding-bottom:40px">
     <div class="wrap">
       <hr class="divider">
       <p class="eyebrow mt-l reveal">Foundation</p>
-      <h2 class="reveal">The Axiom</h2>
-      <p class="lead reveal" style="margin-bottom:32px">Every structure in the theory grows from a single seed and a single rule.
-        No infinities are assumed — only the positive rationals, and one operation on them.</p>
+      <h2 class="reveal">The axiom is a theorem</h2>
+      <p class="lead reveal" style="margin-bottom:32px">The old formulation began "assume the One." The rebuilt theory
+        assumes nothing: the foundation is <em>proved</em>, in two machine-checked steps — the fold is the only
+        operation that can exist, and the One is the only place it can start.</p>
 
       <div class="grid grid--3 axiom-grid">
         <div class="card axiom-card reveal">
-          <div class="axiom-icon">𝟙</div>
-          <h3>The One</h3>
-          <p>A single unit of action — the indivisible quantum. No zero, no negatives, no transcendentals.
-            Everything is built from counting and ratio.</p>
+          <div class="axiom-icon">∄</div>
+          <h3>Not nothing</h3>
+          <p>Zero is forbidden — a value must lie in (0, 1]. That single fact is the theory's entire input.
+            Everything else is forced from it.</p>
         </div>
         <div class="card axiom-card reveal">
           <div class="axiom-icon">⤮</div>
-          <h3>The Fold</h3>
-          <p>Double and cast out the whole. The simplest nonlinear map on (0,1] — and the binary shift
-            that makes number theory physical.</p>
+          <h3>The fold, forced</h3>
+          <p>Enumerate every self-map you can even write down with the One and cast-out — the engine runs each one.
+            Only the fold <em>generates</em>; the rest are static, collapse, or contract to the forbidden zero.
+            Uniqueness isn't asserted — it's executed.</p>
         </div>
         <div class="card axiom-card reveal">
-          <div class="axiom-icon">↺</div>
-          <h3>The Orbit</h3>
-          <p>Every rational falls into a periodic cycle. The period — the multiplicative order of 2 mod q —
-            is the structure that encodes the physics.</p>
+          <div class="axiom-icon">𝟙</div>
+          <h3>The One, forced</h3>
+          <p>The ground can't be zero — it's the unique value whose double is the One: the half-One, ½.
+            It folds up to the One, and the One is the fold's own fixed point. The only consistent unison.</p>
         </div>
       </div>
 
@@ -105,6 +108,33 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- VERIFY IT YOURSELF -->
+  <section class="section" style="padding-top:0;padding-bottom:40px">
+    <div class="wrap">
+      <p class="eyebrow reveal">Don't take it on faith</p>
+      <h2 class="reveal">One command proves everything</h2>
+      <p class="lead reveal" style="margin-bottom:22px">The whole theory is a clean-room build in exact arithmetic —
+        no floating point anywhere a value is derived — written in <strong style="color:var(--ink-0)">ErnosPlain</strong>,
+        with the compiler bundled. Measured numbers are a sealed type the derivation primitives <em>cannot consume</em>:
+        feeding a target into a forcing is a compile error, and the engine halts on any fitted or chosen value.</p>
+      <div class="game reveal" style="max-width:720px">
+        <pre class="game__out" style="min-height:0;max-height:none">make -C verify prove      <span style="color:var(--ink-3)"># proves absolutely everything — any C compiler, no setup</span>
+make -C verify online     <span style="color:var(--ink-3)"># cross-check against LIVE-fetched NIST CODATA</span>
+make -C verify uniqueness <span style="color:var(--ink-3)"># the 1/α assembly is the ONLY 9-digit hit</span></pre>
+      </div>
+      <div class="stats-banner reveal" style="margin-top:22px">
+        <div class="stat-item"><span class="stat-num">281</span><span class="stat-label">proof suites</span></div>
+        <div class="stat-item"><span class="stat-num">1,623</span><span class="stat-label">forced checks</span></div>
+        <div class="stat-item"><span class="stat-num">0</span><span class="stat-label">failures</span></div>
+        <div class="stat-item"><span class="stat-num">9 digits</span><span class="stat-label">on 1/α — no free knob</span></div>
+        <div class="stat-item"><span class="stat-num">0</span><span class="stat-label">axioms — the foundation proves itself</span></div>
+      </div>
+      <p class="reveal" style="margin-top:18px;color:var(--ink-2)">Every proof prints its trace back to the One, then the external
+        measurement it matches — CODATA, PDG, Planck — through a boundary a measurement can never cross into a derivation.
+        <a href="https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything" target="_blank" rel="noopener" style="color:var(--ink-0)">Get the repository ↗</a></p>
     </div>
   </section>
 
@@ -180,7 +210,7 @@
           <div class="step-num">5</div>
           <div class="step-body">
             <h3>Everything follows</h3>
-            <p>All other constants are now determined: the lepton mass ratios, the dark-to-baryon fraction 27/5,
+            <p>All other constants are now determined: the lepton mass ratios, the dark-to-baryon ratio 279/52,
               the proton scale at 2<sup>127/2</sup>, the closure of the periodic table at Z = 137.
               Nothing is tuned — everything is <em>derived</em>.</p>
           </div>
@@ -241,7 +271,7 @@
         and the confining ladder ends at 7. Any force on prime 11 would falsify the theory.</p>
       <div class="census" id="census"></div>
       <p style="color:var(--ink-2);font-size:.9rem;margin-top:26px">The full theory derives the charged-lepton mass
-        ratios, the dark-to-baryon ratio (27/5), a periodic table that closes at element 137 = 1/α, and solves chess
+        ratios, the dark-to-baryon ratio (279/52, to 0.02%), a periodic table that closes at element 137 = 1/α, and solves chess
         and Nim with the same retrograde fold — 1,058 machine-checked proofs in all. <em>Check it.</em></p>
     </div>
   </section>
@@ -337,7 +367,7 @@
   <footer class="foot">
     <div class="wrap foot__in">
       <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
-        <p style="margin-top:12px;max-width:34ch">One axiom. One move. Zero free parameters.</p></div>
+        <p style="margin-top:12px;max-width:34ch">Zero axioms. One move. Zero free parameters.</p></div>
       <div class="foot__cols"><div class="foot__col"><h4>More</h4>
         <a href="ernosplain.html">ErnosPlain</a><a href="ernosdecent.html">ErnosDecent</a><a href="library.html">Library</a></div></div>
     </div>
@@ -349,7 +379,7 @@
   <script src="assets/js/spa.js?v=6ab5f95a"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
 
-  <script src="assets/js/site.js?v=371cf15b"></script>
-  <script src="assets/js/fold.js?v=03dae5e8"></script>
+  <script src="assets/js/site.js?v=a5567f6f"></script>
+  <script src="assets/js/fold.js?v=3ebd0cae"></script>
 </body>
 </html>

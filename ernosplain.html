@@ -50,13 +50,14 @@
       <p class="eyebrow reveal">The language</p>
       <h1 class="reveal">ErnosPlain</h1>
       <p class="lead reveal mt-s">Code that reads like instructions, not cryptic symbols — yet compiles to
-        C and runs at native speed. Statically typed, memory-safe, and <strong style="color:var(--ink-0)">self-hosting</strong>:
-        its compiler is written in itself.</p>
+        C and runs at native speed. Statically typed, memory-safe, and <strong style="color:var(--ink-0)">self-hosting
+        all the way down</strong>: the compiler compiles itself to a byte-identical fixpoint from a Rust-free,
+        clang-only bootstrap. MIT-licensed — and it's the language the Smithian Fold's proof engine is written in.</p>
       <div class="grid grid--4 mt-l">
         <div class="card reveal"><span class="card__tag">Syntax</span><h3>Plain English</h3><p><code>define add with a and b:</code> — no braces, no semicolons.</p></div>
         <div class="card reveal"><span class="card__tag">Speed</span><h3>Compiles to C</h3><p>Emitted C, then <code>clang -O2</code>. No runtime tax.</p></div>
-        <div class="card reveal"><span class="card__tag">Safety</span><h3>Owned &amp; checked</h3><p>Type inference + a borrow checker catch errors before they run.</p></div>
-        <div class="card reveal"><span class="card__tag">Proof</span><h3>Self-hosting</h3><p>The compiler compiles itself. 51/51 conformance tests pass.</p></div>
+        <div class="card reveal"><span class="card__tag">Safety</span><h3>Owned &amp; checked</h3><p>Unification-based type inference + ownership-safety checks catch errors before they run.</p></div>
+        <div class="card reveal"><span class="card__tag">Proof</span><h3>Self-hosting</h3><p>The compiler compiles itself — gen2 = gen3, byte-identical, verified with no Rust installed.</p></div>
       </div>
     </div>
   </header>
@@ -65,11 +66,11 @@
   <section class="section" style="padding-top:0;padding-bottom:0">
     <div class="wrap">
       <div class="stats-banner reveal">
-        <div class="stat-item"><span class="stat-num">~40k</span><span class="stat-label">lines (Rust + self-hosted)</span></div>
-        <div class="stat-item"><span class="stat-num">5.8k</span><span class="stat-label">compiler, in ErnosPlain</span></div>
-        <div class="stat-item"><span class="stat-num">51/51</span><span class="stat-label">conformance tests</span></div>
-        <div class="stat-item"><span class="stat-num">9</span><span class="stat-label">codegen backends</span></div>
-        <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">stdlib modules</span></div>
+        <div class="stat-item"><span class="stat-num">71/71</span><span class="stat-label">reference suite</span></div>
+        <div class="stat-item"><span class="stat-num">53/53</span><span class="stat-label">self-hosted parity · 12/12 rejections</span></div>
+        <div class="stat-item"><span class="stat-num">37/37</span><span class="stat-label">differential — both compilers agree</span></div>
+        <div class="stat-item"><span class="stat-num">0 Rust</span><span class="stat-label">clang-only bootstrap, byte-identical fixpoint</span></div>
+        <div class="stat-item"><span class="stat-num">MIT</span><span class="stat-label">licensed, ~30k Rust + 6.4k self-hosted</span></div>
       </div>
     </div>
   </section>
@@ -279,12 +280,12 @@
 
   </div>
 
-  <script src="assets/js/interp.js?v=f661e015"></script>
+  <script src="assets/js/interp.js?v=4c4b1d7b"></script>
   <script src="assets/js/spa.js?v=6ab5f95a"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
-  <script src="assets/js/site.js?v=371cf15b"></script>
-  <script src="assets/js/playground.js?v=46e1691a"></script>
-  <script src="assets/js/rpg.js?v=9f30726d"></script>
-  <script src="assets/js/game.js?v=cdbc073a"></script>
+  <script src="assets/js/site.js?v=a5567f6f"></script>
+  <script src="assets/js/playground.js?v=acdae1e8"></script>
+  <script src="assets/js/rpg.js?v=687a8b26"></script>
+  <script src="assets/js/game.js?v=404d5a1e"></script>
 </body>
 </html>

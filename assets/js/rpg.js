@@ -264,7 +264,7 @@ Player.prototype.heal = function(amount) {
 };
 Player.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, new_hp, roll;
+    let dmg, roll, new_hp;
     roll = ep_random_int(1, 100);
     dmg = self.atk;
     if ((roll > 80)) {
@@ -311,7 +311,7 @@ Companion.prototype.heal = function(amount) {
 };
 Companion.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg;
+    let dmg, new_hp;
     dmg = self.atk;
     console.log((((((("🪄  " + String(self.name)) + " shoots a magic bolt at ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let count, i, len, member;
+    let i, len, count, member;
     count = 0;
     len = team.length;
     i = 0;
@@ -379,7 +379,7 @@ function count_alive(team) {
 }
 
 function get_first_alive(team) {
-    let len, fallback, member, i;
+    let member, fallback, i, len;
     len = team.length;
     i = 0;
     while ((i < len)) {
@@ -394,7 +394,7 @@ function get_first_alive(team) {
 }
 
 function display_team_status(team_name, team) {
-    let i, member, len;
+    let member, i, len;
     console.log((("--- " + String(team_name)) + " Status ---"));
     len = team.length;
     i = 0;
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let enemy_len, orc, party, party_len, healer, ok, i, hero, enemy, target, party_idx, hero_struct, healer_struct, goblin_struct, enemies, r, member, orc_struct, round, goblin, hero_ref;
+    let party_len, enemies, goblin_struct, orc_struct, healer_struct, target, i, round, hero_struct, party_idx, healer, member, hero_ref, r, enemy_len, goblin, hero, orc, party, ok, enemy;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");

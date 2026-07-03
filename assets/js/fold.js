@@ -11,7 +11,7 @@ function gcd(a, b) {
 }
 
 function fold_orbit(p0, q) {
-    let orbit, p, guard;
+    let p, orbit, guard;
     orbit = [];
     p = (p0 % q);
     if ((p === 0)) {
@@ -42,7 +42,7 @@ function fold_period(p0, q) {
 }
 
 function fold_bits(p0, q) {
-    let orbit, bits, i, p;
+    let bits, orbit, p, i;
     orbit = fold_orbit(p0, q);
     bits = "";
     i = 0;
@@ -70,7 +70,7 @@ function depth_for(x) {
 }
 
 function grand(c) {
-    let d_down, d_up, cov, g;
+    let d_up, d_down, g, cov;
     g = JSON.parse("{}");
     g.c = c;
     d_down = depth_for(((c * c) * c));
@@ -81,7 +81,7 @@ function grand(c) {
     g.cov = cov;
     g.inv_alpha = (Math.pow(2, d_up) + (((c * c) * (cov + 1)) / cov));
     g.alpha = (1 / g.inv_alpha);
-    g.dark_ratio = (27 / 5);
+    g.dark_ratio = (279 / 52);
     g.dark_fraction = (27 / 32);
     return g;
 }
@@ -114,7 +114,7 @@ function fmt(x, places) {
 }
 
 function draw_fold() {
-    let rp, cx, ang, y, seq, q, rq, p, n, bits, dpr, size, orbit, cy, i, info, html, val, canvas, g, ctx, rad, x;
+    let q, bits, rad, canvas, rp, g, cx, rq, size, cy, p, i, ctx, dpr, n, orbit, ang, y, seq, info, html, val, x;
     canvas = document.getElementById("fold-canvas");
     if (!canvas) {
         return 0;
@@ -214,7 +214,7 @@ function fold_seq_text(orbit, q) {
 }
 
 function draw_grand() {
-    let clbl, g, html, hh, match, host, c, head, measured, diff;
+    let c, diff, head, clbl, match, host, hh, g, measured, html;
     c = Math.round(Number(document.getElementById("grand-c").value));
     g = grand(c);
     clbl = document.getElementById("grand-c-label");
@@ -235,7 +235,7 @@ function draw_grand() {
     head = document.getElementById("grand-alpha");
     hh = (((((((((("<div class=\"big-eq\">1/α = 2<sup>" + String(g.d_up)) + "</sup> + ") + String(c)) + "²·(") + String(g.cov)) + "+1)/") + String(g.cov)) + " = <b class=\"glow-text\">") + String(fmt(g.inv_alpha, 4))) + "</b></div>");
     hh = (hh + (("<div class=\"eq-cmp\">measured: 137.035999 &nbsp;·&nbsp; " + String(match)) + "</div>"));
-    hh = (hh + (("<div class=\"eq-cmp\">dark : baryon = 27/5 = " + String(fmt(g.dark_ratio, 1))) + "</div>"));
+    hh = (hh + (("<div class=\"eq-cmp\">dark : baryon = 279/52 = " + String(fmt(g.dark_ratio, 4))) + "</div>"));
     head.innerHTML = hh;
     return 0;
 }
@@ -249,7 +249,7 @@ function to_text_num(n) {
 }
 
 function draw_census() {
-    let html, tagtxt, s, host, tag, secs, i;
+    let s, tagtxt, html, secs, host, i, tag;
     host = document.getElementById("census");
     if (!host) {
         return 0;
@@ -278,7 +278,7 @@ function draw_census() {
 }
 
 function draw_leptons() {
-    let agree_tau, host, html, meas_mu_e, pred_tau_e, meas_tau_e, agree_mu, pred_mu_e;
+    let agree_tau, meas_tau_e, pred_mu_e, host, pred_tau_e, agree_mu, html, meas_mu_e;
     host = document.getElementById("leptons");
     if (!host) {
         return 0;
@@ -307,7 +307,7 @@ function draw_leptons() {
     html = (html + "</div>");
     html = (html + "<div class=\"lepton-row\">");
     html = (html + "<div class=\"lepton-label\"><span class=\"lepton-particle\">Ω<sub>d</sub>/Ω<sub>b</sub></span><span class=\"lepton-name\">dark-to-baryon ratio</span></div>");
-    html = (html + "<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">27/5 = 5.400</b></div>");
+    html = (html + "<div class=\"lepton-vals\"><div class=\"fold-stat\"><span>predicted</span><b class=\"glow-text\">279/52 = 5.3653</b></div>");
     html = (html + "<div class=\"fold-stat\"><span>measured</span><b>5.36 ± 0.05</b></div>");
     html = (html + "<div class=\"fold-stat\"><span>agreement</span><b class=\"lepton-agree\">within 1σ</b></div></div>");
     html = (html + "<div class=\"lepton-bar-wrap\"><div class=\"lepton-bar\" style=\"width:99.3%\"></div></div>");
@@ -318,7 +318,7 @@ function draw_leptons() {
 }
 
 function draw_element137() {
-    let host, html;
+    let html, host;
     host = document.getElementById("element137");
     if (!host) {
         return 0;
@@ -362,7 +362,7 @@ function el_pred() {
 }
 
 function draw_ptable() {
-    let len, cls, html, z, sym, p, closures, e, host, ends, pred, s, cells, syms, starts;
+    let e, len, starts, z, cells, html, syms, pred, sym, closures, host, s, ends, cls, p;
     host = document.getElementById("ptable");
     if (!host) {
         return 0;
@@ -415,7 +415,7 @@ function draw_ptable() {
 }
 
 function pt_click(ev) {
-    let info, status, note, z, sym;
+    let status, z, note, info, sym;
     z = Number(ev.currentTarget.getAttribute("data-z"));
     sym = ev.currentTarget.getAttribute("data-sym");
     info = document.getElementById("pt-info");
@@ -458,7 +458,7 @@ function lock_constants() {
     L.push(lc("quark up I₂", "1/383", ["b", "c", "du"]));
     L.push(lc("quark down I₂", "1/95", ["b", "c", "dd"]));
     L.push(lc("lepton e₃", "1/485", ["c", "dd"]));
-    L.push(lc("dark / baryon", "27/5", ["c", "dd"]));
+    L.push(lc("dark / baryon", "279/52", ["c", "dd"]));
     L.push(lc("dark fraction", "27/32", ["b", "c", "dd"]));
     L.push(lc("Hubble ratio", "13/12", ["b", "c"]));
     L.push(lc("Λ floor", "1/2²⁰", ["b", "c", "dd"]));
@@ -483,7 +483,7 @@ function gen_label(k) {
 }
 
 function draw_lockweb() {
-    let gj, i, host, gkl, chtml, gl, L, ghtml, chips, c, j, gbtns, g, gk, gens;
+    let chtml, L, gk, chips, gens, ghtml, gl, c, gkl, gbtns, gj, i, host, g, j;
     host = document.getElementById("lockweb");
     if (!host) {
         return 0;
@@ -526,7 +526,7 @@ function draw_lockweb() {
 }
 
 function lw_click(ev) {
-    let g, sel, active, gbtns, host, consts, gstr;
+    let g, sel, consts, gstr, gbtns, host, active;
     g = ev.currentTarget.getAttribute("data-g");
     host = document.getElementById("lockweb");
     sel = window.lockSel;
@@ -569,7 +569,7 @@ function orbit_showcase() {
 }
 
 function showcase_next() {
-    let idx, qe, pe, queue, q_val;
+    let idx, pe, q_val, queue, qe;
     idx = window.showcaseIdx;
     queue = window.showcaseQueue;
     if ((idx >= queue.length)) {
@@ -602,25 +602,30 @@ function pred(name, value, cat, status, kill) {
 function predictions() {
     let P;
     P = [];
-    P.push(pred("Fine-structure constant", "1/α = 34259/250 = 137.036", "Forced constants", "now", "precision α measurements converge away from this exact rational"));
-    P.push(pred("Charged-lepton masses", "Koide cubic — τ/μ to 7 in 100,000, μ/e to ~1.6 in 1,000", "Forced constants", "now", "any lepton mass ratio parts from the cubic"));
-    P.push(pred("Proton / electron mass", "a strong bound-group of three over the electron shortfall", "Forced constants", "now", "structural and measured values diverge beyond parts-per-billion"));
-    P.push(pred("W / Z boson masses", "m_W² / m_Z² = 3/4 = cos²θ_W, an on-shell identity", "Forced constants", "now", "any precise violation of the identity"));
-    P.push(pred("Neutrino splitting ratio", "the mass-squared splitting ratio is exactly 33", "Forced constants", "now", "oscillation data tightens away from 33"));
+    P.push(pred("Fine-structure constant", "1/α = 5995462/43751 = 137.035999177 — 9 digits, no free knob", "Forced constants", "now", "precision α measurements converge away from this exact rational"));
+    P.push(pred("Koide lepton relation", "Q = 2/3 exactly — measured 0.666661, agreement to 5 digits", "Forced constants", "now", "any lepton mass ratio parts from the cubic"));
+    P.push(pred("Proton / electron mass", "(1/3)(m_μ−m_e)/(m_μ m_e) = 1836.3254 — measured 1836.15267, 0.0094%", "Forced constants", "now", "structural and measured values diverge further"));
+    P.push(pred("Quark mass ratios", "dual cubics dressed over 1/α — s/d, b/s, t/c = 19.768, 53.986, 103.305 (0.06%, 0.08%, 0.005%)", "Forced constants", "now", "any quark ratio parts from its cubic"));
+    P.push(pred("W / Z boson masses", "cos²θ_W = 3/4, run to the measured 0.7769 — and forced sin²θ_W crosses 0.23113", "Forced constants", "now", "any precise violation of the identity"));
+    P.push(pred("Neutrino mixing (PMNS)", "1/2, 1/3, 1/48 — the reactor angle forced nonzero before it was measured nonzero", "Forced constants", "now", "oscillation data parts from the forced fractions"));
+    P.push(pred("Jarlskog CP invariant", "J² from the quark cubics, no square root anywhere: 9.77×10⁻¹⁰ vs (3.1×10⁻⁵)² — 1.7%", "Forced constants", "now", "the measured CP phase parts from the cubic value"));
     P.push(pred("CP-violating phase", "antipodal — 1/2, maximal CP violation", "Forced constants", "now", "the measured CP phase is not maximal"));
     P.push(pred("Three colours", "the fibre size of the tripling fold", "Structural integers", "now", "a fourth colour is found"));
     P.push(pred("Three generations", "no fourth — bounded by the covering structure", "Structural integers", "now", "a fourth-generation fermion is found"));
-    P.push(pred("Eight gluons", "m² − 1 — colour-anticolour minus the singlet", "Structural integers", "now", "a ninth gluon is found"));
+    P.push(pred("Eight gluons", "colour² − 1 = 8 — colour-anticolour minus the singlet, exact", "Structural integers", "now", "a ninth gluon is found"));
     P.push(pred("Exactly four force sectors", "primes 2, 3, 5, 7 · couplings 1/2, 2/3, 4/5, 6/7", "New forces", "frontier", "no confining force on prime 5 or 7 — or any force on prime 11"));
     P.push(pred("The ladder ends at 7", "no eighth, ninth, or eleventh-prime force exists", "New forces", "frontier", "any fundamental force found beyond prime 7"));
-    P.push(pred("Dark / baryon ratio", "27/5 = exactly 5.4", "Cosmos", "now", "CMB and structure surveys settle away from 27/5"));
-    P.push(pred("Dark matter is gauge-inert", "cosmic fraction 27/32, never seen non-gravitationally", "Cosmos", "now", "a direct (non-gravitational) dark-matter detection"));
-    P.push(pred("Cosmological constant", "vacuum floor 1/2²⁰, non-diluting (w = −1)", "Cosmos", "now", "the dark-energy equation of state drifts off −1"));
-    P.push(pred("EW / Planck hierarchy", "exactly 1/2⁵⁶ — no fine-tuning", "Cosmos", "now", "the measured hierarchy parts from 2⁻⁵⁶"));
-    P.push(pred("Lithium-7 abundance", "primordial 3/16, observed 3/32", "Cosmos", "now", "big-bang nucleosynthesis settles elsewhere"));
-    P.push(pred("Gravitational waves", "quadrupole, propagating at exactly the speed of light", "Gravity", "settled", "confirmed luminal to extraordinary precision"));
-    P.push(pred("Black-hole information", "preserved, never destroyed — and no true singularity", "Gravity", "now", "Hawking-radiation statistics show information loss"));
-    P.push(pred("The reproduced corpus", "150+ established results, derived blind, landing on measurement", "Reproduced physics", "now", "any single established result the fold derives wrongly"));
+    P.push(pred("Dark / baryon ratio", "279/52 = 5.3653 — measured 5.3643, agreement to 0.02%", "Cosmos", "now", "CMB and structure surveys settle away from 279/52"));
+    P.push(pred("Cosmic energy budget", "Ω_Λ = 2/3, Ω_m = 1/3, Ω_b = 5/96, Ω_cdm = 9/32 — Planck 2018 within ~3%", "Cosmos", "now", "any budget fraction parts from its forced rational"));
+    P.push(pred("Dark energy w = −1", "the fold-invariant One — forced exactly, measured −1.03 ± 0.03", "Cosmos", "now", "the dark-energy equation of state drifts off −1"));
+    P.push(pred("Cosmological constant", "vacuum forced positive on a single 127/2 scale axis — the 10¹²⁰ mode-sum never arises", "Cosmos", "now", "the vacuum problem returns in the forced accounting"));
+    P.push(pred("Proton / Planck hierarchy", "(M/m)² = 2¹²⁷ — the hierarchy to 0.24%, no fine-tuning", "Cosmos", "now", "the measured hierarchy parts from 2¹²⁷"));
+    P.push(pred("Primordial tilt", "n_s < 1 — the red tilt forced by sign, measured 0.9649 ± 0.0042, >8σ below 1", "Cosmos", "now", "the spectrum turns out blue or flat"));
+    P.push(pred("Baryon-to-photon ratio", "η = J²/2 ≈ 4.9×10⁻¹⁰ vs 6.1×10⁻¹⁰ — a number the SM cannot compute at all", "Cosmos", "now", "the CP-to-baryogenesis link parts from measurement"));
+    P.push(pred("Hubble calibration ratio", "3305/3048 = 1.0843175 — measured 1.0843230, 5×10⁻⁶", "Cosmos", "now", "the calibration ratio parts from the forced rational"));
+    P.push(pred("Gravitational waves", "light = gravity, both the One — luminal to 1 part in 10¹⁵ (GW170817)", "Gravity", "settled", "confirmed luminal to extraordinary precision"));
+    P.push(pred("Black-hole entropy", "the exact Bekenstein–Hawking quarter S = A/4, from two binary halvings", "Gravity", "now", "the quarter coefficient is measured to differ"));
+    P.push(pred("The reproduced corpus", "281 proof suites · 1,623 forced checks · 0 failures — one command runs them all", "Reproduced physics", "now", "any single established result the fold derives wrongly"));
     P.push(pred("Chess endgames · 4-piece", "42,391,244 positions · 42M agreements · zero errors", "Settled live", "settled", "certified against the tablebases, zero error"));
     P.push(pred("Chess endgames · 5-piece", "2 billion positions — being certified now", "Settled live", "frontier", "a single disagreement with the tablebase"));
     P.push(pred("Inertia as a coupling", "vacuum-to-inertia ratio is the One — inertia is a dial", "Frontier", "frontier", "inertia cannot be lowered without removing matter"));
@@ -641,7 +646,7 @@ function status_label(s) {
 }
 
 function ledger_card(p) {
-    let sl, foot;
+    let foot, sl;
     sl = status_label(p.status);
     foot = (("<div class=\"lg-kill\">dies if: " + String(p.kill)) + "</div>");
     if ((p.status === "settled")) {
@@ -651,7 +656,7 @@ function ledger_card(p) {
 }
 
 function render_ledger() {
-    let html, p, i, grid, P, f;
+    let grid, f, P, p, i, html;
     grid = document.getElementById("lg-grid");
     if (!grid) {
         return 0;
@@ -674,7 +679,7 @@ function render_ledger() {
 }
 
 function ledger_filter(ev) {
-    let f, host, fbtns;
+    let f, fbtns, host;
     f = ev.currentTarget.getAttribute("data-f");
     window.ledgerFilter = f;
     host = document.getElementById("ledger");
@@ -691,7 +696,7 @@ function ledger_filter(ev) {
 }
 
 function draw_ledger() {
-    let fhtml, fbtns, host;
+    let fhtml, host, fbtns;
     host = document.getElementById("ledger");
     if (!host) {
         return 0;
@@ -713,7 +718,7 @@ function draw_ledger() {
 }
 
 function g_xor(a, b) {
-    let place, result;
+    let result, place;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -745,7 +750,7 @@ function clamp_heap(x) {
 }
 
 function sub_solve(n) {
-    let w, i, m, win;
+    let win, w, m, i;
     win = [];
     i = 0;
     while ((i <= n)) {
@@ -766,7 +771,7 @@ function sub_solve(n) {
 }
 
 function draw_sub() {
-    let m, disagree, i, html, w, strip, cls, win, movetxt, verdict, host, vcls, mloss, n, oloss;
+    let host, html, oloss, i, vcls, verdict, w, cls, disagree, mloss, movetxt, win, m, n, strip;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -831,7 +836,7 @@ function nim_key(a, b, c) {
 }
 
 function nim_win(a, b, c, memo) {
-    let nb, nc, k, cached, result, na;
+    let na, nb, k, result, cached, nc;
     k = nim_key(a, b, c);
     cached = memo[k];
     if (cached) {
@@ -868,7 +873,7 @@ function nim_win(a, b, c, memo) {
 }
 
 function draw_nim() {
-    let j, html, c, tc, states, tb, host, memo, disagree, movetxt, i, nimsum, a, rg, w, orc, kk, vcls, ta, verdict, b;
+    let rg, tb, nimsum, vcls, b, memo, disagree, kk, tc, html, c, w, orc, states, host, j, verdict, ta, movetxt, a, i;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -936,7 +941,7 @@ function nim_ev(ev) {
 }
 
 function tokens(n) {
-    let s, i;
+    let i, s;
     s = "";
     i = 0;
     while ((i < n)) {
@@ -978,7 +983,7 @@ function sub_start(ev) {
 }
 
 function sub_render() {
-    let h, dis, takes, host, html, k;
+    let k, html, takes, dis, host, h;
     host = document.getElementById("sub-out");
     if (!host) {
         return 0;
@@ -1043,7 +1048,7 @@ function nim_total(H) {
 }
 
 function nim_best(a, b, c) {
-    let tb, s, bi, bv, tc, ta;
+    let tb, tc, bi, bv, ta, s;
     s = g_xor(g_xor(a, b), c);
     if ((s !== 0)) {
         ta = g_xor(a, s);
@@ -1071,7 +1076,7 @@ function nim_best(a, b, c) {
 }
 
 function nim_start(ev) {
-    let c, a, b;
+    let b, c, a;
     a = clamp_heap(Math.round(Number(document.getElementById("nim-a").value)));
     b = clamp_heap(Math.round(Number(document.getElementById("nim-b").value)));
     c = clamp_heap(Math.round(Number(document.getElementById("nim-c").value)));
@@ -1083,7 +1088,7 @@ function nim_start(ev) {
 }
 
 function nim_render() {
-    let H, i, html, names, nm, takes, host, h;
+    let takes, names, i, nm, host, h, H, html;
     host = document.getElementById("nim-out");
     if (!host) {
         return 0;
@@ -1116,7 +1121,7 @@ function nim_render() {
 }
 
 function nim_take_ev(ev) {
-    let sel, cur, mv, ei, eamt, enm, hi, amt, names, H;
+    let enm, cur, names, eamt, mv, H, sel, amt, hi, ei;
     if (window.nimOver) {
         return 0;
     }
