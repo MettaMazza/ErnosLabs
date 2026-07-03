@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, dpr, h, canvas, ctx;
+    let ctx, w, canvas, dpr, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let count, alpha, a, i, dy, n, j, ctx, dx, dist, w, b, h, nodes;
+    let count, b, w, nodes, dx, j, i, n, h, ctx, dy, alpha, a, dist;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, density, canvas;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -172,7 +172,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let links, href, dbtn, path, act;
+    let href, dbtn, path, act, links;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -208,7 +208,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, opts, els, args, IO;
+    let obs, els, IO, opts, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -238,7 +238,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let dt, nodes, doc, i, parts, n, txt, cls;
+    let doc, i, nodes, parts, cls, dt, n, txt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -283,7 +283,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let pct, fill, btn, status, ph;
+    let status, btn, fill, pct, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
