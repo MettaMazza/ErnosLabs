@@ -871,9 +871,78 @@ define flow_ev with ev:
 # boot
 # ======================================================================
 
+# ======================================================================
+# AMM swap simulator (decent_money) — the constant-product pool x·y = k.
+# ======================================================================
+
+define amm_update with ev:
+    set x0 to 10000
+    set y0 to 10000
+    set k to x0 * y0
+    set amt to Number(document.getElementById("amm-in").value)
+    set lbl to document.getElementById("amm-in-label")
+    set lbl.textContent to amt
+    # swap amt of X into the pool: new_x = x0+amt, new_y = k/new_x
+    set new_x to x0 + amt
+    set new_y to k / new_x
+    set got to y0 - new_y
+    set spot to y0 / x0
+    set eff to got / amt
+    set impact to (1 - eff / spot) * 100
+    set host to document.getElementById("amm-out")
+    set html to f"<div class=\"g-row\"><span>pool before</span><b>{x0} X · {y0} Y</b><em>k = x·y = {k}</em></div>"
+    set html to html + f"<div class=\"g-row\"><span>you swap in</span><b>{amt} X</b><em></em></div>"
+    set html to html + f"<div class=\"g-row\"><span>you receive</span><b>{fmt(got and 1)} Y</b><em>k stays exactly {k}</em></div>"
+    set html to html + f"<div class=\"g-row\"><span>price impact</span><b>{fmt(impact and 2)}%</b><em>bigger swaps bend the curve</em></div>"
+    set host.innerHTML to html
+    return 0
+
+# ======================================================================
+# Content addressing (decent_store) — the address IS the content.
+# The real store uses BLAKE3; this demo uses a small two-lane rolling hash
+# (kept in exact-integer range) purely to show the mechanic.
+# ======================================================================
+
+define roll_hash with s and mult:
+    set h to 5381
+    set i to 0
+    repeat while i < s.length:
+        set h to (h * mult + s.charCodeAt(i)) % 4294967296
+        set i to i + 1
+    return h
+
+define cas_addr with s:
+    set h1 to roll_hash(s and 31)
+    set h2 to roll_hash(s and 131)
+    return h1.toString(16) + "-" + h2.toString(16)
+
+define cas_update with ev:
+    set ta to document.getElementById("cas-in")
+    set text to ta.value
+    set addr to cas_addr(text)
+    set host to document.getElementById("cas-out")
+    set store to window.casStore
+    set dedup to ""
+    if store.indexOf(addr) >= 0:
+        set dedup to "<div class=\"g-row\"><span>store says</span><b>already have it</b><em>same content = same address = stored once</em></div>"
+    else:
+        store.push(addr)
+    set html to f"<div class=\"g-row\"><span>content address</span><b class=\"mono\">{addr}</b><em>the address IS the content</em></div>"
+    set html to html + f"<div class=\"g-row\"><span>unique blocks stored</span><b>{store.length}</b><em>change one letter and the address changes completely</em></div>"
+    set html to html + dedup
+    set host.innerHTML to html
+    return 0
+
 define main:
     draw_stats()
     draw_subs()
+    if document.getElementById("amm-in"):
+        document.getElementById("amm-in").addEventListener("input" and amm_update)
+        amm_update(false)
+    if document.getElementById("cas-in"):
+        set window.casStore to []
+        document.getElementById("cas-in").addEventListener("input" and cas_update)
+        cas_update(false)
     if document.getElementById("arch-canvas"):
         set window.archHighlight to ""
         draw_arch()

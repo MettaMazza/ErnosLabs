@@ -42,7 +42,7 @@ function work_card_html(w) {
 }
 
 function section_cards(works, collection) {
-    let w, out, i;
+    let w, i, out;
     out = "";
     i = 0;
     while ((i < works.length)) {
@@ -56,7 +56,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let cards, i, sections, cards0, intro, works, s, html, cat;
+    let intro, cards0, sections, cat, i, cards, s, html, works;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -107,7 +107,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let dl, doc, toc0, rd, url, rtitle, w;
+    let rd, dl, doc, w, toc0, url, rtitle;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -149,7 +149,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let toc, cls, links, heads, out, i, h;
+    let toc, i, cls, links, heads, h, out;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -237,7 +237,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let count, hl, marks, esc, re, doc, q;
+    let re, hl, marks, count, doc, q, esc;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -277,7 +277,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let text, u, btn, voice_sel, doc, voice;
+    let u, voice_sel, voice, doc, text, btn;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -325,7 +325,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let container, voices, html, i, v;
+    let i, v, voices, html, container;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
@@ -347,7 +347,7 @@ function build_voice_selector() {
 }
 
 function main() {
-    let hash, clink;
+    let clink, hash;
     window.readerFont = 19;
     window.ttsOn = false;
     render_catalog();

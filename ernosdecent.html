@@ -153,6 +153,43 @@
     </div>
   </section>
 
+  <!-- AMM (decent_money) -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">decent_money</p>
+      <h2>A market with no market-maker</h2>
+      <p class="lead" style="margin-bottom:26px">The DEX prices trades with a constant-product pool — <code>x·y&nbsp;=&nbsp;k</code>,
+        the same automated-market-maker rule the node runs. No order book, no company setting the price: the curve is the
+        counterparty. Drag the swap size and watch the price impact appear.</p>
+      <div class="demo-row reveal">
+        <div class="demo-side" style="flex:1">
+          <label for="amm-in" style="color:var(--ink-2);font-size:.9rem">swap in: <b id="amm-in-label" style="color:var(--ink-0)">500</b> X</label>
+          <input id="amm-in" type="range" min="10" max="5000" step="10" value="500" style="width:100%">
+          <div id="amm-out" style="margin-top:16px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT ADDRESSING (decent_store) -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <hr class="divider">
+      <p class="eyebrow mt-l">decent_store</p>
+      <h2>The address is the content</h2>
+      <p class="lead" style="margin-bottom:26px">Storage has no filenames and no owners — a block's address <em>is</em> a hash
+        of its bytes (BLAKE3 in the real node; a small rolling hash here to show the mechanic). Type below: change one letter
+        and the address changes completely; type the same thing twice and it stores once.</p>
+      <div class="demo-row reveal">
+        <div class="demo-side" style="flex:1">
+          <textarea id="cas-in" class="term__input" rows="3" spellcheck="false" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:12px">Owned by no one.</textarea>
+          <div id="cas-out" style="margin-top:16px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SUBSYSTEMS -->
   <section class="section" style="padding-top:0">
     <div class="wrap">
@@ -179,7 +216,7 @@
   <script src="assets/js/spa.js?v=6ab5f95a"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
 
-  <script src="assets/js/site.js?v=a5567f6f"></script>
-  <script src="assets/js/decent.js?v=55fcdfcd"></script>
+  <script src="assets/js/site.js?v=b7e4ddd3"></script>
+  <script src="assets/js/decent.js?v=0515e4aa"></script>
 </body>
 </html>

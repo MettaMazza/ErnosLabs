@@ -75,9 +75,20 @@ define grand with c:
     set g.d_down to d_down
     set g.d_up to d_up
     set g.cov to cov
-    # 1/alpha = 2^d_up + c^2 * (cov+1)/cov
-    set g.inv_alpha to Math.pow(2 and d_up) + c * c * (cov + 1) / cov
-    set g.alpha to 1 / g.inv_alpha
+    # Leading scale: 1/alpha = (2^d_up * cov + c^2 * (cov+1)) / cov  = 34259/250 at c=3
+    set tower to Math.pow(2 and d_up)
+    set g.inv_alpha to tower + c * c * (cov + 1) / cov
+    set g.num1 to tower * cov + c * c * (cov + 1)
+    # Second, self-similar scale (the rebuilt engine's deepening):
+    # sub = d_down^2 * d_up, eff = cov*sub + 1,
+    # 1/alpha = (2^d_up * eff + c^2 * (eff + sub)) / eff  = 5995462/43751 at c=3
+    set sub to d_down * d_down * d_up
+    set eff to cov * sub + 1
+    set g.sub to sub
+    set g.eff to eff
+    set g.num2 to tower * eff + c * c * (eff + sub)
+    set g.inv_alpha2 to g.num2 / eff
+    set g.alpha to 1 / g.inv_alpha2
     set g.dark_ratio to 279 / 52
     set g.dark_fraction to 27 / 32
     return g
@@ -211,22 +222,23 @@ define draw_grand:
     set g to grand(c)
     set clbl to document.getElementById("grand-c-label")
     set clbl.textContent to c
-    set measured to 137.035999
-    set diff to Math.abs(g.inv_alpha - measured)
     set match to "—"
     if c equals 3:
-        set match to "✓ matches measurement"
+        set match to "✓ matches measurement to 9 digits"
     set host to document.getElementById("grand-out")
     set html to ""
     set html to html + grand_row("colours (c)" and to_text_num(c) and "the one input you move")
     set html to html + grand_row("depth d₋ for c³" and to_text_num(g.d_down) and f"smallest 2^d ≥ {c*c*c}")
     set html to html + grand_row("depth d₊ for c⁴" and to_text_num(g.d_up) and f"smallest 2^d ≥ {c*c*c*c}")
     set html to html + grand_row("covering cov = 2·d₋³" and to_text_num(g.cov) and "")
+    set html to html + grand_row("sub-scale = d₋²·d₊" and to_text_num(g.sub) and "the self-similar deepening")
+    set html to html + grand_row("effective top = cov·sub+1" and to_text_num(g.eff) and "")
     set host.innerHTML to html
-    # the headline
+    # the headline — leading scale, then the self-similar deepening
     set head to document.getElementById("grand-alpha")
-    set hh to f"<div class=\"big-eq\">1/α = 2<sup>{g.d_up}</sup> + {c}²·({g.cov}+1)/{g.cov} = <b class=\"glow-text\">{fmt(g.inv_alpha and 4)}</b></div>"
-    set hh to hh + f"<div class=\"eq-cmp\">measured: 137.035999 &nbsp;·&nbsp; {match}</div>"
+    set hh to f"<div class=\"eq-cmp\">leading scale: 1/α = 2<sup>{g.d_up}</sup> + {c}²·({g.cov}+1)/{g.cov} = {g.num1}/{g.cov} = {fmt(g.inv_alpha and 4)}</div>"
+    set hh to hh + f"<div class=\"big-eq\">deepened: 1/α = {g.num2}/{g.eff} = <b class=\"glow-text\">{fmt(g.inv_alpha2 and 9)}</b></div>"
+    set hh to hh + f"<div class=\"eq-cmp\">measured: 137.035999177 &nbsp;·&nbsp; {match}</div>"
     set hh to hh + f"<div class=\"eq-cmp\">dark : baryon = 279/52 = {fmt(g.dark_ratio and 4)}</div>"
     set head.innerHTML to hh
     return 0
