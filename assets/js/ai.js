@@ -35,7 +35,7 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let machine, out, ab, hf;
+    let ab, hf, machine, out;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
@@ -60,7 +60,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let m, out, i, models;
+    let out, m, i, models;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let intro, runners, stats, host, sections, s, ab, sec, cards, j, html;
+    let j, s, sections, stats, sec, cards, host, intro, html, runners, ab;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -124,12 +124,12 @@ function render_ai() {
     html = (html + "</div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:0\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin:34px 0 26px\"><p class=\"eyebrow\">Roll your own</p><h2>Build your own archive</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:18px\">This whole library was built with one open script. Take it, edit the model list and the drive path, and make your own preservation copy. Free to use and change.</p>");
-    html = (html + "<div class=\"ai-run\" style=\"max-width:640px\"><span class=\"ai-run__label\">One-time setup, then run it</span>");
-    html = (html + "<code>pip install huggingface_hub\npython3 download_archive.py</code></div>");
+    html = (html + "<p class=\"lead\" style=\"margin-bottom:18px\">This whole library was built with one open script &mdash; written in <a href=\"ernosplain.html\" style=\"color:var(--ink-0)\">ErnosPlain</a>, the same language as everything else here. No Python, no huggingface_hub: it compiles to a native binary and drives <code>curl</code> to pull every model straight from source. Take it, edit the model list and the archive path, and make your own preservation copy.</p>");
+    html = (html + "<div class=\"ai-run\" style=\"max-width:640px\"><span class=\"ai-run__label\">Compile it, then run it</span>");
+    html = (html + "<code>ernos download_archive.ep\n./download_archive</code></div>");
     html = (html + "<div class=\"ai-card__actions\" style=\"margin-top:16px\">");
-    html = (html + "<a class=\"btn btn--primary\" href=\"tools/download_archive.py\" download>⬇ Download the script</a>");
-    html = (html + "<a class=\"work-dl\" href=\"tools/download_archive.py\" target=\"_blank\" rel=\"noopener\">View the code</a>");
+    html = (html + "<a class=\"btn btn--primary\" href=\"tools/download_archive.ep\" download>⬇ Download the script (.ep)</a>");
+    html = (html + "<a class=\"work-dl\" href=\"tools/download_archive.ep\" target=\"_blank\" rel=\"noopener\">View the code</a>");
     html = (html + "</div></div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>");
@@ -150,7 +150,7 @@ function status_set(cls, msg) {
 }
 
 function use_machine() {
-    let links, mu;
+    let mu, links;
     links = document.querySelectorAll(".ai-dl");
     for (const a of links) {
         mu = a.getAttribute("data-machine");

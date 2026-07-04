@@ -1,0 +1,160 @@
+# The Ernos Labs AI Archive — downloader, written in ErnosPlain.
+#
+# Rebuilds the open-weights archive on your own machine. Every model is pulled
+# from its canonical Hugging Face source; the actual byte transfer is done by the
+# system `curl` (resumable), while all the orchestration — the model manifest,
+# per-repo file listing, and size gating — is plain ErnosPlain below.
+#
+# Build & run:
+#   ernos download_archive.ep      # compiles to a native binary `download_archive`
+#   ./download_archive             # downloads into ./ernos-archive
+#
+# Requires: curl on PATH. No Python, no huggingface_hub — this is the whole thing.
+
+set ARCHIVE to "./ernos-archive"
+set HF to "https://huggingface.co"
+
+# ---- shell out to the system (non-variadic libc system(); the curl FFI bridge's
+# ---- variadic curl_easy_setopt is unsafe on arm64, so we drive the curl binary) --
+define shell with cmd as Str returning Int:
+    set libc to ep_dlopen("libSystem.dylib")
+    if libc equals 0:
+        set libc to ep_dlopen("libc.so.6")
+    if libc equals 0:
+        set libc to ep_dlopen("libc.dylib")
+    set fn_system to ep_dlsym(libc and "system")
+    return ep_dlcall1(fn_system and cmd)
+
+define ensure_dir with path as Str:
+    set _ to shell(f"mkdir -p '{path}'")
+
+define ask_yes with prompt as Str returning Int:
+    display prompt
+    set answer to read_line()
+    if answer equals "y":
+        return 1
+    if answer equals "Y":
+        return 1
+    if answer equals "yes":
+        return 1
+    return 0
+
+# ---- download one named file from a repo ---------------------------------------
+define fetch_file with repo as Str and filename as Str and subdir as Str:
+    ensure_dir(f"{ARCHIVE}/{subdir}")
+    set dest to f"{ARCHIVE}/{subdir}/{filename}"
+    set url to f"{HF}/{repo}/resolve/main/{filename}"
+    display f"  ↓ {subdir}/{filename}"
+    set rc to shell(f"curl -L --retry 3 -C - -o '{dest}' '{url}'")
+    if rc equals 0:
+        display "    ✓ done"
+    else:
+        display f"    ! curl exit {rc} (re-run to resume)"
+
+# ---- download every file in a repo whose path contains `pattern` ---------------
+# ---- pattern "" means the whole repository (all files) -------------------------
+define fetch_repo with repo as Str and subdir as Str and pattern as Str:
+    ensure_dir(f"{ARCHIVE}/{subdir}")
+    display f"  · listing {repo} …"
+    set listfile to f"{ARCHIVE}/.filelist.json"
+    set _ to shell(f"curl -sL -o '{listfile}' '{HF}/api/models/{repo}'")
+    set body to file_read(listfile)
+    set parts to string_split(body and "\"rfilename\":\"")
+    set n to length_list(parts)
+    set count to 0
+    set idx to 1
+    while idx is less than n:
+        set seg to get_list(parts and idx)
+        set q to string_index_of(seg and "\"")
+        if q is greater than 0:
+            set rf to substring(seg and 0 and q)
+            set want to 0
+            if pattern equals "":
+                set want to 1
+            else:
+                if string_contains(rf and pattern) equals 1:
+                    set want to 1
+            if want equals 1:
+                set url to f"{HF}/{repo}/resolve/main/{rf}"
+                set dest to f"{ARCHIVE}/{subdir}/{rf}"
+                display f"  ↓ {rf}"
+                set _ to shell(f"mkdir -p \"$(dirname '{dest}')\" && curl -L --retry 3 -C - -o '{dest}' '{url}'")
+                set count to count + 1
+        set idx to idx + 1
+    display f"  · {count} file(s) fetched for {repo}"
+
+define run_all:
+    ensure_dir(ARCHIVE)
+    display f"Archive root: {ARCHIVE}  (edit ARCHIVE at the top to change it)"
+    display ""
+
+    # ---- 1. Historical milestones ----
+    display "── Historical milestones ──"
+    fetch_repo("EleutherAI/gpt-j-6b" and "Historical_Models/GPT-J-6B" and "")
+    fetch_repo("EleutherAI/gpt-neox-20b" and "Historical_Models/GPT-NeoX-20B" and "")
+    fetch_repo("mistralai/Mistral-7B-v0.1" and "Historical_Models/Mistral-7B-v0.1" and "")
+    fetch_file("TheBloke/vicuna-13B-v1.5-GGUF" and "vicuna-13b-v1.5.Q4_K_M.gguf" and "Historical_Models")
+    fetch_file("TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF" and "mixtral-8x7b-instruct-v0.1.Q4_K_M.gguf" and "Historical_Models")
+    fetch_file("mradermacher/bloom-7b1-GGUF" and "bloom-7b1.Q4_K_M.gguf" and "Historical_Models")
+
+    # ---- 2. Audio & speech ----
+    display "── Audio & speech ──"
+    fetch_repo("hexgrad/Kokoro-82M" and "Audio_TTS/Kokoro-82M" and "")
+    fetch_repo("openai/whisper-large-v3-turbo" and "Audio_TTS/Whisper-Large-v3-Turbo" and "")
+
+    # ---- 3. Image generation ----
+    display "── Image generation ──"
+    fetch_file("runwayml/stable-diffusion-v1-5" and "v1-5-pruned-emaonly.safetensors" and "Creative_Models")
+    fetch_file("stabilityai/stable-diffusion-xl-base-1.0" and "sd_xl_base_1.0.safetensors" and "Creative_Models")
+    fetch_file("city96/FLUX.1-dev-gguf" and "flux1-dev-Q4_K_S.gguf" and "Creative_Models")
+
+    # ---- 4. Video generation ----
+    display "── Video generation ──"
+    fetch_file("city96/HunyuanVideo-gguf" and "hunyuan-video-t2v-720p-BF16.gguf" and "Creative_Models")
+    fetch_file("city96/LTX-Video-gguf" and "ltx-video-2b-v0.9-BF16.gguf" and "Creative_Models")
+
+    # ---- 5. Local & frontier LLMs (small → large) ----
+    display "── Local LLMs (GGUF) ──"
+    fetch_file("bartowski/Meta-Llama-3.1-8B-Instruct-GGUF" and "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("bartowski/gemma-2-9b-it-GGUF" and "gemma-2-9b-it-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/gemma-4-E2B-it-GGUF" and "gemma-4-E2B-it-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/Qwen3.5-4B-GGUF" and "Qwen3.5-4B-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/Qwen3.5-9B-GGUF" and "Qwen3.5-9B-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/phi-4-GGUF" and "phi-4-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("Qwen/Qwen2.5-Coder-32B-Instruct-GGUF" and "qwen2.5-coder-32b-instruct-q4_k_m.gguf" and "GGUF_Models")
+    fetch_file("unsloth/gemma-4-31B-it-GGUF" and "gemma-4-31B-it-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/Qwen3.6-27B-GGUF" and "Qwen3.6-27B-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF" and "DeepSeek-R1-Distill-Qwen-32B-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/Qwen3.6-35B-A3B-GGUF" and "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/gpt-oss-20b-GGUF" and "gpt-oss-20b-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("bartowski/Llama-3.3-70B-Instruct-GGUF" and "Llama-3.3-70B-Instruct-Q4_K_M.gguf" and "GGUF_Models")
+    fetch_file("unsloth/Qwen3-Coder-Next-GGUF" and "Qwen3-Coder-Next-Q4_K_M.gguf" and "GGUF_Models")
+
+    # ---- 6. Giant models (100 GB+ each) — opt-in ----
+    display ""
+    if ask_yes("Download the GIANT models too? gpt-oss-120b, Llama-4 Scout & Maverick, Qwen3-235B, Falcon-180B, DeepSeek-R1 671B, GLM-5.2 744B — 1 TB+ total. [y/N] ") equals 1:
+        fetch_repo("unsloth/gpt-oss-120b-GGUF" and "GGUF_Models/gpt-oss-120b-Q4" and "Q4_K_M/")
+        fetch_repo("unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF" and "GGUF_Models/Llama-4-Scout" and "Q4_K_M/")
+        fetch_repo("unsloth/Qwen3-235B-A22B-Instruct-2507-GGUF" and "GGUF_Models/Qwen3-235B" and "Q4_K_M/")
+        fetch_repo("TheBloke/Falcon-180B-Chat-GGUF" and "Historical_Models/Falcon-180B-Chat" and "Q4_K_M.gguf-split-")
+        fetch_repo("unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF" and "GGUF_Models/Llama-4-Maverick" and "Q4_K_M/")
+        fetch_repo("unsloth/DeepSeek-R1-GGUF" and "GGUF_Models/DeepSeek-R1-Q4" and "DeepSeek-R1-Q4_K_M/")
+        fetch_repo("unsloth/GLM-5.2-GGUF" and "GGUF_Models/GLM-5.2-Q4" and "UD-Q4_K_M/")
+    else:
+        display "Skipped the giant models. Re-run and answer y to fetch them."
+
+    # Note: DeepSeek-V4-Flash is in the served archive but its HF GGUF repo is gated,
+    # so it is not re-downloadable here — get it from the source machine instead.
+    display ""
+    display "Done. Your archive lives in the folder above."
+    display "Keep what you pull; if you can host it, mirror it and seed it to others."
+
+define main:
+    display "╔══════════════════════════════════════════════════════╗"
+    display "║   Ernos Labs — AI Archive downloader (ErnosPlain)      ║"
+    display "╚══════════════════════════════════════════════════════╝"
+    if shell("command -v curl > /dev/null 2>&1") equals 0:
+        display "curl found — good."
+        run_all()
+    else:
+        display "ERROR: curl is not on PATH. Install curl and re-run."
