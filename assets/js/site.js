@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, i, n;
+    let i, nodes, n;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, ctx, h, canvas, dpr;
+    let canvas, ctx, h, w, dpr;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let n, b, ctx, dy, w, i, a, j, alpha, count, h, dist, dx, nodes;
+    let dx, j, dy, a, b, dist, alpha, ctx, w, nodes, i, n, count, h;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, reduce, canvas;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -172,7 +172,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let act, path, links, href, dbtn;
+    let act, href, path, links, dbtn;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -208,7 +208,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, IO, opts, obs, args;
+    let args, opts, els, IO, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -238,7 +238,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let parts, doc, nodes, n, txt, i, dt, cls;
+    let parts, nodes, n, cls, doc, txt, dt, i;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -283,7 +283,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, pct, ph, status, btn;
+    let ph, fill, pct, status, btn;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

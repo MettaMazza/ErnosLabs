@@ -31,7 +31,11 @@ MODELS = [
     ("Stable Diffusion 1.5 (Image Gen)", "runwayml/stable-diffusion-v1-5", "v1-5-pruned-emaonly.safetensors", "Creative_Models", False),
     ("Stable Diffusion XL (Image Gen)", "stabilityai/stable-diffusion-xl-base-1.0", "sd_xl_base_1.0.safetensors", "Creative_Models", False),
     ("FLUX.1-Dev (Image Gen GGUF)", "city96/FLUX.1-dev-gguf", "flux1-dev-Q4_K_S.gguf", "Creative_Models", False),
-    
+
+    # 3b. Open Text-to-Video
+    ("HunyuanVideo T2V 720p (Video Gen GGUF)", "city96/HunyuanVideo-gguf", "hunyuan-video-t2v-720p-BF16.gguf", "Creative_Models", True), # Large (~24 GB)
+    ("LTX-Video 2B v0.9 (Video Gen GGUF)", "city96/LTX-Video-gguf", "ltx-video-2b-v0.9-BF16.gguf", "Creative_Models", False),
+
     # 4. Small-to-Medium Local LLMs (GGUFs)
     ("Llama-3.1-8B-Instruct (GGUF)", "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF", "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf", "GGUF_Models", False),
     ("Gemma-2-9B-IT (GGUF)", "bartowski/gemma-2-9b-it-GGUF", "gemma-2-9b-it-Q4_K_M.gguf", "GGUF_Models", False),
@@ -42,13 +46,21 @@ MODELS = [
     ("Gemma-4-31B-it (Google DeepMind GGUF)", "unsloth/gemma-4-31B-it-GGUF", "gemma-4-31B-it-Q4_K_M.gguf", "GGUF_Models", False),
     ("Qwen3.6-27B (Alibaba GGUF)", "unsloth/Qwen3.6-27B-GGUF", "Qwen3.6-27B-Q4_K_M.gguf", "GGUF_Models", False),
     ("Qwen3.6-35B-A3B (Alibaba MoE GGUF)", "unsloth/Qwen3.6-35B-A3B-GGUF", "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf", "GGUF_Models", False),
-    
+    ("Phi-4 (Microsoft GGUF)", "unsloth/phi-4-GGUF", "phi-4-Q4_K_M.gguf", "GGUF_Models", False),
+    ("Gemma-4-E2B-it (Google DeepMind GGUF)", "unsloth/gemma-4-E2B-it-GGUF", "gemma-4-E2B-it-Q4_K_M.gguf", "GGUF_Models", False),
+    ("Qwen3.5-4B (Alibaba GGUF)", "unsloth/Qwen3.5-4B-GGUF", "Qwen3.5-4B-Q4_K_M.gguf", "GGUF_Models", False),
+    ("Qwen3.5-9B (Alibaba GGUF)", "unsloth/Qwen3.5-9B-GGUF", "Qwen3.5-9B-Q4_K_M.gguf", "GGUF_Models", False),
+    ("Qwen3-Coder-Next (Alibaba Coding GGUF)", "unsloth/Qwen3-Coder-Next-GGUF", "Qwen3-Coder-Next-Q4_K_M.gguf", "GGUF_Models", True), # Large (~45 GB)
+
     # 5. Large Reasoning Models (GGUFs) - Optional/Prompted
     ("DeepSeek-R1 (Full 671B MoE Q4 GGUF)", "unsloth/DeepSeek-R1-GGUF", None, "GGUF_Models/DeepSeek-R1-Q4", True),
     ("GLM-5.2 (Full 744B MoE Q4 GGUF)", "unsloth/GLM-5.2-GGUF", None, "GGUF_Models/GLM-5.2-Q4", True),
     ("GPT-OSS-120B (OpenAI Open-Source GGUF)", "unsloth/gpt-oss-120b-GGUF", None, "GGUF_Models/gpt-oss-120b-Q4", True),
     ("Llama-4-Scout-17B-16E-Instruct (Meta GGUF)", "unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF", None, "GGUF_Models/Llama-4-Scout", True),
-    ("Llama-4-Maverick-17B-128E-Instruct (Meta GGUF)", "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF", None, "GGUF_Models/Llama-4-Maverick", True)
+    ("Llama-4-Maverick-17B-128E-Instruct (Meta GGUF)", "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF", None, "GGUF_Models/Llama-4-Maverick", True),
+    ("Qwen3-235B-A22B-Instruct-2507 (Alibaba MoE GGUF)", "unsloth/Qwen3-235B-A22B-Instruct-2507-GGUF", None, "GGUF_Models/Qwen3-235B", True)
+    # Note: DeepSeek-V4-Flash is also in the archive but its Hugging Face GGUF repo is gated —
+    # it is served from the source machine (the whole point of this archive) rather than re-downloaded here.
 ]
 
 def check_disk_space():
@@ -97,6 +109,9 @@ def download_model(name, repo_id, filename, subfolder, is_large):
                 allow_patterns = ["Q4_K_M/*"]
                 print("Filtering repository download to only 'Q4_K_M/*' files...")
             elif "Llama-4-Scout" in repo_id or "Llama-4-Maverick" in repo_id:
+                allow_patterns = ["Q4_K_M/*"]
+                print("Filtering repository download to only 'Q4_K_M/*' files...")
+            elif "Qwen3-235B-A22B-Instruct-2507-GGUF" in repo_id:
                 allow_patterns = ["Q4_K_M/*"]
                 print("Filtering repository download to only 'Q4_K_M/*' files...")
             elif "Falcon-180B-Chat-GGUF" in repo_id:
