@@ -11,52 +11,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css?v=e729a04a">
   <style>
-    .cm-status{display:inline-block;margin-top:14px;padding:8px 14px;border-radius:10px;font-size:.9rem;
-      background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+    .cm-shell{max-width:860px}
+    .cm-status{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
+      font-size:.88rem;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
     .cm-status.is-online{border-color:var(--glow-dim);color:var(--ink-1)}
-    .cm-status.is-offline{border-color:var(--line);color:var(--ink-2)}
-    .cm-id{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0 8px}
+    .cm-id{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:20px 0 0}
     .cm-id label{color:var(--ink-3);font-size:.9rem}
     .cm-id input{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-0);
-      border-radius:9px;padding:8px 12px;font:inherit;min-width:180px}
-    .cm-tabs{display:flex;gap:8px;margin:18px 0 22px;flex-wrap:wrap}
+      border-radius:10px;padding:9px 13px;font:inherit;min-width:170px}
+    .cm-id input:focus{outline:none;border-color:var(--glow)}
+    .cm-tabs{display:flex;gap:8px;margin:24px 0 20px;flex-wrap:wrap}
     .cm-tabbtn{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2);
-      border-radius:10px;padding:9px 18px;font:600 .95rem/1 "Space Grotesk",sans-serif;cursor:pointer}
+      border-radius:999px;padding:9px 20px;font:600 .95rem/1 "Space Grotesk",sans-serif;cursor:pointer;transition:.15s}
+    .cm-tabbtn:hover{color:var(--ink-0);border-color:var(--glow-dim)}
     .cm-tabbtn.active{background:var(--glow);border-color:var(--glow);color:#08131b}
+
     /* chat */
-    .cm-chat-log{height:min(52vh,460px);overflow-y:auto;background:var(--bg-1);border:1px solid var(--line);
-      border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
-    .cm-msg__name{color:var(--glow);font-weight:600;font-size:.92rem}
-    .cm-msg__time{color:var(--ink-3);font-size:.78rem;margin-left:8px}
-    .cm-msg__body{color:var(--ink-1);margin-top:2px;white-space:pre-wrap;word-break:break-word;line-height:1.5}
-    .cm-inrow{display:flex;gap:10px;margin-top:14px}
-    .cm-inrow textarea{flex:1;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-0);
-      border-radius:11px;padding:11px 14px;font:inherit;resize:vertical;min-height:46px;max-height:160px}
+    .cm-panel{background:var(--bg-1);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+      box-shadow:0 20px 55px -34px rgba(0,0,0,.75)}
+    .cm-chat-log{height:min(48vh,420px);min-height:280px;overflow-y:auto;padding:18px;
+      display:flex;flex-direction:column;gap:12px;justify-content:flex-end}
+    .cm-chat-log:empty{justify-content:center;align-items:center}
+    .cm-chat-log:empty::before{content:"No messages yet — say hello and get the room started 👋";
+      color:var(--ink-3);text-align:center;max-width:32ch;font-size:.95rem;line-height:1.55}
+    .cm-msg{align-self:flex-start;max-width:min(88%,560px);background:var(--bg-2);
+      border:1px solid var(--line-soft);border-radius:14px;padding:10px 15px}
+    .cm-msg__name{color:var(--glow);font-weight:600;font-size:.9rem}
+    .cm-msg__time{color:var(--ink-3);font-size:.74rem;margin-left:8px}
+    .cm-msg__body{color:var(--ink-1);margin-top:4px;white-space:pre-wrap;word-break:break-word;line-height:1.5}
+    .cm-composer{display:flex;gap:10px;align-items:flex-end;padding:14px;border-top:1px solid var(--line);background:var(--bg-2)}
+    .cm-composer textarea{flex:1;background:var(--bg-1);border:1px solid var(--line);color:var(--ink-0);
+      border-radius:12px;padding:12px 14px;font:inherit;resize:none;min-height:46px;max-height:150px;line-height:1.45}
+    .cm-composer textarea:focus{outline:none;border-color:var(--glow)}
+    .cm-composer .btn{white-space:nowrap;height:46px;padding-top:0;padding-bottom:0}
+
     /* forum */
-    .cm-threads{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
-    .cm-thread{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;
-      background:var(--bg-1);border:1px solid var(--line);border-radius:12px;padding:14px 18px;cursor:pointer;width:100%}
-    .cm-thread:hover{border-color:var(--glow-dim)}
+    .cm-threads{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+    .cm-thread{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;
+      background:var(--bg-1);border:1px solid var(--line);border-radius:14px;padding:15px 18px;cursor:pointer;width:100%;transition:.15s}
+    .cm-thread:hover{border-color:var(--glow-dim);transform:translateY(-1px)}
     .cm-thread__title{color:var(--ink-0);font-weight:600;font-size:1.05rem}
     .cm-thread__meta{color:var(--ink-3);font-size:.82rem}
-    .cm-empty{color:var(--ink-3)}
-    .cm-form{background:var(--bg-1);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:10px}
-    .cm-form h3{margin:0 0 14px}
+    .cm-empty{color:var(--ink-3);text-align:center;padding:34px 0}
+    .cm-sep{display:flex;align-items:center;gap:12px;color:var(--ink-3);font-size:.82rem;
+      text-transform:uppercase;letter-spacing:.09em;margin:26px 0 14px}
+    .cm-sep::before,.cm-sep::after{content:"";flex:1;height:1px;background:var(--line)}
+    .cm-form{background:var(--bg-1);border:1px solid var(--line);border-radius:16px;padding:20px}
+    .cm-form h3{margin:0 0 6px;font-size:1.12rem}
+    .cm-form .cm-hint{color:var(--ink-3);font-size:.85rem;margin:0 0 16px}
     .cm-form input,.cm-form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);
-      color:var(--ink-0);border-radius:10px;padding:11px 14px;font:inherit;margin-bottom:12px}
+      color:var(--ink-0);border-radius:11px;padding:12px 14px;font:inherit;margin-bottom:12px}
+    .cm-form input:focus,.cm-form textarea:focus{outline:none;border-color:var(--glow)}
     .cm-form textarea{resize:vertical;min-height:120px}
     .cm-thread__h{margin:0 0 6px}
-    .cm-op,.cm-post__by{margin:0}
-    .cm-op__body,.cm-post .cm-msg__body{margin-top:4px}
-    .cm-op__body{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px}
-    .cm-post{padding:12px 0;border-bottom:1px solid var(--line-soft)}
-    .cm-back{background:none;border:0;color:var(--glow);cursor:pointer;font:600 .95rem "Space Grotesk";padding:0;margin-bottom:16px}
-    .cm-faq details{border-bottom:1px solid var(--line);padding:16px 0}
-    .cm-faq summary{cursor:pointer;color:var(--ink-0);font:600 1.06rem "Space Grotesk";list-style:none}
+    .cm-op{margin:0}
+    .cm-op__body{padding:8px 0 18px;border-bottom:1px solid var(--line);margin-bottom:8px;color:var(--ink-1);line-height:1.6;white-space:pre-wrap;word-break:break-word}
+    .cm-post{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+    .cm-post__by{margin:0}
+    .cm-back{background:none;border:0;color:var(--glow);cursor:pointer;font:600 .95rem "Space Grotesk";padding:0;margin-bottom:18px}
+
+    /* faq */
+    .cm-faq details{border-bottom:1px solid var(--line);padding:16px 2px}
+    .cm-faq summary{cursor:pointer;color:var(--ink-0);font:600 1.06rem "Space Grotesk";list-style:none;display:flex;gap:10px}
     .cm-faq summary::-webkit-details-marker{display:none}
-    .cm-faq summary::before{content:"＋";color:var(--glow);margin-right:10px}
+    .cm-faq summary::before{content:"＋";color:var(--glow)}
     .cm-faq details[open] summary::before{content:"－"}
-    .cm-faq p{color:var(--ink-2);line-height:1.65;margin:12px 0 0}
+    .cm-faq p{color:var(--ink-2);line-height:1.65;margin:12px 0 0;padding-left:22px}
+
+    @media (max-width:560px){ .cm-chat-log{height:56vh} }
   </style>
 </head>
 <body>
@@ -94,101 +116,109 @@
 
   <div id="view">
 
-  <header class="section" style="padding-bottom:18px">
+  <header class="section" style="padding-bottom:8px">
     <div class="wrap">
-      <p class="eyebrow reveal">Gather</p>
-      <h1 class="reveal">Community</h1>
-      <p class="lead reveal mt-s">A live chat room, a forum, and an FAQ — a place for the people building and using
-        this work to find each other. Like everything here, it's <strong style="color:var(--ink-0)">served straight from
-        the source machine</strong>: no accounts, no third party, owned by no one. When the host is asleep, come back soon.</p>
-      <div id="cm-status" class="cm-status">Checking the community…</div>
-      <div class="cm-id">
-        <label for="cm-name">Post as</label>
-        <input id="cm-name" type="text" maxlength="40" placeholder="pick a name" autocomplete="off">
-        <span style="color:var(--ink-3);font-size:.82rem">saved in this browser · no sign-up</span>
+      <div class="cm-shell">
+        <p class="eyebrow reveal">Gather</p>
+        <h1 class="reveal">Community</h1>
+        <p class="lead reveal mt-s">A live chat room, a forum, and an FAQ — a place for the people building and using
+          this work to find each other. Like everything here, it's <strong style="color:var(--ink-0)">served straight from
+          the source machine</strong>: no accounts, no third party, owned by no one.</p>
+        <div id="cm-status" class="cm-status">Checking the community…</div>
+        <div class="cm-id">
+          <label for="cm-name">Post as</label>
+          <input id="cm-name" type="text" maxlength="40" placeholder="pick a name" autocomplete="off">
+          <span style="color:var(--ink-3);font-size:.82rem">saved in this browser · no sign-up</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:0">
+  <section class="section" style="padding-top:14px">
     <div class="wrap">
-      <div class="cm-tabs">
-        <button class="cm-tabbtn active" id="tabbtn-chat">💬 Chat</button>
-        <button class="cm-tabbtn" id="tabbtn-forum">📋 Forum</button>
-        <button class="cm-tabbtn" id="tabbtn-faq">❓ FAQ</button>
-      </div>
-
-      <!-- CHAT -->
-      <div class="cm-tab" id="tab-chat">
-        <div class="cm-chat-log" id="chat-log"></div>
-        <div class="cm-inrow">
-          <textarea id="chat-input" rows="1" placeholder="Say something…  (Enter to send, Shift+Enter for a new line)"></textarea>
-          <button class="btn btn--primary" id="chat-send">Send</button>
+      <div class="cm-shell">
+        <div class="cm-tabs">
+          <button class="cm-tabbtn active" id="tabbtn-chat">💬 Chat</button>
+          <button class="cm-tabbtn" id="tabbtn-forum">📋 Forum</button>
+          <button class="cm-tabbtn" id="tabbtn-faq">❓ FAQ</button>
         </div>
-      </div>
 
-      <!-- FORUM -->
-      <div class="cm-tab hidden" id="tab-forum">
-        <div id="forum-list-view">
-          <div class="cm-threads" id="forum-threads"></div>
-          <div class="cm-form">
-            <h3>Start a thread</h3>
-            <input id="new-title" type="text" maxlength="140" placeholder="Title">
-            <textarea id="new-body" placeholder="What do you want to talk about?"></textarea>
-            <button class="btn btn--primary" id="new-create">Post thread</button>
+        <!-- CHAT -->
+        <div class="cm-tab" id="tab-chat">
+          <div class="cm-panel">
+            <div class="cm-chat-log" id="chat-log"></div>
+            <div class="cm-composer">
+              <textarea id="chat-input" rows="1" placeholder="Say something…  (Enter to send · Shift+Enter for a new line)"></textarea>
+              <button class="btn btn--primary" id="chat-send">Send</button>
+            </div>
           </div>
         </div>
-        <div id="forum-thread-view" class="hidden">
-          <button class="cm-back" id="thread-back">← All threads</button>
-          <div id="thread-head"></div>
-          <div id="thread-posts"></div>
-          <div class="cm-form" style="margin-top:20px">
-            <h3>Reply</h3>
-            <textarea id="reply-body" placeholder="Add to the thread…"></textarea>
-            <button class="btn btn--primary" id="reply-send">Post reply</button>
+
+        <!-- FORUM -->
+        <div class="cm-tab hidden" id="tab-forum">
+          <div id="forum-list-view">
+            <div class="cm-threads" id="forum-threads"></div>
+            <div class="cm-sep">Start a thread</div>
+            <div class="cm-form">
+              <h3>New thread</h3>
+              <p class="cm-hint">Ask a question, share something you built, or start a debate.</p>
+              <input id="new-title" type="text" maxlength="140" placeholder="Title">
+              <textarea id="new-body" placeholder="What do you want to talk about?"></textarea>
+              <button class="btn btn--primary" id="new-create">Post thread</button>
+            </div>
+          </div>
+          <div id="forum-thread-view" class="hidden">
+            <button class="cm-back" id="thread-back">← All threads</button>
+            <div id="thread-head"></div>
+            <div id="thread-posts"></div>
+            <div class="cm-form" style="margin-top:22px">
+              <h3>Reply</h3>
+              <textarea id="reply-body" placeholder="Add to the thread…"></textarea>
+              <button class="btn btn--primary" id="reply-send">Post reply</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- FAQ -->
-      <div class="cm-tab hidden" id="tab-faq">
-        <div class="cm-faq" style="max-width:760px">
-          <details open><summary>What is Ernos Labs?</summary>
-            <p>A body of work by Maria Smith: <a href="ernosplain.html">ErnosPlain</a> (a plain-English compiled language),
-              <a href="smithian-fold-theory-of-everything.html">the Smithian Fold</a> (a parameter-free theory of physics),
-              <a href="ernosdecent.html">ErnosDecent</a> (a decentralised platform), the writing in the
-              <a href="library.html">Library</a> and <a href="seed.html">Seed Vault</a>, and the
-              <a href="ai.html">AI Archive</a> of open model weights. This site is the front door to all of it.</p>
-          </details>
-          <details><summary>Is the site really self-hosted, or is that just a slogan?</summary>
-            <p>Really self-hosted. Downloads, read-aloud, and this community are served straight from Maria's machine over a
-              tunnel. When the machine is online you get the real thing; when it's asleep, downloads fall back to each
-              model's original open source and the community waits. Nothing here depends on a company that could pull it.</p>
-          </details>
-          <details><summary>Do I need an account to chat or post?</summary>
-            <p>No. Pick a display name (it's remembered in your browser) and post. There are no passwords and no sign-up.
-              Be decent — messages are public and lightly rate-limited, and Maria can remove abuse.</p>
-          </details>
-          <details><summary>Where does the community data live?</summary>
-            <p>In a small database on Maria's own machine — not on any third-party service. That's the whole point:
-              the conversation is owned by the people having it, not rented from a platform. It also means the room is
-              only live while the host is online.</p>
-          </details>
-          <details><summary>What is ErnosPlain?</summary>
-            <p>A statically-typed, memory-safe language that reads like English and compiles to native code — self-hosting,
-              MIT-licensed, and the language this very page's client is written in. See <a href="ernosplain.html">the ErnosPlain page</a>
-              to run it in your browser.</p>
-          </details>
-          <details><summary>Can I run the AI models and rebuild the archive myself?</summary>
-            <p>Yes. Every model lists the open-source program that runs it, and the
-              <a href="ai.html">AI Archive</a> ships one ErnosPlain script that rebuilds the whole library from source.
-              Keep what you pull; if you can host it, mirror it and seed it to others.</p>
-          </details>
-          <details><summary>How can I contribute or report a problem?</summary>
-            <p>Start a thread here in the Forum, or open an issue on the code at
-              <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">github.com/MettaMazza</a>.
-              Mirrors, fixes, and honest criticism are all welcome.</p>
-          </details>
+        <!-- FAQ -->
+        <div class="cm-tab hidden" id="tab-faq">
+          <div class="cm-faq">
+            <details open><summary>What is Ernos Labs?</summary>
+              <p>A body of work by Maria Smith: <a href="ernosplain.html">ErnosPlain</a> (a plain-English compiled language),
+                <a href="smithian-fold-theory-of-everything.html">the Smithian Fold</a> (a parameter-free theory of physics),
+                <a href="ernosdecent.html">ErnosDecent</a> (a decentralised platform), the writing in the
+                <a href="library.html">Library</a> and <a href="seed.html">Seed Vault</a>, and the
+                <a href="ai.html">AI Archive</a> of open model weights. This site is the front door to all of it.</p>
+            </details>
+            <details><summary>Is the site really self-hosted, or is that just a slogan?</summary>
+              <p>Really self-hosted. Downloads, read-aloud, and this community are served straight from Maria's machine over a
+                tunnel. When the machine is online you get the real thing; when it's asleep, downloads fall back to each
+                model's original open source and the community waits. Nothing here depends on a company that could pull it.</p>
+            </details>
+            <details><summary>Do I need an account to chat or post?</summary>
+              <p>No. Pick a display name (it's remembered in your browser) and post. There are no passwords and no sign-up.
+                Be decent — messages are public and lightly rate-limited, and Maria can remove abuse.</p>
+            </details>
+            <details><summary>Where does the community data live?</summary>
+              <p>In a small database on Maria's own machine — not on any third-party service. That's the whole point:
+                the conversation is owned by the people having it, not rented from a platform. It also means the room is
+                only live while the host is online.</p>
+            </details>
+            <details><summary>What is ErnosPlain?</summary>
+              <p>A statically-typed, memory-safe language that reads like English and compiles to native code — self-hosting,
+                MIT-licensed, and the language this very page's client is written in. See <a href="ernosplain.html">the ErnosPlain page</a>
+                to run it in your browser.</p>
+            </details>
+            <details><summary>Can I run the AI models and rebuild the archive myself?</summary>
+              <p>Yes. Every model lists the open-source program that runs it, and the
+                <a href="ai.html">AI Archive</a> ships one ErnosPlain script that rebuilds the whole library from source.
+                Keep what you pull; if you can host it, mirror it and seed it to others.</p>
+            </details>
+            <details><summary>How can I contribute or report a problem?</summary>
+              <p>Start a thread here in the Forum, or open an issue on the code at
+                <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">github.com/MettaMazza</a>.
+                Mirrors, fixes, and honest criticism are all welcome.</p>
+            </details>
+          </div>
         </div>
       </div>
     </div>
@@ -208,8 +238,8 @@
 
   <script src="assets/js/spa.js?v=6ab5f95a"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
-  <script src="assets/js/site.js?v=8054af56"></script>
+  <script src="assets/js/site.js?v=c5dcf883"></script>
   <script src="assets/js/community-shim.js?v=b2801e4a"></script>
-  <script src="assets/js/community.js?v=f11c9953"></script>
+  <script src="assets/js/community.js?v=f0e78b65"></script>
 </body>
 </html>

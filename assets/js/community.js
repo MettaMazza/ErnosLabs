@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let o, b;
+    let b, o;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let sec, btn;
+    let btn, sec;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -148,7 +148,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let add, log;
+    let log, add;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, inp, p;
+    let inp, body, p;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, links, host;
+    let host, out, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let tv, t, out, posts, head, lv;
+    let t, head, posts, tv, lv, out;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, inp, p;
+    let inp, body, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let p, bo, ti, body, title;
+    let body, bo, ti, title, p;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
