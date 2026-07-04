@@ -1,0 +1,339 @@
+# community.ep — the client for the self-hosted community (chat + forum).
+# Talks to serve_ernos.py on Maria's machine (window.COMMUNITY_BASE). When the
+# host is asleep it degrades gracefully. Authored in ErnosPlain like the rest;
+# the byte plumbing (fetch/JSON/DOM) are browser globals it calls directly.
+# Tiny interop shims (js_object, fmt_time) live in community.html.
+
+define base:
+    set b to window.COMMUNITY_BASE
+    if window.localStorage:
+        set o to window.localStorage.getItem("ernosCommunityBase")
+        if o:
+            set b to o
+    if b:
+        return b
+    return ""
+
+define esc with s:
+    set t to s
+    if t:
+        set t to t.split("&").join("&amp;")
+        set t to t.split("<").join("&lt;")
+        set t to t.split(">").join("&gt;")
+        return t
+    return ""
+
+define my_name:
+    if window.localStorage:
+        set n to window.localStorage.getItem("ernosCommunityName")
+        if n:
+            return n
+    return "anon"
+
+define post_json with url and payload:
+    set opts to js_object()
+    set opts.method to "POST"
+    set opts.body to JSON.stringify(payload)
+    return fetch(url and opts)
+
+# ---------- host status ----------
+define set_status with cls and msg:
+    set el to document.getElementById("cm-status")
+    if el:
+        set el.className to cls
+        set el.innerHTML to msg
+    return 0
+
+define go_online:
+    if window.cmOnline:
+        return 0
+    set window.cmOnline to true
+    set_status("cm-status is-online" and "🟢 <strong>Community online</strong> — hosted live from the source machine.")
+    return 0
+
+define go_offline:
+    set window.cmOnline to false
+    set_status("cm-status is-offline" and "🌙 <strong>The host is asleep.</strong> This room is served straight from Maria's machine — when it's online you can read and post here. Come back soon.")
+    return 0
+
+define status_ping with resp:
+    if resp.ok:
+        go_online()
+    else:
+        go_offline()
+    return 0
+
+define check_status:
+    fetch(base() + "/ping").then(status_ping).catch(go_offline)
+    return 0
+
+# ---------- tabs ----------
+define hide_tabs:
+    set secs to document.querySelectorAll(".cm-tab")
+    for each sec in secs:
+        sec.classList.add("hidden")
+    set btns to document.querySelectorAll(".cm-tabbtn")
+    for each b in btns:
+        b.classList.remove("active")
+    return 0
+
+define show_tab with name:
+    hide_tabs()
+    set sec to document.getElementById("tab-" + name)
+    if sec:
+        sec.classList.remove("hidden")
+    set btn to document.getElementById("tabbtn-" + name)
+    if btn:
+        btn.classList.add("active")
+    if name equals "chat":
+        load_chat()
+    if name equals "forum":
+        show_thread_list()
+        load_threads()
+    return 0
+
+define tab_chat with ev:
+    show_tab("chat")
+    return 0
+
+define tab_forum with ev:
+    show_tab("forum")
+    return 0
+
+define tab_faq with ev:
+    show_tab("faq")
+    return 0
+
+# ---------- chat ----------
+define load_chat:
+    set url to base() + "/community/chat?since=" + int_to_string(window.chatLastId)
+    fetch(url).then(chat_recv).catch(go_offline)
+    return 0
+
+define chat_recv with resp:
+    go_online()
+    resp.json().then(chat_apply)
+    return 0
+
+define chat_apply with data:
+    set log to document.getElementById("chat-log")
+    if not log:
+        return 0
+    set add to ""
+    for each m in data.messages:
+        set add to add + f"<div class=\"cm-msg\"><span class=\"cm-msg__name\">{esc(m.name)}</span><span class=\"cm-msg__time\">{fmt_time(m.ts)}</span><div class=\"cm-msg__body\">{esc(m.body)}</div></div>"
+        set window.chatLastId to m.id
+    if add equals "":
+        return 0
+    set log.innerHTML to log.innerHTML + add
+    set log.scrollTop to log.scrollHeight
+    return 0
+
+define send_chat:
+    set inp to document.getElementById("chat-input")
+    if not inp:
+        return 0
+    set body to inp.value
+    if not body:
+        return 0
+    if body.trim() equals "":
+        return 0
+    set p to js_object()
+    set p.name to my_name()
+    set p.body to body
+    post_json(base() + "/community/chat" and p).then(chat_sent).catch(go_offline)
+    set inp.value to ""
+    return 0
+
+define chat_sent with resp:
+    go_online()
+    load_chat()
+    return 0
+
+define chat_send_ev with ev:
+    send_chat()
+    return 0
+
+define chat_key_ev with ev:
+    if ev.key equals "Enter":
+        if not ev.shiftKey:
+            ev.preventDefault()
+            send_chat()
+    return 0
+
+# ---------- forum ----------
+define show_thread_list:
+    set lv to document.getElementById("forum-list-view")
+    set tv to document.getElementById("forum-thread-view")
+    if lv:
+        lv.classList.remove("hidden")
+    if tv:
+        tv.classList.add("hidden")
+    return 0
+
+define load_threads:
+    fetch(base() + "/community/threads").then(threads_recv).catch(go_offline)
+    return 0
+
+define threads_recv with resp:
+    go_online()
+    resp.json().then(threads_apply)
+    return 0
+
+define threads_apply with data:
+    set host to document.getElementById("forum-threads")
+    if not host:
+        return 0
+    set out to ""
+    for each t in data.threads:
+        set out to out + f"<button class=\"cm-thread\" data-id=\"{int_to_string(t.id)}\"><span class=\"cm-thread__title\">{esc(t.title)}</span><span class=\"cm-thread__meta\">by {esc(t.author)} · {int_to_string(t.replies)} replies · {fmt_time(t.last_ts)}</span></button>"
+    if out equals "":
+        set out to "<p class=\"cm-empty\">No threads yet. Start the first one below.</p>"
+    set host.innerHTML to out
+    set links to host.querySelectorAll(".cm-thread")
+    for each c in links:
+        c.addEventListener("click" and open_thread_ev)
+    return 0
+
+define open_thread_ev with ev:
+    set id to ev.currentTarget.getAttribute("data-id")
+    open_thread(id)
+    return 0
+
+define open_thread with id:
+    set window.cmThread to id
+    fetch(base() + "/community/thread/" + id).then(thread_recv).catch(go_offline)
+    return 0
+
+define thread_recv with resp:
+    go_online()
+    resp.json().then(thread_apply)
+    return 0
+
+define thread_apply with data:
+    set lv to document.getElementById("forum-list-view")
+    set tv to document.getElementById("forum-thread-view")
+    if lv:
+        lv.classList.add("hidden")
+    if tv:
+        tv.classList.remove("hidden")
+    set head to document.getElementById("thread-head")
+    set t to data.thread
+    if head:
+        set head.innerHTML to f"<h3 class=\"cm-thread__h\">{esc(t.title)}</h3><p class=\"cm-op\"><span class=\"cm-msg__name\">{esc(t.author)}</span><span class=\"cm-msg__time\">{fmt_time(t.ts)}</span></p><div class=\"cm-op__body\">{esc(t.body)}</div>"
+    set posts to document.getElementById("thread-posts")
+    if posts:
+        set out to ""
+        for each p in data.posts:
+            set out to out + f"<div class=\"cm-post\"><p class=\"cm-post__by\"><span class=\"cm-msg__name\">{esc(p.author)}</span><span class=\"cm-msg__time\">{fmt_time(p.ts)}</span></p><div class=\"cm-msg__body\">{esc(p.body)}</div></div>"
+        set posts.innerHTML to out
+    return 0
+
+define send_reply:
+    set inp to document.getElementById("reply-body")
+    if not inp:
+        return 0
+    set body to inp.value
+    if not body:
+        return 0
+    if body.trim() equals "":
+        return 0
+    set p to js_object()
+    set p.author to my_name()
+    set p.body to body
+    post_json(base() + "/community/thread/" + window.cmThread + "/reply" and p).then(reply_sent).catch(go_offline)
+    set inp.value to ""
+    return 0
+
+define reply_sent with resp:
+    go_online()
+    open_thread(window.cmThread)
+    return 0
+
+define reply_ev with ev:
+    send_reply()
+    return 0
+
+define back_ev with ev:
+    show_thread_list()
+    load_threads()
+    return 0
+
+define create_thread:
+    set ti to document.getElementById("new-title")
+    set bo to document.getElementById("new-body")
+    if not ti:
+        return 0
+    if not bo:
+        return 0
+    set title to ti.value
+    set body to bo.value
+    if title.trim() equals "":
+        return 0
+    if body.trim() equals "":
+        return 0
+    set p to js_object()
+    set p.author to my_name()
+    set p.title to title
+    set p.body to body
+    post_json(base() + "/community/threads" and p).then(thread_created).catch(go_offline)
+    set ti.value to ""
+    set bo.value to ""
+    return 0
+
+define thread_created with resp:
+    go_online()
+    load_threads()
+    return 0
+
+define new_thread_ev with ev:
+    create_thread()
+    return 0
+
+# ---------- name ----------
+define name_ev with ev:
+    if window.localStorage:
+        window.localStorage.setItem("ernosCommunityName" and ev.currentTarget.value)
+    return 0
+
+define wire with id and evt and cb:
+    set el to document.getElementById(id)
+    if el:
+        el.addEventListener(evt and cb)
+    return 0
+
+define main:
+    set window.chatLastId to 0
+    set window.cmOnline to false
+    set window.cmThread to ""
+    # restore saved display name
+    set ni to document.getElementById("cm-name")
+    if ni:
+        set ni.value to my_name()
+        ni.addEventListener("input" and name_ev)
+    # tabs
+    wire("tabbtn-chat" and "click" and tab_chat)
+    wire("tabbtn-forum" and "click" and tab_forum)
+    wire("tabbtn-faq" and "click" and tab_faq)
+    # chat
+    wire("chat-send" and "click" and chat_send_ev)
+    wire("chat-input" and "keydown" and chat_key_ev)
+    # forum
+    wire("new-create" and "click" and new_thread_ev)
+    wire("reply-send" and "click" and reply_ev)
+    wire("thread-back" and "click" and back_ev)
+    # go
+    check_status()
+    show_tab("chat")
+    if window.cmPoll:
+        window.clearInterval(window.cmPoll)
+    set window.cmPoll to window.setInterval(poll and 5000)
+    return 0
+
+define poll:
+    set tab to document.getElementById("tab-chat")
+    if tab:
+        if tab.classList.contains("hidden"):
+            return 0
+    load_chat()
+    return 0
