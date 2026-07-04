@@ -63,7 +63,7 @@ function hl_is_word(c) {
 }
 
 function hl(src) {
-    let out, c, sstart, n, word, start, d, i;
+    let d, c, start, word, i, out, sstart, n;
     n = src.length;
     out = "";
     i = 0;
@@ -154,7 +154,7 @@ function hl_word(w) {
 }
 
 function editor_update() {
-    let layer, i, ta, src, g, gutter, lines;
+    let g, src, ta, gutter, lines, i, layer;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -173,7 +173,7 @@ function editor_update() {
 }
 
 function editor_scroll() {
-    let ta, gutter, layer;
+    let ta, layer, gutter;
     ta = document.getElementById("code");
     layer = document.getElementById("code-hl");
     gutter = document.getElementById("gutter");
@@ -184,7 +184,7 @@ function editor_scroll() {
 }
 
 function editor_keydown(ev) {
-    let ta, val, epp, sp;
+    let sp, epp, val, ta;
     if ((ev.key === "Tab")) {
         ev.preventDefault();
         ta = document.getElementById("code");
@@ -208,7 +208,7 @@ function set_code(code) {
 }
 
 function render_gallery() {
-    let exs, host, btn, i, e;
+    let i, host, e, btn, exs;
     host = document.getElementById("examples");
     exs = examples();
     i = 0;
@@ -230,7 +230,7 @@ function to_str(n) {
 }
 
 function pick_example(ev) {
-    let e, idx, exs;
+    let exs, idx, e;
     idx = Number(ev.currentTarget.getAttribute("data-idx"));
     exs = examples();
     e = exs[idx];
@@ -241,7 +241,7 @@ function pick_example(ev) {
 }
 
 function clear_output() {
-    let out, status;
+    let status, out;
     out = document.getElementById("output");
     out.classList.remove("err");
     out.textContent = "▶  Press Run to execute.";
@@ -263,7 +263,7 @@ function mark_active(el) {
 }
 
 function run_code() {
-    let src, ms, t0, t1, status, r, out, reflow, ta;
+    let src, t1, status, out, t0, r, ms, reflow, ta;
     ta = document.getElementById("code");
     src = ta.value;
     out = document.getElementById("output");
@@ -324,7 +324,7 @@ function term_print(text, cls) {
 }
 
 function term_keydown(ev) {
-    let src, epp, val, r, inp, sp, trimmed;
+    let val, src, trimmed, r, inp, sp, epp;
     inp = document.getElementById("term-input");
     if ((ev.key === "Enter")) {
         if (ev.shiftKey) {
@@ -369,7 +369,7 @@ function term_keydown(ev) {
 }
 
 function term_command(cmd) {
-    let log, low;
+    let low, log;
     low = cmd.toLowerCase();
     if ((low === "/save")) {
         term_save();
@@ -469,7 +469,7 @@ function term_help(level) {
 }
 
 function term_save() {
-    let blob, lines, url, a, code, opts;
+    let blob, url, a, opts, code, lines;
     lines = window.epHistory;
     if ((lines.length === 0)) {
         term_print("Nothing to save yet — write some ErnosPlain first.", "term-dim");
@@ -492,7 +492,7 @@ function term_save() {
 }
 
 function main() {
-    let first, ta, exs;
+    let exs, first, ta;
     window.epRunCount = 0;
     render_gallery();
     ta = document.getElementById("code");

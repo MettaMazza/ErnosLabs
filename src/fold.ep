@@ -598,7 +598,7 @@ define predictions:
     P.push(pred("Hubble calibration ratio" and "3305/3048 = 1.0843175 — measured 1.0843230, 5×10⁻⁶" and "Cosmos" and "now" and "the calibration ratio parts from the forced rational"))
     P.push(pred("Gravitational waves" and "light = gravity, both the One — luminal to 1 part in 10¹⁵ (GW170817)" and "Gravity" and "settled" and "confirmed luminal to extraordinary precision"))
     P.push(pred("Black-hole entropy" and "the exact Bekenstein–Hawking quarter S = A/4, from two binary halvings" and "Gravity" and "now" and "the quarter coefficient is measured to differ"))
-    P.push(pred("The reproduced corpus" and "281 proof suites · 1,623 forced checks · 0 failures — one command runs them all" and "Reproduced physics" and "now" and "any single established result the fold derives wrongly"))
+    P.push(pred("The reproduced corpus" and "306 proof suites · 1,832 forced checks · 0 failures — one command runs them all" and "Reproduced physics" and "now" and "any single established result the fold derives wrongly"))
     P.push(pred("Chess endgames · 4-piece" and "42,391,244 positions · 42M agreements · zero errors" and "Settled live" and "settled" and "certified against the tablebases, zero error"))
     P.push(pred("Chess endgames · 5-piece" and "2 billion positions — being certified now" and "Settled live" and "frontier" and "a single disagreement with the tablebase"))
     P.push(pred("Inertia as a coupling" and "vacuum-to-inertia ratio is the One — inertia is a dial" and "Frontier" and "frontier" and "inertia cannot be lowered without removing matter"))
