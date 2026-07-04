@@ -35,7 +35,7 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let ab, hf, machine, out;
+    let hf, machine, ab, out;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
@@ -60,7 +60,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let out, m, i, models;
+    let i, out, models, m;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let j, s, sections, stats, sec, cards, host, intro, html, runners, ab;
+    let ab, j, sections, cards, host, stats, runners, s, intro, sec, html;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -150,7 +150,7 @@ function status_set(cls, msg) {
 }
 
 function use_machine() {
-    let mu, links;
+    let links, mu;
     links = document.querySelectorAll(".ai-dl");
     for (const a of links) {
         mu = a.getAttribute("data-machine");

@@ -13,7 +13,7 @@ browser by the Ernos compiler — the same toolchain the projects themselves use
 | Page | What you can do |
 |------|-----------------|
 | **ErnosPlain** (`ernosplain.html`) | Write code and run it on a real interpreter — itself written in ErnosPlain. |
-| **The Smithian Fold** (`sftom.html`) | Fold rationals into periodic orbits; watch `1/α = 137.036` fall out of one integer with zero free parameters; tour the prime-sector particle census. |
+| **The Smithian Fold** (`smithian-fold-theory-of-everything.html`) | Fold rationals into periodic orbits; watch `1/α = 137.036` fall out of one integer with zero free parameters; tour the prime-sector particle census. |
 | **ErnosDecent** (`ernosdecent.html`) | Route a Kademlia DHT by XOR distance, train a Hebbian memory graph, drive a 5-node Raft cluster through elections and partitions. |
 | **The Library** (`library.html`) | Read *The Last Mind* (five volumes), *A Mind Is Born*, and the ErnosDecent book — with chapters, in-text search, font controls, and read-aloud. |
 
