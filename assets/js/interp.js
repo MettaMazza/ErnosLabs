@@ -39,7 +39,7 @@ function is_alnum(c) {
 }
 
 function lex_line(line, toks) {
-    let buf, e, c, i, n, d, j, res;
+    let c, d, j, buf, e, i, res, n;
     i = 0;
     n = line.length;
     while ((i < n)) {
@@ -97,7 +97,7 @@ function lex_after_string(line, toks, buf, j, dummy) {
 }
 
 function lex_fstring(line, toks, start, n) {
-    let buf, d, e, j;
+    let buf, e, j, d;
     j = start;
     buf = "";
     while ((j < n)) {
@@ -150,7 +150,7 @@ function lex_number(line, toks, start, n) {
 }
 
 function lex_ident(line, toks, start, n) {
-    let buf, j, d;
+    let buf, d, j;
     j = start;
     buf = "";
     while ((j < n)) {
@@ -270,7 +270,7 @@ function word_op1(a) {
 }
 
 function match_phrase(toks, i) {
-    let v0, r, v4, v5, v3, v1, v2;
+    let r, v0, v5, v2, v3, v1, v4;
     r = JSON.parse("{}");
     r.op = "";
     r.len = 0;
@@ -346,7 +346,7 @@ function phrase_val(toks, i) {
 }
 
 function collapse_ops(toks) {
-    let n, w2, w1, nxt, i, out, t, ph;
+    let nxt, i, n, t, out, w1, ph, w2;
     out = [];
     i = 0;
     n = toks.length;
@@ -383,7 +383,7 @@ function collapse_ops(toks) {
 }
 
 function tokenize(src) {
-    let lines, indent, toks, i, line, trimmed, raw, norm, ln;
+    let trimmed, toks, raw, ln, indent, norm, i, line, lines;
     norm = src.replace(Reflect.construct(window.RegExp, ["\r", "g"]), "");
     raw = norm.split("\n");
     lines = [];
@@ -413,7 +413,7 @@ function tokenize(src) {
 }
 
 function count_indent(line) {
-    let i, spaces, c;
+    let spaces, i, c;
     i = 0;
     spaces = 0;
     while ((i < line.length)) {
@@ -446,7 +446,7 @@ function cur_line(P) {
 }
 
 function parse_block(P, indent) {
-    let stmt, stmts, ln;
+    let stmts, stmt, ln;
     stmts = [];
     while (true) {
         ln = cur_line(P);
@@ -468,7 +468,7 @@ function parse_block(P, indent) {
 }
 
 function parse_stmt(P, indent) {
-    let nd, ln, head, toks, ts, kw, ex;
+    let ts, nd, ex, ln, toks, head, kw;
     ln = cur_line(P);
     toks = ln.toks;
     head = toks[0];
@@ -510,7 +510,7 @@ function advance_ret(P, nd) {
 }
 
 function parse_set(P, ln) {
-    let field, t, toks, rest, target_name, i, ts, is_field, ex, nd;
+    let t, ts, nd, is_field, ex, field, toks, target_name, rest, i;
     toks = ln.toks;
     i = 1;
     target_name = toks[i].val;
@@ -550,7 +550,7 @@ function parse_set(P, ln) {
 }
 
 function parse_display(P, ln) {
-    let ts, rest, nd, ex;
+    let ex, ts, nd, rest;
     rest = slice_toks(ln.toks, 1);
     ts = new_stream(rest);
     ex = parse_expr(ts);
@@ -561,7 +561,7 @@ function parse_display(P, ln) {
 }
 
 function parse_return(P, ln) {
-    let ts, nd, rest;
+    let nd, rest, ts;
     rest = slice_toks(ln.toks, 1);
     nd = node("return");
     if ((rest.length === 0)) {
@@ -575,7 +575,7 @@ function parse_return(P, ln) {
 }
 
 function parse_if(P, indent) {
-    let nd, cond_toks, nx, second, body, h, econd, ln, ts2, cond, ebody, ts, pair, ct, toks;
+    let nd, body, ebody, h, cond, ct, second, ts, econd, ts2, nx, ln, cond_toks, pair, toks;
     ln = cur_line(P);
     toks = ln.toks;
     cond_toks = cond_slice(toks, 1);
@@ -622,7 +622,7 @@ function parse_if(P, indent) {
 }
 
 function parse_while(P, indent, ln, skip) {
-    let body, nd, cond_toks, ts, cond;
+    let cond_toks, nd, ts, cond, body;
     cond_toks = cond_slice(ln.toks, skip);
     ts = new_stream(cond_toks);
     cond = parse_expr(ts);
@@ -635,7 +635,7 @@ function parse_while(P, indent, ln, skip) {
 }
 
 function parse_for(P, indent, ln) {
-    let name, i, toks, t;
+    let i, name, toks, t;
     toks = ln.toks;
     name = toks[2].val;
     i = 3;
@@ -654,7 +654,7 @@ function parse_for(P, indent, ln) {
 }
 
 function parse_for_tail(P, indent, toks, name, i) {
-    let iter, nd, body, rest, ts;
+    let iter, nd, rest, body, ts;
     rest = cond_slice(toks, i);
     ts = new_stream(rest);
     iter = parse_expr(ts);
@@ -668,7 +668,7 @@ function parse_for_tail(P, indent, toks, name, i) {
 }
 
 function parse_define(P, indent, ln) {
-    let i, body, name, toks, t, nd, params;
+    let name, params, body, i, t, nd, toks;
     toks = ln.toks;
     name = toks[1].val;
     params = [];
@@ -718,7 +718,7 @@ function read_params(toks, i, params) {
 }
 
 function slice_toks(toks, frm) {
-    let out, i;
+    let i, out;
     out = [];
     i = frm;
     while ((i < toks.length)) {
@@ -770,7 +770,7 @@ function parse_expr(s) {
 }
 
 function parse_or(s) {
-    let t, right, left;
+    let left, t, right;
     left = parse_and(s);
     while (true) {
         t = st_peek(s);
@@ -793,7 +793,7 @@ function parse_or(s) {
 }
 
 function parse_and(s) {
-    let right, t, left;
+    let t, left, right;
     left = parse_cmp(s);
     while (true) {
         t = st_peek(s);
@@ -816,7 +816,7 @@ function parse_and(s) {
 }
 
 function parse_cmp(s) {
-    let left, right, t;
+    let t, right, left;
     left = parse_add(s);
     t = st_peek(s);
     if (!t) {
@@ -855,7 +855,7 @@ function is_cmp(op) {
 }
 
 function parse_add(s) {
-    let t, left;
+    let left, t;
     left = parse_mul(s);
     while (true) {
         t = st_peek(s);
@@ -880,7 +880,7 @@ function parse_add(s) {
 }
 
 function parse_mul(s) {
-    let t, left;
+    let left, t;
     left = parse_unary(s);
     while (true) {
         t = st_peek(s);
@@ -932,7 +932,7 @@ function parse_unary(s) {
 }
 
 function parse_postfix(s) {
-    let nd, t, base, args;
+    let base, args, t, nd;
     base = parse_primary(s);
     while (true) {
         t = st_peek(s);
@@ -954,7 +954,7 @@ function parse_postfix(s) {
 }
 
 function parse_args(s) {
-    let args, t;
+    let t, args;
     args = [];
     t = st_peek(s);
     if (t) {
@@ -991,7 +991,7 @@ function parse_args(s) {
 }
 
 function parse_primary(s) {
-    let nd, t, inner;
+    let t, inner, nd;
     t = st_next(s);
     if (!t) {
         return node("nil");
@@ -1038,7 +1038,7 @@ function parse_primary(s) {
 }
 
 function parse_list(s) {
-    let nd, t, items;
+    let items, nd, t;
     items = [];
     t = st_peek(s);
     if (t) {
@@ -1159,7 +1159,7 @@ function exec_block(stmts, e) {
 }
 
 function exec_stmt(st, e) {
-    let v, fn, k, obj;
+    let k, v, obj, fn;
     k = st.kind;
     if ((k === "set")) {
         v = eval_expr(st.expr, e);
@@ -1227,7 +1227,7 @@ function exec_if(st, e) {
 }
 
 function exec_while(st, e) {
-    let sig, guard;
+    let guard, sig;
     guard = 0;
     while (truthy(eval_expr(st.cond, e))) {
         sig = exec_block(st.body, env_new(e));
@@ -1243,7 +1243,7 @@ function exec_while(st, e) {
 }
 
 function exec_foreach(st, e) {
-    let seq, inner, i, sig;
+    let sig, seq, inner, i;
     seq = eval_expr(st.iter, e);
     i = 0;
     while ((i < seq.length)) {
@@ -1259,7 +1259,7 @@ function exec_foreach(st, e) {
 }
 
 function eval_expr(x, e) {
-    let arr, i, k;
+    let i, arr, k;
     k = x.kind;
     if ((k === "num")) {
         return x.val;
@@ -1307,7 +1307,7 @@ function eval_expr(x, e) {
 }
 
 function eval_bin(x, e) {
-    let b, l, a, op;
+    let a, l, b, op;
     op = x.op;
     if ((op === "&&")) {
         if (truthy(eval_expr(x.left, e))) {
@@ -1385,7 +1385,7 @@ function typeof_str(v) {
 }
 
 function eval_call(x, e) {
-    let i, name, callee, fnv, b, args, fn;
+    let args, fn, i, callee, name, b, fnv;
     callee = x.callee;
     args = [];
     i = 0;
@@ -1426,7 +1426,7 @@ function call_fn(fn, args) {
 }
 
 function eval_fstring(raw, e) {
-    let n, c, j, d, i, inner, out;
+    let n, c, out, d, i, j, inner;
     out = "";
     i = 0;
     n = raw.length;
@@ -1574,7 +1574,7 @@ function run_thunk() {
 }
 
 function run_safely(src) {
-    let old_handler, err_r, result;
+    let err_r, old_handler, result;
     window.epSrc = src;
     window.epRunErr = false;
     old_handler = window.onerror;
@@ -1601,7 +1601,7 @@ function run_err_handler(msg, url, line, col, err) {
 }
 
 function ep_run(src) {
-    let st, lines, ran_main, i, res, program, P, fn, genv;
+    let lines, st, P, genv, program, i, fn, ran_main, res;
     res = JSON.parse("{}");
     window.epOut = [];
     window.epErr = false;
@@ -1651,7 +1651,7 @@ function ep_repl_reset() {
 }
 
 function ep_repl(src) {
-    let P, i, st, res, n, lines, genv, v, program;
+    let lines, i, genv, st, v, P, res, program, n;
     res = JSON.parse("{}");
     window.epOut = [];
     window.epErr = false;

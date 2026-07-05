@@ -16,6 +16,7 @@ import json
 import os
 import pathlib
 import sqlite3
+import sys
 import threading
 import time
 
@@ -269,6 +270,41 @@ def speech(req: SpeechRequest):
     sf.write(buf, audio, sr, format="WAV")
     buf.seek(0)
     return Response(content=buf.read(), media_type="audio/wav")
+
+
+# ---- Live model catalog (auto-updates as the drive changes) -------------
+# The AI Archive page fetches this when the machine is online, so a model that
+# finishes downloading shows up immediately — no rebuild, no redeploy. Falls back
+# to the baked ai-archive-data.js snapshot when the machine is offline.
+sys.path.insert(0, os.path.join(SITE_ROOT, "tools"))
+_catalog_cache = {"ts": 0.0, "data": None}
+_catalog_lock = threading.Lock()
+
+
+def _build_catalog():
+    now = time.time()
+    with _catalog_lock:
+        if _catalog_cache["data"] is not None and now - _catalog_cache["ts"] < 120:
+            return _catalog_cache["data"]
+    try:
+        import gen_archive_catalog as gac
+        reg, models, total, _skipped = gac.build_catalog()
+        clean = [{k: v for k, v in m.items() if not k.startswith("_")} for m in models]
+        data = {
+            "intro": reg["intro"],
+            "stats": {"count": len(models), "size": gac.human(total), "note": reg["stats_note"]},
+            "runners": reg["runners"], "sections": reg["sections"], "models": clean,
+        }
+    except Exception as e:  # never take the archive page down over a catalog hiccup
+        data = {"error": str(e)}
+    with _catalog_lock:
+        _catalog_cache.update(ts=time.time(), data=data)
+    return data
+
+
+@app.get("/catalog")
+def catalog():
+    return _build_catalog()
 
 
 # ---- static mounts (follow the models symlink to its real path) ---------

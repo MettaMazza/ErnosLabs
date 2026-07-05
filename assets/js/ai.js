@@ -35,7 +35,7 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let machine, ab, out, hf;
+    let out, hf, machine, ab;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
@@ -60,7 +60,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let out, i, m, models;
+    let m, out, models, i;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let sections, s, host, j, sec, ab, intro, html, cards, runners, stats;
+    let intro, cards, html, host, sections, sec, runners, s, ab, stats, j;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -150,7 +150,7 @@ function status_set(cls, msg) {
 }
 
 function use_machine() {
-    let links, mu;
+    let mu, links;
     links = document.querySelectorAll(".ai-dl");
     for (const a of links) {
         mu = a.getAttribute("data-machine");
@@ -187,9 +187,47 @@ function check_status() {
     return 0;
 }
 
+function apply_catalog(data) {
+    if (data.models) {
+        if ((data.models.length > 0)) {
+            window.AI_MODELS = data.models;
+            window.AI_SECTIONS = data.sections;
+            window.AI_RUNNERS = data.runners;
+            window.AI_STATS = data.stats;
+            window.AI_INTRO = data.intro;
+            render_ai();
+            use_machine();
+            status_set("ai-status is-online", "🟢 <strong>Archive online</strong> — live from the source machine, always up to date.");
+            return 0;
+        }
+    }
+    check_status();
+    return 0;
+}
+
+function catalog_recv(resp) {
+    if (resp.ok) {
+        resp.json().then(apply_catalog);
+    } else {
+        check_status();
+    }
+    return 0;
+}
+
+function load_live() {
+    let ab;
+    ab = window.__ab;
+    if ((ab === "")) {
+        check_status();
+        return 0;
+    }
+    fetch((ab + "/catalog")).then(catalog_recv).catch(check_status);
+    return 0;
+}
+
 function main() {
     render_ai();
-    check_status();
+    load_live();
     return 0;
 }
 

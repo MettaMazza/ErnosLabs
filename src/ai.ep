@@ -167,7 +167,39 @@ define check_status:
     fetch(ab + "/ping").then(status_ok).catch(status_fail)
     return 0
 
+# When the machine is online, pull the LIVE catalog so newly-finished downloads
+# show up instantly (no rebuild, no redeploy). Falls back to the baked snapshot.
+define apply_catalog with data:
+    if data.models:
+        if data.models.length > 0:
+            set window.AI_MODELS to data.models
+            set window.AI_SECTIONS to data.sections
+            set window.AI_RUNNERS to data.runners
+            set window.AI_STATS to data.stats
+            set window.AI_INTRO to data.intro
+            render_ai()
+            use_machine()
+            status_set("ai-status is-online" and "🟢 <strong>Archive online</strong> — live from the source machine, always up to date.")
+            return 0
+    check_status()
+    return 0
+
+define catalog_recv with resp:
+    if resp.ok:
+        resp.json().then(apply_catalog)
+    else:
+        check_status()
+    return 0
+
+define load_live:
+    set ab to window.__ab
+    if ab equals "":
+        check_status()
+        return 0
+    fetch(ab + "/catalog").then(catalog_recv).catch(check_status)
+    return 0
+
 define main:
     render_ai()
-    check_status()
+    load_live()
     return 0
