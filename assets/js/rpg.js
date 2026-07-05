@@ -311,7 +311,7 @@ Companion.prototype.heal = function(amount) {
 };
 Companion.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg;
+    let dmg, new_hp;
     dmg = self.atk;
     console.log((((((("🪄  " + String(self.name)) + " shoots a magic bolt at ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -352,7 +352,7 @@ Monster.prototype.heal = function(amount) {
 };
 Monster.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, new_hp;
+    let new_hp, dmg;
     dmg = (self.atk + ep_random_int((0 - 2), 2));
     console.log((((((((("👹  [" + String(self.species)) + "] ") + String(self.name)) + " claws ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let count, len, i, member;
+    let count, len, member, i;
     count = 0;
     len = team.length;
     i = 0;
@@ -394,7 +394,7 @@ function get_first_alive(team) {
 }
 
 function display_team_status(team_name, team) {
-    let len, i, member;
+    let i, member, len;
     console.log((("--- " + String(team_name)) + " Status ---"));
     len = team.length;
     i = 0;
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let hero_struct, party, party_len, hero_ref, r, goblin_struct, healer, goblin, target, enemy, party_idx, ok, hero, enemy_len, member, orc, enemies, healer_struct, round, i, orc_struct;
+    let member, party, healer_struct, party_idx, i, enemy, round, healer, enemies, hero_ref, ok, r, enemy_len, goblin_struct, orc_struct, goblin, target, hero, hero_struct, orc, party_len;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");

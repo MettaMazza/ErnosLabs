@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Canvas — Ernos Labs</title>
+  <meta name="description" content="Prompt a local model and watch it build the whole interface as raw HTML, CSS and SVG — zero JavaScript, every control a plain form. Generative UI, streamed straight from the source machine.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn46oPC90ZXh0Pjwvc3ZnPg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=58e40a1e">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+      <div class="navplayer" id="navplayer">
+        <button class="navplayer__btn" id="np-toggle" aria-label="Play or pause read-aloud">▶</button>
+        <div class="navplayer__bar"><div class="navplayer__fill" id="np-fill"></div></div>
+        <span class="navplayer__status" id="np-status">Listen</span>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <a href="ernosplain.html">ErnosPlain</a>
+        <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
+        <a href="ernosdecent.html">ErnosDecent</a>
+        <a href="canvas.html" aria-current="page">Canvas</a>
+        <div class="nav__drop" id="nav-writing">
+          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true">Writing ▾</button>
+          <div class="nav__drop-menu">
+            <a href="library.html">Library</a>
+            <a href="seed.html">Seed Vault</a>
+            <a href="papers.html">Papers</a>
+          </div>
+        </div>
+        <a href="videos.html">Videos</a>
+        <a href="ai.html">AI Archive</a>
+        <a href="community.html">Community</a>
+        <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">Download ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="view">
+
+  <header class="section" style="padding-bottom:10px">
+    <div class="wrap" style="max-width:960px">
+      <p class="eyebrow reveal">Generative UI · zero JavaScript</p>
+      <h1 class="reveal">The AI Canvas</h1>
+      <p class="lead reveal mt-s">Type what you want and a <strong style="color:var(--ink-0)">local model builds the entire
+        interface</strong> — as raw HTML, CSS and SVG, streamed straight to your browser. No framework, no client-side
+        JavaScript: every button, link and game move is a plain HTML <code>&lt;form&gt;</code> that posts back, and the
+        engine answers with the next screen. It's an <a href="ernosdecent.html">ErnosDecent</a> feature, written in
+        <a href="ernosplain.html">ErnosPlain</a>, running live on the source machine.</p>
+      <div id="canvas-status" class="cm-status" style="margin-top:16px">Checking the canvas…</div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:12px">
+    <div class="wrap" style="max-width:960px">
+      <div class="cv-stage">
+        <iframe id="canvas-frame" title="AI Canvas"
+          sandbox="allow-same-origin"
+          style="display:none;width:100%;min-height:72vh;border:1px solid var(--line);border-radius:16px;background:#0d1117;box-shadow:0 24px 60px -34px rgba(0,0,0,.8)"></iframe>
+        <div id="canvas-loading" class="cv-loading" style="display:none">
+          <div class="cv-spinner"></div>
+          <p class="cv-loading__txt">The model is rendering your interface…</p>
+        </div>
+      </div>
+
+      <div id="canvas-offline" style="display:none;border:1px solid var(--line);border-radius:16px;background:var(--bg-1);padding:48px 28px;text-align:center;color:var(--ink-2)">
+        <p style="font-size:2rem;margin:0 0 10px">🌙</p>
+        <p style="max-width:34ch;margin:0 auto;line-height:1.5">The canvas is served live from Maria's machine. It's asleep right now — come back when the host is online and it'll build whatever you ask for.</p>
+      </div>
+
+      <p style="color:var(--ink-3);font-size:.86rem;margin-top:14px;line-height:1.5">
+        Try: <em>“a Connect&nbsp;4 game”</em>, <em>“a calculator”</em>, <em>“a neon synthwave sign-in card”</em>,
+        <em>“a wikipedia-style page about the Iron Age with clickable links”</em>. It runs on a small, fast local model
+        (Llama-3.1-8B) dedicated to the canvas — you'll see it inferring, then the screen appears. The frame is
+        script-sandboxed: nothing the model emits can run code.
+      </p>
+
+      <hr class="divider" style="margin:40px 0 26px">
+      <p class="eyebrow reveal">How it works</p>
+      <h2 class="reveal">The framework is the model</h2>
+      <p class="lead reveal" style="margin-bottom:0">Instead of shipping a heavy front-end to parse Markdown and manage
+        state, the engine emits finished HTML/CSS/SVG and streams it into the page. State lives in the forms themselves —
+        every screen encodes what to do next — so there's no client bloat and no server-side session to keep. It's the
+        local-first idea taken to its limit: native browser capabilities plus direct model output, nothing in between.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="#4ff0c4" opacity=".92"/></svg> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">A UI with no front-end. Rendered by the model.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="ernosdecent.html">ErnosDecent</a><a href="ernosplain.html">ErnosPlain</a><a href="ai.html">AI Archive</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
+  </footer>
+
+  </div>
+
+  <script src="assets/js/spa.js?v=6ab5f95a"></script>
+  <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
+  <script src="assets/js/site.js?v=6d7c1981"></script>
+  <script src="assets/js/canvas-init.js?v=5d031b2e"></script>
+</body>
+</html>

@@ -28,7 +28,7 @@ function play_video(id, title) {
 }
 
 function vid_click(ev) {
-    let idx, v, vids, el;
+    let el, idx, v, vids;
     el = ev.currentTarget;
     idx = el.getAttribute("data-idx");
     vids = window.ERNOS_VIDEOS;
@@ -40,7 +40,7 @@ function vid_click(ev) {
 }
 
 function render_videos() {
-    let cards, thumb, html, i, v, cap, grid, vids;
+    let cards, i, cap, thumb, grid, vids, html, v;
     grid = document.getElementById("video-grid");
     if (!grid) {
         return 0;
@@ -71,7 +71,7 @@ function render_videos() {
 }
 
 function videos_init() {
-    let v0, frame, t, vids;
+    let frame, v0, vids, t;
     render_videos();
     vids = window.ERNOS_VIDEOS;
     if (vids) {

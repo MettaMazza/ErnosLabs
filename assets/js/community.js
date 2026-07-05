@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, p, inp;
+    let inp, p, body;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, host, links;
+    let out, links, host;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let out, tv, lv, t, head, posts;
+    let head, lv, tv, out, t, posts;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, inp, p;
+    let inp, body, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let body, bo, ti, p, title;
+    let bo, body, ti, p, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {

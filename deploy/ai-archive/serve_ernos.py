@@ -20,10 +20,12 @@ import sqlite3
 import sys
 import threading
 import time
+import urllib.request
 
 import numpy as np
 import soundfile as sf
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
@@ -306,6 +308,43 @@ def _build_catalog():
 @app.get("/catalog")
 def catalog():
     return _build_catalog()
+
+
+# ---- AI Canvas: proxy to the standalone ErnosPlain canvas server (:8091) ------
+# The canvas engine is ErnosPlain (decent_web/htmlgen.ep, gemma4). This is a dumb
+# pass-through so the public site can reach it — no generation logic here. The
+# blocking model call runs in a threadpool so it never stalls TTS/downloads.
+_CANVAS_UPSTREAM = os.environ.get("CANVAS_UPSTREAM", "http://127.0.0.1:8091/htmlgen")
+
+
+def _canvas_page(msg):
+    return Response(
+        "<!DOCTYPE html><html><body style=\"font-family:system-ui;background:#0d1117;"
+        "color:#e6edf3;padding:2rem;line-height:1.5\">" + msg + "</body></html>",
+        media_type="text/html; charset=utf-8",
+    )
+
+
+def _fetch_canvas(method, data, ctype):
+    req = urllib.request.Request(_CANVAS_UPSTREAM, data=data, method=method)
+    if data is not None:
+        req.add_header("Content-Type", ctype or "application/x-www-form-urlencoded")
+    with urllib.request.urlopen(req, timeout=200) as r:
+        return r.read()
+
+
+@app.api_route("/htmlgen", methods=["GET", "POST"])
+async def canvas_proxy(request: Request):
+    ip = request.client.host if request.client else "?"
+    if request.method == "POST" and not _rate_ok(ip, 6.0, "canvas"):
+        return _canvas_page("One at a time — the canvas is still thinking. Give it a few seconds and try again.")
+    data = await request.body() if request.method == "POST" else None
+    ctype = request.headers.get("content-type")
+    try:
+        html = await run_in_threadpool(_fetch_canvas, request.method, data, ctype)
+        return Response(content=html, media_type="text/html; charset=utf-8")
+    except Exception:
+        return _canvas_page("The AI Canvas is offline right now — the local model or canvas server isn't reachable. Come back when the host is online.")
 
 
 # ---- Background watcher: keep the OFFLINE snapshot fresh, hands-free ------
