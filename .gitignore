@@ -1,2 +1,6 @@
 .DS_Store
 *.log
+canvas/canvas
+canvas/*_compiled.c
+canvas/*_native.*
+/stdlib

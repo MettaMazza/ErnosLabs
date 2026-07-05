@@ -1,0 +1,320 @@
+# ErnosLabs/canvas/canvas.ep — the WEBSITE's OWN standalone AI-Canvas backend.
+# Self-contained: its own copy of the engine (below), its own model on :8790, its own
+# HTTP server on :8791. It does NOT touch ErnosDecent — not its code, ports, model, or node.
+# The site's funnel (serve_ernos) proxies /htmlgen straight here.
+
+# decent_web/htmlgen.ep — the "AI Canvas".
+#
+# A JavaScript-free, form-driven UI rendered ENTIRELY by a local model as raw HTML/CSS/
+# SVG. It is SEPARATE from Echo: its own system prompt, its own synchronous model call,
+# its own web route (/htmlgen). It does NOT go through the ReAct agent or the IPC daemon,
+# so it never blocks Echo — it runs on the web-server thread and calls the model directly.
+#
+# Phase 1: non-streaming. State is carried by the forms themselves (hidden fields), so no
+# server-side history is needed — every screen the model emits encodes what to do next.
+# Security: the model output is rendered inside a script-sandboxed iframe (set by the
+# dashboard tab); we ALSO strip <script> here as defense-in-depth. Loopback-only (:8088).
+
+import "http"
+import "json"
+import "string"
+import "collections"
+import "static_server"
+
+# Reuse the node's proven chunked-transfer decoder (defined in decent_agent/llm.ep, linked
+# into the same binary) instead of importing the whole agent. A local model's non-streaming
+# response may arrive chunked; dechunk before parsing.
+# http_dechunk — copied so this canvas stands alone (no external link).
+define http_dechunk with body as Str returning Str:
+    set len to string_length(body)
+    if len < 5:
+        return body
+    set pos to 0
+    set has_crlf to 0
+    set limit to 8
+    if limit > len:
+        set limit to len
+    repeat while pos < limit and has_crlf == 0:
+        set ch to get_character(body and pos)
+        if ch == 13:
+            set next_ch to get_character(body and pos + 1)
+            if next_ch == 10:
+                set has_crlf to 1
+            else:
+                set pos to pos + 1
+        else:
+            set pos to pos + 1
+    if has_crlf == 0:
+        return body
+    set hex_str to substring(body and 0 and pos)
+    set is_hex to 1
+    set hi to 0
+    set hex_len to string_length(hex_str)
+    if hex_len == 0:
+        set is_hex to 0
+    repeat while hi < hex_len:
+        set hc to get_character(hex_str and hi)
+        if (hc >= 48 and hc <= 57) or else (hc >= 97 and hc <= 102) or else (hc >= 65 and hc <= 70):
+            set ok to 1
+        else:
+            set is_hex to 0
+        set hi to hi + 1
+    if is_hex == 0:
+        return body
+    set result_list to create_list()
+    set curr_pos to 0
+    set outer_loop to 1
+    repeat while curr_pos < len and outer_loop == 1:
+        set chunk_pos to curr_pos
+        set found_crlf to 0
+        set sub_limit to curr_pos + 8
+        if sub_limit > len:
+            set sub_limit to len
+        repeat while chunk_pos < sub_limit and found_crlf == 0:
+            set ch to get_character(body and chunk_pos)
+            if ch == 13:
+                if chunk_pos + 1 < len:
+                    set next_ch to get_character(body and chunk_pos + 1)
+                    if next_ch == 10:
+                        set found_crlf to 1
+                    else:
+                        set chunk_pos to chunk_pos + 1
+                else:
+                    set chunk_pos to chunk_pos + 1
+            else:
+                set chunk_pos to chunk_pos + 1
+        if found_crlf == 0:
+            set outer_loop to 0
+        else:
+            set size_hex to substring(body and curr_pos and chunk_pos - curr_pos)
+            set chunk_size to 0
+            set hex_idx to 0
+            set size_hex_len to string_length(size_hex)
+            repeat while hex_idx < size_hex_len:
+                set hc to get_character(size_hex and hex_idx)
+                set val to 0
+                if hc >= 48 and hc <= 57:
+                    set val to hc - 48
+                else if hc >= 97 and hc <= 102:
+                    set val to hc - 87
+                else if hc >= 65 and hc <= 70:
+                    set val to hc - 55
+                set chunk_size to chunk_size * 16 + val
+                set hex_idx to hex_idx + 1
+            if chunk_size == 0:
+                set outer_loop to 0
+            else:
+                set data_start to chunk_pos + 2
+                if data_start + chunk_size <= len:
+                    set di to 0
+                    repeat while di < chunk_size:
+                        set dc to get_character(body and data_start + di)
+                        set ok to append_list(result_list and dc)
+                        set di to di + 1
+                    set curr_pos to data_start + chunk_size + 2
+                else:
+                    set outer_loop to 0
+    set decompressed to string_from_list(result_list)
+    free_list(result_list)
+    return decompressed
+
+# ── URL / form decoding ───────────────────────────────────────────────────────
+define htmlgen_hex with c as Int returning Int:
+    if c >= 48 and also c <= 57:
+        return c - 48
+    if c >= 97 and also c <= 102:
+        return c - 87
+    if c >= 65 and also c <= 70:
+        return c - 55
+    return 0 - 1
+
+# Percent- and plus-decode an application/x-www-form-urlencoded token.
+define htmlgen_url_decode with s as Str returning Str:
+    set out to create_list()
+    set i to 0
+    set n to string_length(s)
+    repeat while i < n:
+        set c to get_character(s and i)
+        if c == 43:
+            set ok to append_list(out and 32)
+            set i to i + 1
+        else if c == 37 and also i + 2 < n:
+            set h1 to htmlgen_hex(get_character(s and i + 1))
+            set h2 to htmlgen_hex(get_character(s and i + 2))
+            if h1 >= 0 and also h2 >= 0:
+                set b to h1 * 16 + h2
+                if b > 0:
+                    set ok to append_list(out and b)
+                set i to i + 3
+            else:
+                set ok to append_list(out and c)
+                set i to i + 1
+        else:
+            set ok to append_list(out and c)
+            set i to i + 1
+    return string_from_list(out)
+
+# Turn a form body ("prompt=make+a+calculator&context=clicked_iron_age") into a readable
+# action description the model can act on. Decodes each key=value and joins them.
+define htmlgen_form_to_action with body as Str returning Str:
+    if string_length(body) == 0:
+        return "(the user opened the canvas — show a friendly welcome screen and invite them to ask for anything)"
+    set pairs to string_split(body and "&")
+    set np to length_list(pairs)
+    set action to ""
+    set i to 0
+    repeat while i < np:
+        set kv to get_list(pairs and i)
+        set eq to string_index_of(kv and "=")
+        if eq >= 0:
+            set k to htmlgen_url_decode(substring(kv and 0 and eq))
+            set v to htmlgen_url_decode(substring(kv and eq + 1 and string_length(kv) - eq - 1))
+            if string_length(action) > 0:
+                set action to concat(action and "\n")
+            set action to concat(action and concat(k and concat(": " and v)))
+        set i to i + 1
+    if string_length(action) == 0:
+        return htmlgen_url_decode(body)
+    return action
+
+# ── The engine prompt (override Markdown → pure HTML) ─────────────────────────
+define htmlgen_system_prompt returning Str:
+    set p to "You are an interactive web application ENGINE, not a chatbot.\n"
+    set p to concat(p and "Reply with a COMPLETE, valid HTML fragment ONLY. No Markdown. No code fences (never ```). No explanation. No <html>/<head>/<body> wrapper.\n")
+    set p to concat(p and "Allowed: normal HTML tags, inline CSS inside a <style> tag, SVG, and MathML. FORBIDDEN: <script>, JavaScript, and on* event attributes (onclick etc.) — none of them will run.\n")
+    set p to concat(p and "EVERY interactive element (a link, a button, a menu item, a game move, a toggle) MUST be an HTML form: <form method=\"POST\" action=\"/htmlgen\"> ... <button>label</button></form>. Encode what the click means in <input type=\"hidden\" name=\"...\" value=\"...\"> fields, INCLUDING any game/app state, so the next request can continue from it. Style the forms and buttons with CSS to look like normal UI (no raw form borders).\n")
+    set p to concat(p and "Render a single self-contained, visually polished screen that answers the user's request or reacts to their action. Put ALL state you need into the hidden fields you emit — there is no other memory between turns.\n")
+    return p
+
+define htmlgen_build_prompt with user_action as Str returning Str:
+    set full to htmlgen_system_prompt()
+    set full to concat(full and "\n\n--- USER ACTION / REQUEST ---\n")
+    set full to concat(full and user_action)
+    set full to concat(full and "\n\n--- Output the next screen now, as raw HTML only. ---")
+    return full
+
+# ── Output cleaning ───────────────────────────────────────────────────────────
+# Remove any <tag...>...</close> region (best-effort; bounded loop). The iframe sandbox
+# is the real guard — this is defense-in-depth against a stray <script>.
+define htmlgen_strip_region with s as Str and open_tok as Str and close_tok as Str returning Str:
+    set out to s
+    set guard to 0
+    repeat while guard < 100:
+        set lo to string_index_of(out and open_tok)
+        if lo < 0:
+            return out
+        set after to substring(out and lo and string_length(out) - lo)
+        set rel to string_index_of(after and close_tok)
+        if rel < 0:
+            return substring(out and 0 and lo)
+        set endp to lo + rel + string_length(close_tok)
+        set before to substring(out and 0 and lo)
+        set tail to substring(out and endp and string_length(out) - endp)
+        set out to concat(before and tail)
+        set guard to guard + 1
+    return out
+
+define htmlgen_clean_html with raw as Str returning Str:
+    set s to string_trim(raw)
+    set s to string_replace(s and "```html" and "")
+    set s to string_replace(s and "```HTML" and "")
+    set s to string_replace(s and "```" and "")
+    set s to htmlgen_strip_region(s and "<script" and "</script>")
+    set s to htmlgen_strip_region(s and "<SCRIPT" and "</SCRIPT>")
+    return string_trim(s)
+
+# ── The model call (SYNC, own path) ───────────────────────────────────────────
+# gemma4 on Ollama (:11434) — faster, and kept off :8080/Qwen which other programs use.
+# No ReAct stop sequences, large token budget; the content channel is pure HTML.
+define htmlgen_extract_content with resp as Str returning Str:
+    if string_length(resp) == 0:
+        return ""
+    set decoded to http_dechunk(resp)
+    set root to json_parse(decoded)
+    if root == 0:
+        return ""
+    set choices to get_json_object_value(root and "choices")
+    if choices == 0:
+        return ""
+    set clist to get_json_value(choices)
+    if length_list(clist) == 0:
+        return ""
+    set c0 to get_list(clist and 0)
+    set msg to get_json_object_value(c0 and "message")
+    if msg == 0:
+        return ""
+    set cn to get_json_object_value(msg and "content")
+    if cn == 0:
+        return ""
+    return get_json_value(cn)
+
+define htmlgen_llm_call with prompt as Str returning Str:
+    set headers to "Content-Type: application/json"
+    set esc to json_escape_string(prompt)
+    # The AI Canvas has its OWN dedicated model (gpt-oss-20b, a reasoning model) on its OWN
+    # llama-server at :8082, auto-started at node boot. It is deliberately isolated from Qwen
+    # (:8080) and gemma/Ollama (:11434) — Echo's router never scans :8082 — so the canvas
+    # never queues behind, nor evicts, the models used for real work. Served as "canvas".
+    # reasoning_effort=low keeps gpt-oss from over-thinking each screen (faster; less chance
+    # its analysis leaks into the HTML). Ignored by non-reasoning backends.
+    set body to concat("{\"model\": \"canvas\", \"messages\": [{\"role\": \"user\", \"content\": \"" and esc)
+    set body to concat(body and "\"}], \"max_tokens\": 16384, \"reasoning_effort\": \"low\"}")
+    set resp to http_post("http://127.0.0.1:8790/v1/chat/completions" and headers and body)
+    return htmlgen_extract_content(resp)
+
+# ── Page assembly ─────────────────────────────────────────────────────────────
+# Wrap an inner HTML fragment in the persistent shell (a freeform prompt bar that is
+# always available, plus the model-rendered content below it).
+define htmlgen_wrap with inner as Str returning Str:
+    set h to "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"color-scheme\" content=\"dark light\"><style>*{box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#0d1117;color:#e6edf3}form.ask{display:flex;gap:.5rem;padding:.75rem 1rem;border-bottom:1px solid #30363d;position:sticky;top:0;background:#0d1117;z-index:9}form.ask input[name=prompt]{flex:1;padding:.55rem .7rem;border-radius:8px;border:1px solid #30363d;background:#161b22;color:#e6edf3;font-size:14px}form.ask button{padding:.55rem 1rem;border-radius:8px;border:0;background:#238636;color:#fff;cursor:pointer;font-weight:600}.canvas{padding:1rem}</style></head><body>"
+    set h to concat(h and "<form class=\"ask\" method=\"POST\" action=\"/htmlgen\"><input name=\"prompt\" placeholder=\"Ask for anything — a Connect 4 game, a wiki page, a calculator...\" autofocus><button type=\"submit\">Generate</button></form>")
+    set h to concat(h and "<div class=\"canvas\">")
+    set h to concat(h and inner)
+    set h to concat(h and "</div></body></html>")
+    return h
+
+# GET /htmlgen — the opening screen.
+define htmlgen_home returning Str:
+    set welcome to "<div style=\"opacity:.75;max-width:46rem;line-height:1.5\"><h2 style=\"margin-top:.5rem\">AI Canvas</h2><p>This surface is rendered entirely by your <b>local model</b> as HTML — no JavaScript runs here. Type a request above and the model returns a full interactive screen. Every button on it is a tiny form that asks the model for the next screen.</p><p>Try: <i>“make a Connect 4 game”</i>, <i>“a calculator”</i>, <i>“a wikipedia-style page about the Iron Age with clickable links”</i>.</p></div>"
+    return htmlgen_wrap(welcome)
+
+# POST /htmlgen — render the next screen for a submitted form/action.
+define htmlgen_render with form_body as Str returning Str:
+    set action to htmlgen_form_to_action(form_body)
+    set prompt to htmlgen_build_prompt(action)
+    set raw to htmlgen_llm_call(prompt)
+    if string_length(raw) == 0:
+        return htmlgen_wrap("<div style=\"padding:2rem;color:#f85149\">The canvas model (gpt-oss-20b) is not reachable on :8082. It auto-starts with the node — check ~/.ernosdecent/canvas-llama.log if it did not come up.</div>")
+    return htmlgen_wrap(htmlgen_clean_html(raw))
+
+# ── Standalone HTTP server (this file's own; :8791) ───────────────────────────
+set CANVAS_PORT to 8791
+
+define canvas_request_body with req as Str returning Str:
+    set pos to string_index_of(req and "\r\n\r\n")
+    if pos < 0:
+        return ""
+    set start to pos + 4
+    return substring(req and start and string_length(req) - start)
+
+define canvas_handle with client_fd as Int and req_str as Str:
+    set method to string_upper(extract_request_method(req_str))
+    if method equals "POST":
+        set html to htmlgen_render(canvas_request_body(req_str))
+    else:
+        set html to htmlgen_home()
+    set ok to send_response(client_fd and 200 and "text/html; charset=utf-8" and html)
+    return 0
+
+define main:
+    set server to start_server(CANVAS_PORT)
+    if server == 0:
+        display f"[-] site canvas: could not bind :{CANVAS_PORT}"
+        return 1
+    display f"[*] site canvas backend on :{CANVAS_PORT} (own engine, own model :8790)"
+    repeat while 1 == 1:
+        set request to receive from server
+        set client_fd to get_list(request and 0)
+        set req_str to get_list(request and 1)
+        canvas_handle(client_fd and req_str)
+    return 0

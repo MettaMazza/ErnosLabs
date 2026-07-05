@@ -310,11 +310,11 @@ def catalog():
     return _build_catalog()
 
 
-# ---- AI Canvas: proxy to the standalone ErnosPlain canvas server (:8091) ------
-# The canvas engine is ErnosPlain (decent_web/htmlgen.ep, gemma4). This is a dumb
-# pass-through so the public site can reach it — no generation logic here. The
-# blocking model call runs in a threadpool so it never stalls TTS/downloads.
-_CANVAS_UPSTREAM = os.environ.get("CANVAS_UPSTREAM", "http://127.0.0.1:8091/htmlgen")
+# ---- AI Canvas: the site's OWN standalone backend (ErnosLabs/canvas) ----------
+# Self-contained: its own copy of the ErnosPlain engine + server on :8791, and its own
+# model (gpt-oss-20b, alias "canvas") on :8790. It does NOT touch ErnosDecent — not its
+# code, ports, model, or node. This funnel proxies /htmlgen to it and keeps it alive.
+_CANVAS_UPSTREAM = os.environ.get("CANVAS_UPSTREAM", "http://127.0.0.1:8791/htmlgen")
 
 
 def _canvas_page(msg):
@@ -348,9 +348,8 @@ async def canvas_proxy(request: Request):
 
 
 # ---- Canvas services supervisor -----------------------------------------
-# The AI Canvas must work whenever THIS website backend is up — with the ErnosDecent
-# node completely OFF. So the always-on funnel owns the canvas's dedicated processes:
-# its :8082 model (Llama-3.1-8B, alias "canvas") and its :8091 ErnosPlain server.
+# The site's funnel owns the canvas's OWN dedicated processes (nothing of ErnosDecent's):
+# its gpt-oss-20b model (alias "canvas") on :8790 and its ErnosPlain server on :8791.
 # Idempotent (only launches a process whose port is down); detached (start_new_session)
 # so they survive a funnel restart and are re-adopted by the port check.
 import shutil
@@ -358,11 +357,11 @@ import subprocess
 
 _CANVAS_BIN = os.environ.get(
     "CANVAS_BIN",
-    str(pathlib.Path.home() / "Desktop" / "ErnosDecent." / "decent_web" / "canvas_server"),
+    str(pathlib.Path.home() / "Desktop" / "ErnosLabs" / "canvas" / "canvas"),
 )
 _CANVAS_MODEL = os.environ.get(
     "CANVAS_MODEL",
-    str(pathlib.Path.home() / "models" / "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"),
+    str(pathlib.Path.home() / "models" / "gpt-oss-20b-Q4_K_M.gguf"),
 )
 _LLAMA_SERVER = shutil.which("llama-server") or "/opt/homebrew/bin/llama-server"
 
@@ -376,23 +375,23 @@ def _port_ok(url):
 
 
 def _ensure_canvas():
-    if not _port_ok("http://127.0.0.1:8082/v1/models") and os.path.exists(_CANVAS_MODEL):
+    if not _port_ok("http://127.0.0.1:8790/v1/models") and os.path.exists(_CANVAS_MODEL):
         subprocess.Popen(
-            [_LLAMA_SERVER, "-m", _CANVAS_MODEL, "--host", "127.0.0.1", "--port", "8082",
+            [_LLAMA_SERVER, "-m", _CANVAS_MODEL, "--host", "127.0.0.1", "--port", "8790",
              "--alias", "canvas", "-c", "32768", "-b", "2048", "-ub", "2048", "-np", "1",
              "-fa", "on", "-ngl", "999", "--jinja"],
             start_new_session=True,
             stdout=open("/tmp/ernos-canvas-model.log", "a"),
             stderr=subprocess.STDOUT,
         )
-        print("[canvas] launched model on :8082", flush=True)
-    if not _port_ok("http://127.0.0.1:8091/htmlgen") and os.path.exists(_CANVAS_BIN):
+        print("[canvas] launched model on :8790", flush=True)
+    if not _port_ok("http://127.0.0.1:8791/htmlgen") and os.path.exists(_CANVAS_BIN):
         subprocess.Popen(
             [_CANVAS_BIN], start_new_session=True,
             stdout=open("/tmp/ernos-canvas.log", "a"),
             stderr=subprocess.STDOUT,
         )
-        print("[canvas] launched server on :8091", flush=True)
+        print("[canvas] launched server on :8791", flush=True)
 
 
 def _canvas_supervisor():
