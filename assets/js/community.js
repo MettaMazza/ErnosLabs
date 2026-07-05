@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let btns, secs;
+    let secs, btns;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -148,7 +148,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let add, log;
+    let log, add;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, p, inp;
+    let p, body, inp;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, links, host;
+    let host, links, out;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, posts, out, t, lv, tv;
+    let head, lv, posts, out, t, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let bo, title, p, ti, body;
+    let ti, title, p, bo, body;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {

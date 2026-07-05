@@ -122,7 +122,7 @@ p { margin: 0 0 1.1em; }
   width: 26px; height: 26px; flex-shrink: 0;
   filter: drop-shadow(0 0 8px rgba(79,240,196,.6));
 }
-.nav__links { display: flex; gap: 2px; margin-left: auto; align-items: center; }
+.nav__links { display: flex; gap: 2px; align-items: center; flex-shrink: 0; }
 .nav__links a {
   color: var(--ink-1); font-size: .9rem; padding: 7px 10px; border-radius: var(--r-pill);
   transition: background .2s, color .2s; white-space: nowrap;
@@ -149,14 +149,14 @@ p { margin: 0 0 1.1em; }
 .nav__drop-menu a { display: block; white-space: nowrap; }
 
 /* global read-aloud player, centred in the nav */
-.navplayer { flex: 1; display: flex; align-items: center; justify-content: center; gap: 11px; min-width: 0; max-width: 240px; margin-inline: auto; }
+.navplayer { flex: 1; display: flex; align-items: center; justify-content: center; gap: 11px; min-width: 0; padding-inline: 18px; }
 .navplayer__btn {
   flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
   background: var(--bg-3); border: 1px solid var(--line); color: var(--glow); font-size: .82rem;
   display: flex; align-items: center; justify-content: center; transition: background .2s, border-color .2s, transform .15s;
 }
 .navplayer__btn:hover { background: var(--bg-4); border-color: var(--glow-dim); transform: scale(1.06); }
-.navplayer__bar { flex: 1; height: 4px; min-width: 40px; background: var(--bg-4); border-radius: var(--r-pill); overflow: hidden; }
+.navplayer__bar { flex: 0 1 150px; height: 4px; min-width: 40px; max-width: 150px; background: var(--bg-4); border-radius: var(--r-pill); overflow: hidden; }
 .navplayer__fill { width: 0; height: 100%; background: linear-gradient(90deg, var(--glow-dim), var(--glow)); border-radius: var(--r-pill); transition: width .25s var(--ease); }
 .navplayer__fill.np-indet { width: 40% !important; background: linear-gradient(90deg, transparent, var(--glow), var(--accent), transparent); border-radius: var(--r-pill); transition: none; animation: np-sweep 1.0s ease-in-out infinite; }
 @keyframes np-sweep { 0% { margin-left: -40%; } 100% { margin-left: 100%; } }
