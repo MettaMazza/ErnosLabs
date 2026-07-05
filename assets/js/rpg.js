@@ -264,7 +264,7 @@ Player.prototype.heal = function(amount) {
 };
 Player.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg, roll;
+    let dmg, new_hp, roll;
     roll = ep_random_int(1, 100);
     dmg = self.atk;
     if ((roll > 80)) {
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let i, len, count, member;
+    let len, count, i, member;
     count = 0;
     len = team.length;
     i = 0;
@@ -379,7 +379,7 @@ function count_alive(team) {
 }
 
 function get_first_alive(team) {
-    let len, i, member, fallback;
+    let member, fallback, len, i;
     len = team.length;
     i = 0;
     while ((i < len)) {
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let goblin, party_idx, hero_struct, ok, hero_ref, target, orc_struct, i, r, orc, party_len, hero, goblin_struct, enemy_len, party, round, member, healer_struct, enemy, healer, enemies;
+    let hero_ref, r, party_idx, member, healer_struct, i, goblin_struct, hero_struct, healer, orc_struct, ok, round, party, orc, enemy_len, enemy, party_len, goblin, target, hero, enemies;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");

@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let b, o;
+    let o, b;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let btn, sec;
+    let sec, btn;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -209,7 +209,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let tv, lv;
+    let lv, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let tv, out, head, t, posts, lv;
+    let head, posts, out, t, lv, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, p, inp;
+    let p, inp, body;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let body, p, title, bo, ti;
+    let bo, title, p, ti, body;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
