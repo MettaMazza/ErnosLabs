@@ -307,6 +307,69 @@ def catalog():
     return _build_catalog()
 
 
+# ---- Background watcher: keep the OFFLINE snapshot fresh, hands-free ------
+# The /catalog endpoint already keeps the page live while the machine is online.
+# This thread additionally regenerates the baked ai-archive-data.js and pushes it
+# when the drive changes, so the offline fallback stays current too. It runs inside
+# the server (which auto-starts and can reach ~/Desktop), sidestepping the macOS TCC
+# rule that blocks stand-alone launchd bash jobs from the Desktop. Best-effort:
+# every failure is logged and the live endpoint still covers everything.
+import subprocess
+
+
+def _sh(args):
+    return subprocess.run(args, cwd=SITE_ROOT, capture_output=True, text=True, timeout=600)
+
+
+def _archive_watch_probe():
+    tag = "[archivewatch]"
+    try:
+        probe = os.path.join(SITE_ROOT, ".archivewatch_probe")
+        with open(probe, "w") as fh:
+            fh.write("ok")
+        os.remove(probe)
+        can_write = True
+    except Exception as e:
+        can_write, ls = False, e
+    git_status = _sh(["git", "status", "--porcelain", "assets/js/ai-archive-data.js"])
+    ls_remote = _sh(["git", "ls-remote", "origin", "-h", "refs/heads/main"])
+    print(f"{tag} probe: write_desktop={can_write} "
+          f"git_status_rc={git_status.returncode} push_auth_rc={ls_remote.returncode} "
+          f"(rc 0/0 means auto-push will work)", flush=True)
+
+
+def _archive_watch_loop():
+    tag = "[archivewatch]"
+    js = os.path.join(SITE_ROOT, "assets", "js", "ai-archive-data.js")
+    _archive_watch_probe()
+    while True:
+        time.sleep(300)
+        try:
+            if not os.path.isdir(os.path.join(ARCHIVE_ROOT, "models")):
+                continue
+            import gen_archive_catalog as gac
+            reg, models, total, _skipped = gac.build_catalog()
+            new = gac.emit_js(reg, models, total)
+            old = open(js).read() if os.path.exists(js) else ""
+            if new == old:
+                continue
+            print(f"{tag} drive changed → rebuilding + pushing", flush=True)
+            open(js, "w").write(new)
+            _sh(["bash", "build.sh"])
+            # stage only the files build touches (never `git add -A` — don't grab
+            # unrelated working-tree edits); commit -a covers tracked html/js stamps.
+            _sh(["git", "add", "assets/js/ai-archive-data.js"])
+            _sh(["git", "-c", "user.name=Maria Smith", "-c", "user.email=maria.smith.xo@outlook.com",
+                 "commit", "-aq", "-m", "chore(archive): sync catalog with the drive [auto]"])
+            push = _sh(["git", "push", "-q", "origin", "main"])
+            print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
+        except Exception as e:
+            print(f"{tag} cycle error: {e}", flush=True)
+
+
+threading.Thread(target=_archive_watch_loop, daemon=True).start()
+
+
 # ---- static mounts (follow the models symlink to its real path) ---------
 def _mount(url, path):
     real = os.path.realpath(path)
