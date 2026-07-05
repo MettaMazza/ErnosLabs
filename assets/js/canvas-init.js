@@ -41,6 +41,8 @@
       if (busy) return;
       var params = new URLSearchParams();
       new FormData(e.currentTarget).forEach(function (v, k) { params.append(k, v); });
+      // include the clicked button's name/value (native submit would; FormData won't)
+      if (e.submitter && e.submitter.name) params.append(e.submitter.name, e.submitter.value || "");
       go("POST", params.toString());
     }
 
