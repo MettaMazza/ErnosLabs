@@ -15,6 +15,7 @@ import io
 import json
 import os
 import pathlib
+import re
 import sqlite3
 import sys
 import threading
@@ -355,14 +356,27 @@ def _archive_watch_loop():
             old = open(js).read() if os.path.exists(js) else ""
             if new == old:
                 continue
-            print(f"{tag} drive changed → rebuilding + pushing", flush=True)
+            print(f"{tag} catalog changed → stamping + pushing", flush=True)
             open(js, "w").write(new)
-            _sh(["bash", "build.sh"])
-            # stage only the files build touches (never `git add -A` — don't grab
-            # unrelated working-tree edits); commit -a covers tracked html/js stamps.
-            _sh(["git", "add", "assets/js/ai-archive-data.js"])
+            # Re-stamp ONLY ai.html's cache-bust hash for the catalog (same sha1[:8]
+            # build.sh uses). We deliberately do NOT run build.sh: it recompiles every
+            # .ep, whose emitter output isn't byte-stable, so it would churn all 14 JS
+            # files each cycle. And we stage exactly the two files we touched — never
+            # `git add -A`/`commit -a`, so an unrelated working-tree edit is never swept in.
+            import hashlib
+            h = hashlib.sha1(new.encode("utf-8")).hexdigest()[:8]
+            ai_html = os.path.join(SITE_ROOT, "ai.html")
+            try:
+                page = open(ai_html, encoding="utf-8").read()
+                stamped = re.sub(r"ai-archive-data\.js(\?v=[0-9a-f]+)?",
+                                 f"ai-archive-data.js?v={h}", page)
+                if stamped != page:
+                    open(ai_html, "w", encoding="utf-8").write(stamped)
+            except Exception as e:
+                print(f"{tag} stamp warn: {e}", flush=True)
+            _sh(["git", "add", "assets/js/ai-archive-data.js", "ai.html"])
             _sh(["git", "-c", "user.name=Maria Smith", "-c", "user.email=maria.smith.xo@outlook.com",
-                 "commit", "-aq", "-m", "chore(archive): sync catalog with the drive [auto]"])
+                 "commit", "-q", "-m", "chore(archive): sync catalog with the drive [auto]"])
             push = _sh(["git", "push", "-q", "origin", "main"])
             print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
         except Exception as e:
