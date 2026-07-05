@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let btn, sec;
+    let sec, btn;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -148,7 +148,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let log, add;
+    let add, log;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let inp, p, body;
+    let inp, body, p;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -209,7 +209,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let tv, lv;
+    let lv, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, links, host;
+    let out, host, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, t, posts, out, tv, lv;
+    let out, head, lv, t, posts, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, p, inp;
+    let p, body, inp;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let title, ti, bo, body, p;
+    let body, p, bo, ti, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {

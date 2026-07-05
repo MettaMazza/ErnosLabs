@@ -14,6 +14,7 @@ Usage: python3 gen_archive_catalog.py            # writes the .js (and prints a 
 import json
 import os
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -48,21 +49,48 @@ def _iter_files(path):
             yield os.path.join(root, f), f
 
 
+_SHARD_RE = re.compile(r"-(\d+)-of-(\d+)\.")
+
+
 def scan_entry(path):
-    """Return (size_bytes, has_weights, incomplete_count) for a model file or dir."""
+    """Return (size_bytes, ready) for a model file or dir.
+
+    A model is ready only when its weights are all there and finished:
+      - has at least one finalized weight file, AND
+      - every sharded set is complete (all NN-of-MM present — catches Kimi at 9/14),
+      - and no half-downloaded single file sits in the folder.
+    HF .incomplete blobs under the .cache/ tree are ignored (they can be stale, like
+    GPT-J's, and the shard check is the real signal for multi-part downloads)."""
     if os.path.isfile(path):
-        return os.path.getsize(path), _is_weight(os.path.basename(path)), 0
+        return os.path.getsize(path), _is_weight(os.path.basename(path))
     size = 0
     has_weights = False
-    for fp, name in _iter_files(path):
-        try:
-            size += os.path.getsize(fp)
-        except OSError:
-            pass
-        if _is_weight(name):
-            has_weights = True
-    incomplete = sum(1 for _r, _d, fs in os.walk(path) for x in fs if x.endswith(".incomplete"))
-    return size, has_weights, incomplete
+    shards = {}  # MM -> set of NN present
+    dir_incomplete = 0
+    for root, dirs, files in os.walk(path):
+        in_cache = os.sep + ".cache" in root + os.sep
+        dirs[:] = [d for d in dirs if d != ".cache"]
+        for name in files:
+            if name.startswith("._"):
+                continue
+            fp = os.path.join(root, name)
+            if not in_cache and name.endswith(".incomplete"):
+                dir_incomplete += 1
+            if in_cache:
+                continue
+            try:
+                size += os.path.getsize(fp)
+            except OSError:
+                pass
+            if _is_weight(name):
+                has_weights = True
+                m = _SHARD_RE.search(name)
+                if m:
+                    nn, mm = int(m.group(1)), int(m.group(2))
+                    shards.setdefault(mm, set()).add(nn)
+    shard_complete = all(len(nns) == mm for mm, nns in shards.items())
+    ready = has_weights and shard_complete and dir_incomplete == 0
+    return size, ready
 
 
 def human(nbytes):
@@ -81,7 +109,7 @@ def build_catalog():
     by_disk = {m["disk"]: m for m in reg["models"]}
     order = {m["disk"]: i for i, m in enumerate(reg["models"])}
 
-    present = {}  # disk -> (folder, path, size, has_weights, incomplete)
+    present = {}  # disk -> (folder, path, size, ready)
     if MODELS_DIR.is_dir():
         for folder in sorted(os.listdir(MODELS_DIR)):
             fdir = MODELS_DIR / folder
@@ -91,15 +119,13 @@ def build_catalog():
                 if entry.startswith("._") or entry in (".cache", ".DS_Store"):
                     continue
                 p = fdir / entry
-                size, has_w, inc = scan_entry(str(p))
-                present[entry] = (folder, str(p), size, has_w, inc)
+                size, ready = scan_entry(str(p))
+                present[entry] = (folder, str(p), size, ready)
 
     models, skipped = [], []
-    for disk, (folder, path, size, has_w, inc) in present.items():
-        registered = disk in by_disk
-        ready = has_w and (registered or inc == 0)
+    for disk, (folder, path, size, ready) in present.items():
         if not ready:
-            skipped.append((disk, "downloading" if inc else "no weights"))
+            skipped.append((disk, "still downloading / incomplete"))
             continue
         meta = by_disk.get(disk)
         is_dir = os.path.isdir(path)
@@ -129,7 +155,7 @@ def build_catalog():
     total = 0
     for m in models:
         disk = m["path"].split("/", 2)[2]
-        total += present.get(disk, (0, 0, 0, 0, 0))[2]
+        total += present.get(disk, (None, None, 0, False))[2]
     return reg, models, total, skipped
 
 

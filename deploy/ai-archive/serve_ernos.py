@@ -342,8 +342,10 @@ def _archive_watch_loop():
     tag = "[archivewatch]"
     js = os.path.join(SITE_ROOT, "assets", "js", "ai-archive-data.js")
     _archive_watch_probe()
+    first = True
     while True:
-        time.sleep(300)
+        time.sleep(15 if first else 300)  # catch up shortly after boot, then every 5 min
+        first = False
         try:
             if not os.path.isdir(os.path.join(ARCHIVE_ROOT, "models")):
                 continue

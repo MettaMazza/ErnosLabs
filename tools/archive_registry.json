@@ -658,6 +658,22 @@
       ],
       "cmd": "llama-cli -m Qwen3-Coder-480B-A35B-Instruct-Q4_K_M-00001-of-*.gguf -p \"write a function\"",
       "desc": "Alibaba's flagship open coding model — 480B total, 35B active per token; frontier-scale, quantised to run on a big rig."
+    },
+    {
+      "disk": "Kimi-K2.6",
+      "folder": "GGUF_Models",
+      "id": "kimi-k2",
+      "name": "Kimi-K2 (Moonshot)",
+      "cat": "llm",
+      "fmt": "GGUF · UD-Q4_K_XL",
+      "repo": "unsloth/Kimi-K2-Instruct-GGUF",
+      "license": "Modified MIT",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Kimi-K2.6-UD-Q4_K_XL-00001-of-00014.gguf -p \"Hello\"",
+      "desc": "Moonshot AI's Kimi K2 — a ~1-trillion-parameter open mixture-of-experts model (32B active per token); one of the largest openly-downloadable LLMs, quantised to run on a big rig."
     }
   ]
 }
