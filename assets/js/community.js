@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let o, b;
+    let b, o;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let btns, secs;
+    let secs, btns;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let sec, btn;
+    let btn, sec;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let inp, body, p;
+    let body, p, inp;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -209,7 +209,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let lv, tv;
+    let tv, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, host, links;
+    let out, links, host;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let out, head, lv, t, posts, tv;
+    let tv, out, head, t, posts, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let p, body, inp;
+    let body, p, inp;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let body, p, bo, ti, title;
+    let body, p, title, bo, ti;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
