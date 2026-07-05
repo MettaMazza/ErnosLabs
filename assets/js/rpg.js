@@ -264,7 +264,7 @@ Player.prototype.heal = function(amount) {
 };
 Player.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, roll, new_hp;
+    let new_hp, dmg, roll;
     roll = ep_random_int(1, 100);
     dmg = self.atk;
     if ((roll > 80)) {
@@ -311,7 +311,7 @@ Companion.prototype.heal = function(amount) {
 };
 Companion.prototype.attack_target = function(target) {
     const self = this;
-    let dmg, new_hp;
+    let new_hp, dmg;
     dmg = self.atk;
     console.log((((((("🪄  " + String(self.name)) + " shoots a magic bolt at ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -352,7 +352,7 @@ Monster.prototype.heal = function(amount) {
 };
 Monster.prototype.attack_target = function(target) {
     const self = this;
-    let new_hp, dmg;
+    let dmg, new_hp;
     dmg = (self.atk + ep_random_int((0 - 2), 2));
     console.log((((((((("👹  [" + String(self.species)) + "] ") + String(self.name)) + " claws ") + String(target.get_name())) + " for ") + String(dmg)) + " damage!"));
     new_hp = target.take_damage(dmg);
@@ -364,7 +364,7 @@ Monster.prototype.is_alive = function() {
 };
 
 function count_alive(team) {
-    let i, count, member, len;
+    let count, len, i, member;
     count = 0;
     len = team.length;
     i = 0;
@@ -379,7 +379,7 @@ function count_alive(team) {
 }
 
 function get_first_alive(team) {
-    let member, fallback, i, len;
+    let len, member, fallback, i;
     len = team.length;
     i = 0;
     while ((i < len)) {
@@ -411,7 +411,7 @@ function display_team_status(team_name, team) {
 }
 
 function main() {
-    let goblin_struct, orc_struct, ok, healer, r, enemies, target, enemy_len, hero_struct, healer_struct, enemy, party, hero, round, goblin, i, member, hero_ref, orc, party_len, party_idx;
+    let hero_struct, party, party_len, hero_ref, r, goblin_struct, healer, goblin, target, enemy, party_idx, ok, hero, enemy_len, member, orc, enemies, healer_struct, round, i, orc_struct;
     console.log("=============================================");
     console.log("⚔️  WELCOME TO THE ERNOSPLAIN RPG ENTIRETY ⚔️");
     console.log("=============================================");

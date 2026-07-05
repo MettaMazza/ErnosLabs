@@ -1074,3 +1074,75 @@ pre {
   .axiom-eq-row { flex-direction: column; }
   .axiom-eq-block { padding: 10px 0; }
 }
+
+/* =========================================================================
+   COMMUNITY (community.html) — kept here, not inline in the page, so SPA
+   navigation (which swaps only #view, not <head>) never shows it unstyled.
+   ========================================================================= */
+.cm-shell{max-width:860px}
+.cm-status{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 16px;border-radius:999px;
+  font-size:.88rem;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+.cm-status.is-online{border-color:var(--glow-dim);color:var(--ink-1)}
+.cm-id{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:20px 0 0}
+.cm-id label{color:var(--ink-3);font-size:.9rem}
+.cm-id input{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-0);
+  border-radius:10px;padding:9px 13px;font:inherit;min-width:170px}
+.cm-id input:focus{outline:none;border-color:var(--glow)}
+.cm-tabs{display:flex;gap:8px;margin:24px 0 20px;flex-wrap:wrap}
+.cm-tabbtn{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2);
+  border-radius:999px;padding:9px 20px;font:600 .95rem/1 "Space Grotesk",sans-serif;cursor:pointer;transition:.15s}
+.cm-tabbtn:hover{color:var(--ink-0);border-color:var(--glow-dim)}
+.cm-tabbtn.active{background:var(--glow);border-color:var(--glow);color:#08131b}
+
+/* chat */
+.cm-panel{background:var(--bg-1);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 20px 55px -34px rgba(0,0,0,.75)}
+.cm-chat-log{height:min(48vh,420px);min-height:280px;overflow-y:auto;padding:18px;
+  display:flex;flex-direction:column;gap:12px;justify-content:flex-end}
+.cm-chat-log:empty{justify-content:center;align-items:center}
+.cm-chat-log:empty::before{content:"No messages yet — say hello and get the room started 👋";
+  color:var(--ink-3);text-align:center;max-width:32ch;font-size:.95rem;line-height:1.55}
+.cm-msg{align-self:flex-start;max-width:min(88%,560px);background:var(--bg-2);
+  border:1px solid var(--line-soft);border-radius:14px;padding:10px 15px}
+.cm-msg__name{color:var(--glow);font-weight:600;font-size:.9rem}
+.cm-msg__time{color:var(--ink-3);font-size:.74rem;margin-left:8px}
+.cm-msg__body{color:var(--ink-1);margin-top:4px;white-space:pre-wrap;word-break:break-word;line-height:1.5}
+.cm-composer{display:flex;gap:10px;align-items:flex-end;padding:14px;border-top:1px solid var(--line);background:var(--bg-2)}
+.cm-composer textarea{flex:1;background:var(--bg-1);border:1px solid var(--line);color:var(--ink-0);
+  border-radius:12px;padding:12px 14px;font:inherit;resize:none;min-height:46px;max-height:150px;line-height:1.45}
+.cm-composer textarea:focus{outline:none;border-color:var(--glow)}
+.cm-composer .btn{white-space:nowrap;height:46px;padding-top:0;padding-bottom:0}
+
+/* forum */
+.cm-threads{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.cm-thread{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;
+  background:var(--bg-1);border:1px solid var(--line);border-radius:14px;padding:15px 18px;cursor:pointer;width:100%;transition:.15s}
+.cm-thread:hover{border-color:var(--glow-dim);transform:translateY(-1px)}
+.cm-thread__title{color:var(--ink-0);font-weight:600;font-size:1.05rem}
+.cm-thread__meta{color:var(--ink-3);font-size:.82rem}
+.cm-empty{color:var(--ink-3);text-align:center;padding:34px 0}
+.cm-sep{display:flex;align-items:center;gap:12px;color:var(--ink-3);font-size:.82rem;
+  text-transform:uppercase;letter-spacing:.09em;margin:26px 0 14px}
+.cm-sep::before,.cm-sep::after{content:"";flex:1;height:1px;background:var(--line)}
+.cm-form{background:var(--bg-1);border:1px solid var(--line);border-radius:16px;padding:20px}
+.cm-form h3{margin:0 0 6px;font-size:1.12rem}
+.cm-form .cm-hint{color:var(--ink-3);font-size:.85rem;margin:0 0 16px}
+.cm-form input,.cm-form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);
+  color:var(--ink-0);border-radius:11px;padding:12px 14px;font:inherit;margin-bottom:12px}
+.cm-form input:focus,.cm-form textarea:focus{outline:none;border-color:var(--glow)}
+.cm-form textarea{resize:vertical;min-height:120px}
+.cm-thread__h{margin:0 0 6px}
+.cm-op{margin:0}
+.cm-op__body{padding:8px 0 18px;border-bottom:1px solid var(--line);margin-bottom:8px;color:var(--ink-1);line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.cm-post{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.cm-post__by{margin:0}
+.cm-back{background:none;border:0;color:var(--glow);cursor:pointer;font:600 .95rem "Space Grotesk";padding:0;margin-bottom:18px}
+
+/* faq */
+.cm-faq details{border-bottom:1px solid var(--line);padding:16px 2px}
+.cm-faq summary{cursor:pointer;color:var(--ink-0);font:600 1.06rem "Space Grotesk";list-style:none;display:flex;gap:10px}
+.cm-faq summary::-webkit-details-marker{display:none}
+.cm-faq summary::before{content:"＋";color:var(--glow)}
+.cm-faq details[open] summary::before{content:"－"}
+.cm-faq p{color:var(--ink-2);line-height:1.65;margin:12px 0 0;padding-left:22px}
+@media (max-width:560px){ .cm-chat-log{height:56vh} }

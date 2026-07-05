@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, i, n;
+    let n, nodes, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let canvas, w, dpr, h, ctx;
+    let ctx, w, canvas, dpr, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let nodes, b, ctx, i, dx, dist, j, n, count, dy, h, a, w, alpha;
+    let alpha, nodes, i, a, dist, w, h, b, n, dy, count, j, dx, ctx;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, canvas, density;
+    let canvas, density, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -158,7 +158,7 @@ function drop_close(ev) {
 }
 
 function nav_init() {
-    let dbtn, burger;
+    let burger, dbtn;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -172,7 +172,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let links, href, dbtn, act, path;
+    let links, dbtn, act, path, href;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -208,7 +208,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, args, obs, IO, opts;
+    let els, obs, args, opts, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -238,7 +238,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let txt, parts, dt, i, n, cls, nodes, doc;
+    let i, parts, nodes, txt, cls, doc, dt, n;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -283,7 +283,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let pct, ph, fill, status, btn;
+    let btn, ph, pct, fill, status;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

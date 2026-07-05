@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -167,7 +167,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let p, body, inp;
+    let body, p, inp;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -233,7 +233,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let host, links, out;
+    let out, host, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +273,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, lv, posts, out, t, tv;
+    let out, tv, lv, t, head, posts;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +299,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let p, inp, body;
+    let body, inp, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +337,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let ti, title, p, bo, body;
+    let body, bo, ti, p, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {

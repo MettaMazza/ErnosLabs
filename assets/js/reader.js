@@ -28,7 +28,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let mins, out;
+    let out, mins;
     mins = read_minutes(w.words);
     out = "<div class=\"work-item\">";
     out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
@@ -42,7 +42,7 @@ function work_card_html(w) {
 }
 
 function section_cards(works, collection) {
-    let out, i, w;
+    let out, w, i;
     out = "";
     i = 0;
     while ((i < works.length)) {
@@ -56,7 +56,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let html, i, sections, works, intro, s, cards0, cat, cards;
+    let sections, html, works, s, i, intro, cards, cards0, cat;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -93,7 +93,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let works, w, i;
+    let works, i, w;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -107,7 +107,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let w, rtitle, doc, url, toc0, rd, dl;
+    let rtitle, w, toc0, doc, url, dl, rd;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -138,7 +138,7 @@ function resp_text(resp) {
 }
 
 function render_doc(text) {
-    let html, doc;
+    let doc, html;
     doc = document.getElementById("doc");
     html = md_render(text);
     window.docHtml = html;
@@ -149,7 +149,7 @@ function render_doc(text) {
 }
 
 function build_toc(text) {
-    let links, i, h, cls, heads, toc, out;
+    let i, h, cls, links, heads, toc, out;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -173,7 +173,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let id, el;
+    let el, id;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -237,7 +237,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let marks, esc, doc, q, count, re, hl;
+    let count, q, hl, esc, doc, re, marks;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -277,7 +277,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let voice_sel, doc, voice, btn, u, text;
+    let u, text, doc, voice_sel, btn, voice;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -325,7 +325,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let i, container, v, voices, html;
+    let voices, html, i, v, container;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
