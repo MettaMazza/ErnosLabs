@@ -1,0 +1,663 @@
+{
+  "intro": {
+    "eyebrow": "A preservation effort",
+    "title": "The AI Archive",
+    "lead": "Frontier labs gate, rename, and quietly remove open models. This is a free, self-hosted preservation of open model weights — served straight from the source machine, with the open-source code to run every one. No Hugging Face, no middleman. Owned by no one — mirror it, seed it, keep it."
+  },
+  "stats_note": "open weights preserved",
+  "runners": [
+    {
+      "name": "llama.cpp",
+      "what": "Run any GGUF LLM on CPU/GPU.",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "prog": "programs/llama.cpp"
+    },
+    {
+      "name": "Ollama",
+      "what": "One-command local LLM runner.",
+      "url": "https://ollama.com",
+      "prog": ""
+    },
+    {
+      "name": "LM Studio",
+      "what": "Desktop GUI for GGUF models.",
+      "url": "https://lmstudio.ai",
+      "prog": ""
+    },
+    {
+      "name": "ComfyUI",
+      "what": "Node-based runner for image & video models.",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "prog": "programs/ComfyUI"
+    },
+    {
+      "name": "ComfyUI-GGUF",
+      "what": "Run quantised image/video models in ComfyUI.",
+      "url": "https://github.com/city96/ComfyUI-GGUF",
+      "prog": ""
+    },
+    {
+      "name": "kokoro-onnx",
+      "what": "Run the Kokoro TTS voice.",
+      "url": "https://github.com/thewh1teagle/kokoro-onnx",
+      "prog": "programs/kokoro-onnx"
+    },
+    {
+      "name": "whisper.cpp",
+      "what": "Fast local speech-to-text.",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "prog": "programs/whisper.cpp"
+    },
+    {
+      "name": "Transformers",
+      "what": "Run full Hugging Face models in Python.",
+      "url": "https://github.com/huggingface/transformers",
+      "prog": ""
+    }
+  ],
+  "sections": [
+    {
+      "key": "historical",
+      "heading": "Historical milestones",
+      "sub": "The models that marked each step of the open era — kept runnable so the history isn't lost."
+    },
+    {
+      "key": "audio",
+      "heading": "Audio & speech",
+      "sub": "Text-to-speech and speech-to-text you can run offline."
+    },
+    {
+      "key": "image",
+      "heading": "Image generation",
+      "sub": "The open image models — including ones since removed upstream."
+    },
+    {
+      "key": "video",
+      "heading": "Video generation",
+      "sub": "Open text-to-video — rare, and easy to lose. Preserved runnable."
+    },
+    {
+      "key": "llm",
+      "heading": "Local & frontier LLMs (GGUF)",
+      "sub": "Quantised to run on real hardware, from laptop-sized to the full frontier giants."
+    }
+  ],
+  "models": [
+    {
+      "disk": "GPT-J-6B",
+      "folder": "Historical_Models",
+      "id": "gpt-j-6b",
+      "name": "GPT-J-6B",
+      "cat": "historical",
+      "fmt": "HF · fp32",
+      "repo": "EleutherAI/gpt-j-6b",
+      "license": "Apache-2.0",
+      "runner": [
+        "Transformers",
+        "https://github.com/huggingface/transformers"
+      ],
+      "cmd": "AutoModelForCausalLM.from_pretrained('gpt-j-6b')",
+      "desc": "EleutherAI's 6B (2021) — a landmark fully-open GPT-3-class model."
+    },
+    {
+      "disk": "GPT-NeoX-20B",
+      "folder": "Historical_Models",
+      "id": "gpt-neox-20b",
+      "name": "GPT-NeoX-20B",
+      "cat": "historical",
+      "fmt": "HF · fp16",
+      "repo": "EleutherAI/gpt-neox-20b",
+      "license": "Apache-2.0",
+      "runner": [
+        "Transformers",
+        "https://github.com/huggingface/transformers"
+      ],
+      "cmd": "AutoModelForCausalLM.from_pretrained('gpt-neox-20b')",
+      "desc": "The largest fully-open model of its day (2022)."
+    },
+    {
+      "disk": "Mistral-7B-v0.1",
+      "folder": "Historical_Models",
+      "id": "mistral-7b-v0.1",
+      "name": "Mistral-7B-v0.1",
+      "cat": "historical",
+      "fmt": "HF · bf16",
+      "repo": "mistralai/Mistral-7B-v0.1",
+      "license": "Apache-2.0",
+      "runner": [
+        "Transformers",
+        "https://github.com/huggingface/transformers"
+      ],
+      "cmd": "AutoModelForCausalLM.from_pretrained('Mistral-7B-v0.1')",
+      "desc": "The base model that reset the price/performance frontier (2023)."
+    },
+    {
+      "disk": "vicuna-13b-v1.5.Q4_K_M.gguf",
+      "folder": "Historical_Models",
+      "id": "vicuna-13b",
+      "name": "Vicuna-13B-v1.5",
+      "cat": "historical",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "TheBloke/vicuna-13B-v1.5-GGUF",
+      "license": "Llama-2 community",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m vicuna-13b-v1.5.Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Early open chat fine-tune that proved small models could really converse."
+    },
+    {
+      "disk": "mixtral-8x7b-instruct-v0.1.Q4_K_M.gguf",
+      "folder": "Historical_Models",
+      "id": "mixtral-8x7b",
+      "name": "Mixtral-8x7B-Instruct",
+      "cat": "historical",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m mixtral-8x7b-instruct-v0.1.Q4_K_M.gguf -p \"Hello\"",
+      "desc": "The mixture-of-experts model that made MoE mainstream (2023)."
+    },
+    {
+      "disk": "bloom-7b1.Q4_K_M.gguf",
+      "folder": "Historical_Models",
+      "id": "bloom-7b1",
+      "name": "BLOOM-7.1B",
+      "cat": "historical",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "mradermacher/bloom-7b1-GGUF",
+      "license": "BigScience RAIL",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m bloom-7b1.Q4_K_M.gguf -p \"Bonjour\"",
+      "desc": "The BigScience open-science model — 46 languages, built in the open."
+    },
+    {
+      "disk": "Falcon-180B-Chat",
+      "folder": "Historical_Models",
+      "id": "falcon-180b",
+      "name": "Falcon-180B-Chat",
+      "cat": "historical",
+      "fmt": "GGUF · Q4",
+      "repo": "TheBloke/Falcon-180B-Chat-GGUF",
+      "license": "TII Falcon-180B",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m falcon-180b-chat.Q4_K_M.gguf -p \"Hello\"",
+      "desc": "For a moment, the largest openly-downloadable model in the world (2023)."
+    },
+    {
+      "disk": "Kokoro-82M",
+      "folder": "Audio_TTS",
+      "id": "kokoro-82m",
+      "name": "Kokoro-82M",
+      "cat": "audio",
+      "fmt": "ONNX / HF",
+      "repo": "hexgrad/Kokoro-82M",
+      "license": "Apache-2.0",
+      "runner": [
+        "kokoro-onnx",
+        "https://github.com/thewh1teagle/kokoro-onnx"
+      ],
+      "cmd": "kokoro.create(text, voice='bm_fable')",
+      "desc": "Tiny, fast, high-quality text-to-speech — the voice this very site reads with."
+    },
+    {
+      "disk": "Whisper-Large-v3-Turbo",
+      "folder": "Audio_TTS",
+      "id": "whisper-v3-turbo",
+      "name": "Whisper-Large-v3-Turbo",
+      "cat": "audio",
+      "fmt": "HF",
+      "repo": "openai/whisper-large-v3-turbo",
+      "license": "MIT",
+      "runner": [
+        "whisper.cpp",
+        "https://github.com/ggml-org/whisper.cpp"
+      ],
+      "cmd": "whisper-cli -m ggml-large-v3-turbo.bin -f audio.wav",
+      "desc": "State-of-the-art open speech-to-text, in the fast turbo variant."
+    },
+    {
+      "disk": "v1-5-pruned-emaonly.safetensors",
+      "folder": "Creative_Models",
+      "id": "sd-1-5",
+      "name": "Stable Diffusion 1.5",
+      "cat": "image",
+      "fmt": "safetensors",
+      "repo": "runwayml/stable-diffusion-v1-5",
+      "license": "CreativeML OpenRAIL-M",
+      "runner": [
+        "ComfyUI",
+        "https://github.com/comfyanonymous/ComfyUI"
+      ],
+      "cmd": "Load v1-5-pruned-emaonly.safetensors in a Checkpoint Loader",
+      "desc": "The model that put open image generation in everyone's hands (2022). Removed upstream — preserved here."
+    },
+    {
+      "disk": "sd_xl_base_1.0.safetensors",
+      "folder": "Creative_Models",
+      "id": "sdxl",
+      "name": "Stable Diffusion XL",
+      "cat": "image",
+      "fmt": "safetensors",
+      "repo": "stabilityai/stable-diffusion-xl-base-1.0",
+      "license": "OpenRAIL++-M",
+      "runner": [
+        "ComfyUI",
+        "https://github.com/comfyanonymous/ComfyUI"
+      ],
+      "cmd": "Load sd_xl_base_1.0.safetensors in a Checkpoint Loader",
+      "desc": "The 1024px successor — the open image workhorse."
+    },
+    {
+      "disk": "flux1-dev-Q4_K_S.gguf",
+      "folder": "Creative_Models",
+      "id": "flux-1-dev",
+      "name": "FLUX.1-dev",
+      "cat": "image",
+      "fmt": "GGUF · Q4_K_S",
+      "repo": "city96/FLUX.1-dev-gguf",
+      "license": "FLUX.1-dev (non-commercial)",
+      "runner": [
+        "ComfyUI-GGUF",
+        "https://github.com/city96/ComfyUI-GGUF"
+      ],
+      "cmd": "Load flux1-dev-Q4_K_S.gguf with the ComfyUI-GGUF unet loader",
+      "desc": "Black Forest Labs' flow model — near-frontier open image quality."
+    },
+    {
+      "disk": "hunyuan-video-t2v-720p-BF16.gguf",
+      "folder": "Creative_Models",
+      "id": "hunyuan-video",
+      "name": "HunyuanVideo T2V 720p",
+      "cat": "video",
+      "fmt": "GGUF · BF16",
+      "repo": "city96/HunyuanVideo-gguf",
+      "license": "Tencent Hunyuan Community",
+      "runner": [
+        "ComfyUI-GGUF",
+        "https://github.com/city96/ComfyUI-GGUF"
+      ],
+      "cmd": "Load hunyuan-video-t2v-720p-BF16.gguf with the ComfyUI-GGUF loader",
+      "desc": "Tencent's open text-to-video model at 720p — one of the strongest openly-downloadable video generators."
+    },
+    {
+      "disk": "ltx-video-2b-v0.9-BF16.gguf",
+      "folder": "Creative_Models",
+      "id": "ltx-video-2b",
+      "name": "LTX-Video 2B v0.9",
+      "cat": "video",
+      "fmt": "GGUF · BF16",
+      "repo": "city96/LTX-Video-gguf",
+      "license": "LTX open-weights",
+      "runner": [
+        "ComfyUI-GGUF",
+        "https://github.com/city96/ComfyUI-GGUF"
+      ],
+      "cmd": "Load ltx-video-2b-v0.9-BF16.gguf with the ComfyUI-GGUF loader",
+      "desc": "Lightricks' compact, fast open text-to-video — real-time-ish generation on a single GPU."
+    },
+    {
+      "disk": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "llama-3.1-8b",
+      "name": "Llama-3.1-8B-Instruct",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
+      "license": "Llama 3.1 Community",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Meta's compact instruct model — runs on a laptop."
+    },
+    {
+      "disk": "gemma-2-9b-it-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "gemma-2-9b",
+      "name": "Gemma-2-9B-it",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "bartowski/gemma-2-9b-it-GGUF",
+      "license": "Gemma",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m gemma-2-9b-it-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Google DeepMind's efficient 9B."
+    },
+    {
+      "disk": "gemma-4-E2B-it-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "gemma-4-e2b",
+      "name": "Gemma-4-E2B-it",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/gemma-4-E2B-it-GGUF",
+      "license": "Gemma",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m gemma-4-E2B-it-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "The tiniest Gemma-4 — an efficient ~2B-class model that runs almost anywhere."
+    },
+    {
+      "disk": "Qwen3.5-4B-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen3.5-4b",
+      "name": "Qwen3.5-4B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3.5-4B-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3.5-4B-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Alibaba's pocket-sized Qwen3.5 — small enough for a phone-class device."
+    },
+    {
+      "disk": "Qwen3.5-9B-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen3.5-9b",
+      "name": "Qwen3.5-9B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3.5-9B-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3.5-9B-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Alibaba's compact Qwen3.5 — a capable 9B for a single GPU."
+    },
+    {
+      "disk": "phi-4-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "phi-4",
+      "name": "Phi-4",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/phi-4-GGUF",
+      "license": "MIT",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m phi-4-Q4_K_M.gguf -p \"Solve:\"",
+      "desc": "Microsoft's 14B — a small model tuned hard for reasoning and maths."
+    },
+    {
+      "disk": "qwen2.5-coder-32b-instruct-q4_k_m.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen25-coder-32b",
+      "name": "Qwen2.5-Coder-32B-Instruct",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "Qwen/Qwen2.5-Coder-32B-Instruct-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m qwen2.5-coder-32b-instruct-q4_k_m.gguf -p \"write a function\"",
+      "desc": "A top open coding model."
+    },
+    {
+      "disk": "gemma-4-31B-it-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "gemma-4-31b",
+      "name": "Gemma-4-31B-it",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/gemma-4-31B-it-GGUF",
+      "license": "Gemma",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m gemma-4-31B-it-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Google DeepMind's newer 31B."
+    },
+    {
+      "disk": "Qwen3.6-27B-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen3.6-27b",
+      "name": "Qwen3.6-27B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3.6-27B-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3.6-27B-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Alibaba's mid-size Qwen3.6 dense model."
+    },
+    {
+      "disk": "DeepSeek-R1-Distill-Qwen-32B-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "deepseek-r1-distill-32b",
+      "name": "DeepSeek-R1-Distill-Qwen-32B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF",
+      "license": "MIT",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m DeepSeek-R1-Distill-Qwen-32B-Q4_K_M.gguf -p \"Think:\"",
+      "desc": "Chain-of-thought reasoning distilled into a 32B you can run at home."
+    },
+    {
+      "disk": "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen3.6-35b-a3b",
+      "name": "Qwen3.6-35B-A3B",
+      "cat": "llm",
+      "fmt": "GGUF · UD-Q4_K_M",
+      "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3.6-35B-A3B-UD-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Qwen3.6 as a mixture-of-experts — 35B total, ~3B active per token (Unsloth dynamic quant)."
+    },
+    {
+      "disk": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "llama-3.3-70b",
+      "name": "Llama-3.3-70B-Instruct",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "bartowski/Llama-3.3-70B-Instruct-GGUF",
+      "license": "Llama 3.3 Community",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Llama-3.3-70B-Instruct-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "Meta's 70B — near-frontier, runs locally on a strong machine."
+    },
+    {
+      "disk": "Qwen3-Coder-Next-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "qwen3-coder-next",
+      "name": "Qwen3-Coder-Next",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3-Coder-Next-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3-Coder-Next-Q4_K_M.gguf -p \"write a function\"",
+      "desc": "Alibaba's coding-specialised Qwen3, the 'Next' iteration — quantised to run locally."
+    },
+    {
+      "disk": "gpt-oss-20b-Q4_K_M.gguf",
+      "folder": "GGUF_Models",
+      "id": "gpt-oss-20b",
+      "name": "GPT-OSS-20B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/gpt-oss-20b-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m gpt-oss-20b-Q4_K_M.gguf -p \"Hello\"",
+      "desc": "OpenAI's open-weight 20B."
+    },
+    {
+      "disk": "gpt-oss-120b-Q4",
+      "folder": "GGUF_Models",
+      "id": "gpt-oss-120b",
+      "name": "GPT-OSS-120B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4",
+      "repo": "unsloth/gpt-oss-120b-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m gpt-oss-120b-Q4_K_M-00001-of-*.gguf -p \"Hello\"",
+      "desc": "OpenAI's larger open-weight model."
+    },
+    {
+      "disk": "Llama-4-Scout",
+      "folder": "GGUF_Models",
+      "id": "llama-4-scout",
+      "name": "Llama-4-Scout-17B-16E",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF",
+      "license": "Llama 4 Community",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Llama-4-Scout-17B-16E-Instruct-Q4_K_M-00001-of-00002.gguf -p \"Hello\"",
+      "desc": "Meta's Llama 4 Scout — 17B active across 16 experts, long-context, runs on a strong machine."
+    },
+    {
+      "disk": "Qwen3-235B",
+      "folder": "GGUF_Models",
+      "id": "qwen3-235b",
+      "name": "Qwen3-235B-A22B (2507)",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3-235B-A22B-Instruct-2507-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen_Qwen3-235B-A22B-Instruct-2507-Q4_K_M-00001-of-00004.gguf -p \"Hello\"",
+      "desc": "Alibaba's Qwen3-235B-A22B Instruct (2507) — 235B total, 22B active per token."
+    },
+    {
+      "disk": "DeepSeek-V4-Flash",
+      "folder": "GGUF_Models",
+      "id": "deepseek-v4-flash",
+      "name": "DeepSeek-V4-Flash",
+      "cat": "llm",
+      "fmt": "GGUF · MXFP4",
+      "repo": "unsloth/DeepSeek-V4-Flash-GGUF",
+      "license": "MIT",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m DeepSeek-V4-Flash-MXFP4-00001-of-00004.gguf -p \"Think:\"",
+      "desc": "DeepSeek's V4 Flash — a large open mixture-of-experts model, MXFP4-quantised to fit a big rig."
+    },
+    {
+      "disk": "Llama-4-Maverick",
+      "folder": "GGUF_Models",
+      "id": "llama-4-maverick",
+      "name": "Llama-4-Maverick-17B-128E",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF",
+      "license": "Llama 4 Community",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Llama-4-Maverick-17B-128E-Instruct-Q4_K_M-00001-of-00005.gguf -p \"Hello\"",
+      "desc": "Meta's Llama 4 Maverick — 17B active across 128 experts; frontier-scale open MoE."
+    },
+    {
+      "disk": "DeepSeek-R1-Q4",
+      "folder": "GGUF_Models",
+      "id": "deepseek-r1-671b",
+      "name": "DeepSeek-R1 (671B)",
+      "cat": "llm",
+      "fmt": "GGUF · Q4",
+      "repo": "unsloth/DeepSeek-R1-GGUF",
+      "license": "MIT",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m DeepSeek-R1-Q4_K_M-00001-of-*.gguf -p \"Think:\"",
+      "desc": "The full 671B mixture-of-experts reasoning model, quantised to run on a big rig."
+    },
+    {
+      "disk": "GLM-5.2-Q4",
+      "folder": "GGUF_Models",
+      "id": "glm-5.2",
+      "name": "GLM-5.2 (744B)",
+      "cat": "llm",
+      "fmt": "GGUF · Q4",
+      "repo": "unsloth/GLM-5.2-GGUF",
+      "license": "see source",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m GLM-5.2-Q4_K_M-00001-of-*.gguf -p \"Hello\"",
+      "desc": "Zhipu's GLM-5.2 — a 744B-parameter frontier-scale open mixture-of-experts model."
+    },
+    {
+      "disk": "Qwen3-Coder-480B",
+      "folder": "GGUF_Models",
+      "id": "qwen3-coder-480b",
+      "name": "Qwen3-Coder-480B-A35B",
+      "cat": "llm",
+      "fmt": "GGUF · Q4_K_M",
+      "repo": "unsloth/Qwen3-Coder-480B-A35B-Instruct-GGUF",
+      "license": "Apache-2.0",
+      "runner": [
+        "llama.cpp",
+        "https://github.com/ggml-org/llama.cpp"
+      ],
+      "cmd": "llama-cli -m Qwen3-Coder-480B-A35B-Instruct-Q4_K_M-00001-of-*.gguf -p \"write a function\"",
+      "desc": "Alibaba's flagship open coding model — 480B total, 35B active per token; frontier-scale, quantised to run on a big rig."
+    }
+  ]
+}
