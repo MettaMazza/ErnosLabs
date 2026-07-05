@@ -344,7 +344,67 @@ async def canvas_proxy(request: Request):
         html = await run_in_threadpool(_fetch_canvas, request.method, data, ctype)
         return Response(content=html, media_type="text/html; charset=utf-8")
     except Exception:
-        return _canvas_page("The AI Canvas is offline right now — the local model or canvas server isn't reachable. Come back when the host is online.")
+        return _canvas_page("The AI Canvas is warming up (its model is loading) or momentarily busy — give it a few seconds and try again.")
+
+
+# ---- Canvas services supervisor -----------------------------------------
+# The AI Canvas must work whenever THIS website backend is up — with the ErnosDecent
+# node completely OFF. So the always-on funnel owns the canvas's dedicated processes:
+# its :8082 model (Llama-3.1-8B, alias "canvas") and its :8091 ErnosPlain server.
+# Idempotent (only launches a process whose port is down); detached (start_new_session)
+# so they survive a funnel restart and are re-adopted by the port check.
+import shutil
+import subprocess
+
+_CANVAS_BIN = os.environ.get(
+    "CANVAS_BIN",
+    str(pathlib.Path.home() / "Desktop" / "ErnosDecent." / "decent_web" / "canvas_server"),
+)
+_CANVAS_MODEL = os.environ.get(
+    "CANVAS_MODEL",
+    str(pathlib.Path.home() / "models" / "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"),
+)
+_LLAMA_SERVER = shutil.which("llama-server") or "/opt/homebrew/bin/llama-server"
+
+
+def _port_ok(url):
+    try:
+        with urllib.request.urlopen(url, timeout=2):
+            return True
+    except Exception:
+        return False
+
+
+def _ensure_canvas():
+    if not _port_ok("http://127.0.0.1:8082/v1/models") and os.path.exists(_CANVAS_MODEL):
+        subprocess.Popen(
+            [_LLAMA_SERVER, "-m", _CANVAS_MODEL, "--host", "127.0.0.1", "--port", "8082",
+             "--alias", "canvas", "-c", "32768", "-b", "2048", "-ub", "2048", "-np", "1",
+             "-fa", "on", "-ngl", "999", "--jinja"],
+            start_new_session=True,
+            stdout=open("/tmp/ernos-canvas-model.log", "a"),
+            stderr=subprocess.STDOUT,
+        )
+        print("[canvas] launched model on :8082", flush=True)
+    if not _port_ok("http://127.0.0.1:8091/htmlgen") and os.path.exists(_CANVAS_BIN):
+        subprocess.Popen(
+            [_CANVAS_BIN], start_new_session=True,
+            stdout=open("/tmp/ernos-canvas.log", "a"),
+            stderr=subprocess.STDOUT,
+        )
+        print("[canvas] launched server on :8091", flush=True)
+
+
+def _canvas_supervisor():
+    while True:
+        try:
+            _ensure_canvas()
+        except Exception as e:
+            print("[canvas] supervisor:", e, flush=True)
+        time.sleep(30)
+
+
+threading.Thread(target=_canvas_supervisor, daemon=True).start()
 
 
 # ---- Background watcher: keep the OFFLINE snapshot fresh, hands-free ------
