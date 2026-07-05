@@ -875,6 +875,9 @@ define flow_ev with ev:
 # AMM swap simulator (decent_money) — the constant-product pool x·y = k.
 # ======================================================================
 
+define fmt with x and places:
+    return Number(x).toFixed(places)
+
 define amm_update with ev:
     set x0 to 10000
     set y0 to 10000

@@ -36,7 +36,7 @@ function subsystems() {
 }
 
 function draw_subs() {
-    let host, card, s, fn, j, cards, subs, i, html;
+    let html, cards, host, j, s, card, subs, fn, i;
     host = document.getElementById("subs");
     if (!host) {
         return 0;
@@ -62,7 +62,7 @@ function draw_subs() {
 }
 
 function sub_card_click(ev) {
-    let desc, nameEl, descEl, name, target, archSection, descs;
+    let archSection, nameEl, name, target, descs, desc, descEl;
     target = ev.currentTarget;
     name = target.getAttribute("data-name");
     archSection = document.getElementById("arch-canvas");
@@ -92,7 +92,7 @@ function hex2(n) {
 }
 
 function mesh_build() {
-    let nd, i, nodes, ang, count;
+    let nd, nodes, count, i, ang;
     nodes = [];
     count = 14;
     i = 0;
@@ -111,7 +111,7 @@ function mesh_build() {
 }
 
 function mesh_render() {
-    let on_path, a, k, nodes, j, size, canvas, b, nd, path, ctx, xor, n, i, dpr;
+    let dpr, path, ctx, nd, nodes, a, on_path, b, k, xor, n, i, canvas, size, j;
     canvas = document.getElementById("dht-canvas");
     if (!canvas) {
         return 0;
@@ -216,7 +216,7 @@ function bitxor(a, b) {
 }
 
 function mesh_route() {
-    let j, cand, nodes, target, cur_id, current, n, path, best_d, d, best, src, guard;
+    let current, guard, nodes, src, cur_id, path, best_d, j, cand, target, n, best, d;
     nodes = window.meshNodes;
     n = nodes.length;
     src = Math.floor((Math.random() * n));
@@ -271,7 +271,7 @@ function heb_concepts() {
 }
 
 function heb_init() {
-    let nodes, n, nd, names, i, ang;
+    let names, n, i, nodes, ang, nd;
     names = heb_concepts();
     nodes = [];
     n = names.length;
@@ -299,7 +299,7 @@ function heb_key(a, b) {
 }
 
 function heb_get(a, b) {
-    let k, w;
+    let w, k;
     k = heb_key(a, b);
     w = window.hebW[k];
     if (w) {
@@ -328,7 +328,7 @@ function heb_reinforce(a, b) {
 }
 
 function heb_sweep() {
-    let nodes, n, j, i, w;
+    let i, n, w, j, nodes;
     nodes = window.hebNodes;
     n = nodes.length;
     i = 0;
@@ -354,7 +354,7 @@ function heb_sweep() {
 }
 
 function heb_render() {
-    let a, nodes, size, nd, n, sel, j, b, i, canvas, dpr, ctx, w;
+    let canvas, i, nodes, ctx, n, w, a, b, j, dpr, nd, sel, size;
     canvas = document.getElementById("heb-canvas");
     if (!canvas) {
         return 0;
@@ -417,7 +417,7 @@ function heb_render() {
 }
 
 function heb_click(ev) {
-    let my, mx, canvas, nodes, hit, rect, i, dy, dx, sel, n, nd;
+    let dy, i, nodes, n, dx, mx, sel, rect, hit, nd, canvas, my;
     canvas = document.getElementById("heb-canvas");
     rect = canvas.getBoundingClientRect();
     mx = (ev.clientX - rect.left);
@@ -452,7 +452,7 @@ function heb_click(ev) {
 }
 
 function raft_init() {
-    let nodes, i, nd;
+    let i, nodes, nd;
     nodes = [];
     i = 0;
     while ((i < 5)) {
@@ -471,7 +471,7 @@ function raft_init() {
 }
 
 function raft_leader() {
-    let i, nodes, nd;
+    let nd, nodes, i;
     nodes = window.raftNodes;
     i = 0;
     while ((i < nodes.length)) {
@@ -487,7 +487,7 @@ function raft_leader() {
 }
 
 function raft_count_up() {
-    let c, i, nodes;
+    let nodes, c, i;
     nodes = window.raftNodes;
     c = 0;
     i = 0;
@@ -501,7 +501,7 @@ function raft_count_up() {
 }
 
 function raft_step() {
-    let lt, votes, newterm, nodes, leader, nd, needed, c, i, cand;
+    let nd, c, votes, i, cand, lt, nodes, newterm, needed, leader;
     nodes = window.raftNodes;
     leader = raft_leader();
     if ((leader >= 0)) {
@@ -542,7 +542,7 @@ function raft_step() {
 }
 
 function raft_pick_up() {
-    let tries, k, nodes;
+    let k, tries, nodes;
     nodes = window.raftNodes;
     tries = 0;
     while ((tries < 20)) {
@@ -556,7 +556,7 @@ function raft_pick_up() {
 }
 
 function raft_partition() {
-    let a, b, nodes;
+    let nodes, a, b;
     nodes = window.raftNodes;
     a = nodes[3];
     b = nodes[4];
@@ -580,7 +580,7 @@ function raft_partition() {
 }
 
 function raft_render() {
-    let k, lines, shown, nd, label, out, html, i, cls, logel, host, nodes;
+    let i, host, html, nd, lines, label, nodes, logel, out, shown, k, cls;
     host = document.getElementById("raft-nodes");
     if (!host) {
         return 0;
@@ -624,7 +624,7 @@ function raft_log(msg) {
 }
 
 function draw_stats() {
-    let lb, html, v, i, labels, host, stats;
+    let lb, stats, labels, v, html, i, host;
     host = document.getElementById("stats-banner");
     if (!host) {
         return 0;
@@ -674,7 +674,7 @@ function arch_descriptions() {
 }
 
 function draw_arch() {
-    let layerCount, colors, layerMods, layerLabels, modName, rightMargin, lw, layerColor, mods, cw, lh, gap, highlight, region, modCount, mr, modsStr, mi, my, lx, mx, ctx, dpr, ly, canvas, modW, startY, li, ch, regions, leftMargin, modGap, totalH, r, mh;
+    let modGap, region, totalH, layerMods, lw, layerColor, leftMargin, modCount, highlight, mx, regions, ch, mh, colors, mods, rightMargin, lh, gap, startY, li, lx, r, cw, canvas, modW, my, mr, ly, modsStr, mi, modName, layerCount, ctx, layerLabels, dpr;
     canvas = document.getElementById("arch-canvas");
     if (!canvas) {
         return 0;
@@ -807,7 +807,7 @@ function draw_arch() {
 }
 
 function arch_click(ev) {
-    let i, scaleY, descs, canvas, rect, desc, my, regions, mx, descEl, nameEl, scaleX, r;
+    let i, r, scaleY, rect, regions, descEl, scaleX, descs, desc, my, canvas, nameEl, mx;
     canvas = document.getElementById("arch-canvas");
     rect = canvas.getBoundingClientRect();
     mx = (ev.clientX - rect.left);
@@ -850,7 +850,7 @@ function arch_click(ev) {
 }
 
 function draw_flow() {
-    let host, i, label, stages, stageLabels, html, desc, sub, stageDescs;
+    let stages, desc, i, stageLabels, host, html, sub, label, stageDescs;
     host = document.getElementById("flow-vis");
     if (!host) {
         return 0;
@@ -902,7 +902,7 @@ function flow_play() {
 }
 
 function flow_activate(idx) {
-    let next, cb, stages;
+    let cb, stages, next;
     stages = document.querySelectorAll(".flow-stage");
     if ((idx >= stages.length)) {
         return 0;
@@ -917,7 +917,7 @@ function flow_activate(idx) {
 }
 
 function flow_next_factory(idx) {
-    let fn, wrapper, callback;
+    let callback, wrapper, fn;
     fn = Reflect["set"];
     wrapper = new_obj();
     fn.call(Reflect, wrapper, "idx", idx);
@@ -936,8 +936,12 @@ function flow_ev(ev) {
     return 0;
 }
 
+function fmt(x, places) {
+    return Number(x).toFixed(places);
+}
+
 function amm_update(ev) {
-    let amt, eff, impact, host, got, html, lbl, new_y, spot, x0, k, new_x, y0;
+    let new_x, x0, amt, new_y, y0, eff, k, impact, spot, got, host, html, lbl;
     x0 = 10000;
     y0 = 10000;
     k = (x0 * y0);
@@ -960,7 +964,7 @@ function amm_update(ev) {
 }
 
 function roll_hash(s, mult) {
-    let h, i;
+    let i, h;
     h = 5381;
     i = 0;
     while ((i < s.length)) {
@@ -971,14 +975,14 @@ function roll_hash(s, mult) {
 }
 
 function cas_addr(s) {
-    let h1, h2;
+    let h2, h1;
     h1 = roll_hash(s, 31);
     h2 = roll_hash(s, 131);
     return ((h1.toString(16) + "-") + h2.toString(16));
 }
 
 function cas_update(ev) {
-    let ta, dedup, store, addr, html, text, host;
+    let ta, host, store, dedup, html, addr, text;
     ta = document.getElementById("cas-in");
     text = ta.value;
     addr = cas_addr(text);
@@ -998,7 +1002,7 @@ function cas_update(ev) {
 }
 
 function main() {
-    let rb, hc, ac;
+    let hc, ac, rb;
     draw_stats();
     draw_subs();
     if (document.getElementById("amm-in")) {
