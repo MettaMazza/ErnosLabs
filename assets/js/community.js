@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let o, b;
+    let b, o;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let btns, secs;
+    let secs, btns;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -116,6 +116,9 @@ function show_tab(name) {
         show_thread_list();
         load_threads();
     }
+    if ((name === "links")) {
+        load_links();
+    }
     return 0;
 }
 
@@ -126,6 +129,11 @@ function tab_chat(ev) {
 
 function tab_forum(ev) {
     show_tab("forum");
+    return 0;
+}
+
+function tab_links(ev) {
+    show_tab("links");
     return 0;
 }
 
@@ -148,7 +156,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let log, add;
+    let add, log;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -167,7 +175,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let inp, p, body;
+    let inp, body, p;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -233,7 +241,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, links, host;
+    let links, out, host;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -273,7 +281,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, lv, tv, out, t, posts;
+    let t, out, posts, head, tv, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -299,7 +307,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let inp, body, p;
+    let body, inp, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -337,7 +345,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let bo, body, ti, p, title;
+    let title, ti, p, body, bo;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -375,6 +383,107 @@ function new_thread_ev(ev) {
     return 0;
 }
 
+function load_links() {
+    fetch((base() + "/community/links")).then(links_recv).catch(go_offline);
+    return 0;
+}
+
+function links_recv(resp) {
+    go_online();
+    resp.json().then(links_apply);
+    return 0;
+}
+
+function link_note_html(l) {
+    let tt;
+    tt = l.title;
+    if (tt) {
+        if ((tt.trim() === "")) {
+            return "";
+        }
+        return (("<p class=\"cm-link__note\">" + String(esc(tt))) + "</p>");
+    }
+    return "";
+}
+
+function links_apply(data) {
+    let out, slug, host;
+    host = document.getElementById("links-list");
+    if (!host) {
+        return 0;
+    }
+    out = "";
+    for (const l of data.links) {
+        slug = l.provider.toLowerCase().split(" ").join("-");
+        out = (out + (((((((((((((("<div class=\"cm-link\"><div class=\"cm-link__top\"><span class=\"cm-badge cm-badge--" + String(slug)) + "\">") + String(esc(l.provider))) + "</span><span class=\"cm-msg__time\">shared by ") + String(esc(l.submitter))) + " · ") + String(fmt_time(l.ts))) + "</span></div>") + String(link_note_html(l))) + "<a class=\"cm-link__url\" href=\"") + String(esc(l.url))) + "\" target=\"_blank\" rel=\"noopener nofollow\">") + String(esc(l.url))) + "</a></div>"));
+    }
+    if ((out === "")) {
+        out = "<p class=\"cm-empty\">No links yet. Be the first to share a public AI chat.</p>";
+    }
+    host.innerHTML = out;
+    return 0;
+}
+
+function submit_link() {
+    let ui, note, ni, url, p;
+    ui = document.getElementById("link-url");
+    if (!ui) {
+        return 0;
+    }
+    url = ui.value;
+    if (!url) {
+        return 0;
+    }
+    if ((url.trim() === "")) {
+        return 0;
+    }
+    note = "";
+    ni = document.getElementById("link-note");
+    if (ni) {
+        note = ni.value;
+    }
+    p = js_object();
+    p.submitter = my_name();
+    p.url = url;
+    p.title = note;
+    post_json((base() + "/community/links"), p).then(link_sent).catch(go_offline);
+    return 0;
+}
+
+function link_sent(resp) {
+    let ni, ui;
+    go_online();
+    if (resp.ok) {
+        ui = document.getElementById("link-url");
+        ni = document.getElementById("link-note");
+        if (ui) {
+            ui.value = "";
+        }
+        if (ni) {
+            ni.value = "";
+        }
+        load_links();
+    } else {
+        resp.json().then(link_err);
+    }
+    return 0;
+}
+
+function link_err(data) {
+    let msg;
+    msg = "Could not post that link.";
+    if (data.detail) {
+        msg = data.detail;
+    }
+    window.alert(msg);
+    return 0;
+}
+
+function link_add_ev(ev) {
+    submit_link();
+    return 0;
+}
+
 function name_ev(ev) {
     if (window.localStorage) {
         window.localStorage.setItem("ernosCommunityName", ev.currentTarget.value);
@@ -403,12 +512,14 @@ function main() {
     }
     wire("tabbtn-chat", "click", tab_chat);
     wire("tabbtn-forum", "click", tab_forum);
+    wire("tabbtn-links", "click", tab_links);
     wire("tabbtn-faq", "click", tab_faq);
     wire("chat-send", "click", chat_send_ev);
     wire("chat-input", "keydown", chat_key_ev);
     wire("new-create", "click", new_thread_ev);
     wire("reply-send", "click", reply_ev);
     wire("thread-back", "click", back_ev);
+    wire("link-add", "click", link_add_ev);
     check_status();
     show_tab("chat");
     if (window.cmPoll) {

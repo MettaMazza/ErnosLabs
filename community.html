@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=58e40a1e">
+  <link rel="stylesheet" href="assets/css/site.css?v=727edd90">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -70,6 +70,7 @@
         <div class="cm-tabs">
           <button class="cm-tabbtn active" id="tabbtn-chat">💬 Chat</button>
           <button class="cm-tabbtn" id="tabbtn-forum">📋 Forum</button>
+          <button class="cm-tabbtn" id="tabbtn-links">🔗 AI Links</button>
           <button class="cm-tabbtn" id="tabbtn-faq">❓ FAQ</button>
         </div>
 
@@ -109,6 +110,21 @@
           </div>
         </div>
 
+        <!-- AI LINKS & EVIDENCE -->
+        <div class="cm-tab hidden" id="tab-links">
+          <div class="cm-form" style="margin-bottom:22px">
+            <h3>Share an AI chat</h3>
+            <p class="cm-hint">Paste a <strong>public share link</strong> to a conversation — a Claude, ChatGPT, or Gemini
+              session worth keeping: evidence, a demo, a discovery, a good exchange. It joins the shared archive below,
+              open to everyone. Only public share links from known AI-chat providers are accepted.</p>
+            <input id="link-url" type="url" maxlength="2000" placeholder="https://claude.ai/share/…   ·   https://chatgpt.com/share/…   ·   https://g.co/gemini/…">
+            <input id="link-note" type="text" maxlength="200" placeholder="Optional — one line on what this chat shows">
+            <button class="btn btn--primary" id="link-add">Post link</button>
+          </div>
+          <div class="cm-sep">Shared sessions</div>
+          <div class="cm-links" id="links-list"></div>
+        </div>
+
         <!-- FAQ -->
         <div class="cm-tab hidden" id="tab-faq">
           <div class="cm-faq">
@@ -143,6 +159,12 @@
                 <a href="ai.html">AI Archive</a> ships one ErnosPlain script that rebuilds the whole library from source.
                 Keep what you pull; if you can host it, mirror it and seed it to others.</p>
             </details>
+            <details><summary>What is the AI Links tab for?</summary>
+              <p>It's a shared archive of public AI conversations. If you've had a Claude, ChatGPT, or Gemini chat worth
+                keeping — a discovery, a demo, evidence for a claim, a good exchange — use that tool's <em>share</em>
+                button to make a public link and paste it here. Everyone can browse them in one place. Only public share
+                links from known AI-chat providers are accepted, and links open in a new tab.</p>
+            </details>
             <details><summary>How can I contribute or report a problem?</summary>
               <p>Start a thread here in the Forum, or open an issue on the code at
                 <a href="https://github.com/MettaMazza?tab=repositories" target="_blank" rel="noopener">github.com/MettaMazza</a>.
@@ -168,8 +190,8 @@
 
   <script src="assets/js/spa.js?v=6ab5f95a"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
-  <script src="assets/js/site.js?v=9cf0b27e"></script>
+  <script src="assets/js/site.js?v=5f38a77e"></script>
   <script src="assets/js/community-shim.js?v=b2801e4a"></script>
-  <script src="assets/js/community.js?v=4be38566"></script>
+  <script src="assets/js/community.js?v=0c996fab"></script>
 </body>
 </html>

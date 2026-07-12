@@ -21,6 +21,7 @@ import sys
 import threading
 import time
 import urllib.request
+from urllib.parse import urlparse
 
 import numpy as np
 import soundfile as sf
@@ -100,6 +101,10 @@ def _init_community():
             CREATE TABLE IF NOT EXISTS posts(
                 id INTEGER PRIMARY KEY AUTOINCREMENT, thread_id INTEGER, ts REAL,
                 author TEXT, body TEXT);
+            CREATE TABLE IF NOT EXISTS links(
+                id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, submitter TEXT,
+                provider TEXT, title TEXT, url TEXT);
+            CREATE UNIQUE INDEX IF NOT EXISTS links_url ON links(url);
             """
         )
 
@@ -251,9 +256,101 @@ async def admin_delete(request: Request):
             con.execute("DELETE FROM posts WHERE thread_id=?", (ident,))
         elif kind == "post":
             con.execute("DELETE FROM posts WHERE id=?", (ident,))
+        elif kind == "link":
+            con.execute("DELETE FROM links WHERE id=?", (ident,))
         else:
             raise HTTPException(400, "Unknown kind.")
     return {"ok": True}
+
+
+# ---- AI Links & Evidence: a shared archive of public AI chat links -------
+# People paste a public share link to a Claude/ChatGPT/Gemini/… conversation and
+# it's collected here. We only accept https share links from known AI-chat hosts
+# (an allow-list — an open URL field would be a spam/malware magnet), auto-detect
+# the provider server-side, and dedupe by URL. The client escapes on render and
+# only ever builds http(s) anchors, so stored URLs can't inject script.
+_LINK_PROVIDERS = [
+    ("claude.ai", "Claude"),
+    ("chatgpt.com", "ChatGPT"),
+    ("chat.openai.com", "ChatGPT"),
+    ("gemini.google.com", "Gemini"),
+    ("g.co", "Gemini"),
+    ("aistudio.google.com", "Google AI Studio"),
+    ("copilot.microsoft.com", "Copilot"),
+    ("poe.com", "Poe"),
+    ("grok.com", "Grok"),
+    ("perplexity.ai", "Perplexity"),
+    ("chat.deepseek.com", "DeepSeek"),
+    ("chat.mistral.ai", "Mistral"),
+    ("meta.ai", "Meta AI"),
+]
+
+
+def _provider_for(host):
+    host = (host or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    for suffix, label in _LINK_PROVIDERS:
+        if host == suffix or host.endswith("." + suffix):
+            return label
+    return None
+
+
+def _validate_link(raw):
+    raw = (raw or "").strip().replace("\x00", "")
+    if not raw:
+        raise HTTPException(400, "Paste a share link first.")
+    if len(raw) > 2000:
+        raise HTTPException(400, "That URL is too long.")
+    try:
+        u = urlparse(raw)
+    except Exception:
+        raise HTTPException(400, "That doesn't look like a URL.")
+    if u.scheme not in ("http", "https") or not u.hostname:
+        raise HTTPException(400, "Links must start with http:// or https://")
+    prov = _provider_for(u.hostname)
+    if not prov:
+        raise HTTPException(
+            400,
+            "Only public share links from AI chat providers are accepted "
+            "(Claude, ChatGPT, Gemini, Copilot, Grok, Perplexity, and a few more).",
+        )
+    return raw, prov
+
+
+@app.get("/community/links")
+def links_list(limit: int = 100):
+    limit = max(1, min(limit, 200))
+    with _db() as con:
+        rows = con.execute(
+            "SELECT id, ts, submitter, provider, title, url FROM links "
+            "ORDER BY id DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+    return {"links": [dict(r) for r in rows]}
+
+
+@app.post("/community/links")
+async def links_post(request: Request):
+    ip = request.client.host if request.client else "?"
+    if not _rate_ok(ip, 5.0, "link"):
+        raise HTTPException(429, "Slow down a moment.")
+    d = await _payload(request)
+    url, provider = _validate_link(d.get("url"))
+    title = _clean(d.get("title"), 200)
+    submitter = _name(d.get("submitter"))
+    ts = time.time()
+    with _db() as con:
+        if con.execute("SELECT id FROM links WHERE url=?", (url,)).fetchone():
+            raise HTTPException(409, "That link has already been shared.")
+        lid = con.execute(
+            "INSERT INTO links(ts,submitter,provider,title,url) VALUES(?,?,?,?,?)",
+            (ts, submitter, provider, title, url),
+        ).lastrowid
+    return {
+        "id": lid, "ts": ts, "submitter": submitter,
+        "provider": provider, "title": title, "url": url,
+    }
 
 
 class SpeechRequest(BaseModel):

@@ -90,6 +90,8 @@ define show_tab with name:
     if name equals "forum":
         show_thread_list()
         load_threads()
+    if name equals "links":
+        load_links()
     return 0
 
 define tab_chat with ev:
@@ -98,6 +100,10 @@ define tab_chat with ev:
 
 define tab_forum with ev:
     show_tab("forum")
+    return 0
+
+define tab_links with ev:
+    show_tab("links")
     return 0
 
 define tab_faq with ev:
@@ -290,6 +296,82 @@ define new_thread_ev with ev:
     create_thread()
     return 0
 
+# ---------- ai links & evidence ----------
+define load_links:
+    fetch(base() + "/community/links").then(links_recv).catch(go_offline)
+    return 0
+
+define links_recv with resp:
+    go_online()
+    resp.json().then(links_apply)
+    return 0
+
+define link_note_html with l:
+    set tt to l.title
+    if tt:
+        if tt.trim() equals "":
+            return ""
+        return f"<p class=\"cm-link__note\">{esc(tt)}</p>"
+    return ""
+
+define links_apply with data:
+    set host to document.getElementById("links-list")
+    if not host:
+        return 0
+    set out to ""
+    for each l in data.links:
+        set slug to l.provider.toLowerCase().split(" ").join("-")
+        set out to out + f"<div class=\"cm-link\"><div class=\"cm-link__top\"><span class=\"cm-badge cm-badge--{slug}\">{esc(l.provider)}</span><span class=\"cm-msg__time\">shared by {esc(l.submitter)} · {fmt_time(l.ts)}</span></div>{link_note_html(l)}<a class=\"cm-link__url\" href=\"{esc(l.url)}\" target=\"_blank\" rel=\"noopener nofollow\">{esc(l.url)}</a></div>"
+    if out equals "":
+        set out to "<p class=\"cm-empty\">No links yet. Be the first to share a public AI chat.</p>"
+    set host.innerHTML to out
+    return 0
+
+define submit_link:
+    set ui to document.getElementById("link-url")
+    if not ui:
+        return 0
+    set url to ui.value
+    if not url:
+        return 0
+    if url.trim() equals "":
+        return 0
+    set note to ""
+    set ni to document.getElementById("link-note")
+    if ni:
+        set note to ni.value
+    set p to js_object()
+    set p.submitter to my_name()
+    set p.url to url
+    set p.title to note
+    post_json(base() + "/community/links" and p).then(link_sent).catch(go_offline)
+    return 0
+
+define link_sent with resp:
+    go_online()
+    if resp.ok:
+        set ui to document.getElementById("link-url")
+        set ni to document.getElementById("link-note")
+        if ui:
+            set ui.value to ""
+        if ni:
+            set ni.value to ""
+        load_links()
+    else:
+        resp.json().then(link_err)
+    return 0
+
+define link_err with data:
+    set msg to "Could not post that link."
+    if data.detail:
+        set msg to data.detail
+    window.alert(msg)
+    return 0
+
+define link_add_ev with ev:
+    submit_link()
+    return 0
+
 # ---------- name ----------
 define name_ev with ev:
     if window.localStorage:
@@ -314,6 +396,7 @@ define main:
     # tabs
     wire("tabbtn-chat" and "click" and tab_chat)
     wire("tabbtn-forum" and "click" and tab_forum)
+    wire("tabbtn-links" and "click" and tab_links)
     wire("tabbtn-faq" and "click" and tab_faq)
     # chat
     wire("chat-send" and "click" and chat_send_ev)
@@ -322,6 +405,8 @@ define main:
     wire("new-create" and "click" and new_thread_ev)
     wire("reply-send" and "click" and reply_ev)
     wire("thread-back" and "click" and back_ev)
+    # ai links
+    wire("link-add" and "click" and link_add_ev)
     # go
     check_status()
     show_tab("chat")

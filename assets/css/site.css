@@ -1145,6 +1145,26 @@ pre {
 .cm-faq summary::before{content:"＋";color:var(--glow)}
 .cm-faq details[open] summary::before{content:"－"}
 .cm-faq p{color:var(--ink-2);line-height:1.65;margin:12px 0 0;padding-left:22px}
+
+/* ai links & evidence */
+.cm-links{display:flex;flex-direction:column;gap:12px}
+.cm-link{background:var(--bg-1);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  transition:border-color .15s,transform .15s}
+.cm-link:hover{border-color:var(--glow-dim);transform:translateY(-1px)}
+.cm-link__top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.cm-link__note{color:var(--ink-1);margin:0 0 8px;line-height:1.5;word-break:break-word}
+.cm-link__url{display:inline-block;color:var(--glow);font:600 .88rem "JetBrains Mono";
+  text-decoration:none;word-break:break-all;line-height:1.4}
+.cm-link__url:hover{text-decoration:underline}
+.cm-badge{display:inline-flex;align-items:center;font:600 .78rem "Space Grotesk";padding:3px 11px;
+  border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-1)}
+.cm-badge--claude{border-color:#d97757;color:#e8916f}
+.cm-badge--chatgpt{border-color:#10a37f;color:#25c79b}
+.cm-badge--gemini{border-color:#5b8cff;color:#89aaff}
+.cm-badge--copilot{border-color:#4b9ed6;color:#79c0ee}
+.cm-badge--grok{border-color:#8a8f98;color:#c3c7cf}
+.cm-badge--perplexity{border-color:#20b8cd;color:#4fd6e6}
+
 @media (max-width:560px){ .cm-chat-log{height:56vh} }
 
 /* AI Canvas (canvas.html) — inference spinner overlay over the sandboxed frame */
