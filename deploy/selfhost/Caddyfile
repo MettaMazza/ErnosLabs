@@ -1,0 +1,25 @@
+# ernoslabs.com — full self-host. Caddy terminates TLS on THIS machine
+# (Let's Encrypt, auto-renewed) and hands everything to serve_ernos.py on
+# :8899, which serves the site from the working tree plus all the live APIs
+# (community, canvas, archive, TTS, project zips). No third party in the path.
+#
+# bind: the Tailscale system extension permanently reserves wildcard *:443,
+# so we bind the LAN address specifically (BSD: specific beats wildcard —
+# verified). Caddy therefore runs as a root LaunchDaemon
+# (com.ernoslabs.caddy), because macOS only allows unprivileged low-port
+# binds on the wildcard. 192.168.1.240 = this Mac's ethernet; keep the DHCP
+# reservation on the router pointed at it.
+{
+	email maria.smith.xo@outlook.com
+}
+
+ernoslabs.com {
+	bind 192.168.1.240 127.0.0.1
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8899
+}
+
+www.ernoslabs.com {
+	bind 192.168.1.240 127.0.0.1
+	redir https://ernoslabs.com{uri} permanent
+}

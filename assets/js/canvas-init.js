@@ -10,7 +10,7 @@
  * the local model is thinking. Kept external so the SPA re-runs it on navigation.
  */
 (function () {
-  var BASE = window.CANVAS_BASE || "https://marias-mac-studio-1.tail36a593.ts.net";
+  var BASE = window.CANVAS_BASE || window.location.origin;
   function q(id) { return document.getElementById(id); }
 
   function init() {

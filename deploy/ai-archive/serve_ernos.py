@@ -829,6 +829,31 @@ _mount("/tools", os.path.join(SITE_ROOT, "tools"))
 _mount("/projects", _PROJECTS_ZIPS)
 
 
+# ---- the website itself: full self-host ----------------------------------
+# This machine IS the host for ernoslabs.com (Caddy on :443 reverse-proxies to
+# this server). Serve the site from the working tree — an edit is live the
+# moment it's saved, no build/deploy step. ALLOWLIST, not blocklist: only the
+# public site surface is reachable; .git, deploy/, src/, build scripts and
+# anything else in the tree are never served.
+_SITE_DIRS = {"assets", "content", "tools", "research"}
+
+
+class SiteFiles(StaticFiles):
+    def lookup_path(self, path):
+        parts = [p for p in path.split("/") if p not in ("", ".")]
+        ok = (
+            not parts  # "/" -> index.html via html=True
+            or (len(parts) == 1 and parts[0].endswith(".html"))
+            or (parts and parts[0] in _SITE_DIRS)
+        )
+        if not ok or any(p.startswith(".") for p in parts):
+            return "", None
+        return super().lookup_path(path)
+
+
+app.mount("/", SiteFiles(directory=SITE_ROOT, html=True), name="site")
+
+
 if __name__ == "__main__":
     import uvicorn
     print(f"Ernos serve on http://127.0.0.1:{PORT}")

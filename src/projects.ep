@@ -10,12 +10,13 @@
 # fallback for when the machine sleeps. Depends on md.js (md_render) on
 # project.html. Authored in ErnosPlain like the rest of the site.
 
+# Same-origin: the site and the download mirror live on one host (full self-host).
 define pj_base:
     if window.localStorage:
         set o to window.localStorage.getItem("ernosArchiveBase")
         if o:
             return o
-    return "https://marias-mac-studio-1.tail36a593.ts.net"
+    return window.location.origin
 
 define pj_gh with repo:
     return "https://github.com/MettaMazza/" + repo

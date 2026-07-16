@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let o, b;
+    let b, o;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -86,7 +86,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let sec, btn;
+    let btn, sec;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -156,7 +156,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let add, log;
+    let log, add;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -175,7 +175,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, p, inp;
+    let p, inp, body;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -241,7 +241,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let host, out, links;
+    let links, host, out;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -281,7 +281,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let tv, t, lv, head, posts, out;
+    let lv, out, posts, tv, head, t;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -307,7 +307,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, p, inp;
+    let inp, p, body;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -345,7 +345,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let body, bo, ti, title, p;
+    let ti, bo, title, body, p;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -407,7 +407,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let slug, host, out;
+    let host, out, slug;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -425,7 +425,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let ui, url, note, ni, p;
+    let url, note, ui, ni, p;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;

@@ -9,7 +9,7 @@
  *  - js_object()    : ErnosPlain can't write an object literal; this supplies one.
  *  - fmt_time(ts)   : format a unix timestamp for display.
  */
-window.COMMUNITY_BASE = window.COMMUNITY_BASE || "https://marias-mac-studio-1.tail36a593.ts.net";
+window.COMMUNITY_BASE = window.COMMUNITY_BASE || window.location.origin;
 window.js_object = window.js_object || function () { return {}; };
 window.fmt_time = window.fmt_time || function (ts) {
   try {

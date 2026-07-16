@@ -8,7 +8,7 @@ function pj_base() {
             return o;
         }
     }
-    return "https://marias-mac-studio-1.tail36a593.ts.net";
+    return window.location.origin;
 }
 
 function pj_gh(repo) {
@@ -28,7 +28,7 @@ function pj_esc(s) {
 }
 
 function pj_use_machine() {
-    let links, repo;
+    let repo, links;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -100,7 +100,7 @@ function pj_card(p) {
 }
 
 function pj_section(key, heading, sub) {
-    let out, cards;
+    let cards, out;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         if ((p.cat === key)) {
@@ -117,7 +117,7 @@ function pj_section(key, heading, sub) {
 }
 
 function pj_render_grid() {
-    let html, host;
+    let host, html;
     host = document.getElementById("projects-grid");
     if (!host) {
         return 0;
@@ -179,7 +179,7 @@ function pj_doc_fail(err) {
 }
 
 function pj_render_page() {
-    let host, m, p, d, dl, gh, repo, h;
+    let dl, host, p, gh, h, m, d, repo;
     host = document.getElementById("project-doc");
     if (!host) {
         return 0;
