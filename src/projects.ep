@@ -75,8 +75,9 @@ define pj_meta_line with p:
 
 define pj_card with p:
     set out to "<div class=\"ai-card reveal in\">"
-    set out to out + f"<div class=\"ai-card__top\"><h3>{pj_esc(p.title)}</h3><span class=\"ai-size\">{pj_meta_line(p)}</span></div>"
+    set out to out + f"<div class=\"ai-card__top\"><h3>{pj_esc(p.title)}</h3></div>"
     set out to out + f"<p class=\"ai-desc\">{pj_esc(p.desc)}</p>"
+    set out to out + f"<p class=\"pj-meta\">{pj_meta_line(p)}</p>"
     set out to out + "<div class=\"ai-card__actions\">"
     set out to out + f"<a class=\"btn btn--primary\" href=\"project.html?p={p.repo}\">Read more →</a>"
     set out to out + f"<a class=\"pj-dl\" data-repo=\"{p.repo}\" href=\"{pj_gh(p.repo)}/archive/refs/heads/main.zip\">⬇ Download .zip</a>"

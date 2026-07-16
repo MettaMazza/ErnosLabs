@@ -1168,6 +1168,7 @@ pre {
 @media (max-width:560px){ .cm-chat-log{height:56vh} }
 
 /* projects & downloads */
+.pj-meta{color:var(--ink-3);font-size:.8rem;margin:6px 0 0;overflow-wrap:anywhere}
 .pj-dl{color:var(--glow);font:600 .9rem "Space Grotesk";text-decoration:none;white-space:nowrap}
 .pj-dl:hover{text-decoration:underline}
 .pj-ghl{color:var(--ink-3);font-size:.85rem;text-decoration:none;white-space:nowrap}

@@ -28,7 +28,7 @@ function pj_esc(s) {
 }
 
 function pj_use_machine() {
-    let repo, links;
+    let links, repo;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -88,8 +88,9 @@ function pj_meta_line(p) {
 function pj_card(p) {
     let out;
     out = "<div class=\"ai-card reveal in\">";
-    out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(pj_esc(p.title))) + "</h3><span class=\"ai-size\">") + String(pj_meta_line(p))) + "</span></div>"));
+    out = (out + (("<div class=\"ai-card__top\"><h3>" + String(pj_esc(p.title))) + "</h3></div>"));
     out = (out + (("<p class=\"ai-desc\">" + String(pj_esc(p.desc))) + "</p>"));
+    out = (out + (("<p class=\"pj-meta\">" + String(pj_meta_line(p))) + "</p>"));
     out = (out + "<div class=\"ai-card__actions\">");
     out = (out + (("<a class=\"btn btn--primary\" href=\"project.html?p=" + String(p.repo)) + "\">Read more →</a>"));
     out = (out + (((("<a class=\"pj-dl\" data-repo=\"" + String(p.repo)) + "\" href=\"") + String(pj_gh(p.repo))) + "/archive/refs/heads/main.zip\">⬇ Download .zip</a>"));
@@ -99,7 +100,7 @@ function pj_card(p) {
 }
 
 function pj_section(key, heading, sub) {
-    let cards, out;
+    let out, cards;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         if ((p.cat === key)) {
@@ -178,7 +179,7 @@ function pj_doc_fail(err) {
 }
 
 function pj_render_page() {
-    let h, gh, dl, m, repo, d, p, host;
+    let host, m, p, d, dl, gh, repo, h;
     host = document.getElementById("project-doc");
     if (!host) {
         return 0;
