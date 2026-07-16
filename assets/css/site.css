@@ -1167,6 +1167,61 @@ pre {
 
 @media (max-width:560px){ .cm-chat-log{height:56vh} }
 
+/* ---- dedicated project pages: interactive showcase ---- */
+.showcase-stage{background:var(--bg-1);border:1px solid var(--line);border-radius:18px;padding:22px;
+  box-shadow:0 24px 60px -40px rgba(0,0,0,.7)}
+.sc-caption{color:var(--ink-2);font-size:.92rem;line-height:1.5;margin:0 0 16px;max-width:60ch}
+.sc-board{display:flex;justify-content:center;align-items:center;min-height:200px}
+.sc-board--protein{min-height:420px}
+.sc-goban,.sc-protein{width:100%;max-width:440px;height:auto}
+.sc-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px}
+.sc-btn{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-1);border-radius:9px;
+  width:42px;height:38px;font-size:.9rem;cursor:pointer;transition:border-color .15s,color .15s}
+.sc-btn:hover{color:var(--ink-0);border-color:var(--glow-dim)}
+.sc-btn--play{background:var(--glow);border-color:var(--glow);color:#08131b;font-weight:700}
+.sc-count{margin-left:10px;color:var(--ink-3);font:600 .84rem "JetBrains Mono";min-width:74px;text-align:right}
+.sc-chess{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:420px;aspect-ratio:1;
+  border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.sc-sq{display:flex;align-items:center;justify-content:center;background:#ecd9b0;
+  font-size:clamp(1.1rem,4.4vw,2rem);line-height:1;color:#111;user-select:none}
+.sc-sq--d{background:#a97a4c}
+.sc-term{background:#0b0f14;border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+  font:500 .82rem/1.5 "JetBrains Mono";color:#c7f6e6;white-space:pre-wrap;word-break:break-word;
+  height:min(60vh,460px);overflow-y:auto;margin:0}
+.uni-pipe{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;
+  background:var(--bg-1);border:1px solid var(--line);border-radius:16px;padding:20px}
+.uni-stage{display:flex;align-items:center;gap:8px;background:var(--bg-2);border:1px solid var(--line);
+  border-radius:10px;padding:10px 14px;color:var(--ink-1);font-size:.9rem;font-weight:500}
+.uni-stage--out{border-color:var(--glow-dim);color:var(--ink-0)}
+.uni-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;
+  background:var(--glow);color:#08131b;font:700 .78rem "Space Grotesk"}
+.uni-arrow{color:var(--ink-3)}
+
+/* ---- mega-menu nav ---- */
+.nav__drop--mega{position:static}
+.nav__mega{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:8px 26px;
+  left:50%;transform:translateX(-50%);min-width:min(760px,92vw);padding:20px 24px}
+.nav__mega-col{display:flex;flex-direction:column;gap:2px}
+.nav__mega-col h4{margin:0 0 8px;color:var(--ink-3);font:600 .72rem "Space Grotesk";
+  text-transform:uppercase;letter-spacing:.08em}
+.nav__mega-col a{padding:5px 0}
+.nav__mega-all{margin-top:6px;color:var(--glow)!important;font-weight:600}
+@media (max-width:900px){
+  .nav__mega{grid-template-columns:1fr 1fr;min-width:0;left:0;transform:none;gap:6px 18px}
+}
+
+/* ---- about page ---- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+.about-card{background:var(--bg-1);border:1px solid var(--line);border-radius:18px;padding:26px 26px 8px}
+.about-card h2{margin:6px 0 14px;font-size:1.5rem}
+.about-card p{color:var(--ink-1);line-height:1.65;margin:0 0 14px}
+.about-tag{display:inline-block;font:600 .72rem "Space Grotesk";text-transform:uppercase;letter-spacing:.09em;
+  color:#08131b;background:var(--glow);padding:4px 11px;border-radius:999px}
+.about-life{background:var(--bg-1);border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin-top:22px}
+.about-life h3{margin:0 0 10px;font-size:1.2rem}
+.about-life p{color:var(--ink-1);line-height:1.7;margin:0}
+@media (max-width:720px){ .about-grid{grid-template-columns:1fr} }
+
 /* projects & downloads */
 .pj-meta{color:var(--ink-3);font-size:.8rem;margin:6px 0 0;overflow-wrap:anywhere}
 .pj-dl{color:var(--glow);font:600 .9rem "Space Grotesk";text-decoration:none;white-space:nowrap}

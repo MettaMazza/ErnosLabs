@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let ctx, w, dpr, h, canvas;
+    let dpr, h, ctx, canvas, w;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let alpha, dist, h, j, count, n, w, nodes, dy, a, b, i, ctx, dx;
+    let nodes, i, j, dx, ctx, count, dist, n, b, w, alpha, h, a, dy;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, density, reduce;
+    let canvas, reduce, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,7 +139,7 @@ function nav_toggle(ev) {
 }
 
 function drop_toggle(ev) {
-    let me, drops;
+    let drops, me;
     ev.stopPropagation();
     me = ev.currentTarget.parentElement;
     drops = document.querySelectorAll(".nav__drop");
@@ -162,7 +162,7 @@ function drop_close(ev) {
 }
 
 function nav_init() {
-    let burger, dbtns;
+    let dbtns, burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -176,7 +176,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let href, act, qi, drops, path, hp, links, b;
+    let path, hp, b, links, drops, qi, href, act;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -226,7 +226,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, args, IO, obs, opts;
+    let els, args, obs, IO, opts;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -256,7 +256,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let doc, txt, nodes, cls, parts, n, dt, i;
+    let doc, nodes, parts, n, txt, i, cls, dt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -286,7 +286,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let btn, st;
+    let st, btn;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -301,7 +301,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let status, fill, ph, btn, pct;
+    let btn, pct, fill, status, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -358,7 +358,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let status, btn;
+    let btn, status;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

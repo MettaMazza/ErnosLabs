@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UnisonAI — Ernos Labs</title>
+  <meta name="description" content="A forced, derived AI architecture with zero parameters — knowledge stored as exact held orbits, attention as unit-capacity selection. It beat its trained transformer twin on held-out text.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn6egPC90ZXh0Pjwvc3ZnPg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=53ae89de">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+      <div class="navplayer" id="navplayer">
+        <button class="navplayer__btn" id="np-toggle" aria-label="Play or pause read-aloud">▶</button>
+        <div class="navplayer__bar"><div class="navplayer__fill" id="np-fill"></div></div>
+        <span class="navplayer__status" id="np-status">Listen</span>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <div class="nav__drop nav__drop--mega" id="nav-work">
+          <button class="nav__drop-btn" id="nav-work-btn" aria-haspopup="true">Work ▾</button>
+          <div class="nav__drop-menu nav__mega">
+            <div class="nav__mega-col">
+              <h4>Theory</h4>
+              <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
+              <a href="papers.html">Papers</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Engines</h4>
+              <a href="foldbot-chess.html">FoldBot Chess</a>
+              <a href="fold-go.html">Fold-Go</a>
+              <a href="fold-protein.html">Fold-Protein</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Platform</h4>
+              <a href="ernosplain.html">ErnosPlain</a>
+              <a href="ernosdecent.html">ErnosDecent</a>
+              <a href="ern-os.html">Ern-OS</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>AI</h4>
+              <a href="unisonai.html" aria-current="page">UnisonAI</a>
+              <a href="ai.html">AI Archive</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Preservation</h4>
+              <a href="civ-seed.html">Civ-Seed</a>
+              <a href="seed.html">Seed Vault</a>
+              <a class="nav__mega-all" href="projects.html">⬇ All projects &amp; downloads</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__drop" id="nav-writing">
+          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true">Writing ▾</button>
+          <div class="nav__drop-menu">
+            <a href="library.html">Library</a>
+            <a href="seed.html">Seed Vault</a>
+            <a href="papers.html">Papers</a>
+          </div>
+        </div>
+        <div class="nav__drop" id="nav-media">
+          <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true">Media ▾</button>
+          <div class="nav__drop-menu">
+            <a href="videos.html">Videos</a>
+            <a href="ai.html">AI Archive</a>
+          </div>
+        </div>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="view">
+  <div id="project-page" data-repo="UnisonAI">
+
+  <header class="section" style="padding-bottom:8px">
+    <div class="wrap" style="max-width:960px">
+      <p class="eyebrow reveal">AI, derived not trained</p>
+      <h1 class="reveal">UnisonAI</h1>
+      <p class="lead reveal mt-s">An AI architecture that is <strong style="color:var(--ink-0)">not designed but forced</strong> — derived from the fold's own laws, with zero parameters and zero gradient steps. Knowledge is stored as exact held orbits (the tablebase pattern applied to text); attention is unit-capacity selection. Reading its training text once, in 26 seconds, it beat its trained transformer twin on held-out text — 1.289 vs 1.888, the widest margin of the campaign.</p>
+      <div class="ai-card__actions" style="margin-top:20px">
+        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
+        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:6px;padding-bottom:0">
+    <div class="wrap" style="max-width:960px">
+      <div class="uni-pipe">
+        <div class="uni-stage"><span class="uni-num">1</span>Text in</div>
+        <div class="uni-arrow">→</div>
+        <div class="uni-stage"><span class="uni-num">2</span>Fold to exact orbits</div>
+        <div class="uni-arrow">→</div>
+        <div class="uni-stage"><span class="uni-num">3</span>Held as a tablebase</div>
+        <div class="uni-arrow">→</div>
+        <div class="uni-stage"><span class="uni-num">4</span>Unit-capacity selection</div>
+        <div class="uni-arrow">→</div>
+        <div class="uni-stage uni-stage--out"><span class="uni-num">5</span>Next token</div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:14px">
+    <div class="wrap" style="max-width:960px">
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:8px">
+    <div class="wrap" style="max-width:900px">
+      <p class="lead" style="margin-bottom:0">Then the same pre-registered instrument was pointed at <em>trained</em> neural networks — and found the fold's placement-law sitting inside their weights: unanimously (18 of 18 validated released models), causally (untrained controls sit at exactly chance), and located in specific projections, reaching 230× chance in GPT-2's token embedding and surviving 4-bit quantization in a production Llama-3.1-8B. The proposition: much of what is currently purchased with parameters, data and compute is <strong style="color:var(--ink-0)">law — and law can be derived.</strong></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin:8px 0 26px">
+      <p class="eyebrow">Read the work</p>
+      <h2>Papers behind it</h2>
+      <p class="lead"><a href="papers.html">UnisonAI: a Forced, Derived Omni-Model Architecture</a> (DOI 10.5281/zenodo.21217279), <a href="papers.html">the Forced Language Architecture</a>, and <a href="papers.html">the Fold Decode Campaign</a> on the law inside trained weights.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin:8px 0 26px">
+      <p class="eyebrow">Straight from the source</p>
+      <h2>The README</h2>
+      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+    </div>
+  </section>
+
+  </div>
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html">Community</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
+  </footer>
+  </div>
+
+  <script src="assets/js/md.js?v=fde39345"></script>
+  <script src="assets/js/spa.js?v=85d305c7"></script>
+  <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
+  <script src="assets/js/site.js?v=1bbfa180"></script>
+  <script src="assets/js/showcase.js?v=ab76d52b"></script>
+</body>
+</html>

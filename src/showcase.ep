@@ -1,0 +1,522 @@
+# showcase.ep — the shared engine behind every dedicated project page.
+#
+# Each page declares its config as data-attributes on #showcase-stage
+# (data-repo, data-kind, data-file) — attributes survive the SPA's innerHTML
+# swap, and this script re-runs on navigation. It renders an interactive replay
+# of the project's REAL recorded output — the Go game vs KataGo, a recorded
+# FoldBot chess game, the folded ubiquitin backbone, the Ern-OS boot — plus the
+# source-machine download flip and the README (via md.js). Replay data lives in
+# content/interactive/, re-baked from the repo mirrors by the source machine.
+
+# ---------- source-machine status + downloads ----------
+define sc_base:
+    if window.localStorage:
+        set o to window.localStorage.getItem("ernosArchiveBase")
+        if o:
+            return o
+    return window.location.origin
+
+define sc_status_set with cls and msg:
+    set el to document.getElementById("pj-status")
+    if el:
+        set el.className to cls
+        set el.innerHTML to msg
+    return 0
+
+define sc_use_machine:
+    set links to document.querySelectorAll(".pj-dl")
+    for each a in links:
+        set repo to a.getAttribute("data-repo")
+        if repo:
+            set a.href to sc_base() + "/projects/" + repo + ".zip"
+    return 0
+
+define sc_status_ok with resp:
+    if resp.ok:
+        sc_use_machine()
+        sc_status_set("ai-status is-online" and "🟢 <strong>Source machine online</strong> — the download comes straight from it.")
+    else:
+        sc_status_fail(resp)
+    return 0
+
+define sc_status_fail with err:
+    sc_status_set("ai-status is-offline" and "🌙 <strong>The source machine is asleep.</strong> Download falls back to GitHub; the replay below still runs.")
+    return 0
+
+define sc_check:
+    fetch(sc_base() + "/ping").then(sc_status_ok).catch(sc_status_fail)
+    return 0
+
+# ---------- README ----------
+define sc_doc_recv with resp:
+    if resp.ok:
+        resp.text().then(sc_doc_apply)
+    else:
+        sc_doc_fail(resp)
+    return 0
+
+define sc_doc_apply with text:
+    set host to document.getElementById("project-doc")
+    if host:
+        set host.innerHTML to md_render(text)
+    return 0
+
+define sc_doc_fail with err:
+    set host to document.getElementById("project-doc")
+    if host:
+        set host.innerHTML to "<p class=\"loading\">Couldn't load the README right now — use the GitHub link above.</p>"
+    return 0
+
+# ---------- shared transport controls ----------
+define sc_controls with total:
+    set t to int_to_string(total)
+    set out to "<div class=\"sc-controls\">"
+    set out to out + "<button class=\"sc-btn\" id=\"sc-first\" aria-label=\"Start\">⏮</button>"
+    set out to out + "<button class=\"sc-btn\" id=\"sc-prev\" aria-label=\"Back\">◀</button>"
+    set out to out + "<button class=\"sc-btn sc-btn--play\" id=\"sc-play\" aria-label=\"Play\">▶</button>"
+    set out to out + "<button class=\"sc-btn\" id=\"sc-next\" aria-label=\"Forward\">▶▏</button>"
+    set out to out + "<button class=\"sc-btn\" id=\"sc-last\" aria-label=\"End\">⏭</button>"
+    set out to out + f"<span class=\"sc-count\" id=\"sc-count\">0 / {t}</span>"
+    set out to out + "</div>"
+    return out
+
+define sc_wire with id and cb:
+    set el to document.getElementById(id)
+    if el:
+        el.addEventListener("click" and cb)
+    return 0
+
+define sc_wire_controls with render_fn and total:
+    set window.scPos to 0
+    set window.scTotal to total
+    set window.scRender to render_fn
+    set window.scPlaying to false
+    render_fn(0)
+    sc_wire("sc-first" and sc_first)
+    sc_wire("sc-prev" and sc_prev)
+    sc_wire("sc-next" and sc_next)
+    sc_wire("sc-last" and sc_last)
+    sc_wire("sc-play" and sc_playpause)
+    return 0
+
+define sc_goto with n:
+    set p to n
+    if p < 0:
+        set p to 0
+    if p > window.scTotal:
+        set p to window.scTotal
+    set window.scPos to p
+    window.scRender(p)
+    set c to document.getElementById("sc-count")
+    if c:
+        set c.textContent to int_to_string(p) + " / " + int_to_string(window.scTotal)
+    return 0
+
+define sc_stop:
+    set window.scPlaying to false
+    if window.scTimer:
+        window.clearInterval(window.scTimer)
+        set window.scTimer to 0
+    set b to document.getElementById("sc-play")
+    if b:
+        set b.textContent to "▶"
+    return 0
+
+define sc_first with ev:
+    sc_stop()
+    sc_goto(0)
+    return 0
+
+define sc_prev with ev:
+    sc_stop()
+    set p to window.scPos - 1
+    sc_goto(p)
+    return 0
+
+define sc_next with ev:
+    sc_stop()
+    set p to window.scPos + 1
+    sc_goto(p)
+    return 0
+
+define sc_last with ev:
+    sc_stop()
+    sc_goto(window.scTotal)
+    return 0
+
+define sc_tick:
+    if window.scPos >= window.scTotal:
+        sc_stop()
+        return 0
+    set p to window.scPos + 1
+    sc_goto(p)
+    return 0
+
+define sc_playpause with ev:
+    if window.scPlaying:
+        sc_stop()
+        return 0
+    if window.scPos >= window.scTotal:
+        sc_goto(0)
+    set window.scPlaying to true
+    set b to document.getElementById("sc-play")
+    if b:
+        set b.textContent to "⏸"
+    set window.scTimer to window.setInterval(sc_tick and 650)
+    return 0
+
+# ---------- GO (19×19 goban, SVG) ----------
+define go_col with ch:
+    return "ABCDEFGHJKLMNOPQRST".indexOf(ch)
+
+define go_render with n:
+    set d to window.scData
+    set moves to d.moves
+    set size to d.boardsize
+    set cell to 30
+    set pad to 22
+    set dim to pad * 2 + cell * (size - 1)
+    set dims to int_to_string(dim)
+    set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">"
+    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"6\" fill=\"#e8c583\"/>"
+    set a0 to int_to_string(pad)
+    set a1 to int_to_string(pad + (size - 1) * cell)
+    set i to 0
+    repeat while i < size:
+        set p to int_to_string(pad + i * cell)
+        set svg to svg + f"<line x1=\"{p}\" y1=\"{a0}\" x2=\"{p}\" y2=\"{a1}\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"
+        set svg to svg + f"<line x1=\"{a0}\" y1=\"{p}\" x2=\"{a1}\" y2=\"{p}\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"
+        set i to i + 1
+    # star points
+    set stars to [3, 9, 15]
+    for each sx in stars:
+        for each sy in stars:
+            set cx to int_to_string(pad + sx * cell)
+            set cy to int_to_string(pad + sy * cell)
+            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"2.6\" fill=\"#7a5c28\"/>"
+    set k to 0
+    repeat while k < n:
+        set mv to get_list(moves and k)
+        set side to get_list(mv and 0)
+        set coord to get_list(mv and 1)
+        set playable to true
+        if coord equals "PASS":
+            set playable to false
+        if coord equals "RESIGN":
+            set playable to false
+        if playable:
+            set col to go_col(coord.charAt(0))
+            set rownum to window.parseInt(coord.substring(1) and 10)
+            set row to size - rownum
+            set cx to int_to_string(pad + col * cell)
+            set cy to int_to_string(pad + row * cell)
+            set fill to "#111"
+            if side equals "W":
+                set fill to "#f5f5f5"
+            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13\" fill=\"{fill}\" stroke=\"#0006\" stroke-width=\".5\"/>"
+            set lastidx to n - 1
+            if k equals lastidx:
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"4\" fill=\"#f5c45e\"/>"
+        set k to k + 1
+    set svg to svg + "</svg>"
+    set stage to document.getElementById("sc-board")
+    if stage:
+        set stage.innerHTML to svg
+    return 0
+
+define go_init:
+    set stage to document.getElementById("showcase-stage")
+    set total to window.scData.moves.length
+    set stage.innerHTML to "<div class=\"sc-caption\">The fold engine (black) vs KataGo (white) — the recorded match, move by move. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    sc_wire_controls(go_render and total)
+    return 0
+
+# ---------- CHESS (replayed from the recorded UCI movetext) ----------
+define chess_row with letters and colour:
+    set arr to []
+    set i to 0
+    repeat while i < 8:
+        set ch to letters.charAt(i)
+        if ch equals " ":
+            arr.push("")
+        else:
+            arr.push(colour + ch)
+        set i to i + 1
+    return arr
+
+define chess_fresh_board:
+    set out to []
+    out.push(chess_row("RNBQKBNR" and "w"))
+    out.push(chess_row("PPPPPPPP" and "w"))
+    out.push(chess_row("        " and ""))
+    out.push(chess_row("        " and ""))
+    out.push(chess_row("        " and ""))
+    out.push(chess_row("        " and ""))
+    out.push(chess_row("PPPPPPPP" and "b"))
+    out.push(chess_row("RNBQKBNR" and "b"))
+    return out
+
+define chess_glyph with piece:
+    if piece equals "wK":
+        return "♔"
+    if piece equals "wQ":
+        return "♕"
+    if piece equals "wR":
+        return "♖"
+    if piece equals "wB":
+        return "♗"
+    if piece equals "wN":
+        return "♘"
+    if piece equals "wP":
+        return "♙"
+    if piece equals "bK":
+        return "♚"
+    if piece equals "bQ":
+        return "♛"
+    if piece equals "bR":
+        return "♜"
+    if piece equals "bB":
+        return "♝"
+    if piece equals "bN":
+        return "♞"
+    if piece equals "bP":
+        return "♟"
+    return ""
+
+define chess_file with ch:
+    return "abcdefgh".indexOf(ch)
+
+define chess_board_at with n:
+    set board to chess_fresh_board()
+    set moves to window.scData.moves
+    set k to 0
+    repeat while k < n:
+        set uci to get_list(moves and k)
+        set ff to chess_file(uci.charAt(0))
+        set fr to window.parseInt(uci.charAt(1) and 10) - 1
+        set tf to chess_file(uci.charAt(2))
+        set tr to window.parseInt(uci.charAt(3) and 10) - 1
+        set fromrow to get_list(board and fr)
+        set torow to get_list(board and tr)
+        set piece to get_list(fromrow and ff)
+        set kind to ""
+        if piece:
+            set kind to piece.charAt(1)
+        # castling — the king moves two files; carry the rook across
+        if kind equals "K":
+            set diff to tf - ff
+            if diff equals 2:
+                set rook to get_list(torow and 7)
+                torow.splice(5 and 1 and rook)
+                torow.splice(7 and 1 and "")
+            set negtwo to 0 - 2
+            if diff equals negtwo:
+                set rook to get_list(torow and 0)
+                torow.splice(3 and 1 and rook)
+                torow.splice(0 and 1 and "")
+        # en passant — pawn moves diagonally onto an empty square
+        if kind equals "P":
+            set target to get_list(torow and tf)
+            set filediff to tf - ff
+            if filediff:
+                if target equals "":
+                    set caprow to get_list(board and fr)
+                    caprow.splice(tf and 1 and "")
+        # promotion — a pawn reaching the last rank becomes a queen
+        if kind equals "P":
+            if tr equals 7:
+                set piece to "wQ"
+            if tr equals 0:
+                set piece to "bQ"
+        torow.splice(tf and 1 and piece)
+        fromrow.splice(ff and 1 and "")
+        set k to k + 1
+    return board
+
+define chess_render with n:
+    set board to chess_board_at(n)
+    set html to "<div class=\"sc-chess\">"
+    set r to 7
+    repeat while r >= 0:
+        set row to get_list(board and r)
+        set f to 0
+        repeat while f < 8:
+            set cls to "sc-sq"
+            set parity to (r + f) % 2
+            if parity equals 0:
+                set cls to "sc-sq sc-sq--d"
+            set g to chess_glyph(get_list(row and f))
+            set html to html + f"<div class=\"{cls}\">{g}</div>"
+            set f to f + 1
+        set r to r - 1
+    set html to html + "</div>"
+    set stage to document.getElementById("sc-board")
+    if stage:
+        set stage.innerHTML to html
+    return 0
+
+define chess_init:
+    set stage to document.getElementById("showcase-stage")
+    set total to window.scData.moves.length
+    set res to window.scData.result
+    set stage.innerHTML to f"<div class=\"sc-caption\">A recorded FoldBot game — every evaluation an exact rational counted from the board's geometry. Result: {res}.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    sc_wire_controls(chess_render and total)
+    return 0
+
+# ---------- PROTEIN (Cα backbone, auto-rotating SVG projection) ----------
+define protein_render with step:
+    set ca to window.scData.ca
+    set n to ca.length
+    set ang to step * 0.045
+    set cosa to Math.cos(ang)
+    set sina to Math.sin(ang)
+    set minx to 100000.0
+    set maxx to 0.0 - 100000.0
+    set miny to 100000.0
+    set maxy to 0.0 - 100000.0
+    set proj to []
+    set i to 0
+    repeat while i < n:
+        set p to get_list(ca and i)
+        set x to get_list(p and 0)
+        set y to get_list(p and 1)
+        set z to get_list(p and 2)
+        set px to x * cosa - z * sina
+        set py to y
+        set pair to []
+        pair.push(px)
+        pair.push(py)
+        proj.push(pair)
+        if px < minx:
+            set minx to px
+        if px > maxx:
+            set maxx to px
+        if py < miny:
+            set miny to py
+        if py > maxy:
+            set maxy to py
+        set i to i + 1
+    set span to maxx - minx
+    set spy to maxy - miny
+    if spy > span:
+        set span to spy
+    set scale to 380.0 / span
+    set path to ""
+    set i to 0
+    repeat while i < n:
+        set pr to get_list(proj and i)
+        set sxn to 40.0 + (get_list(pr and 0) - minx) * scale
+        set syn to 40.0 + (get_list(pr and 1) - miny) * scale
+        set sx to int_to_string(Math.round(sxn * 10) / 10)
+        set sy to int_to_string(Math.round(syn * 10) / 10)
+        set cmd to "L"
+        if i equals 0:
+            set cmd to "M"
+        set path to path + cmd + " " + sx + " " + sy + " "
+        set i to i + 1
+    set svg to "<svg viewBox=\"0 0 460 460\" class=\"sc-protein\" xmlns=\"http://www.w3.org/2000/svg\">"
+    set svg to svg + "<defs><linearGradient id=\"pg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#4ff0c4\"/><stop offset=\"100%\" stop-color=\"#7c8cff\"/></linearGradient></defs>"
+    set svg to svg + f"<path d=\"{path}\" fill=\"none\" stroke=\"url(#pg)\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+    set svg to svg + "</svg>"
+    set stage to document.getElementById("sc-board")
+    if stage:
+        set stage.innerHTML to svg
+    return 0
+
+define protein_spin:
+    set window.scSpin to window.scSpin + 1
+    protein_render(window.scSpin)
+    return 0
+
+define protein_init:
+    set stage to document.getElementById("showcase-stage")
+    set n to int_to_string(window.scData.ca.length)
+    set src to window.scData.source
+    set stage.innerHTML to f"<div class=\"sc-caption\">Ubiquitin ({n} residues) folded by descent to the fold's fixed point — the real Cα backbone from {src}, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>"
+    set window.scSpin to 0
+    protein_render(0)
+    if window.scSpinTimer:
+        window.clearInterval(window.scSpinTimer)
+    set window.scSpinTimer to window.setInterval(protein_spin and 60)
+    return 0
+
+# ---------- ERN-OS (typed boot terminal) ----------
+define boot_esc with s:
+    set t to s
+    set t to t.split("&").join("&amp;")
+    set t to t.split("<").join("&lt;")
+    set t to t.split(">").join("&gt;")
+    return t
+
+define boot_step:
+    set term to document.getElementById("sc-term")
+    if not term:
+        return 0
+    if window.bootIdx >= window.bootLines.length:
+        return 0
+    set line to get_list(window.bootLines and window.bootIdx)
+    set term.innerHTML to term.innerHTML + boot_esc(line) + "\n"
+    set term.scrollTop to term.scrollHeight
+    set window.bootIdx to window.bootIdx + 1
+    window.setTimeout(boot_step and 330)
+    return 0
+
+define boot_init:
+    set stage to document.getElementById("showcase-stage")
+    set stage.innerHTML to "<div class=\"sc-caption\">Ern-OS booting — a self-contained operating system in plain-English Ernos, captured from a real run.</div><pre class=\"sc-term\" id=\"sc-term\"></pre>"
+    set window.bootLines to window.scData.lines
+    set window.bootIdx to 0
+    boot_step()
+    return 0
+
+# ---------- data loading + boot ----------
+define sc_data_ready with data:
+    set window.scData to data
+    set kind to window.scKind
+    if kind equals "go":
+        go_init()
+    if kind equals "chess":
+        chess_init()
+    if kind equals "protein":
+        protein_init()
+    if kind equals "boot":
+        boot_init()
+    return 0
+
+define sc_recv with resp:
+    if resp.ok:
+        resp.json().then(sc_data_ready)
+    else:
+        sc_data_fail(resp)
+    return 0
+
+define sc_data_fail with err:
+    set stage to document.getElementById("showcase-stage")
+    if stage:
+        set stage.innerHTML to "<p class=\"loading\">The replay data isn't available right now.</p>"
+    return 0
+
+define main:
+    set page to document.getElementById("project-page")
+    if not page:
+        return 0
+    set repo to page.getAttribute("data-repo")
+    set dl to document.getElementById("project-dl")
+    if dl:
+        dl.setAttribute("data-repo" and repo)
+        set dl.href to "https://github.com/MettaMazza/" + repo + "/archive/refs/heads/main.zip"
+    set gh to document.getElementById("project-gh")
+    if gh:
+        set gh.href to "https://github.com/MettaMazza/" + repo
+    sc_check()
+    set doc to document.getElementById("project-doc")
+    if doc:
+        fetch("content/projects/" + repo + ".md").then(sc_doc_recv).catch(sc_doc_fail)
+    # the interactive replay is optional — pages without one stop here
+    set stage to document.getElementById("showcase-stage")
+    if not stage:
+        return 0
+    set window.scKind to stage.getAttribute("data-kind")
+    set file to stage.getAttribute("data-file")
+    fetch("content/interactive/" + file).then(sc_recv).catch(sc_data_fail)
+    return 0

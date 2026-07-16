@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=e047e5b0">
+  <link rel="stylesheet" href="assets/css/site.css?v=53ae89de">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -25,19 +25,37 @@
       </div>
       <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
       <div class="nav__links" id="navlinks">
-        <a href="ernosplain.html">ErnosPlain</a>
-        <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
-        <a href="ernosdecent.html" aria-current="page">ErnosDecent</a>
-        <div class="nav__drop" id="nav-projects">
-          <button class="nav__drop-btn" id="nav-projects-btn" aria-haspopup="true">Projects ▾</button>
-          <div class="nav__drop-menu">
-            <a href="projects.html">⬇ All projects &amp; downloads</a>
-            <a href="project.html?p=UnisonAI">UnisonAI</a>
-            <a href="project.html?p=Ern-OS">Ern-OS</a>
-            <a href="project.html?p=FoldBot-Chess">FoldBot Chess</a>
-            <a href="project.html?p=Fold-Go">Fold-Go</a>
-            <a href="project.html?p=Fold-Protein">Fold-Protein</a>
-            <a href="project.html?p=Civ-Seed">Civ-Seed</a>
+        <div class="nav__drop nav__drop--mega" id="nav-work">
+          <button class="nav__drop-btn" id="nav-work-btn" aria-haspopup="true">Work ▾</button>
+          <div class="nav__drop-menu nav__mega">
+            <div class="nav__mega-col">
+              <h4>Theory</h4>
+              <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
+              <a href="papers.html">Papers</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Engines</h4>
+              <a href="foldbot-chess.html">FoldBot Chess</a>
+              <a href="fold-go.html">Fold-Go</a>
+              <a href="fold-protein.html">Fold-Protein</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Platform</h4>
+              <a href="ernosplain.html">ErnosPlain</a>
+              <a href="ernosdecent.html" aria-current="page">ErnosDecent</a>
+              <a href="ern-os.html">Ern-OS</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>AI</h4>
+              <a href="unisonai.html">UnisonAI</a>
+              <a href="ai.html">AI Archive</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Preservation</h4>
+              <a href="civ-seed.html">Civ-Seed</a>
+              <a href="seed.html">Seed Vault</a>
+              <a class="nav__mega-all" href="projects.html">⬇ All projects &amp; downloads</a>
+            </div>
           </div>
         </div>
         <div class="nav__drop" id="nav-writing">
@@ -48,9 +66,15 @@
             <a href="papers.html">Papers</a>
           </div>
         </div>
-        <a href="videos.html">Videos</a>
-        <a href="ai.html">AI Archive</a>
+        <div class="nav__drop" id="nav-media">
+          <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true">Media ▾</button>
+          <div class="nav__drop-menu">
+            <a href="videos.html">Videos</a>
+            <a href="ai.html">AI Archive</a>
+          </div>
+        </div>
         <a href="community.html">Community</a>
+        <a href="about.html">About</a>
       </div>
     </div>
   </nav>
@@ -228,7 +252,7 @@
   <script src="assets/js/spa.js?v=85d305c7"></script>
   <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
 
-  <script src="assets/js/site.js?v=a6ea590c"></script>
-  <script src="assets/js/decent.js?v=eeb89549"></script>
+  <script src="assets/js/site.js?v=1bbfa180"></script>
+  <script src="assets/js/decent.js?v=9dc31990"></script>
 </body>
 </html>

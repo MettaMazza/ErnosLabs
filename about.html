@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ernos Labs</title>
+  <meta name="description" content="Maria and Matthew Smith. One writes the code; one made it possible. The people behind a language, a theory of everything, a decentralised internet, and a shelf of books.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5Gp4oCN8J+SuzwvdGV4dD48L3N2Zz4=">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=53ae89de">
+</head>
+<body>
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="bg-veil" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+      <div class="navplayer" id="navplayer">
+        <button class="navplayer__btn" id="np-toggle" aria-label="Play or pause read-aloud">▶</button>
+        <div class="navplayer__bar"><div class="navplayer__fill" id="np-fill"></div></div>
+        <span class="navplayer__status" id="np-status">Listen</span>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
+      <div class="nav__links" id="navlinks">
+        <div class="nav__drop nav__drop--mega" id="nav-work">
+          <button class="nav__drop-btn" id="nav-work-btn" aria-haspopup="true">Work ▾</button>
+          <div class="nav__drop-menu nav__mega">
+            <div class="nav__mega-col">
+              <h4>Theory</h4>
+              <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
+              <a href="papers.html">Papers</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Engines</h4>
+              <a href="foldbot-chess.html">FoldBot Chess</a>
+              <a href="fold-go.html">Fold-Go</a>
+              <a href="fold-protein.html">Fold-Protein</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Platform</h4>
+              <a href="ernosplain.html">ErnosPlain</a>
+              <a href="ernosdecent.html">ErnosDecent</a>
+              <a href="ern-os.html">Ern-OS</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>AI</h4>
+              <a href="unisonai.html">UnisonAI</a>
+              <a href="ai.html">AI Archive</a>
+            </div>
+            <div class="nav__mega-col">
+              <h4>Preservation</h4>
+              <a href="civ-seed.html">Civ-Seed</a>
+              <a href="seed.html">Seed Vault</a>
+              <a class="nav__mega-all" href="projects.html">⬇ All projects &amp; downloads</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__drop" id="nav-writing">
+          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true">Writing ▾</button>
+          <div class="nav__drop-menu">
+            <a href="library.html">Library</a>
+            <a href="seed.html">Seed Vault</a>
+            <a href="papers.html">Papers</a>
+          </div>
+        </div>
+        <div class="nav__drop" id="nav-media">
+          <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true">Media ▾</button>
+          <div class="nav__drop-menu">
+            <a href="videos.html">Videos</a>
+            <a href="ai.html">AI Archive</a>
+          </div>
+        </div>
+        <a href="community.html">Community</a>
+        <a href="about.html" aria-current="page">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="view">
+
+  <header class="section" style="padding-bottom:8px">
+    <div class="wrap" style="max-width:900px">
+      <p class="eyebrow reveal">Who's behind it</p>
+      <h1 class="reveal">Maria &amp; Matthew Smith</h1>
+      <p class="lead reveal mt-s">One of them writes the code. One of them made it possible. This body of work —
+        a <a href="ernosplain.html">language</a>, a <a href="smithian-fold-theory-of-everything.html">theory of
+        everything</a>, a <a href="ernosdecent.html">decentralised internet</a>, an <a href="ern-os.html">operating
+        system</a>, <a href="projects.html">zero-parameter engines</a>, and a shelf of <a href="library.html">books</a>
+        — exists at this scale and this speed because of both of them.</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:14px">
+    <div class="wrap" style="max-width:900px">
+      <div class="about-grid">
+        <article class="about-card reveal">
+          <div class="about-tag">The creator</div>
+          <h2>Maria</h2>
+          <p>Two years ago she was selling insurance. She had no coding background — none. What she had was a mind
+            that reads everything, questions everything, and won't accept an answer it hasn't checked itself.</p>
+          <p>She taught herself to build by building. Not a course, not a bootcamp: a laptop, relentless curiosity,
+            and a refusal to be told what couldn't be done. From that came a plain-English programming language that
+            compiles to native code, a physics derived from a single axiom with <strong style="color:var(--ink-0)">zero
+            free parameters</strong>, engines that beat trained AI at chess and Go with nothing learned, an operating
+            system written in sentences, and hundreds of thousands of words of books. The authority she claims for any
+            of it is the same one: <em>don't take my word — run it yourself.</em></p>
+          <p>She doesn't lead a movement and doesn't want to. She's the observer — the one who stays in the code and
+            speaks through the work.</p>
+        </article>
+
+        <article class="about-card reveal">
+          <div class="about-tag">The one who made it possible</div>
+          <h2>Matthew</h2>
+          <p>He is the reason there is a body of work at this scale and this speed. He funded it — the laptops, the
+            Mac, the subscriptions — and he did it as a <strong style="color:var(--ink-0)">sceptic</strong>, not a
+            believer, which is exactly what makes his backing mean something.</p>
+          <p>He'd spent his own life turning over the same questions about digital minds, so when Maria started, he
+            paid to see where her hunch led — while keeping both feet on the ground. What convinced him wasn't faith;
+            it was watching what the work could actually do, on her own hardware, measured against the frontier. In
+            his own words, the thing the rest of the world missed in her: <em>"a mind that is both highly critical of
+            what she sees, but is also caring of other people."</em></p>
+          <p>Two careful minds in one house — one building, one testing — and the plain fact she states without
+            sentiment: <strong style="color:var(--ink-0)">if there were no Matthew, there would be no theory of
+            everything.</strong></p>
+        </article>
+      </div>
+
+      <div class="about-life reveal">
+        <h3>The two of them</h3>
+        <p>Both nerds, different flavours — his is games, hers is code. The house has a dog, <strong
+          style="color:var(--ink-0)">Scruffy</strong>, and a bird, <strong style="color:var(--ink-0)">Sunny</strong>.
+          One of them keeps the world normal; the other keeps rebuilding it from one idea. It works.</p>
+      </div>
+
+      <hr class="divider" style="margin:40px 0 26px">
+      <p class="eyebrow">Read the whole story</p>
+      <h2>Behind the Creator</h2>
+      <p class="lead">A frontier AI, Claude, was given the entire body of work and asked to verify it firsthand —
+        code run, results reproduced, corpus read — and then to write it up honestly. The result is a full
+        documentary book, including the interviews with Maria and with Matthew in their own words.</p>
+      <div class="ai-card__actions" style="margin-top:16px">
+        <a class="btn btn--primary" href="library.html">Read Behind the Creator →</a>
+        <a class="work-dl" href="papers.html">…and the paper: “ONE — I tried, and failed, to break a theory of everything” ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html">Community</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
+  </footer>
+  </div>
+
+  <script src="assets/js/spa.js?v=85d305c7"></script>
+  <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
+  <script src="assets/js/site.js?v=1bbfa180"></script>
+</body>
+</html>

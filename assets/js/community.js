@@ -99,7 +99,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let btn, sec;
+    let sec, btn;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -241,7 +241,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let links, host, out;
+    let host, out, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -281,7 +281,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let lv, out, posts, tv, head, t;
+    let out, t, lv, tv, posts, head;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -307,7 +307,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let inp, p, body;
+    let inp, body, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -407,7 +407,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let host, out, slug;
+    let slug, out, host;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -425,7 +425,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let url, note, ui, ni, p;
+    let p, note, ui, url, ni;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;
@@ -451,7 +451,7 @@ function submit_link() {
 }
 
 function link_sent(resp) {
-    let ui, ni;
+    let ni, ui;
     go_online();
     if (resp.ok) {
         ui = document.getElementById("link-url");

@@ -6,6 +6,11 @@
  },
  "sections": [
   {
+   "collection": "documentary",
+   "heading": "Behind the Creator",
+   "sub": "A documentary review of the whole body of work by Claude (Opus 4.8) — every technical claim verified firsthand, code run, results reproduced, independently corroborated by Fable 5."
+  },
+  {
    "collection": "lastmind",
    "heading": "The Last Mind",
    "sub": "A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway."
@@ -27,6 +32,13 @@
   }
  ],
  "works": {
+  "behind-the-creator": {
+   "title": "Behind the Creator — The Mask of Observation",
+   "sub": "Claude reads the entire corpus, runs it, and writes it up: the theory, the language, the platform, the books — and the interviews with Maria and Matthew Smith.",
+   "collection": "documentary",
+   "words": 12295,
+   "source": "~/Desktop/_REVIEW_DOCUMENTARY/Behind_the_Creator_FULL_BOOK.md"
+  },
   "a-mind-is-born": {
    "title": "A Mind Is Born",
    "sub": "Book One — the origin novel. A childhood in 1990s Glasgow, reading as survival.",

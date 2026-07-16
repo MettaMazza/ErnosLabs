@@ -75,16 +75,45 @@ define pj_meta_line with p:
     return out
 
 define pj_card with p:
+    set page to pj_page(p.repo)
     set out to "<div class=\"ai-card reveal in\">"
     set out to out + f"<div class=\"ai-card__top\"><h3>{pj_esc(p.title)}</h3></div>"
     set out to out + f"<p class=\"ai-desc\">{pj_esc(p.desc)}</p>"
     set out to out + f"<p class=\"pj-meta\">{pj_meta_line(p)}</p>"
     set out to out + "<div class=\"ai-card__actions\">"
-    set out to out + f"<a class=\"btn btn--primary\" href=\"project.html?p={p.repo}\">Read more →</a>"
+    set out to out + f"<a class=\"btn btn--primary\" href=\"{page}\">Explore →</a>"
     set out to out + f"<a class=\"pj-dl\" data-repo=\"{p.repo}\" href=\"{pj_gh(p.repo)}/archive/refs/heads/main.zip\">⬇ Download .zip</a>"
     set out to out + f"<a class=\"pj-ghl\" href=\"{pj_gh(p.repo)}\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>"
     set out to out + "</div></div>"
     return out
+
+# Each project's dedicated, fully-featured page (falls back to GitHub-only repos).
+define pj_page with repo:
+    if repo equals "FoldBot-Chess":
+        return "foldbot-chess.html"
+    if repo equals "Fold-Go":
+        return "fold-go.html"
+    if repo equals "Fold-Protein":
+        return "fold-protein.html"
+    if repo equals "UnisonAI":
+        return "unisonai.html"
+    if repo equals "Ern-OS":
+        return "ern-os.html"
+    if repo equals "Civ-Seed":
+        return "civ-seed.html"
+    if repo equals "Ernos-Programming-Language":
+        return "ernosplain.html"
+    if repo equals "ErnosDecent":
+        return "ernosdecent.html"
+    if repo equals "Smithian-Fold-Theory-Of-Everything":
+        return "smithian-fold-theory-of-everything.html"
+    if repo equals "Smithian-Fold-Theory":
+        return "smithian-fold-theory-of-everything.html"
+    if repo equals "sft-dev":
+        return "smithian-fold-theory-of-everything.html"
+    if repo equals "ErnosLabs":
+        return "index.html"
+    return pj_gh(repo)
 
 define pj_section with key and heading and sub:
     set cards to ""

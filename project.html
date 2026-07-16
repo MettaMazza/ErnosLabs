@@ -2,99 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project — Ernos Labs</title>
-  <meta name="description" content="One Ernos Labs project — its README rendered right here, its source downloadable straight from the source machine or from GitHub.">
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5OmPC90ZXh0Pjwvc3ZnPg==">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=e047e5b0">
+  <title>Redirecting… — Ernos Labs</title>
+  <meta name="robots" content="noindex">
+  <script>
+    // project.html is retired — every project now has its own dedicated page.
+    (function () {
+      var map = {
+        "FoldBot-Chess": "foldbot-chess.html",
+        "Fold-Go": "fold-go.html",
+        "Fold-Protein": "fold-protein.html",
+        "UnisonAI": "unisonai.html",
+        "Ern-OS": "ern-os.html",
+        "Civ-Seed": "civ-seed.html",
+        "Ernos-Programming-Language": "ernosplain.html",
+        "ErnosDecent": "ernosdecent.html",
+        "Smithian-Fold-Theory-Of-Everything": "smithian-fold-theory-of-everything.html",
+        "Smithian-Fold-Theory": "smithian-fold-theory-of-everything.html",
+        "sft-dev": "smithian-fold-theory-of-everything.html"
+      };
+      var p = new URLSearchParams(location.search).get("p");
+      location.replace((p && map[p]) || "projects.html");
+    })();
+  </script>
 </head>
 <body>
-  <canvas id="mesh" aria-hidden="true"></canvas>
-  <div class="bg-veil" aria-hidden="true"></div>
-
-  <nav class="nav">
-    <div class="wrap nav__in">
-      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
-      <div class="navplayer" id="navplayer">
-        <button class="navplayer__btn" id="np-toggle" aria-label="Play or pause read-aloud">▶</button>
-        <div class="navplayer__bar"><div class="navplayer__fill" id="np-fill"></div></div>
-        <span class="navplayer__status" id="np-status">Listen</span>
-      </div>
-      <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
-      <div class="nav__links" id="navlinks">
-        <a href="ernosplain.html">ErnosPlain</a>
-        <a href="smithian-fold-theory-of-everything.html">Fold Theory</a>
-        <a href="ernosdecent.html">ErnosDecent</a>
-        <div class="nav__drop" id="nav-projects">
-          <button class="nav__drop-btn" id="nav-projects-btn" aria-haspopup="true">Projects ▾</button>
-          <div class="nav__drop-menu">
-            <a href="projects.html">⬇ All projects &amp; downloads</a>
-            <a href="project.html?p=UnisonAI">UnisonAI</a>
-            <a href="project.html?p=Ern-OS">Ern-OS</a>
-            <a href="project.html?p=FoldBot-Chess">FoldBot Chess</a>
-            <a href="project.html?p=Fold-Go">Fold-Go</a>
-            <a href="project.html?p=Fold-Protein">Fold-Protein</a>
-            <a href="project.html?p=Civ-Seed">Civ-Seed</a>
-          </div>
-        </div>
-        <div class="nav__drop" id="nav-writing">
-          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true">Writing ▾</button>
-          <div class="nav__drop-menu">
-            <a href="library.html">Library</a>
-            <a href="seed.html">Seed Vault</a>
-            <a href="papers.html">Papers</a>
-          </div>
-        </div>
-        <a href="videos.html">Videos</a>
-        <a href="ai.html">AI Archive</a>
-        <a href="community.html">Community</a>
-      </div>
-    </div>
-  </nav>
-
-  <div id="view">
-
-  <header class="section" style="padding-bottom:6px">
-    <div class="wrap" style="max-width:900px">
-      <a class="cm-back" href="projects.html">← All projects &amp; downloads</a>
-      <h1 id="project-title" class="reveal" style="margin-top:14px">—</h1>
-      <p id="project-desc" class="lead reveal mt-s"></p>
-      <p id="project-meta" style="color:var(--ink-3);font-size:.85rem;margin-top:10px"></p>
-      <div class="ai-card__actions" style="margin-top:18px">
-        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
-        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
-      </div>
-      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
-    </div>
-  </header>
-
-  <section class="section" style="padding-top:18px">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin-bottom:26px">
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
-    </div>
-  </section>
-
-  <footer class="foot">
-    <div class="wrap foot__in">
-      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="#4ff0c4" opacity=".92"/></svg> Ernos&nbsp;Labs</a>
-        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
-      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
-        <a href="projects.html">All projects</a><a href="ai.html">AI Archive</a><a href="community.html">Community</a></div></div>
-    </div>
-    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
-  </footer>
-
-  </div>
-
-  <script src="assets/js/md.js?v=2f15e68f"></script>
-  <script src="assets/js/spa.js?v=85d305c7"></script>
-  <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
-  <script src="assets/js/site.js?v=a6ea590c"></script>
-  <script src="assets/js/projects-data.js?v=0dd5a207"></script>
-  <script src="assets/js/projects.js?v=43f0f6f8"></script>
+  <p style="font-family:system-ui;padding:2rem">Redirecting… if nothing happens, <a href="projects.html">go to Projects</a>.</p>
 </body>
 </html>

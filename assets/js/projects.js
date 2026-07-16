@@ -86,21 +86,62 @@ function pj_meta_line(p) {
 }
 
 function pj_card(p) {
-    let out;
+    let out, page;
+    page = pj_page(p.repo);
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (("<div class=\"ai-card__top\"><h3>" + String(pj_esc(p.title))) + "</h3></div>"));
     out = (out + (("<p class=\"ai-desc\">" + String(pj_esc(p.desc))) + "</p>"));
     out = (out + (("<p class=\"pj-meta\">" + String(pj_meta_line(p))) + "</p>"));
     out = (out + "<div class=\"ai-card__actions\">");
-    out = (out + (("<a class=\"btn btn--primary\" href=\"project.html?p=" + String(p.repo)) + "\">Read more →</a>"));
+    out = (out + (("<a class=\"btn btn--primary\" href=\"" + String(page)) + "\">Explore →</a>"));
     out = (out + (((("<a class=\"pj-dl\" data-repo=\"" + String(p.repo)) + "\" href=\"") + String(pj_gh(p.repo))) + "/archive/refs/heads/main.zip\">⬇ Download .zip</a>"));
     out = (out + (("<a class=\"pj-ghl\" href=\"" + String(pj_gh(p.repo))) + "\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>"));
     out = (out + "</div></div>");
     return out;
 }
 
+function pj_page(repo) {
+    if ((repo === "FoldBot-Chess")) {
+        return "foldbot-chess.html";
+    }
+    if ((repo === "Fold-Go")) {
+        return "fold-go.html";
+    }
+    if ((repo === "Fold-Protein")) {
+        return "fold-protein.html";
+    }
+    if ((repo === "UnisonAI")) {
+        return "unisonai.html";
+    }
+    if ((repo === "Ern-OS")) {
+        return "ern-os.html";
+    }
+    if ((repo === "Civ-Seed")) {
+        return "civ-seed.html";
+    }
+    if ((repo === "Ernos-Programming-Language")) {
+        return "ernosplain.html";
+    }
+    if ((repo === "ErnosDecent")) {
+        return "ernosdecent.html";
+    }
+    if ((repo === "Smithian-Fold-Theory-Of-Everything")) {
+        return "smithian-fold-theory-of-everything.html";
+    }
+    if ((repo === "Smithian-Fold-Theory")) {
+        return "smithian-fold-theory-of-everything.html";
+    }
+    if ((repo === "sft-dev")) {
+        return "smithian-fold-theory-of-everything.html";
+    }
+    if ((repo === "ErnosLabs")) {
+        return "index.html";
+    }
+    return pj_gh(repo);
+}
+
 function pj_section(key, heading, sub) {
-    let cards, out;
+    let out, cards;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         if ((p.cat === key)) {
@@ -133,7 +174,7 @@ function pj_render_grid() {
 }
 
 function pj_param() {
-    let sp, v;
+    let v, sp;
     sp = Reflect.construct(window.URLSearchParams, [window.location.search]);
     v = sp.get("p");
     if (v) {
@@ -179,7 +220,7 @@ function pj_doc_fail(err) {
 }
 
 function pj_render_page() {
-    let dl, host, p, gh, h, m, d, repo;
+    let p, repo, host, m, dl, gh, d, h;
     host = document.getElementById("project-doc");
     if (!host) {
         return 0;

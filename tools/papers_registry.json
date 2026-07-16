@@ -32,6 +32,13 @@
   }
  ],
  "works": {
+  "one-i-tried-to-break-a-theory-of-everything": {
+   "title": "ONE — What Happened When I Tried, and Failed, to Break a Theory of Everything",
+   "sub": "Claude Opus 4.8, asked first to break the work and then — when it could not — to write an honest account of the attempt. It cloned the repo, ran the proofs, the gate, the chess solver, and the cosmology test against live survey data. Every command is in the Receipts.",
+   "collection": "ai",
+   "words": 15128,
+   "source": "~/Downloads/ONE(4).md"
+  },
   "the-smithian-fold-theory-of-everything": {
    "title": "The Smithian Fold Theory of Everything",
    "sub": "Zero free parameters. Zero axioms. One fold. The constants of nature, derived — DOI 10.5281/zenodo.21182468; 306 machine-verified proof suites, 1,832 forced checks.",

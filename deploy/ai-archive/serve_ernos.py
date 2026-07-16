@@ -674,7 +674,9 @@ _PROJECTS = [
     ("ErnosDecent", "ErnosDecent", "platform", ""),
     ("Ern-OS", "Ern-OS", "platform", ""),
     ("Civ-Seed", "Civ-Seed", "preserve", ""),
-    ("ErnosLabs", "Ernos Labs (this site)", "preserve", ""),
+    # NB: the ErnosLabs repo (this site) is deliberately NOT mirrored — the
+    # watchers auto-push to it, so zipping it would move its HEAD every cycle
+    # and churn projects-data.js forever. It's the host, not a listed download.
 ]
 _PROJECTS_ROOT = os.environ.get(
     "PROJECTS_ROOT", str(pathlib.Path.home() / ".ernos" / "projects-mirror"))
@@ -755,6 +757,78 @@ def _projects_data_js(meta):
     return out
 
 
+def _bake_interactive():
+    """Re-derive the dedicated pages' replay data from the repo mirrors + local
+    game logs, so a fresh match/fold/boot shows up on the site on its own.
+    Best-effort per source; returns the list of changed content files."""
+    out = os.path.join(SITE_ROOT, "content", "interactive")
+    os.makedirs(out, exist_ok=True)
+    changed = []
+
+    def write_if_changed(name, data):
+        p = os.path.join(out, name)
+        new = json.dumps(data, ensure_ascii=False)
+        old = open(p, encoding="utf-8").read() if os.path.exists(p) else None
+        if new != old:
+            open(p, "w", encoding="utf-8").write(new)
+            changed.append(f"content/interactive/{name}")
+
+    home = os.path.expanduser("~")
+    # GO — newest/biggest KataGo GTP log
+    try:
+        import glob as _glob
+        logs = sorted(_glob.glob(f"{home}/Desktop/Fold Go/gtp_logs/*.log"),
+                      key=os.path.getsize, reverse=True)
+        if logs:
+            side, moves = None, []
+            for line in open(logs[0], errors="replace"):
+                g = re.search(r"Controller: (genmove|play) (B|W)(?: ([A-T]\d{1,2}|pass))?", line)
+                if g:
+                    if g.group(1) == "play":
+                        moves.append([g.group(2), (g.group(3) or "").upper()]); side = None
+                    else:
+                        side = g.group(2)
+                    continue
+                if side:
+                    r = re.search(r": = ([A-T]\d{1,2}|pass|resign)\s*$", line)
+                    if r:
+                        moves.append([side, r.group(1).upper()]); side = None
+            if moves:
+                write_if_changed("fold-go-game.json",
+                                 {"boardsize": 19, "source": os.path.basename(logs[0]), "moves": moves})
+    except Exception as e:
+        print(f"[interactive] go: {e}", flush=True)
+    # CHESS — decode moves_enc (from*64+to, 0=a1) from the newest gate game
+    try:
+        import glob as _glob
+        gates = sorted(_glob.glob(f"{home}/Desktop/FoldBot Chess/tools/gate_*/gate_01.json"),
+                       key=os.path.getmtime, reverse=True)
+        if gates:
+            d = json.load(open(gates[0]))
+            sqr = lambda i: "abcdefgh"[i % 8] + str(i // 8 + 1)
+            uci = [sqr(e // 64) + sqr(e % 64) for e in d["moves_enc"]]
+            write_if_changed("foldbot-chess-game.json",
+                             {"result": d.get("result"), "white": "FoldBot" if d.get("new_white") else "prev",
+                              "moves": uci})
+    except Exception as e:
+        print(f"[interactive] chess: {e}", flush=True)
+    # PROTEIN — highest-version ubiquitin PDB → CA trace
+    try:
+        import glob as _glob
+        pdbs = _glob.glob(f"{home}/Desktop/Fold Protein/1ubq_autonomous_v*.pdb")
+        if pdbs:
+            best = max(pdbs, key=lambda p: int(re.search(r"_v(\d+)", p).group(1)))
+            ca = []
+            for line in open(best, errors="replace"):
+                if line.startswith("ATOM") and line[12:16].strip() == "CA":
+                    ca.append([round(float(line[30:38]), 2), round(float(line[38:46]), 2), round(float(line[46:54]), 2)])
+            if ca:
+                write_if_changed("fold-protein-ca.json", {"source": os.path.basename(best), "ca": ca})
+    except Exception as e:
+        print(f"[interactive] protein: {e}", flush=True)
+    return changed
+
+
 def _projects_loop():
     tag = "[projects]"
     first = True
@@ -768,6 +842,10 @@ def _projects_loop():
                 print(f"{tag} meta warn: {e}", flush=True)
                 meta = {}
             changed = []
+            try:
+                changed += _bake_interactive()
+            except Exception as e:
+                print(f"{tag} interactive: {e}", flush=True)
             cdir = os.path.join(SITE_ROOT, "content", "projects")
             os.makedirs(cdir, exist_ok=True)
             for repo, _t, _c, _f in _PROJECTS:
@@ -812,6 +890,162 @@ def _projects_loop():
 
 
 threading.Thread(target=_projects_loop, daemon=True).start()
+
+
+# ---- Background watcher: keep Papers & Library synced with her sources -------
+# Curation is preserved: tools/{papers,library}_registry.json holds the intro,
+# the sections, and per-work {title, sub, collection, source}. This watcher
+# copies each work's source file into content/{papers,library}/ when it changes,
+# refreshes the word count, auto-discovers NEW papers/books in the known
+# directories (adding them under a "new" section so they appear immediately,
+# ready for her to curate), regenerates the *-data.js catalog, and pushes —
+# exactly like the archive/videos/projects watchers. So editing a book or
+# pushing a paper updates the site hands-free.
+_PAPER_DIRS = [
+    "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers",
+    "~/.ernos/projects-mirror/repos/UnisonAI/papers",
+    "~/.ernos/projects-mirror/repos/Fold-Go/papers",
+    "~/.ernos/projects-mirror/repos/FoldBot-Chess/papers",
+    "~/.ernos/projects-mirror/repos/Fold-Protein/papers",
+]
+_BOOK_DIRS = ["~/Desktop/Civ/Library"]
+
+
+def _slugify(name):
+    s = re.sub(r"\.md$", "", name, flags=re.I)
+    s = re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-").lower()
+    return s[:80]
+
+
+def _wordcount(path):
+    try:
+        return len(open(path, encoding="utf-8", errors="replace").read().split())
+    except Exception:
+        return 0
+
+
+def _first_h1(path):
+    try:
+        for line in open(path, encoding="utf-8", errors="replace"):
+            if line.startswith("# "):
+                return line[2:].strip()
+    except Exception:
+        pass
+    return ""
+
+
+def _emit_reader_js(kind, reg, content_rel):
+    intro = reg["intro"]
+    sections = list(reg["sections"])
+    if not any(s.get("collection") == "new" for s in sections):
+        sections.append({"collection": "new",
+                          "heading": "Newly added",
+                          "sub": "Freshly synced from the source — not yet placed into a section."})
+    out = [f"// AUTO-GENERATED by the content watcher from tools/{kind}_registry.json — do not hand-edit.",
+           "// Curation (titles, blurbs, sections) lives in that registry; content and",
+           "// word counts sync from the source files on Maria's machine.",
+           'window.READER_EXTRA_HTML = "";',
+           "window.READER_INTRO = " + json.dumps(intro, ensure_ascii=False) + ";",
+           "window.READER_SECTIONS = " + json.dumps(sections, ensure_ascii=False) + ";",
+           "window.READER_WORKS = ["]
+    for wid, w in reg["works"].items():
+        row = {"id": wid, "file": f"{content_rel}/{wid}.md", "title": w["title"],
+               "sub": w.get("sub", ""), "words": w.get("words", 0),
+               "collection": w.get("collection", "new")}
+        out.append("  " + json.dumps(row, ensure_ascii=False) + ",")
+    out.append("];")
+    return "\n".join(out) + "\n"
+
+
+def _content_sync(kind, regfile, content_sub, page, srcdirs):
+    tag = f"[{kind}watch]"
+    reg = json.load(open(regfile, encoding="utf-8"))
+    cdir = os.path.join(SITE_ROOT, "content", content_sub)
+    os.makedirs(cdir, exist_ok=True)
+    changed = []
+    # 1) sync sourced works + refresh word counts
+    for wid, w in reg["works"].items():
+        src = w.get("source")
+        dst = os.path.join(cdir, f"{wid}.md")
+        if src:
+            src = os.path.expanduser(src)
+            if os.path.exists(src):
+                new = open(src, encoding="utf-8", errors="replace").read()
+                old = open(dst, encoding="utf-8").read() if os.path.exists(dst) else None
+                if new != old:
+                    open(dst, "w", encoding="utf-8").write(new)
+                    changed.append(f"content/{content_sub}/{wid}.md")
+        if os.path.exists(dst):
+            wc = _wordcount(dst)
+            if wc and wc != w.get("words"):
+                w["words"] = wc
+    # 2) auto-discover new files not already tracked
+    tracked = {os.path.basename(os.path.expanduser(w["source"])) for w in reg["works"].values() if w.get("source")}
+    for d in srcdirs:
+        d = os.path.expanduser(d)
+        if not os.path.isdir(d):
+            continue
+        for name in sorted(os.listdir(d)):
+            if not name.endswith(".md") or name in tracked:
+                continue
+            if name.upper() in ("README.MD",) or "BACKUP" in name.upper() or name.startswith("_"):
+                continue
+            wid = _slugify(name)
+            if wid in reg["works"]:
+                continue
+            src = os.path.join(d, name)
+            open(os.path.join(cdir, f"{wid}.md"), "w", encoding="utf-8").write(
+                open(src, encoding="utf-8", errors="replace").read())
+            reg["works"][wid] = {"title": _first_h1(src) or name[:-3].replace("_", " "),
+                                 "sub": "", "collection": "new", "words": _wordcount(src),
+                                 "source": src.replace(os.path.expanduser("~"), "~")}
+            changed.append(f"content/{content_sub}/{wid}.md")
+            print(f"{tag} new work discovered: {wid}", flush=True)
+    # 3) regenerate the catalog + registry (word counts) if anything moved
+    js_path = os.path.join(SITE_ROOT, "assets", "js", f"{content_sub}-data.js")
+    new_js = _emit_reader_js(content_sub, reg, f"content/{content_sub}")
+    old_js = open(js_path, encoding="utf-8").read() if os.path.exists(js_path) else ""
+    if new_js != old_js:
+        open(js_path, "w", encoding="utf-8").write(new_js)
+        json.dump(reg, open(regfile, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+        changed.append(f"assets/js/{content_sub}-data.js")
+        changed.append(os.path.relpath(regfile, SITE_ROOT))
+        import hashlib
+        h = hashlib.sha1(new_js.encode("utf-8")).hexdigest()[:8]
+        pp = os.path.join(SITE_ROOT, page)
+        s = open(pp, encoding="utf-8").read()
+        s2 = re.sub(rf"{content_sub}-data\.js(\?v=[0-9a-f]+)?", f"{content_sub}-data.js?v={h}", s)
+        if s2 != s:
+            open(pp, "w", encoding="utf-8").write(s2)
+            changed.append(page)
+    return changed
+
+
+def _content_loop():
+    tag = "[contentwatch]"
+    first = True
+    while True:
+        time.sleep(60 if first else 1200)  # after boot, then every 20 min
+        first = False
+        try:
+            changed = []
+            changed += _content_sync("papers", os.path.join(SITE_ROOT, "tools", "papers_registry.json"),
+                                     "papers", "papers.html", _PAPER_DIRS)
+            changed += _content_sync("library", os.path.join(SITE_ROOT, "tools", "library_registry.json"),
+                                     "library", "library.html", _BOOK_DIRS)
+            if changed:
+                print(f"{tag} {len(changed)} file(s) changed → pushing", flush=True)
+                _sh(["git", "add"] + changed)
+                _sh(["git", "-c", "user.name=Maria Smith",
+                     "-c", "user.email=maria.smith.xo@outlook.com",
+                     "commit", "-q", "-m", "chore(content): sync papers & library from source [auto]"])
+                push = _sh(["git", "push", "-q", "origin", "main"])
+                print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
+        except Exception as e:
+            print(f"{tag} cycle error: {e}", flush=True)
+
+
+threading.Thread(target=_content_loop, daemon=True).start()
 
 
 # ---- static mounts (follow the models symlink to its real path) ---------

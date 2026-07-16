@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papers &amp; Essays — Ernos Labs</title>
-  <meta name="description" content="Standalone papers and essays by Maria Smith — reproducible, sourced arguments. Read them in the browser or download the full text.">
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5OEPC90ZXh0Pjwvc3ZnPg==">
+  <title>Ern-OS — Ernos Labs</title>
+  <meta name="description" content="A small operating system written entirely in plain-English Ernos — self-contained, offline, and self-hosting from a C compiler alone. Watch it boot.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5al77iPPC90ZXh0Pjwvc3ZnPg==">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
               <h4>Platform</h4>
               <a href="ernosplain.html">ErnosPlain</a>
               <a href="ernosdecent.html">ErnosDecent</a>
-              <a href="ern-os.html">Ern-OS</a>
+              <a href="ern-os.html" aria-current="page">Ern-OS</a>
             </div>
             <div class="nav__mega-col">
               <h4>AI</h4>
@@ -63,7 +63,7 @@
           <div class="nav__drop-menu">
             <a href="library.html">Library</a>
             <a href="seed.html">Seed Vault</a>
-            <a href="papers.html" aria-current="page">Papers</a>
+            <a href="papers.html">Papers</a>
           </div>
         </div>
         <div class="nav__drop" id="nav-media">
@@ -80,40 +80,60 @@
   </nav>
 
   <div id="view">
+  <div id="project-page" data-repo="Ern-OS">
 
-  <main>
-    <!-- Catalog view -->
-    <div id="catalog"></div>
-
-    <!-- Reader view -->
-    <div id="reader" class="hidden">
-      <div class="reader__bar">
-        <button class="r-btn" id="back">← Papers</button>
-        <span class="r-title" id="reader-title">—</span>
-        <button class="r-btn" id="font-down" aria-label="Smaller text">A−</button>
-        <button class="r-btn" id="font-up" aria-label="Larger text">A+</button>
-        <input class="r-search" id="search" type="search" placeholder="Search this text…" autocomplete="off">
-        <span class="r-count" id="search-count"></span>
-        <button class="r-btn" id="tts">▶ Read aloud</button>
-        <span id="voice-container"></span>
-        <span class="r-count" id="tts-status"></span>
-        <button class="r-btn" id="copy-link">🔗 Copy link</button>
-        <a class="r-btn" id="reader-dl" href="#" download>⬇ Download</a>
+  <header class="section" style="padding-bottom:8px">
+    <div class="wrap" style="max-width:960px">
+      <p class="eyebrow reveal">The platform</p>
+      <h1 class="reveal">Ern-OS</h1>
+      <p class="lead reveal mt-s">A small operating system written <strong style="color:var(--ink-0)">entirely in plain-English Ernos</strong> — kernel, shell, filesystem, desktop, all of it. Self-contained, works with no network, and self-hosting: it rebuilds itself from a C compiler alone. Every part of it, including the system itself, is written in language you can read.</p>
+      <div class="ai-card__actions" style="margin-top:20px">
+        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
+        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
-      <div class="reader__wrap">
-        <aside class="toc" id="toc"></aside>
-        <article class="doc" id="doc"></article>
+      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:14px">
+    <div class="wrap" style="max-width:960px">
+      <div id="showcase-stage" class="showcase-stage" data-kind="boot" data-file="ern-os-boot.json">
+        <p class="loading">Loading the interactive replay…</p>
       </div>
     </div>
-  </main>
+  </section>
 
+  <section class="section" style="padding-top:8px">
+    <div class="wrap" style="max-width:900px">
+      <p class="lead" style="margin-bottom:0">You talk to Ern-OS in sentences — <em>make a folder called letters</em>, <em>write a note called hello saying good morning</em>, <em>rebuild the system</em>. Everything it knows lives in its own disk folder; nothing is forgotten between visits; nothing reaches the network. The terminal above is a real captured session: first boot, disk preparation, login, and the command tour.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin:8px 0 26px">
+      <p class="eyebrow">Straight from the source</p>
+      <h2>The README</h2>
+      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+    </div>
+  </section>
+
+  </div>
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
+      <div class="foot__cols"><div class="foot__col"><h4>More</h4>
+        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html">Community</a></div></div>
+    </div>
+    <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
+  </footer>
   </div>
 
   <script src="assets/js/md.js?v=fde39345"></script>
   <script src="assets/js/spa.js?v=85d305c7"></script>
   <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
   <script src="assets/js/site.js?v=1bbfa180"></script>
-  <script src="assets/js/papers-data.js?v=474a8dc3"></script>
-  <script src="assets/js/reader.js?v=2078f09a"></script>
+  <script src="assets/js/showcase.js?v=ab76d52b"></script>
 </body>
 </html>

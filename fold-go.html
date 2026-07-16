@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos — Ernos Labs</title>
-  <meta name="description" content="Watch the Ernos Labs channel — the Smithian Fold theory, the language, the platform, and the writing, explained on video. Play them right here.">
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7ilrY8L3RleHQ+PC9zdmc+">
+  <title>Fold-Go — Ernos Labs</title>
+  <meta name="description" content="A zero-parameter Go engine that swept KataGo 2–0 at 19×19 — no neural network, no learned patterns, no random playouts. Three purely mathematical theorems. Replay the match.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7imqs8L3RleHQ+PC9zdmc+">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
             <div class="nav__mega-col">
               <h4>Engines</h4>
               <a href="foldbot-chess.html">FoldBot Chess</a>
-              <a href="fold-go.html">Fold-Go</a>
+              <a href="fold-go.html" aria-current="page">Fold-Go</a>
               <a href="fold-protein.html">Fold-Protein</a>
             </div>
             <div class="nav__mega-col">
@@ -69,7 +69,7 @@
         <div class="nav__drop" id="nav-media">
           <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true">Media ▾</button>
           <div class="nav__drop-menu">
-            <a href="videos.html" aria-current="page">Videos</a>
+            <a href="videos.html">Videos</a>
             <a href="ai.html">AI Archive</a>
           </div>
         </div>
@@ -80,51 +80,68 @@
   </nav>
 
   <div id="view">
+  <div id="project-page" data-repo="Fold-Go">
 
-  <header class="section" style="padding-bottom:24px">
-    <div class="wrap">
-      <p class="eyebrow reveal">The channel</p>
-      <h1 class="reveal">Videos</h1>
-      <p class="lead reveal mt-s">The whole body of work, explained on video — the Smithian Fold, the language,
-        the platform, and the writing. Pick any one below; it plays right here.
-        <a href="https://www.youtube.com/@Ernos_Labs" target="_blank" rel="noopener" style="color:var(--ink-0)">See the full channel ↗</a></p>
+  <header class="section" style="padding-bottom:8px">
+    <div class="wrap" style="max-width:960px">
+      <p class="eyebrow reveal">Zero-parameter engine</p>
+      <h1 class="reveal">Fold-Go</h1>
+      <p class="lead reveal mt-s">A Go engine that <strong style="color:var(--ink-0)">swept KataGo 2–0 at 19×19</strong> using three purely mathematical theorems — <strong style="color:var(--ink-0)">0 learned weights, 0 predefined patterns, 0 random playouts</strong>. Where DeepMind's architecture had to statistically approximate opening moves through millions of games, the fold engine derives them from first-principles Euclidean geometry on move one.</p>
+      <div class="ai-card__actions" style="margin-top:20px">
+        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
+        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="video-stage reveal">
-        <iframe id="video-player" src="" title="Ernos Labs video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <section class="section" style="padding-top:14px">
+    <div class="wrap" style="max-width:960px">
+      <div id="showcase-stage" class="showcase-stage" data-kind="go" data-file="fold-go-game.json">
+        <p class="loading">Loading the interactive replay…</p>
       </div>
-      <h2 id="video-title" style="margin-top:22px;font-size:1.35rem">—</h2>
-
-      <hr class="divider" style="margin:40px 0 30px">
-      <p class="eyebrow">Latest uploads</p>
-      <h2>Browse the channel</h2>
-      <p class="lead" style="margin-bottom:26px">Click any video to watch it in the player above.</p>
-      <div class="video-grid" id="video-grid"></div>
     </div>
   </section>
 
+  <section class="section" style="padding-top:8px">
+    <div class="wrap" style="max-width:900px">
+      <p class="lead" style="margin-bottom:0">Go stood for decades as the grand challenge of AI: a state space of 10<sup>170</sup> and ~250 legal moves a turn made classical search intractable, and the modern answer — AlphaGo, then KataGo — leaned entirely on vast statistical approximation. The fold engine evaluates positions by an exact D₄ dihedral reduction of the board's coordinate space. The goban above replays the recorded match, move for move.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin:8px 0 26px">
+      <p class="eyebrow">Read the work</p>
+      <h2>Papers behind it</h2>
+      <p class="lead"><a href="papers.html">Defeating Deep Learning: a Zero-Parameter Geometric Engine Sweeps KataGo 2–0</a> and the companion <a href="papers.html">Symmetric Go</a> paper give the theorems and the full match record.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin:8px 0 26px">
+      <p class="eyebrow">Straight from the source</p>
+      <h2>The README</h2>
+      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+    </div>
+  </section>
+
+  </div>
   <footer class="foot">
     <div class="wrap foot__in">
-      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="#4ff0c4" opacity=".92"/></svg> Ernos&nbsp;Labs</a>
-        <p style="margin-top:12px;max-width:34ch">The work, explained on video.</p></div>
+      <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
+        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
       <div class="foot__cols"><div class="foot__col"><h4>More</h4>
-        <a href="ernosplain.html">ErnosPlain</a><a href="smithian-fold-theory-of-everything.html">Fold Theory</a><a href="library.html">Library</a>
-        <a href="https://www.youtube.com/@Ernos_Labs" target="_blank" rel="noopener">YouTube ↗</a></div></div>
+        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html">Community</a></div></div>
     </div>
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
   </footer>
-
   </div>
 
+  <script src="assets/js/md.js?v=fde39345"></script>
   <script src="assets/js/spa.js?v=85d305c7"></script>
   <script src="assets/js/kokoro-tts.js?v=1933b4e1"></script>
   <script src="assets/js/site.js?v=1bbfa180"></script>
-  <script src="assets/js/videos-data.js?v=997375c6"></script>
-  <script src="assets/js/videos.js?v=075e7ff1"></script>
+  <script src="assets/js/showcase.js?v=ab76d52b"></script>
 </body>
 </html>
