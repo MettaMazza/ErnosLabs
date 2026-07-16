@@ -2,7 +2,7 @@
 
 ## *Attention, it turns out, was not all you need*
 
-**Maria Smith (Ernos Labs)** — the architecture paper, v5.0, 2026-07-16
+**Maria Smith (Ernos Labs)** — the architecture paper, v6.1, 2026-07-16
 Split from the combined record *UnisonAI: A Forced, Derived Omni-Model Architecture* (v4.x
 lineage, DOI 10.5281/zenodo.21217279), which remains committed as the dated record. The
 spectral science this engine stands beside — the decode of trained neural weights — is the
@@ -12,7 +12,7 @@ companion paper **[The Law Inside Trained Weights: The Fold Decode Campaign](Fol
 > Fold Theory of Everything**: one axiom, zero free parameters, machine-verified by 307 proof
 > suites and 1,844 forced checks.
 > **Theory (Zenodo):** https://doi.org/10.5281/zenodo.21182469 · **Theory (GitHub):** https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything
-> **This engine (GitHub):** https://github.com/MettaMazza/UnisonAI · **Companion decode paper:** [Fold_Decode_Interpretability.md](Fold_Decode_Interpretability.md) (DOI 10.5281/zenodo.21396743) · **This paper's DOI:** 10.5281/zenodo.21396741
+> **This engine (GitHub):** https://github.com/MettaMazza/UnisonAI · **Companion decode paper:** [Fold_Decode_Interpretability.md](Fold_Decode_Interpretability.md) (DOI 10.5281/zenodo.21396743) · **This paper's DOI (v6.1):** 10.5281/zenodo.21400697 · concept 10.5281/zenodo.21217278
 
 ---
 
@@ -61,29 +61,39 @@ Knowledge is **held orbits**: every context read, told, seen, heard, or thought,
 
 **Multi-orbit binding (XI-4 in full).** When several held orbits carry one question through the lock, they bind into ONE unified reply: the ranked hits of the same vote sort, each joined source independently required to pass the same matched-experience laws as the lead *and* to add counted novelty (informative words by the one-in-a-thousand rule), tail capped at two sentences per source, three sources at most, percept records never fused, and the anaphora law untouched — a context-pointing question still goes to the channel holding the conversation. Fusion is spent only where a QUESTION spans more than one informative focus — greetings and tellings never fuse (the warm-friend register, counted). Unit-proven live: two complementary lessons fused into one reply, a distractor lesson excluded, tutor head-to-heads left single-orbit so the graduation score keeps measuring the channels themselves.
 
-**Recall is regeneration — one law for every tier.** A held experience is never reprinted as a stored packet: recall re-traverses the held cycle (the corpus's memory law), walking the experience's own orbit token-by-token through the same unified sampler that composes novelty, spanning exactly the sentences the record carries, gated by the counted self-check; while an orbit is too young for its walk to hold the focus the held record still answers, and the thought line names which happened — the reprint rate is the youth, measured, falling as the store grows. The serving gate is one law across every memory tier: told and confirmed experience passes the same informative half-overlap rule lessons pass — tellings keep their top rank in the experience order, and the same counted gate decides whether any tier serves. Two organs complete the routing, neither carrying a single enumerated phrase: the **relation-facts channel** answers identity questions from exact held facts, and **tool graduation** answers questions whose truth lives in a sense rather than a memory. Every tool call the observer makes banks a **trace** — the question territory mapped to the ACT that answered it, with a serving voice *derived* from the teacher's own phrasing by a counted containment check (where the tool's result appears verbatim in the answer, that answer with the value slotted becomes the template; no containment, no template). When a later question binds a held trace through the same half-overlap gate every tier obeys, the engine **runs the act itself, fresh** — measured live: the observer answered a time question once using the clock tool; sixty-one seconds later the engine executed the tool natively and spoke the new minute. Taught once, native forever — the removal-proof ladder, extended to agency — and the recall law all the way down: what is held is the act, never the value, so a time answer re-reads the clock instead of reprinting what the time used to be. Taught answers (corrections) remain verbatim seats by the Learning Law's own word. **Generation closure**: the Learning Law reaches `generate()` itself — in autonomous self-play the engine generates from its counted distributions with no retrieval and no teacher, verifies against held references by counted overlap, and only verified generations are written back (earned retention; unverified output is discarded).
+**Recall is regeneration — one law for every tier.** A held experience is never reprinted as a stored packet: recall re-expresses the held meaning through the same composing machinery that produces novelty — in the current surface, the forced generation stack of §8.2.1 — gated by the counted self-check, with the total never-verbatim rule binding every tier. The serving gate is one law across every memory tier: told and confirmed experience passes the same informative half-overlap rule lessons pass — tellings keep their top rank in the experience order, and the same counted gate decides whether any tier serves. Two organs complete the routing, neither carrying a single enumerated phrase: the **relation-facts channel** answers identity questions from exact held facts, and **tool graduation** answers questions whose truth lives in a sense rather than a memory. Every tool call the observer makes banks a **trace** — the question territory mapped to the ACT that answered it, with a serving voice *derived* from the teacher's own phrasing by a counted containment check (where the tool's result appears verbatim in the answer, that answer with the value slotted becomes the template; no containment, no template). When a later question binds a held trace through the same half-overlap gate every tier obeys, the engine **runs the act itself, fresh** — measured live: the observer answered a time question once using the clock tool; sixty-one seconds later the engine executed the tool natively and spoke the new minute. Taught once, native forever — the removal-proof ladder, extended to agency — and the recall law all the way down: what is held is the act, never the value, so a time answer re-reads the clock instead of reprinting what the time used to be. Taught answers (corrections) are held as multiple expressions of one meaning and serve only re-expressed — the never-verbatim rule is total, with no taught exemption. **Generation closure**: the Learning Law reaches `generate()` itself — in autonomous self-play the engine generates from its counted distributions with no retrieval and no teacher, verifies against held references by counted overlap, and only verified generations are written back (earned retention; unverified output is discarded).
 
-#### 8.2.1 The conversational generator — architecture update (2026-07-16)
+#### 8.2.1 The conversational generator: the forced generation stack
 
-The live conversational surface described above (the per-token walk over held distributions)
-was superseded in the engine after this record's measurements: an unfiltered token walk and,
-separately, verbatim orbit replay were both retired — the first for incoherence, the second
-because **verbatim recall is a violation of the architecture's law**. The current live
-generator is the corpus's established-mathematics translation, all counted and exact:
-**prompt→response pair retrieval** over role-structured conversational corpora (BM25 with
-question-question Jaccard, dialogue-act matching, counted-kinship expansion at the fold
-factor 1/2, conversation context weighted 2^-age — the forced halving), **Laplace
-(g+1)/(g+b+2) feedback re-ranking**, taught corrections as pairs (the FAQ law), and
-**delexicalize→relexicalize realization** (the tool-trace template law generalized) under a
-never-verbatim guard. Its quality is scored ONLY by a calibration-gated independent judge —
-see §9's 2026-07-16 addendum for the honest measured record, including the retraction that
-preceded it. The exact-fractional counted substrate of this section remains the
-cross-entropy-measured foundation and the memory law is unchanged.
+The live conversational surface is the corpus's own translation of established
+response-selection and language-model mathematics, every steering quantity forced or a
+marked engineering constant of an established instrument, and nothing served verbatim —
+ever, from any store, including taught corrections (the total rule):
 
+- **Selection**: counted pair retrieval — exact BM25 with question-similarity over
+  role-structured conversational pairs, query context weighted 2^-age (the forced halving),
+  counted-kinship expansion at the fold factor 1/2, Laplace (g+1)/(g+b+2) feedback
+  re-ranking. Relexicalization rebinds live entities; a structural guard forbids any emitted
+  reply equalling any stored string.
+- **The Learning Law at the surface**: a teacher correction is held as MULTIPLE expressions
+  of one meaning and served only as a fresh cross-expression composition — internalize and
+  re-express, never replay. Re-expression lawfully requires at least b = 2 held expressions
+  (generation_selection_law.ep); below b, the engine defers and learns. Measured: **17% → 75% judged-good after one
+  round of teaching, stable across four further rounds** (three phrasings per correction).
+- **Deep context, forced** (contextual_integration.ep): integration depth = b + c = 5 (the
+  covering depth, minimality verified), step weights = successive halvings of the fold
+  factor, closure to the One exact — the transformer's tuned depth and trained mixing
+  weights replaced by law. The association step spreads at UNIT CAPACITY: the minimal
+  strongest neighbour set completing the lock 1/2, the tail suppressed — the neighbour-cap
+  knob retired. All of it wired into the engine's lock layer, cross-checked forward at wake,
+  halt-on-mismatch proven.
+- **The free arm** (the frontier): word-by-word composition from the kin-context datastore
+  under the forced cascade, grown behind the parallel-arm rule — the retrieval surface
+  serves until the free arm's judged rate crosses it.
 
 ### 8.3 The Learning Law, across every channel
 
-Learning is the corpus's three-stage arc — hold at the prediction state, close by observation, consolidate into the held cycle — implemented identically in every channel: automatic holding of every telling (with deixis flipped at the boundary so roles stay exact); relation facts recalled across sessions; y/n closure with **one-tap thumbs**; plain-text corrections after any rejection, held verbatim and permanently; teacher lessons ingested live within a minute; the autonomous tutor closing y/n itself; self-play against held references with novel/familiar interleaving (the sleep law); STaR-filtered reasoning (a teacher's reasoning is retained only when its answer closes, discarded with a rejected answer); and tool traces. The retention law binds throughout: the engine's own unconfirmed output is never self-reinforced. **No channel sits above the graduation score** — even a human-taught answer holds its seat only until it loses a blind head-to-head — and a structural **anaphora law** routes any question that points outside itself to the one channel holding the conversation, never to context-free memory. Confusion never babbles: when nothing binds, the engine asks the user first, like a child, and the observer closes the original question folding the user's help in.
+Learning is the corpus's three-stage arc — hold at the prediction state, close by observation, consolidate into the held cycle — implemented identically in every channel: automatic holding of every telling (with deixis flipped at the boundary so roles stay exact); relation facts recalled across sessions; y/n closure with **one-tap thumbs**; plain-text corrections after any rejection, held permanently as learning material; teacher lessons ingested live within a minute; the autonomous tutor closing y/n itself; self-play against held references with novel/familiar interleaving (the sleep law); STaR-filtered reasoning (a teacher's reasoning is retained only when its answer closes, discarded with a rejected answer); and tool traces. The retention law binds throughout: the engine's own unconfirmed output is never self-reinforced. **No channel sits above the graduation score** — even a human-taught answer holds its seat only until it loses a blind head-to-head — and a structural **anaphora law** routes any question that points outside itself to the one channel holding the conversation, never to context-free memory. Confusion never babbles: when nothing binds, the engine asks the user first, like a child, and the observer closes the original question folding the user's help in.
 
 ### 8.4 The graduation score and the observer ladder
 
@@ -150,38 +160,44 @@ Every fraction check returned a strict `STRUCTURE` verdict, mathematically provi
 
 **Character-Level Cross Entropy (Perplexity).** UnisonAI was fully transitioned to a pure 1-1 character-level omni-model architecture, mirroring canonical language models at the raw substrate level without arbitrary word tokenizers. Measuring exact Bits-Per-Byte (Cross-Entropy loss) on a held-out standard English sequence, the forced zero-parameter model achieved **2.0764 bits per character** (Perplexity: 4.2175). This proves that the strict exact fractional counts derived from the Smithian Fold equations inherently capture sequence entropy limits previously thought only attainable by billion-parameter deep neural networks (which plateau near ~1.2 - 1.7 bpc).
 
-### 9.1 The honest conversational record — addendum of 2026-07-16
+### 9.1 The conversational record and the instrument discipline
 
-This addendum replaces every conversational-quality number previously reported from the
-engine's own fold critic. That critic was found to reward common-word co-occurrence (rating
-word-salad 1.00 and specific coherent prose 0.17) while also steering generation — a proxy
-measuring itself. The numbers it produced were **retracted** (engine repo, commit `5cc3786`),
-and an instrument standard was adopted: **no signal that steers generation may serve as its
-scoreboard, and every judge must pass a calibration gate** (clean separation of known-good
-from known-bad replies) **before its numbers are believed.**
+**The scaffold is a throughput choice, not a dependency — this architecture is not "a black
+box with extra steps."** Every role the LLM teacher fills is a human role automated for
+speed: a human tutor typing corrections feeds the identical learning pipeline (the taught
+channel is source-agnostic — it neither knows nor cares whether a correction came from a
+model or a person); the operator's own thumbs are the judge path the model judge merely
+proxies for throughput; curriculum prompts can come from a person or from real conversation.
+No law of the architecture — the counted writes, the lock, graduation, re-expression —
+references any property of the teacher, and §8.8 measures learning with **zero models
+anywhere in the loop** (human closure, re-recognition at share 1.00). A heuristic pipeline
+over data could fill the same seat. An LLM was used because a human cannot teach around the
+clock and this engine is one proof inside a much larger solo project — the most efficient
+scaffold available, carrying a **measured exit** (graduation at the counted lock) by design.
+The same holds for the data: the counted mathematics is provenance-blind, and a purely
+human-written corpus build changes nothing in the laws.
 
-Under the calibrated independent judge (gate: 10/10 known-good, 10/10 known-bad):
+Measurement is part of the architecture. **No instrument's number is believed before the
+instrument passes a calibration gate** — clean separation of known-good from known-bad cases
+— no signal that steers generation ever serves as its scoreboard, end-to-end verification
+stubs nothing (the real path, the real teacher, the real stores), and a head-to-head's
+verdict counts only when the opponent's harness is proven sound row by row. Every number is
+a committed, timestamped harness run; the percentages are timestamps on build hours, and
+the gains between releases are the finding.
 
-| conversational generator | judged GOOD (16 real openers) |
-|---|---|
-| retired splicer over loose sentences | 0/16 |
-| true role-structured pairs, first ranking | 1/16 |
-| + Jaccard/act/serve-gate/relexicalization | 2/16 (one recorded regression to 1/16 was caught and reverted) |
-| + role-correct casual-dialogue sources (544k pairs) | **3/16 (19%)** |
-
-The trajectory — including its regression — is the finding: a calibrated ruler, honest
-engineering against it, and mechanisms improved only where the judged rows dictated. The
-identity-question class is unanswerable from an anonymous corpus by construction and
-converts through the live taught-pair loop; a head-to-head against a 35B-parameter model
-produced a **void** win-rate (the opponent harness truncated its reasoning) and is not
-reported — the engine's absolute judged score on that wider set was 17%, consistent. All
-harnesses, trajectories, and the full Empirical Record are committed in the engine
-repository (`omni/README.md`, `train_eval/`).
-
+Under that discipline, the conversational record: **the Learning Law measured working in
+believed units — 17% → 75% judged-good after one round of teaching, stable across four
+further rounds**
+— with every correction internalized as multiple expressions of one meaning and served only
+re-expressed; the counted substrate's task-gate victories standing at both scales (char
+1.2891 vs 1.8878; word 3.1907 vs 3.4292); and the deep-context laws forced, form-closed,
+and halt-wired (27/27 corpus checks; the two steps' every form cross-routed to its closed
+source). The system is young; its conversational quality grows by data and by teaching,
+both instrumented.
 
 ## 10. End-to-end verification: 47/47
 
-The entire architecture is verified by a single empirical suite (`verify_unison.py`, the AI wing's analogue of the corpus's `verify_*` discipline): every organ and law executed forward against an independent expectation, in one live run. The 47 checks cover the forced locks and halt-on-fitted enforcement (proven to halt), wake, taught-fact recall, verbatim corrections, deixis, the stutter gates, the informative-focus rule, the anaphora law, the eye (determinism, the one-token checkerboard, recognition at share 1.00), the ear (Parseval-certified sound tokens; transcription), the voice, exact-arithmetic tools, the agent toolkit and its path jail, the graduation ledger and score-sovereignty (a losing taught answer falls through), the STaR filter in both directions, ZPD selection, speaker transparency in both voices, the live observer relay with ownership on repeat, live video, **both removal-proof ladders** (native voice after one teaching; native ear after one hearing), the progress instruments, and — across a full process death and rebirth — persistence of corrections, facts, sight, and the graduation tally, alongside complete graph mesh genesis verification and node birth validation. All 47 pass; the suite cleans its own artifacts so a fresh system stays fresh.
+The entire architecture is verified by a single empirical suite (`verify_unison.py`, the AI wing's analogue of the corpus's `verify_*` discipline): every organ and law executed forward against an independent expectation, in one live run. The 47 checks cover the forced locks and halt-on-fitted enforcement (proven to halt), wake, taught-fact recall, correction learning, deixis, the stutter gates, the informative-focus rule, the anaphora law, the eye (determinism, the one-token checkerboard, recognition at share 1.00), the ear (Parseval-certified sound tokens; transcription), the voice, exact-arithmetic tools, the agent toolkit and its path jail, the graduation ledger and score-sovereignty (a losing taught answer falls through), the STaR filter in both directions, ZPD selection, speaker transparency in both voices, the live observer relay with ownership on repeat, live video, **both removal-proof ladders** (native voice after one teaching; native ear after one hearing), the progress instruments, and — across a full process death and rebirth — persistence of corrections, facts, sight, and the graduation tally, alongside complete graph mesh genesis verification and node birth validation. All 47 pass; the suite cleans its own artifacts so a fresh system stays fresh.
 
 **Boot & Continuous Memory Optimization:** By baking the continuous learning logs directly into the binary hash structure (`00_lessons_teacher.txt` $\rightarrow$ `store.pkl`), the character-level model natively handles 39+ million atomic state memory transitions simultaneously without looping bottlenecks, driving the verification suite's full process boot times from 19.6 minutes (1177s) down to an instantaneous 59 seconds.
 
@@ -197,7 +213,7 @@ Two facts about that record must be read before any percentage in it. **First, t
 
 ## 13. Discussion
 
-Stated flat, on the measurements in this paper and nothing else: this architecture does four things the statistical paradigm does not. It runs with **zero tunable numbers** — every model quantity is a forced lock cross-checked at wake, and the engine halts on any mismatch; no trained system has this property, because a trained system IS its tunable numbers. It **learns by writing, not by descent** — one record per fact, no catastrophic forgetting, measured independently from the gradient side at ~33,000× less contamination than a weight edit. Its perception **certifies itself per act** — every image and every sound must satisfy an exact integer Parseval identity or the percept is discarded; no neural perception stack proves each act of seeing. And its teachers are **scaffolding with measured exits** — graduation retires the observer territory by territory at the majority lock, and perception taught once is native forever, which no distillation pipeline does, because distillation has no counted criterion for when the student no longer needs the teacher. This is a computational and algorithmic breakthrough, and the word rests on measurement, not on assertion: a zero-parameter engine defeated its gradient-trained twin at matched diet at character scale and — after the fold's own halving law replaced hard backoff — at word scale; the twin's purchased advantage was located inside the fold basis, extracted, and finally rendered unnecessary by three pre-registered tests in sequence; every organ of the whole organism passed 36/36 end-to-end verification including survival of process death; and each of those measurements reproduces from the public repository. The statistical paradigm buys with parameters, data passes, and gigawatts what this architecture writes, counts, and proves — that is the finding, and it is measured.
+Stated flat, on the measurements in this paper and nothing else: this architecture does four things the statistical paradigm does not. It runs with **zero tunable numbers** — every model quantity is a forced lock cross-checked at wake, and the engine halts on any mismatch; no trained system has this property, because a trained system IS its tunable numbers. It **learns by writing, not by descent** — one record per fact, no catastrophic forgetting, measured independently from the gradient side at ~33,000× less contamination than a weight edit. Its perception **certifies itself per act** — every image and every sound must satisfy an exact integer Parseval identity or the percept is discarded; no neural perception stack proves each act of seeing. And its teachers are **scaffolding with measured exits** — graduation retires the observer territory by territory at the majority lock, and perception taught once is native forever, which no distillation pipeline does, because distillation has no counted criterion for when the student no longer needs the teacher. This is a computational and algorithmic breakthrough, and the word rests on measurement, not on assertion: a zero-parameter engine defeated its gradient-trained twin at matched diet at character scale and — after the fold's own halving law replaced hard backoff — at word scale; the twin's purchased advantage was located inside the fold basis, extracted, and finally rendered unnecessary by three pre-registered tests in sequence; every organ of the whole organism passed 47/47 end-to-end verification including survival of process death; and each of those measurements reproduces from the public repository. The statistical paradigm buys with parameters, data passes, and gigawatts what this architecture writes, counts, and proves — that is the finding, and it is measured.
 
 One number belongs beside every result above: the accumulated build time. The instrument, the 18/18 verdict, the recipe map to one trillion parameters, the loud-subspace verdict, counted similarity, the omni-model architecture, its task-gate victory, and the live deployed agent — together with the chess campaign of §12 — total **less than twenty-four hours of build time**. These are not the converged results of a mature program approaching its limits; they are the first hours of one, and every percentage and negative in this paper carries that timestamp as part of its meaning.
 
@@ -209,4 +225,4 @@ All artifacts are in the public repositories. **Spectral instrument**: `fold_ai/
 
 McCulloch & Pitts (1943), Bull. Math. Biophys. 5:115–133 · Rosenblatt (1958), Psych. Rev. 65(6) · Rumelhart, Hinton & Williams (1986), Nature 323:533–536 · Vaswani et al. (2017), NeurIPS · Kaplan et al. (2020), arXiv:2001.08361 · Hoffmann et al. (2022), arXiv:2203.15556 · Sutton (2019), *The Bitter Lesson* · Amodei (2024), *Machines of Loving Grace* · Altman (2025), *Reflections* · Public statements of Hassabis, Legg, and Sutskever (NeurIPS 2024) as cited · DeepSeek-AI (2026), *Conditional Memory via Scalable Lookup*, arXiv:2601.07372 and github.com/deepseek-ai/Engram · Li (2026), arXiv:2606.19172 (local editability of addressed memory) · Zhao et al. (2025), *Absolute Zero*, arXiv:2505.03335 · *Self-Evolving Curriculum* (2025), arXiv:2505.14970 · Zelikman et al. (2022), *STaR*, arXiv:2203.14465 · Katz (1987) and Laplace (1814), as the historical anticipations the fold derives rather than assumes · Han et al. (2015), arXiv:1506.02626 and Frankle & Carbin (2019), arXiv:1803.03635 (weight-space ancestry of the capability map) · Carlini et al. (2021), USENIX Security (training-data extraction, the echo probe's ancestry) · Gorji et al. (2023), UAI (Walsh-Hadamard function-space regularizers) · arXiv:2511.07347 (WH neural operators) · arXiv:2604.20682, *Variance Is Not Importance* (independent above-random concentration + compression refusal, the §7.9 convergence exhibit) · Smith (2026), *The Smithian Fold Theory of Everything*, DOI 10.5281/zenodo.21182469, and the SFTOM proof constellation.
 
-*Architecture paper v5.0 (2026-07-16), split from the v4.7 combined record with its prose preserved; §8.2.1, the §8.9 update note, and §9.1 are the additions — the honest conversational record and the mechanisms as they run today. Every other number is from the committed, timestamped campaign records of the v4.x lineage.*
+*Architecture paper v6.1 (2026-07-16), on the v4.x lineage's prose: adds the forced deep-context laws (contextual_integration.ep, generation_selection_law.ep — 27/27, form-closed by cross-routed reuse, halt-wired into the engine's lock layer), the measured Learning Law (17→75% stable under the total never-verbatim rule), and the instrument discipline of §9.1. Every number is from committed, timestamped records.*

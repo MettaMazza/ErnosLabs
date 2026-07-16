@@ -106,7 +106,7 @@
    "title": "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters",
    "sub": "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.",
    "collection": "unison",
-   "words": 6488,
+   "words": 6734,
    "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/UnisonAI_Architecture.md"
   },
   "unisonai-forced-language-architecture": {
