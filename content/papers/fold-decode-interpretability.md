@@ -11,7 +11,7 @@ companion paper **[UnisonAI: A Forced, Derived Omni-Model Architecture](UnisonAI
 > Everything here derives from and is verified against **The Smithian Fold Theory of
 > Everything**: one axiom, zero free parameters, 307 proof suites, 1,844 forced checks.
 > **Theory (Zenodo):** https://doi.org/10.5281/zenodo.21182469 · **Theory (GitHub):** https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything
-> **Instruments & ledgers (GitHub):** https://github.com/MettaMazza/UnisonAI (`omni/benchmarks/`) · **Companion architecture paper:** [UnisonAI_Architecture.md](UnisonAI_Architecture.md)
+> **Instruments & ledgers (GitHub):** https://github.com/MettaMazza/UnisonAI (`omni/benchmarks/`) · **Companion architecture paper:** [UnisonAI_Architecture.md](UnisonAI_Architecture.md) (concept DOI 10.5281/zenodo.21217278) · **This paper's DOI:** 10.5281/zenodo.21396743
 
 ---
 

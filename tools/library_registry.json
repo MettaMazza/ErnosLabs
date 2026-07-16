@@ -1,0 +1,122 @@
+{
+ "intro": {
+  "eyebrow": "The writing",
+  "title": "The Library",
+  "lead": "A reader for the full body of work — open any volume to read it here, with chapters, search, and read-aloud, or download the full text."
+ },
+ "sections": [
+  {
+   "collection": "lastmind",
+   "heading": "The Last Mind",
+   "sub": "A five-volume work on institutional capture, with the origin novel <em>A Mind Is Born</em> as its gateway."
+  },
+  {
+   "collection": "fold",
+   "heading": "The Fold",
+   "sub": "The Smithian Fold — a theory of everything from one axiom and one move. The full technical work, and three ways in for any reader."
+  },
+  {
+   "collection": "ernos",
+   "heading": "ErnosDecent",
+   "sub": "The constructive counterpart — what to build instead."
+  },
+  {
+   "collection": "seed",
+   "heading": "The Seed Vault",
+   "sub": "The framework and narrative behind the survival archive — the full archive is on the <a href=\"seed.html\" style=\"color:var(--ink-0)\">Seed Vault</a> page."
+  }
+ ],
+ "works": {
+  "a-mind-is-born": {
+   "title": "A Mind Is Born",
+   "sub": "Book One — the origin novel. A childhood in 1990s Glasgow, reading as survival.",
+   "collection": "lastmind",
+   "words": 251522,
+   "source": "~/Desktop/Civ/Library/a_mind_is_born_book_one_complete-5.md"
+  },
+  "behind-the-mask": {
+   "title": "Behind the Mask",
+   "sub": "Vol I · The Devil They Call God — the 400-year debt-money mechanism.",
+   "collection": "lastmind",
+   "words": 281246,
+   "source": "~/Desktop/Civ/Library/Behind_the_Mask_The_Devil_The_Demons_Call_God.md"
+  },
+  "behind-the-performance": {
+   "title": "Behind the Performance",
+   "sub": "Vol II · The Demon They Call the State — the political class as operating layer.",
+   "collection": "lastmind",
+   "words": 536662,
+   "source": "~/Desktop/Civ/Library/Behind_the_Performance_The_Demon_They_Call_the_State.md"
+  },
+  "behind-the-blessed": {
+   "title": "Behind the Blessed",
+   "sub": "Vol III · The Demon They Call the Church — institutional capture of faith.",
+   "collection": "lastmind",
+   "words": 318151,
+   "source": "~/Desktop/Civ/Library/Behind_the_Blessed_The_Demon_They_Call_the_Church.md"
+  },
+  "behind-the-knowing": {
+   "title": "Behind the Knowing",
+   "sub": "Vol IV · The Demon They Call Consensus — press, academia, the knowledge apparatus.",
+   "collection": "lastmind",
+   "words": 192588,
+   "source": "~/Desktop/Civ/Library/Behind_the_Knowing_The_Demon_They_Call_Consensus.md"
+  },
+  "behind-the-synthesis": {
+   "title": "Behind the Synthesis",
+   "sub": "Vol V · The Devil, the Demons & the Masks — the unifying framework.",
+   "collection": "lastmind",
+   "words": 30331,
+   "source": "~/Desktop/Civ/Library/Behind_the_Synthesis_The_Devil_The_Demons_and_The_Masks.md"
+  },
+  "smithian-fold": {
+   "title": "Smithian Fold: Theory of Everything",
+   "sub": "The full technical work — the constants of nature derived from one axiom and one move, with zero free parameters.",
+   "collection": "fold",
+   "words": 325720,
+   "source": null
+  },
+  "the-one-and-the-fold": {
+   "title": "The One and the Fold",
+   "sub": "The whole of physics from a single idea a child already understands — no mathematics required.",
+   "collection": "fold",
+   "words": 24697,
+   "source": null
+  },
+  "the-big-unfolding": {
+   "title": "The Big Unfolding",
+   "sub": "How one number became everything — a narrative walk through the fold.",
+   "collection": "fold",
+   "words": 28196,
+   "source": null
+  },
+  "the-unfolding-adventures": {
+   "title": "The Unfolding Adventures",
+   "sub": "An episodic story set in the Fold — fiction that teaches the theory, one night at a time.",
+   "collection": "fold",
+   "words": 53850,
+   "source": null
+  },
+  "ernosdecent-book": {
+   "title": "ErnosDecent: Owned by No One",
+   "sub": "The plain-language book — what to build instead, in everyday words.",
+   "collection": "ernos",
+   "words": 64487,
+   "source": null
+  },
+  "hermeticism": {
+   "title": "Hermeticism, the Solo Initiate",
+   "sub": "The bridge between the Hermetic tradition, the Smithian Fold, the tools, and the Seed Vault.",
+   "collection": "seed",
+   "words": 10950,
+   "source": "~/Desktop/Civ/Library/Hermeticism_The_Solo_Initiate.md"
+  },
+  "the-seed-book": {
+   "title": "The Seed Book",
+   "sub": "The narrative companion to the survival archive — why it exists and how to use it.",
+   "collection": "seed",
+   "words": 19362,
+   "source": "~/Desktop/Civ/Library/The_Seed_Book.md"
+  }
+ }
+}

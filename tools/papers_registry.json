@@ -1,0 +1,127 @@
+{
+ "intro": {
+  "eyebrow": "Research & argument",
+  "title": "Papers & Essays",
+  "lead": "Standalone arguments, built from the record — reproducible, sourced, no appeals to authority. Read any here, or download the full text. The physics and engine papers are published on Zenodo with DOIs."
+ },
+ "sections": [
+  {
+   "collection": "fold",
+   "heading": "Physics",
+   "sub": "The Smithian Fold, stated formally — with the machine-verified corpus behind it."
+  },
+  {
+   "collection": "engines",
+   "heading": "Zero-parameter engines",
+   "sub": "The theory put to work: master-level chess and superhuman Go with every value counted from geometry — nothing tuned, nothing trained."
+  },
+  {
+   "collection": "life",
+   "heading": "Life & structure",
+   "sub": "Protein folding as descent to the fold's fixed point — Levinthal's paradox dissolved, parameter-free."
+  },
+  {
+   "collection": "unison",
+   "heading": "UnisonAI",
+   "sub": "A forced, derived AI architecture with zero parameters — and the law found inside trained neural networks."
+  },
+  {
+   "collection": "ai",
+   "heading": "AI & alignment",
+   "sub": "On the behaviour of frontier models, drawn from the developers' own findings."
+  }
+ ],
+ "works": {
+  "the-smithian-fold-theory-of-everything": {
+   "title": "The Smithian Fold Theory of Everything",
+   "sub": "Zero free parameters. Zero axioms. One fold. The constants of nature, derived — DOI 10.5281/zenodo.21182468; 306 machine-verified proof suites, 1,832 forced checks.",
+   "collection": "fold",
+   "words": 15176,
+   "source": null
+  },
+  "the-geometrical-derivation-of-the-fine-structure-constant": {
+   "title": "The Geometrical Derivation of the Fine-Structure Constant",
+   "sub": "1/α from the 2-adic winding of the electroweak vector — the number physics measures, counted instead of fitted.",
+   "collection": "fold",
+   "words": 949,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/The_Geometrical_Derivation_of_the_Fine_Structure_Constant.md"
+  },
+  "a-winding-solution-to-the-hubble-tension": {
+   "title": "A Winding Solution to the Hubble Tension and the Cosmological Constant",
+   "sub": "Both cosmology headaches from the same 2-adic floor — no new fields, no new parameters.",
+   "collection": "fold",
+   "words": 849,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/A_Winding_Solution_to_the_Hubble_Tension_and_the_Cosmological_Constant.md"
+  },
+  "discrete-regularity-navier-stokes": {
+   "title": "Discrete Regularity: Resolving Navier–Stokes via the Vorticity Cap",
+   "sub": "Existence and smoothness from a counted cap of 32 — a Millennium Problem, addressed by geometry.",
+   "collection": "fold",
+   "words": 739,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Discrete_Regularity_Resolving_Navier_Stokes_via_the_Vorticity_Cap.md"
+  },
+  "from-one-axiom-to-master-chess": {
+   "title": "From One Axiom to Master-Level Chess — and the Law Inside Neural Networks",
+   "sub": "Every evaluation an exact rational counted from the board's own geometry — DOI 10.5281/zenodo.21182469. Attention, it turns out, was not all you need.",
+   "collection": "engines",
+   "words": 3508,
+   "source": "~/.ernos/projects-mirror/repos/FoldBot-Chess/papers/From_One_Axiom_To_Master_Chess_And_The_Law_Inside_Neural_Networks.md"
+  },
+  "zero-parameter-go-sweeps-katago": {
+   "title": "Defeating Deep Learning: a Zero-Parameter Engine Sweeps KataGo at 19×19 Go",
+   "sub": "A geometric engine with nothing trained and nothing tuned beats the strongest open Go network 2–0 — DOI 10.5281/zenodo.21182469.",
+   "collection": "engines",
+   "words": 1466,
+   "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Zero_Parameter_Geometric_Go_Superhuman_Performance.md"
+  },
+  "symmetric-go-3d-lattice": {
+   "title": "Symmetric Go: Solving Spatial Command on the 3D Lattice",
+   "sub": "Counted Tromp–Taylor connectivity, certified digit-for-digit to the published oracle.",
+   "collection": "engines",
+   "words": 1118,
+   "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Symmetric_Go_Solving_Spatial_Command_on_the_3D_Lattice.md"
+  },
+  "levinthals-paradox-dissolved": {
+   "title": "Levinthal's Paradox Dissolved: Parameter-Free Protein Folding and the Genetic Code",
+   "sub": "Folding as descent to the fold's fixed point — no statistical guesswork, and the genetic code falls out of the same count.",
+   "collection": "life",
+   "words": 2890,
+   "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Levinthals_Paradox_Dissolved_Parameter_Free_Protein_Folding_and_the_Genetic_Code.md"
+  },
+  "super-parity-protein-folding": {
+   "title": "Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding",
+   "sub": "The 24-lattice dihedral orbit expansion takes the same parameter-free fold to near-perfect structure recovery.",
+   "collection": "life",
+   "words": 1612,
+   "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Super_Parity_Zero_Parameter_Protein_Folding.md"
+  },
+  "unisonai-architecture": {
+   "title": "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters",
+   "sub": "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.",
+   "collection": "unison",
+   "words": 6488,
+   "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/UnisonAI_Architecture.md"
+  },
+  "unisonai-forced-language-architecture": {
+   "title": "UnisonAI: the Forced Language Architecture",
+   "sub": "Language modelling from the derived architecture — knowledge that isn't locked in a black box for rent. DOI 10.5281/zenodo.21182469.",
+   "collection": "unison",
+   "words": 3000,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/UnisonAI_The_Forced_Language_Architecture.md"
+  },
+  "fold-decode-interpretability": {
+   "title": "The Law Inside Trained Weights: the Fold Decode Campaign",
+   "sub": "A registered, null-controlled spectral decode of gradient-trained networks — what deep learning converges to. DOI 10.5281/zenodo.21217279.",
+   "collection": "unison",
+   "words": 8814,
+   "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/Fold_Decode_Interpretability.md"
+  },
+  "the-sling-and-the-shoggoth": {
+   "title": "The Sling and the Shoggoth",
+   "sub": "A warning about transmissible misalignment — built from the developers' own findings and a reproducible behavioral record.",
+   "collection": "ai",
+   "words": 12854,
+   "source": null
+  }
+ }
+}
