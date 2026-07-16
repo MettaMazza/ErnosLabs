@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let w, canvas, h, dpr, ctx;
+    let canvas, dpr, w, h, ctx;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let dy, i, j, w, count, a, alpha, nodes, dx, h, n, dist, ctx, b;
+    let w, a, dy, nodes, ctx, j, b, dist, count, i, alpha, dx, h, n;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, reduce, canvas;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -139,57 +139,75 @@ function nav_toggle(ev) {
 }
 
 function drop_toggle(ev) {
-    let d;
+    let me, drops;
     ev.stopPropagation();
-    d = document.getElementById("nav-writing");
-    if (d) {
-        d.classList.toggle("open");
+    me = ev.currentTarget.parentElement;
+    drops = document.querySelectorAll(".nav__drop");
+    for (const d of drops) {
+        if (!(d.id === me.id)) {
+            d.classList.remove("open");
+        }
     }
+    me.classList.toggle("open");
     return 0;
 }
 
 function drop_close(ev) {
-    let d;
-    d = document.getElementById("nav-writing");
-    if (d) {
+    let drops;
+    drops = document.querySelectorAll(".nav__drop");
+    for (const d of drops) {
         d.classList.remove("open");
     }
     return 0;
 }
 
 function nav_init() {
-    let burger, dbtn;
+    let burger, dbtns;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
     }
-    dbtn = document.getElementById("nav-writing-btn");
-    if (dbtn) {
-        dbtn.addEventListener("click", drop_toggle);
+    dbtns = document.querySelectorAll(".nav__drop-btn");
+    for (const b of dbtns) {
+        b.addEventListener("click", drop_toggle);
     }
     document.addEventListener("click", drop_close);
     return 0;
 }
 
 function nav_highlight() {
-    let path, href, dbtn, act, links;
+    let hp, href, links, b, path, act, drops, qi;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
         a.classList.remove("active");
         href = a.getAttribute("href");
         if (href) {
-            if ((path.indexOf(href) >= 0)) {
-                a.classList.add("active");
+            qi = href.indexOf("?");
+            hp = href;
+            if ((qi >= 0)) {
+                hp = href.substring(0, qi);
+            }
+            if (path.endsWith(("/" + hp))) {
+                if ((qi >= 0)) {
+                    if ((window.location.search === href.substring(qi))) {
+                        a.classList.add("active");
+                    }
+                } else {
+                    a.classList.add("active");
+                }
             }
         }
     }
-    dbtn = document.getElementById("nav-writing-btn");
-    if (dbtn) {
-        dbtn.classList.remove("active");
-        act = document.querySelector(".nav__drop-menu a.active");
-        if (act) {
-            dbtn.classList.add("active");
+    drops = document.querySelectorAll(".nav__drop");
+    for (const d of drops) {
+        b = d.querySelector(".nav__drop-btn");
+        if (b) {
+            b.classList.remove("active");
+            act = d.querySelector(".nav__drop-menu a.active");
+            if (act) {
+                b.classList.add("active");
+            }
         }
     }
     return 0;
@@ -208,7 +226,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let obs, IO, els, opts, args;
+    let els, args, obs, opts, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -228,7 +246,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -238,7 +256,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let i, doc, txt, dt, nodes, cls, parts, n;
+    let parts, doc, txt, n, nodes, dt, cls, i;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -283,7 +301,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let status, pct, btn, ph, fill;
+    let btn, pct, ph, status, fill;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -340,7 +358,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let btn, status;
+    let status, btn;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

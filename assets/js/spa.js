@@ -97,13 +97,12 @@
     });
   }
 
-  // Close the mobile hamburger menu + the "Writing" dropdown (so tapping a tab
+  // Close the mobile hamburger menu + every nav dropdown (so tapping a tab
   // on mobile navigates AND dismisses the menu, instead of leaving it stuck open).
   function closeMenus() {
     const nl = document.getElementById("navlinks");
     if (nl) nl.classList.remove("open");
-    const dd = document.getElementById("nav-writing");
-    if (dd) dd.classList.remove("open");
+    document.querySelectorAll(".nav__drop").forEach(function (d) { d.classList.remove("open"); });
   }
 
   let navToken = 0;
@@ -153,7 +152,7 @@
     const a = e.target.closest ? e.target.closest("a") : null;
     if (!isInternalLink(a)) return;
     const target = new URL(a.href, location.href);
-    if (target.pathname === location.pathname) {
+    if (target.pathname === location.pathname && target.search === location.search) {
       if (target.hash) { closeMenus(); return; } // in-page anchor — let the browser scroll
       e.preventDefault();          // same page, no hash — just dismiss the menu
       closeMenus();

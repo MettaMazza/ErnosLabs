@@ -126,16 +126,20 @@ define nav_toggle with ev:
         links.classList.toggle("open")
     return 0
 
+# Any number of .nav__drop menus: toggling one closes the others.
 define drop_toggle with ev:
     ev.stopPropagation()
-    set d to document.getElementById("nav-writing")
-    if d:
-        d.classList.toggle("open")
+    set me to ev.currentTarget.parentElement
+    set drops to document.querySelectorAll(".nav__drop")
+    for each d in drops:
+        if not (d.id equals me.id):
+            d.classList.remove("open")
+    me.classList.toggle("open")
     return 0
 
 define drop_close with ev:
-    set d to document.getElementById("nav-writing")
-    if d:
+    set drops to document.querySelectorAll(".nav__drop")
+    for each d in drops:
         d.classList.remove("open")
     return 0
 
@@ -143,9 +147,9 @@ define nav_init:
     set burger to document.getElementById("burger")
     if burger:
         burger.addEventListener("click" and nav_toggle)
-    set dbtn to document.getElementById("nav-writing-btn")
-    if dbtn:
-        dbtn.addEventListener("click" and drop_toggle)
+    set dbtns to document.querySelectorAll(".nav__drop-btn")
+    for each b in dbtns:
+        b.addEventListener("click" and drop_toggle)
     document.addEventListener("click" and drop_close)
     return 0
 
@@ -157,15 +161,26 @@ define nav_highlight:
         a.classList.remove("active")
         set href to a.getAttribute("href")
         if href:
-            if path.indexOf(href) >= 0:
-                a.classList.add("active")
-    # reflect an active submenu item on the dropdown button
-    set dbtn to document.getElementById("nav-writing-btn")
-    if dbtn:
-        dbtn.classList.remove("active")
-        set act to document.querySelector(".nav__drop-menu a.active")
-        if act:
-            dbtn.classList.add("active")
+            # match the path part; links carrying a query must match it too
+            set qi to href.indexOf("?")
+            set hp to href
+            if qi >= 0:
+                set hp to href.substring(0 and qi)
+            if path.endsWith("/" + hp):
+                if qi >= 0:
+                    if window.location.search equals href.substring(qi):
+                        a.classList.add("active")
+                else:
+                    a.classList.add("active")
+    # reflect an active submenu item on its own dropdown's button
+    set drops to document.querySelectorAll(".nav__drop")
+    for each d in drops:
+        set b to d.querySelector(".nav__drop-btn")
+        if b:
+            b.classList.remove("active")
+            set act to d.querySelector(".nav__drop-menu a.active")
+            if act:
+                b.classList.add("active")
     return 0
 
 # ---- scroll reveal -------------------------------------------------------

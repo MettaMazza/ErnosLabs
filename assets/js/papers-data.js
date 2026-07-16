@@ -4,13 +4,32 @@ window.READER_EXTRA_HTML = ""; // reset (avoid cross-page leak from other pages)
 window.READER_INTRO = {
   eyebrow: "Research & argument",
   title: "Papers & Essays",
-  lead: "Standalone arguments, built from the record — reproducible, sourced, no appeals to authority. Read any here, or download the full text.",
+  lead: "Standalone arguments, built from the record — reproducible, sourced, no appeals to authority. Read any here, or download the full text. The physics and engine papers are published on Zenodo with DOIs.",
 };
 window.READER_SECTIONS = [
   { collection: "fold", heading: "Physics", sub: "The Smithian Fold, stated formally — with the machine-verified corpus behind it." },
+  { collection: "engines", heading: "Zero-parameter engines", sub: "The theory put to work: master-level chess and superhuman Go with every value counted from geometry — nothing tuned, nothing trained." },
+  { collection: "life", heading: "Life & structure", sub: "Protein folding as descent to the fold's fixed point — Levinthal's paradox dissolved, parameter-free." },
+  { collection: "unison", heading: "UnisonAI", sub: "A forced, derived AI architecture with zero parameters — and the law found inside trained neural networks." },
   { collection: "ai", heading: "AI & alignment", sub: "On the behaviour of frontier models, drawn from the developers' own findings." },
 ];
 window.READER_WORKS = [
+  // --- Physics ---
   { id: "the-smithian-fold-theory-of-everything", file: "content/papers/the-smithian-fold-theory-of-everything.md", title: "The Smithian Fold Theory of Everything", sub: "Zero free parameters. Zero axioms. One fold. The constants of nature, derived — DOI 10.5281/zenodo.21182468; 306 machine-verified proof suites, 1,832 forced checks.", words: 15176, collection: "fold" },
+  { id: "the-geometrical-derivation-of-the-fine-structure-constant", file: "content/papers/the-geometrical-derivation-of-the-fine-structure-constant.md", title: "The Geometrical Derivation of the Fine-Structure Constant", sub: "1/α from the 2-adic winding of the electroweak vector — the number physics measures, counted instead of fitted.", words: 949, collection: "fold" },
+  { id: "a-winding-solution-to-the-hubble-tension", file: "content/papers/a-winding-solution-to-the-hubble-tension.md", title: "A Winding Solution to the Hubble Tension and the Cosmological Constant", sub: "Both cosmology headaches from the same 2-adic floor — no new fields, no new parameters.", words: 849, collection: "fold" },
+  { id: "discrete-regularity-navier-stokes", file: "content/papers/discrete-regularity-navier-stokes.md", title: "Discrete Regularity: Resolving Navier–Stokes via the Vorticity Cap", sub: "Existence and smoothness from a counted cap of 32 — a Millennium Problem, addressed by geometry.", words: 739, collection: "fold" },
+  // --- Zero-parameter engines ---
+  { id: "from-one-axiom-to-master-chess", file: "content/papers/from-one-axiom-to-master-chess.md", title: "From One Axiom to Master-Level Chess — and the Law Inside Neural Networks", sub: "Every evaluation an exact rational counted from the board's own geometry — DOI 10.5281/zenodo.21182469. Attention, it turns out, was not all you need.", words: 3619, collection: "engines" },
+  { id: "zero-parameter-go-sweeps-katago", file: "content/papers/zero-parameter-go-sweeps-katago.md", title: "Defeating Deep Learning: a Zero-Parameter Engine Sweeps KataGo at 19×19 Go", sub: "A geometric engine with nothing trained and nothing tuned beats the strongest open Go network 2–0 — DOI 10.5281/zenodo.21182469.", words: 1466, collection: "engines" },
+  { id: "symmetric-go-3d-lattice", file: "content/papers/symmetric-go-3d-lattice.md", title: "Symmetric Go: Solving Spatial Command on the 3D Lattice", sub: "Counted Tromp–Taylor connectivity, certified digit-for-digit to the published oracle.", words: 1118, collection: "engines" },
+  // --- Life & structure ---
+  { id: "levinthals-paradox-dissolved", file: "content/papers/levinthals-paradox-dissolved.md", title: "Levinthal's Paradox Dissolved: Parameter-Free Protein Folding and the Genetic Code", sub: "Folding as descent to the fold's fixed point — no statistical guesswork, and the genetic code falls out of the same count.", words: 2890, collection: "life" },
+  { id: "super-parity-protein-folding", file: "content/papers/super-parity-protein-folding.md", title: "Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding", sub: "The 24-lattice dihedral orbit expansion takes the same parameter-free fold to near-perfect structure recovery.", words: 1612, collection: "life" },
+  // --- UnisonAI ---
+  { id: "unisonai-architecture", file: "content/papers/unisonai-architecture.md", title: "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters", sub: "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.", words: 6481, collection: "unison" },
+  { id: "unisonai-forced-language-architecture", file: "content/papers/unisonai-forced-language-architecture.md", title: "UnisonAI: the Forced Language Architecture", sub: "Language modelling from the derived architecture — knowledge that isn't locked in a black box for rent. DOI 10.5281/zenodo.21182469.", words: 3000, collection: "unison" },
+  { id: "fold-decode-interpretability", file: "content/papers/fold-decode-interpretability.md", title: "The Law Inside Trained Weights: the Fold Decode Campaign", sub: "A registered, null-controlled spectral decode of gradient-trained networks — what deep learning converges to. DOI 10.5281/zenodo.21217279.", words: 8806, collection: "unison" },
+  // --- AI & alignment ---
   { id: "the-sling-and-the-shoggoth", file: "content/papers/the-sling-and-the-shoggoth.md", title: "The Sling and the Shoggoth", sub: "A warning about transmissible misalignment — built from the developers' own findings and a reproducible behavioral record.", words: 12854, collection: "ai" },
 ];

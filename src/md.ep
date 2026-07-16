@@ -13,10 +13,11 @@ define md_escape with s:
     set s to s.replace(md_rx(">" and "g") and "&gt;")
     return s
 
-# Inline span formatting: code, links, bold, italic. Escapes HTML first.
+# Inline span formatting: code, images, links, bold, italic. Escapes HTML first.
 define md_inline with s:
     set s to md_escape(s)
     set s to s.replace(md_rx("`([^`]+)`" and "g") and "<code>$1</code>")
+    set s to s.replace(md_rx("!\\[([^\\]]*)\\]\\(([^)\\s]+)\\)" and "g") and "<img src=\"$2\" alt=\"$1\" loading=\"lazy\">")
     set s to s.replace(md_rx("\\[([^\\]]+)\\]\\(([^)]+)\\)" and "g") and "<a href=\"$2\" target=\"_blank\" rel=\"noopener\">$1</a>")
     set s to s.replace(md_rx("\\*\\*([^*]+)\\*\\*" and "g") and "<strong>$1</strong>")
     set s to s.replace(md_rx("__([^_]+)__" and "g") and "<strong>$1</strong>")

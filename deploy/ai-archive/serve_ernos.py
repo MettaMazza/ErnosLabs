@@ -581,6 +581,239 @@ def _archive_watch_loop():
 threading.Thread(target=_archive_watch_loop, daemon=True).start()
 
 
+# ---- Background watcher: keep the videos page synced with the channel ----
+# Same shape as the archive watcher: poll the YouTube uploads RSS, and when the
+# channel changes (video added/deleted/retitled) regenerate the baked
+# videos-data.js, re-stamp ONLY videos.html's cache-bust, and push exactly those
+# two files. So deleting a video on YouTube updates the site hands-free.
+_YT_CHANNEL_ID = "UCv7ij795G5z8ebW9ew5Ca5w"
+
+
+def _fetch_videos_js():
+    url = f"https://www.youtube.com/feeds/videos.xml?channel_id={_YT_CHANNEL_ID}"
+    with urllib.request.urlopen(url, timeout=20) as r:
+        xml = r.read().decode("utf-8")
+    import html as _html
+    vids = []
+    for e in re.findall(r"<entry>(.*?)</entry>", xml, re.S):
+        vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
+        if not vid:
+            continue
+        title = re.search(r"<title>(.*?)</title>", e, re.S)
+        pub = re.search(r"<published>([^<]+)</published>", e)
+        vids.append({
+            "id": vid.group(1),
+            "title": _html.unescape(title.group(1).strip()) if title else "",
+            "published": pub.group(1)[:10] if pub else "",
+        })
+    if not vids:  # empty/garbled feed — treat as a failed fetch, keep what we have
+        raise ValueError("feed parsed to zero videos")
+    out = "// Auto-generated from the YouTube channel RSS at build time. Do not hand-edit.\n"
+    out += "window.ERNOS_VIDEOS = " + json.dumps(vids, ensure_ascii=False) + ";\n"
+    return out
+
+
+def _videos_watch_loop():
+    tag = "[videowatch]"
+    js = os.path.join(SITE_ROOT, "assets", "js", "videos-data.js")
+    first = True
+    while True:
+        time.sleep(30 if first else 900)  # catch up after boot, then every 15 min
+        first = False
+        try:
+            new = _fetch_videos_js()
+            old = open(js).read() if os.path.exists(js) else ""
+            if new == old:
+                continue
+            print(f"{tag} channel changed → stamping + pushing", flush=True)
+            open(js, "w").write(new)
+            import hashlib
+            h = hashlib.sha1(new.encode("utf-8")).hexdigest()[:8]
+            vhtml = os.path.join(SITE_ROOT, "videos.html")
+            try:
+                page = open(vhtml, encoding="utf-8").read()
+                stamped = re.sub(r"videos-data\.js(\?v=[0-9a-f]+)?",
+                                 f"videos-data.js?v={h}", page)
+                if stamped != page:
+                    open(vhtml, "w", encoding="utf-8").write(stamped)
+            except Exception as e:
+                print(f"{tag} stamp warn: {e}", flush=True)
+            _sh(["git", "add", "assets/js/videos-data.js", "videos.html"])
+            _sh(["git", "-c", "user.name=Maria Smith", "-c", "user.email=maria.smith.xo@outlook.com",
+                 "commit", "-q", "-m", "chore(videos): sync list with the channel [auto]"])
+            push = _sh(["git", "push", "-q", "origin", "main"])
+            print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
+        except Exception as e:
+            print(f"{tag} cycle error: {e}", flush=True)
+
+
+threading.Thread(target=_videos_watch_loop, daemon=True).start()
+
+
+# ---- Projects: self-hosted mirrors, downloads, and readme showcase -------
+# The ethos made concrete: every GitHub project is mirrored ONTO this machine.
+# A background thread keeps a local clone of each repo, builds a clean source
+# zip (served at /projects/<repo>.zip — a download that comes from Maria, not
+# from GitHub), extracts each README into content/projects/ for the site's
+# showcase pages, and regenerates projects-data.js. Changes are committed and
+# pushed exactly like the archive/videos watchers, so a push to any repo
+# updates the portfolio hands-free. GitHub remains the fallback when this
+# machine is asleep.
+_PROJECTS = [
+    # (repo, display title, category, fallback description)
+    ("Smithian-Fold-Theory-Of-Everything", "Smithian Fold Theory of Everything", "theory", ""),
+    ("Smithian-Fold-Theory", "Smithian Fold Theory (first release)", "theory", ""),
+    ("sft-dev", "sft-dev — the open process", "theory", ""),
+    ("FoldBot-Chess", "FoldBot Chess", "engines", ""),
+    ("Fold-Go", "Fold-Go", "engines", ""),
+    ("Fold-Protein", "Fold-Protein", "engines", ""),
+    ("UnisonAI", "UnisonAI", "ai",
+     "The forced omni-model architecture — knowledge that isn't locked in a black box for rent. AI built on the fold, not on statistical guesswork."),
+    ("Ernos-Programming-Language", "ErnosPlain", "platform",
+     "A statically-typed, memory-safe language that reads like plain English and compiles to native code — self-hosting, MIT-licensed, and the language everything here is written in."),
+    ("ErnosDecent", "ErnosDecent", "platform", ""),
+    ("Ern-OS", "Ern-OS", "platform", ""),
+    ("Civ-Seed", "Civ-Seed", "preserve", ""),
+    ("ErnosLabs", "Ernos Labs (this site)", "preserve", ""),
+]
+_PROJECTS_ROOT = os.environ.get(
+    "PROJECTS_ROOT", str(pathlib.Path.home() / ".ernos" / "projects-mirror"))
+_PROJECTS_REPOS = os.path.join(_PROJECTS_ROOT, "repos")
+_PROJECTS_ZIPS = os.path.join(_PROJECTS_ROOT, "zips")
+os.makedirs(_PROJECTS_REPOS, exist_ok=True)
+os.makedirs(_PROJECTS_ZIPS, exist_ok=True)
+
+
+def _gh_repo_meta():
+    """One anonymous API call for all repo descriptions/dates. Best-effort."""
+    req = urllib.request.Request(
+        "https://api.github.com/users/MettaMazza/repos?per_page=100",
+        headers={"User-Agent": "ernoslabs-mirror"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return {d["name"]: d for d in json.loads(r.read())}
+
+
+def _psh(args, cwd):
+    return subprocess.run(args, cwd=cwd, capture_output=True, text=True, timeout=1800)
+
+
+def _mirror_repo(repo):
+    """Clone/refresh one repo; rebuild its zip when HEAD moves. Returns local HEAD."""
+    path = os.path.join(_PROJECTS_REPOS, repo)
+    url = f"https://github.com/MettaMazza/{repo}.git"
+    if not os.path.isdir(os.path.join(path, ".git")):
+        r = _psh(["git", "clone", "--depth", "1", url, path], _PROJECTS_REPOS)
+        if r.returncode != 0:
+            raise RuntimeError(f"clone {repo}: {r.stderr.strip()[:150]}")
+    else:
+        remote = _psh(["git", "ls-remote", url, "HEAD"], path).stdout.split()
+        local = _psh(["git", "rev-parse", "HEAD"], path).stdout.strip()
+        if remote and remote[0] != local:
+            _psh(["git", "fetch", "--depth", "1", "origin"], path)
+            _psh(["git", "reset", "--hard", "origin/HEAD"], path)
+    head = _psh(["git", "rev-parse", "HEAD"], path).stdout.strip()
+    zpath = os.path.join(_PROJECTS_ZIPS, f"{repo}.zip")
+    stamp = zpath + ".head"
+    old = open(stamp).read().strip() if os.path.exists(stamp) else ""
+    if head and (head != old or not os.path.exists(zpath)):
+        r = _psh(["git", "archive", "--format=zip", f"--prefix={repo}/",
+                  "-o", zpath, "HEAD"], path)
+        if r.returncode == 0:
+            open(stamp, "w").write(head)
+            print(f"[projects] zipped {repo} @ {head[:8]}", flush=True)
+    return head
+
+
+def _readme_md(repo):
+    """The repo's README with relative links/images pointed back at GitHub so
+    they keep working when rendered on the site."""
+    path = os.path.join(_PROJECTS_REPOS, repo)
+    for name in ("README.md", "readme.md", "README.MD"):
+        p = os.path.join(path, name)
+        if os.path.exists(p):
+            md = open(p, encoding="utf-8", errors="replace").read()
+            raw = f"https://raw.githubusercontent.com/MettaMazza/{repo}/main/"
+            blob = f"https://github.com/MettaMazza/{repo}/blob/main/"
+            md = re.sub(r"(!\[[^\]]*\]\()(?!https?://|#|/)", r"\1" + raw, md)
+            md = re.sub(r"((?<!\!)\[[^\]]*\]\()(?!https?://|#|mailto:|/)", r"\1" + blob, md)
+            return md
+    return ""
+
+
+def _projects_data_js(meta):
+    rows = []
+    for repo, title, cat, fallback in _PROJECTS:
+        m = meta.get(repo, {})
+        desc = (m.get("description") or "").strip() or fallback or ""
+        zpath = os.path.join(_PROJECTS_ZIPS, f"{repo}.zip")
+        size = os.path.getsize(zpath) if os.path.exists(zpath) else 0
+        mb = f"{size/1048576:.1f} MB" if size else ""
+        rows.append({"repo": repo, "title": title, "cat": cat, "desc": desc,
+                     "updated": (m.get("pushed_at") or "")[:10], "zip_size": mb})
+    out = "// Auto-generated by the projects mirror on the source machine. Do not hand-edit.\n"
+    out += "window.ERNOS_PROJECTS = " + json.dumps(rows, ensure_ascii=False) + ";\n"
+    return out
+
+
+def _projects_loop():
+    tag = "[projects]"
+    first = True
+    while True:
+        time.sleep(45 if first else 1800)  # soon after boot, then every 30 min
+        first = False
+        try:
+            try:
+                meta = _gh_repo_meta()
+            except Exception as e:
+                print(f"{tag} meta warn: {e}", flush=True)
+                meta = {}
+            changed = []
+            cdir = os.path.join(SITE_ROOT, "content", "projects")
+            os.makedirs(cdir, exist_ok=True)
+            for repo, _t, _c, _f in _PROJECTS:
+                try:
+                    _mirror_repo(repo)
+                    md = _readme_md(repo)
+                    if md:
+                        mp = os.path.join(cdir, f"{repo}.md")
+                        old = open(mp, encoding="utf-8").read() if os.path.exists(mp) else ""
+                        if md != old:
+                            open(mp, "w", encoding="utf-8").write(md)
+                            changed.append(f"content/projects/{repo}.md")
+                except Exception as e:
+                    print(f"{tag} {repo}: {e}", flush=True)
+            js = os.path.join(SITE_ROOT, "assets", "js", "projects-data.js")
+            new = _projects_data_js(meta)
+            old = open(js, encoding="utf-8").read() if os.path.exists(js) else ""
+            if new != old:
+                open(js, "w", encoding="utf-8").write(new)
+                changed.append("assets/js/projects-data.js")
+                import hashlib
+                h = hashlib.sha1(new.encode("utf-8")).hexdigest()[:8]
+                for page in ("projects.html", "project.html"):
+                    pp = os.path.join(SITE_ROOT, page)
+                    if os.path.exists(pp):
+                        s = open(pp, encoding="utf-8").read()
+                        s2 = re.sub(r"projects-data\.js(\?v=[0-9a-f]+)?",
+                                    f"projects-data.js?v={h}", s)
+                        if s2 != s:
+                            open(pp, "w", encoding="utf-8").write(s2)
+                            changed.append(page)
+            if changed:
+                print(f"{tag} {len(changed)} file(s) changed → pushing", flush=True)
+                _sh(["git", "add"] + changed)
+                _sh(["git", "-c", "user.name=Maria Smith",
+                     "-c", "user.email=maria.smith.xo@outlook.com",
+                     "commit", "-q", "-m", "chore(projects): sync mirrors & readmes [auto]"])
+                push = _sh(["git", "push", "-q", "origin", "main"])
+                print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
+        except Exception as e:
+            print(f"{tag} cycle error: {e}", flush=True)
+
+
+threading.Thread(target=_projects_loop, daemon=True).start()
+
+
 # ---- static mounts (follow the models symlink to its real path) ---------
 def _mount(url, path):
     real = os.path.realpath(path)
@@ -593,6 +826,7 @@ _mount("/models", os.path.join(ARCHIVE_ROOT, "models"))
 _mount("/programs", os.path.join(ARCHIVE_ROOT, "programs"))
 _mount("/content", os.path.join(SITE_ROOT, "content"))
 _mount("/tools", os.path.join(SITE_ROOT, "tools"))
+_mount("/projects", _PROJECTS_ZIPS)
 
 
 if __name__ == "__main__":

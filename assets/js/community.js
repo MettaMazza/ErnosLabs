@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let b, o;
+    let o, b;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -175,7 +175,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let inp, body, p;
+    let body, p, inp;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -241,7 +241,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let links, out, host;
+    let host, out, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -281,7 +281,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let t, out, posts, head, tv, lv;
+    let tv, t, lv, head, posts, out;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -307,7 +307,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, inp, p;
+    let body, p, inp;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -345,7 +345,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let title, ti, p, body, bo;
+    let body, bo, ti, title, p;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -407,7 +407,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let out, slug, host;
+    let slug, host, out;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -425,7 +425,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let ui, note, ni, url, p;
+    let ui, url, note, ni, p;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;
@@ -451,7 +451,7 @@ function submit_link() {
 }
 
 function link_sent(resp) {
-    let ni, ui;
+    let ui, ni;
     go_online();
     if (resp.ok) {
         ui = document.getElementById("link-url");

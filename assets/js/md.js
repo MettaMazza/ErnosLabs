@@ -14,6 +14,7 @@ function md_escape(s) {
 function md_inline(s) {
     s = md_escape(s);
     s = s.replace(md_rx("`([^`]+)`", "g"), "<code>$1</code>");
+    s = s.replace(md_rx("!\\[([^\\]]*)\\]\\(([^)\\s]+)\\)", "g"), "<img src=\"$2\" alt=\"$1\" loading=\"lazy\">");
     s = s.replace(md_rx("\\[([^\\]]+)\\]\\(([^)]+)\\)", "g"), "<a href=\"$2\" target=\"_blank\" rel=\"noopener\">$1</a>");
     s = s.replace(md_rx("\\*\\*([^*]+)\\*\\*", "g"), "<strong>$1</strong>");
     s = s.replace(md_rx("__([^_]+)__", "g"), "<strong>$1</strong>");
@@ -59,7 +60,7 @@ function md_is_hr(line) {
 }
 
 function md_render(src) {
-    let in_code, line, i, tag, out, code_buf, norm, para, in_list, trimmed, hid, list_tag, hlvl, ordered, want, htext, lines, n;
+    let trimmed, n, code_buf, para, hid, norm, htext, line, ordered, tag, in_code, want, lines, list_tag, hlvl, out, in_list, i;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;
@@ -221,7 +222,7 @@ function md_list_text(t) {
 }
 
 function md_headings(src) {
-    let n, lvl, norm, h, htext, lines, heads, line, in_code, i;
+    let norm, in_code, lvl, h, htext, i, lines, heads, line, n;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;

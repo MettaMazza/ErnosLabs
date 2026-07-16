@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos — Ernos Labs</title>
-  <meta name="description" content="Watch the Ernos Labs channel — the Smithian Fold theory, the language, the platform, and the writing, explained on video. Play them right here.">
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7ilrY8L3RleHQ+PC9zdmc+">
+  <title>Project — Ernos Labs</title>
+  <meta name="description" content="One Ernos Labs project — its README rendered right here, its source downloadable straight from the source machine or from GitHub.">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5OmPC90ZXh0Pjwvc3ZnPg==">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
             <a href="papers.html">Papers</a>
           </div>
         </div>
-        <a href="videos.html" aria-current="page">Videos</a>
+        <a href="videos.html">Videos</a>
         <a href="ai.html">AI Archive</a>
         <a href="community.html">Community</a>
       </div>
@@ -57,50 +57,44 @@
 
   <div id="view">
 
-  <header class="section" style="padding-bottom:24px">
-    <div class="wrap">
-      <p class="eyebrow reveal">The channel</p>
-      <h1 class="reveal">Videos</h1>
-      <p class="lead reveal mt-s">The whole body of work, explained on video — the Smithian Fold, the language,
-        the platform, and the writing. Pick any one below; it plays right here.
-        <a href="https://www.youtube.com/@Ernos_Labs" target="_blank" rel="noopener" style="color:var(--ink-0)">See the full channel ↗</a></p>
+  <header class="section" style="padding-bottom:6px">
+    <div class="wrap" style="max-width:900px">
+      <a class="cm-back" href="projects.html">← All projects &amp; downloads</a>
+      <h1 id="project-title" class="reveal" style="margin-top:14px">—</h1>
+      <p id="project-desc" class="lead reveal mt-s"></p>
+      <p id="project-meta" style="color:var(--ink-3);font-size:.85rem;margin-top:10px"></p>
+      <div class="ai-card__actions" style="margin-top:18px">
+        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
+        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="video-stage reveal">
-        <iframe id="video-player" src="" title="Ernos Labs video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <h2 id="video-title" style="margin-top:22px;font-size:1.35rem">—</h2>
-
-      <hr class="divider" style="margin:40px 0 30px">
-      <p class="eyebrow">Latest uploads</p>
-      <h2>Browse the channel</h2>
-      <p class="lead" style="margin-bottom:26px">Click any video to watch it in the player above.</p>
-      <div class="video-grid" id="video-grid"></div>
+  <section class="section" style="padding-top:18px">
+    <div class="wrap" style="max-width:900px">
+      <hr class="divider" style="margin-bottom:26px">
+      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
     </div>
   </section>
 
   <footer class="foot">
     <div class="wrap foot__in">
       <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="#4ff0c4" opacity=".92"/></svg> Ernos&nbsp;Labs</a>
-        <p style="margin-top:12px;max-width:34ch">The work, explained on video.</p></div>
+        <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
       <div class="foot__cols"><div class="foot__col"><h4>More</h4>
-        <a href="ernosplain.html">ErnosPlain</a><a href="smithian-fold-theory-of-everything.html">Fold Theory</a><a href="library.html">Library</a>
-        <a href="https://www.youtube.com/@Ernos_Labs" target="_blank" rel="noopener">YouTube ↗</a></div></div>
+        <a href="projects.html">All projects</a><a href="ai.html">AI Archive</a><a href="community.html">Community</a></div></div>
     </div>
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
   </footer>
 
   </div>
 
+  <script src="assets/js/md.js?v=28735f0e"></script>
   <script src="assets/js/spa.js?v=85d305c7"></script>
   <script src="assets/js/kokoro-tts.js?v=ac7a4623"></script>
   <script src="assets/js/site.js?v=29803230"></script>
-  <script src="assets/js/videos-data.js?v=997375c6"></script>
-  <script src="assets/js/videos.js?v=18dfad8c"></script>
+  <script src="assets/js/projects-data.js?v=34132692"></script>
+  <script src="assets/js/projects.js?v=007add4e"></script>
 </body>
 </html>
