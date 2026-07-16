@@ -89,7 +89,7 @@ function pj_meta_line(p) {
 }
 
 function pj_card(p) {
-    let out, page;
+    let page, out;
     page = pj_page(p.repo);
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (("<div class=\"ai-card__top\"><h3>" + String(pj_esc(p.title))) + "</h3></div>"));
@@ -144,7 +144,7 @@ function pj_page(repo) {
 }
 
 function pj_section(key, heading, sub) {
-    let cards, out;
+    let out, cards;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         if ((p.cat === key)) {
@@ -161,7 +161,7 @@ function pj_section(key, heading, sub) {
 }
 
 function pj_render_grid() {
-    let host, html;
+    let html, host;
     host = document.getElementById("projects-grid");
     if (!host) {
         return 0;
@@ -223,7 +223,7 @@ function pj_doc_fail(err) {
 }
 
 function pj_render_page() {
-    let p, h, m, dl, d, host, repo, gh;
+    let h, m, dl, p, gh, host, d, repo;
     host = document.getElementById("project-doc");
     if (!host) {
         return 0;

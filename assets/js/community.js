@@ -1,7 +1,7 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let o, b;
+    let b, o;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
@@ -178,7 +178,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let inp, body, p;
+    let body, p, inp;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -220,7 +220,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let tv, lv;
+    let lv, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -244,7 +244,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let host, links, out;
+    let host, out, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -284,7 +284,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let tv, t, head, lv, posts, out;
+    let head, tv, out, t, posts, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -310,7 +310,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let body, inp, p;
+    let inp, body, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -348,7 +348,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let body, p, ti, bo, title;
+    let p, ti, bo, body, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -410,7 +410,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let out, host, slug;
+    let slug, out, host;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -428,7 +428,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let ui, url, note, ni, p;
+    let p, ui, ni, note, url;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;
@@ -454,7 +454,7 @@ function submit_link() {
 }
 
 function link_sent(resp) {
-    let ui, ni;
+    let ni, ui;
     go_online();
     if (resp.ok) {
         ui = document.getElementById("link-url");

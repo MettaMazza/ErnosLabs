@@ -126,21 +126,48 @@ define nav_toggle with ev:
         links.classList.toggle("open")
     return 0
 
-# Any number of .nav__drop menus: toggling one closes the others.
-define drop_toggle with ev:
-    ev.stopPropagation()
-    set me to ev.currentTarget.parentElement
+# Any number of .nav__drop menus. Hover opens; the menu STAYS open while the
+# pointer is anywhere over the button or the panel, and closes only after a
+# short grace period once the pointer has truly left — so travelling from the
+# button down into the panel never dismisses it. Click still toggles (touch).
+define drop_open_only with me:
+    if window.navCloseTimer:
+        window.clearTimeout(window.navCloseTimer)
+        set window.navCloseTimer to 0
     set drops to document.querySelectorAll(".nav__drop")
     for each d in drops:
         if not (d.id equals me.id):
             d.classList.remove("open")
-    me.classList.toggle("open")
+    me.classList.add("open")
     return 0
 
-define drop_close with ev:
+define drop_enter with ev:
+    drop_open_only(ev.currentTarget)
+    return 0
+
+define drop_close_all:
     set drops to document.querySelectorAll(".nav__drop")
     for each d in drops:
         d.classList.remove("open")
+    return 0
+
+define drop_leave with ev:
+    if window.navCloseTimer:
+        window.clearTimeout(window.navCloseTimer)
+    set window.navCloseTimer to window.setTimeout(drop_close_all and 300)
+    return 0
+
+define drop_toggle with ev:
+    ev.stopPropagation()
+    set me to ev.currentTarget.parentElement
+    if me.classList.contains("open"):
+        me.classList.remove("open")
+    else:
+        drop_open_only(me)
+    return 0
+
+define drop_close with ev:
+    drop_close_all()
     return 0
 
 define nav_init:
@@ -150,6 +177,10 @@ define nav_init:
     set dbtns to document.querySelectorAll(".nav__drop-btn")
     for each b in dbtns:
         b.addEventListener("click" and drop_toggle)
+    set drops to document.querySelectorAll(".nav__drop")
+    for each d in drops:
+        d.addEventListener("pointerenter" and drop_enter)
+        d.addEventListener("pointerleave" and drop_leave)
     document.addEventListener("click" and drop_close)
     return 0
 

@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let n, nodes, i;
+    let i, n, nodes;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let h, canvas, dpr, w, ctx;
+    let dpr, ctx, w, h, canvas;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let nodes, dist, count, w, h, n, alpha, b, dx, ctx, j, a, i, dy;
+    let ctx, b, dx, alpha, j, dy, h, a, n, nodes, dist, w, i, count;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, canvas, density;
+    let reduce, density, canvas;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -138,21 +138,28 @@ function nav_toggle(ev) {
     return 0;
 }
 
-function drop_toggle(ev) {
-    let drops, me;
-    ev.stopPropagation();
-    me = ev.currentTarget.parentElement;
+function drop_open_only(me) {
+    let drops;
+    if (window.navCloseTimer) {
+        window.clearTimeout(window.navCloseTimer);
+        window.navCloseTimer = 0;
+    }
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
         if (!(d.id === me.id)) {
             d.classList.remove("open");
         }
     }
-    me.classList.toggle("open");
+    me.classList.add("open");
     return 0;
 }
 
-function drop_close(ev) {
+function drop_enter(ev) {
+    drop_open_only(ev.currentTarget);
+    return 0;
+}
+
+function drop_close_all() {
     let drops;
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
@@ -161,8 +168,33 @@ function drop_close(ev) {
     return 0;
 }
 
+function drop_leave(ev) {
+    if (window.navCloseTimer) {
+        window.clearTimeout(window.navCloseTimer);
+    }
+    window.navCloseTimer = window.setTimeout(drop_close_all, 300);
+    return 0;
+}
+
+function drop_toggle(ev) {
+    let me;
+    ev.stopPropagation();
+    me = ev.currentTarget.parentElement;
+    if (me.classList.contains("open")) {
+        me.classList.remove("open");
+    } else {
+        drop_open_only(me);
+    }
+    return 0;
+}
+
+function drop_close(ev) {
+    drop_close_all();
+    return 0;
+}
+
 function nav_init() {
-    let dbtns, burger;
+    let drops, dbtns, burger;
     burger = document.getElementById("burger");
     if (burger) {
         burger.addEventListener("click", nav_toggle);
@@ -171,12 +203,17 @@ function nav_init() {
     for (const b of dbtns) {
         b.addEventListener("click", drop_toggle);
     }
+    drops = document.querySelectorAll(".nav__drop");
+    for (const d of drops) {
+        d.addEventListener("pointerenter", drop_enter);
+        d.addEventListener("pointerleave", drop_leave);
+    }
     document.addEventListener("click", drop_close);
     return 0;
 }
 
 function nav_highlight() {
-    let path, drops, qi, b, act, href, links, hp;
+    let path, href, hp, drops, b, qi, act, links;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -226,7 +263,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, opts, args, IO, obs;
+    let args, opts, els, IO, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -256,7 +293,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let dt, n, parts, i, nodes, doc, cls, txt;
+    let doc, nodes, dt, cls, parts, n, txt, i;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -301,7 +338,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let ph, btn, fill, status, pct;
+    let status, fill, btn, pct, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -358,7 +395,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let status, btn;
+    let btn, status;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

@@ -219,7 +219,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let colour, neigh, i, stack, row, total, group, libs, cur, col, v, seen;
+    let stack, colour, neigh, v, total, seen, group, cur, i, col, libs, row;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -270,7 +270,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let coord, neigh, i, colour, rownum, mv, row, size, col, playable, moves, board, idx, dead, enemy, side, d, k;
+    let k, mv, idx, board, col, moves, enemy, neigh, size, playable, row, d, side, colour, i, coord, rownum, dead;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -331,7 +331,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let cell, i, board, row, idx, p, lastn, numlbl, col, v, a0, d, svg, stars, a1, dim, pad, size, mv, stage, edge, moves, rownum, marky, letter, coord, dims, cx, cy, total;
+    let board, stars, cx, row, rownum, edge, size, a0, coord, dim, i, letter, cy, svg, idx, d, cell, numlbl, pad, p, marky, mv, total, v, dims, moves, col, lastn, a1, stage;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -411,7 +411,7 @@ function go_render(n) {
 }
 
 function go_init() {
-    let stage, nmoves, total;
+    let total, nmoves, stage;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
@@ -474,7 +474,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let rook, piece, tf, filediff, fr, target, moves, caprow, diff, negtwo, promo, k, ff, kind, torow, side, tr, board, uci, fromrow;
+    let promo, ff, board, k, piece, kind, target, rook, tf, diff, uci, tr, filediff, fr, caprow, side, moves, negtwo, fromrow, torow;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -543,7 +543,7 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let ry, flabel, htf, hff, uci, hlfrom, svg, r, y, ishl, i, px, row, g, pyrow, pad, hfr, rlabel, piece, board, hlto, sqidx, fillc, strokec, x, htr, fx, fy, stage, yrow, dim, parity, kind, py, lastn, cells, f, dims, cell;
+    let lastn, htr, r, ishl, cell, dims, yrow, hlfrom, cells, flabel, svg, hfr, pyrow, rlabel, board, parity, stage, strokec, sqidx, i, pad, py, hlto, fillc, fx, fy, y, px, ry, uci, row, dim, f, htf, piece, g, hff, x, kind;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
@@ -636,7 +636,7 @@ function chess_render(n) {
 }
 
 function chess_init() {
-    let sidename, d, elostr, stage, plies, caption, total;
+    let plies, d, sidename, stage, total, caption, elostr;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -656,7 +656,7 @@ function chess_init() {
 }
 
 function protein_render(step) {
-    let scale, z, syn, ang, minx, ca, cosa, pr, sxn, stage, sy, proj, sina, pair, path, miny, span, n, y, sx, spy, maxy, cmd, maxx, p, px, i, py, svg, x;
+    let proj, pr, spy, scale, minx, i, ang, py, path, ca, svg, p, pair, stage, n, x, maxy, syn, miny, span, cosa, px, sxn, maxx, z, sy, cmd, y, sx, sina;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -732,7 +732,7 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let n, stage, src;
+    let stage, n, src;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
@@ -756,7 +756,7 @@ function boot_esc(s) {
 }
 
 function boot_step() {
-    let term, line;
+    let line, term;
     term = document.getElementById("sc-term");
     if (!term) {
         return 0;
@@ -820,7 +820,7 @@ function sc_data_fail(err) {
 }
 
 function main() {
-    let file, gh, repo, doc, stage, dl, page;
+    let file, page, doc, gh, dl, repo, stage;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;
