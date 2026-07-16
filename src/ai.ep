@@ -16,7 +16,7 @@ define archive_base:
     if window.localStorage:
         set b to window.localStorage.getItem("ernosArchiveBase")
     if not b:
-        set b to window.ARCHIVE_BASE_DEFAULT
+        set b to window.ERNOS_API
     if not b:
         return ""
     repeat while b.length > 0 and also b.endsWith("/"):
@@ -199,7 +199,13 @@ define load_live:
     fetch(ab + "/catalog").then(catalog_recv).catch(check_status)
     return 0
 
+define boot_live:
+    set window.__ab to archive_base()
+    load_live()
+    return 0
+
 define main:
     render_ai()
-    load_live()
+    # network work waits for the resolved API base (api-base.js)
+    window.ernosApiReady.then(boot_live)
     return 0

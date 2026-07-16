@@ -10,13 +10,16 @@
 # fallback for when the machine sleeps. Depends on md.js (md_render) on
 # project.html. Authored in ErnosPlain like the rest of the site.
 
-# Same-origin: the site and the download mirror live on one host (full self-host).
+# The API base is resolved once by api-base.js (same-origin when the source
+# machine serves the site, else the funnel).
 define pj_base:
     if window.localStorage:
         set o to window.localStorage.getItem("ernosArchiveBase")
         if o:
             return o
-    return window.location.origin
+    if window.ERNOS_API:
+        return window.ERNOS_API
+    return ""
 
 define pj_gh with repo:
     return "https://github.com/MettaMazza/" + repo
@@ -206,5 +209,9 @@ define pj_render_page:
 define main:
     pj_render_grid()
     pj_render_page()
+    window.ernosApiReady.then(pj_check_cb)
+    return 0
+
+define pj_check_cb with basev:
     pj_check()
     return 0

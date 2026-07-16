@@ -9,7 +9,7 @@
  *  - js_object()    : ErnosPlain can't write an object literal; this supplies one.
  *  - fmt_time(ts)   : format a unix timestamp for display.
  */
-window.COMMUNITY_BASE = window.COMMUNITY_BASE || window.location.origin;
+window.COMMUNITY_BASE = window.COMMUNITY_BASE || null;  // resolved via api-base.js (window.ERNOS_API)
 window.js_object = window.js_object || function () { return {}; };
 window.fmt_time = window.fmt_time || function (ts) {
   try {

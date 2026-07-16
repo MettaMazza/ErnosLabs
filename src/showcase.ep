@@ -3,18 +3,22 @@
 # Each page declares its config as data-attributes on #showcase-stage
 # (data-repo, data-kind, data-file) — attributes survive the SPA's innerHTML
 # swap, and this script re-runs on navigation. It renders an interactive replay
-# of the project's REAL recorded output — the Go game vs KataGo, a recorded
-# FoldBot chess game, the folded ubiquitin backbone, the Ern-OS boot — plus the
-# source-machine download flip and the README (via md.js). Replay data lives in
-# content/interactive/, re-baked from the repo mirrors by the source machine.
+# of the project's REAL recorded output — the match vs KataGo (with proper
+# capture logic), the recorded win over Stockfish, the folded ubiquitin
+# backbone, the captured Ern-OS boot — plus the source-machine download flip
+# and the README (via md.js). Replay data lives in content/interactive/,
+# re-baked from the repo mirrors and match logs by the source machine.
 
 # ---------- source-machine status + downloads ----------
+# The API base is resolved once by api-base.js.
 define sc_base:
     if window.localStorage:
         set o to window.localStorage.getItem("ernosArchiveBase")
         if o:
             return o
-    return window.location.origin
+    if window.ERNOS_API:
+        return window.ERNOS_API
+    return ""
 
 define sc_status_set with cls and msg:
     set el to document.getElementById("pj-status")
@@ -45,6 +49,10 @@ define sc_status_fail with err:
 
 define sc_check:
     fetch(sc_base() + "/ping").then(sc_status_ok).catch(sc_status_fail)
+    return 0
+
+define sc_check_cb with basev:
+    sc_check()
     return 0
 
 # ---------- README ----------
@@ -165,35 +173,63 @@ define sc_playpause with ev:
     set window.scTimer to window.setInterval(sc_tick and 650)
     return 0
 
-# ---------- GO (19×19 goban, SVG) ----------
+# ---------- GO: real rules — a captured group leaves the board ----------
 define go_col with ch:
     return "ABCDEFGHJKLMNOPQRST".indexOf(ch)
 
-define go_render with n:
-    set d to window.scData
-    set moves to d.moves
-    set size to d.boardsize
-    set cell to 30
-    set pad to 22
-    set dim to pad * 2 + cell * (size - 1)
-    set dims to int_to_string(dim)
-    set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">"
-    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"6\" fill=\"#e8c583\"/>"
-    set a0 to int_to_string(pad)
-    set a1 to int_to_string(pad + (size - 1) * cell)
+# The group at `start` and its liberty count, via flood fill on the flat board.
+# Returns the group's indices when it has NO liberties (i.e. it is captured);
+# otherwise an empty list.
+define go_dead_group with board and start and size:
+    set colour to get_list(board and start)
+    set total to size * size
+    set seen to []
     set i to 0
-    repeat while i < size:
-        set p to int_to_string(pad + i * cell)
-        set svg to svg + f"<line x1=\"{p}\" y1=\"{a0}\" x2=\"{p}\" y2=\"{a1}\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"
-        set svg to svg + f"<line x1=\"{a0}\" y1=\"{p}\" x2=\"{a1}\" y2=\"{p}\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"
+    repeat while i < total:
+        seen.push(false)
         set i to i + 1
-    # star points
-    set stars to [3, 9, 15]
-    for each sx in stars:
-        for each sy in stars:
-            set cx to int_to_string(pad + sx * cell)
-            set cy to int_to_string(pad + sy * cell)
-            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"2.6\" fill=\"#7a5c28\"/>"
+    set stack to []
+    stack.push(start)
+    seen.splice(start and 1 and true)
+    set group to []
+    set libs to 0
+    repeat while stack.length > 0:
+        set cur to stack.pop()
+        group.push(cur)
+        set col to cur % size
+        set row to Math.floor(cur / size)
+        set neigh to []
+        if col > 0:
+            neigh.push(cur - 1)
+        if col < size - 1:
+            neigh.push(cur + 1)
+        if row > 0:
+            neigh.push(cur - size)
+        if row < size - 1:
+            neigh.push(cur + size)
+        for each nb in neigh:
+            set v to get_list(board and nb)
+            if v equals 0:
+                set libs to libs + 1
+            else:
+                if v equals colour:
+                    if not get_list(seen and nb):
+                        seen.splice(nb and 1 and true)
+                        stack.push(nb)
+    if libs equals 0:
+        return group
+    return []
+
+# The position after the first n moves, captures applied. 0 empty, 1 B, 2 W.
+define go_position_at with n:
+    set d to window.scData
+    set size to d.boardsize
+    set moves to d.moves
+    set board to []
+    set i to 0
+    repeat while i < size * size:
+        board.push(0)
+        set i to i + 1
     set k to 0
     repeat while k < n:
         set mv to get_list(moves and k)
@@ -208,16 +244,94 @@ define go_render with n:
             set col to go_col(coord.charAt(0))
             set rownum to window.parseInt(coord.substring(1) and 10)
             set row to size - rownum
+            set idx to row * size + col
+            set colour to 1
+            if side equals "W":
+                set colour to 2
+            board.splice(idx and 1 and colour)
+            set enemy to 3 - colour
+            # any adjacent enemy group left without liberties is captured
+            set neigh to []
+            if col > 0:
+                neigh.push(idx - 1)
+            if col < size - 1:
+                neigh.push(idx + 1)
+            if row > 0:
+                neigh.push(idx - size)
+            if row < size - 1:
+                neigh.push(idx + size)
+            for each nb in neigh:
+                if get_list(board and nb) equals enemy:
+                    set dead to go_dead_group(board and nb and size)
+                    for each di in dead:
+                        board.splice(di and 1 and 0)
+        set k to k + 1
+    return board
+
+define go_render with n:
+    set d to window.scData
+    set size to d.boardsize
+    set board to go_position_at(n)
+    set cell to 30
+    set pad to 34
+    set dim to pad * 2 + cell * (size - 1)
+    set dims to int_to_string(dim)
+    set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">"
+    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"8\" fill=\"#dcb877\"/>"
+    set a0 to int_to_string(pad)
+    set a1 to int_to_string(pad + (size - 1) * cell)
+    set i to 0
+    repeat while i < size:
+        set p to int_to_string(pad + i * cell)
+        set svg to svg + f"<line x1=\"{p}\" y1=\"{a0}\" x2=\"{p}\" y2=\"{a1}\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"
+        set svg to svg + f"<line x1=\"{a0}\" y1=\"{p}\" x2=\"{a1}\" y2=\"{p}\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"
+        # coordinates: letters along the bottom, numbers up the left side
+        set letter to "ABCDEFGHJKLMNOPQRST".charAt(i)
+        set numlbl to int_to_string(size - i)
+        set edge to int_to_string(dim - 12)
+        set svg to svg + f"<text x=\"{p}\" y=\"{edge}\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">{letter}</text>"
+        set svg to svg + f"<text x=\"12\" y=\"{p}\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">{numlbl}</text>"
+        set i to i + 1
+    set stars to [3, 9, 15]
+    for each sx in stars:
+        for each sy in stars:
+            set cx to int_to_string(pad + sx * cell)
+            set cy to int_to_string(pad + sy * cell)
+            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"2.6\" fill=\"#8a6a33\"/>"
+    # stones from the computed position
+    set idx to 0
+    set total to size * size
+    repeat while idx < total:
+        set v to get_list(board and idx)
+        if v > 0:
+            set col to idx % size
+            set row to Math.floor(idx / size)
             set cx to int_to_string(pad + col * cell)
             set cy to int_to_string(pad + row * cell)
-            set fill to "#111"
-            if side equals "W":
-                set fill to "#f5f5f5"
-            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13\" fill=\"{fill}\" stroke=\"#0006\" stroke-width=\".5\"/>"
-            set lastidx to n - 1
-            if k equals lastidx:
-                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"4\" fill=\"#f5c45e\"/>"
-        set k to k + 1
+            if v equals 1:
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"#1a1c22\" stroke=\"#000\" stroke-width=\".6\"/>"
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"none\" stroke=\"#3a3f4c\" stroke-width=\".8\" opacity=\".6\"/>"
+            else:
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"#f4f2ec\" stroke=\"#b9b3a4\" stroke-width=\".8\"/>"
+        set idx to idx + 1
+    # mark the last move played
+    if n > 0:
+        set moves to d.moves
+        set lastn to n - 1
+        set mv to get_list(moves and lastn)
+        set coord to get_list(mv and 1)
+        set marky to true
+        if coord equals "PASS":
+            set marky to false
+        if coord equals "RESIGN":
+            set marky to false
+        if marky:
+            set col to go_col(coord.charAt(0))
+            set rownum to window.parseInt(coord.substring(1) and 10)
+            set row to size - rownum
+            set cx to int_to_string(pad + col * cell)
+            set cy to int_to_string(pad + row * cell)
+            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"4.4\" fill=\"none\" stroke=\"#f5c45e\" stroke-width=\"2.2\"/>"
     set svg to svg + "</svg>"
     set stage to document.getElementById("sc-board")
     if stage:
@@ -227,11 +341,12 @@ define go_render with n:
 define go_init:
     set stage to document.getElementById("showcase-stage")
     set total to window.scData.moves.length
-    set stage.innerHTML to "<div class=\"sc-caption\">The fold engine (black) vs KataGo (white) — the recorded match, move by move. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    set nmoves to int_to_string(total)
+    set stage.innerHTML to f"<div class=\"sc-caption\">The fold engine (black) vs <strong>KataGo</strong> — the recorded match log, all {nmoves} moves, captures and all. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
     sc_wire_controls(go_render and total)
     return 0
 
-# ---------- CHESS (replayed from the recorded UCI movetext) ----------
+# ---------- CHESS: the recorded win over Stockfish, on a real SVG board ----
 define chess_row with letters and colour:
     set arr to []
     set i to 0
@@ -256,32 +371,19 @@ define chess_fresh_board:
     out.push(chess_row("RNBQKBNR" and "b"))
     return out
 
-define chess_glyph with piece:
-    if piece equals "wK":
-        return "♔"
-    if piece equals "wQ":
-        return "♕"
-    if piece equals "wR":
-        return "♖"
-    if piece equals "wB":
-        return "♗"
-    if piece equals "wN":
-        return "♘"
-    if piece equals "wP":
-        return "♙"
-    if piece equals "bK":
+# One filled silhouette per piece kind; colour comes from the SVG fill.
+define chess_glyph with kind:
+    if kind equals "K":
         return "♚"
-    if piece equals "bQ":
+    if kind equals "Q":
         return "♛"
-    if piece equals "bR":
+    if kind equals "R":
         return "♜"
-    if piece equals "bB":
+    if kind equals "B":
         return "♝"
-    if piece equals "bN":
+    if kind equals "N":
         return "♞"
-    if piece equals "bP":
-        return "♟"
-    return ""
+    return "♟"
 
 define chess_file with ch:
     return "abcdefgh".indexOf(ch)
@@ -314,7 +416,7 @@ define chess_board_at with n:
                 set rook to get_list(torow and 0)
                 torow.splice(3 and 1 and rook)
                 torow.splice(0 and 1 and "")
-        # en passant — pawn moves diagonally onto an empty square
+        # en passant — a pawn moving diagonally onto an empty square
         if kind equals "P":
             set target to get_list(torow and tf)
             set filediff to tf - ff
@@ -322,12 +424,21 @@ define chess_board_at with n:
                 if target equals "":
                     set caprow to get_list(board and fr)
                     caprow.splice(tf and 1 and "")
-        # promotion — a pawn reaching the last rank becomes a queen
+        # promotion — 5-char UCI carries the piece; default queen
         if kind equals "P":
+            set promo to ""
+            if uci.length > 4:
+                set promo to uci.charAt(4).toUpperCase()
             if tr equals 7:
-                set piece to "wQ"
+                set side to "w"
+                if promo equals "":
+                    set promo to "Q"
+                set piece to side + promo
             if tr equals 0:
-                set piece to "bQ"
+                set side to "b"
+                if promo equals "":
+                    set promo to "Q"
+                set piece to side + promo
         torow.splice(tf and 1 and piece)
         fromrow.splice(ff and 1 and "")
         set k to k + 1
@@ -335,31 +446,98 @@ define chess_board_at with n:
 
 define chess_render with n:
     set board to chess_board_at(n)
-    set html to "<div class=\"sc-chess\">"
-    set r to 7
-    repeat while r >= 0:
+    set cell to 56
+    set pad to 26
+    set dim to pad * 2 + cell * 8
+    set dims to int_to_string(dim)
+    set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-chessboard\" xmlns=\"http://www.w3.org/2000/svg\">"
+    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"8\" fill=\"#171a21\"/>"
+    # last move — highlight its from/to squares under the pieces
+    set hlfrom to 0 - 1
+    set hlto to 0 - 1
+    if n > 0:
+        set lastn to n - 1
+        set uci to get_list(window.scData.moves and lastn)
+        set hff to chess_file(uci.charAt(0))
+        set hfr to window.parseInt(uci.charAt(1) and 10) - 1
+        set htf to chess_file(uci.charAt(2))
+        set htr to window.parseInt(uci.charAt(3) and 10) - 1
+        set hlfrom to hfr * 8 + hff
+        set hlto to htr * 8 + htf
+    set r to 0
+    repeat while r < 8:
+        set f to 0
+        repeat while f < 8:
+            set x to int_to_string(pad + f * cell)
+            set yrow to 7 - r
+            set y to int_to_string(pad + yrow * cell)
+            set fillc to "#e9ddc2"
+            set parity to (r + f) % 2
+            if parity equals 0:
+                set fillc to "#9c7b52"
+            set cells to int_to_string(cell)
+            set svg to svg + f"<rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"{fillc}\"/>"
+            set sqidx to r * 8 + f
+            set ishl to false
+            if sqidx equals hlfrom:
+                set ishl to true
+            if sqidx equals hlto:
+                set ishl to true
+            if ishl:
+                set svg to svg + f"<rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"#f5c45e\" opacity=\".3\"/>"
+            set f to f + 1
+        set r to r + 1
+    # coordinates
+    set i to 0
+    repeat while i < 8:
+        set fx to int_to_string(pad + i * cell + cell / 2)
+        set fy to int_to_string(dim - 8)
+        set flabel to "abcdefgh".charAt(i)
+        set svg to svg + f"<text x=\"{fx}\" y=\"{fy}\" font-size=\"12\" fill=\"#8a8f9c\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">{flabel}</text>"
+        set ry to int_to_string(pad + (7 - i) * cell + cell / 2)
+        set rlabel to int_to_string(i + 1)
+        set svg to svg + f"<text x=\"11\" y=\"{ry}\" font-size=\"12\" fill=\"#8a8f9c\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">{rlabel}</text>"
+        set i to i + 1
+    # pieces — filled silhouettes, colour by fill, outlined for contrast
+    set r to 0
+    repeat while r < 8:
         set row to get_list(board and r)
         set f to 0
         repeat while f < 8:
-            set cls to "sc-sq"
-            set parity to (r + f) % 2
-            if parity equals 0:
-                set cls to "sc-sq sc-sq--d"
-            set g to chess_glyph(get_list(row and f))
-            set html to html + f"<div class=\"{cls}\">{g}</div>"
+            set piece to get_list(row and f)
+            if piece:
+                set kind to piece.charAt(1)
+                set g to chess_glyph(kind)
+                set px to int_to_string(pad + f * cell + cell / 2)
+                set pyrow to 7 - r
+                set py to int_to_string(pad + pyrow * cell + cell / 2 + 2)
+                set fillc to "#f6f1e4"
+                set strokec to "#23262e"
+                if piece.charAt(0) equals "b":
+                    set fillc to "#15171d"
+                    set strokec to "#cfd6e4"
+                set svg to svg + f"<text x=\"{px}\" y=\"{py}\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"{fillc}\" stroke=\"{strokec}\" stroke-width=\"1.1\" paint-order=\"stroke\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">{g}</text>"
             set f to f + 1
-        set r to r - 1
-    set html to html + "</div>"
+        set r to r + 1
+    set svg to svg + "</svg>"
     set stage to document.getElementById("sc-board")
     if stage:
-        set stage.innerHTML to html
+        set stage.innerHTML to svg
     return 0
 
 define chess_init:
     set stage to document.getElementById("showcase-stage")
-    set total to window.scData.moves.length
-    set res to window.scData.result
-    set stage.innerHTML to f"<div class=\"sc-caption\">A recorded FoldBot game — every evaluation an exact rational counted from the board's geometry. Result: {res}.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    set d to window.scData
+    set total to d.moves.length
+    set sidename to "White"
+    if d.bot_white equals false:
+        set sidename to "Black"
+    set elostr to ""
+    if d.elo:
+        set elostr to " at Elo " + int_to_string(d.elo)
+    set plies to int_to_string(total)
+    set caption to f"<div class=\"sc-caption\">The recorded <strong>win over Stockfish{elostr}</strong> — FoldBot playing {sidename}, {plies} plies, from the refereed match log. Every evaluation an exact rational counted from the board's geometry.</div>"
+    set stage.innerHTML to caption + "<div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
     sc_wire_controls(chess_render and total)
     return 0
 
@@ -432,7 +610,7 @@ define protein_init:
     set stage to document.getElementById("showcase-stage")
     set n to int_to_string(window.scData.ca.length)
     set src to window.scData.source
-    set stage.innerHTML to f"<div class=\"sc-caption\">Ubiquitin ({n} residues) folded by descent to the fold's fixed point — the real Cα backbone from {src}, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>"
+    set stage.innerHTML to f"<div class=\"sc-caption\">Ubiquitin ({n} residues) folded by descent to the fold's fixed point — the real Cα backbone from <code>{src}</code>, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>"
     set window.scSpin to 0
     protein_render(0)
     if window.scSpinTimer:
@@ -508,7 +686,7 @@ define main:
     set gh to document.getElementById("project-gh")
     if gh:
         set gh.href to "https://github.com/MettaMazza/" + repo
-    sc_check()
+    window.ernosApiReady.then(sc_check_cb)
     set doc to document.getElementById("project-doc")
     if doc:
         fetch("content/projects/" + repo + ".md").then(sc_doc_recv).catch(sc_doc_fail)

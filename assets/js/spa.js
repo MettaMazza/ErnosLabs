@@ -16,7 +16,7 @@
   "use strict";
 
   // Scripts present on every page — never re-injected; their state persists.
-  const SHARED = ["spa.js", "site.js", "kokoro-tts.js"];
+  const SHARED = ["api-base.js", "spa.js", "site.js", "kokoro-tts.js"];
 
   function baseName(src) { return (src || "").split("?")[0].split("/").pop(); }
 

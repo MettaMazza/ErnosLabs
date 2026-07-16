@@ -16,7 +16,7 @@ function archive_base() {
         b = window.localStorage.getItem("ernosArchiveBase");
     }
     if (!b) {
-        b = window.ARCHIVE_BASE_DEFAULT;
+        b = window.ERNOS_API;
     }
     if (!b) {
         return "";
@@ -35,7 +35,7 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let ab, machine, out, hf;
+    let machine, out, hf, ab;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
@@ -60,7 +60,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let models, i, m, out;
+    let out, m, models, i;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let stats, ab, html, runners, j, intro, sections, sec, cards, host, s;
+    let intro, ab, runners, stats, j, sections, cards, html, sec, host, s;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -225,9 +225,15 @@ function load_live() {
     return 0;
 }
 
+function boot_live() {
+    window.__ab = archive_base();
+    load_live();
+    return 0;
+}
+
 function main() {
     render_ai();
-    load_live();
+    window.ernosApiReady.then(boot_live);
     return 0;
 }
 

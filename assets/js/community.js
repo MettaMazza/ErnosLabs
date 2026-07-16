@@ -1,13 +1,16 @@
 // Auto-generated JavaScript from ErnosPlain
 
 function base() {
-    let b, o;
+    let o, b;
     b = window.COMMUNITY_BASE;
     if (window.localStorage) {
         o = window.localStorage.getItem("ernosCommunityBase");
         if (o) {
             b = o;
         }
+    }
+    if (!b) {
+        b = window.ERNOS_API;
     }
     if (b) {
         return b;
@@ -86,7 +89,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let btns, secs;
+    let secs, btns;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -99,7 +102,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let sec, btn;
+    let btn, sec;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -156,7 +159,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let log, add;
+    let add, log;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -175,7 +178,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let p, inp, body;
+    let inp, body, p;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -217,7 +220,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let lv, tv;
+    let tv, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -241,7 +244,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let host, out, links;
+    let host, links, out;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -281,7 +284,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let out, t, lv, tv, posts, head;
+    let tv, t, head, lv, posts, out;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -307,7 +310,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let inp, body, p;
+    let body, inp, p;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -345,7 +348,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let ti, bo, title, body, p;
+    let body, p, ti, bo, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -407,7 +410,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let slug, out, host;
+    let out, host, slug;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -425,7 +428,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let p, note, ui, url, ni;
+    let ui, url, note, ni, p;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;
@@ -451,7 +454,7 @@ function submit_link() {
 }
 
 function link_sent(resp) {
-    let ni, ui;
+    let ui, ni;
     go_online();
     if (resp.ok) {
         ui = document.getElementById("link-url");
@@ -520,6 +523,11 @@ function main() {
     wire("reply-send", "click", reply_ev);
     wire("thread-back", "click", back_ev);
     wire("link-add", "click", link_add_ev);
+    window.ernosApiReady.then(boot_net);
+    return 0;
+}
+
+function boot_net() {
     check_status();
     show_tab("chat");
     if (window.cmPoll) {

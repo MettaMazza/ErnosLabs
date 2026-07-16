@@ -10,7 +10,7 @@
  * the local model is thinking. Kept external so the SPA re-runs it on navigation.
  */
 (function () {
-  var BASE = window.CANVAS_BASE || window.location.origin;
+  var BASE = null; // resolved before init() runs (api-base.js)
   function q(id) { return document.getElementById(id); }
 
   function init() {
@@ -77,6 +77,10 @@
     });
   }
 
-  init();
-  window.canvas_page_init = init;
+  function boot() {
+    BASE = window.CANVAS_BASE || window.ERNOS_API;
+    init();
+  }
+  if (window.ernosApiReady) window.ernosApiReady.then(boot); else boot();
+  window.canvas_page_init = function () { if (window.ernosApiReady) window.ernosApiReady.then(boot); else boot(); };
 })();

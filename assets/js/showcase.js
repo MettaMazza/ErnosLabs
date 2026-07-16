@@ -8,7 +8,10 @@ function sc_base() {
             return o;
         }
     }
-    return window.location.origin;
+    if (window.ERNOS_API) {
+        return window.ERNOS_API;
+    }
+    return "";
 }
 
 function sc_status_set(cls, msg) {
@@ -22,7 +25,7 @@ function sc_status_set(cls, msg) {
 }
 
 function sc_use_machine() {
-    let links, repo;
+    let repo, links;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -50,6 +53,11 @@ function sc_status_fail(err) {
 
 function sc_check() {
     fetch((sc_base() + "/ping")).then(sc_status_ok).catch(sc_status_fail);
+    return 0;
+}
+
+function sc_check_cb(basev) {
+    sc_check();
     return 0;
 }
 
@@ -81,7 +89,7 @@ function sc_doc_fail(err) {
 }
 
 function sc_controls(total) {
-    let out, t;
+    let t, out;
     t = String(total);
     out = "<div class=\"sc-controls\">";
     out = (out + "<button class=\"sc-btn\" id=\"sc-first\" aria-label=\"Start\">⏮</button>");
@@ -118,7 +126,7 @@ function sc_wire_controls(render_fn, total) {
 }
 
 function sc_goto(n) {
-    let p, c;
+    let c, p;
     p = n;
     if ((p < 0)) {
         p = 0;
@@ -210,33 +218,67 @@ function go_col(ch) {
     return "ABCDEFGHJKLMNOPQRST".indexOf(ch);
 }
 
-function go_render(n) {
-    let coord, cell, row, lastidx, side, mv, svg, dims, fill, i, stage, p, d, rownum, dim, moves, stars, a0, a1, size, playable, col, pad, cx, cy, k;
-    d = window.scData;
-    moves = d.moves;
-    size = d.boardsize;
-    cell = 30;
-    pad = 22;
-    dim = ((pad * 2) + (cell * (size - 1)));
-    dims = String(dim);
-    svg = (((("<svg viewBox=\"0 0 " + String(dims)) + " ") + String(dims)) + "\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">");
-    svg = (svg + (((("<rect x=\"0\" y=\"0\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"6\" fill=\"#e8c583\"/>"));
-    a0 = String(pad);
-    a1 = String((pad + ((size - 1) * cell)));
+function go_dead_group(board, start, size) {
+    let colour, neigh, i, stack, row, total, group, libs, cur, col, v, seen;
+    colour = board[start];
+    total = (size * size);
+    seen = [];
     i = 0;
-    while ((i < size)) {
-        p = String((pad + (i * cell)));
-        svg = (svg + (((((((("<line x1=\"" + String(p)) + "\" y1=\"") + String(a0)) + "\" x2=\"") + String(p)) + "\" y2=\"") + String(a1)) + "\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"));
-        svg = (svg + (((((((("<line x1=\"" + String(a0)) + "\" y1=\"") + String(p)) + "\" x2=\"") + String(a1)) + "\" y2=\"") + String(p)) + "\" stroke=\"#7a5c28\" stroke-width=\"1\"/>"));
+    while ((i < total)) {
+        seen.push(false);
         i = (i + 1);
     }
-    stars = [3, 9, 15];
-    for (const sx of stars) {
-        for (const sy of stars) {
-            cx = String((pad + (sx * cell)));
-            cy = String((pad + (sy * cell)));
-            svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"2.6\" fill=\"#7a5c28\"/>"));
+    stack = [];
+    stack.push(start);
+    seen.splice(start, 1, true);
+    group = [];
+    libs = 0;
+    while ((stack.length > 0)) {
+        cur = stack.pop();
+        group.push(cur);
+        col = (cur % size);
+        row = Math.floor((cur / size));
+        neigh = [];
+        if ((col > 0)) {
+            neigh.push((cur - 1));
         }
+        if ((col < (size - 1))) {
+            neigh.push((cur + 1));
+        }
+        if ((row > 0)) {
+            neigh.push((cur - size));
+        }
+        if ((row < (size - 1))) {
+            neigh.push((cur + size));
+        }
+        for (const nb of neigh) {
+            v = board[nb];
+            if ((v === 0)) {
+                libs = (libs + 1);
+            } else if ((v === colour)) {
+                if (!seen[nb]) {
+                    seen.splice(nb, 1, true);
+                    stack.push(nb);
+                }
+            }
+        }
+    }
+    if ((libs === 0)) {
+        return group;
+    }
+    return [];
+}
+
+function go_position_at(n) {
+    let coord, neigh, i, colour, rownum, mv, row, size, col, playable, moves, board, idx, dead, enemy, side, d, k;
+    d = window.scData;
+    size = d.boardsize;
+    moves = d.moves;
+    board = [];
+    i = 0;
+    while ((i < (size * size))) {
+        board.push(0);
+        i = (i + 1);
     }
     k = 0;
     while ((k < n)) {
@@ -254,19 +296,111 @@ function go_render(n) {
             col = go_col(coord.charAt(0));
             rownum = window.parseInt(coord.substring(1), 10);
             row = (size - rownum);
-            cx = String((pad + (col * cell)));
-            cy = String((pad + (row * cell)));
-            fill = "#111";
+            idx = ((row * size) + col);
+            colour = 1;
             if ((side === "W")) {
-                fill = "#f5f5f5";
+                colour = 2;
             }
-            svg = (svg + (((((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13\" fill=\"") + String(fill)) + "\" stroke=\"#0006\" stroke-width=\".5\"/>"));
-            lastidx = (n - 1);
-            if ((k === lastidx)) {
-                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"4\" fill=\"#f5c45e\"/>"));
+            board.splice(idx, 1, colour);
+            enemy = (3 - colour);
+            neigh = [];
+            if ((col > 0)) {
+                neigh.push((idx - 1));
+            }
+            if ((col < (size - 1))) {
+                neigh.push((idx + 1));
+            }
+            if ((row > 0)) {
+                neigh.push((idx - size));
+            }
+            if ((row < (size - 1))) {
+                neigh.push((idx + size));
+            }
+            for (const nb of neigh) {
+                if ((board[nb] === enemy)) {
+                    dead = go_dead_group(board, nb, size);
+                    for (const di of dead) {
+                        board.splice(di, 1, 0);
+                    }
+                }
             }
         }
         k = (k + 1);
+    }
+    return board;
+}
+
+function go_render(n) {
+    let cell, i, board, row, idx, p, lastn, numlbl, col, v, a0, d, svg, stars, a1, dim, pad, size, mv, stage, edge, moves, rownum, marky, letter, coord, dims, cx, cy, total;
+    d = window.scData;
+    size = d.boardsize;
+    board = go_position_at(n);
+    cell = 30;
+    pad = 34;
+    dim = ((pad * 2) + (cell * (size - 1)));
+    dims = String(dim);
+    svg = (((("<svg viewBox=\"0 0 " + String(dims)) + " ") + String(dims)) + "\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">");
+    svg = (svg + (((("<rect x=\"0\" y=\"0\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"8\" fill=\"#dcb877\"/>"));
+    a0 = String(pad);
+    a1 = String((pad + ((size - 1) * cell)));
+    i = 0;
+    while ((i < size)) {
+        p = String((pad + (i * cell)));
+        svg = (svg + (((((((("<line x1=\"" + String(p)) + "\" y1=\"") + String(a0)) + "\" x2=\"") + String(p)) + "\" y2=\"") + String(a1)) + "\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"));
+        svg = (svg + (((((((("<line x1=\"" + String(a0)) + "\" y1=\"") + String(p)) + "\" x2=\"") + String(a1)) + "\" y2=\"") + String(p)) + "\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"));
+        letter = "ABCDEFGHJKLMNOPQRST".charAt(i);
+        numlbl = String((size - i));
+        edge = String((dim - 12));
+        svg = (svg + (((((("<text x=\"" + String(p)) + "\" y=\"") + String(edge)) + "\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">") + String(letter)) + "</text>"));
+        svg = (svg + (((("<text x=\"12\" y=\"" + String(p)) + "\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">") + String(numlbl)) + "</text>"));
+        i = (i + 1);
+    }
+    stars = [3, 9, 15];
+    for (const sx of stars) {
+        for (const sy of stars) {
+            cx = String((pad + (sx * cell)));
+            cy = String((pad + (sy * cell)));
+            svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"2.6\" fill=\"#8a6a33\"/>"));
+        }
+    }
+    idx = 0;
+    total = (size * size);
+    while ((idx < total)) {
+        v = board[idx];
+        if ((v > 0)) {
+            col = (idx % size);
+            row = Math.floor((idx / size));
+            cx = String((pad + (col * cell)));
+            cy = String((pad + (row * cell)));
+            if ((v === 1)) {
+                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"#1a1c22\" stroke=\"#000\" stroke-width=\".6\"/>"));
+                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"none\" stroke=\"#3a3f4c\" stroke-width=\".8\" opacity=\".6\"/>"));
+            } else {
+                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"#f4f2ec\" stroke=\"#b9b3a4\" stroke-width=\".8\"/>"));
+            }
+        }
+        idx = (idx + 1);
+    }
+    if ((n > 0)) {
+        moves = d.moves;
+        lastn = (n - 1);
+        mv = moves[lastn];
+        coord = mv[1];
+        marky = true;
+        if ((coord === "PASS")) {
+            marky = false;
+        }
+        if ((coord === "RESIGN")) {
+            marky = false;
+        }
+        if (marky) {
+            col = go_col(coord.charAt(0));
+            rownum = window.parseInt(coord.substring(1), 10);
+            row = (size - rownum);
+            cx = String((pad + (col * cell)));
+            cy = String((pad + (row * cell)));
+            svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"4.4\" fill=\"none\" stroke=\"#f5c45e\" stroke-width=\"2.2\"/>"));
+        }
     }
     svg = (svg + "</svg>");
     stage = document.getElementById("sc-board");
@@ -277,10 +411,11 @@ function go_render(n) {
 }
 
 function go_init() {
-    let total, stage;
+    let stage, nmoves, total;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
-    stage.innerHTML = ("<div class=\"sc-caption\">The fold engine (black) vs KataGo (white) — the recorded match, move by move. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total));
+    nmoves = String(total);
+    stage.innerHTML = ((("<div class=\"sc-caption\">The fold engine (black) vs <strong>KataGo</strong> — the recorded match log, all " + String(nmoves)) + " moves, captures and all. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>") + sc_controls(total));
     sc_wire_controls(go_render, total);
     return 0;
 }
@@ -315,44 +450,23 @@ function chess_fresh_board() {
     return out;
 }
 
-function chess_glyph(piece) {
-    if ((piece === "wK")) {
-        return "♔";
-    }
-    if ((piece === "wQ")) {
-        return "♕";
-    }
-    if ((piece === "wR")) {
-        return "♖";
-    }
-    if ((piece === "wB")) {
-        return "♗";
-    }
-    if ((piece === "wN")) {
-        return "♘";
-    }
-    if ((piece === "wP")) {
-        return "♙";
-    }
-    if ((piece === "bK")) {
+function chess_glyph(kind) {
+    if ((kind === "K")) {
         return "♚";
     }
-    if ((piece === "bQ")) {
+    if ((kind === "Q")) {
         return "♛";
     }
-    if ((piece === "bR")) {
+    if ((kind === "R")) {
         return "♜";
     }
-    if ((piece === "bB")) {
+    if ((kind === "B")) {
         return "♝";
     }
-    if ((piece === "bN")) {
+    if ((kind === "N")) {
         return "♞";
     }
-    if ((piece === "bP")) {
-        return "♟";
-    }
-    return "";
+    return "♟";
 }
 
 function chess_file(ch) {
@@ -360,7 +474,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let fr, negtwo, diff, caprow, kind, ff, tr, torow, fromrow, board, piece, moves, tf, filediff, uci, target, k, rook;
+    let rook, piece, tf, filediff, fr, target, moves, caprow, diff, negtwo, promo, k, ff, kind, torow, side, tr, board, uci, fromrow;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -402,11 +516,23 @@ function chess_board_at(n) {
             }
         }
         if ((kind === "P")) {
+            promo = "";
+            if ((uci.length > 4)) {
+                promo = uci.charAt(4).toUpperCase();
+            }
             if ((tr === 7)) {
-                piece = "wQ";
+                side = "w";
+                if ((promo === "")) {
+                    promo = "Q";
+                }
+                piece = (side + promo);
             }
             if ((tr === 0)) {
-                piece = "bQ";
+                side = "b";
+                if ((promo === "")) {
+                    promo = "Q";
+                }
+                piece = (side + promo);
             }
         }
         torow.splice(tf, 1, piece);
@@ -417,45 +543,120 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let board, f, g, stage, r, html, row, cls, parity;
+    let ry, flabel, htf, hff, uci, hlfrom, svg, r, y, ishl, i, px, row, g, pyrow, pad, hfr, rlabel, piece, board, hlto, sqidx, fillc, strokec, x, htr, fx, fy, stage, yrow, dim, parity, kind, py, lastn, cells, f, dims, cell;
     board = chess_board_at(n);
-    html = "<div class=\"sc-chess\">";
-    r = 7;
-    while ((r >= 0)) {
+    cell = 56;
+    pad = 26;
+    dim = ((pad * 2) + (cell * 8));
+    dims = String(dim);
+    svg = (((("<svg viewBox=\"0 0 " + String(dims)) + " ") + String(dims)) + "\" class=\"sc-chessboard\" xmlns=\"http://www.w3.org/2000/svg\">");
+    svg = (svg + (((("<rect x=\"0\" y=\"0\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"8\" fill=\"#171a21\"/>"));
+    hlfrom = (0 - 1);
+    hlto = (0 - 1);
+    if ((n > 0)) {
+        lastn = (n - 1);
+        uci = window.scData.moves[lastn];
+        hff = chess_file(uci.charAt(0));
+        hfr = (window.parseInt(uci.charAt(1), 10) - 1);
+        htf = chess_file(uci.charAt(2));
+        htr = (window.parseInt(uci.charAt(3), 10) - 1);
+        hlfrom = ((hfr * 8) + hff);
+        hlto = ((htr * 8) + htf);
+    }
+    r = 0;
+    while ((r < 8)) {
+        f = 0;
+        while ((f < 8)) {
+            x = String((pad + (f * cell)));
+            yrow = (7 - r);
+            y = String((pad + (yrow * cell)));
+            fillc = "#e9ddc2";
+            parity = ((r + f) % 2);
+            if ((parity === 0)) {
+                fillc = "#9c7b52";
+            }
+            cells = String(cell);
+            svg = (svg + (((((((((("<rect x=\"" + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"") + String(fillc)) + "\"/>"));
+            sqidx = ((r * 8) + f);
+            ishl = false;
+            if ((sqidx === hlfrom)) {
+                ishl = true;
+            }
+            if ((sqidx === hlto)) {
+                ishl = true;
+            }
+            if (ishl) {
+                svg = (svg + (((((((("<rect x=\"" + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"#f5c45e\" opacity=\".3\"/>"));
+            }
+            f = (f + 1);
+        }
+        r = (r + 1);
+    }
+    i = 0;
+    while ((i < 8)) {
+        fx = String(((pad + (i * cell)) + (cell / 2)));
+        fy = String((dim - 8));
+        flabel = "abcdefgh".charAt(i);
+        svg = (svg + (((((("<text x=\"" + String(fx)) + "\" y=\"") + String(fy)) + "\" font-size=\"12\" fill=\"#8a8f9c\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">") + String(flabel)) + "</text>"));
+        ry = String(((pad + ((7 - i) * cell)) + (cell / 2)));
+        rlabel = String((i + 1));
+        svg = (svg + (((("<text x=\"11\" y=\"" + String(ry)) + "\" font-size=\"12\" fill=\"#8a8f9c\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">") + String(rlabel)) + "</text>"));
+        i = (i + 1);
+    }
+    r = 0;
+    while ((r < 8)) {
         row = board[r];
         f = 0;
         while ((f < 8)) {
-            cls = "sc-sq";
-            parity = ((r + f) % 2);
-            if ((parity === 0)) {
-                cls = "sc-sq sc-sq--d";
+            piece = row[f];
+            if (piece) {
+                kind = piece.charAt(1);
+                g = chess_glyph(kind);
+                px = String(((pad + (f * cell)) + (cell / 2)));
+                pyrow = (7 - r);
+                py = String((((pad + (pyrow * cell)) + (cell / 2)) + 2));
+                fillc = "#f6f1e4";
+                strokec = "#23262e";
+                if ((piece.charAt(0) === "b")) {
+                    fillc = "#15171d";
+                    strokec = "#cfd6e4";
+                }
+                svg = (svg + (((((((((("<text x=\"" + String(px)) + "\" y=\"") + String(py)) + "\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"") + String(fillc)) + "\" stroke=\"") + String(strokec)) + "\" stroke-width=\"1.1\" paint-order=\"stroke\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">") + String(g)) + "</text>"));
             }
-            g = chess_glyph(row[f]);
-            html = (html + (((("<div class=\"" + String(cls)) + "\">") + String(g)) + "</div>"));
             f = (f + 1);
         }
-        r = (r - 1);
+        r = (r + 1);
     }
-    html = (html + "</div>");
+    svg = (svg + "</svg>");
     stage = document.getElementById("sc-board");
     if (stage) {
-        stage.innerHTML = html;
+        stage.innerHTML = svg;
     }
     return 0;
 }
 
 function chess_init() {
-    let total, res, stage;
+    let sidename, d, elostr, stage, plies, caption, total;
     stage = document.getElementById("showcase-stage");
-    total = window.scData.moves.length;
-    res = window.scData.result;
-    stage.innerHTML = ((("<div class=\"sc-caption\">A recorded FoldBot game — every evaluation an exact rational counted from the board's geometry. Result: " + String(res)) + ".</div><div id=\"sc-board\" class=\"sc-board\"></div>") + sc_controls(total));
+    d = window.scData;
+    total = d.moves.length;
+    sidename = "White";
+    if ((d.bot_white === false)) {
+        sidename = "Black";
+    }
+    elostr = "";
+    if (d.elo) {
+        elostr = (" at Elo " + String(d.elo));
+    }
+    plies = String(total);
+    caption = (((((("<div class=\"sc-caption\">The recorded <strong>win over Stockfish" + String(elostr)) + "</strong> — FoldBot playing ") + String(sidename)) + ", ") + String(plies)) + " plies, from the refereed match log. Every evaluation an exact rational counted from the board's geometry.</div>");
+    stage.innerHTML = ((caption + "<div id=\"sc-board\" class=\"sc-board\"></div>") + sc_controls(total));
     sc_wire_controls(chess_render, total);
     return 0;
 }
 
 function protein_render(step) {
-    let i, sina, maxy, spy, px, n, path, maxx, cosa, py, syn, cmd, ang, sx, span, z, stage, proj, p, sxn, svg, ca, sy, y, scale, minx, pair, x, pr, miny;
+    let scale, z, syn, ang, minx, ca, cosa, pr, sxn, stage, sy, proj, sina, pair, path, miny, span, n, y, sx, spy, maxy, cmd, maxx, p, px, i, py, svg, x;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -531,11 +732,11 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let stage, src, n;
+    let n, stage, src;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
-    stage.innerHTML = (((("<div class=\"sc-caption\">Ubiquitin (" + String(n)) + " residues) folded by descent to the fold's fixed point — the real Cα backbone from ") + String(src)) + ", rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>");
+    stage.innerHTML = (((("<div class=\"sc-caption\">Ubiquitin (" + String(n)) + " residues) folded by descent to the fold's fixed point — the real Cα backbone from <code>") + String(src)) + "</code>, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>");
     window.scSpin = 0;
     protein_render(0);
     if (window.scSpinTimer) {
@@ -619,7 +820,7 @@ function sc_data_fail(err) {
 }
 
 function main() {
-    let page, doc, stage, file, gh, repo, dl;
+    let file, gh, repo, doc, stage, dl, page;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;
@@ -634,7 +835,7 @@ function main() {
     if (gh) {
         gh.href = ("https://github.com/MettaMazza/" + repo);
     }
-    sc_check();
+    window.ernosApiReady.then(sc_check_cb);
     doc = document.getElementById("project-doc");
     if (doc) {
         fetch((("content/projects/" + repo) + ".md")).then(sc_doc_recv).catch(sc_doc_fail);

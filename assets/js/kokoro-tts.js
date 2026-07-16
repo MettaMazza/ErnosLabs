@@ -22,7 +22,9 @@
   // When it's running, read-aloud uses the real local Fable voice instantly.
   // When it's not (any other visitor), the fetch fails fast and we fall back to
   // the browser voice. Override with setEndpoint()/window.KOKORO_ENDPOINT.
-  const KOKORO_ENDPOINT = window.location.origin;
+  // Resolved by api-base.js: same-origin when the source machine serves the
+  // site, else the funnel. Read lazily (at play time) so resolution is done.
+  const KOKORO_ENDPOINT = null;
   const DEFAULT_VOICE = "bm_fable";
   const FIRST_TIMEOUT_MS = 12000; // if the source machine is offline, fall back to the browser voice quickly
   const GEN_TIMEOUT_MS = 30000;   // subsequent requests
@@ -48,7 +50,7 @@
       const s = localStorage.getItem("kokoroEndpoint");
       if (s) return s;
     } catch (e) {}
-    return KOKORO_ENDPOINT;
+    return window.ERNOS_API || KOKORO_ENDPOINT;
   }
 
   // ---- text sanitisation: never speak markdown or stray symbols ----------

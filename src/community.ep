@@ -10,6 +10,8 @@ define base:
         set o to window.localStorage.getItem("ernosCommunityBase")
         if o:
             set b to o
+    if not b:
+        set b to window.ERNOS_API
     if b:
         return b
     return ""
@@ -407,7 +409,11 @@ define main:
     wire("thread-back" and "click" and back_ev)
     # ai links
     wire("link-add" and "click" and link_add_ev)
-    # go
+    # go — network work waits for the resolved API base (api-base.js)
+    window.ernosApiReady.then(boot_net)
+    return 0
+
+define boot_net:
     check_status()
     show_tab("chat")
     if window.cmPoll:

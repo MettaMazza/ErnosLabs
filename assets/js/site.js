@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let i, n, nodes;
+    let n, nodes, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, h, ctx, canvas, w;
+    let h, canvas, dpr, w, ctx;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let nodes, i, j, dx, ctx, count, dist, n, b, w, alpha, h, a, dy;
+    let nodes, dist, count, w, h, n, alpha, b, dx, ctx, j, a, i, dy;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, reduce, density;
+    let reduce, canvas, density;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -176,7 +176,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let path, hp, b, links, drops, qi, href, act;
+    let path, drops, qi, b, act, href, links, hp;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -226,7 +226,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let els, args, obs, IO, opts;
+    let els, opts, args, IO, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -256,7 +256,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let doc, nodes, parts, n, txt, i, cls, dt;
+    let dt, n, parts, i, nodes, doc, cls, txt;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -301,7 +301,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let btn, pct, fill, status, ph;
+    let ph, btn, fill, status, pct;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;
@@ -358,7 +358,7 @@ function np_progress(info) {
 }
 
 function player_init() {
-    let btn, status;
+    let status, btn;
     btn = document.getElementById("np-toggle");
     if (!btn) {
         return 0;

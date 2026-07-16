@@ -798,18 +798,31 @@ def _bake_interactive():
                                  {"boardsize": 19, "source": os.path.basename(logs[0]), "moves": moves})
     except Exception as e:
         print(f"[interactive] go: {e}", flush=True)
-    # CHESS — decode moves_enc (from*64+to, 0=a1) from the newest gate game
+    # CHESS — the LATEST WIN against real Stockfish, full UCI movetext
+    # (tools/games_<elo>/game_NN.json written by match_log.py). Highest Elo
+    # first, then the latest game number — "the last victory".
     try:
         import glob as _glob
-        gates = sorted(_glob.glob(f"{home}/Desktop/FoldBot Chess/tools/gate_*/gate_01.json"),
-                       key=os.path.getmtime, reverse=True)
-        if gates:
-            d = json.load(open(gates[0]))
-            sqr = lambda i: "abcdefgh"[i % 8] + str(i // 8 + 1)
-            uci = [sqr(e // 64) + sqr(e % 64) for e in d["moves_enc"]]
+        best = None
+        for gdir in sorted(_glob.glob(f"{home}/Desktop/FoldBot Chess/tools/games_*"), reverse=True):
+            wins = []
+            for gf in sorted(_glob.glob(os.path.join(gdir, "game_*.json"))):
+                try:
+                    d = json.load(open(gf))
+                    if d.get("result") == "win" and d.get("moves_uci"):
+                        wins.append(d)
+                except Exception:
+                    pass
+            if wins:
+                best = wins[-1]
+                break
+        if best:
             write_if_changed("foldbot-chess-game.json",
-                             {"result": d.get("result"), "white": "FoldBot" if d.get("new_white") else "prev",
-                              "moves": uci})
+                             {"result": "win", "elo": best.get("elo"),
+                              "bot_white": bool(best.get("bot_white")),
+                              "plies": best.get("plies"),
+                              "game": best.get("game"),
+                              "moves": best["moves_uci"]})
     except Exception as e:
         print(f"[interactive] chess: {e}", flush=True)
     # PROTEIN — highest-version ubiquitin PDB → CA trace

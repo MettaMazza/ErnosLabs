@@ -1173,18 +1173,15 @@ pre {
 .sc-caption{color:var(--ink-2);font-size:.92rem;line-height:1.5;margin:0 0 16px;max-width:60ch}
 .sc-board{display:flex;justify-content:center;align-items:center;min-height:200px}
 .sc-board--protein{min-height:420px}
-.sc-goban,.sc-protein{width:100%;max-width:440px;height:auto}
+.sc-goban{width:100%;max-width:560px;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+.sc-protein{width:100%;max-width:440px;height:auto}
 .sc-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px}
 .sc-btn{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-1);border-radius:9px;
   width:42px;height:38px;font-size:.9rem;cursor:pointer;transition:border-color .15s,color .15s}
 .sc-btn:hover{color:var(--ink-0);border-color:var(--glow-dim)}
 .sc-btn--play{background:var(--glow);border-color:var(--glow);color:#08131b;font-weight:700}
 .sc-count{margin-left:10px;color:var(--ink-3);font:600 .84rem "JetBrains Mono";min-width:74px;text-align:right}
-.sc-chess{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:420px;aspect-ratio:1;
-  border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.sc-sq{display:flex;align-items:center;justify-content:center;background:#ecd9b0;
-  font-size:clamp(1.1rem,4.4vw,2rem);line-height:1;color:#111;user-select:none}
-.sc-sq--d{background:#a97a4c}
+.sc-chessboard{width:100%;max-width:520px;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
 .sc-term{background:#0b0f14;border:1px solid var(--line);border-radius:10px;padding:16px 18px;
   font:500 .82rem/1.5 "JetBrains Mono";color:#c7f6e6;white-space:pre-wrap;word-break:break-word;
   height:min(60vh,460px);overflow-y:auto;margin:0}
@@ -1199,8 +1196,9 @@ pre {
 
 /* ---- mega-menu nav ---- */
 .nav__drop--mega{position:static}
-.nav__mega{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:8px 26px;
+.nav__mega{grid-template-columns:repeat(5,minmax(120px,1fr));gap:8px 26px;
   left:50%;transform:translateX(-50%);min-width:min(760px,92vw);padding:20px 24px}
+.nav__drop:hover .nav__mega,.nav__drop.open .nav__mega{display:grid}
 .nav__mega-col{display:flex;flex-direction:column;gap:2px}
 .nav__mega-col h4{margin:0 0 8px;color:var(--ink-3);font:600 .72rem "Space Grotesk";
   text-transform:uppercase;letter-spacing:.08em}
@@ -1224,8 +1222,8 @@ pre {
 
 /* projects & downloads */
 .pj-meta{color:var(--ink-3);font-size:.8rem;margin:6px 0 0;overflow-wrap:anywhere}
-.pj-dl{color:var(--glow);font:600 .9rem "Space Grotesk";text-decoration:none;white-space:nowrap}
-.pj-dl:hover{text-decoration:underline}
+a.pj-dl:not(.btn){color:var(--glow);font:600 .9rem "Space Grotesk";text-decoration:none;white-space:nowrap}
+a.pj-dl:not(.btn):hover{text-decoration:underline}
 .pj-ghl{color:var(--ink-3);font-size:.85rem;text-decoration:none;white-space:nowrap}
 .pj-ghl:hover{color:var(--ink-1)}
 .doc img{max-width:100%;height:auto;border-radius:10px}

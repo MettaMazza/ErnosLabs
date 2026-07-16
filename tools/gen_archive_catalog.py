@@ -167,7 +167,7 @@ def emit_js(reg, models, total):
     lines.append("// Curated metadata lives in tools/archive_registry.json; sizes and which")
     lines.append("// models appear are scanned live from the archive drive by the folder-watcher.")
     # same-origin: the site and the archive live on one host now (full self-host)
-    lines.append('window.ARCHIVE_BASE_DEFAULT = window.location.origin;')
+    lines.append('window.ARCHIVE_BASE_DEFAULT = null;  // resolved by api-base.js (window.ERNOS_API)')
     lines.append('window.archiveSetBase = function (url) {')
     lines.append('  try { localStorage.setItem("ernosArchiveBase", (url || "").replace(/\\/+$/, "")); } catch (e) {}')
     lines.append('  location.reload();')

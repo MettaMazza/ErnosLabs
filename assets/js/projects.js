@@ -8,7 +8,10 @@ function pj_base() {
             return o;
         }
     }
-    return window.location.origin;
+    if (window.ERNOS_API) {
+        return window.ERNOS_API;
+    }
+    return "";
 }
 
 function pj_gh(repo) {
@@ -28,7 +31,7 @@ function pj_esc(s) {
 }
 
 function pj_use_machine() {
-    let repo, links;
+    let links, repo;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -141,7 +144,7 @@ function pj_page(repo) {
 }
 
 function pj_section(key, heading, sub) {
-    let out, cards;
+    let cards, out;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         if ((p.cat === key)) {
@@ -174,7 +177,7 @@ function pj_render_grid() {
 }
 
 function pj_param() {
-    let v, sp;
+    let sp, v;
     sp = Reflect.construct(window.URLSearchParams, [window.location.search]);
     v = sp.get("p");
     if (v) {
@@ -220,7 +223,7 @@ function pj_doc_fail(err) {
 }
 
 function pj_render_page() {
-    let p, repo, host, m, dl, gh, d, h;
+    let p, h, m, dl, d, host, repo, gh;
     host = document.getElementById("project-doc");
     if (!host) {
         return 0;
@@ -261,6 +264,11 @@ function pj_render_page() {
 function main() {
     pj_render_grid();
     pj_render_page();
+    window.ernosApiReady.then(pj_check_cb);
+    return 0;
+}
+
+function pj_check_cb(basev) {
     pj_check();
     return 0;
 }
