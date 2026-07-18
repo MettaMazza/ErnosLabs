@@ -25,7 +25,7 @@ function sc_status_set(cls, msg) {
 }
 
 function sc_use_machine() {
-    let repo, links;
+    let links, repo;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -89,16 +89,16 @@ function sc_doc_fail(err) {
 }
 
 function sc_controls(total) {
-    let t, out;
+    let out, t;
     t = String(total);
-    out = "<div class=\"sc-controls\">";
+    out = "<div class=\"sc-transport\"><div class=\"sc-progress\" aria-hidden=\"true\"><span id=\"sc-progress-fill\"></span></div><div class=\"sc-controls\">";
     out = (out + "<button class=\"sc-btn\" id=\"sc-first\" aria-label=\"Start\">⏮</button>");
     out = (out + "<button class=\"sc-btn\" id=\"sc-prev\" aria-label=\"Back\">◀</button>");
     out = (out + "<button class=\"sc-btn sc-btn--play\" id=\"sc-play\" aria-label=\"Play\">▶</button>");
     out = (out + "<button class=\"sc-btn\" id=\"sc-next\" aria-label=\"Forward\">▶▏</button>");
     out = (out + "<button class=\"sc-btn\" id=\"sc-last\" aria-label=\"End\">⏭</button>");
     out = (out + (("<span class=\"sc-count\" id=\"sc-count\">0 / " + String(t)) + "</span>"));
-    out = (out + "</div>");
+    out = (out + "</div></div>");
     return out;
 }
 
@@ -112,10 +112,12 @@ function sc_wire(id, cb) {
 }
 
 function sc_wire_controls(render_fn, total) {
+    sc_stop();
     window.scPos = 0;
     window.scTotal = total;
     window.scRender = render_fn;
     window.scPlaying = false;
+    window.scLoop = false;
     render_fn(0);
     sc_wire("sc-first", sc_first);
     sc_wire("sc-prev", sc_prev);
@@ -126,7 +128,7 @@ function sc_wire_controls(render_fn, total) {
 }
 
 function sc_goto(n) {
-    let c, p;
+    let p, fill, pc, c;
     p = n;
     if ((p < 0)) {
         p = 0;
@@ -139,6 +141,14 @@ function sc_goto(n) {
     c = document.getElementById("sc-count");
     if (c) {
         c.textContent = ((String(p) + " / ") + String(window.scTotal));
+    }
+    fill = document.getElementById("sc-progress-fill");
+    if (fill) {
+        pc = 0;
+        if ((window.scTotal > 0)) {
+            pc = (Math.round(((p * 1000) / window.scTotal)) / 10);
+        }
+        fill.style.width = (String(pc) + "%");
     }
     return 0;
 }
@@ -188,6 +198,10 @@ function sc_last(ev) {
 function sc_tick() {
     let p;
     if ((window.scPos >= window.scTotal)) {
+        if (window.scLoop) {
+            sc_goto(0);
+            return 0;
+        }
         sc_stop();
         return 0;
     }
@@ -219,7 +233,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let libs, stack, cur, i, neigh, row, total, seen, group, col, v, colour;
+    let total, col, stack, group, libs, cur, neigh, i, row, v, colour, seen;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -270,7 +284,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let i, enemy, d, board, dead, col, k, side, idx, colour, row, moves, playable, rownum, neigh, mv, coord, size;
+    let rownum, neigh, k, i, mv, col, size, board, coord, d, idx, enemy, side, dead, playable, colour, moves, row;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -331,7 +345,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let size, dim, cell, pad, col, i, a0, d, letter, v, svg, dims, lastn, stars, moves, marky, cy, edge, total, coord, stage, p, cx, mv, idx, numlbl, rownum, a1, board, row;
+    let stars, board, turn, idx, signal, cell, nextside, col, edge, total, p, numlbl, a0, d, i, current, lastn, pad, moves, v, rownum, coord, lastmove, marky, size, cy, mv, letter, row, a1, side, dim, dims, stage, svg, cx;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -340,19 +354,21 @@ function go_render(n) {
     dim = ((pad * 2) + (cell * (size - 1)));
     dims = String(dim);
     svg = (((("<svg viewBox=\"0 0 " + String(dims)) + " ") + String(dims)) + "\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">");
-    svg = (svg + (((("<rect x=\"0\" y=\"0\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"8\" fill=\"#dcb877\"/>"));
+    svg = (svg + "<defs><linearGradient id=\"goWood\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#e5bd75\"/><stop offset=\"48%\" stop-color=\"#c9924f\"/><stop offset=\"100%\" stop-color=\"#a96f38\"/></linearGradient><radialGradient id=\"goBlack\" cx=\"32%\" cy=\"26%\"><stop offset=\"0%\" stop-color=\"#59616c\"/><stop offset=\"38%\" stop-color=\"#20242a\"/><stop offset=\"100%\" stop-color=\"#050608\"/></radialGradient><radialGradient id=\"goWhite\" cx=\"32%\" cy=\"26%\"><stop offset=\"0%\" stop-color=\"#ffffff\"/><stop offset=\"58%\" stop-color=\"#f0eee7\"/><stop offset=\"100%\" stop-color=\"#bfc2c5\"/></radialGradient><filter id=\"goShadow\" x=\"-40%\" y=\"-40%\" width=\"180%\" height=\"180%\"><feDropShadow dx=\"1.4\" dy=\"3.2\" stdDeviation=\"2.2\" flood-color=\"#1a0c04\" flood-opacity=\".58\"/></filter></defs>");
+    svg = (svg + (((("<rect x=\"1\" y=\"1\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"17\" fill=\"url(#goWood)\" stroke=\"#f1cf8e\" stroke-opacity=\".35\"/>"));
+    svg = (svg + (((("<rect x=\"13\" y=\"13\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"12\" fill=\"none\" stroke=\"#6e3e1f\" stroke-opacity=\".22\" transform=\"scale(.956)\"/>"));
     a0 = String(pad);
     a1 = String((pad + ((size - 1) * cell)));
     i = 0;
     while ((i < size)) {
         p = String((pad + (i * cell)));
-        svg = (svg + (((((((("<line x1=\"" + String(p)) + "\" y1=\"") + String(a0)) + "\" x2=\"") + String(p)) + "\" y2=\"") + String(a1)) + "\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"));
-        svg = (svg + (((((((("<line x1=\"" + String(a0)) + "\" y1=\"") + String(p)) + "\" x2=\"") + String(a1)) + "\" y2=\"") + String(p)) + "\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"));
+        svg = (svg + (((((((("<line x1=\"" + String(p)) + "\" y1=\"") + String(a0)) + "\" x2=\"") + String(p)) + "\" y2=\"") + String(a1)) + "\" stroke=\"#5c321d\" stroke-width=\"1.15\" opacity=\".72\"/>"));
+        svg = (svg + (((((((("<line x1=\"" + String(a0)) + "\" y1=\"") + String(p)) + "\" x2=\"") + String(a1)) + "\" y2=\"") + String(p)) + "\" stroke=\"#5c321d\" stroke-width=\"1.15\" opacity=\".72\"/>"));
         letter = "ABCDEFGHJKLMNOPQRST".charAt(i);
         numlbl = String((size - i));
         edge = String((dim - 12));
-        svg = (svg + (((((("<text x=\"" + String(p)) + "\" y=\"") + String(edge)) + "\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">") + String(letter)) + "</text>"));
-        svg = (svg + (((("<text x=\"12\" y=\"" + String(p)) + "\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">") + String(numlbl)) + "</text>"));
+        svg = (svg + (((((("<text x=\"" + String(p)) + "\" y=\"") + String(edge)) + "\" font-size=\"10\" fill=\"#5c321d\" text-anchor=\"middle\" font-family=\"JetBrains Mono,monospace\" opacity=\".8\">") + String(letter)) + "</text>"));
+        svg = (svg + (((("<text x=\"12\" y=\"" + String(p)) + "\" font-size=\"10\" fill=\"#5c321d\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"JetBrains Mono,monospace\" opacity=\".8\">") + String(numlbl)) + "</text>"));
         i = (i + 1);
     }
     stars = [3, 9, 15];
@@ -373,10 +389,9 @@ function go_render(n) {
             cx = String((pad + (col * cell)));
             cy = String((pad + (row * cell)));
             if ((v === 1)) {
-                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"#1a1c22\" stroke=\"#000\" stroke-width=\".6\"/>"));
-                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"none\" stroke=\"#3a3f4c\" stroke-width=\".8\" opacity=\".6\"/>"));
+                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.35\" fill=\"url(#goBlack)\" stroke=\"#020304\" stroke-width=\".7\" filter=\"url(#goShadow)\"/>"));
             } else {
-                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.2\" fill=\"#f4f2ec\" stroke=\"#b9b3a4\" stroke-width=\".8\"/>"));
+                svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"13.35\" fill=\"url(#goWhite)\" stroke=\"#aeb0b3\" stroke-width=\".7\" filter=\"url(#goShadow)\"/>"));
             }
         }
         idx = (idx + 1);
@@ -399,7 +414,7 @@ function go_render(n) {
             row = (size - rownum);
             cx = String((pad + (col * cell)));
             cy = String((pad + (row * cell)));
-            svg = (svg + (((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"4.4\" fill=\"none\" stroke=\"#f5c45e\" stroke-width=\"2.2\"/>"));
+            svg = (svg + (((((((("<circle cx=\"" + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"5\" fill=\"none\" stroke=\"#62f3c8\" stroke-width=\"2.5\"/><circle cx=\"") + String(cx)) + "\" cy=\"") + String(cy)) + "\" r=\"17\" fill=\"none\" stroke=\"#62f3c8\" stroke-width=\"1\" opacity=\".45\"/>"));
         }
     }
     svg = (svg + "</svg>");
@@ -407,21 +422,52 @@ function go_render(n) {
     if (stage) {
         stage.innerHTML = svg;
     }
+    current = document.getElementById("sc-current");
+    turn = document.getElementById("sc-turn");
+    signal = document.getElementById("sc-signal");
+    if ((n === 0)) {
+        if (current) {
+            current.textContent = "Opening position";
+        }
+        if (turn) {
+            turn.textContent = "Black to move";
+        }
+        if (signal) {
+            signal.textContent = "19 × 19";
+        }
+    } else {
+        lastmove = d.moves[(n - 1)];
+        side = lastmove[0];
+        coord = lastmove[1];
+        if (current) {
+            current.textContent = ((side + " · ") + coord);
+        }
+        if (turn) {
+            nextside = "Black to move";
+            if ((side === "B")) {
+                nextside = "White to move";
+            }
+            turn.textContent = nextside;
+        }
+        if (signal) {
+            signal.textContent = ("Move " + String(n));
+        }
+    }
     return 0;
 }
 
 function go_init() {
-    let stage, total, nmoves;
+    let total, nmoves, stage;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
-    stage.innerHTML = ((("<div class=\"sc-caption\">The fold engine (black) vs <strong>KataGo</strong> — the recorded match log, all " + String(nmoves)) + " moves, captures and all. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>") + sc_controls(total));
+    stage.innerHTML = ((("<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Recorded match · 19 × 19</span><h3>Fold engine vs KataGo</h3><p>The complete " + String(nmoves)) + "-move match log, with legal captures reconstructed on every step.</p></div><span class=\"sc-replay-badge\"><i></i> Match receipt</span></div><div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board\"></div><aside class=\"sc-replay-rail\"><div><span>Last action</span><strong id=\"sc-current\">Opening position</strong></div><div><span>Turn</span><strong id=\"sc-turn\">Black to move</strong></div><div><span>Board</span><strong id=\"sc-signal\">19 × 19</strong></div><div class=\"sc-replay-result\"><span>Engine profile</span><strong>0 weights<br>0 playouts</strong></div></aside></div>") + sc_controls(total));
     sc_wire_controls(go_render, total);
     return 0;
 }
 
 function chess_row(letters, colour) {
-    let arr, i, ch;
+    let ch, i, arr;
     arr = [];
     i = 0;
     while ((i < 8)) {
@@ -474,7 +520,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let rook, caprow, board, side, k, negtwo, moves, target, promo, tr, fr, fromrow, tf, ff, torow, diff, uci, kind, piece, filediff;
+    let board, tf, tr, piece, ff, caprow, side, target, filediff, diff, fr, torow, kind, fromrow, moves, uci, rook, negtwo, promo, k;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -543,14 +589,15 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let yrow, f, r, strokec, fillc, px, kind, hfr, htr, rlabel, dim, uci, board, py, row, pyrow, fx, hlfrom, x, svg, hff, cells, hlto, lastn, dims, pad, sqidx, ishl, ry, piece, g, cell, stage, y, htf, flabel, i, fy, parity;
+    let nextturn, dim, cells, strokec, yrow, ry, g, htr, sqidx, hlfrom, fx, px, hfr, pad, pyrow, turn, x, cell, y, lastn, flabel, dims, fillc, board, r, parity, svg, hff, piece, rlabel, kind, stage, current, ishl, f, row, played, py, hlto, htf, fy, i, uci, signal;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
     dim = ((pad * 2) + (cell * 8));
     dims = String(dim);
     svg = (((("<svg viewBox=\"0 0 " + String(dims)) + " ") + String(dims)) + "\" class=\"sc-chessboard\" xmlns=\"http://www.w3.org/2000/svg\">");
-    svg = (svg + (((("<rect x=\"0\" y=\"0\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"8\" fill=\"#171a21\"/>"));
+    svg = (svg + "<defs><linearGradient id=\"chessFrame\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#303d51\"/><stop offset=\"52%\" stop-color=\"#151d2a\"/><stop offset=\"100%\" stop-color=\"#090e16\"/></linearGradient><filter id=\"pieceShadow\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\"><feDropShadow dx=\"0\" dy=\"2.5\" stdDeviation=\"1.8\" flood-color=\"#02040a\" flood-opacity=\".72\"/></filter></defs>");
+    svg = (svg + (((("<rect x=\"1\" y=\"1\" width=\"" + String(dims)) + "\" height=\"") + String(dims)) + "\" rx=\"18\" fill=\"url(#chessFrame)\" stroke=\"#f4ca71\" stroke-opacity=\".22\"/>"));
     hlfrom = (0 - 1);
     hlto = (0 - 1);
     if ((n > 0)) {
@@ -570,10 +617,10 @@ function chess_render(n) {
             x = String((pad + (f * cell)));
             yrow = (7 - r);
             y = String((pad + (yrow * cell)));
-            fillc = "#e9ddc2";
+            fillc = "#b9c4c2";
             parity = ((r + f) % 2);
             if ((parity === 0)) {
-                fillc = "#9c7b52";
+                fillc = "#34475a";
             }
             cells = String(cell);
             svg = (svg + (((((((((("<rect x=\"" + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"") + String(fillc)) + "\"/>"));
@@ -586,7 +633,7 @@ function chess_render(n) {
                 ishl = true;
             }
             if (ishl) {
-                svg = (svg + (((((((("<rect x=\"" + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"#f5c45e\" opacity=\".3\"/>"));
+                svg = (svg + (((((((((((((((("<rect x=\"" + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"#f4ca71\" opacity=\".48\"/><rect x=\"") + String(x)) + "\" y=\"") + String(y)) + "\" width=\"") + String(cells)) + "\" height=\"") + String(cells)) + "\" fill=\"none\" stroke=\"#ffe6a5\" stroke-width=\"1.4\" opacity=\".75\"/>"));
             }
             f = (f + 1);
         }
@@ -615,13 +662,13 @@ function chess_render(n) {
                 px = String(((pad + (f * cell)) + (cell / 2)));
                 pyrow = (7 - r);
                 py = String((((pad + (pyrow * cell)) + (cell / 2)) + 2));
-                fillc = "#f6f1e4";
-                strokec = "#23262e";
+                fillc = "#fffaf0";
+                strokec = "#25313f";
                 if ((piece.charAt(0) === "b")) {
-                    fillc = "#15171d";
-                    strokec = "#cfd6e4";
+                    fillc = "#111821";
+                    strokec = "#e8edf3";
                 }
-                svg = (svg + (((((((((("<text x=\"" + String(px)) + "\" y=\"") + String(py)) + "\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"") + String(fillc)) + "\" stroke=\"") + String(strokec)) + "\" stroke-width=\"1.1\" paint-order=\"stroke\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">") + String(g)) + "</text>"));
+                svg = (svg + (((((((((("<text x=\"" + String(px)) + "\" y=\"") + String(py)) + "\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"") + String(fillc)) + "\" stroke=\"") + String(strokec)) + "\" stroke-width=\"1.05\" paint-order=\"stroke\" filter=\"url(#pieceShadow)\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">") + String(g)) + "</text>"));
             }
             f = (f + 1);
         }
@@ -632,11 +679,40 @@ function chess_render(n) {
     if (stage) {
         stage.innerHTML = svg;
     }
+    current = document.getElementById("sc-current");
+    turn = document.getElementById("sc-turn");
+    signal = document.getElementById("sc-signal");
+    if ((n === 0)) {
+        if (current) {
+            current.textContent = "Starting position";
+        }
+        if (turn) {
+            turn.textContent = "White to move";
+        }
+        if (signal) {
+            signal.textContent = "Game 8";
+        }
+    } else {
+        played = window.scData.moves[(n - 1)];
+        if (current) {
+            current.textContent = ((played.substring(0, 2) + " → ") + played.substring(2, 4));
+        }
+        if (turn) {
+            nextturn = "White to move";
+            if (((n % 2) === 1)) {
+                nextturn = "Black to move";
+            }
+            turn.textContent = nextturn;
+        }
+        if (signal) {
+            signal.textContent = ("Ply " + String(n));
+        }
+    }
     return 0;
 }
 
 function chess_init() {
-    let plies, caption, d, stage, sidename, elostr, total;
+    let stage, d, sidename, elostr, total, caption, plies;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -649,14 +725,14 @@ function chess_init() {
         elostr = (" at Elo " + String(d.elo));
     }
     plies = String(total);
-    caption = (((((("<div class=\"sc-caption\">The recorded <strong>win over Stockfish" + String(elostr)) + "</strong> — FoldBot playing ") + String(sidename)) + ", ") + String(plies)) + " plies, from the refereed match log. Every evaluation an exact rational counted from the board's geometry.</div>");
-    stage.innerHTML = ((caption + "<div id=\"sc-board\" class=\"sc-board\"></div>") + sc_controls(total));
+    caption = (((((("<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Recorded victory · Game 8</span><h3>FoldBot vs Stockfish" + String(elostr)) + "</h3><p>FoldBot plays ") + String(sidename)) + ". Every one of the ") + String(plies)) + " plies comes from the preserved match log.</p></div><span class=\"sc-replay-badge\"><i></i> Refereed game</span></div>");
+    stage.innerHTML = ((caption + "<div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board\"></div><aside class=\"sc-replay-rail\"><div><span>Last move</span><strong id=\"sc-current\">Starting position</strong></div><div><span>Turn</span><strong id=\"sc-turn\">White to move</strong></div><div><span>Match</span><strong id=\"sc-signal\">Game 8</strong></div><div class=\"sc-replay-result\"><span>Recorded result</span><strong>FoldBot wins<br>as Black</strong></div></aside></div>") + sc_controls(total));
     sc_wire_controls(chess_render, total);
     return 0;
 }
 
 function protein_render(step) {
-    let n, miny, scale, syn, ang, sina, maxy, minx, sx, y, px, proj, z, p, span, sy, cmd, sxn, x, pair, maxx, stage, spy, path, cosa, i, ca, py, pr, svg;
+    let proj, depth, n, sxn, nx, degrees, pr, miny, minz, colour, pnode, ny, current, spy, b, p, sx, syn, signal, maxz, scale, z, span, turn, pair, y, svg, maxy, i, ax, cosa, sina, py, ca, maxx, sp, minx, x, pz, a, ratio, ay, bx, screen, sy, by, sw, stage, isnode, px, ang;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -666,6 +742,8 @@ function protein_render(step) {
     maxx = (0 - 100000);
     miny = 100000;
     maxy = (0 - 100000);
+    minz = 100000;
+    maxz = (0 - 100000);
     proj = [];
     i = 0;
     while ((i < n)) {
@@ -674,10 +752,12 @@ function protein_render(step) {
         y = p[1];
         z = p[2];
         px = ((x * cosa) - (z * sina));
+        pz = ((x * sina) + (z * cosa));
         py = y;
         pair = [];
         pair.push(px);
         pair.push(py);
+        pair.push(pz);
         proj.push(pair);
         if ((px < minx)) {
             minx = px;
@@ -691,6 +771,12 @@ function protein_render(step) {
         if ((py > maxy)) {
             maxy = py;
         }
+        if ((pz < minz)) {
+            minz = pz;
+        }
+        if ((pz > maxz)) {
+            maxz = pz;
+        }
         i = (i + 1);
     }
     span = (maxx - minx);
@@ -699,7 +785,7 @@ function protein_render(step) {
         span = spy;
     }
     scale = (380 / span);
-    path = "";
+    screen = [];
     i = 0;
     while ((i < n)) {
         pr = proj[i];
@@ -707,42 +793,91 @@ function protein_render(step) {
         syn = (40 + ((pr[1] - miny) * scale));
         sx = String((Math.round((sxn * 10)) / 10));
         sy = String((Math.round((syn * 10)) / 10));
-        cmd = "L";
-        if ((i === 0)) {
-            cmd = "M";
-        }
-        path = ((((((path + cmd) + " ") + sx) + " ") + sy) + " ");
+        sp = [];
+        sp.push(sx);
+        sp.push(sy);
+        sp.push(pr[2]);
+        screen.push(sp);
         i = (i + 1);
     }
     svg = "<svg viewBox=\"0 0 460 460\" class=\"sc-protein\" xmlns=\"http://www.w3.org/2000/svg\">";
-    svg = (svg + "<defs><linearGradient id=\"pg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#4ff0c4\"/><stop offset=\"100%\" stop-color=\"#7c8cff\"/></linearGradient></defs>");
-    svg = (svg + (("<path d=\"" + String(path)) + "\" fill=\"none\" stroke=\"url(#pg)\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"));
+    svg = (svg + "<defs><radialGradient id=\"proteinHalo\"><stop offset=\"0%\" stop-color=\"#ff9f7f\" stop-opacity=\".14\"/><stop offset=\"100%\" stop-color=\"#ff9f7f\" stop-opacity=\"0\"/></radialGradient><filter id=\"proteinGlow\" x=\"-60%\" y=\"-60%\" width=\"220%\" height=\"220%\"><feGaussianBlur stdDeviation=\"4\" result=\"blur\"/><feMerge><feMergeNode in=\"blur\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs>");
+    svg = (svg + "<circle cx=\"230\" cy=\"230\" r=\"212\" fill=\"url(#proteinHalo)\"/><ellipse cx=\"230\" cy=\"230\" rx=\"206\" ry=\"74\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".11\"/><ellipse cx=\"230\" cy=\"230\" rx=\"104\" ry=\"206\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".08\" transform=\"rotate(-28 230 230)\"/><circle cx=\"230\" cy=\"230\" r=\"160\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".06\"/>");
+    i = 1;
+    while ((i < n)) {
+        a = screen[(i - 1)];
+        b = screen[i];
+        depth = ((a[2] + b[2]) / 2);
+        ratio = 0.5;
+        if ((maxz > minz)) {
+            ratio = ((depth - minz) / (maxz - minz));
+        }
+        colour = "#8b91ff";
+        if ((ratio > 0.62)) {
+            colour = "#ff9f7f";
+        }
+        if ((ratio < 0.36)) {
+            colour = "#62f3c8";
+        }
+        sw = String((Math.round(((2.3 + (ratio * 3.5)) * 10)) / 10));
+        ax = a[0];
+        ay = a[1];
+        bx = b[0];
+        by = b[1];
+        svg = (svg + (((((((((((("<line x1=\"" + String(ax)) + "\" y1=\"") + String(ay)) + "\" x2=\"") + String(bx)) + "\" y2=\"") + String(by)) + "\" stroke=\"") + String(colour)) + "\" stroke-width=\"") + String(sw)) + "\" stroke-linecap=\"round\" opacity=\".88\" filter=\"url(#proteinGlow)\"/>"));
+        i = (i + 1);
+    }
+    i = 0;
+    while ((i < n)) {
+        isnode = (i % 8);
+        if ((isnode === 0)) {
+            pnode = screen[i];
+            nx = pnode[0];
+            ny = pnode[1];
+            svg = (svg + (((("<circle cx=\"" + String(nx)) + "\" cy=\"") + String(ny)) + "\" r=\"4.2\" fill=\"#fff8f4\" stroke=\"#ff9f7f\" stroke-width=\"2\"/>"));
+        }
+        i = (i + 1);
+    }
     svg = (svg + "</svg>");
     stage = document.getElementById("sc-board");
     if (stage) {
         stage.innerHTML = svg;
     }
+    current = document.getElementById("sc-current");
+    turn = document.getElementById("sc-turn");
+    signal = document.getElementById("sc-signal");
+    if (current) {
+        current.textContent = (String(n) + " Cα points");
+    }
+    if (turn) {
+        degrees = Math.round(((step * 360) / 140));
+        turn.textContent = (String(degrees) + "° orbit");
+    }
+    if (signal) {
+        signal.textContent = "0.989121";
+    }
     return 0;
 }
 
 function protein_spin() {
-    window.scSpin = (window.scSpin + 1);
-    protein_render(window.scSpin);
+    sc_tick();
     return 0;
 }
 
 function protein_init() {
-    let n, src, stage;
+    let stage, play, src, n;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
-    stage.innerHTML = (((("<div class=\"sc-caption\">Ubiquitin (" + String(n)) + " residues) folded by descent to the fold's fixed point — the real Cα backbone from <code>") + String(src)) + "</code>, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>");
-    window.scSpin = 0;
-    protein_render(0);
-    if (window.scSpinTimer) {
-        window.clearInterval(window.scSpinTimer);
+    stage.innerHTML = ((((("<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Constructed witness · Ubiquitin</span><h3>The 76-residue backbone in orbit</h3><p>The committed Cα trace from <code>" + String(src)) + "</code>, projected with depth and available from every angle.</p></div><span class=\"sc-replay-badge\"><i></i> Verified geometry</span></div><div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div><aside class=\"sc-replay-rail\"><div><span>Witness</span><strong id=\"sc-current\">") + String(n)) + " Cα points</strong></div><div><span>View</span><strong id=\"sc-turn\">0° orbit</strong></div><div><span>TM-score</span><strong id=\"sc-signal\">0.989121</strong></div><div class=\"sc-replay-result\"><span>Distance RMSD</span><strong>0.260858 Å</strong></div></aside></div>") + sc_controls(140));
+    sc_wire_controls(protein_render, 140);
+    window.scLoop = true;
+    window.scPlaying = true;
+    play = document.getElementById("sc-play");
+    if (play) {
+        play.textContent = "⏸";
     }
-    window.scSpinTimer = window.setInterval(protein_spin, 60);
+    window.scTimer = window.setInterval(protein_spin, 80);
     return 0;
 }
 
@@ -755,6 +890,35 @@ function boot_esc(s) {
     return t;
 }
 
+function boot_append(line) {
+    let term;
+    term = document.getElementById("sc-term");
+    if (term) {
+        term.innerHTML = ((term.innerHTML + boot_esc(line)) + "\n");
+        term.scrollTop = term.scrollHeight;
+    }
+    return 0;
+}
+
+function boot_finish() {
+    let shell, prompt, state;
+    shell = document.getElementById("ern-shell");
+    if (shell) {
+        shell.classList.add("is-ready");
+    }
+    state = document.getElementById("ern-state");
+    if (state) {
+        state.textContent = "READY";
+    }
+    prompt = document.getElementById("ern-command");
+    if (prompt) {
+        prompt.disabled = false;
+    }
+    boot_append("");
+    boot_append("System ready. Try a sentence below.");
+    return 0;
+}
+
 function boot_step() {
     let term, line;
     term = document.getElementById("sc-term");
@@ -762,22 +926,138 @@ function boot_step() {
         return 0;
     }
     if ((window.bootIdx >= window.bootLines.length)) {
+        boot_finish();
         return 0;
     }
     line = window.bootLines[window.bootIdx];
-    term.innerHTML = ((term.innerHTML + boot_esc(line)) + "\n");
-    term.scrollTop = term.scrollHeight;
+    boot_append(line);
     window.bootIdx = (window.bootIdx + 1);
-    window.setTimeout(boot_step, 330);
+    window.setTimeout(boot_step, 42);
+    return 0;
+}
+
+function boot_answer(command) {
+    let cmd, files;
+    cmd = command.toLowerCase().trim();
+    if ((cmd === "help")) {
+        return "Try: where am i · show my files · make a folder called letters · go to letters · write a note called hello saying good morning · read hello · what is running · rebuild the system";
+    }
+    if ((cmd === "where am i")) {
+        return (("You are standing in " + window.ernPlace) + ".");
+    }
+    if ((cmd === "who am i")) {
+        return "You are maria, the administrator of this machine.";
+    }
+    if ((cmd === "make a folder called letters")) {
+        window.ernHasLetters = true;
+        return "Made a folder called letters.";
+    }
+    if ((cmd === "go to letters")) {
+        if (window.ernHasLetters) {
+            window.ernPlace = "/home/maria/letters";
+            return "You are now in /home/maria/letters.";
+        }
+        return "There is no folder called letters here yet.";
+    }
+    if ((cmd === "go home")) {
+        window.ernPlace = "/home/maria";
+        return "You are back in /home/maria.";
+    }
+    if ((cmd.indexOf("write a note called hello") === 0)) {
+        window.ernHasNote = true;
+        return "Saved the note hello.";
+    }
+    if ((cmd === "read hello")) {
+        if (window.ernHasNote) {
+            return "The note hello says:\ngood morning";
+        }
+        return "There is no note called hello here yet.";
+    }
+    if ((cmd === "show my files")) {
+        files = [];
+        if (window.ernHasLetters) {
+            files.push("letters/");
+        }
+        if (window.ernHasNote) {
+            files.push("hello.note");
+        }
+        if ((files.length === 0)) {
+            return (window.ernPlace + " is empty.");
+        }
+        return ((("Inside " + window.ernPlace) + ":\n  ") + files.join("\n  "));
+    }
+    if ((cmd === "what is running")) {
+        return "heartbeat      running\nsystem log     running\nsession maria  active";
+    }
+    if ((cmd === "open monitor")) {
+        return "Ern Monitor\n  system: healthy\n  disk: local and fenced\n  network: not required\n  services: 2 running";
+    }
+    if ((cmd === "rebuild the system")) {
+        return "Building the vendored Ernos compiler... done\nCompiling Ern-OS from its own plain-English source... done\nChecking the rebuilt system... byte-identical\nThe new system is ready for the next boot.";
+    }
+    return (("I do not know how to '" + command) + "'. Say 'help' to see what I understand.");
+}
+
+function boot_run(ev) {
+    let command, input;
+    if (ev) {
+        ev.preventDefault();
+    }
+    input = document.getElementById("ern-command");
+    if (!input) {
+        return 0;
+    }
+    command = input.value.trim();
+    if ((command === "")) {
+        return 0;
+    }
+    boot_append(((window.ernPlace + " > ") + command));
+    boot_append(boot_answer(command));
+    boot_append("");
+    input.value = "";
+    input.focus();
+    return 0;
+}
+
+function boot_quick(ev) {
+    let command, input;
+    command = ev.currentTarget.getAttribute("data-command");
+    input = document.getElementById("ern-command");
+    if (input) {
+        input.value = command;
+    }
+    boot_run(ev);
+    return 0;
+}
+
+function boot_key(ev) {
+    if ((ev.key === "Enter")) {
+        boot_run(ev);
+    }
     return 0;
 }
 
 function boot_init() {
-    let stage;
+    let stage, form, commandbox, quicks;
     stage = document.getElementById("showcase-stage");
-    stage.innerHTML = "<div class=\"sc-caption\">Ern-OS booting — a self-contained operating system in plain-English Ernos, captured from a real run.</div><pre class=\"sc-term\" id=\"sc-term\"></pre>";
-    window.bootLines = window.scData.lines;
+    stage.innerHTML = "<div class=\"ern-shell\" id=\"ern-shell\"><div class=\"ern-windowbar\"><span class=\"ern-window-dots\"><i></i><i></i><i></i></span><strong>Ern‑OS Desktop</strong><span class=\"ern-window-state\" id=\"ern-state\">BOOTING</span></div><div class=\"ern-desktop\"><aside class=\"ern-dock\" aria-label=\"Ern-OS apps\"><span class=\"is-active\">›_</span><span>▤</span><span>◫</span><span>⌁</span></aside><div class=\"ern-terminal\"><div class=\"ern-terminal-head\"><span>Conversation</span><small>maria@ern-os · offline</small></div><pre class=\"sc-term\" id=\"sc-term\"></pre><form class=\"ern-prompt\" id=\"ern-prompt\"><label for=\"ern-command\">/home/maria &gt;</label><input id=\"ern-command\" type=\"text\" autocomplete=\"off\" disabled placeholder=\"Type a sentence…\"><button type=\"submit\">Run</button></form></div></div><div class=\"ern-quick\" aria-label=\"Command suggestions\"><span>Try a command</span><button data-command=\"make a folder called letters\">Make a folder</button><button data-command=\"write a note called hello saying good morning\">Write a note</button><button data-command=\"what is running\">Running services</button><button data-command=\"rebuild the system\">Rebuild itself</button></div></div>";
+    window.bootLines = window.scData.lines.slice(0, 31);
     window.bootIdx = 0;
+    window.ernPlace = "/home/maria";
+    window.ernHasLetters = false;
+    window.ernHasNote = false;
+    form = document.getElementById("ern-prompt");
+    if (form) {
+        form.addEventListener("submit", boot_run);
+    }
+    commandbox = document.getElementById("ern-command");
+    if (commandbox) {
+        commandbox.addEventListener("keydown", boot_key);
+    }
+    quicks = stage.querySelectorAll(".ern-quick button");
+    for (const quick of quicks) {
+        quick.addEventListener("click", boot_quick);
+    }
     boot_step();
     return 0;
 }
@@ -820,7 +1100,7 @@ function sc_data_fail(err) {
 }
 
 function lab_go_group(start) {
-    let colour, i, stack, col, out, seen, cur, ns, board, row, value;
+    let ns, i, value, colour, stack, out, board, row, col, cur, seen;
     board = window.labGoBoard;
     colour = board[start];
     out = JSON.parse("{\"group\":[],\"libs\":[]}");
@@ -871,7 +1151,7 @@ function lab_go_group(start) {
 }
 
 function lab_go_click(ev) {
-    let value, idx;
+    let idx, value;
     idx = window.parseInt(ev.currentTarget.getAttribute("data-i"), 10);
     value = window.labGoBoard[idx];
     value = ((value + 1) % 3);
@@ -896,7 +1176,7 @@ function lab_go_preset(ev) {
 }
 
 function lab_go_render() {
-    let colour, i, host, label, v, html, points, found, cls;
+    let host, found, html, points, label, cls, colour, i, v;
     host = document.getElementById("go-lab");
     if (!host) {
         return 0;
@@ -948,7 +1228,7 @@ function lab_go_init() {
 }
 
 function lab_chess_moves(square, piece) {
-    let c, rr, cc, dirs, jumps, r, moves;
+    let jumps, r, cc, moves, c, rr, dirs;
     moves = [];
     r = Math.floor((square / 8));
     c = (square % 8);
@@ -1006,7 +1286,7 @@ function lab_chess_piece(ev) {
 }
 
 function lab_chess_render() {
-    let glyph, title, active, picks, pieces, html, cc, cls, squares, host, moves, i, content, rr;
+    let rr, picks, moves, title, i, squares, content, cc, pieces, active, cls, html, glyph, host;
     host = document.getElementById("chess-lab");
     moves = lab_chess_moves(window.labChessSquare, window.labChessPiece);
     glyph = "♘";
@@ -1070,7 +1350,7 @@ function lab_chess_init() {
 }
 
 function lab_protein_distance(a, b) {
-    let dy, dx, dz;
+    let dx, dy, dz;
     dx = (a[0] - b[0]);
     dy = (a[1] - b[1]);
     dz = (a[2] - b[2]);
@@ -1078,7 +1358,7 @@ function lab_protein_distance(a, b) {
 }
 
 function lab_protein_render() {
-    let j, i, copy, contacts, ctx, cell, coords, focus, n, nearest, canvas, dist, stat;
+    let ctx, n, cell, dist, stat, nearest, j, copy, i, coords, contacts, focus, canvas;
     coords = window.labProteinCoords;
     focus = window.labProteinFocus;
     canvas = document.getElementById("protein-map");
@@ -1158,7 +1438,7 @@ function lab_protein_init() {
 }
 
 function lab_unison_clean(text) {
-    let clean, marks;
+    let marks, clean;
     clean = text.toLowerCase();
     marks = [".", ",", "!", "?", ";", ":", "—", "\n"];
     for (const mark of marks) {
@@ -1168,7 +1448,7 @@ function lab_unison_clean(text) {
 }
 
 function lab_unison_run(ev) {
-    let html, old, pct, best, total, words, counts, next, text, pos, held, result, count, i, raw, options;
+    let raw, total, old, counts, i, html, words, options, pos, best, count, pct, text, next, result, held;
     text = document.getElementById("unison-corpus").value;
     held = document.getElementById("unison-held").value.toLowerCase();
     raw = lab_unison_clean(text);
@@ -1245,7 +1525,7 @@ function project_labs_init() {
 }
 
 function main() {
-    let gh, repo, stage, page, file, dl, doc;
+    let stage, page, repo, file, dl, doc, gh;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;

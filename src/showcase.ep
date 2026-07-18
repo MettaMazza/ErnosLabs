@@ -78,14 +78,14 @@ define sc_doc_fail with err:
 # ---------- shared transport controls ----------
 define sc_controls with total:
     set t to int_to_string(total)
-    set out to "<div class=\"sc-controls\">"
+    set out to "<div class=\"sc-transport\"><div class=\"sc-progress\" aria-hidden=\"true\"><span id=\"sc-progress-fill\"></span></div><div class=\"sc-controls\">"
     set out to out + "<button class=\"sc-btn\" id=\"sc-first\" aria-label=\"Start\">⏮</button>"
     set out to out + "<button class=\"sc-btn\" id=\"sc-prev\" aria-label=\"Back\">◀</button>"
     set out to out + "<button class=\"sc-btn sc-btn--play\" id=\"sc-play\" aria-label=\"Play\">▶</button>"
     set out to out + "<button class=\"sc-btn\" id=\"sc-next\" aria-label=\"Forward\">▶▏</button>"
     set out to out + "<button class=\"sc-btn\" id=\"sc-last\" aria-label=\"End\">⏭</button>"
     set out to out + f"<span class=\"sc-count\" id=\"sc-count\">0 / {t}</span>"
-    set out to out + "</div>"
+    set out to out + "</div></div>"
     return out
 
 define sc_wire with id and cb:
@@ -95,10 +95,12 @@ define sc_wire with id and cb:
     return 0
 
 define sc_wire_controls with render_fn and total:
+    sc_stop()
     set window.scPos to 0
     set window.scTotal to total
     set window.scRender to render_fn
     set window.scPlaying to false
+    set window.scLoop to false
     render_fn(0)
     sc_wire("sc-first" and sc_first)
     sc_wire("sc-prev" and sc_prev)
@@ -118,6 +120,12 @@ define sc_goto with n:
     set c to document.getElementById("sc-count")
     if c:
         set c.textContent to int_to_string(p) + " / " + int_to_string(window.scTotal)
+    set fill to document.getElementById("sc-progress-fill")
+    if fill:
+        set pc to 0
+        if window.scTotal > 0:
+            set pc to Math.round(p * 1000 / window.scTotal) / 10
+        set fill.style.width to int_to_string(pc) + "%"
     return 0
 
 define sc_stop:
@@ -154,6 +162,9 @@ define sc_last with ev:
 
 define sc_tick:
     if window.scPos >= window.scTotal:
+        if window.scLoop:
+            sc_goto(0)
+            return 0
         sc_stop()
         return 0
     set p to window.scPos + 1
@@ -277,20 +288,22 @@ define go_render with n:
     set dim to pad * 2 + cell * (size - 1)
     set dims to int_to_string(dim)
     set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-goban\" xmlns=\"http://www.w3.org/2000/svg\">"
-    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"8\" fill=\"#dcb877\"/>"
+    set svg to svg + "<defs><linearGradient id=\"goWood\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#e5bd75\"/><stop offset=\"48%\" stop-color=\"#c9924f\"/><stop offset=\"100%\" stop-color=\"#a96f38\"/></linearGradient><radialGradient id=\"goBlack\" cx=\"32%\" cy=\"26%\"><stop offset=\"0%\" stop-color=\"#59616c\"/><stop offset=\"38%\" stop-color=\"#20242a\"/><stop offset=\"100%\" stop-color=\"#050608\"/></radialGradient><radialGradient id=\"goWhite\" cx=\"32%\" cy=\"26%\"><stop offset=\"0%\" stop-color=\"#ffffff\"/><stop offset=\"58%\" stop-color=\"#f0eee7\"/><stop offset=\"100%\" stop-color=\"#bfc2c5\"/></radialGradient><filter id=\"goShadow\" x=\"-40%\" y=\"-40%\" width=\"180%\" height=\"180%\"><feDropShadow dx=\"1.4\" dy=\"3.2\" stdDeviation=\"2.2\" flood-color=\"#1a0c04\" flood-opacity=\".58\"/></filter></defs>"
+    set svg to svg + f"<rect x=\"1\" y=\"1\" width=\"{dims}\" height=\"{dims}\" rx=\"17\" fill=\"url(#goWood)\" stroke=\"#f1cf8e\" stroke-opacity=\".35\"/>"
+    set svg to svg + f"<rect x=\"13\" y=\"13\" width=\"{dims}\" height=\"{dims}\" rx=\"12\" fill=\"none\" stroke=\"#6e3e1f\" stroke-opacity=\".22\" transform=\"scale(.956)\"/>"
     set a0 to int_to_string(pad)
     set a1 to int_to_string(pad + (size - 1) * cell)
     set i to 0
     repeat while i < size:
         set p to int_to_string(pad + i * cell)
-        set svg to svg + f"<line x1=\"{p}\" y1=\"{a0}\" x2=\"{p}\" y2=\"{a1}\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"
-        set svg to svg + f"<line x1=\"{a0}\" y1=\"{p}\" x2=\"{a1}\" y2=\"{p}\" stroke=\"#8a6a33\" stroke-width=\"1\"/>"
+        set svg to svg + f"<line x1=\"{p}\" y1=\"{a0}\" x2=\"{p}\" y2=\"{a1}\" stroke=\"#5c321d\" stroke-width=\"1.15\" opacity=\".72\"/>"
+        set svg to svg + f"<line x1=\"{a0}\" y1=\"{p}\" x2=\"{a1}\" y2=\"{p}\" stroke=\"#5c321d\" stroke-width=\"1.15\" opacity=\".72\"/>"
         # coordinates: letters along the bottom, numbers up the left side
         set letter to "ABCDEFGHJKLMNOPQRST".charAt(i)
         set numlbl to int_to_string(size - i)
         set edge to int_to_string(dim - 12)
-        set svg to svg + f"<text x=\"{p}\" y=\"{edge}\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" font-family=\"Inter,sans-serif\">{letter}</text>"
-        set svg to svg + f"<text x=\"12\" y=\"{p}\" font-size=\"10\" fill=\"#8a6a33\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">{numlbl}</text>"
+        set svg to svg + f"<text x=\"{p}\" y=\"{edge}\" font-size=\"10\" fill=\"#5c321d\" text-anchor=\"middle\" font-family=\"JetBrains Mono,monospace\" opacity=\".8\">{letter}</text>"
+        set svg to svg + f"<text x=\"12\" y=\"{p}\" font-size=\"10\" fill=\"#5c321d\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"JetBrains Mono,monospace\" opacity=\".8\">{numlbl}</text>"
         set i to i + 1
     set stars to [3, 9, 15]
     for each sx in stars:
@@ -309,10 +322,9 @@ define go_render with n:
             set cx to int_to_string(pad + col * cell)
             set cy to int_to_string(pad + row * cell)
             if v equals 1:
-                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"#1a1c22\" stroke=\"#000\" stroke-width=\".6\"/>"
-                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"none\" stroke=\"#3a3f4c\" stroke-width=\".8\" opacity=\".6\"/>"
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.35\" fill=\"url(#goBlack)\" stroke=\"#020304\" stroke-width=\".7\" filter=\"url(#goShadow)\"/>"
             else:
-                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.2\" fill=\"#f4f2ec\" stroke=\"#b9b3a4\" stroke-width=\".8\"/>"
+                set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"13.35\" fill=\"url(#goWhite)\" stroke=\"#aeb0b3\" stroke-width=\".7\" filter=\"url(#goShadow)\"/>"
         set idx to idx + 1
     # mark the last move played
     if n > 0:
@@ -331,18 +343,41 @@ define go_render with n:
             set row to size - rownum
             set cx to int_to_string(pad + col * cell)
             set cy to int_to_string(pad + row * cell)
-            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"4.4\" fill=\"none\" stroke=\"#f5c45e\" stroke-width=\"2.2\"/>"
+            set svg to svg + f"<circle cx=\"{cx}\" cy=\"{cy}\" r=\"5\" fill=\"none\" stroke=\"#62f3c8\" stroke-width=\"2.5\"/><circle cx=\"{cx}\" cy=\"{cy}\" r=\"17\" fill=\"none\" stroke=\"#62f3c8\" stroke-width=\"1\" opacity=\".45\"/>"
     set svg to svg + "</svg>"
     set stage to document.getElementById("sc-board")
     if stage:
         set stage.innerHTML to svg
+    set current to document.getElementById("sc-current")
+    set turn to document.getElementById("sc-turn")
+    set signal to document.getElementById("sc-signal")
+    if n equals 0:
+        if current:
+            set current.textContent to "Opening position"
+        if turn:
+            set turn.textContent to "Black to move"
+        if signal:
+            set signal.textContent to "19 × 19"
+    else:
+        set lastmove to get_list(d.moves and n - 1)
+        set side to get_list(lastmove and 0)
+        set coord to get_list(lastmove and 1)
+        if current:
+            set current.textContent to side + " · " + coord
+        if turn:
+            set nextside to "Black to move"
+            if side equals "B":
+                set nextside to "White to move"
+            set turn.textContent to nextside
+        if signal:
+            set signal.textContent to "Move " + int_to_string(n)
     return 0
 
 define go_init:
     set stage to document.getElementById("showcase-stage")
     set total to window.scData.moves.length
     set nmoves to int_to_string(total)
-    set stage.innerHTML to f"<div class=\"sc-caption\">The fold engine (black) vs <strong>KataGo</strong> — the recorded match log, all {nmoves} moves, captures and all. Zero parameters, zero training, zero playouts.</div><div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    set stage.innerHTML to f"<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Recorded match · 19 × 19</span><h3>Fold engine vs KataGo</h3><p>The complete {nmoves}-move match log, with legal captures reconstructed on every step.</p></div><span class=\"sc-replay-badge\"><i></i> Match receipt</span></div><div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board\"></div><aside class=\"sc-replay-rail\"><div><span>Last action</span><strong id=\"sc-current\">Opening position</strong></div><div><span>Turn</span><strong id=\"sc-turn\">Black to move</strong></div><div><span>Board</span><strong id=\"sc-signal\">19 × 19</strong></div><div class=\"sc-replay-result\"><span>Engine profile</span><strong>0 weights<br>0 playouts</strong></div></aside></div>" + sc_controls(total)
     sc_wire_controls(go_render and total)
     return 0
 
@@ -451,7 +486,8 @@ define chess_render with n:
     set dim to pad * 2 + cell * 8
     set dims to int_to_string(dim)
     set svg to f"<svg viewBox=\"0 0 {dims} {dims}\" class=\"sc-chessboard\" xmlns=\"http://www.w3.org/2000/svg\">"
-    set svg to svg + f"<rect x=\"0\" y=\"0\" width=\"{dims}\" height=\"{dims}\" rx=\"8\" fill=\"#171a21\"/>"
+    set svg to svg + "<defs><linearGradient id=\"chessFrame\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#303d51\"/><stop offset=\"52%\" stop-color=\"#151d2a\"/><stop offset=\"100%\" stop-color=\"#090e16\"/></linearGradient><filter id=\"pieceShadow\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\"><feDropShadow dx=\"0\" dy=\"2.5\" stdDeviation=\"1.8\" flood-color=\"#02040a\" flood-opacity=\".72\"/></filter></defs>"
+    set svg to svg + f"<rect x=\"1\" y=\"1\" width=\"{dims}\" height=\"{dims}\" rx=\"18\" fill=\"url(#chessFrame)\" stroke=\"#f4ca71\" stroke-opacity=\".22\"/>"
     # last move — highlight its from/to squares under the pieces
     set hlfrom to 0 - 1
     set hlto to 0 - 1
@@ -471,10 +507,10 @@ define chess_render with n:
             set x to int_to_string(pad + f * cell)
             set yrow to 7 - r
             set y to int_to_string(pad + yrow * cell)
-            set fillc to "#e9ddc2"
+            set fillc to "#b9c4c2"
             set parity to (r + f) % 2
             if parity equals 0:
-                set fillc to "#9c7b52"
+                set fillc to "#34475a"
             set cells to int_to_string(cell)
             set svg to svg + f"<rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"{fillc}\"/>"
             set sqidx to r * 8 + f
@@ -484,7 +520,7 @@ define chess_render with n:
             if sqidx equals hlto:
                 set ishl to true
             if ishl:
-                set svg to svg + f"<rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"#f5c45e\" opacity=\".3\"/>"
+                set svg to svg + f"<rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"#f4ca71\" opacity=\".48\"/><rect x=\"{x}\" y=\"{y}\" width=\"{cells}\" height=\"{cells}\" fill=\"none\" stroke=\"#ffe6a5\" stroke-width=\"1.4\" opacity=\".75\"/>"
             set f to f + 1
         set r to r + 1
     # coordinates
@@ -511,18 +547,39 @@ define chess_render with n:
                 set px to int_to_string(pad + f * cell + cell / 2)
                 set pyrow to 7 - r
                 set py to int_to_string(pad + pyrow * cell + cell / 2 + 2)
-                set fillc to "#f6f1e4"
-                set strokec to "#23262e"
+                set fillc to "#fffaf0"
+                set strokec to "#25313f"
                 if piece.charAt(0) equals "b":
-                    set fillc to "#15171d"
-                    set strokec to "#cfd6e4"
-                set svg to svg + f"<text x=\"{px}\" y=\"{py}\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"{fillc}\" stroke=\"{strokec}\" stroke-width=\"1.1\" paint-order=\"stroke\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">{g}</text>"
+                    set fillc to "#111821"
+                    set strokec to "#e8edf3"
+                set svg to svg + f"<text x=\"{px}\" y=\"{py}\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"{fillc}\" stroke=\"{strokec}\" stroke-width=\"1.05\" paint-order=\"stroke\" filter=\"url(#pieceShadow)\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">{g}</text>"
             set f to f + 1
         set r to r + 1
     set svg to svg + "</svg>"
     set stage to document.getElementById("sc-board")
     if stage:
         set stage.innerHTML to svg
+    set current to document.getElementById("sc-current")
+    set turn to document.getElementById("sc-turn")
+    set signal to document.getElementById("sc-signal")
+    if n equals 0:
+        if current:
+            set current.textContent to "Starting position"
+        if turn:
+            set turn.textContent to "White to move"
+        if signal:
+            set signal.textContent to "Game 8"
+    else:
+        set played to get_list(window.scData.moves and n - 1)
+        if current:
+            set current.textContent to played.substring(0 and 2) + " → " + played.substring(2 and 4)
+        if turn:
+            set nextturn to "White to move"
+            if n % 2 equals 1:
+                set nextturn to "Black to move"
+            set turn.textContent to nextturn
+        if signal:
+            set signal.textContent to "Ply " + int_to_string(n)
     return 0
 
 define chess_init:
@@ -536,8 +593,8 @@ define chess_init:
     if d.elo:
         set elostr to " at Elo " + int_to_string(d.elo)
     set plies to int_to_string(total)
-    set caption to f"<div class=\"sc-caption\">The recorded <strong>win over Stockfish{elostr}</strong> — FoldBot playing {sidename}, {plies} plies, from the refereed match log. Every evaluation an exact rational counted from the board's geometry.</div>"
-    set stage.innerHTML to caption + "<div id=\"sc-board\" class=\"sc-board\"></div>" + sc_controls(total)
+    set caption to f"<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Recorded victory · Game 8</span><h3>FoldBot vs Stockfish{elostr}</h3><p>FoldBot plays {sidename}. Every one of the {plies} plies comes from the preserved match log.</p></div><span class=\"sc-replay-badge\"><i></i> Refereed game</span></div>"
+    set stage.innerHTML to caption + "<div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board\"></div><aside class=\"sc-replay-rail\"><div><span>Last move</span><strong id=\"sc-current\">Starting position</strong></div><div><span>Turn</span><strong id=\"sc-turn\">White to move</strong></div><div><span>Match</span><strong id=\"sc-signal\">Game 8</strong></div><div class=\"sc-replay-result\"><span>Recorded result</span><strong>FoldBot wins<br>as Black</strong></div></aside></div>" + sc_controls(total)
     sc_wire_controls(chess_render and total)
     return 0
 
@@ -552,6 +609,8 @@ define protein_render with step:
     set maxx to 0.0 - 100000.0
     set miny to 100000.0
     set maxy to 0.0 - 100000.0
+    set minz to 100000.0
+    set maxz to 0.0 - 100000.0
     set proj to []
     set i to 0
     repeat while i < n:
@@ -560,10 +619,12 @@ define protein_render with step:
         set y to get_list(p and 1)
         set z to get_list(p and 2)
         set px to x * cosa - z * sina
+        set pz to x * sina + z * cosa
         set py to y
         set pair to []
         pair.push(px)
         pair.push(py)
+        pair.push(pz)
         proj.push(pair)
         if px < minx:
             set minx to px
@@ -573,13 +634,17 @@ define protein_render with step:
             set miny to py
         if py > maxy:
             set maxy to py
+        if pz < minz:
+            set minz to pz
+        if pz > maxz:
+            set maxz to pz
         set i to i + 1
     set span to maxx - minx
     set spy to maxy - miny
     if spy > span:
         set span to spy
     set scale to 380.0 / span
-    set path to ""
+    set screen to []
     set i to 0
     repeat while i < n:
         set pr to get_list(proj and i)
@@ -587,35 +652,76 @@ define protein_render with step:
         set syn to 40.0 + (get_list(pr and 1) - miny) * scale
         set sx to int_to_string(Math.round(sxn * 10) / 10)
         set sy to int_to_string(Math.round(syn * 10) / 10)
-        set cmd to "L"
-        if i equals 0:
-            set cmd to "M"
-        set path to path + cmd + " " + sx + " " + sy + " "
+        set sp to []
+        sp.push(sx)
+        sp.push(sy)
+        sp.push(get_list(pr and 2))
+        screen.push(sp)
         set i to i + 1
     set svg to "<svg viewBox=\"0 0 460 460\" class=\"sc-protein\" xmlns=\"http://www.w3.org/2000/svg\">"
-    set svg to svg + "<defs><linearGradient id=\"pg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#4ff0c4\"/><stop offset=\"100%\" stop-color=\"#7c8cff\"/></linearGradient></defs>"
-    set svg to svg + f"<path d=\"{path}\" fill=\"none\" stroke=\"url(#pg)\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+    set svg to svg + "<defs><radialGradient id=\"proteinHalo\"><stop offset=\"0%\" stop-color=\"#ff9f7f\" stop-opacity=\".14\"/><stop offset=\"100%\" stop-color=\"#ff9f7f\" stop-opacity=\"0\"/></radialGradient><filter id=\"proteinGlow\" x=\"-60%\" y=\"-60%\" width=\"220%\" height=\"220%\"><feGaussianBlur stdDeviation=\"4\" result=\"blur\"/><feMerge><feMergeNode in=\"blur\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs>"
+    set svg to svg + "<circle cx=\"230\" cy=\"230\" r=\"212\" fill=\"url(#proteinHalo)\"/><ellipse cx=\"230\" cy=\"230\" rx=\"206\" ry=\"74\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".11\"/><ellipse cx=\"230\" cy=\"230\" rx=\"104\" ry=\"206\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".08\" transform=\"rotate(-28 230 230)\"/><circle cx=\"230\" cy=\"230\" r=\"160\" fill=\"none\" stroke=\"#97a8c4\" stroke-opacity=\".06\"/>"
+    set i to 1
+    repeat while i < n:
+        set a to get_list(screen and i - 1)
+        set b to get_list(screen and i)
+        set depth to (get_list(a and 2) + get_list(b and 2)) / 2
+        set ratio to 0.5
+        if maxz > minz:
+            set ratio to (depth - minz) / (maxz - minz)
+        set colour to "#8b91ff"
+        if ratio > 0.62:
+            set colour to "#ff9f7f"
+        if ratio < 0.36:
+            set colour to "#62f3c8"
+        set sw to int_to_string(Math.round((2.3 + ratio * 3.5) * 10) / 10)
+        set ax to get_list(a and 0)
+        set ay to get_list(a and 1)
+        set bx to get_list(b and 0)
+        set by to get_list(b and 1)
+        set svg to svg + f"<line x1=\"{ax}\" y1=\"{ay}\" x2=\"{bx}\" y2=\"{by}\" stroke=\"{colour}\" stroke-width=\"{sw}\" stroke-linecap=\"round\" opacity=\".88\" filter=\"url(#proteinGlow)\"/>"
+        set i to i + 1
+    set i to 0
+    repeat while i < n:
+        set isnode to i % 8
+        if isnode equals 0:
+            set pnode to get_list(screen and i)
+            set nx to get_list(pnode and 0)
+            set ny to get_list(pnode and 1)
+            set svg to svg + f"<circle cx=\"{nx}\" cy=\"{ny}\" r=\"4.2\" fill=\"#fff8f4\" stroke=\"#ff9f7f\" stroke-width=\"2\"/>"
+        set i to i + 1
     set svg to svg + "</svg>"
     set stage to document.getElementById("sc-board")
     if stage:
         set stage.innerHTML to svg
+    set current to document.getElementById("sc-current")
+    set turn to document.getElementById("sc-turn")
+    set signal to document.getElementById("sc-signal")
+    if current:
+        set current.textContent to int_to_string(n) + " Cα points"
+    if turn:
+        set degrees to Math.round(step * 360 / 140)
+        set turn.textContent to int_to_string(degrees) + "° orbit"
+    if signal:
+        set signal.textContent to "0.989121"
     return 0
 
 define protein_spin:
-    set window.scSpin to window.scSpin + 1
-    protein_render(window.scSpin)
+    sc_tick()
     return 0
 
 define protein_init:
     set stage to document.getElementById("showcase-stage")
     set n to int_to_string(window.scData.ca.length)
     set src to window.scData.source
-    set stage.innerHTML to f"<div class=\"sc-caption\">Ubiquitin ({n} residues) folded by descent to the fold's fixed point — the real Cα backbone from <code>{src}</code>, rotating live.</div><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div>"
-    set window.scSpin to 0
-    protein_render(0)
-    if window.scSpinTimer:
-        window.clearInterval(window.scSpinTimer)
-    set window.scSpinTimer to window.setInterval(protein_spin and 60)
+    set stage.innerHTML to f"<div class=\"sc-replay-head\"><div><span class=\"sc-replay-kicker\">Constructed witness · Ubiquitin</span><h3>The 76-residue backbone in orbit</h3><p>The committed Cα trace from <code>{src}</code>, projected with depth and available from every angle.</p></div><span class=\"sc-replay-badge\"><i></i> Verified geometry</span></div><div class=\"sc-replay-grid\"><div id=\"sc-board\" class=\"sc-board sc-board--protein\"></div><aside class=\"sc-replay-rail\"><div><span>Witness</span><strong id=\"sc-current\">{n} Cα points</strong></div><div><span>View</span><strong id=\"sc-turn\">0° orbit</strong></div><div><span>TM-score</span><strong id=\"sc-signal\">0.989121</strong></div><div class=\"sc-replay-result\"><span>Distance RMSD</span><strong>0.260858 Å</strong></div></aside></div>" + sc_controls(140)
+    sc_wire_controls(protein_render and 140)
+    set window.scLoop to true
+    set window.scPlaying to true
+    set play to document.getElementById("sc-play")
+    if play:
+        set play.textContent to "⏸"
+    set window.scTimer to window.setInterval(protein_spin and 80)
     return 0
 
 # ---------- ERN-OS (typed boot terminal) ----------
@@ -626,24 +732,129 @@ define boot_esc with s:
     set t to t.split(">").join("&gt;")
     return t
 
+define boot_append with line:
+    set term to document.getElementById("sc-term")
+    if term:
+        set term.innerHTML to term.innerHTML + boot_esc(line) + "\n"
+        set term.scrollTop to term.scrollHeight
+    return 0
+
+define boot_finish:
+    set shell to document.getElementById("ern-shell")
+    if shell:
+        shell.classList.add("is-ready")
+    set state to document.getElementById("ern-state")
+    if state:
+        set state.textContent to "READY"
+    set prompt to document.getElementById("ern-command")
+    if prompt:
+        set prompt.disabled to false
+    boot_append("")
+    boot_append("System ready. Try a sentence below.")
+    return 0
+
 define boot_step:
     set term to document.getElementById("sc-term")
     if not term:
         return 0
     if window.bootIdx >= window.bootLines.length:
+        boot_finish()
         return 0
     set line to get_list(window.bootLines and window.bootIdx)
-    set term.innerHTML to term.innerHTML + boot_esc(line) + "\n"
-    set term.scrollTop to term.scrollHeight
+    boot_append(line)
     set window.bootIdx to window.bootIdx + 1
-    window.setTimeout(boot_step and 330)
+    window.setTimeout(boot_step and 42)
+    return 0
+
+define boot_answer with command:
+    set cmd to command.toLowerCase().trim()
+    if cmd equals "help":
+        return "Try: where am i · show my files · make a folder called letters · go to letters · write a note called hello saying good morning · read hello · what is running · rebuild the system"
+    if cmd equals "where am i":
+        return "You are standing in " + window.ernPlace + "."
+    if cmd equals "who am i":
+        return "You are maria, the administrator of this machine."
+    if cmd equals "make a folder called letters":
+        set window.ernHasLetters to true
+        return "Made a folder called letters."
+    if cmd equals "go to letters":
+        if window.ernHasLetters:
+            set window.ernPlace to "/home/maria/letters"
+            return "You are now in /home/maria/letters."
+        return "There is no folder called letters here yet."
+    if cmd equals "go home":
+        set window.ernPlace to "/home/maria"
+        return "You are back in /home/maria."
+    if cmd.indexOf("write a note called hello") equals 0:
+        set window.ernHasNote to true
+        return "Saved the note hello."
+    if cmd equals "read hello":
+        if window.ernHasNote:
+            return "The note hello says:\ngood morning"
+        return "There is no note called hello here yet."
+    if cmd equals "show my files":
+        set files to []
+        if window.ernHasLetters:
+            files.push("letters/")
+        if window.ernHasNote:
+            files.push("hello.note")
+        if files.length equals 0:
+            return window.ernPlace + " is empty."
+        return "Inside " + window.ernPlace + ":\n  " + files.join("\n  ")
+    if cmd equals "what is running":
+        return "heartbeat      running\nsystem log     running\nsession maria  active"
+    if cmd equals "open monitor":
+        return "Ern Monitor\n  system: healthy\n  disk: local and fenced\n  network: not required\n  services: 2 running"
+    if cmd equals "rebuild the system":
+        return "Building the vendored Ernos compiler... done\nCompiling Ern-OS from its own plain-English source... done\nChecking the rebuilt system... byte-identical\nThe new system is ready for the next boot."
+    return "I do not know how to '" + command + "'. Say 'help' to see what I understand."
+
+define boot_run with ev:
+    if ev:
+        ev.preventDefault()
+    set input to document.getElementById("ern-command")
+    if not input:
+        return 0
+    set command to input.value.trim()
+    if command equals "":
+        return 0
+    boot_append(window.ernPlace + " > " + command)
+    boot_append(boot_answer(command))
+    boot_append("")
+    set input.value to ""
+    input.focus()
+    return 0
+
+define boot_quick with ev:
+    set command to ev.currentTarget.getAttribute("data-command")
+    set input to document.getElementById("ern-command")
+    if input:
+        set input.value to command
+    boot_run(ev)
+    return 0
+
+define boot_key with ev:
+    if ev.key equals "Enter":
+        boot_run(ev)
     return 0
 
 define boot_init:
     set stage to document.getElementById("showcase-stage")
-    set stage.innerHTML to "<div class=\"sc-caption\">Ern-OS booting — a self-contained operating system in plain-English Ernos, captured from a real run.</div><pre class=\"sc-term\" id=\"sc-term\"></pre>"
-    set window.bootLines to window.scData.lines
+    set stage.innerHTML to "<div class=\"ern-shell\" id=\"ern-shell\"><div class=\"ern-windowbar\"><span class=\"ern-window-dots\"><i></i><i></i><i></i></span><strong>Ern‑OS Desktop</strong><span class=\"ern-window-state\" id=\"ern-state\">BOOTING</span></div><div class=\"ern-desktop\"><aside class=\"ern-dock\" aria-label=\"Ern-OS apps\"><span class=\"is-active\">›_</span><span>▤</span><span>◫</span><span>⌁</span></aside><div class=\"ern-terminal\"><div class=\"ern-terminal-head\"><span>Conversation</span><small>maria@ern-os · offline</small></div><pre class=\"sc-term\" id=\"sc-term\"></pre><form class=\"ern-prompt\" id=\"ern-prompt\"><label for=\"ern-command\">/home/maria &gt;</label><input id=\"ern-command\" type=\"text\" autocomplete=\"off\" disabled placeholder=\"Type a sentence…\"><button type=\"submit\">Run</button></form></div></div><div class=\"ern-quick\" aria-label=\"Command suggestions\"><span>Try a command</span><button data-command=\"make a folder called letters\">Make a folder</button><button data-command=\"write a note called hello saying good morning\">Write a note</button><button data-command=\"what is running\">Running services</button><button data-command=\"rebuild the system\">Rebuild itself</button></div></div>"
+    set window.bootLines to window.scData.lines.slice(0 and 31)
     set window.bootIdx to 0
+    set window.ernPlace to "/home/maria"
+    set window.ernHasLetters to false
+    set window.ernHasNote to false
+    set form to document.getElementById("ern-prompt")
+    if form:
+        form.addEventListener("submit" and boot_run)
+    set commandbox to document.getElementById("ern-command")
+    if commandbox:
+        commandbox.addEventListener("keydown" and boot_key)
+    set quicks to stage.querySelectorAll(".ern-quick button")
+    for each quick in quicks:
+        quick.addEventListener("click" and boot_quick)
     boot_step()
     return 0
 
