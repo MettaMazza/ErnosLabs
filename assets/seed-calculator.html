@@ -66,13 +66,14 @@
 
   .input-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 
   .input-group {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     gap: 0.3rem;
   }
 
@@ -84,6 +85,8 @@
   }
 
   .input-group input, .input-group select {
+    width: 100%;
+    min-width: 0;
     background: var(--bg);
     border: 1px solid var(--border);
     color: var(--text);
@@ -173,6 +176,14 @@
     overflow: hidden;
   }
 
+  .table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    border-radius: 8px;
+  }
+
   .slab-table th {
     background: var(--bg);
     color: var(--accent);
@@ -227,6 +238,9 @@
     .input-grid { grid-template-columns: 1fr; }
     .summary-cards { grid-template-columns: 1fr; }
     body { padding: 1rem; }
+    h1 { font-size: 1.45rem; overflow-wrap: anywhere; }
+    .input-section, .card, .notes { padding: 1rem; }
+    .slab-table { min-width: 520px; }
   }
 </style>
 </head>
@@ -279,6 +293,7 @@
       </div>
     </div>
 
+    <div class="table-scroll" role="region" aria-label="Engraving surface results" tabindex="0">
     <table class="slab-table">
       <thead>
         <tr>
@@ -291,6 +306,7 @@
       </thead>
       <tbody id="slabBody"></tbody>
     </table>
+    </div>
 
     <div class="notes" id="notes"></div>
   </div>
