@@ -2034,10 +2034,10 @@ body::before {
 }
 
 /* =========================================================================
-   THUMB NAVIGATION
-   On touch layouts the navigation is a bottom sheet. The five destinations
-   live in the lower half of the screen; opening a collection expands it in
-   place without depending on hover or a held pointer.
+   TOUCH NAVIGATION
+   On touch layouts Explore opens as a top dropdown attached directly beneath
+   the menu button. Collections still expand in place and remain open after
+   the pointer lifts.
    ========================================================================= */
 @media (max-width: 1180px) {
   body.nav-open::after {
@@ -2050,33 +2050,35 @@ body::before {
   }
   .nav { z-index: 100; backdrop-filter: none; }
   .nav__links {
-    inset: auto 10px 10px;
+    inset: 62px 20px auto auto;
     z-index: 101;
     display: grid;
     grid-template-columns: repeat(2, minmax(0,1fr));
     align-content: start;
-    width: auto;
-    max-height: min(76dvh, 680px);
+    width: min(430px, calc(100vw - 40px));
+    max-height: calc(100dvh - 74px);
     height: auto;
-    padding: 14px 12px calc(12px + env(safe-area-inset-bottom));
+    padding: 12px;
     gap: 9px;
     overflow-y: auto;
     border: 1px solid rgba(151,168,196,.22);
-    border-radius: 28px;
+    border-radius: 24px 7px 24px 24px;
     background:
       radial-gradient(520px 240px at 12% 0%, rgba(98,243,200,.11), transparent 64%),
       linear-gradient(160deg, rgba(17,23,35,.995), rgba(6,9,15,.995));
     box-shadow: 0 30px 100px rgba(0,0,0,.78), inset 0 1px rgba(255,255,255,.055);
-    transform: translateY(calc(100% + 28px));
-    transition: transform .32s cubic-bezier(.22,.82,.24,1), visibility 0s linear .32s;
+    opacity: 0;
+    transform: translateY(-14px) scale(.98);
+    transform-origin: top right;
+    transition: transform .24s cubic-bezier(.22,.82,.24,1), opacity .18s, visibility 0s linear .24s;
   }
-  .nav__links.open { transform: none; }
+  .nav__links.open { opacity:1; transform:none; transition-delay:0s; }
   .nav__links::before {
     content: "Explore";
     grid-column: 1 / -1;
     display: block;
-    padding: 14px 9px 11px;
-    border-top: 3px solid rgba(151,168,196,.35);
+    padding: 10px 9px 12px;
+    border-bottom: 1px solid rgba(151,168,196,.13);
     color: var(--ink-0);
     font: 600 1.05rem/1 var(--font-display);
     letter-spacing: -.01em;
@@ -2112,7 +2114,7 @@ body::before {
 }
 
 @media (max-width: 520px) {
-  .nav__links { max-height: min(78dvh, 650px); }
+  .nav__links { width: calc(100vw - 40px); max-height: calc(100dvh - 74px); }
   .nav__mega { grid-template-columns: 1fr; }
 }
 
