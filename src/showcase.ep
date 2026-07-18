@@ -674,6 +674,342 @@ define sc_data_fail with err:
         set stage.innerHTML to "<p class=\"loading\">The replay data isn't available right now.</p>"
     return 0
 
+# ---------- hands-on project labs ----------
+define lab_go_group with start:
+    set board to window.labGoBoard
+    set colour to get_list(board and start)
+    set out to JSON.parse("{\"group\":[],\"libs\":[]}")
+    if colour equals 0:
+        return out
+    set seen to []
+    set i to 0
+    repeat while i < 25:
+        seen.push(false)
+        set i to i + 1
+    set stack to [start]
+    seen.splice(start and 1 and true)
+    repeat while stack.length > 0:
+        set cur to stack.pop()
+        out.group.push(cur)
+        set col to cur % 5
+        set row to Math.floor(cur / 5)
+        set ns to []
+        if col > 0:
+            ns.push(cur - 1)
+        if col < 4:
+            ns.push(cur + 1)
+        if row > 0:
+            ns.push(cur - 5)
+        if row < 4:
+            ns.push(cur + 5)
+        for each nb in ns:
+            set value to get_list(board and nb)
+            if value equals 0:
+                if out.libs.indexOf(nb) < 0:
+                    out.libs.push(nb)
+            else:
+                if value equals colour:
+                    if not get_list(seen and nb):
+                        seen.splice(nb and 1 and true)
+                        stack.push(nb)
+    return out
+
+define lab_go_click with ev:
+    set idx to window.parseInt(ev.currentTarget.getAttribute("data-i") and 10)
+    set value to get_list(window.labGoBoard and idx)
+    set value to (value + 1) % 3
+    window.labGoBoard.splice(idx and 1 and value)
+    set window.labGoFocus to idx
+    lab_go_render()
+    return 0
+
+define lab_go_clear with ev:
+    set window.labGoBoard to [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    set window.labGoFocus to 12
+    lab_go_render()
+    return 0
+
+define lab_go_preset with ev:
+    set window.labGoBoard to [0,0,0,0,0,0,2,1,0,0,2,1,1,1,0,0,2,1,0,0,0,0,0,0,0]
+    set window.labGoFocus to 12
+    lab_go_render()
+    return 0
+
+define lab_go_render:
+    set host to document.getElementById("go-lab")
+    if not host:
+        return 0
+    set found to lab_go_group(window.labGoFocus)
+    set colour to get_list(window.labGoBoard and window.labGoFocus)
+    set label to "Empty intersection"
+    if colour equals 1:
+        set label to "Black chain"
+    if colour equals 2:
+        set label to "White chain"
+    set html to "<div class=\"lab-layout\"><div class=\"go-lab-board\">"
+    set i to 0
+    repeat while i < 25:
+        set cls to "go-lab-point"
+        set v to get_list(window.labGoBoard and i)
+        if v equals 1:
+            set cls to cls + " black"
+        if v equals 2:
+            set cls to cls + " white"
+        if found.group.indexOf(i) >= 0:
+            set cls to cls + " is-group"
+        set html to html + "<button class=\"" + cls + "\" data-i=\"" + int_to_string(i) + "\" aria-label=\"Cycle stone\"></button>"
+        set i to i + 1
+    set html to html + "</div><div class=\"lab-panel\"><p class=\"lab-kicker\">Selected structure</p><div class=\"lab-stat\">" + label + "</div>"
+    set html to html + "<p class=\"lab-copy\"><strong>" + int_to_string(found.group.length) + " stones</strong> connected · <strong>" + int_to_string(found.libs.length) + " unique liberties</strong>. Tap any intersection to cycle empty → black → white.</p>"
+    set html to html + "<div class=\"lab-actions\"><button class=\"lab-action\" id=\"go-preset\">Load atari</button><button class=\"lab-action\" id=\"go-clear\">Clear board</button></div></div></div>"
+    set host.innerHTML to html
+    set points to host.querySelectorAll(".go-lab-point")
+    for each p in points:
+        p.addEventListener("click" and lab_go_click)
+    document.getElementById("go-preset").addEventListener("click" and lab_go_preset)
+    document.getElementById("go-clear").addEventListener("click" and lab_go_clear)
+    return 0
+
+define lab_go_init:
+    set window.labGoBoard to [0,0,0,0,0,0,2,1,0,0,2,1,1,1,0,0,2,1,0,0,0,0,0,0,0]
+    set window.labGoFocus to 12
+    lab_go_render()
+    return 0
+
+define lab_chess_moves with square and piece:
+    set moves to []
+    set r to Math.floor(square / 8)
+    set c to square % 8
+    if piece equals "knight":
+        set jumps to [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]
+        for each jump in jumps:
+            set rr to r + get_list(jump and 0)
+            set cc to c + get_list(jump and 1)
+            if rr >= 0:
+                if rr < 8:
+                    if cc >= 0:
+                        if cc < 8:
+                            moves.push(rr * 8 + cc)
+        return moves
+    set dirs to [[-1,0],[1,0],[0,-1],[0,1]]
+    if piece equals "queen":
+        set dirs to [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[-1,1],[1,-1],[1,1]]
+    for each d in dirs:
+        set rr to r + get_list(d and 0)
+        set cc to c + get_list(d and 1)
+        repeat while rr >= 0:
+            if rr >= 8:
+                set rr to -10
+            else:
+                if cc < 0:
+                    set rr to -10
+                else:
+                    if cc >= 8:
+                        set rr to -10
+                    else:
+                        moves.push(rr * 8 + cc)
+                        set rr to rr + get_list(d and 0)
+                        set cc to cc + get_list(d and 1)
+    return moves
+
+define lab_chess_square with ev:
+    set window.labChessSquare to window.parseInt(ev.currentTarget.getAttribute("data-i") and 10)
+    lab_chess_render()
+    return 0
+
+define lab_chess_piece with ev:
+    set window.labChessPiece to ev.currentTarget.getAttribute("data-piece")
+    lab_chess_render()
+    return 0
+
+define lab_chess_render:
+    set host to document.getElementById("chess-lab")
+    set moves to lab_chess_moves(window.labChessSquare and window.labChessPiece)
+    set glyph to "♘"
+    set title to "Knight"
+    if window.labChessPiece equals "rook":
+        set glyph to "♖"
+        set title to "Rook"
+    if window.labChessPiece equals "queen":
+        set glyph to "♕"
+        set title to "Queen"
+    set html to "<div class=\"lab-layout\"><div class=\"chess-lab-board\">"
+    set i to 0
+    repeat while i < 64:
+        set cls to "chess-lab-square"
+        set rr to Math.floor(i / 8)
+        set cc to i % 8
+        if (rr + cc) % 2 equals 0:
+            set cls to cls + " is-light"
+        if moves.indexOf(i) >= 0:
+            set cls to cls + " is-commanded"
+        set content to ""
+        if i equals window.labChessSquare:
+            set cls to cls + " is-origin"
+            set content to glyph
+        set html to html + "<button class=\"" + cls + "\" data-i=\"" + int_to_string(i) + "\" aria-label=\"Move piece here\">" + content + "</button>"
+        set i to i + 1
+    set html to html + "</div><div class=\"lab-panel\"><p class=\"lab-kicker\">Board-derived value</p><div class=\"lab-stat\">" + int_to_string(moves.length) + " commanded squares</div>"
+    set html to html + "<p class=\"lab-copy\">The " + title + " receives this value from its present square. Move it and the count changes with the position.</p><div class=\"lab-actions\">"
+    set pieces to ["knight","rook","queen"]
+    for each piece in pieces:
+        set active to "lab-action"
+        if piece equals window.labChessPiece:
+            set active to active + " is-active"
+        set html to html + "<button class=\"" + active + "\" data-piece=\"" + piece + "\">" + piece + "</button>"
+    set html to html + "</div></div></div>"
+    set host.innerHTML to html
+    set squares to host.querySelectorAll(".chess-lab-square")
+    for each sq in squares:
+        sq.addEventListener("click" and lab_chess_square)
+    set picks to host.querySelectorAll("[data-piece]")
+    for each pick in picks:
+        pick.addEventListener("click" and lab_chess_piece)
+    return 0
+
+define lab_chess_init:
+    set window.labChessPiece to "knight"
+    set window.labChessSquare to 27
+    lab_chess_render()
+    return 0
+
+define lab_protein_distance with a and b:
+    set dx to get_list(a and 0) - get_list(b and 0)
+    set dy to get_list(a and 1) - get_list(b and 1)
+    set dz to get_list(a and 2) - get_list(b and 2)
+    return Math.sqrt(dx * dx + dy * dy + dz * dz)
+
+define lab_protein_render:
+    set coords to window.labProteinCoords
+    set focus to window.labProteinFocus
+    set canvas to document.getElementById("protein-map")
+    if not canvas:
+        return 0
+    set ctx to canvas.getContext("2d")
+    set n to coords.length
+    set cell to 520 / n
+    ctx.clearRect(0 and 0 and 520 and 520)
+    set contacts to 0
+    set nearest to 999
+    set i to 0
+    repeat while i < n:
+        set j to 0
+        repeat while j < n:
+            set dist to lab_protein_distance(get_list(coords and i) and get_list(coords and j))
+            if dist < 8:
+                set ctx.fillStyle to "rgba(255,159,127,.42)"
+                if Math.abs(i - j) > 2:
+                    set ctx.fillStyle to "#ff9f7f"
+                ctx.fillRect(j * cell and i * cell and cell + 0.35 and cell + 0.35)
+            set j to j + 1
+        set i to i + 1
+    set ctx.fillStyle to "rgba(255,255,255,.86)"
+    ctx.fillRect(0 and focus * cell and 520 and Math.max(1.5 and cell))
+    ctx.fillRect(focus * cell and 0 and Math.max(1.5 and cell) and 520)
+    set i to 0
+    repeat while i < n:
+        if Math.abs(i - focus) > 2:
+            set dist to lab_protein_distance(get_list(coords and focus) and get_list(coords and i))
+            if dist < nearest:
+                set nearest to dist
+            if dist < 8:
+                set contacts to contacts + 1
+        set i to i + 1
+    set stat to document.getElementById("protein-stat")
+    set copy to document.getElementById("protein-copy")
+    set stat.textContent to int_to_string(contacts) + " folded contacts"
+    set copy.textContent to "Residue " + int_to_string(focus + 1) + " · nearest non-neighbour " + nearest.toFixed(2) + " Å · contact threshold 8 Å."
+    return 0
+
+define lab_protein_slide with ev:
+    set window.labProteinFocus to window.parseInt(ev.currentTarget.value and 10) - 1
+    lab_protein_render()
+    return 0
+
+define lab_protein_ready with data:
+    set window.labProteinCoords to data.ca
+    set window.labProteinFocus to 35
+    set host to document.getElementById("protein-lab")
+    set host.innerHTML to "<div class=\"lab-layout\"><canvas id=\"protein-map\" class=\"protein-map\" width=\"520\" height=\"520\" aria-label=\"76 by 76 residue contact map\"></canvas><div class=\"lab-panel\"><p class=\"lab-kicker\">Selected residue</p><div class=\"lab-stat\" id=\"protein-stat\"></div><p class=\"lab-copy\" id=\"protein-copy\"></p><input class=\"lab-range\" id=\"protein-range\" type=\"range\" min=\"1\" max=\"76\" value=\"36\" aria-label=\"Residue number\"></div></div>"
+    document.getElementById("protein-range").addEventListener("input" and lab_protein_slide)
+    lab_protein_render()
+    return 0
+
+define lab_protein_recv with resp:
+    resp.json().then(lab_protein_ready)
+    return 0
+
+define lab_protein_init:
+    fetch("content/interactive/fold-protein-ca.json").then(lab_protein_recv)
+    return 0
+
+define lab_unison_clean with text:
+    set clean to text.toLowerCase()
+    set marks to [".",",","!","?",";",":","—","\n"]
+    for each mark in marks:
+        set clean to clean.split(mark).join(" ")
+    return clean.split(" ")
+
+define lab_unison_run with ev:
+    set text to document.getElementById("unison-corpus").value
+    set held to document.getElementById("unison-held").value.toLowerCase()
+    set raw to lab_unison_clean(text)
+    set words to []
+    for each word in raw:
+        if word.length > 0:
+            words.push(word)
+    set options to []
+    set counts to []
+    set total to 0
+    set i to 0
+    repeat while i < words.length - 1:
+        if get_list(words and i) equals held:
+            set next to get_list(words and i + 1)
+            set pos to options.indexOf(next)
+            if pos < 0:
+                options.push(next)
+                counts.push(1)
+            else:
+                set old to get_list(counts and pos)
+                counts.splice(pos and 1 and old + 1)
+            set total to total + 1
+        set i to i + 1
+    set result to document.getElementById("unison-result")
+    if total equals 0:
+        set result.innerHTML to "<p class=\"lab-copy\">That held word has no continuation in this memory yet. Add it to the text or choose another word.</p>"
+        return 0
+    set best to 0
+    set html to "<p class=\"lab-kicker\">Exact continuations after “" + held + "”</p><div class=\"unison-shares\">"
+    set i to 0
+    repeat while i < options.length:
+        set count to get_list(counts and i)
+        if count > get_list(counts and best):
+            set best to i
+        set pct to Math.round(count * 100 / total)
+        set html to html + "<div class=\"unison-share\"><span>" + get_list(options and i) + "</span><b>" + int_to_string(count) + "/" + int_to_string(total) + "</b><i style=\"--share:" + int_to_string(pct) + "%\"></i></div>"
+        set i to i + 1
+    set html to html + "</div><div class=\"lab-stat\" style=\"margin-top:26px\">“" + get_list(options and best) + "” is selected</div><p class=\"lab-copy\">The largest exact share wins; ties preserve the first held continuation.</p>"
+    set result.innerHTML to html
+    return 0
+
+define lab_unison_init:
+    set host to document.getElementById("unison-lab")
+    set host.innerHTML to "<div class=\"lab-layout\"><div><textarea class=\"unison-corpus\" id=\"unison-corpus\">the fold holds memory. the fold derives structure. the fold holds relation. memory holds the fold. relation holds the one.</textarea><div class=\"lab-actions\"><input class=\"unison-corpus\" id=\"unison-held\" value=\"the\" aria-label=\"Held word\" style=\"min-height:44px;height:44px;width:140px;padding:10px\"><button class=\"lab-action is-active\" id=\"unison-run\">Form exact shares</button></div></div><div class=\"lab-panel\" id=\"unison-result\"></div></div>"
+    document.getElementById("unison-run").addEventListener("click" and lab_unison_run)
+    lab_unison_run(0)
+    return 0
+
+define project_labs_init:
+    if document.getElementById("go-lab"):
+        lab_go_init()
+    if document.getElementById("chess-lab"):
+        lab_chess_init()
+    if document.getElementById("protein-lab"):
+        lab_protein_init()
+    if document.getElementById("unison-lab"):
+        lab_unison_init()
+    return 0
+
 define main:
     set page to document.getElementById("project-page")
     if not page:
@@ -690,6 +1026,7 @@ define main:
     set doc to document.getElementById("project-doc")
     if doc:
         fetch("content/projects/" + repo + ".md").then(sc_doc_recv).catch(sc_doc_fail)
+    project_labs_init()
     # the interactive replay is optional — pages without one stop here
     set stage to document.getElementById("showcase-stage")
     if not stage:

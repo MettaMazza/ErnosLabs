@@ -219,7 +219,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let stack, colour, neigh, v, total, seen, group, cur, i, col, libs, row;
+    let libs, stack, cur, i, neigh, row, total, seen, group, col, v, colour;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -270,7 +270,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let k, mv, idx, board, col, moves, enemy, neigh, size, playable, row, d, side, colour, i, coord, rownum, dead;
+    let i, enemy, d, board, dead, col, k, side, idx, colour, row, moves, playable, rownum, neigh, mv, coord, size;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -331,7 +331,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let board, stars, cx, row, rownum, edge, size, a0, coord, dim, i, letter, cy, svg, idx, d, cell, numlbl, pad, p, marky, mv, total, v, dims, moves, col, lastn, a1, stage;
+    let size, dim, cell, pad, col, i, a0, d, letter, v, svg, dims, lastn, stars, moves, marky, cy, edge, total, coord, stage, p, cx, mv, idx, numlbl, rownum, a1, board, row;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -411,7 +411,7 @@ function go_render(n) {
 }
 
 function go_init() {
-    let total, nmoves, stage;
+    let stage, total, nmoves;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
@@ -421,7 +421,7 @@ function go_init() {
 }
 
 function chess_row(letters, colour) {
-    let ch, arr, i;
+    let arr, i, ch;
     arr = [];
     i = 0;
     while ((i < 8)) {
@@ -474,7 +474,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let promo, ff, board, k, piece, kind, target, rook, tf, diff, uci, tr, filediff, fr, caprow, side, moves, negtwo, fromrow, torow;
+    let rook, caprow, board, side, k, negtwo, moves, target, promo, tr, fr, fromrow, tf, ff, torow, diff, uci, kind, piece, filediff;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -543,7 +543,7 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let lastn, htr, r, ishl, cell, dims, yrow, hlfrom, cells, flabel, svg, hfr, pyrow, rlabel, board, parity, stage, strokec, sqidx, i, pad, py, hlto, fillc, fx, fy, y, px, ry, uci, row, dim, f, htf, piece, g, hff, x, kind;
+    let yrow, f, r, strokec, fillc, px, kind, hfr, htr, rlabel, dim, uci, board, py, row, pyrow, fx, hlfrom, x, svg, hff, cells, hlto, lastn, dims, pad, sqidx, ishl, ry, piece, g, cell, stage, y, htf, flabel, i, fy, parity;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
@@ -636,7 +636,7 @@ function chess_render(n) {
 }
 
 function chess_init() {
-    let plies, d, sidename, stage, total, caption, elostr;
+    let plies, caption, d, stage, sidename, elostr, total;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -656,7 +656,7 @@ function chess_init() {
 }
 
 function protein_render(step) {
-    let proj, pr, spy, scale, minx, i, ang, py, path, ca, svg, p, pair, stage, n, x, maxy, syn, miny, span, cosa, px, sxn, maxx, z, sy, cmd, y, sx, sina;
+    let n, miny, scale, syn, ang, sina, maxy, minx, sx, y, px, proj, z, p, span, sy, cmd, sxn, x, pair, maxx, stage, spy, path, cosa, i, ca, py, pr, svg;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -732,7 +732,7 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let stage, n, src;
+    let n, src, stage;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
@@ -756,7 +756,7 @@ function boot_esc(s) {
 }
 
 function boot_step() {
-    let line, term;
+    let term, line;
     term = document.getElementById("sc-term");
     if (!term) {
         return 0;
@@ -819,8 +819,433 @@ function sc_data_fail(err) {
     return 0;
 }
 
+function lab_go_group(start) {
+    let colour, i, stack, col, out, seen, cur, ns, board, row, value;
+    board = window.labGoBoard;
+    colour = board[start];
+    out = JSON.parse("{\"group\":[],\"libs\":[]}");
+    if ((colour === 0)) {
+        return out;
+    }
+    seen = [];
+    i = 0;
+    while ((i < 25)) {
+        seen.push(false);
+        i = (i + 1);
+    }
+    stack = [start];
+    seen.splice(start, 1, true);
+    while ((stack.length > 0)) {
+        cur = stack.pop();
+        out.group.push(cur);
+        col = (cur % 5);
+        row = Math.floor((cur / 5));
+        ns = [];
+        if ((col > 0)) {
+            ns.push((cur - 1));
+        }
+        if ((col < 4)) {
+            ns.push((cur + 1));
+        }
+        if ((row > 0)) {
+            ns.push((cur - 5));
+        }
+        if ((row < 4)) {
+            ns.push((cur + 5));
+        }
+        for (const nb of ns) {
+            value = board[nb];
+            if ((value === 0)) {
+                if ((out.libs.indexOf(nb) < 0)) {
+                    out.libs.push(nb);
+                }
+            } else if ((value === colour)) {
+                if (!seen[nb]) {
+                    seen.splice(nb, 1, true);
+                    stack.push(nb);
+                }
+            }
+        }
+    }
+    return out;
+}
+
+function lab_go_click(ev) {
+    let value, idx;
+    idx = window.parseInt(ev.currentTarget.getAttribute("data-i"), 10);
+    value = window.labGoBoard[idx];
+    value = ((value + 1) % 3);
+    window.labGoBoard.splice(idx, 1, value);
+    window.labGoFocus = idx;
+    lab_go_render();
+    return 0;
+}
+
+function lab_go_clear(ev) {
+    window.labGoBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    window.labGoFocus = 12;
+    lab_go_render();
+    return 0;
+}
+
+function lab_go_preset(ev) {
+    window.labGoBoard = [0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 2, 1, 1, 1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0];
+    window.labGoFocus = 12;
+    lab_go_render();
+    return 0;
+}
+
+function lab_go_render() {
+    let colour, i, host, label, v, html, points, found, cls;
+    host = document.getElementById("go-lab");
+    if (!host) {
+        return 0;
+    }
+    found = lab_go_group(window.labGoFocus);
+    colour = window.labGoBoard[window.labGoFocus];
+    label = "Empty intersection";
+    if ((colour === 1)) {
+        label = "Black chain";
+    }
+    if ((colour === 2)) {
+        label = "White chain";
+    }
+    html = "<div class=\"lab-layout\"><div class=\"go-lab-board\">";
+    i = 0;
+    while ((i < 25)) {
+        cls = "go-lab-point";
+        v = window.labGoBoard[i];
+        if ((v === 1)) {
+            cls = (cls + " black");
+        }
+        if ((v === 2)) {
+            cls = (cls + " white");
+        }
+        if ((found.group.indexOf(i) >= 0)) {
+            cls = (cls + " is-group");
+        }
+        html = (((((html + "<button class=\"") + cls) + "\" data-i=\"") + String(i)) + "\" aria-label=\"Cycle stone\"></button>");
+        i = (i + 1);
+    }
+    html = (((html + "</div><div class=\"lab-panel\"><p class=\"lab-kicker\">Selected structure</p><div class=\"lab-stat\">") + label) + "</div>");
+    html = (((((html + "<p class=\"lab-copy\"><strong>") + String(found.group.length)) + " stones</strong> connected · <strong>") + String(found.libs.length)) + " unique liberties</strong>. Tap any intersection to cycle empty → black → white.</p>");
+    html = (html + "<div class=\"lab-actions\"><button class=\"lab-action\" id=\"go-preset\">Load atari</button><button class=\"lab-action\" id=\"go-clear\">Clear board</button></div></div></div>");
+    host.innerHTML = html;
+    points = host.querySelectorAll(".go-lab-point");
+    for (const p of points) {
+        p.addEventListener("click", lab_go_click);
+    }
+    document.getElementById("go-preset").addEventListener("click", lab_go_preset);
+    document.getElementById("go-clear").addEventListener("click", lab_go_clear);
+    return 0;
+}
+
+function lab_go_init() {
+    window.labGoBoard = [0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 2, 1, 1, 1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0];
+    window.labGoFocus = 12;
+    lab_go_render();
+    return 0;
+}
+
+function lab_chess_moves(square, piece) {
+    let c, rr, cc, dirs, jumps, r, moves;
+    moves = [];
+    r = Math.floor((square / 8));
+    c = (square % 8);
+    if ((piece === "knight")) {
+        jumps = [[(0 - 2), (0 - 1)], [(0 - 2), 1], [(0 - 1), (0 - 2)], [(0 - 1), 2], [1, (0 - 2)], [1, 2], [2, (0 - 1)], [2, 1]];
+        for (const jump of jumps) {
+            rr = (r + jump[0]);
+            cc = (c + jump[1]);
+            if ((rr >= 0)) {
+                if ((rr < 8)) {
+                    if ((cc >= 0)) {
+                        if ((cc < 8)) {
+                            moves.push(((rr * 8) + cc));
+                        }
+                    }
+                }
+            }
+        }
+        return moves;
+    }
+    dirs = [[(0 - 1), 0], [1, 0], [0, (0 - 1)], [0, 1]];
+    if ((piece === "queen")) {
+        dirs = [[(0 - 1), 0], [1, 0], [0, (0 - 1)], [0, 1], [(0 - 1), (0 - 1)], [(0 - 1), 1], [1, (0 - 1)], [1, 1]];
+    }
+    for (const d of dirs) {
+        rr = (r + d[0]);
+        cc = (c + d[1]);
+        while ((rr >= 0)) {
+            if ((rr >= 8)) {
+                rr = (0 - 10);
+            } else if ((cc < 0)) {
+                rr = (0 - 10);
+            } else if ((cc >= 8)) {
+                rr = (0 - 10);
+            } else {
+                moves.push(((rr * 8) + cc));
+                rr = (rr + d[0]);
+                cc = (cc + d[1]);
+            }
+        }
+    }
+    return moves;
+}
+
+function lab_chess_square(ev) {
+    window.labChessSquare = window.parseInt(ev.currentTarget.getAttribute("data-i"), 10);
+    lab_chess_render();
+    return 0;
+}
+
+function lab_chess_piece(ev) {
+    window.labChessPiece = ev.currentTarget.getAttribute("data-piece");
+    lab_chess_render();
+    return 0;
+}
+
+function lab_chess_render() {
+    let glyph, title, active, picks, pieces, html, cc, cls, squares, host, moves, i, content, rr;
+    host = document.getElementById("chess-lab");
+    moves = lab_chess_moves(window.labChessSquare, window.labChessPiece);
+    glyph = "♘";
+    title = "Knight";
+    if ((window.labChessPiece === "rook")) {
+        glyph = "♖";
+        title = "Rook";
+    }
+    if ((window.labChessPiece === "queen")) {
+        glyph = "♕";
+        title = "Queen";
+    }
+    html = "<div class=\"lab-layout\"><div class=\"chess-lab-board\">";
+    i = 0;
+    while ((i < 64)) {
+        cls = "chess-lab-square";
+        rr = Math.floor((i / 8));
+        cc = (i % 8);
+        if ((((rr + cc) % 2) === 0)) {
+            cls = (cls + " is-light");
+        }
+        if ((moves.indexOf(i) >= 0)) {
+            cls = (cls + " is-commanded");
+        }
+        content = "";
+        if ((i === window.labChessSquare)) {
+            cls = (cls + " is-origin");
+            content = glyph;
+        }
+        html = (((((((html + "<button class=\"") + cls) + "\" data-i=\"") + String(i)) + "\" aria-label=\"Move piece here\">") + content) + "</button>");
+        i = (i + 1);
+    }
+    html = (((html + "</div><div class=\"lab-panel\"><p class=\"lab-kicker\">Board-derived value</p><div class=\"lab-stat\">") + String(moves.length)) + " commanded squares</div>");
+    html = (((html + "<p class=\"lab-copy\">The ") + title) + " receives this value from its present square. Move it and the count changes with the position.</p><div class=\"lab-actions\">");
+    pieces = ["knight", "rook", "queen"];
+    for (const piece of pieces) {
+        active = "lab-action";
+        if ((piece === window.labChessPiece)) {
+            active = (active + " is-active");
+        }
+        html = (((((((html + "<button class=\"") + active) + "\" data-piece=\"") + piece) + "\">") + piece) + "</button>");
+    }
+    html = (html + "</div></div></div>");
+    host.innerHTML = html;
+    squares = host.querySelectorAll(".chess-lab-square");
+    for (const sq of squares) {
+        sq.addEventListener("click", lab_chess_square);
+    }
+    picks = host.querySelectorAll("[data-piece]");
+    for (const pick of picks) {
+        pick.addEventListener("click", lab_chess_piece);
+    }
+    return 0;
+}
+
+function lab_chess_init() {
+    window.labChessPiece = "knight";
+    window.labChessSquare = 27;
+    lab_chess_render();
+    return 0;
+}
+
+function lab_protein_distance(a, b) {
+    let dy, dx, dz;
+    dx = (a[0] - b[0]);
+    dy = (a[1] - b[1]);
+    dz = (a[2] - b[2]);
+    return Math.sqrt((((dx * dx) + (dy * dy)) + (dz * dz)));
+}
+
+function lab_protein_render() {
+    let j, i, copy, contacts, ctx, cell, coords, focus, n, nearest, canvas, dist, stat;
+    coords = window.labProteinCoords;
+    focus = window.labProteinFocus;
+    canvas = document.getElementById("protein-map");
+    if (!canvas) {
+        return 0;
+    }
+    ctx = canvas.getContext("2d");
+    n = coords.length;
+    cell = (520 / n);
+    ctx.clearRect(0, 0, 520, 520);
+    contacts = 0;
+    nearest = 999;
+    i = 0;
+    while ((i < n)) {
+        j = 0;
+        while ((j < n)) {
+            dist = lab_protein_distance(coords[i], coords[j]);
+            if ((dist < 8)) {
+                ctx.fillStyle = "rgba(255,159,127,.42)";
+                if ((Math.abs((i - j)) > 2)) {
+                    ctx.fillStyle = "#ff9f7f";
+                }
+                ctx.fillRect((j * cell), (i * cell), (cell + 0.35), (cell + 0.35));
+            }
+            j = (j + 1);
+        }
+        i = (i + 1);
+    }
+    ctx.fillStyle = "rgba(255,255,255,.86)";
+    ctx.fillRect(0, (focus * cell), 520, Math.max(1.5, cell));
+    ctx.fillRect((focus * cell), 0, Math.max(1.5, cell), 520);
+    i = 0;
+    while ((i < n)) {
+        if ((Math.abs((i - focus)) > 2)) {
+            dist = lab_protein_distance(coords[focus], coords[i]);
+            if ((dist < nearest)) {
+                nearest = dist;
+            }
+            if ((dist < 8)) {
+                contacts = (contacts + 1);
+            }
+        }
+        i = (i + 1);
+    }
+    stat = document.getElementById("protein-stat");
+    copy = document.getElementById("protein-copy");
+    stat.textContent = (String(contacts) + " folded contacts");
+    copy.textContent = (((("Residue " + String((focus + 1))) + " · nearest non-neighbour ") + nearest.toFixed(2)) + " Å · contact threshold 8 Å.");
+    return 0;
+}
+
+function lab_protein_slide(ev) {
+    window.labProteinFocus = (window.parseInt(ev.currentTarget.value, 10) - 1);
+    lab_protein_render();
+    return 0;
+}
+
+function lab_protein_ready(data) {
+    let host;
+    window.labProteinCoords = data.ca;
+    window.labProteinFocus = 35;
+    host = document.getElementById("protein-lab");
+    host.innerHTML = "<div class=\"lab-layout\"><canvas id=\"protein-map\" class=\"protein-map\" width=\"520\" height=\"520\" aria-label=\"76 by 76 residue contact map\"></canvas><div class=\"lab-panel\"><p class=\"lab-kicker\">Selected residue</p><div class=\"lab-stat\" id=\"protein-stat\"></div><p class=\"lab-copy\" id=\"protein-copy\"></p><input class=\"lab-range\" id=\"protein-range\" type=\"range\" min=\"1\" max=\"76\" value=\"36\" aria-label=\"Residue number\"></div></div>";
+    document.getElementById("protein-range").addEventListener("input", lab_protein_slide);
+    lab_protein_render();
+    return 0;
+}
+
+function lab_protein_recv(resp) {
+    resp.json().then(lab_protein_ready);
+    return 0;
+}
+
+function lab_protein_init() {
+    fetch("content/interactive/fold-protein-ca.json").then(lab_protein_recv);
+    return 0;
+}
+
+function lab_unison_clean(text) {
+    let clean, marks;
+    clean = text.toLowerCase();
+    marks = [".", ",", "!", "?", ";", ":", "—", "\n"];
+    for (const mark of marks) {
+        clean = clean.split(mark).join(" ");
+    }
+    return clean.split(" ");
+}
+
+function lab_unison_run(ev) {
+    let html, old, pct, best, total, words, counts, next, text, pos, held, result, count, i, raw, options;
+    text = document.getElementById("unison-corpus").value;
+    held = document.getElementById("unison-held").value.toLowerCase();
+    raw = lab_unison_clean(text);
+    words = [];
+    for (const word of raw) {
+        if ((word.length > 0)) {
+            words.push(word);
+        }
+    }
+    options = [];
+    counts = [];
+    total = 0;
+    i = 0;
+    while ((i < (words.length - 1))) {
+        if ((words[i] === held)) {
+            next = words[(i + 1)];
+            pos = options.indexOf(next);
+            if ((pos < 0)) {
+                options.push(next);
+                counts.push(1);
+            } else {
+                old = counts[pos];
+                counts.splice(pos, 1, (old + 1));
+            }
+            total = (total + 1);
+        }
+        i = (i + 1);
+    }
+    result = document.getElementById("unison-result");
+    if ((total === 0)) {
+        result.innerHTML = "<p class=\"lab-copy\">That held word has no continuation in this memory yet. Add it to the text or choose another word.</p>";
+        return 0;
+    }
+    best = 0;
+    html = (("<p class=\"lab-kicker\">Exact continuations after “" + held) + "”</p><div class=\"unison-shares\">");
+    i = 0;
+    while ((i < options.length)) {
+        count = counts[i];
+        if ((count > counts[best])) {
+            best = i;
+        }
+        pct = Math.round(((count * 100) / total));
+        html = (((((((((html + "<div class=\"unison-share\"><span>") + options[i]) + "</span><b>") + String(count)) + "/") + String(total)) + "</b><i style=\"--share:") + String(pct)) + "%\"></i></div>");
+        i = (i + 1);
+    }
+    html = (((html + "</div><div class=\"lab-stat\" style=\"margin-top:26px\">“") + options[best]) + "” is selected</div><p class=\"lab-copy\">The largest exact share wins; ties preserve the first held continuation.</p>");
+    result.innerHTML = html;
+    return 0;
+}
+
+function lab_unison_init() {
+    let host;
+    host = document.getElementById("unison-lab");
+    host.innerHTML = "<div class=\"lab-layout\"><div><textarea class=\"unison-corpus\" id=\"unison-corpus\">the fold holds memory. the fold derives structure. the fold holds relation. memory holds the fold. relation holds the one.</textarea><div class=\"lab-actions\"><input class=\"unison-corpus\" id=\"unison-held\" value=\"the\" aria-label=\"Held word\" style=\"min-height:44px;height:44px;width:140px;padding:10px\"><button class=\"lab-action is-active\" id=\"unison-run\">Form exact shares</button></div></div><div class=\"lab-panel\" id=\"unison-result\"></div></div>";
+    document.getElementById("unison-run").addEventListener("click", lab_unison_run);
+    lab_unison_run(0);
+    return 0;
+}
+
+function project_labs_init() {
+    if (document.getElementById("go-lab")) {
+        lab_go_init();
+    }
+    if (document.getElementById("chess-lab")) {
+        lab_chess_init();
+    }
+    if (document.getElementById("protein-lab")) {
+        lab_protein_init();
+    }
+    if (document.getElementById("unison-lab")) {
+        lab_unison_init();
+    }
+    return 0;
+}
+
 function main() {
-    let file, page, doc, gh, dl, repo, stage;
+    let gh, repo, stage, page, file, dl, doc;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;
@@ -840,6 +1265,7 @@ function main() {
     if (doc) {
         fetch((("content/projects/" + repo) + ".md")).then(sc_doc_recv).catch(sc_doc_fail);
     }
+    project_labs_init();
     stage = document.getElementById("showcase-stage");
     if (!stage) {
         return 0;
