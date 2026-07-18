@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=3ed694a6">
+  <link rel="stylesheet" href="assets/css/site.css?v=e6e71266">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -129,7 +129,7 @@
         <!-- CHAT -->
         <div class="cm-tab" id="tab-chat">
           <div class="cm-panel">
-            <div class="cm-chat-log" id="chat-log"></div>
+            <div class="cm-chat-log" id="chat-log" role="log" aria-label="Community chat messages" tabindex="0"></div>
             <div class="cm-composer">
               <textarea id="chat-input" rows="1" placeholder="Say something…" aria-label="Message"></textarea>
               <button class="btn btn--primary" id="chat-send">Send</button>
