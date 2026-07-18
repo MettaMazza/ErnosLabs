@@ -406,19 +406,30 @@ define chess_fresh_board:
     out.push(chess_row("RNBQKBNR" and "b"))
     return out
 
-# One filled silhouette per piece kind; colour comes from the SVG fill.
-define chess_glyph with kind:
-    if kind equals "K":
-        return "♚"
-    if kind equals "Q":
-        return "♛"
+# Platform-independent vector pieces. Text chess glyphs are deliberately not
+# used here: iOS Safari can substitute Apple symbol artwork and ignore the SVG
+# text fill, which makes piece colours appear reversed on some iPhones.
+define chess_piece_svg with kind and x and y and side:
+    set fillc to "#fffaf0"
+    set strokec to "#25313f"
+    if side equals "b":
+        set fillc to "#111821"
+        set strokec to "#eef2f7"
+    set out to f"<g class=\"sc-piece sc-piece--{side}\" data-side=\"{side}\" data-kind=\"{kind}\" transform=\"translate({x} {y})\" fill=\"{fillc}\" stroke=\"{strokec}\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#pieceShadow)\">"
+    if kind equals "P":
+        set out to out + "<circle cx=\"28\" cy=\"16\" r=\"7.4\"/><path d=\"M19 38c1.3-7.8 4.2-12.4 9-14.3 4.8 1.9 7.7 6.5 9 14.3z\"/><path d=\"M16 43h24l-2.2-5H18.2z\"/>"
     if kind equals "R":
-        return "♜"
-    if kind equals "B":
-        return "♝"
+        set out to out + "<path d=\"M16 11h7v6h5v-6h5v6h7v-6h3v13l-5 4 2.4 13H15.6L18 28l-5-4V11z\"/><path d=\"M15 41h26v5H15z\"/>"
     if kind equals "N":
-        return "♞"
-    return "♟"
+        set out to out + f"<path d=\"M16 43h25v3H14z\"/><path d=\"M19 39c0-8.5 2.8-15.1 8.5-20l-2.2-7 12.2 5.2c4.8 5.5 5.8 12.1 2.8 19.8l-5.8-6.2-7.4 2.4-3.1 5.8z\"/><circle cx=\"35.5\" cy=\"22.5\" r=\"1.5\" fill=\"{strokec}\" stroke=\"none\"/>"
+    if kind equals "B":
+        set out to out + "<path d=\"M28 9c6.5 5.2 9.5 10.2 9 15 0 4.8-2.7 8.5-8 11h-2c-5.3-2.5-8-6.2-8-11-.5-4.8 2.5-9.8 9-15z\"/><path d=\"M17 42h22l-4.5-8h-13z\"/><path d=\"M14 46h28l-3-4H17z\"/><path d=\"M31.8 15.5l-8 10\" fill=\"none\" stroke-width=\"2.2\"/>"
+    if kind equals "Q":
+        set out to out + "<circle cx=\"15\" cy=\"14\" r=\"3\"/><circle cx=\"28\" cy=\"9\" r=\"3\"/><circle cx=\"41\" cy=\"14\" r=\"3\"/><path d=\"M15 17l6.2 17h13.6L41 17l-8 9-5-13-5 13z\"/><path d=\"M18 39h20l-3.2-5H21.2z\"/><path d=\"M15 45h26l-3-6H18z\"/>"
+    if kind equals "K":
+        set out to out + "<path d=\"M28 7v13M22 13h12\" fill=\"none\" stroke-width=\"3\"/><path d=\"M20 39c1.2-7.2 3.7-12.8 8-16.8 4.3 4 6.8 9.6 8 16.8z\"/><path d=\"M16 45h24l-3-6H19z\"/>"
+    set out to out + "</g>"
+    return out
 
 define chess_file with ch:
     return "abcdefgh".indexOf(ch)
@@ -534,7 +545,7 @@ define chess_render with n:
         set rlabel to int_to_string(i + 1)
         set svg to svg + f"<text x=\"11\" y=\"{ry}\" font-size=\"12\" fill=\"#8a8f9c\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Inter,sans-serif\">{rlabel}</text>"
         set i to i + 1
-    # pieces — filled silhouettes, colour by fill, outlined for contrast
+    # pieces — native SVG geometry, never platform font glyphs
     set r to 0
     repeat while r < 8:
         set row to get_list(board and r)
@@ -543,16 +554,10 @@ define chess_render with n:
             set piece to get_list(row and f)
             if piece:
                 set kind to piece.charAt(1)
-                set g to chess_glyph(kind)
-                set px to int_to_string(pad + f * cell + cell / 2)
+                set piecex to int_to_string(pad + f * cell)
                 set pyrow to 7 - r
-                set py to int_to_string(pad + pyrow * cell + cell / 2 + 2)
-                set fillc to "#fffaf0"
-                set strokec to "#25313f"
-                if piece.charAt(0) equals "b":
-                    set fillc to "#111821"
-                    set strokec to "#e8edf3"
-                set svg to svg + f"<text x=\"{px}\" y=\"{py}\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"{fillc}\" stroke=\"{strokec}\" stroke-width=\"1.05\" paint-order=\"stroke\" filter=\"url(#pieceShadow)\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">{g}</text>"
+                set piecey to int_to_string(pad + pyrow * cell)
+                set svg to svg + chess_piece_svg(kind and piecex and piecey and piece.charAt(0))
             set f to f + 1
         set r to r + 1
     set svg to svg + "</svg>"
