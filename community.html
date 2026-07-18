@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=656b4bc3">
+  <link rel="stylesheet" href="assets/css/site.css?v=9b91129d">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -87,14 +87,31 @@
         <p class="eyebrow reveal">Gather</p>
         <h1 class="reveal">Community</h1>
         <p class="lead reveal mt-s">A live chat room, a forum, and an FAQ — a place for the people building and using
-          this work to find each other. Like everything here, it's <strong style="color:var(--ink-0)">served straight from
-          the source machine</strong>: no accounts, no third party, owned by no one.</p>
+          this work to find each other. The space below is <strong style="color:var(--ink-0)">served straight from the
+          source machine</strong> with no account required; you can also join us on Discord or contact Maria directly.</p>
         <div id="cm-status" class="cm-status">Checking the community…</div>
         <div class="cm-id">
           <label for="cm-name">Post as</label>
           <input id="cm-name" type="text" maxlength="40" placeholder="pick a name" autocomplete="off">
           <span style="color:var(--ink-3);font-size:.82rem">saved in this browser · no sign-up</span>
         </div>
+        <aside class="cm-connect reveal" aria-labelledby="cm-connect-title">
+          <div class="cm-connect__intro">
+            <p class="card__tag">Direct channels</p>
+            <h2 id="cm-connect-title">Join the conversation</h2>
+            <p>For discussion, project updates, and help getting started, join the Ernos Labs Discord. For a private question or direct contact, email Maria.</p>
+          </div>
+          <div class="cm-connect__actions">
+            <a class="cm-connect__link cm-connect__link--discord" href="https://discord.gg/NTAf8hnWKT" target="_blank" rel="noopener">
+              <span class="cm-connect__icon" aria-hidden="true">#</span>
+              <span><strong>Join the Discord</strong><small>Open the community invite ↗</small></span>
+            </a>
+            <a class="cm-connect__link" href="mailto:maria.smith.sftoe@gmail.com">
+              <span class="cm-connect__icon" aria-hidden="true">@</span>
+              <span><strong>Email Maria</strong><small>maria.smith.sftoe@gmail.com</small></span>
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
   </header>
