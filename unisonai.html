@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=8fc2d2d5">
+  <link rel="stylesheet" href="assets/css/site.css?v=656b4bc3">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -26,7 +26,7 @@
       <button class="nav__burger" id="burger" aria-label="Menu">≡</button>
       <div class="nav__links" id="navlinks">
         <div class="nav__drop nav__drop--mega" id="nav-work">
-          <button class="nav__drop-btn" id="nav-work-btn" aria-haspopup="true">Work ▾</button>
+          <button class="nav__drop-btn" id="nav-work-btn" aria-haspopup="true" aria-label="Work">Work</button>
           <div class="nav__drop-menu nav__mega">
             <div class="nav__mega-col">
               <h4>Theory</h4>
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="nav__drop" id="nav-writing">
-          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true">Writing ▾</button>
+          <button class="nav__drop-btn" id="nav-writing-btn" aria-haspopup="true" aria-label="Writing">Writing</button>
           <div class="nav__drop-menu">
             <a href="library.html">Library</a>
             <a href="seed.html">Seed Vault</a>
@@ -67,14 +67,14 @@
           </div>
         </div>
         <div class="nav__drop" id="nav-media">
-          <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true">Media ▾</button>
+          <button class="nav__drop-btn" id="nav-media-btn" aria-haspopup="true" aria-label="Media">Media</button>
           <div class="nav__drop-menu">
             <a href="videos.html">Videos</a>
             <a href="ai.html">AI Archive</a>
           </div>
         </div>
-        <a href="community.html">Community</a>
-        <a href="about.html">About</a>
+        <a href="community.html" aria-label="Community">Community</a>
+        <a href="about.html" aria-label="About">About</a>
       </div>
     </div>
   </nav>
@@ -144,7 +144,7 @@
       <div><a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" width="26" height="26" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#4ff0c4"/><stop offset="100%" stop-color="#7c8cff"/></linearGradient></defs><path d="M13 24c0-7-4-11-4-15C9 5.5 11 3 13 2c2 1 4 3.5 4 7 0 4-4 8-4 15z" fill="url(#sg)" opacity=".92"/><path d="M13 24c0-6 3-9.5 5.5-11.5" fill="none" stroke="#4ff0c4" stroke-width="1.2" stroke-linecap="round" opacity=".55"/><path d="M13 24c0-6-3-9.5-5.5-11.5" fill="none" stroke="#7c8cff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/></svg> Ernos&nbsp;Labs</a>
         <p style="margin-top:12px;max-width:34ch">Owned by no one. Mirrored by anyone.</p></div>
       <div class="foot__cols"><div class="foot__col"><h4>More</h4>
-        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html">Community</a></div></div>
+        <a href="projects.html">All projects</a><a href="papers.html">Papers</a><a href="community.html" aria-label="Community">Community</a></div></div>
     </div>
     <div class="wrap" style="margin-top:30px;color:var(--ink-3);font-size:.82rem">© <span id="year">2026</span> Maria Smith · Ernos Labs</div>
   </footer>
