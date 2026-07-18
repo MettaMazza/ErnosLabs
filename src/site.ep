@@ -120,11 +120,41 @@ define mesh_init:
 
 # ---- mobile nav ----------------------------------------------------------
 
+define nav_set_open with open:
+    set links to document.getElementById("navlinks")
+    set burger to document.getElementById("burger")
+    if not links:
+        return 0
+    if open:
+        drop_close_all()
+        links.classList.add("open")
+        document.body.classList.add("nav-open")
+        if burger:
+            burger.setAttribute("aria-expanded" and "true")
+            burger.setAttribute("aria-label" and "Close menu")
+            set burger.textContent to "×"
+    else:
+        links.classList.remove("open")
+        document.body.classList.remove("nav-open")
+        if burger:
+            burger.setAttribute("aria-expanded" and "false")
+            burger.setAttribute("aria-label" and "Menu")
+            set burger.textContent to "≡"
+    return 0
+
 define nav_toggle with ev:
     set links to document.getElementById("navlinks")
     if links:
-        links.classList.toggle("open")
+        nav_set_open(not links.classList.contains("open"))
     return 0
+
+define nav_hover_enabled:
+    # The collapsed navigation is click/tap-only. Synthetic mouse events fired
+    # after a thumb lifts must never arm the desktop hover-close timer.
+    if window.innerWidth <= 1180:
+        return false
+    set fine to window.matchMedia("(hover: hover) and (pointer: fine)")
+    return fine.matches
 
 # Any number of .nav__drop menus. Hover opens; the menu STAYS open while the
 # pointer is anywhere over the button or the panel, and closes only after a
@@ -136,12 +166,24 @@ define drop_open_only with me:
         set window.navCloseTimer to 0
     set drops to document.querySelectorAll(".nav__drop")
     for each d in drops:
+        set b to d.querySelector(".nav__drop-btn")
         if not (d.id equals me.id):
             d.classList.remove("open")
+            if b:
+                b.setAttribute("aria-expanded" and "false")
     me.classList.add("open")
+    set mybtn to me.querySelector(".nav__drop-btn")
+    if mybtn:
+        mybtn.setAttribute("aria-expanded" and "true")
     return 0
 
 define drop_enter with ev:
+    if not nav_hover_enabled():
+        return 0
+    if ev.pointerType equals "touch":
+        return 0
+    if ev.pointerType equals "pen":
+        return 0
     drop_open_only(ev.currentTarget)
     return 0
 
@@ -149,9 +191,18 @@ define drop_close_all:
     set drops to document.querySelectorAll(".nav__drop")
     for each d in drops:
         d.classList.remove("open")
+        set b to d.querySelector(".nav__drop-btn")
+        if b:
+            b.setAttribute("aria-expanded" and "false")
     return 0
 
 define drop_leave with ev:
+    if not nav_hover_enabled():
+        return 0
+    if ev.pointerType equals "touch":
+        return 0
+    if ev.pointerType equals "pen":
+        return 0
     if window.navCloseTimer:
         window.clearTimeout(window.navCloseTimer)
     set window.navCloseTimer to window.setTimeout(drop_close_all and 300)
@@ -162,6 +213,7 @@ define drop_toggle with ev:
     set me to ev.currentTarget.parentElement
     if me.classList.contains("open"):
         me.classList.remove("open")
+        ev.currentTarget.setAttribute("aria-expanded" and "false")
     else:
         drop_open_only(me)
     return 0
@@ -170,18 +222,28 @@ define drop_close with ev:
     drop_close_all()
     return 0
 
+define nav_keydown with ev:
+    if ev.key equals "Escape":
+        nav_set_open(false)
+        drop_close_all()
+    return 0
+
 define nav_init:
     set burger to document.getElementById("burger")
     if burger:
+        burger.setAttribute("aria-controls" and "navlinks")
+        burger.setAttribute("aria-expanded" and "false")
         burger.addEventListener("click" and nav_toggle)
     set dbtns to document.querySelectorAll(".nav__drop-btn")
     for each b in dbtns:
+        b.setAttribute("aria-expanded" and "false")
         b.addEventListener("click" and drop_toggle)
     set drops to document.querySelectorAll(".nav__drop")
     for each d in drops:
         d.addEventListener("pointerenter" and drop_enter)
         d.addEventListener("pointerleave" and drop_leave)
     document.addEventListener("click" and drop_close)
+    document.addEventListener("keydown" and nav_keydown)
     return 0
 
 # highlight the current page's nav link (re-run on every SPA page change)

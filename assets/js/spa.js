@@ -102,7 +102,18 @@
   function closeMenus() {
     const nl = document.getElementById("navlinks");
     if (nl) nl.classList.remove("open");
-    document.querySelectorAll(".nav__drop").forEach(function (d) { d.classList.remove("open"); });
+    document.body.classList.remove("nav-open");
+    const burger = document.getElementById("burger");
+    if (burger) {
+      burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Menu");
+      burger.textContent = "≡";
+    }
+    document.querySelectorAll(".nav__drop").forEach(function (d) {
+      d.classList.remove("open");
+      const button = d.querySelector(".nav__drop-btn");
+      if (button) button.setAttribute("aria-expanded", "false");
+    });
   }
 
   let navToken = 0;

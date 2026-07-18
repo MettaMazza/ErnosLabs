@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let i, n, nodes;
+    let nodes, n, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, ctx, w, h, canvas;
+    let dpr, w, ctx, canvas, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let ctx, b, dx, alpha, j, dy, h, a, n, nodes, dist, w, i, count;
+    let h, b, i, dy, dist, alpha, a, w, ctx, j, n, nodes, dx, count;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let reduce, density, canvas;
+    let canvas, density, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -129,46 +129,113 @@ function mesh_init() {
     return 0;
 }
 
-function nav_toggle(ev) {
-    let links;
+function nav_set_open(open) {
+    let burger, links;
     links = document.getElementById("navlinks");
-    if (links) {
-        links.classList.toggle("open");
+    burger = document.getElementById("burger");
+    if (!links) {
+        return 0;
+    }
+    if (open) {
+        drop_close_all();
+        links.classList.add("open");
+        document.body.classList.add("nav-open");
+        if (burger) {
+            burger.setAttribute("aria-expanded", "true");
+            burger.setAttribute("aria-label", "Close menu");
+            burger.textContent = "×";
+        }
+    } else {
+        links.classList.remove("open");
+        document.body.classList.remove("nav-open");
+        if (burger) {
+            burger.setAttribute("aria-expanded", "false");
+            burger.setAttribute("aria-label", "Menu");
+            burger.textContent = "≡";
+        }
     }
     return 0;
 }
 
+function nav_toggle(ev) {
+    let links;
+    links = document.getElementById("navlinks");
+    if (links) {
+        nav_set_open(!links.classList.contains("open"));
+    }
+    return 0;
+}
+
+function nav_hover_enabled() {
+    let fine;
+    if ((window.innerWidth <= 1180)) {
+        return false;
+    }
+    fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+    return fine.matches;
+}
+
 function drop_open_only(me) {
-    let drops;
+    let b, mybtn, drops;
     if (window.navCloseTimer) {
         window.clearTimeout(window.navCloseTimer);
         window.navCloseTimer = 0;
     }
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
+        b = d.querySelector(".nav__drop-btn");
         if (!(d.id === me.id)) {
             d.classList.remove("open");
+            if (b) {
+                b.setAttribute("aria-expanded", "false");
+            }
         }
     }
     me.classList.add("open");
+    mybtn = me.querySelector(".nav__drop-btn");
+    if (mybtn) {
+        mybtn.setAttribute("aria-expanded", "true");
+    }
     return 0;
 }
 
 function drop_enter(ev) {
+    if (!nav_hover_enabled()) {
+        return 0;
+    }
+    if ((ev.pointerType === "touch")) {
+        return 0;
+    }
+    if ((ev.pointerType === "pen")) {
+        return 0;
+    }
     drop_open_only(ev.currentTarget);
     return 0;
 }
 
 function drop_close_all() {
-    let drops;
+    let b, drops;
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
         d.classList.remove("open");
+        b = d.querySelector(".nav__drop-btn");
+        if (b) {
+            b.setAttribute("aria-expanded", "false");
+        }
     }
     return 0;
 }
 
 function drop_leave(ev) {
+    if (!nav_hover_enabled()) {
+        return 0;
+    }
+    if ((ev.pointerType === "touch")) {
+        return 0;
+    }
+    if ((ev.pointerType === "pen")) {
+        return 0;
+    }
     if (window.navCloseTimer) {
         window.clearTimeout(window.navCloseTimer);
     }
@@ -182,6 +249,7 @@ function drop_toggle(ev) {
     me = ev.currentTarget.parentElement;
     if (me.classList.contains("open")) {
         me.classList.remove("open");
+        ev.currentTarget.setAttribute("aria-expanded", "false");
     } else {
         drop_open_only(me);
     }
@@ -193,14 +261,25 @@ function drop_close(ev) {
     return 0;
 }
 
+function nav_keydown(ev) {
+    if ((ev.key === "Escape")) {
+        nav_set_open(false);
+        drop_close_all();
+    }
+    return 0;
+}
+
 function nav_init() {
-    let drops, dbtns, burger;
+    let burger, dbtns, drops;
     burger = document.getElementById("burger");
     if (burger) {
+        burger.setAttribute("aria-controls", "navlinks");
+        burger.setAttribute("aria-expanded", "false");
         burger.addEventListener("click", nav_toggle);
     }
     dbtns = document.querySelectorAll(".nav__drop-btn");
     for (const b of dbtns) {
+        b.setAttribute("aria-expanded", "false");
         b.addEventListener("click", drop_toggle);
     }
     drops = document.querySelectorAll(".nav__drop");
@@ -209,11 +288,12 @@ function nav_init() {
         d.addEventListener("pointerleave", drop_leave);
     }
     document.addEventListener("click", drop_close);
+    document.addEventListener("keydown", nav_keydown);
     return 0;
 }
 
 function nav_highlight() {
-    let path, href, hp, drops, b, qi, act, links;
+    let act, drops, path, b, href, links, qi, hp;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -263,7 +343,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let args, opts, els, IO, obs;
+    let opts, IO, els, obs, args;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -283,7 +363,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let y, d;
+    let d, y;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -293,7 +373,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let doc, nodes, dt, cls, parts, n, txt, i;
+    let dt, txt, nodes, parts, i, cls, n, doc;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -323,7 +403,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let st, btn;
+    let btn, st;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -338,7 +418,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let status, fill, btn, pct, ph;
+    let fill, ph, pct, btn, status;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

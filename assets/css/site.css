@@ -269,13 +269,55 @@ pre {
 /* Collapse the nav to a hamburger well before the links crowd (not just at phone
    width) — with 8 top-level items an inline bar gets cramped on laptops. */
 @media (max-width: 1180px) {
-  .nav__links { position: fixed; inset: 64px 0 auto; flex-direction: column; background: rgba(8,11,18,.97); border-bottom: 1px solid var(--line); padding: 14px; gap: 4px; transform: translateY(-130%); transition: transform .3s var(--ease); }
-  .nav__links.open { transform: none; }
-  .nav__links a { padding: 13px; font-size: 1rem; }
-  .nav__burger { display: block; }
-  /* dropdown becomes an inline, always-open group in the mobile menu */
-  .nav__drop-btn { display: block; width: 100%; text-align: left; padding: 13px; color: var(--ink-3); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; pointer-events: none; }
-  .nav__drop-menu { display: block; position: static; border: 0; box-shadow: none; background: none; padding: 0 0 0 12px; min-width: 0; }
+  body.nav-open { overflow: hidden; }
+  .nav__links {
+    position: fixed; inset: 64px 0 auto; flex-direction: column; align-items: stretch;
+    height: calc(100vh - 64px); height: calc(100dvh - 64px);
+    overflow-y: auto; overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    background: rgba(8,11,18,.99); border-bottom: 1px solid var(--line);
+    padding: 12px 14px calc(18px + env(safe-area-inset-bottom)); gap: 8px;
+    transform: translateY(-130%); visibility: hidden; pointer-events: none;
+    transition: transform .3s var(--ease), visibility 0s linear .3s;
+  }
+  .nav__links.open { transform: none; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+  .nav__links > a,
+  .nav__drop-btn {
+    min-height: 52px; width: 100%; display: flex; align-items: center;
+    padding: 0 16px; border: 1px solid var(--line-soft); border-radius: 14px;
+    background: var(--bg-2); color: var(--ink-0); font-size: 1rem; font-weight: 600;
+    text-align: left; text-transform: none; letter-spacing: 0;
+    touch-action: manipulation;
+  }
+  .nav__links > a:hover,
+  .nav__drop-btn:hover,
+  .nav__drop-btn.active,
+  .nav__drop.open > .nav__drop-btn { background: var(--bg-3); border-color: var(--glow-dim); }
+  .nav__burger {
+    display: flex; align-items: center; justify-content: center; flex: 0 0 48px;
+    width: 48px; height: 48px; margin-left: 0; padding: 0;
+    border: 1px solid var(--line); border-radius: 13px; background: var(--bg-2);
+    font-size: 1.7rem; line-height: 1; touch-action: manipulation;
+  }
+  .nav__drop { width: 100%; }
+  /* Touch navigation is an accordion: one thumb-sized section at a time. */
+  .nav__drop-menu {
+    display: none; position: static; min-width: 0; margin-top: 6px;
+    padding: 4px 0 6px 10px; border: 0; box-shadow: none; background: none;
+  }
+  .nav__links .nav__drop-menu a {
+    min-height: 48px; display: flex; align-items: center;
+    padding: 10px 14px; border-radius: 12px; font-size: .98rem;
+    white-space: normal; touch-action: manipulation;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav__in { gap: 8px; }
+  .navplayer { flex: 0 0 42px; max-width: 42px; padding: 0; margin: 0 0 0 auto; }
+  .navplayer__bar { display: none; }
+  .navplayer__btn { width: 40px; height: 40px; }
 }
 
 /* =========================================================================
