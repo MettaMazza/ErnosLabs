@@ -128,7 +128,7 @@ function sc_wire_controls(render_fn, total) {
 }
 
 function sc_goto(n) {
-    let p, fill, pc, c;
+    let pc, fill, c, p;
     p = n;
     if ((p < 0)) {
         p = 0;
@@ -233,7 +233,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let total, col, stack, group, libs, cur, neigh, i, row, v, colour, seen;
+    let neigh, total, i, stack, seen, libs, col, row, v, group, colour, cur;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -284,7 +284,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let rownum, neigh, k, i, mv, col, size, board, coord, d, idx, enemy, side, dead, playable, colour, moves, row;
+    let mv, row, size, neigh, dead, board, idx, i, playable, rownum, k, d, enemy, side, col, moves, colour, coord;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -345,7 +345,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let stars, board, turn, idx, signal, cell, nextside, col, edge, total, p, numlbl, a0, d, i, current, lastn, pad, moves, v, rownum, coord, lastmove, marky, size, cy, mv, letter, row, a1, side, dim, dims, stage, svg, cx;
+    let dims, a0, cx, nextside, letter, size, board, stars, v, mv, total, moves, svg, lastn, coord, dim, current, p, numlbl, idx, a1, lastmove, cell, i, stage, d, turn, cy, col, rownum, row, pad, edge, side, signal, marky;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -457,7 +457,7 @@ function go_render(n) {
 }
 
 function go_init() {
-    let total, nmoves, stage;
+    let nmoves, stage, total;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
@@ -467,7 +467,7 @@ function go_init() {
 }
 
 function chess_row(letters, colour) {
-    let ch, i, arr;
+    let i, arr, ch;
     arr = [];
     i = 0;
     while ((i < 8)) {
@@ -496,23 +496,35 @@ function chess_fresh_board() {
     return out;
 }
 
-function chess_glyph(kind) {
-    if ((kind === "K")) {
-        return "♚";
+function chess_piece_svg(kind, x, y, side) {
+    let fillc, strokec, out;
+    fillc = "#fffaf0";
+    strokec = "#25313f";
+    if ((side === "b")) {
+        fillc = "#111821";
+        strokec = "#eef2f7";
     }
-    if ((kind === "Q")) {
-        return "♛";
+    out = (((((((((((((("<g class=\"sc-piece sc-piece--" + String(side)) + "\" data-side=\"") + String(side)) + "\" data-kind=\"") + String(kind)) + "\" transform=\"translate(") + String(x)) + " ") + String(y)) + ")\" fill=\"") + String(fillc)) + "\" stroke=\"") + String(strokec)) + "\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#pieceShadow)\">");
+    if ((kind === "P")) {
+        out = (out + "<circle cx=\"28\" cy=\"16\" r=\"7.4\"/><path d=\"M19 38c1.3-7.8 4.2-12.4 9-14.3 4.8 1.9 7.7 6.5 9 14.3z\"/><path d=\"M16 43h24l-2.2-5H18.2z\"/>");
     }
     if ((kind === "R")) {
-        return "♜";
-    }
-    if ((kind === "B")) {
-        return "♝";
+        out = (out + "<path d=\"M16 11h7v6h5v-6h5v6h7v-6h3v13l-5 4 2.4 13H15.6L18 28l-5-4V11z\"/><path d=\"M15 41h26v5H15z\"/>");
     }
     if ((kind === "N")) {
-        return "♞";
+        out = (out + (("<path d=\"M16 43h25v3H14z\"/><path d=\"M19 39c0-8.5 2.8-15.1 8.5-20l-2.2-7 12.2 5.2c4.8 5.5 5.8 12.1 2.8 19.8l-5.8-6.2-7.4 2.4-3.1 5.8z\"/><circle cx=\"35.5\" cy=\"22.5\" r=\"1.5\" fill=\"" + String(strokec)) + "\" stroke=\"none\"/>"));
     }
-    return "♟";
+    if ((kind === "B")) {
+        out = (out + "<path d=\"M28 9c6.5 5.2 9.5 10.2 9 15 0 4.8-2.7 8.5-8 11h-2c-5.3-2.5-8-6.2-8-11-.5-4.8 2.5-9.8 9-15z\"/><path d=\"M17 42h22l-4.5-8h-13z\"/><path d=\"M14 46h28l-3-4H17z\"/><path d=\"M31.8 15.5l-8 10\" fill=\"none\" stroke-width=\"2.2\"/>");
+    }
+    if ((kind === "Q")) {
+        out = (out + "<circle cx=\"15\" cy=\"14\" r=\"3\"/><circle cx=\"28\" cy=\"9\" r=\"3\"/><circle cx=\"41\" cy=\"14\" r=\"3\"/><path d=\"M15 17l6.2 17h13.6L41 17l-8 9-5-13-5 13z\"/><path d=\"M18 39h20l-3.2-5H21.2z\"/><path d=\"M15 45h26l-3-6H18z\"/>");
+    }
+    if ((kind === "K")) {
+        out = (out + "<path d=\"M28 7v13M22 13h12\" fill=\"none\" stroke-width=\"3\"/><path d=\"M20 39c1.2-7.2 3.7-12.8 8-16.8 4.3 4 6.8 9.6 8 16.8z\"/><path d=\"M16 45h24l-3-6H19z\"/>");
+    }
+    out = (out + "</g>");
+    return out;
 }
 
 function chess_file(ch) {
@@ -520,7 +532,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let board, tf, tr, piece, ff, caprow, side, target, filediff, diff, fr, torow, kind, fromrow, moves, uci, rook, negtwo, promo, k;
+    let target, filediff, promo, tf, fr, kind, piece, ff, diff, rook, negtwo, side, caprow, torow, uci, moves, board, fromrow, k, tr;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -589,7 +601,7 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let nextturn, dim, cells, strokec, yrow, ry, g, htr, sqidx, hlfrom, fx, px, hfr, pad, pyrow, turn, x, cell, y, lastn, flabel, dims, fillc, board, r, parity, svg, hff, piece, rlabel, kind, stage, current, ishl, f, row, played, py, hlto, htf, fy, i, uci, signal;
+    let fx, pad, current, hlto, nextturn, hfr, htr, htf, x, dims, svg, r, y, sqidx, flabel, kind, ishl, piecex, pyrow, fy, stage, hlfrom, board, piece, yrow, dim, lastn, cells, piecey, uci, ry, rlabel, row, hff, turn, i, signal, played, parity, f, fillc, cell;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
@@ -658,17 +670,10 @@ function chess_render(n) {
             piece = row[f];
             if (piece) {
                 kind = piece.charAt(1);
-                g = chess_glyph(kind);
-                px = String(((pad + (f * cell)) + (cell / 2)));
+                piecex = String((pad + (f * cell)));
                 pyrow = (7 - r);
-                py = String((((pad + (pyrow * cell)) + (cell / 2)) + 2));
-                fillc = "#fffaf0";
-                strokec = "#25313f";
-                if ((piece.charAt(0) === "b")) {
-                    fillc = "#111821";
-                    strokec = "#e8edf3";
-                }
-                svg = (svg + (((((((((("<text x=\"" + String(px)) + "\" y=\"") + String(py)) + "\" font-size=\"42\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"") + String(fillc)) + "\" stroke=\"") + String(strokec)) + "\" stroke-width=\"1.05\" paint-order=\"stroke\" filter=\"url(#pieceShadow)\" style=\"font-family:'Segoe UI Symbol','Noto Sans Symbols 2',system-ui\">") + String(g)) + "</text>"));
+                piecey = String((pad + (pyrow * cell)));
+                svg = (svg + chess_piece_svg(kind, piecex, piecey, piece.charAt(0)));
             }
             f = (f + 1);
         }
@@ -712,7 +717,7 @@ function chess_render(n) {
 }
 
 function chess_init() {
-    let stage, d, sidename, elostr, total, caption, plies;
+    let plies, caption, total, stage, d, sidename, elostr;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -732,7 +737,7 @@ function chess_init() {
 }
 
 function protein_render(step) {
-    let proj, depth, n, sxn, nx, degrees, pr, miny, minz, colour, pnode, ny, current, spy, b, p, sx, syn, signal, maxz, scale, z, span, turn, pair, y, svg, maxy, i, ax, cosa, sina, py, ca, maxx, sp, minx, x, pz, a, ratio, ay, bx, screen, sy, by, sw, stage, isnode, px, ang;
+    let pnode, degrees, ax, px, ay, span, syn, maxx, sx, sy, screen, b, sw, y, nx, turn, ca, spy, n, current, maxz, depth, signal, scale, cosa, x, pr, minz, p, sina, ang, i, py, pair, z, a, ratio, proj, miny, bx, pz, by, ny, stage, sp, maxy, sxn, svg, colour, minx, isnode;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -865,7 +870,7 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let stage, play, src, n;
+    let stage, n, src, play;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
@@ -901,7 +906,7 @@ function boot_append(line) {
 }
 
 function boot_finish() {
-    let shell, prompt, state;
+    let shell, state, prompt;
     shell = document.getElementById("ern-shell");
     if (shell) {
         shell.classList.add("is-ready");
@@ -920,7 +925,7 @@ function boot_finish() {
 }
 
 function boot_step() {
-    let term, line;
+    let line, term;
     term = document.getElementById("sc-term");
     if (!term) {
         return 0;
@@ -999,7 +1004,7 @@ function boot_answer(command) {
 }
 
 function boot_run(ev) {
-    let command, input;
+    let input, command;
     if (ev) {
         ev.preventDefault();
     }
@@ -1020,7 +1025,7 @@ function boot_run(ev) {
 }
 
 function boot_quick(ev) {
-    let command, input;
+    let input, command;
     command = ev.currentTarget.getAttribute("data-command");
     input = document.getElementById("ern-command");
     if (input) {
@@ -1100,7 +1105,7 @@ function sc_data_fail(err) {
 }
 
 function lab_go_group(start) {
-    let ns, i, value, colour, stack, out, board, row, col, cur, seen;
+    let value, seen, i, out, cur, col, stack, board, row, ns, colour;
     board = window.labGoBoard;
     colour = board[start];
     out = JSON.parse("{\"group\":[],\"libs\":[]}");
@@ -1176,7 +1181,7 @@ function lab_go_preset(ev) {
 }
 
 function lab_go_render() {
-    let host, found, html, points, label, cls, colour, i, v;
+    let html, colour, i, label, found, host, v, points, cls;
     host = document.getElementById("go-lab");
     if (!host) {
         return 0;
@@ -1228,7 +1233,7 @@ function lab_go_init() {
 }
 
 function lab_chess_moves(square, piece) {
-    let jumps, r, cc, moves, c, rr, dirs;
+    let moves, jumps, dirs, c, rr, cc, r;
     moves = [];
     r = Math.floor((square / 8));
     c = (square % 8);
@@ -1286,7 +1291,7 @@ function lab_chess_piece(ev) {
 }
 
 function lab_chess_render() {
-    let rr, picks, moves, title, i, squares, content, cc, pieces, active, cls, html, glyph, host;
+    let glyph, rr, active, host, title, cc, pieces, picks, i, content, squares, moves, cls, html;
     host = document.getElementById("chess-lab");
     moves = lab_chess_moves(window.labChessSquare, window.labChessPiece);
     glyph = "♘";
@@ -1350,7 +1355,7 @@ function lab_chess_init() {
 }
 
 function lab_protein_distance(a, b) {
-    let dx, dy, dz;
+    let dz, dx, dy;
     dx = (a[0] - b[0]);
     dy = (a[1] - b[1]);
     dz = (a[2] - b[2]);
@@ -1358,7 +1363,7 @@ function lab_protein_distance(a, b) {
 }
 
 function lab_protein_render() {
-    let ctx, n, cell, dist, stat, nearest, j, copy, i, coords, contacts, focus, canvas;
+    let canvas, focus, n, cell, nearest, dist, stat, copy, contacts, coords, j, ctx, i;
     coords = window.labProteinCoords;
     focus = window.labProteinFocus;
     canvas = document.getElementById("protein-map");
@@ -1448,7 +1453,7 @@ function lab_unison_clean(text) {
 }
 
 function lab_unison_run(ev) {
-    let raw, total, old, counts, i, html, words, options, pos, best, count, pct, text, next, result, held;
+    let pct, html, text, words, count, best, pos, total, counts, next, raw, held, old, i, result, options;
     text = document.getElementById("unison-corpus").value;
     held = document.getElementById("unison-held").value.toLowerCase();
     raw = lab_unison_clean(text);
@@ -1525,7 +1530,7 @@ function project_labs_init() {
 }
 
 function main() {
-    let stage, page, repo, file, dl, doc, gh;
+    let page, dl, repo, gh, doc, stage, file;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;
