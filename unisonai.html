@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=9b91129d">
+  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,61 +80,116 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" data-repo="UnisonAI">
+  <div id="project-page" class="project-story project-story--unison" data-repo="UnisonAI">
 
-  <header class="section" style="padding-bottom:8px">
-    <div class="wrap" style="max-width:960px">
+  <header class="section project-hero">
+    <div class="wrap">
       <p class="eyebrow reveal">AI, derived not trained</p>
       <h1 class="reveal">UnisonAI</h1>
-      <p class="lead reveal mt-s">An AI architecture that is <strong style="color:var(--ink-0)">not designed but forced</strong> — derived from the fold's own laws, with zero parameters and zero gradient steps. Knowledge is stored as exact held orbits (the tablebase pattern applied to text); attention is unit-capacity selection. Reading its training text once, in 26 seconds, it beat its trained transformer twin on held-out text — 1.289 vs 1.888, the widest margin of the campaign.</p>
+      <p class="lead reveal mt-s">An investigation into whether memory, binding, attention, context, generation, perception, learning, and agency can be <strong style="color:var(--ink-0)">derived rather than trained</strong>. Its native mechanisms carry zero trained parameters: knowledge is held in exact orbits, prediction uses rational shares, and every promoted component records where its authority comes from.</p>
       <div class="ai-card__actions" style="margin-top:20px">
         <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
         <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+      <div class="project-metrics reveal" aria-label="UnisonAI verification surface">
+        <div class="project-metric"><strong>2,002</strong><span>checks across the main proof corpus</span></div>
+        <div class="project-metric"><strong>326 / 326</strong><span>proof suites with source-certificate identity</span></div>
+        <div class="project-metric"><strong>21 / 21</strong><span>current standalone omni verifier</span></div>
+        <div class="project-metric"><strong>0</strong><span>trained parameters in native mechanisms</span></div>
+      </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:6px;padding-bottom:0">
-    <div class="wrap" style="max-width:960px">
-      <div class="uni-pipe">
-        <div class="uni-stage"><span class="uni-num">1</span>Text in</div>
-        <div class="uni-arrow">→</div>
-        <div class="uni-stage"><span class="uni-num">2</span>Fold to exact orbits</div>
-        <div class="uni-arrow">→</div>
-        <div class="uni-stage"><span class="uni-num">3</span>Held as a tablebase</div>
-        <div class="uni-arrow">→</div>
-        <div class="uni-stage"><span class="uni-num">4</span>Unit-capacity selection</div>
-        <div class="uni-arrow">→</div>
-        <div class="uni-stage uni-stage--out"><span class="uni-num">5</span>Next token</div>
+  <section class="section project-demo-section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">The architecture</p>
+        <h2>An intelligence organised around exact held memory</h2>
+        <p class="lead">Unison is not a small transformer with its weights removed. It is a different computational anatomy: exact memory at the centre, with selection, context, perception, and action built as auditable organs around it.</p>
+      </div>
+      <div class="unison-architecture reveal" aria-label="UnisonAI architecture">
+        <article class="unison-organ"><h3>Memory</h3><p>Exact held orbits, counted kinship, pair retrieval, and persistent sessions.</p></article>
+        <div class="unison-core"><div><strong>Held-orbit core</strong><span>exact memory · rational shares</span></div></div>
+        <article class="unison-organ"><h3>Selection</h3><p>Unit-capacity choice and generation locks instead of learned attention weights.</p></article>
+        <article class="unison-organ"><h3>Context</h3><p>Deep-context integration, binding, and non-verbatim re-expression guards.</p></article>
+        <article class="unison-organ"><h3>Senses + action</h3><p>Integer-Walsh sight and hearing, voice, tools, observer, and diagnostic organs.</p></article>
       </div>
     </div>
   </section>
-  <section class="section" style="padding-top:14px">
-    <div class="wrap" style="max-width:960px">
+
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">A generated token has a provenance trail</p>
+        <h2>From input to choice without a gradient step</h2>
+      </div>
+      <div class="project-process reveal" aria-label="UnisonAI generation path">
+        <div><span>Fold</span><strong>Turn input into exact relational orbits</strong></div>
+        <div><span>Hold</span><strong>Store them as an inspectable tablebase</strong></div>
+        <div><span>Integrate</span><strong>Bind memory and context with rational shares</strong></div>
+        <div><span>Select</span><strong>Choose under unit capacity and generation locks</strong></div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="wrap" style="max-width:900px">
-      <p class="lead" style="margin-bottom:0">Then the same pre-registered instrument was pointed at <em>trained</em> neural networks — and found the fold's placement-law sitting inside their weights: unanimously (18 of 18 validated released models), causally (untrained controls sit at exactly chance), and located in specific projections, reaching 230× chance in GPT-2's token embedding and surviving 4-bit quantization in a production Llama-3.1-8B. The proposition: much of what is currently purchased with parameters, data and compute is <strong style="color:var(--ink-0)">law — and law can be derived.</strong></p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Authority is part of the data</p>
+        <h2>Every component says why it is allowed to exist</h2>
+        <p class="lead">The architecture carries its derivation route inside the implementation. Every promoted component records how it follows, extends, or constitutionally rebuilds the law.</p>
+      </div>
+      <div class="project-ledger reveal">
+        <div class="project-ledger__head"><span>Provenance</span><span>What it means</span><span>Authority</span></div>
+        <div><span>Forced</span><strong>Directly follows from the self-proven theorem</strong><em>highest</em></div>
+        <div><span>Forward-forced</span><strong>Closes a required computational operation</strong><em>derived</em></div>
+        <div><span>Re-derived</span><strong>Established mathematics rebuilt constitutionally</strong><em>audited</em></div>
+        <div><span>Expansion</span><strong>New implementation driven through the same law</strong><em>advancing</em></div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Read the work</p>
-      <h2>Papers behind it</h2>
-      <p class="lead"><a href="papers.html">UnisonAI: a Forced, Derived Omni-Model Architecture</a> (DOI 10.5281/zenodo.21217279), <a href="papers.html">the Forced Language Architecture</a>, and <a href="papers.html">the Fold Decode Campaign</a> on the law inside trained weights.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Verification surface</p>
+        <h2>Not one headline score—a stack of named checks</h2>
+      </div>
+      <div class="project-proof-grid reveal">
+        <div class="project-proof"><strong>8 / 8</strong><span>Step 322 coherence checks</span></div>
+        <div class="project-proof"><strong>14 / 14</strong><span>Step 323 contextual integration checks</span></div>
+        <div class="project-proof"><strong>13 / 13</strong><span>Step 324 generation-selection checks</span></div>
+        <div class="project-proof"><strong>Parseval</strong><span>per-act integer-Walsh sight and hearing checks</span></div>
+        <div class="project-proof"><strong>Exact shares</strong><span>held memory and rational prediction primitives</span></div>
+        <div class="project-proof"><strong>Halt on mismatch</strong><span>diagnostics stop rather than laundering a failure</span></div>
+      </div>
+      <div class="project-split mt-l">
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Finding</span>
+          <h3>The fold inside trained weights</h3>
+          <p>A registered decode instrument was also pointed at released neural networks, locating the placement law in specific projections and preserving its matched controls, ablations, and receipts.</p>
+        </article>
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Expansion</span>
+          <h3>Free generation is accelerating</h3>
+          <p>The current campaign forward-forces a stronger generative surface, derives steering quantities from the law, and expands independent judged evaluation with every receipt preserved.</p>
+        </article>
+      </div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Straight from the source</p>
-      <h2>The README</h2>
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+
+  <section class="section project-evidence-section">
+    <div class="wrap">
+      <div class="project-callout reveal">
+        <div><p class="eyebrow">Reproduce it</p><h2>Run the omni verifier</h2></div>
+        <pre><code>python3 omni/benchmarks/verify_omni.py</code></pre>
+      </div>
+      <div class="project-reading reveal">
+        <div><p class="eyebrow">Read the work</p><h2>Architecture and interpretability</h2></div>
+        <p><a href="papers.html">UnisonAI: a Forced, Derived Omni-Model Architecture</a> describes the system; the Fold Decode paper records the separate campaign examining the law inside trained weights.</p>
+      </div>
+      <a class="project-doc-link reveal" href="https://github.com/MettaMazza/UnisonAI#readme" target="_blank" rel="noopener"><span><small>Source documentation</small>Read the repository guide on GitHub</span><b>↗</b></a>
     </div>
   </section>
 

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=9b91129d">
+  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,10 +80,10 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" data-repo="Fold-Protein">
+  <div id="project-page" class="project-story project-story--protein" data-repo="Fold-Protein">
 
-  <header class="section" style="padding-bottom:8px">
-    <div class="wrap" style="max-width:960px">
+  <header class="section project-hero">
+    <div class="wrap">
       <p class="eyebrow reveal">Zero-parameter engine</p>
       <h1 class="reveal">Fold-Protein</h1>
       <p class="lead reveal mt-s">Protein folding without statistical guesswork — <strong style="color:var(--ink-0)">folding as descent to the fold's fixed point</strong>. Levinthal's paradox, the puzzle of how a chain finds its structure among astronomically many possibilities, dissolves: the structure is the fixed point, and the fold walks straight to it. Ubiquitin recovers to a 0.9891 TM-score.</p>
@@ -92,37 +92,103 @@
         <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+      <div class="project-metrics reveal" aria-label="Fold-Protein headline results">
+        <div class="project-metric"><strong>0.989121</strong><span>repository TM-score for ubiquitin</span></div>
+        <div class="project-metric"><strong>0.260858 Å</strong><span>Cα distance-matrix RMSD</span></div>
+        <div class="project-metric"><strong>76</strong><span>residues in the replayed witness</span></div>
+        <div class="project-metric"><strong>0</strong><span>trained weights or gradient steps</span></div>
+      </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:14px">
-    <div class="wrap" style="max-width:960px">
+  <section class="section project-demo-section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">The constructed witness</p>
+        <h2>Read the backbone in three dimensions</h2>
+        <p class="lead">The rotating trace is the committed 76-residue Cα witness. It lets you inspect the geometry that the release replay scores against experimental ubiquitin.</p>
+      </div>
       <div id="showcase-stage" class="showcase-stage" data-kind="protein" data-file="fold-protein-ca.json">
         <p class="loading">Loading the interactive replay…</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="wrap" style="max-width:900px">
-      <p class="lead" style="margin-bottom:0">The genetic code itself falls out of the same count. The backbone above is the real folded ubiquitin (76 residues) produced by the engine — the α-carbon trace, rotating so you can read its shape. No trained network, no force-field fitting: the same parameter-free machinery behind the chess and Go engines, pointed at biology.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Proof by construction</p>
+        <h2>From experimental target to byte-exact witness</h2>
+        <p class="lead">This release constructs the ubiquitin backbone on the theorem-forced 24×24 dihedral lattice at near-experimental resolution. The native coordinates forward-force the successful state path, and the same theory now drives the advance into blind sequence-to-structure selection.</p>
+      </div>
+      <div class="project-process reveal" aria-label="Fold-Protein proof path">
+        <div><span>Target</span><strong>Take the experimental 1UBQ Cα coordinates</strong></div>
+        <div><span>Lattice</span><strong>Map construction onto 24×24 dihedral states</strong></div>
+        <div><span>Witness</span><strong>Commit all 76 states and source hashes</strong></div>
+        <div><span>Replay</span><strong>Rebuild the PDB and score it independently</strong></div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Read the work</p>
-      <h2>Papers behind it</h2>
-      <p class="lead"><a href="papers.html">Levinthal&rsquo;s Paradox Dissolved</a> and <a href="papers.html">Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding</a> give the method and the results.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">What the score means</p>
+        <h2>Super Parity, with its evidence visible</h2>
+      </div>
+      <div class="project-split">
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Construction</span>
+          <h3>The native fold is contained</h3>
+          <p>The 24-lattice construction reaches the experimental backbone with a TM-score of 0.9891211351 and 0.2608575408 Å distance-matrix RMSD.</p>
+          <ul class="project-checklist">
+            <li>Committed state path and witness PDB</li>
+            <li>Exact source hashes and release manifest</li>
+            <li>Independent byte-exact replay</li>
+          </ul>
+        </article>
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Expansion</span>
+          <h3>Blind selection from sequence</h3>
+          <p>The lattice and forcing machinery now advance into selecting the complete structure directly from sequence, carrying the same zero-parameter law into blind runs.</p>
+          <ul class="project-checklist">
+            <li>Zero trained networks or gradient fitting</li>
+            <li>Named, replayable blind-run protocols</li>
+            <li>Every advance committed as a new evidence surface</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Straight from the source</p>
-      <h2>The README</h2>
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Evidence package</p>
+        <h2>Every number points to a file</h2>
+      </div>
+      <div class="project-proof-grid reveal">
+        <div class="project-proof"><strong>manifest.json</strong><span>sequence, lattice states, hashes, and metrics</span></div>
+        <div class="project-proof"><strong>replay.py</strong><span>independent release reconstruction and score check</span></div>
+        <div class="project-proof"><strong>witness.pdb</strong><span>the constructed three-dimensional backbone</span></div>
+        <div class="project-proof"><strong>1ubq.pdb</strong><span>the experimental development target</span></div>
+        <div class="project-proof"><strong>NeRF builder</strong><span>committed backbone construction code</span></div>
+        <div class="project-proof"><strong>TM scorer</strong><span>repository scoring implementation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-evidence-section">
+    <div class="wrap">
+      <div class="project-callout reveal">
+        <div><p class="eyebrow">Reproduce it</p><h2>Replay the witness</h2></div>
+        <pre><code>python3 verify/replay_ubiquitin_24_lattice.py</code></pre>
+      </div>
+      <div class="project-reading reveal">
+        <div><p class="eyebrow">Read the work</p><h2>The method and the result</h2></div>
+        <p><a href="papers.html">Super Parity</a> documents the 0.9891 construction, while <a href="papers.html">Levinthal&rsquo;s Paradox Dissolved</a> develops the parameter-free folding argument and its connection to the genetic code.</p>
+      </div>
+      <a class="project-doc-link reveal" href="https://github.com/MettaMazza/Fold-Protein#readme" target="_blank" rel="noopener"><span><small>Source documentation</small>Read the repository guide on GitHub</span><b>↗</b></a>
     </div>
   </section>
 

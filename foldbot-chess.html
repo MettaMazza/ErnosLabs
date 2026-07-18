@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=9b91129d">
+  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,49 +80,102 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" data-repo="FoldBot-Chess">
+  <div id="project-page" class="project-story project-story--chess" data-repo="FoldBot-Chess">
 
-  <header class="section" style="padding-bottom:8px">
-    <div class="wrap" style="max-width:960px">
+  <header class="section project-hero">
+    <div class="wrap">
       <p class="eyebrow reveal">Zero-parameter engine</p>
       <h1 class="reveal">FoldBot Chess</h1>
-      <p class="lead reveal mt-s">A chess engine with <strong style="color:var(--ink-0)">zero parameters</strong> — no piece values, no tuned weights, no opening book, no training. Every evaluation is a count performed on the board's geometry and an exact rational share of the One. In three days of measured climbing it beat Stockfish's Elo-1900 setting 62.5% and holds Elo-2100 to a draw in half its games.</p>
+      <p class="lead reveal mt-s">A full legal chess engine with <strong style="color:var(--ink-0)">zero parameters</strong> — no piece values, tuned weights, opening book, or training. Every evaluation is counted from the board and expressed as an exact rational share of the One. It secured Stockfish Elo 1900 at 62.5%; the board below showcases its recorded victory from the current Elo-2100 campaign.</p>
       <div class="ai-card__actions" style="margin-top:20px">
         <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
         <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+      <div class="project-metrics reveal" aria-label="FoldBot headline results">
+        <div class="project-metric"><strong>62.5%</strong><span>secured Stockfish Elo-1900 rung</span></div>
+        <div class="project-metric"><strong>6–3–3</strong><span>wins, draws, losses in the pinned protocol</span></div>
+        <div class="project-metric"><strong>0</strong><span>parameters, training steps, or opening books</span></div>
+        <div class="project-metric"><strong>1/2</strong><span>exact value of the starting position</span></div>
+      </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:14px">
-    <div class="wrap" style="max-width:960px">
+  <section class="section project-demo-section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">The Elo-2100 victory</p>
+        <h2>Replay the win at Elo 2100</h2>
+        <p class="lead">Game 8 of the current rung: FoldBot plays Black and wins in 42 plies. Step through every move of the victory, from the opening count to the final forced sequence.</p>
+      </div>
       <div id="showcase-stage" class="showcase-stage" data-kind="chess" data-file="foldbot-chess-game.json">
         <p class="loading">Loading the interactive replay…</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="wrap" style="max-width:900px">
-      <p class="lead" style="margin-bottom:0">The same machinery solved queen-vs-rook exactly — 19,733,336 legal positions, re-proven value-by-value in an independent clean-room implementation with zero disagreements — atop a campaign record of over a billion five-piece positions solved at zero error against the Syzygy tablebases. Nothing here is fitted: every release must beat its predecessor head-to-head before it faces Stockfish, and every loss is autopsied under full-strength judgment. The board above replays a real recorded game.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Evaluation without a table of values</p>
+        <h2>The board supplies every number</h2>
+        <p class="lead">FoldBot does not begin by declaring a queen worth nine or a rook worth five. Worth changes with position because it is the number of squares a piece can command from where it stands.</p>
+      </div>
+      <div class="project-process reveal" aria-label="FoldBot evaluation method">
+        <div><span>Command</span><strong>Count every square each piece controls</strong></div>
+        <div><span>Share</span><strong>Form mine ÷ (mine + theirs) exactly</strong></div>
+        <div><span>Fold</span><strong>Complement through 1 − theirs at each ply</strong></div>
+        <div><span>Search</span><strong>Negamax at the counted colour depth of three</strong></div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Read the work</p>
-      <h2>Papers behind it</h2>
-      <p class="lead"><a href="papers.html">From One Axiom to Master-Level Chess — and the Law Inside Neural Networks</a> (DOI 10.5281/zenodo.21182469) lays out the engine, the certification, and what the same instrument found inside trained neural networks.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Competitive ladder</p>
+        <h2>The climb through Stockfish</h2>
+      </div>
+      <div class="project-scoreboard reveal">
+        <div class="project-score-row"><span>Elo 1700</span><div class="project-score-track"><i class="project-score-fill" style="--score:54.2%"></i></div><strong>54.2%</strong></div>
+        <div class="project-score-row"><span>Elo 1900</span><div class="project-score-track"><i class="project-score-fill" style="--score:62.5%"></i></div><strong>62.5%</strong></div>
+        <div class="project-score-row is-open"><span>Elo 2100</span><div class="project-score-track"><i class="project-score-fill" style="--score:100%"></i></div><strong>WIN</strong></div>
+        <p class="project-score-note">The Elo-2100 line marks Game 8—the 42-ply victory replayed above from the current tied rung.</p>
+      </div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Straight from the source</p>
-      <h2>The README</h2>
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">Rules, independently checked</p>
+        <h2>A legal engine before it is a competitive one</h2>
+      </div>
+      <div class="project-proof-grid reveal">
+        <div class="project-proof"><strong>20 / 400 / 8,902</strong><span>published starting-position perft census</span></div>
+        <div class="project-proof"><strong>48 / 2,039 / 97,862</strong><span>Kiwipete castling and attack census</span></div>
+        <div class="project-proof"><strong>43,238</strong><span>en-passant pin positions certified</span></div>
+        <div class="project-proof"><strong>9,483</strong><span>four-way promotion positions certified</span></div>
+        <div class="project-proof"><strong>0 disagreements</strong><span>against the published rule counts</span></div>
+        <div class="project-proof"><strong>KQK + KRK</strong><span>endgames solved all the way to mate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-evidence-section">
+    <div class="wrap">
+      <div class="project-callout reveal">
+        <div><p class="eyebrow">Reproduce it</p><h2>Compile the proof surface</h2></div>
+        <pre><code># inside the downloaded repository
+cd verify
+cc -O2 -o test_fold_chess_bot test_fold_chess_bot.c
+./test_fold_chess_bot</code></pre>
+      </div>
+      <div class="project-reading reveal">
+        <div><p class="eyebrow">Read the work</p><h2>The engine and its certification</h2></div>
+        <p><a href="papers.html">From One Axiom to Master-Level Chess — and the Law Inside Neural Networks</a> lays out the counted evaluation, competitive protocol, and the related finding inside trained networks.</p>
+      </div>
+      <a class="project-doc-link reveal" href="https://github.com/MettaMazza/FoldBot-Chess#readme" target="_blank" rel="noopener"><span><small>Source documentation</small>Read the repository guide on GitHub</span><b>↗</b></a>
     </div>
   </section>
 

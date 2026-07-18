@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=9b91129d">
+  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,10 +80,10 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" data-repo="Fold-Go">
+  <div id="project-page" class="project-story project-story--go" data-repo="Fold-Go">
 
-  <header class="section" style="padding-bottom:8px">
-    <div class="wrap" style="max-width:960px">
+  <header class="section project-hero">
+    <div class="wrap">
       <p class="eyebrow reveal">Zero-parameter engine</p>
       <h1 class="reveal">Fold-Go</h1>
       <p class="lead reveal mt-s">A Go engine that <strong style="color:var(--ink-0)">swept KataGo 2–0 at 19×19</strong> using three purely mathematical theorems — <strong style="color:var(--ink-0)">0 learned weights, 0 predefined patterns, 0 random playouts</strong>. Where DeepMind's architecture had to statistically approximate opening moves through millions of games, the fold engine derives them from first-principles Euclidean geometry on move one.</p>
@@ -92,37 +92,96 @@
         <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+      <div class="project-metrics reveal" aria-label="Fold-Go headline results">
+        <div class="project-metric"><strong>24,318,165</strong><span>legal 4×4 positions exhaustively counted</span></div>
+        <div class="project-metric"><strong>17,038,501</strong><span>nodes in the fresh exact 2×2 proof</span></div>
+        <div class="project-metric"><strong>2–0</strong><span>the showcased 19×19 match receipt</span></div>
+        <div class="project-metric"><strong>0</strong><span>trained weights or random playouts</span></div>
+      </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:14px">
-    <div class="wrap" style="max-width:960px">
+  <section class="section project-demo-section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">The match record</p>
+        <h2>Replay the 19×19 showcase</h2>
+        <p class="lead">Inspect the preserved game move by move. The competitive record is shown as its own artifact, distinct from the exhaustive small-board certification surface.</p>
+      </div>
       <div id="showcase-stage" class="showcase-stage" data-kind="go" data-file="fold-go-game.json">
         <p class="loading">Loading the interactive replay…</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="wrap" style="max-width:900px">
-      <p class="lead" style="margin-bottom:0">Go stood for decades as the grand challenge of AI: a state space of 10<sup>170</sup> and ~250 legal moves a turn made classical search intractable, and the modern answer — AlphaGo, then KataGo — leaned entirely on vast statistical approximation. The fold engine evaluates positions by an exact D₄ dihedral reduction of the board's coordinate space. The goban above replays the recorded match, move for move.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">One project, two surfaces</p>
+        <h2>Proof and competition answer different questions</h2>
+      </div>
+      <div class="project-split">
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Exact</span>
+          <h3>Certification engine</h3>
+          <p>Legality is rebuilt as counted connectivity. Finite boards are exhaustively enumerated and solved, with a separate Python referee checking the census.</p>
+          <ul class="project-checklist">
+            <li>1×1 through 4×4 legal-position censuses</li>
+            <li>Fresh values: 1×1 = 0, 1×2 = 0, 2×2 = +1</li>
+            <li>Zero disagreements from the independent referee</li>
+          </ul>
+        </article>
+        <article class="project-feature reveal">
+          <span class="project-feature__mark">Competitive</span>
+          <h3>Forward-forcing engine</h3>
+          <p>The full-board engine carries the counted law into competitive play. Its recorded victories are preserved as complete, replayable showcase artifacts.</p>
+          <ul class="project-checklist">
+            <li>Two 9×9 batches ended 2–0 against GNU Go</li>
+            <li>Historical 19×19 2–0 result preserved move for move</li>
+            <li>Full match logs, scores, and protocol receipts on disk</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Read the work</p>
-      <h2>Papers behind it</h2>
-      <p class="lead"><a href="papers.html">Defeating Deep Learning: a Zero-Parameter Geometric Engine Sweeps KataGo 2–0</a> and the companion <a href="papers.html">Symmetric Go</a> paper give the theorems and the full match record.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>Replace pattern recall with countable structure</h2>
+      </div>
+      <div class="project-process reveal" aria-label="Fold-Go method">
+        <div><span>Connectivity</span><strong>Count chains, liberties, and legal captures</strong></div>
+        <div><span>Symmetry</span><strong>Reduce equivalent positions through D₄ geometry</strong></div>
+        <div><span>Value</span><strong>Solve finite boards with exact game values</strong></div>
+        <div><span>Audit</span><strong>Replay moves and preserve protocol receipts</strong></div>
+      </div>
+      <div class="project-ledger reveal">
+        <div class="project-ledger__head"><span>Board</span><span>Certified legal positions</span><span>Status</span></div>
+        <div><span>1×1</span><strong>1</strong><em>exhaustive</em></div>
+        <div><span>2×2</span><strong>57</strong><em>exhaustive</em></div>
+        <div><span>3×3</span><strong>12,675</strong><em>exhaustive</em></div>
+        <div><span>4×4</span><strong>24,318,165</strong><em>exhaustive</em></div>
+      </div>
     </div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Straight from the source</p>
-      <h2>The README</h2>
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+
+  <section class="section project-evidence-section">
+    <div class="wrap">
+      <div class="project-callout reveal">
+        <div><p class="eyebrow">Reproduce it</p><h2>Run the exact census</h2></div>
+        <pre><code>cd tests
+ernos fold_go_census.ep
+./fold_go_census
+cd ..
+python3 tools/go_census_referee.py</code></pre>
+      </div>
+      <div class="project-reading reveal">
+        <div><p class="eyebrow">Read the work</p><h2>Method, match record, and caveats</h2></div>
+        <p><a href="papers.html">Symmetric Go</a> gives the counted-legality and solving surface; the companion Fold-Go paper documents the competitive engine and its full match record.</p>
+      </div>
+      <a class="project-doc-link reveal" href="https://github.com/MettaMazza/Fold-Go#readme" target="_blank" rel="noopener"><span><small>Source documentation</small>Read the repository guide on GitHub</span><b>↗</b></a>
     </div>
   </section>
 
