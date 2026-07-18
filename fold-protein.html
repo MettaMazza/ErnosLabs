@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
+  <link rel="stylesheet" href="assets/css/site.css?v=6f357acf">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,7 +80,7 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" class="project-story project-story--protein" data-repo="Fold-Protein">
+  <div id="project-page" class="project-story project-story--protein project-story--labbed" data-repo="Fold-Protein">
 
   <header class="section project-hero">
     <div class="wrap">
@@ -101,7 +101,19 @@
     </div>
   </header>
 
-  <section class="section project-demo-section">
+  <section class="section project-lab-section">
+    <div class="wrap">
+      <div class="project-lab-shell reveal">
+        <div class="project-lab-head">
+          <div><p class="eyebrow">Residue contact explorer</p><h2>Move through the folded witness</h2></div>
+          <p>Scrub across all 76 Cα coordinates. The map lights every non-neighbour residue within 8 Å of the selected point, exposing the packed geometry behind the score.</p>
+        </div>
+        <div id="protein-lab" class="project-lab" aria-label="Interactive protein residue contact map"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-demo-section project-replay-keep">
     <div class="wrap">
       <div class="project-section-head reveal">
         <p class="eyebrow">The constructed witness</p>
@@ -210,6 +222,6 @@
   <script src="assets/js/spa.js?v=395284ab"></script>
   <script src="assets/js/kokoro-tts.js?v=6171695b"></script>
   <script src="assets/js/site.js?v=99f14e98"></script>
-  <script src="assets/js/showcase.js?v=b04a86b7"></script>
+  <script src="assets/js/showcase.js?v=363dcf8d"></script>
 </body>
 </html>

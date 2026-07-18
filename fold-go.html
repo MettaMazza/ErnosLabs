@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
+  <link rel="stylesheet" href="assets/css/site.css?v=6f357acf">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,7 +80,7 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" class="project-story project-story--go" data-repo="Fold-Go">
+  <div id="project-page" class="project-story project-story--go project-story--labbed" data-repo="Fold-Go">
 
   <header class="section project-hero">
     <div class="wrap">
@@ -101,7 +101,19 @@
     </div>
   </header>
 
-  <section class="section project-demo-section">
+  <section class="section project-lab-section">
+    <div class="wrap">
+      <div class="project-lab-shell reveal">
+        <div class="project-lab-head">
+          <div><p class="eyebrow">Live counting lab</p><h2>Touch the law the engine sees</h2></div>
+          <p>Place black and white stones on a 5×5 board. The lab finds the connected chain under your last move and counts its unique liberties immediately.</p>
+        </div>
+        <div id="go-lab" class="project-lab" aria-label="Interactive Go connectivity and liberty lab"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-demo-section project-replay-keep">
     <div class="wrap">
       <div class="project-section-head reveal">
         <p class="eyebrow">The match record</p>
@@ -203,6 +215,6 @@ python3 tools/go_census_referee.py</code></pre>
   <script src="assets/js/spa.js?v=395284ab"></script>
   <script src="assets/js/kokoro-tts.js?v=6171695b"></script>
   <script src="assets/js/site.js?v=99f14e98"></script>
-  <script src="assets/js/showcase.js?v=b04a86b7"></script>
+  <script src="assets/js/showcase.js?v=363dcf8d"></script>
 </body>
 </html>

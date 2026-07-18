@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=1b107619">
+  <link rel="stylesheet" href="assets/css/site.css?v=6f357acf">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,7 +80,7 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" class="project-story project-story--chess" data-repo="FoldBot-Chess">
+  <div id="project-page" class="project-story project-story--chess project-story--labbed" data-repo="FoldBot-Chess">
 
   <header class="section project-hero">
     <div class="wrap">
@@ -101,7 +101,19 @@
     </div>
   </header>
 
-  <section class="section project-demo-section">
+  <section class="section project-lab-section">
+    <div class="wrap">
+      <div class="project-lab-shell reveal">
+        <div class="project-lab-head">
+          <div><p class="eyebrow">Command-value lab</p><h2>Worth comes from the square</h2></div>
+          <p>Choose a piece, then touch any square. Instead of looking up a fixed value, the board highlights and counts every square that piece can command from that exact position.</p>
+        </div>
+        <div id="chess-lab" class="project-lab" aria-label="Interactive chess command-value lab"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section project-demo-section project-replay-keep">
     <div class="wrap">
       <div class="project-section-head reveal">
         <p class="eyebrow">The Elo-2100 victory</p>
@@ -197,6 +209,6 @@ cc -O2 -o test_fold_chess_bot test_fold_chess_bot.c
   <script src="assets/js/spa.js?v=395284ab"></script>
   <script src="assets/js/kokoro-tts.js?v=6171695b"></script>
   <script src="assets/js/site.js?v=99f14e98"></script>
-  <script src="assets/js/showcase.js?v=b04a86b7"></script>
+  <script src="assets/js/showcase.js?v=363dcf8d"></script>
 </body>
 </html>
