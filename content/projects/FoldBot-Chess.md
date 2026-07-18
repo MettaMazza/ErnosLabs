@@ -60,7 +60,7 @@ this engine carries none.
 
 - **[From the Self-Proven Theorem to Master-Level Chess — and the Law Inside Neural Networks](https://github.com/MettaMazza/FoldBot-Chess/blob/main/papers/From_One_Axiom_To_Master_Chess_And_The_Law_Inside_Neural_Networks.md)**
 - Full match record: [`tools/MATCHES.md`](https://github.com/MettaMazza/FoldBot-Chess/blob/main/tools/MATCHES.md)
-- Release manifest: [`release/chess_release_manifest_v2.1.json`](https://github.com/MettaMazza/FoldBot-Chess/blob/main/release/chess_release_manifest_v2.1.json)
+- Release manifest: [`release/chess_release_manifest_v2.2.json`](https://github.com/MettaMazza/FoldBot-Chess/blob/main/release/chess_release_manifest_v2.2.json)
 
 ## Layout
 
