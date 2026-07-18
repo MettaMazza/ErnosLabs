@@ -642,16 +642,17 @@ And the structural laws of physics, forced the same way:
   5 draws + 1 loss vs Stockfish at its minimum exposed strength, zero illegal moves**
   ([`tools/MATCHES.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/tools/MATCHES.md)) — **the fold does not just derive; it plays**).
 
-The full, ordered, run-it-yourself derivation of all of it — every step, all 306 test
-suites (1,844 forced checks, including the trace-to-the-One and the CODATA comparison) —
+The full, ordered, run-it-yourself derivation of all of it — every step, all 326 test
+suites (2,002 forced checks, including the trace-to-the-One and the CODATA comparison) —
 is in [`OneFoldMaster.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/OneFoldMaster.md), and provable in one run with
 `make -C verify prove`.
 
 ---
 
-## The axiom is a theorem
+## The foundation is a self-proven theorem
 
-The model has zero free parameters — and zero axioms. The foundation proves itself,
+The model has zero free parameters and zero axioms. Its single foundation is the
+machine-checked, self-proven theorem **there is no nothing**. The foundation proves itself,
 and the proof is machine-checked in two parts.
 
 **The fold itself is forced** (`constants/forced_fold_theorem.ep`). Build maps from
@@ -666,7 +667,7 @@ is not asserted — it is executed and checked.
 
 **The One then follows** (`constants/the_axiom_is_a_theorem.ep`):
 
-1. **Not nothing.** Zero is forbidden; a value must lie in `(0, 1]`.
+1. **There is no nothing.** Zero is forbidden; a value must lie in `(0, 1]`.
 2. **The displaced ground.** The ground cannot be zero — it is the unique value
    whose double is the One (`x + x = One`), solved to the half-One `1/2`.
 3. **The One, forced.** The ground folds up to the One (`fold(1/2) = 1`), and the
@@ -700,7 +701,7 @@ counted generators → depths → the constant), and **the external measurement 
 (`test_codata_comparison`: every forced value vs CODATA / PDG / Planck, through a sealed
 boundary a measurement can never cross into a derivation). It ends with `EVERYTHING
 FORCED, DERIVED, COUNTED, AND VERIFIED — traced to the One, and checked against external
-CODATA / PDG / Planck measurement` (currently 307 suites, 1,844 forced checks, 0 failures).
+CODATA / PDG / Planck measurement` (currently 326 suites, 2,002 forced checks, 0 failures).
 
 `make online` closes the "you typed the measured numbers in yourself" objection: it
 **derives** the forced values from the two generators (`2`, `3`) and **fetches** the
@@ -708,7 +709,7 @@ measured ones live from NIST's CODATA table — `1/α`, the proton/electron mass
 and the electron `g` all land on the downloaded values, nothing measured stored locally.
 
 **Reproduce the headline results (theory + the UnisonAI engine): four commands.**
-[`fold_ai/REPRODUCE.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/fold_ai/REPRODUCE.md) — the theory prover (307 suites / 1,844
+[`fold_ai/REPRODUCE.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/fold_ai/REPRODUCE.md) — the theory prover (326 suites / 2,002
 forced checks), the LLM-presence suite on public GPT-2 (13/13 tensors, 39/39 registered
 checks, weights auto-fetched on a fresh clone), the pre-registered loud-subspace
 transfer test (verdict SUPPORTED), and the engine's end-to-end verification (36/36),
@@ -747,7 +748,15 @@ voids the engine.
 
 ---
 
-## Layout
+## UnisonAI computational-proof project
+
+UnisonAI is the active artificial-intelligence computational proof of this corpus. Its canonical version-controlled development repository is [MettaMazza/UnisonAI](https://github.com/MettaMazza/UnisonAI); reviewed established releases are synchronized back here.
+
+The native architecture uses zero trained parameters. Its promoted mechanisms are tracked as directly forced, forward-forced, or constitutionally re-derived; disclosed engineering quantities record open development status and are not theoretical walls. The current standalone structural verifier passes 21/21 checks, while the main SFT corpus supplies the closed coherence, contextual-integration, and generation-selection laws in Steps 322–324.
+
+The current free generative surface remains under active development. Supporting local models are scaffolding and judges, not native Unison parameters. See [`papers/UnisonAI_The_Forced_Language_Architecture.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/papers/UnisonAI_The_Forced_Language_Architecture.md) and the standalone repository for the synchronized release boundary.
+
+---
 
 ```
 foundation/   the One, the fold, exact integers and fractions, the counted
