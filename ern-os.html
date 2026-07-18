@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz@0,7..72;1,7..72&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=5bf8bf07">
+  <link rel="stylesheet" href="assets/css/site.css?v=3ed694a6">
 </head>
 <body>
   <canvas id="mesh" aria-hidden="true"></canvas>
@@ -80,41 +80,99 @@
   </nav>
 
   <div id="view">
-  <div id="project-page" data-repo="Ern-OS">
+  <div id="project-page" class="project-story project-story--os" data-repo="Ern-OS">
 
-  <header class="section" style="padding-bottom:8px">
-    <div class="wrap" style="max-width:960px">
-      <p class="eyebrow reveal">The platform</p>
-      <h1 class="reveal">Ern-OS</h1>
-      <p class="lead reveal mt-s">A small operating system written <strong style="color:var(--ink-0)">entirely in plain-English Ernos</strong> — kernel, shell, filesystem, desktop, all of it. Self-contained, works with no network, and self-hosting: it rebuilds itself from a C compiler alone. Every part of it, including the system itself, is written in language you can read.</p>
-      <div class="ai-card__actions" style="margin-top:20px">
-        <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download the source (.zip)</a>
-        <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">View on GitHub ↗</a>
+  <header class="section project-hero">
+    <div class="wrap">
+      <div class="os-hero-grid">
+        <div>
+          <p class="eyebrow reveal">The sovereign operating system</p>
+          <h1 class="reveal">Ern-OS</h1>
+          <p class="lead reveal mt-s">An operating system you can speak to, inspect, carry, and rebuild. The shell, filesystem, people, services, desktops, and hardware boundary are written in <strong style="color:var(--ink-0)">plain-English Ernos</strong>. Its whole world lives on your machine.</p>
+          <div class="ai-card__actions" style="margin-top:24px">
+            <a class="btn btn--primary pj-dl" id="project-dl" href="#">⬇ Download Ern-OS</a>
+            <a class="work-dl" id="project-gh" href="#" target="_blank" rel="noopener">Explore the source ↗</a>
+          </div>
+          <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
+        </div>
+        <div class="os-hero-sigil reveal" aria-hidden="true"><div class="os-hero-core"><span>ern://</span></div></div>
+        <div class="project-metrics os-metric-bar reveal" aria-label="Ern-OS system properties">
+          <div class="project-metric"><strong>Offline</strong><span>no cloud, account service, or telemetry</span></div>
+          <div class="project-metric"><strong>3 faces</strong><span>graphical desktop, terminal desktop, plain shell</span></div>
+          <div class="project-metric"><strong>1 folder</strong><span>the complete portable world, including its disk</span></div>
+          <div class="project-metric"><strong>C → Ern</strong><span>the vendored compiler rebuilds the whole system</span></div>
+        </div>
       </div>
-      <div id="pj-status" class="ai-status" style="margin-top:16px">Checking the source machine…</div>
     </div>
   </header>
 
-  <section class="section" style="padding-top:14px">
-    <div class="wrap" style="max-width:960px">
+  <section class="section os-stage-section">
+    <div class="wrap">
+      <div class="os-stage-intro reveal">
+        <div><p class="eyebrow">Live command surface</p><h2>Speak to the machine</h2></div>
+        <p class="lead">The desktop begins with a captured first boot, then becomes an interactive command tour. Make folders, write notes, inspect services, or ask the system to rebuild itself.</p>
+      </div>
       <div id="showcase-stage" class="showcase-stage" data-kind="boot" data-file="ern-os-boot.json">
-        <p class="loading">Loading the interactive replay…</p>
+        <p class="loading">Booting the interactive desktop…</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:8px">
-    <div class="wrap" style="max-width:900px">
-      <p class="lead" style="margin-bottom:0">You talk to Ern-OS in sentences — <em>make a folder called letters</em>, <em>write a note called hello saying good morning</em>, <em>rebuild the system</em>. Everything it knows lives in its own disk folder; nothing is forgotten between visits; nothing reaches the network. The terminal above is a real captured session: first boot, disk preparation, login, and the command tour.</p>
+  <section class="section">
+    <div class="wrap">
+      <div class="os-section-head reveal">
+        <p class="eyebrow">One system, three strict layers</p>
+        <h2>Plain English all the way down</h2>
+        <p class="lead">The layer rule is simple and enforced: only the hardware abstraction layer touches the host machine. Everything above it belongs to Ern-OS.</p>
+      </div>
+      <div class="os-architecture">
+        <article class="os-layer reveal" data-layer="01"><span>Userland</span><h3>The conversation</h3><p>Understands sentences, runs apps, explains commands, and keeps the desktop coherent through <code>system/shell/</code>.</p></article>
+        <article class="os-layer reveal" data-layer="02"><span>Kernel</span><h3>The living system</h3><p>Owns folders, notes, people, permissions, sessions, services, and the readable system log in <code>system/kernel/</code>.</p></article>
+        <article class="os-layer reveal" data-layer="03"><span>HAL</span><h3>The machine boundary</h3><p>Four files mediate the terminal, disk, clock, and host. Replacing this boundary is the route from today’s desktops to bare metal.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
-    <div class="wrap" style="max-width:900px">
-      <hr class="divider" style="margin:8px 0 26px">
-      <p class="eyebrow">Straight from the source</p>
-      <h2>The README</h2>
-      <article class="doc" id="project-doc"><p class="loading">Loading the README…</p></article>
+  <section class="section">
+    <div class="wrap">
+      <div class="project-split">
+        <div class="reveal">
+          <p class="eyebrow">Sentence-native computing</p>
+          <h2>The command language is the interface</h2>
+          <p class="lead">Every face runs the same commands. A mouse can open an app, a terminal can show the same app in text, and a sentence can act directly on the underlying system.</p>
+        </div>
+        <div class="os-command-grid reveal" aria-label="Ern-OS command examples">
+          <div class="os-command"><code>make a folder called letters</code><span>Create structure without memorising flags.</span></div>
+          <div class="os-command"><code>write a note called hello saying good morning</code><span>Turn an intention into a persistent file.</span></div>
+          <div class="os-command"><code>what is running</code><span>See services and active apps in the same language.</span></div>
+          <div class="os-command"><code>rebuild the system</code><span>Compile, check, and prepare the next boot from within Ern-OS.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap os-proof">
+      <div class="reveal">
+        <p class="eyebrow">Self-hosting chain</p>
+        <h2>It carries the means to become itself</h2>
+        <p class="lead">A C compiler builds the vendored Ernos compiler. That compiler builds Ern-OS. The system can then trigger the same chain from inside itself and verify the replacement before the next boot.</p>
+      </div>
+      <div class="os-proof-flow reveal" aria-label="Ern-OS rebuild and verification sequence">
+        <div><b>01</b><strong>Bootstrap</strong><span>clang builds the portable Ernos compiler from the vendored source.</span></div>
+        <div><b>02</b><strong>Compile</strong><span>ErnosPlain source becomes the complete operating system.</span></div>
+        <div><b>03</b><strong>Exercise</strong><span>Layer rules, parser, disk fences, accounts, logins, and a full scripted boot are tested.</span></div>
+        <div><b>04</b><strong>Persist</strong><span>The conversation runs twice to prove the machine remembers across boots.</span></div>
+        <div><b>05</b><strong>Replace</strong><span>A verified byte-identical rebuild is prepared for the next restart.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:18px">
+    <div class="wrap">
+      <a class="project-doc-link os-source-link" href="https://github.com/MettaMazza/Ern-OS" target="_blank" rel="noopener">
+        <span><small>Build guides, architecture, command language, road map</small>Continue into the complete Ern-OS source and documentation</span><b>↗</b>
+      </a>
     </div>
   </section>
 
@@ -136,6 +194,6 @@
   <script src="assets/js/spa.js?v=395284ab"></script>
   <script src="assets/js/kokoro-tts.js?v=6171695b"></script>
   <script src="assets/js/site.js?v=99f14e98"></script>
-  <script src="assets/js/showcase.js?v=363dcf8d"></script>
+  <script src="assets/js/showcase.js?v=ccbcc789"></script>
 </body>
 </html>
