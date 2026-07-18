@@ -1,10 +1,10 @@
-# From One Axiom to Master-Level Chess — and the Law Inside Neural Networks
+# From the Self-Proven Theorem to Master-Level Chess — and the Law Inside Neural Networks
 
 ## *Attention, it turns out, was not all you need*
 
 **The fold's computational program, en route to UnisonAI**
 
-Maria Smith (Ernos Labs) — pre-paper v0.3, 2026-07-06
+Maria Smith (Ernos Labs) — release v2.1, 2026-07-17
 Companion to *The Smithian Fold Theory of Everything* (DOI: 10.5281/zenodo.21182469)
 
 ---
@@ -53,7 +53,7 @@ All matches: 12 games, pinned binaries, alternating colours, referee-validated, 
 | 1900 | 6-3-3 | 62.5% | v14 |
 | 2100 | 1-6-5 | 33.3% (best) | v17 |
 
-Three days. Zero training. One axiom. And the discipline is as load-bearing as the arithmetic: every release must beat its predecessor head-to-head before it faces Stockfish (v13 over v12: 4-2; v14 over v13: 9-1; v17 over v14: 10-1); every loss is autopsied under full-strength Stockfish judgment, per-move eval curves locating the exact ply each game goes permanently bad; every release cures exactly one named disease with counted or lossless machinery. The cures themselves are the story of where compute really goes: a profiler found **91% of match CPU inside the language runtime's garbage collector** — cured by an allocation-free hot path, ~25x compounded; weak move ordering — cured by killers and history, collapsing depth-7 cost from 63.5M to 17.7M nodes with provably identical move choices; horizon — cured losslessly, and one single ply of added sight flipped the 1900 rung from 20.8% to 62.5%. Two principled evaluation variants were gated, **refused** (37.5%, 45.8%), and permanently closed: iterating evaluations against match results is fitting by another name, and the zero-parameter law bans it structurally. A parallel-root release (8 worker processes, exact single-core values, 7.6x measured parallelism at 95% efficiency, complete depth 8–9) is in gate at the time of writing; the standing protocol thereafter iterates directly against **full-strength** Stockfish, every probe game logged in full — movetext, eval curve, death-ply, kill phase — from the first 0–12 onward.
+Three days. Zero training. One machine-checked, self-proven theorem: *there is no nothing*. And the discipline is as load-bearing as the arithmetic: every release must beat its predecessor head-to-head before it faces Stockfish (v13 over v12: 4-2; v14 over v13: 9-1; v17 over v14: 10-1); every loss is autopsied under full-strength Stockfish judgment, per-move eval curves locating the exact ply each game goes permanently bad; every release cures exactly one named disease with counted or lossless machinery. The cures themselves are the story of where compute really goes: a profiler found **91% of match CPU inside the language runtime's garbage collector** — cured by an allocation-free hot path, ~25x compounded; weak move ordering — cured by killers and history, collapsing depth-7 cost from 63.5M to 17.7M nodes with provably identical move choices; horizon — cured losslessly, and one single ply of added sight flipped the 1900 rung from 20.8% to 62.5%. Two principled evaluation variants were gated, **refused** (37.5%, 45.8%), and permanently closed: iterating evaluations against match results is fitting by another name, and the zero-parameter law bans it structurally. A parallel-root release (8 worker processes, exact single-core values, 7.6x measured parallelism at 95% efficiency, complete depth 8–9) is in gate at the time of writing; the standing protocol thereafter iterates directly against **full-strength** Stockfish, every probe game logged in full — movetext, eval curve, death-ply, kill phase — from the first 0–12 onward.
 
 ### 3.3 Solving, certification, and the compact truth
 
@@ -103,7 +103,7 @@ The corrected method is the chess method: **the fold fights as itself.** A nativ
 
 All artifacts live in the public repositories accompanying the SFTOM corpus.
 
-1. **The corpus's proof driver** (clean room): `make -C verify prove` — 307 suites / 1,844 forced checks, non-zero exit on any failure.
+1. **The corpus's proof driver** (clean room): `make -C verify prove` — 326 suites / 2,002 forced checks, non-zero exit on any failure.
 2. **Chess rules**: perft censuses inside the engine's test suite; refereed play validates every move externally (python-chess).
 3. **Matches**: `tools/measure_sf.py <elo|full>` (pinned 12-game protocol); `tools/h2h_gate.py <old-binary>` (gates); `tools/summit_probe.py <label>` (full-forensics probe); the complete ledger is `tools/MATCHES.md`.
 4. **Endgame certification**: `tests/kqkr_cert.ep <lo> <hi>` re-derives every stored KQKR value from the fold's value law with the clean room's own move generator (0 to 33,554,432 = the full census; the committed 3-man analogue is `constants/endgame_tables.ep`).

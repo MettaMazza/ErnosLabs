@@ -71,56 +71,56 @@
    "title": "From One Axiom to Master-Level Chess — and the Law Inside Neural Networks",
    "sub": "Every evaluation an exact rational counted from the board's own geometry — DOI 10.5281/zenodo.21182469. Attention, it turns out, was not all you need.",
    "collection": "engines",
-   "words": 3508,
+   "words": 3515,
    "source": "~/.ernos/projects-mirror/repos/FoldBot-Chess/papers/From_One_Axiom_To_Master_Chess_And_The_Law_Inside_Neural_Networks.md"
   },
   "zero-parameter-go-sweeps-katago": {
    "title": "Defeating Deep Learning: a Zero-Parameter Engine Sweeps KataGo at 19×19 Go",
    "sub": "A geometric engine with nothing trained and nothing tuned beats the strongest open Go network 2–0 — DOI 10.5281/zenodo.21182469.",
    "collection": "engines",
-   "words": 1466,
+   "words": 894,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Zero_Parameter_Geometric_Go_Superhuman_Performance.md"
   },
   "symmetric-go-3d-lattice": {
    "title": "Symmetric Go: Solving Spatial Command on the 3D Lattice",
    "sub": "Counted Tromp–Taylor connectivity, certified digit-for-digit to the published oracle.",
    "collection": "engines",
-   "words": 1118,
+   "words": 539,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Symmetric_Go_Solving_Spatial_Command_on_the_3D_Lattice.md"
   },
   "levinthals-paradox-dissolved": {
    "title": "Levinthal's Paradox Dissolved: Parameter-Free Protein Folding and the Genetic Code",
    "sub": "Folding as descent to the fold's fixed point — no statistical guesswork, and the genetic code falls out of the same count.",
    "collection": "life",
-   "words": 2890,
+   "words": 950,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Levinthals_Paradox_Dissolved_Parameter_Free_Protein_Folding_and_the_Genetic_Code.md"
   },
   "super-parity-protein-folding": {
    "title": "Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding",
    "sub": "The 24-lattice dihedral orbit expansion takes the same parameter-free fold to near-perfect structure recovery.",
    "collection": "life",
-   "words": 3148,
+   "words": 823,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Super_Parity_Zero_Parameter_Protein_Folding.md"
   },
   "unisonai-architecture": {
    "title": "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters",
    "sub": "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.",
    "collection": "unison",
-   "words": 6734,
+   "words": 1101,
    "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/UnisonAI_Architecture.md"
   },
   "unisonai-forced-language-architecture": {
    "title": "UnisonAI: the Forced Language Architecture",
    "sub": "Language modelling from the derived architecture — knowledge that isn't locked in a black box for rent. DOI 10.5281/zenodo.21182469.",
    "collection": "unison",
-   "words": 3000,
+   "words": 1101,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/UnisonAI_The_Forced_Language_Architecture.md"
   },
   "fold-decode-interpretability": {
    "title": "The Law Inside Trained Weights: the Fold Decode Campaign",
    "sub": "A registered, null-controlled spectral decode of gradient-trained networks — what deep learning converges to. DOI 10.5281/zenodo.21217279.",
    "collection": "unison",
-   "words": 8814,
+   "words": 1059,
    "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/Fold_Decode_Interpretability.md"
   },
   "the-sling-and-the-shoggoth": {
@@ -129,6 +129,13 @@
    "collection": "ai",
    "words": 12854,
    "source": null
+  },
+  "there-is-no-nothing-self-proven-theorem": {
+   "title": "There Is No Nothing",
+   "sub": "",
+   "collection": "new",
+   "words": 595,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/There_Is_No_Nothing_Self_Proven_Theorem.md"
   }
  }
 }
