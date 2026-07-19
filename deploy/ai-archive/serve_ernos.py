@@ -11,7 +11,6 @@
 CORS is open so the static site can call it; Range requests work (resumable
 big-file downloads). When this machine is off, the site falls back on its own.
 """
-import io
 import json
 import os
 import pathlib
@@ -23,8 +22,6 @@ import time
 import urllib.request
 from urllib.parse import urlparse
 
-import numpy as np
-import soundfile as sf
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
@@ -35,28 +32,21 @@ from pydantic import BaseModel
 ARCHIVE_ROOT = os.environ.get("ARCHIVE_ROOT", "/Volumes/One Touch/ernos-archive")
 SITE_ROOT = os.environ.get("SITE_ROOT", str(pathlib.Path.home() / "Desktop" / "ErnosLabs"))
 PORT = int(os.environ.get("PORT", "8899"))
+KOKORO_LOCAL_ENDPOINT = os.environ.get(
+    "KOKORO_LOCAL_ENDPOINT", "http://127.0.0.1:8880"
+).rstrip("/")
 
 # ---- Kokoro TTS ---------------------------------------------------------
-def _find_kokoro():
-    for c in [
-        pathlib.Path.home() / ".ernosagent" / "models" / "kokoro-v1.0.onnx",
-        pathlib.Path.home() / "Desktop" / "HIVENET" / "models" / "kokoro-v1.0.onnx",
-        pathlib.Path.home() / "Desktop" / "Embers Home" / "models" / "kokoro-v1.0.onnx",
-    ]:
-        if c.exists() and (c.parent / "voices-v1.0.bin").exists():
-            return str(c), str(c.parent / "voices-v1.0.bin")
-    return None, None
-
-
-kokoro = None
-try:
-    from kokoro_onnx import Kokoro
-    _m, _v = _find_kokoro()
-    if _m:
-        kokoro = Kokoro(_m, _v)
-        print(f"[tts] Kokoro loaded: {_m}")
-except Exception as e:  # TTS optional; file serving still works
-    print(f"[tts] Kokoro unavailable: {e}")
+# Kokoro runs as a dedicated, warmed process on port 8880.  This public
+# archive/community gateway deliberately does not load another ONNX session:
+# two copies exhaust the machine's available memory and macOS terminates the
+# fast dedicated service, which was the cause of the browser voice fallback.
+def _kokoro_available():
+    try:
+        with urllib.request.urlopen(KOKORO_LOCAL_ENDPOINT + "/", timeout=1) as response:
+            return response.status == 200
+    except Exception:
+        return False
 
 app = FastAPI(title="Ernos Labs — serve")
 app.add_middleware(
@@ -66,7 +56,12 @@ app.add_middleware(
 
 @app.get("/ping")
 def ping():
-    return {"ok": True, "service": "ernos-serve", "tts": kokoro is not None, "community": True}
+    return {
+        "ok": True,
+        "service": "ernos-serve",
+        "tts": _kokoro_available(),
+        "community": True,
+    }
 
 
 # ---- Community: self-hosted chat + forum, owned by this machine ---------
@@ -363,13 +358,34 @@ class SpeechRequest(BaseModel):
 
 @app.post("/v1/audio/speech")
 def speech(req: SpeechRequest):
-    if not kokoro:
-        raise HTTPException(status_code=503, detail="TTS unavailable")
-    audio, sr = kokoro.create(req.input or "", voice=req.voice or "bm_fable", speed=req.speed, lang="en-us")
-    buf = io.BytesIO()
-    sf.write(buf, audio, sr, format="WAV")
-    buf.seek(0)
-    return Response(content=buf.read(), media_type="audio/wav")
+    # The dedicated Kokoro process owns the only hot ONNX session. Keep this
+    # combined archive server as the public HTTPS surface and proxy locally.
+    payload = json.dumps({
+        "model": req.model,
+        "input": req.input or "",
+        "voice": req.voice or "bm_fable",
+        "response_format": req.response_format,
+        "speed": req.speed,
+    }).encode("utf-8")
+    try:
+        local_req = urllib.request.Request(
+            KOKORO_LOCAL_ENDPOINT + "/v1/audio/speech",
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        # The dedicated process warms itself at startup. Thirty seconds still
+        # leaves a bounded failure path while allowing a queued request to
+        # remain on Kokoro instead of being replaced by a browser voice.
+        with urllib.request.urlopen(local_req, timeout=30) as local_res:
+            audio = local_res.read()
+            if audio:
+                return Response(content=audio, media_type="audio/wav")
+    except Exception as e:
+        print(f"[tts] dedicated Kokoro unavailable: {e}", flush=True)
+        raise HTTPException(
+            status_code=503, detail="Kokoro TTS is temporarily unavailable"
+        ) from e
 
 
 # ---- Live model catalog (auto-updates as the drive changes) -------------

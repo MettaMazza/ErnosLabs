@@ -5,6 +5,7 @@
 import io
 import sys
 import pathlib
+import threading
 import soundfile as sf
 from fastapi import FastAPI
 from fastapi.responses import Response
@@ -32,7 +33,11 @@ def find_model():
 MODEL, VOICES = find_model()
 print(f"Loading Kokoro ONNX: {MODEL}")
 kokoro = Kokoro(MODEL, VOICES)
-print("Kokoro loaded.")
+kokoro_lock = threading.Lock()
+print("Kokoro loaded. Warming the inference session…")
+with kokoro_lock:
+    kokoro.create("Kokoro ready.", voice="bm_fable", speed=1.0, lang="en-us")
+print("Kokoro warm and ready.")
 
 app = FastAPI(title="Kokoro TTS (local, Ernos Labs)")
 
@@ -72,7 +77,14 @@ def health():
 
 @app.post("/v1/audio/speech")
 def speech(req: SpeechRequest):
-    audio, sr = kokoro.create(req.input or "", voice=req.voice or "am_fable", speed=req.speed, lang="en-us")
+    # kokoro_onnx shares one inference session. Serialising calls avoids
+    # concurrent visitors contending inside ONNX and turning a sub-second
+    # sentence into a client-side timeout.
+    with kokoro_lock:
+        audio, sr = kokoro.create(
+            req.input or "", voice=req.voice or "am_fable",
+            speed=req.speed, lang="en-us"
+        )
     buf = io.BytesIO()
     sf.write(buf, audio, sr, format="WAV")
     buf.seek(0)

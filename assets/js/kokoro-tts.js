@@ -26,7 +26,10 @@
   // site, else the funnel. Read lazily (at play time) so resolution is done.
   const KOKORO_ENDPOINT = null;
   const DEFAULT_VOICE = "bm_fable";
-  const FIRST_TIMEOUT_MS = 12000; // if the source machine is offline, fall back to the browser voice quickly
+  // api-base.js already detects a truly offline source machine before play.
+  // Give an online Kokoro enough room to queue briefly under concurrent use
+  // instead of replacing Maria's voice with a browser voice after 12 seconds.
+  const FIRST_TIMEOUT_MS = 30000;
   const GEN_TIMEOUT_MS = 30000;   // subsequent requests
 
   let audioCtx = null;
