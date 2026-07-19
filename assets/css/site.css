@@ -1323,7 +1323,7 @@ pre {
 
 /* ---- mega-menu nav ---- */
 .nav__drop--mega{position:static}
-.nav__mega{grid-template-columns:repeat(5,minmax(120px,1fr));gap:8px 26px;
+.nav__mega{grid-template-columns:repeat(4,minmax(140px,1fr));gap:8px 30px;
   left:50%;transform:translateX(-50%);min-width:min(760px,92vw);padding:20px 24px}
 .nav__drop.open .nav__mega{display:grid}
 .nav__mega-col{display:flex;flex-direction:column;gap:2px}
