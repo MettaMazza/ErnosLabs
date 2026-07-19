@@ -40,6 +40,9 @@
   let keepAlive = null;      // browser-voice keep-alive (Chrome long-speech bug)
   let onStatusChange = null; // (status, detail)
   let onProgress = null;     // ({ phase, current, total, fraction })
+  let readAlong = null;      // DOM word map for the active narration
+  let clearHighlightTimer = null;
+  let followSuppressedUntil = 0;
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   function setStatus(status, detail) { if (onStatusChange) onStatusChange(status, detail); }
@@ -101,6 +104,176 @@
     return chunks.length ? chunks : [text];
   }
 
+  // ---- synchronized read-along ------------------------------------------
+  // Kokoro returns audio rather than word timestamps. Map the words in every
+  // generated chunk back to their original DOM text nodes, then divide the
+  // measured AudioBuffer duration by word length and punctuation pauses. This
+  // follows the actual generated segment instead of assuming a fixed WPM.
+  const WORD_PATTERN = /[\p{L}\p{N}]+(?:['’/-][\p{L}\p{N}]+)*/gu;
+  const SOURCE_PATTERN = /[\p{L}\p{N}]+(?:['’/-][\p{L}\p{N}]+)*|[αβγδλμπστθΛ×÷⊕→≈≥≤≠·²³½⌊⌋∕%]/gu;
+
+  function normalizedWord(word) {
+    return String(word || "")
+      .toLocaleLowerCase()
+      .replace(/[’']/g, "")
+      .replace(/[^\p{L}\p{N}]/gu, "");
+  }
+
+  function narrationRoots() {
+    const doc = document.getElementById("doc");
+    if (doc && (doc.textContent || "").length > 60) return [doc];
+    return Array.from(document.querySelectorAll("header h1, header p, section h2, section h3, section p"))
+      .filter((el) => !el.classList.contains("eyebrow"));
+  }
+
+  function sourceWordMap() {
+    const entries = [];
+    const skip = "script, style, code, pre, button, select, textarea, [aria-hidden='true']";
+    for (const root of narrationRoots()) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentElement;
+          return parent && !parent.closest(skip) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        },
+      });
+      let node;
+      while ((node = walker.nextNode())) {
+        SOURCE_PATTERN.lastIndex = 0;
+        let match;
+        while ((match = SOURCE_PATTERN.exec(node.nodeValue))) {
+          const spoken = sanitize(match[0]).match(WORD_PATTERN) || [];
+          for (const word of spoken) {
+            entries.push({
+              node,
+              start: match.index,
+              end: match.index + match[0].length,
+              word: normalizedWord(word),
+            });
+          }
+        }
+      }
+    }
+    return entries;
+  }
+
+  function chunkWords(chunk) {
+    const words = [];
+    WORD_PATTERN.lastIndex = 0;
+    let match;
+    while ((match = WORD_PATTERN.exec(chunk))) {
+      const tail = chunk.slice(match.index + match[0].length, match.index + match[0].length + 3);
+      let pause = 0;
+      if (/[.!?]/.test(tail)) pause = 0.85;
+      else if (/[,;:]/.test(tail)) pause = 0.36;
+      const weight = 0.72 + Math.min(match[0].length, 14) * 0.055 + pause;
+      words.push({ text: match[0], start: match.index, end: match.index + match[0].length, weight, target: null });
+    }
+    let cumulative = 0;
+    for (const word of words) { cumulative += word.weight; word.endWeight = cumulative; }
+    words.totalWeight = cumulative || 1;
+    return words;
+  }
+
+  function buildReadAlong(chunks) {
+    const source = sourceWordMap();
+    const mappedChunks = chunks.map(chunkWords);
+    let sourceIndex = 0;
+    for (const words of mappedChunks) {
+      for (const word of words) {
+        const wanted = normalizedWord(word.text);
+        let found = -1;
+        for (let probe = sourceIndex; probe < source.length; probe++) {
+          if (source[probe].word === wanted) { found = probe; break; }
+        }
+        if (found >= 0) {
+          word.target = source[found];
+          sourceIndex = found + 1;
+        }
+      }
+    }
+    return { chunks: mappedChunks, activeKey: "" };
+  }
+
+  function removePaint() {
+    try { if (window.CSS && CSS.highlights) CSS.highlights.delete("ernos-read-word"); } catch (e) {}
+    const overlay = document.getElementById("tts-word-overlay");
+    if (overlay) overlay.remove();
+    if (readAlong) readAlong.activeKey = "";
+  }
+
+  function clearReadAlong() {
+    if (clearHighlightTimer) { clearTimeout(clearHighlightTimer); clearHighlightTimer = null; }
+    removePaint();
+    readAlong = null;
+  }
+
+  function finishReadAlong() {
+    if (clearHighlightTimer) clearTimeout(clearHighlightTimer);
+    clearHighlightTimer = setTimeout(() => {
+      clearHighlightTimer = null;
+      clearReadAlong();
+    }, 650);
+  }
+
+  function paintWord(target, key) {
+    if (!target || !target.node || !target.node.isConnected || !readAlong) return;
+    if (readAlong.activeKey === key) return;
+    readAlong.activeKey = key;
+    const range = document.createRange();
+    try { range.setStart(target.node, target.start); range.setEnd(target.node, target.end); }
+    catch (e) { return; }
+
+    let usedCssHighlight = false;
+    try {
+      if (window.CSS && CSS.highlights && window.Highlight) {
+        CSS.highlights.set("ernos-read-word", new window.Highlight(range));
+        usedCssHighlight = true;
+      }
+    } catch (e) {}
+
+    const oldOverlay = document.getElementById("tts-word-overlay");
+    if (usedCssHighlight) {
+      if (oldOverlay) oldOverlay.remove();
+    } else {
+      const rect = range.getBoundingClientRect();
+      const overlay = oldOverlay || document.body.appendChild(document.createElement("span"));
+      overlay.id = "tts-word-overlay";
+      overlay.setAttribute("aria-hidden", "true");
+      overlay.style.left = rect.left + "px";
+      overlay.style.top = rect.top + "px";
+      overlay.style.width = Math.max(2, rect.width) + "px";
+      overlay.style.height = Math.max(2, rect.height) + "px";
+    }
+
+    if (Date.now() < followSuppressedUntil) return;
+    const rect = range.getBoundingClientRect();
+    const topComfort = Math.max(92, window.innerHeight * 0.22);
+    const bottomComfort = window.innerHeight * 0.72;
+    if (rect.top < topComfort || rect.bottom > bottomComfort) {
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const top = Math.max(0, window.scrollY + rect.top - window.innerHeight * 0.34);
+      window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+    }
+  }
+
+  function showReadWord(chunkIndex, wordIndex) {
+    if (!readAlong) return;
+    const words = readAlong.chunks[chunkIndex];
+    const word = words && words[Math.max(0, Math.min(wordIndex, words.length - 1))];
+    if (word && word.target) paintWord(word.target, chunkIndex + ":" + wordIndex);
+  }
+
+  function showReadProgress(chunkIndex, fraction) {
+    if (!readAlong) return;
+    const words = readAlong.chunks[chunkIndex];
+    if (!words || !words.length) return;
+    const point = Math.max(0, Math.min(0.999999, fraction || 0)) * words.totalWeight;
+    let wordIndex = words.findIndex((word) => point < word.endWeight);
+    if (wordIndex < 0) wordIndex = words.length - 1;
+    showReadWord(chunkIndex, wordIndex);
+  }
+
   // ---- audio -------------------------------------------------------------
   function ensureCtx() {
     if (!audioCtx || audioCtx.state === "closed") {
@@ -151,14 +324,26 @@
     const my = {}; session = my;
     playing = true; paused = false;
     ensureCtx(); // created inside the click gesture
-    const ep = resolveEndpoint();
+    let ep = resolveEndpoint();
     const v = voice || DEFAULT_VOICE;
+    const chunks = chunkText(clean);
+    readAlong = buildReadAlong(chunks);
 
-    if (!ep) { return speakBrowser(clean, my); } // no server → instant browser voice
+    // api-base resolves the public source machine asynchronously. A very fast
+    // tap after page load must wait for that health check instead of mistaking
+    // "not resolved yet" for "offline" and choosing a browser voice.
+    if (!ep && window.ernosApiReady && typeof window.ernosApiReady.then === "function") {
+      emit("loading", 0, 0);
+      setStatus("loading", "Finding Kokoro…");
+      try { await window.ernosApiReady; } catch (e) {}
+      if (session !== my) return;
+      ep = resolveEndpoint();
+    }
+
+    if (!ep) { return speakBrowser(clean, my, chunks); } // no server → instant browser voice
 
     emit("loading", 0, 0);
     setStatus("loading", "Waking the voice…");
-    const chunks = chunkText(clean);
     const total = chunks.length;
     const ready = new Array(total).fill(null); // AudioBuffer | "error" | null
 
@@ -170,7 +355,7 @@
       console.warn("Kokoro server unavailable — using browser voice:", e);
       if (session !== my) return;
       setStatus("fallback", "Using the browser voice");
-      return speakBrowser(clean, my);
+      return speakBrowser(clean, my, chunks);
     }
     if (session !== my) return;
     ready[0] = first || "error";
@@ -185,6 +370,7 @@
 
     // SCHEDULER — place each ready buffer back-to-back on the audio clock.
     const segStart = new Array(total).fill(-1);
+    const segDuration = new Array(total).fill(0);
     let clock = 0, started = false, scheduled = 0, endClock = 0;
     (async function sched() {
       for (let i = 0; i < total; i++) {
@@ -200,6 +386,7 @@
         node.buffer = buf; node.connect(audioCtx.destination);
         try { node.start(clock); } catch (e) {}
         segStart[i] = clock;
+        segDuration[i] = buf.duration;
         clock += buf.duration;
         endClock = clock;
         scheduled = i + 1;
@@ -218,10 +405,11 @@
       for (let i = 0; i < scheduled; i++) if (segStart[i] >= 0 && now >= segStart[i]) cur = i;
       if (cur >= scheduled - 1 && scheduled < total && now >= endClock - 0.06) { emit("buffering", cur + 1, total); return; }
       if (scheduled >= total && now >= endClock) {
-        clearInterval(ticker); ticker = null; playing = false; emit("done", total, total); setStatus("done", "Finished"); return;
+        clearInterval(ticker); ticker = null; playing = false; emit("done", total, total); setStatus("done", "Finished"); finishReadAlong(); return;
       }
+      showReadProgress(cur, segDuration[cur] ? (now - segStart[cur]) / segDuration[cur] : 0);
       emit("speaking", cur + 1, total);
-    }, 140);
+    }, 80);
   }
 
   // ---- browser-voice fallback (instant, no download) ---------------------
@@ -234,9 +422,9 @@
   }
   function stopKeepAlive() { if (keepAlive) { clearInterval(keepAlive); keepAlive = null; } }
 
-  function speakBrowser(text, token) {
-    if (!window.speechSynthesis) { playing = false; emit("idle", 0, 0); setStatus("idle", ""); return; }
-    const chunks = chunkText(text);
+  function speakBrowser(text, token, preparedChunks) {
+    if (!window.speechSynthesis) { playing = false; clearReadAlong(); emit("idle", 0, 0); setStatus("idle", ""); return; }
+    const chunks = preparedChunks || chunkText(text);
     const total = chunks.length;
     const voiceObj = pickVoice();
     window.speechSynthesis.cancel();
@@ -245,12 +433,41 @@
     emit("speaking", 1, total);
     const speakNext = () => {
       if (session !== token) return;
-      if (idx >= total) { playing = false; emit("done", total, total); setStatus("done", "Finished"); stopKeepAlive(); return; }
-      const u = new SpeechSynthesisUtterance(chunks[idx]);
+      if (idx >= total) { playing = false; emit("done", total, total); setStatus("done", "Finished"); stopKeepAlive(); finishReadAlong(); return; }
+      const chunkIndex = idx;
+      const u = new SpeechSynthesisUtterance(chunks[chunkIndex]);
       if (voiceObj) u.voice = voiceObj;
       u.rate = 1; u.pitch = 1;
-      u.onend = () => { if (session !== token) return; idx++; emit("speaking", Math.min(idx + 1, total), total); speakNext(); };
-      u.onerror = () => { if (session !== token) return; idx++; speakNext(); };
+      u.onstart = () => {
+        showReadProgress(chunkIndex, 0);
+        if (ticker) clearInterval(ticker);
+        const began = performance.now();
+        const words = readAlong && readAlong.chunks[chunkIndex];
+        const estimatedMs = Math.max(700, (words ? words.totalWeight : 1) * 315);
+        // Some mobile/browser voices omit boundary events. Keep a measured-rate
+        // fallback moving between any native boundaries they do provide.
+        ticker = setInterval(() => {
+          if (session !== token) { clearInterval(ticker); ticker = null; return; }
+          if (!paused) showReadProgress(chunkIndex, (performance.now() - began) / estimatedMs);
+        }, 100);
+      };
+      u.onboundary = (event) => {
+        if (session !== token || !readAlong) return;
+        const words = readAlong.chunks[chunkIndex] || [];
+        let wordIndex = words.findIndex((word) => event.charIndex >= word.start && event.charIndex < word.end);
+        if (wordIndex < 0) wordIndex = words.findIndex((word) => word.start >= event.charIndex);
+        if (wordIndex >= 0) showReadWord(chunkIndex, wordIndex);
+      };
+      u.onend = () => {
+        if (ticker) { clearInterval(ticker); ticker = null; }
+        if (session !== token) return;
+        idx++; emit("speaking", Math.min(idx + 1, total), total); speakNext();
+      };
+      u.onerror = () => {
+        if (ticker) { clearInterval(ticker); ticker = null; }
+        if (session !== token) return;
+        idx++; speakNext();
+      };
       window.speechSynthesis.speak(u);
     };
     // Chrome pauses long speech after ~15s — nudge it to keep going.
@@ -281,6 +498,7 @@
     stopKeepAlive();
     if (audioCtx) { try { audioCtx.close(); } catch (e) {} audioCtx = null; }
     if (window.speechSynthesis) window.speechSynthesis.cancel();
+    clearReadAlong();
     emit("idle", 0, 0);
     setStatus("idle", "");
   }
@@ -317,4 +535,9 @@
     setOnStatusChange(fn) { onStatusChange = fn; },
     setOnProgress(fn) { onProgress = fn; },
   };
+
+  // A deliberate touch or wheel gesture temporarily wins over auto-follow;
+  // narration resumes following after a short reading/reorientation window.
+  window.addEventListener("touchstart", () => { if (playing) followSuppressedUntil = Date.now() + 3000; }, { passive: true });
+  window.addEventListener("wheel", () => { if (playing) followSuppressedUntil = Date.now() + 3000; }, { passive: true });
 })();
