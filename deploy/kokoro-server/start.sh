@@ -4,12 +4,19 @@
 # using your local ONNX weights and the bm_fable voice.
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
-PY="$HOME/.ernos/kokoro-venv/bin/python"
 
-# Free the port if something's already on it.
-lsof -ti tcp:8880 2>/dev/null | xargs kill -9 2>/dev/null || true
+PLIST="$HERE/com.ernoslabs.kokoro.plist"
+INSTALLED="$HOME/Library/LaunchAgents/com.ernoslabs.kokoro.plist"
+DOMAIN="gui/$(id -u)"
 
-echo "Starting Kokoro server on http://localhost:8880 …"
-nohup "$PY" "$HERE/serve_local.py" > /tmp/kokoro-server.log 2>&1 &
-echo "pid $! — logs at /tmp/kokoro-server.log"
-echo "Leave this running; the deployed site (in Chrome) will use it for read-aloud."
+mkdir -p "$HOME/Library/LaunchAgents"
+cp "$PLIST" "$INSTALLED"
+
+if launchctl print "$DOMAIN/com.ernoslabs.kokoro" >/dev/null 2>&1; then
+  launchctl kickstart -k "$DOMAIN/com.ernoslabs.kokoro"
+else
+  launchctl bootstrap "$DOMAIN" "$INSTALLED"
+fi
+
+echo "Kokoro is managed by launchd on http://localhost:8880."
+echo "Logs: /tmp/kokoro-server.log"
