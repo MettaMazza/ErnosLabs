@@ -74,6 +74,21 @@ img, svg, canvas { max-width: 100%; display: block; }
 a { color: var(--glow); text-decoration: none; transition: color .2s var(--ease); }
 a:hover { color: #8ff7da; }
 ::selection { background: rgba(79,240,196,.28); color: #fff; }
+::highlight(ernos-read-word) {
+  color: #06130f;
+  background: #62f3c8;
+  text-shadow: none;
+}
+#tts-word-overlay {
+  position: fixed;
+  z-index: 52;
+  pointer-events: none;
+  border-radius: 4px;
+  background: rgba(98,243,200,.72);
+  box-shadow: 0 0 0 2px rgba(98,243,200,.2), 0 0 18px rgba(98,243,200,.3);
+  mix-blend-mode: screen;
+  transition: left 70ms linear, top 70ms linear, width 70ms linear, height 70ms linear;
+}
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
