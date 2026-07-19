@@ -78,42 +78,42 @@
    "title": "Defeating Deep Learning: a Zero-Parameter Engine Sweeps KataGo at 19×19 Go",
    "sub": "A geometric engine with nothing trained and nothing tuned beats the strongest open Go network 2–0 — DOI 10.5281/zenodo.21182469.",
    "collection": "engines",
-   "words": 1019,
+   "words": 1232,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Zero_Parameter_Geometric_Go_Superhuman_Performance.md"
   },
   "symmetric-go-3d-lattice": {
    "title": "Symmetric Go: Solving Spatial Command on the 3D Lattice",
    "sub": "Counted Tromp–Taylor connectivity, certified digit-for-digit to the published oracle.",
    "collection": "engines",
-   "words": 544,
+   "words": 777,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Symmetric_Go_Solving_Spatial_Command_on_the_3D_Lattice.md"
   },
   "levinthals-paradox-dissolved": {
    "title": "Levinthal's Paradox Dissolved: Parameter-Free Protein Folding and the Genetic Code",
    "sub": "Folding as descent to the fold's fixed point — no statistical guesswork, and the genetic code falls out of the same count.",
    "collection": "life",
-   "words": 1792,
+   "words": 2066,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Levinthals_Paradox_Dissolved_Parameter_Free_Protein_Folding_and_the_Genetic_Code.md"
   },
   "super-parity-protein-folding": {
    "title": "Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding",
    "sub": "The 24-lattice dihedral orbit expansion takes the same parameter-free fold to near-perfect structure recovery.",
    "collection": "life",
-   "words": 1071,
+   "words": 1220,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Super_Parity_Zero_Parameter_Protein_Folding.md"
   },
   "unisonai-architecture": {
    "title": "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters",
    "sub": "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.",
    "collection": "unison",
-   "words": 1156,
+   "words": 1829,
    "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/UnisonAI_Architecture.md"
   },
   "unisonai-forced-language-architecture": {
    "title": "UnisonAI: the Forced Language Architecture",
    "sub": "Language modelling from the derived architecture — knowledge that isn't locked in a black box for rent. DOI 10.5281/zenodo.21182469.",
    "collection": "unison",
-   "words": 1156,
+   "words": 1829,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/UnisonAI_The_Forced_Language_Architecture.md"
   },
   "fold-decode-interpretability": {
@@ -141,7 +141,7 @@
    "title": "From the Self-Proven Theorem to Master-Level Chess — and the Law Inside Neural Networks",
    "sub": "",
    "collection": "new",
-   "words": 3485,
+   "words": 3698,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/From_The_Self_Proven_Theorem_To_Master_Chess_And_The_Law_Inside_Neural_Networks.md"
   }
  }
