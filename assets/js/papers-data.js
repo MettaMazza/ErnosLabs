@@ -23,4 +23,6 @@ window.READER_WORKS = [
   {"id": "from-the-self-proven-theorem-to-master-chess-and-the-law-inside-neural-networks", "file": "content/papers/from-the-self-proven-theorem-to-master-chess-and-the-law-inside-neural-networks.md", "title": "From the Self-Proven Theorem to Master-Level Chess — and the Law Inside Neural Networks", "sub": "", "words": 3698, "collection": "new"},
   {"id": "from-one-theorem-to-blind-protein-structure-a-zero-parameter-computational-proof", "file": "content/papers/from-one-theorem-to-blind-protein-structure-a-zero-parameter-computational-proof.md", "title": "From One Self-Proven Theorem to Blind Protein Structure", "sub": "", "words": 8117, "collection": "new"},
   {"id": "the-constants-are-one-object-grand-lock-v2", "file": "content/papers/the-constants-are-one-object-grand-lock-v2.md", "title": "The Constants Are One Object", "sub": "", "words": 1685, "collection": "new"},
+  {"id": "smithium-element-126-v2", "file": "content/papers/smithium-element-126-v2.md", "title": "Smithium", "sub": "", "words": 1620, "collection": "new"},
+  {"id": "the-continuum-was-the-bug-v2", "file": "content/papers/the-continuum-was-the-bug-v2.md", "title": "The Continuum Was the Bug", "sub": "", "words": 1893, "collection": "new"},
 ];
