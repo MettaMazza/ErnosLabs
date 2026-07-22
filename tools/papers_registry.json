@@ -92,14 +92,14 @@
    "title": "Levinthal's Paradox Dissolved: Parameter-Free Protein Folding and the Genetic Code",
    "sub": "Folding as descent to the fold's fixed point — no statistical guesswork, and the genetic code falls out of the same count.",
    "collection": "life",
-   "words": 4647,
+   "words": 4648,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Levinthals_Paradox_Dissolved_Parameter_Free_Protein_Folding_and_the_Genetic_Code.md"
   },
   "super-parity-protein-folding": {
    "title": "Super Parity: 0.9891 TM-Score in Zero-Parameter Protein Folding",
    "sub": "The 24-lattice dihedral orbit expansion takes the same parameter-free fold to near-perfect structure recovery.",
    "collection": "life",
-   "words": 4013,
+   "words": 4014,
    "source": "~/.ernos/projects-mirror/repos/Fold-Protein/papers/Super_Parity_Zero_Parameter_Protein_Folding.md"
   },
   "unisonai-architecture": {
@@ -148,7 +148,7 @@
    "title": "From One Self-Proven Theorem to Blind Protein Structure",
    "sub": "",
    "collection": "new",
-   "words": 8117,
+   "words": 9016,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/From_One_Theorem_to_Blind_Protein_Structure_A_Zero_Parameter_Computational_Proof.md"
   },
   "the-constants-are-one-object-grand-lock-v2": {
