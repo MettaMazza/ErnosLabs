@@ -78,14 +78,14 @@
    "title": "Defeating Deep Learning: a Zero-Parameter Engine Sweeps KataGo at 19×19 Go",
    "sub": "A geometric engine with nothing trained and nothing tuned beats the strongest open Go network 2–0 — DOI 10.5281/zenodo.21182469.",
    "collection": "engines",
-   "words": 1232,
+   "words": 1316,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Zero_Parameter_Geometric_Go_Superhuman_Performance.md"
   },
   "symmetric-go-3d-lattice": {
    "title": "Symmetric Go: Solving Spatial Command on the 3D Lattice",
    "sub": "Counted Tromp–Taylor connectivity, certified digit-for-digit to the published oracle.",
    "collection": "engines",
-   "words": 777,
+   "words": 845,
    "source": "~/.ernos/projects-mirror/repos/Fold-Go/papers/Symmetric_Go_Solving_Spatial_Command_on_the_3D_Lattice.md"
   },
   "levinthals-paradox-dissolved": {
@@ -106,7 +106,7 @@
    "title": "UnisonAI: a Forced, Derived Omni-Model Architecture with Zero Parameters",
    "sub": "The architecture is not designed — it is forced by the fold. DOI 10.5281/zenodo.21217279.",
    "collection": "unison",
-   "words": 1829,
+   "words": 1980,
    "source": "~/.ernos/projects-mirror/repos/UnisonAI/papers/UnisonAI_Architecture.md"
   },
   "unisonai-forced-language-architecture": {
@@ -171,6 +171,48 @@
    "collection": "new",
    "words": 1893,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/The_Continuum_Was_The_Bug_v2.md"
+  },
+  "determined-and-unforeseeable-v2": {
+   "title": "Determined and Unforeseeable",
+   "sub": "",
+   "collection": "new",
+   "words": 1190,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Determined_And_Unforeseeable_v2.md"
+  },
+  "dont-be-evil-freedom-of-knowledge-v2": {
+   "title": "Don't Be Evil: The Freedom of Knowledge",
+   "sub": "",
+   "collection": "new",
+   "words": 1824,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Dont_Be_Evil_Freedom_of_Knowledge_v2.md"
+  },
+  "entanglement-without-spookiness-v2": {
+   "title": "Entanglement Without Spookiness",
+   "sub": "",
+   "collection": "new",
+   "words": 1161,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Entanglement_Without_Spookiness_v2.md"
+  },
+  "no-dice-v2": {
+   "title": "No Dice",
+   "sub": "",
+   "collection": "new",
+   "words": 1499,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/No_Dice_v2.md"
+  },
+  "what-a-self-is-v2": {
+   "title": "What a Self Is",
+   "sub": "",
+   "collection": "new",
+   "words": 1240,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/What_A_Self_Is_v2.md"
+  },
+  "why-there-is-uncertainty-v2": {
+   "title": "Why There Is Uncertainty",
+   "sub": "",
+   "collection": "new",
+   "words": 1054,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Why_There_Is_Uncertainty_v2.md"
   }
  }
 }
