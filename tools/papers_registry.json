@@ -57,14 +57,14 @@
    "title": "A Winding Solution to the Hubble Tension and the Cosmological Constant",
    "sub": "Both cosmology headaches from the same 2-adic floor — no new fields, no new parameters.",
    "collection": "fold",
-   "words": 849,
+   "words": 1412,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/A_Winding_Solution_to_the_Hubble_Tension_and_the_Cosmological_Constant.md"
   },
   "discrete-regularity-navier-stokes": {
    "title": "Discrete Regularity: Resolving Navier–Stokes via the Vorticity Cap",
    "sub": "Existence and smoothness from a counted cap of 32 — a Millennium Problem, addressed by geometry.",
    "collection": "fold",
-   "words": 739,
+   "words": 1479,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/Discrete_Regularity_Resolving_Navier_Stokes_via_the_Vorticity_Cap.md"
   },
   "from-one-axiom-to-master-chess": {
@@ -150,6 +150,13 @@
    "collection": "new",
    "words": 8117,
    "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/From_One_Theorem_to_Blind_Protein_Structure_A_Zero_Parameter_Computational_Proof.md"
+  },
+  "the-constants-are-one-object-grand-lock-v2": {
+   "title": "The Constants Are One Object",
+   "sub": "",
+   "collection": "new",
+   "words": 1685,
+   "source": "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers/The_Constants_Are_One_Object_Grand_Lock_v2.md"
   }
  }
 }
