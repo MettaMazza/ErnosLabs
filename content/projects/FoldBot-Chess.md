@@ -62,6 +62,57 @@ The latest source-bound real-position evidence contains three matched surfaces:
 
 These are applied development measurements of the named builds, not Maria Smith's official games, findings, losses, or rank conclusion. The next state is to use the real-position panel to derive the next lossless calculation improvement, validate it on the same source-bound positions, and execute the 2100 match when Maria designates the build. The secured 1900 victory, exact legality, endgame proofs, common-depth identity, and demonstrated depth-8–11 real-position calculation provide a constructive route forward; no theorem-derived wall is established.
 
+The first new calculation candidate reused each already generated root child for worker handoff. It preserved 36/36 real-position moves and depths and 4/4 generated-position exact rational values. The matched panel measured 2.075576833 seconds before and 2.124612667 seconds with the candidate, so the live source and binaries were restored while the complete candidate executable, patch, and receipts were retained as development evidence.
+
+The next typed exact-value transposition candidate also executed. It held
+depth, exact numerator/denominator and exact/lower/upper relation and included
+the half-move clock in value identity. It preserved **36/36** real-position
+moves and depths and **4/4** exact rational values, but total panel time
+regressed from `2.075576833` to `2.421576875` seconds (**16.67% slower**), with
+only 11/36 positions faster. The candidate source, binaries and complete
+receipts are preserved, while the active engine was restored exactly to the
+ordering-only baseline. This could indicate that materialising four extra
+262,144-row arrays costs more at depth 3 than the saved transpositions return.
+The next calculation should measure a compact held-value representation or a
+deeper matched panel where exact transpositions recur more often, without
+changing value identity or the active baseline first.
+
+That compact two-array representation has now been implemented and measured.
+It again preserved **36/36** real-position moves and completed depths and
+**4/4** generated-position moves and exact rational values. Packing the four
+typed-value arrays into two improved the candidate total from `2.421576875` to
+`2.370992332` seconds, but the active ordering-only baseline remained faster at
+`2.075576833` seconds: the compact candidate was **14.23% slower**, with 14/36
+positions faster. The candidate is preserved as applied evidence and the live
+source and binaries are restored to the faster baseline. The result indicates
+that packing reduces the table overhead, but at the measured depth the exact
+value reuses still do not repay two additional full-capacity arrays. The next
+calculation should therefore measure recurrence and reuse on a deeper
+source-bound subset before allocating another complete value table.
+
+A new full 2100 match is **not yet the recommended next execution** from this
+specific candidate because it changed neither the selected move nor completed
+depth and made the matched calculation slower. The recommended next execution
+is the deeper source-bound reuse panel; a full match remains available whenever
+Maria orders it, and this advisory recommendation does not gate her decision.
+
+The recommended deeper panel has now completed and changes the implementation
+decision. Across the same **36 real 2100 positions** at ceiling 6, the compact
+exact-value table again preserved **36/36 moves and completed depths**, while
+total calculation time improved from `34.142311874` to `30.986964794` seconds
+(**9.24% faster**); the candidate was faster on **30/36** positions. Together
+with the earlier **4/4 exact rational value identity**, this shows that exact
+reuse does not repay its allocation at depth 3 but becomes net-positive by
+depth 6, consistent with greater transposition recurrence as calculation
+deepens. The compact source and rebuilt active binaries are now activated; no
+evaluation quantity, search depth, selected move, or trained parameter changed.
+
+A complete 2100 cumulative development match is now recommended under the
+current receipt protocol. The active benchmark path historically reaches
+depths 8–11, the candidate is already positive by depth 6, and all matched
+moves, depths, and exact-value controls remained identical. It is not an
+official run unless Maria explicitly registers it as one.
+
 ## The rule that governs this workspace
 
 **Read [`AGENT.md`](https://github.com/MettaMazza/FoldBot-Chess/blob/main/AGENT.md) first.** Every derivation and expansion must route through the
