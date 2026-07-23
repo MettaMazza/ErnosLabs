@@ -2,6 +2,35 @@
 
 ### Zero free parameters. Zero axioms. One fold.
 
+## Featured paper — *After Turing: The Fold Machine*
+
+**[Read the finished PDF](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/output/pdf/After_Turing_The_Fold_Machine_v1.pdf)** ·
+**[Read the open Markdown paper](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/papers/After_Turing_The_Fold_Machine.md)** ·
+**[Cite the Zenodo edition](https://doi.org/10.5281/zenodo.21512799)** ·
+**[Inspect the computation census](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/FUNDAMENTAL_COMPUTATION_CENSUS.md)** ·
+**[Run the Fold Machine laboratory](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/computational_lab/)**
+
+*An Exact Smithian Derivation of Classical and Quantum Computation, in
+Correspondence with Turing, Church, Gödel, Shannon, von Neumann, Landauer,
+Bennett, Feynman, and Deutsch.*
+
+This paper builds one proof-carrying Fold Machine whose tape, symbols,
+observation, resources, computability limits, reversible execution and quantum
+mode are derived from the same exact Fold law. It closes the declared 164-row
+computation census through Steps 325–407 and connects the derivation to a
+standalone showcase: twelve closed-theorem demonstrations, eight exact finite
+investigations, 25 end-to-end tests, 20 unfavorable controls and an independent
+34-check C certificate. Four formerly native-frontier questions are now closed
+in the main corpus: `BB_F(k)=k`, `P_F=NP_F`, exact lawful-Fold-circuit lower
+bounds, and the unique minimum fault width `2t+1` for every positive finite
+`t`. The synchronized corpus seal is **409 suites, 2,693 checks, zero failures,
+and 409/409 byte-identical generated certificates**.
+
+**Release status:** published 23 July 2026. Main corpus and standalone laboratory
+are public on GitHub; the archival edition is [Zenodo record
+21512799](https://zenodo.org/records/21512799), DOI
+[`10.5281/zenodo.21512799`](https://doi.org/10.5281/zenodo.21512799).
+
 Every fundamental constant and structural law of physics — **forced, counted,
 derived, and verified** from a single self-proving foundation. No number here is
 fitted. No number is chosen. And the starting point is not even assumed: given
@@ -21,7 +50,7 @@ or chosen value is introduced. Nothing slips through.
 
 > **THE PAPER:** [`THE_SMITHIAN_FOLD_THEORY_OF_EVERYTHING.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/THE_SMITHIAN_FOLD_THEORY_OF_EVERYTHING.md)
 > — the complete model in one document: the history of number, every derivation,
-> every forced value, the engines, the lock, the ledger, and the full 303-step
+> every forced value, the engines, the lock, the ledger, and the full 403-step
 > catalogue. Start here. Published: [DOI 10.5281/zenodo.21182468](https://doi.org/10.5281/zenodo.21182468).
 
 > **Where the theory stakes its life:** [`PREDICTIONS.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/PREDICTIONS.md) — the
@@ -642,8 +671,8 @@ And the structural laws of physics, forced the same way:
   5 draws + 1 loss vs Stockfish at its minimum exposed strength, zero illegal moves**
   ([`tools/MATCHES.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/tools/MATCHES.md)) — **the fold does not just derive; it plays**).
 
-The full, ordered, run-it-yourself derivation of all of it — every step, all 326 test
-suites (2,002 forced checks, including the trace-to-the-One and the CODATA comparison) —
+The full, ordered, run-it-yourself derivation of all of it — every step, all 409 test
+suites (2,693 forced checks, including the trace-to-the-One and the CODATA comparison) —
 is in [`OneFoldMaster.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/OneFoldMaster.md), and provable in one run with
 `make -C verify prove`.
 
@@ -659,11 +688,14 @@ and the proof is machine-checked in two parts.
 only `x` and the One with `+, −, ·, cast_out` and no other literal: every constant
 you can build is a positive integer, and `cast_out` sends every one to the One — so
 no continuous free parameter is even *expressible*, and the candidate operations
-form a **discrete, listable** space. The engine enumerates the size-≤2 self-maps
-{identity, square, constant, fold}, **runs each one**, and finds that only the fold
-*generates* (the others are static, collapse, or contract to the forbidden zero).
-`forced_unique` halts the engine if any rival ever qualifies. The fold's uniqueness
-is not asserted — it is executed and checked.
+form a **discrete, listable** space. The engine begins from the four primitive
+self-maps {identity, square, constant, fold}, then mechanically generates every
+ordered composition through size three: `4 + 16 + 64 = 84` forms. It runs every
+form and finds the Fold is the unique least-size generator; the others are static,
+collapse, contract, or are nonminimal compositions. `forced_unique` halts the
+engine if any equal-size rival qualifies. The exact statement is conditional on
+this declared generated composition grammar, with larger sizes retained as an
+extension route.
 
 **The One then follows** (`constants/the_axiom_is_a_theorem.ep`):
 
@@ -701,7 +733,7 @@ foundation theorem → One → counted generators → depths → the constant), 
 (`test_codata_comparison`: every forced value vs CODATA / PDG / Planck, through a sealed
 boundary a measurement can never cross into a derivation). It ends with `EVERYTHING
 FORCED, DERIVED, COUNTED, AND VERIFIED — traced to the One, and checked against external
-CODATA / PDG / Planck measurement` (currently 326 suites, 2,002 forced checks, 0 failures).
+CODATA / PDG / Planck measurement` (currently 409 suites, 2,693 forced checks, 0 failures).
 
 `make online` closes the "you typed the measured numbers in yourself" objection: it
 **derives** the forced values from the two generators (`2`, `3`) and **fetches** the
@@ -709,7 +741,7 @@ measured ones live from NIST's CODATA table — `1/α`, the proton/electron mass
 and the electron `g` all land on the downloaded values, nothing measured stored locally.
 
 **Reproduce the headline results (theory + the UnisonAI engine): four commands.**
-[`fold_ai/REPRODUCE.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/fold_ai/REPRODUCE.md) — the theory prover (326 suites / 2,002
+[`fold_ai/REPRODUCE.md`](https://github.com/MettaMazza/Smithian-Fold-Theory-Of-Everything/blob/main/fold_ai/REPRODUCE.md) — the theory prover (409 suites / 2,693
 forced checks), the LLM-presence suite on public GPT-2 (13/13 tensors, 39/39 registered
 checks, weights auto-fetched on a fresh clone), the pre-registered loud-subspace
 transfer test (verdict SUPPORTED), and the engine's end-to-end verification (36/36),
