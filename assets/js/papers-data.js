@@ -31,4 +31,5 @@ window.READER_WORKS = [
   {"id": "no-dice-v2", "file": "content/papers/no-dice-v2.md", "title": "No Dice", "sub": "", "words": 1499, "collection": "new"},
   {"id": "what-a-self-is-v2", "file": "content/papers/what-a-self-is-v2.md", "title": "What a Self Is", "sub": "", "words": 1240, "collection": "new"},
   {"id": "why-there-is-uncertainty-v2", "file": "content/papers/why-there-is-uncertainty-v2.md", "title": "Why There Is Uncertainty", "sub": "", "words": 1054, "collection": "new"},
+  {"id": "after-turing-the-fold-machine", "file": "content/papers/after-turing-the-fold-machine.md", "title": "After Turing: The Fold Machine", "sub": "", "words": 13794, "collection": "new"},
 ];
