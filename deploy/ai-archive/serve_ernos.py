@@ -50,7 +50,17 @@ def _kokoro_available():
 
 app = FastAPI(title="Ernos Labs — serve")
 app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"], expose_headers=["*"]
+    CORSMiddleware,
+    allow_origins=[
+        "https://ernoslabs.com",
+        "https://www.ernoslabs.com",
+        "https://mettamazza.github.io",
+    ],
+    allow_origin_regex=r"https?://(?:localhost|127\.0\.0\.1)(?::\d+)?",
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_private_network=True,
+    expose_headers=["*"],
 )
 
 
