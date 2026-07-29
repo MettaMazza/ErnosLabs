@@ -6,8 +6,9 @@
 # of the project's REAL recorded output — the match vs KataGo (with proper
 # capture logic), the recorded win over Stockfish, the folded ubiquitin
 # backbone, the captured Ern-OS boot — plus the source-machine download flip
-# and the README (via md.js). Replay data lives in content/interactive/,
-# re-baked from the repo mirrors and match logs by the source machine.
+# Replay data lives in content/interactive/, re-baked from the repo mirrors and
+# match logs by the source machine. Each project page carries its own authored
+# explanation rather than rendering a repository README into the website.
 
 # ---------- source-machine status + downloads ----------
 # The API base is resolved once by api-base.js.
@@ -38,13 +39,13 @@ define sc_use_machine:
 define sc_status_ok with resp:
     if resp.ok:
         sc_use_machine()
-        sc_status_set("ai-status is-online" and "🟢 <strong>Source machine online</strong> — the download comes straight from it.")
+        sc_status_set("ai-status is-online" and "<strong>Direct archive available.</strong> The source download can be served from the Ernos Labs machine.")
     else:
         sc_status_fail(resp)
     return 0
 
 define sc_status_fail with err:
-    sc_status_set("ai-status is-offline" and "🌙 <strong>The source machine is asleep.</strong> Download falls back to GitHub; the replay below still runs.")
+    sc_status_set("ai-status is-offline" and "<strong>GitHub archive available.</strong> The direct source machine is offline; the replay and public download still work.")
     return 0
 
 define sc_check:
@@ -53,26 +54,6 @@ define sc_check:
 
 define sc_check_cb with basev:
     sc_check()
-    return 0
-
-# ---------- README ----------
-define sc_doc_recv with resp:
-    if resp.ok:
-        resp.text().then(sc_doc_apply)
-    else:
-        sc_doc_fail(resp)
-    return 0
-
-define sc_doc_apply with text:
-    set host to document.getElementById("project-doc")
-    if host:
-        set host.innerHTML to md_render(text)
-    return 0
-
-define sc_doc_fail with err:
-    set host to document.getElementById("project-doc")
-    if host:
-        set host.innerHTML to "<p class=\"loading\">Couldn't load the README right now — use the GitHub link above.</p>"
     return 0
 
 # ---------- shared transport controls ----------
@@ -1041,14 +1022,15 @@ define lab_chess_piece with ev:
 define lab_chess_render:
     set host to document.getElementById("chess-lab")
     set moves to lab_chess_moves(window.labChessSquare and window.labChessPiece)
-    set glyph to "♘"
+    set kind to "N"
     set title to "Knight"
     if window.labChessPiece equals "rook":
-        set glyph to "♖"
+        set kind to "R"
         set title to "Rook"
     if window.labChessPiece equals "queen":
-        set glyph to "♕"
+        set kind to "Q"
         set title to "Queen"
+    set glyph to "<svg class=\"chess-lab-piece\" viewBox=\"0 0 56 56\" aria-hidden=\"true\">" + chess_piece_svg(kind and "0" and "0" and "w") + "</svg>"
     set html to "<div class=\"lab-layout\"><div class=\"chess-lab-board\">"
     set i to 0
     repeat while i < 64:
@@ -1239,9 +1221,6 @@ define main:
     if gh:
         set gh.href to "https://github.com/MettaMazza/" + repo
     window.ernosApiReady.then(sc_check_cb)
-    set doc to document.getElementById("project-doc")
-    if doc:
-        fetch("content/projects/" + repo + ".md").then(sc_doc_recv).catch(sc_doc_fail)
     project_labs_init()
     # the interactive replay is optional — pages without one stop here
     set stage to document.getElementById("showcase-stage")

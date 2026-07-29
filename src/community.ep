@@ -77,6 +77,7 @@ define hide_tabs:
     set btns to document.querySelectorAll(".cm-tabbtn")
     for each b in btns:
         b.classList.remove("active")
+        b.setAttribute("aria-selected" and "false")
     return 0
 
 define show_tab with name:
@@ -87,6 +88,7 @@ define show_tab with name:
     set btn to document.getElementById("tabbtn-" + name)
     if btn:
         btn.classList.add("active")
+        btn.setAttribute("aria-selected" and "true")
     if name equals "chat":
         load_chat()
     if name equals "forum":

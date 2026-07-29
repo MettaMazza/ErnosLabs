@@ -107,7 +107,7 @@
     if (burger) {
       burger.setAttribute("aria-expanded", "false");
       burger.setAttribute("aria-label", "Menu");
-      burger.textContent = "≡";
+      burger.textContent = "Menu";
     }
     document.querySelectorAll(".nav__drop").forEach(function (d) {
       d.classList.remove("open");

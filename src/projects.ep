@@ -1,14 +1,13 @@
-# projects.ep — the portfolio / downloads pages. Data-driven from
+# projects.ep — the portfolio / downloads page. Data-driven from
 # assets/js/projects-data.js, which the mirror thread on the source machine
 # regenerates (and pushes) whenever a repo changes — the pages never go stale.
 #
 #   projects.html : every project as a card, grouped by theme, with downloads.
-#   project.html  : one project's README rendered by md.js, plus downloads.
 #
 # The ethos, made visible: the ⬇ Download served straight from Maria's machine
 # (/projects/<repo>.zip on the funnel) whenever it's online; GitHub is only the
-# fallback for when the machine sleeps. Depends on md.js (md_render) on
-# project.html. Authored in ErnosPlain like the rest of the site.
+# fallback for when the machine sleeps. Authored in ErnosPlain like the rest
+# of the site.
 
 # The API base is resolved once by api-base.js (same-origin when the source
 # machine serves the site, else the funnel).
@@ -22,7 +21,30 @@ define pj_base:
     return ""
 
 define pj_gh with repo:
+    if repo equals "Smithian-Fold-Theory-Of-Everything":
+        return "https://github.com/MettaMazza/ernos-labs-sft-platform"
     return "https://github.com/MettaMazza/" + repo
+
+define pj_desc with p:
+    if p.repo equals "Smithian-Fold-Theory-Of-Everything":
+        return "An open science platform and public knowledge tree connecting the current publications to claims, dependencies, controls and evidence."
+    if p.repo equals "FoldBot-Chess":
+        return "A full legal chess engine whose position values are counted from the board, with rule certification, match receipts and replayable games."
+    if p.repo equals "Fold-Go":
+        return "A Go project spanning exhaustive small-board verification and preserved full-board match records, built from counted connectivity and legality."
+    if p.repo equals "Fold-Protein":
+        return "A protein-structure research engine with committed coordinates, comparison scripts and an interactive ubiquitin reconstruction."
+    if p.repo equals "UnisonAI":
+        return "Active AI research built around inspectable memory, counted relationships, explicit component provenance and repeatable verification."
+    if p.repo equals "Ernos-Programming-Language":
+        return "A compiled language that reads like ordinary sentences, with a browser playground, native compiler and self-hosting toolchain."
+    if p.repo equals "ErnosDecent":
+        return "A local-first peer-to-peer application stack for identity, messaging, storage, publishing and other everyday network services."
+    if p.repo equals "Ern-OS":
+        return "A portable operating-system project written in ErnosPlain, with a sentence-based shell and a rebuild path from a C compiler."
+    if p.repo equals "Civ-Seed":
+        return "A self-contained collection of practical knowledge, readable digital sections and engraving-ready preservation files."
+    return p.desc
 
 define pj_esc with s:
     set t to s
@@ -52,13 +74,13 @@ define pj_status_set with cls and msg:
 define pj_status_ok with resp:
     if resp.ok:
         pj_use_machine()
-        pj_status_set("ai-status is-online" and "🟢 <strong>Source machine online</strong> — downloads come straight from it, not from GitHub.")
+        pj_status_set("ai-status is-online" and "<strong>Direct archive available.</strong> Downloads can be served from the Ernos Labs source machine.")
     else:
         pj_status_fail(resp)
     return 0
 
 define pj_status_fail with err:
-    pj_status_set("ai-status is-offline" and "🌙 <strong>The source machine is asleep.</strong> Downloads fall back to GitHub for now.")
+    pj_status_set("ai-status is-offline" and "<strong>GitHub archive available.</strong> The direct source machine is currently offline, so downloads use the public repository.")
     return 0
 
 define pj_check:
@@ -81,13 +103,21 @@ define pj_card with p:
     set page to pj_page(p.repo)
     set out to "<div class=\"ai-card reveal in\">"
     set out to out + f"<div class=\"ai-card__top\"><h3>{pj_esc(p.title)}</h3></div>"
-    set out to out + f"<p class=\"ai-desc\">{pj_esc(p.desc)}</p>"
+    set out to out + f"<p class=\"ai-desc\">{pj_esc(pj_desc(p))}</p>"
     set out to out + f"<p class=\"pj-meta\">{pj_meta_line(p)}</p>"
     set out to out + "<div class=\"ai-card__actions\">"
     set out to out + f"<a class=\"btn btn--primary\" href=\"{page}\">Explore →</a>"
     set out to out + f"<a class=\"pj-dl\" data-repo=\"{p.repo}\" href=\"{pj_gh(p.repo)}/archive/refs/heads/main.zip\">⬇ Download .zip</a>"
     set out to out + f"<a class=\"pj-ghl\" href=\"{pj_gh(p.repo)}\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>"
     set out to out + "</div></div>"
+    return out
+
+define pj_site_card with title and description and page and action:
+    set out to "<div class=\"ai-card reveal in\">"
+    set out to out + f"<div class=\"ai-card__top\"><h3>{title}</h3></div>"
+    set out to out + f"<p class=\"ai-desc\">{description}</p>"
+    set out to out + "<p class=\"pj-meta\">Ernos Labs public collection</p>"
+    set out to out + f"<div class=\"ai-card__actions\"><a class=\"btn btn--primary\" href=\"{page}\">{action} →</a></div></div>"
     return out
 
 # Each project's dedicated, fully-featured page (falls back to GitHub-only repos).
@@ -121,8 +151,24 @@ define pj_page with repo:
 define pj_section with key and heading and sub:
     set cards to ""
     for each p in window.ERNOS_PROJECTS:
-        if p.cat equals key:
+        set include to false
+        if key equals "projects":
+            if p.cat equals "platform":
+                set include to true
+            if p.cat equals "ai":
+                set include to true
+        else:
+            if p.cat equals key:
+                set include to true
+        if p.repo equals "Smithian-Fold-Theory":
+            set include to false
+        if p.repo equals "sft-dev":
+            set include to false
+        if include:
             set cards to cards + pj_card(p)
+    if key equals "preserve":
+        set cards to cards + pj_site_card("Seed Vault" and "A readable, searchable route through the knowledge selected for long-term preservation, available in the browser or as downloadable text." and "seed.html" and "Read the vault")
+        set cards to cards + pj_site_card("AI Archive" and "Open model files kept with their formats, licences, checksums, source links and the programs needed to run them again." and "ai.html" and "Browse the archive")
     if cards equals "":
         return ""
     set out to f"<hr class=\"divider\" style=\"margin:34px 0 26px\"><h2>{heading}</h2>"
@@ -135,80 +181,15 @@ define pj_render_grid:
     if not host:
         return 0
     set html to ""
-    set html to html + pj_section("theory" and "The theory" and "The Smithian Fold — a theory of everything with zero free parameters and zero axioms, machine-verified.")
-    set html to html + pj_section("engines" and "Zero-parameter engines" and "The theory put to work: chess, Go, and protein folding with every value counted from geometry — nothing tuned, nothing trained.")
-    set html to html + pj_section("ai" and "AI" and "Intelligence built on the fold instead of statistical guesswork.")
-    set html to html + pj_section("platform" and "The language & platform" and "ErnosPlain and everything written in it — a language, a decentralised internet, an operating system.")
-    set html to html + pj_section("preserve" and "Preservation" and "Knowledge that survives on its own — including this very site.")
+    set html to html + pj_section("theory" and "Theory" and "The current Smithian Fold Theory platform, publications and public knowledge record.")
+    set html to html + pj_section("projects" and "Projects" and "Languages, local systems, peer-to-peer infrastructure and active AI research—with working interfaces and source code.")
+    set html to html + pj_section("engines" and "Engines" and "Chess, Go and protein-structure showcases that make the method visible through interactive results and reproducible files.")
+    set html to html + pj_section("preserve" and "Preservation" and "Knowledge and software prepared to remain useful beyond their original machine, service or moment.")
     set host.innerHTML to html
-    return 0
-
-# ---------- the single-project README page ----------
-define pj_param:
-    set sp to Reflect.construct(window.URLSearchParams and [window.location.search])
-    set v to sp.get("p")
-    if v:
-        return v
-    return ""
-
-define pj_find with repo:
-    for each p in window.ERNOS_PROJECTS:
-        if p.repo equals repo:
-            return p
-    return 0
-
-define pj_doc_recv with resp:
-    if resp.ok:
-        resp.text().then(pj_doc_apply)
-    else:
-        pj_doc_fail(resp)
-    return 0
-
-define pj_doc_apply with text:
-    set host to document.getElementById("project-doc")
-    if host:
-        set host.innerHTML to md_render(text)
-    return 0
-
-define pj_doc_fail with err:
-    set host to document.getElementById("project-doc")
-    if host:
-        set host.innerHTML to "<p class=\"loading\">Couldn't load this project's README right now — use the GitHub link above.</p>"
-    return 0
-
-define pj_render_page:
-    set host to document.getElementById("project-doc")
-    if not host:
-        return 0
-    set repo to pj_param()
-    set p to pj_find(repo)
-    if not p:
-        set host.innerHTML to "<p class=\"loading\">Unknown project. <a href=\"projects.html\">Back to all projects →</a></p>"
-        return 0
-    set document.title to p.title + " — Ernos Labs"
-    set h to document.getElementById("project-title")
-    if h:
-        set h.innerHTML to pj_esc(p.title)
-    set d to document.getElementById("project-desc")
-    if d:
-        set d.innerHTML to pj_esc(p.desc)
-    set m to document.getElementById("project-meta")
-    if m:
-        set m.innerHTML to pj_meta_line(p)
-    set dl to document.getElementById("project-dl")
-    if dl:
-        set dl.href to pj_gh(repo) + "/archive/refs/heads/main.zip"
-        dl.setAttribute("data-repo" and repo)
-    set gh to document.getElementById("project-gh")
-    if gh:
-        set gh.href to pj_gh(repo)
-    set host.innerHTML to "<p class=\"loading\">Loading the README…</p>"
-    fetch("content/projects/" + repo + ".md").then(pj_doc_recv).catch(pj_doc_fail)
     return 0
 
 define main:
     pj_render_grid()
-    pj_render_page()
     window.ernosApiReady.then(pj_check_cb)
     return 0
 

@@ -114,6 +114,13 @@ define open_work with id:
     set dl to document.getElementById("reader-dl")
     if dl:
         set dl.href to w.file
+    set source_link to document.getElementById("reader-source")
+    if source_link:
+        if w.source_url:
+            set source_link.href to w.source_url
+            source_link.classList.remove("hidden")
+        else:
+            source_link.classList.add("hidden")
     set doc to document.getElementById("doc")
     set doc.innerHTML to "<p class=\"loading\">Loading " + w.title + "…</p>"
     set toc0 to document.getElementById("toc")
@@ -126,12 +133,70 @@ define open_work with id:
 define resp_text with resp:
     return resp.text()
 
+define reader_absolute_url with href and raw:
+    set base to window.curWork.source_root_url
+    if raw:
+        set base to window.curWork.raw_root_url
+    if href.startsWith("./"):
+        set base to window.curWork.source_url
+        if raw:
+            set base to window.curWork.raw_source_url
+    else:
+        if href.startsWith("../"):
+            set base to window.curWork.source_url
+            if raw:
+                set base to window.curWork.raw_source_url
+    return Reflect.construct(window.URL and [href, base]).href
+
+define resolve_reader_resources:
+    if not window.curWork:
+        return 0
+    if not window.curWork.source_root_url:
+        return 0
+    set doc to document.getElementById("doc")
+    set links to doc.querySelectorAll("a[href]")
+    for each link in links:
+        set href to link.getAttribute("href")
+        if href.startsWith("#"):
+            link.removeAttribute("target")
+            link.removeAttribute("rel")
+        else:
+            if not href.startsWith("http://"):
+                if not href.startsWith("https://"):
+                    if not href.startsWith("mailto:"):
+                        if not href.startsWith("tel:"):
+                            set link.href to reader_absolute_url(href and false)
+                            set link.target to "_blank"
+                            set link.rel to "noopener"
+    set images to doc.querySelectorAll("img[src]")
+    for each img in images:
+        set src to img.getAttribute("src")
+        if not src.startsWith("http://"):
+            if not src.startsWith("https://"):
+                if not src.startsWith("data:"):
+                    set img.src to reader_absolute_url(src and true)
+    return 0
+
+define prepare_reader_text with text:
+    # The methods manuscript is retained byte-for-byte as a versioned source
+    # and download. In the public reader, qualify its short internal link so it
+    # cannot be mistaken for a claim that the complete SFT contains two claims.
+    if window.curWork:
+        if window.curWork.id equals "methods":
+            return text.replace("[Inspect the two inaugural claims]" and "[Inspect this methods paper's two founding proofs]")
+    return text
+
 define render_doc with text:
     set doc to document.getElementById("doc")
-    set html to md_render(text)
+    set reader_text to prepare_reader_text(text)
+    set html to md_render(reader_text)
+    if window.curWork:
+        if window.curWork.context:
+            set html to window.curWork.context + html
     set window.docHtml to html
     set doc.innerHTML to html
-    build_toc(text)
+    resolve_reader_resources()
+    build_toc(reader_text)
     apply_font()
     return 0
 
@@ -182,7 +247,7 @@ define copy_link with ev:
 define reset_copy_label:
     set btn to document.getElementById("copy-link")
     if btn:
-        set btn.textContent to "🔗 Copy link"
+        set btn.textContent to "Copy link"
     return 0
 
 # ---- font controls -------------------------------------------------------
@@ -213,6 +278,7 @@ define do_search with ev:
     set count to document.getElementById("search-count")
     if q equals "":
         set doc.innerHTML to window.docHtml
+        resolve_reader_resources()
         set count.textContent to ""
         return 0
     if q.length < 2:
@@ -221,6 +287,7 @@ define do_search with ev:
     set re to md_rx(esc + "(?![^<]*>)" and "gi")
     set hl to window.docHtml.replace(re and "<mark>$&</mark>")
     set doc.innerHTML to hl
+    resolve_reader_resources()
     set marks to doc.querySelectorAll("mark")
     set count.textContent to f"{marks.length} matches"
     if marks.length > 0:
@@ -247,8 +314,6 @@ define toggle_tts with ev:
         return 0
     set doc to document.getElementById("doc")
     set text to doc.textContent
-    if text.length > 15000:
-        set text to text.slice(0 and 15000)
     set window.ttsOn to true
     set btn to document.getElementById("tts")
     set btn.textContent to "■ Stop"
@@ -320,4 +385,3 @@ define main:
         if hash.length > 1:
             open_work(hash.slice(1))
     return 0
-

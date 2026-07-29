@@ -39,7 +39,7 @@ function sc_use_machine() {
 function sc_status_ok(resp) {
     if (resp.ok) {
         sc_use_machine();
-        sc_status_set("ai-status is-online", "🟢 <strong>Source machine online</strong> — the download comes straight from it.");
+        sc_status_set("ai-status is-online", "<strong>Direct archive available.</strong> The source download can be served from the Ernos Labs machine.");
     } else {
         sc_status_fail(resp);
     }
@@ -47,7 +47,7 @@ function sc_status_ok(resp) {
 }
 
 function sc_status_fail(err) {
-    sc_status_set("ai-status is-offline", "🌙 <strong>The source machine is asleep.</strong> Download falls back to GitHub; the replay below still runs.");
+    sc_status_set("ai-status is-offline", "<strong>GitHub archive available.</strong> The direct source machine is offline; the replay and public download still work.");
     return 0;
 }
 
@@ -61,35 +61,8 @@ function sc_check_cb(basev) {
     return 0;
 }
 
-function sc_doc_recv(resp) {
-    if (resp.ok) {
-        resp.text().then(sc_doc_apply);
-    } else {
-        sc_doc_fail(resp);
-    }
-    return 0;
-}
-
-function sc_doc_apply(text) {
-    let host;
-    host = document.getElementById("project-doc");
-    if (host) {
-        host.innerHTML = md_render(text);
-    }
-    return 0;
-}
-
-function sc_doc_fail(err) {
-    let host;
-    host = document.getElementById("project-doc");
-    if (host) {
-        host.innerHTML = "<p class=\"loading\">Couldn't load the README right now — use the GitHub link above.</p>";
-    }
-    return 0;
-}
-
 function sc_controls(total) {
-    let out, t;
+    let t, out;
     t = String(total);
     out = "<div class=\"sc-transport\"><div class=\"sc-progress\" aria-hidden=\"true\"><span id=\"sc-progress-fill\"></span></div><div class=\"sc-controls\">";
     out = (out + "<button class=\"sc-btn\" id=\"sc-first\" aria-label=\"Start\">⏮</button>");
@@ -128,7 +101,7 @@ function sc_wire_controls(render_fn, total) {
 }
 
 function sc_goto(n) {
-    let pc, fill, c, p;
+    let pc, c, p, fill;
     p = n;
     if ((p < 0)) {
         p = 0;
@@ -233,7 +206,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let neigh, total, i, stack, seen, libs, col, row, v, group, colour, cur;
+    let cur, col, stack, row, neigh, libs, group, i, seen, v, total, colour;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -284,7 +257,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let mv, row, size, neigh, dead, board, idx, i, playable, rownum, k, d, enemy, side, col, moves, colour, coord;
+    let col, i, neigh, board, size, idx, coord, d, dead, k, playable, colour, enemy, mv, rownum, row, moves, side;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -345,7 +318,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let dims, a0, cx, nextside, letter, size, board, stars, v, mv, total, moves, svg, lastn, coord, dim, current, p, numlbl, idx, a1, lastmove, cell, i, stage, d, turn, cy, col, rownum, row, pad, edge, side, signal, marky;
+    let i, rownum, turn, cy, cell, lastmove, lastn, size, dim, side, signal, edge, numlbl, pad, a1, marky, stage, board, letter, coord, dims, current, svg, d, idx, nextside, a0, cx, row, total, col, p, stars, moves, mv, v;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -457,7 +430,7 @@ function go_render(n) {
 }
 
 function go_init() {
-    let nmoves, stage, total;
+    let stage, total, nmoves;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
@@ -467,7 +440,7 @@ function go_init() {
 }
 
 function chess_row(letters, colour) {
-    let i, arr, ch;
+    let ch, i, arr;
     arr = [];
     i = 0;
     while ((i < 8)) {
@@ -497,7 +470,7 @@ function chess_fresh_board() {
 }
 
 function chess_piece_svg(kind, x, y, side) {
-    let fillc, strokec, out;
+    let strokec, out, fillc;
     fillc = "#fffaf0";
     strokec = "#25313f";
     if ((side === "b")) {
@@ -532,7 +505,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let target, filediff, promo, tf, fr, kind, piece, ff, diff, rook, negtwo, side, caprow, torow, uci, moves, board, fromrow, k, tr;
+    let filediff, kind, target, fr, promo, k, moves, tr, piece, board, tf, fromrow, ff, rook, caprow, side, uci, diff, torow, negtwo;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -601,7 +574,7 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let fx, pad, current, hlto, nextturn, hfr, htr, htf, x, dims, svg, r, y, sqidx, flabel, kind, ishl, piecex, pyrow, fy, stage, hlfrom, board, piece, yrow, dim, lastn, cells, piecey, uci, ry, rlabel, row, hff, turn, i, signal, played, parity, f, fillc, cell;
+    let lastn, hfr, ishl, piecex, parity, hlfrom, board, i, fillc, cells, played, kind, row, signal, piecey, hff, y, pyrow, current, f, flabel, stage, svg, dim, htf, ry, hlto, turn, htr, x, piece, dims, uci, cell, sqidx, fx, r, fy, nextturn, rlabel, yrow, pad;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
@@ -717,7 +690,7 @@ function chess_render(n) {
 }
 
 function chess_init() {
-    let plies, caption, total, stage, d, sidename, elostr;
+    let plies, total, d, stage, sidename, elostr, caption;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -737,7 +710,7 @@ function chess_init() {
 }
 
 function protein_render(step) {
-    let pnode, degrees, ax, px, ay, span, syn, maxx, sx, sy, screen, b, sw, y, nx, turn, ca, spy, n, current, maxz, depth, signal, scale, cosa, x, pr, minz, p, sina, ang, i, py, pair, z, a, ratio, proj, miny, bx, pz, by, ny, stage, sp, maxy, sxn, svg, colour, minx, isnode;
+    let z, p, degrees, b, maxz, pz, pr, proj, span, ang, x, ratio, colour, isnode, nx, minx, turn, miny, y, depth, ca, minz, n, px, scale, py, spy, maxx, i, svg, ay, by, bx, pnode, ny, maxy, sxn, signal, sx, sy, sp, syn, stage, sw, current, cosa, a, pair, screen, ax, sina;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -870,7 +843,7 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let stage, n, src, play;
+    let stage, play, n, src;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
@@ -906,7 +879,7 @@ function boot_append(line) {
 }
 
 function boot_finish() {
-    let shell, state, prompt;
+    let state, shell, prompt;
     shell = document.getElementById("ern-shell");
     if (shell) {
         shell.classList.add("is-ready");
@@ -1043,7 +1016,7 @@ function boot_key(ev) {
 }
 
 function boot_init() {
-    let stage, form, commandbox, quicks;
+    let stage, form, quicks, commandbox;
     stage = document.getElementById("showcase-stage");
     stage.innerHTML = "<div class=\"ern-shell\" id=\"ern-shell\"><div class=\"ern-windowbar\"><span class=\"ern-window-dots\"><i></i><i></i><i></i></span><strong>Ern‑OS Desktop</strong><span class=\"ern-window-state\" id=\"ern-state\">BOOTING</span></div><div class=\"ern-desktop\"><aside class=\"ern-dock\" aria-label=\"Ern-OS apps\"><span class=\"is-active\">›_</span><span>▤</span><span>◫</span><span>⌁</span></aside><div class=\"ern-terminal\"><div class=\"ern-terminal-head\"><span>Conversation</span><small>maria@ern-os · offline</small></div><pre class=\"sc-term\" id=\"sc-term\"></pre><form class=\"ern-prompt\" id=\"ern-prompt\"><label for=\"ern-command\">/home/maria &gt;</label><input id=\"ern-command\" type=\"text\" autocomplete=\"off\" disabled placeholder=\"Type a sentence…\"><button type=\"submit\">Run</button></form></div></div><div class=\"ern-quick\" aria-label=\"Command suggestions\"><span>Try a command</span><button data-command=\"make a folder called letters\">Make a folder</button><button data-command=\"write a note called hello saying good morning\">Write a note</button><button data-command=\"what is running\">Running services</button><button data-command=\"rebuild the system\">Rebuild itself</button></div></div>";
     window.bootLines = window.scData.lines.slice(0, 31);
@@ -1105,7 +1078,7 @@ function sc_data_fail(err) {
 }
 
 function lab_go_group(start) {
-    let value, seen, i, out, cur, col, stack, board, row, ns, colour;
+    let value, i, stack, colour, col, cur, row, seen, board, out, ns;
     board = window.labGoBoard;
     colour = board[start];
     out = JSON.parse("{\"group\":[],\"libs\":[]}");
@@ -1181,7 +1154,7 @@ function lab_go_preset(ev) {
 }
 
 function lab_go_render() {
-    let html, colour, i, label, found, host, v, points, cls;
+    let label, v, html, colour, found, cls, i, host, points;
     host = document.getElementById("go-lab");
     if (!host) {
         return 0;
@@ -1233,7 +1206,7 @@ function lab_go_init() {
 }
 
 function lab_chess_moves(square, piece) {
-    let moves, jumps, dirs, c, rr, cc, r;
+    let r, cc, rr, moves, jumps, dirs, c;
     moves = [];
     r = Math.floor((square / 8));
     c = (square % 8);
@@ -1291,19 +1264,20 @@ function lab_chess_piece(ev) {
 }
 
 function lab_chess_render() {
-    let glyph, rr, active, host, title, cc, pieces, picks, i, content, squares, moves, cls, html;
+    let pieces, squares, moves, cc, rr, html, content, active, kind, cls, i, host, title, picks, glyph;
     host = document.getElementById("chess-lab");
     moves = lab_chess_moves(window.labChessSquare, window.labChessPiece);
-    glyph = "♘";
+    kind = "N";
     title = "Knight";
     if ((window.labChessPiece === "rook")) {
-        glyph = "♖";
+        kind = "R";
         title = "Rook";
     }
     if ((window.labChessPiece === "queen")) {
-        glyph = "♕";
+        kind = "Q";
         title = "Queen";
     }
+    glyph = (("<svg class=\"chess-lab-piece\" viewBox=\"0 0 56 56\" aria-hidden=\"true\">" + chess_piece_svg(kind, "0", "0", "w")) + "</svg>");
     html = "<div class=\"lab-layout\"><div class=\"chess-lab-board\">";
     i = 0;
     while ((i < 64)) {
@@ -1355,7 +1329,7 @@ function lab_chess_init() {
 }
 
 function lab_protein_distance(a, b) {
-    let dz, dx, dy;
+    let dx, dy, dz;
     dx = (a[0] - b[0]);
     dy = (a[1] - b[1]);
     dz = (a[2] - b[2]);
@@ -1363,7 +1337,7 @@ function lab_protein_distance(a, b) {
 }
 
 function lab_protein_render() {
-    let canvas, focus, n, cell, nearest, dist, stat, copy, contacts, coords, j, ctx, i;
+    let n, ctx, canvas, coords, cell, dist, stat, contacts, focus, i, j, copy, nearest;
     coords = window.labProteinCoords;
     focus = window.labProteinFocus;
     canvas = document.getElementById("protein-map");
@@ -1453,7 +1427,7 @@ function lab_unison_clean(text) {
 }
 
 function lab_unison_run(ev) {
-    let pct, html, text, words, count, best, pos, total, counts, next, raw, held, old, i, result, options;
+    let options, counts, total, old, html, text, count, raw, next, pct, result, i, held, best, words, pos;
     text = document.getElementById("unison-corpus").value;
     held = document.getElementById("unison-held").value.toLowerCase();
     raw = lab_unison_clean(text);
@@ -1530,7 +1504,7 @@ function project_labs_init() {
 }
 
 function main() {
-    let page, dl, repo, gh, doc, stage, file;
+    let page, dl, repo, file, stage, gh;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;
@@ -1546,10 +1520,6 @@ function main() {
         gh.href = ("https://github.com/MettaMazza/" + repo);
     }
     window.ernosApiReady.then(sc_check_cb);
-    doc = document.getElementById("project-doc");
-    if (doc) {
-        fetch((("content/projects/" + repo) + ".md")).then(sc_doc_recv).catch(sc_doc_fail);
-    }
     project_labs_init();
     stage = document.getElementById("showcase-stage");
     if (!stage) {

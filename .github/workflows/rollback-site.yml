@@ -1,0 +1,71 @@
+name: Roll back Ernos Labs to the preserved site
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type ROLLBACK to redeploy the preserved pre-v2 site
+        required: true
+        default: ""
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ernoslabs-production
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require deliberate rollback confirmation
+        shell: bash
+        run: test "${{ inputs.confirmation }}" = "ROLLBACK"
+
+      - name: Check out the preserved pre-v2 site
+        uses: actions/checkout@v4
+        with:
+          ref: pre-site-v2-2026-07-29-49d7b85
+
+      - name: Verify the immutable rollback commit
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "49d7b85d696b8ce2e1522de56859cd2b0655de66"
+
+      - name: Prepare only the preserved public site
+        shell: bash
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude='.git/' \
+            --exclude='.gitignore' \
+            --exclude='.github/' \
+            --exclude='_site/' \
+            --exclude='src/' \
+            --exclude='tools/' \
+            --exclude='demos/' \
+            --exclude='deploy/' \
+            --exclude='research/' \
+            --exclude='canvas/' \
+            --exclude='stdlib' \
+            --exclude='build.sh' \
+            --exclude='serve.py' \
+            --exclude='README.md' \
+            --exclude='netlify.toml'
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the preserved site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy the preserved site
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -59,8 +59,50 @@ function md_is_hr(line) {
     return false;
 }
 
+function md_table_cells(line) {
+    let t;
+    t = line.trim();
+    if (t.startsWith("|")) {
+        t = t.slice(1);
+    }
+    if (t.endsWith("|")) {
+        t = t.slice(0, (t.length - 1));
+    }
+    return t.split("|");
+}
+
+function md_is_table_separator(line) {
+    let cell, cells, i;
+    cells = md_table_cells(line);
+    if ((cells.length < 1)) {
+        return false;
+    }
+    i = 0;
+    while ((i < cells.length)) {
+        cell = cells[i].trim();
+        if (!md_rx("^:?-{3,}:?$", "").test(cell)) {
+            return false;
+        }
+        i = (i + 1);
+    }
+    return true;
+}
+
+function md_table_row(line, tag) {
+    let i, out, cells, cell;
+    cells = md_table_cells(line);
+    out = "<tr>";
+    i = 0;
+    while ((i < cells.length)) {
+        cell = cells[i].trim();
+        out = (((out + (("<" + String(tag)) + ">")) + md_inline(cell)) + (("</" + String(tag)) + ">"));
+        i = (i + 1);
+    }
+    return (out + "</tr>");
+}
+
 function md_render(src) {
-    let line, para, i, n, code_buf, lines, norm, in_list, hlvl, htext, list_tag, hid, tag, want, out, in_code, ordered, trimmed;
+    let ordered, code_buf, in_code, out, list_tag, hlvl, n, i, htext, line, hid, tag, next_line, want, qline, in_list, para, quote, trimmed, norm, lines;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;
@@ -71,6 +113,7 @@ function md_render(src) {
     para = "";
     in_list = false;
     list_tag = "ul";
+    next_line = "";
     while ((i < n)) {
         line = lines[i];
         if (line.trim().startsWith("```")) {
@@ -113,63 +156,103 @@ function md_render(src) {
                 }
                 out = (out + "<hr>");
                 i = (i + 1);
-            } else if ((hlvl >= 1)) {
-                if ((hlvl <= 6)) {
-                    if ((line.charAt(hlvl) === " ")) {
-                        if ((para !== "")) {
-                            out = (((out + "<p>") + md_inline(para)) + "</p>");
-                            para = "";
+            } else {
+                next_line = "";
+                if (((i + 1) < n)) {
+                    next_line = lines[(i + 1)];
+                }
+                if ((trimmed.includes("|") && md_is_table_separator(next_line))) {
+                    if ((para !== "")) {
+                        out = (((out + "<p>") + md_inline(para)) + "</p>");
+                        para = "";
+                    }
+                    if (in_list) {
+                        out = (((out + "</") + list_tag) + ">");
+                        in_list = false;
+                    }
+                    out = (((out + "<table><thead>") + md_table_row(line, "th")) + "</thead><tbody>");
+                    i = (i + 2);
+                    while ((i < n)) {
+                        line = lines[i];
+                        trimmed = line.trim();
+                        if ((trimmed === "")) {
+                            break;
                         }
-                        if (in_list) {
-                            out = (((out + "</") + list_tag) + ">");
-                            in_list = false;
+                        if (!trimmed.includes("|")) {
+                            break;
                         }
-                        htext = line.slice((hlvl + 1)).trim();
-                        hid = md_slug(htext);
-                        tag = ("h" + String(hlvl));
-                        out = (((out + (((("<" + String(tag)) + " id=\"") + String(hid)) + "\">")) + md_inline(htext)) + (("</" + String(tag)) + ">"));
+                        out = (out + md_table_row(line, "td"));
                         i = (i + 1);
+                    }
+                    out = (out + "</tbody></table>");
+                } else if ((hlvl >= 1)) {
+                    if ((hlvl <= 6)) {
+                        if ((line.charAt(hlvl) === " ")) {
+                            if ((para !== "")) {
+                                out = (((out + "<p>") + md_inline(para)) + "</p>");
+                                para = "";
+                            }
+                            if (in_list) {
+                                out = (((out + "</") + list_tag) + ">");
+                                in_list = false;
+                            }
+                            htext = line.slice((hlvl + 1)).trim();
+                            hid = md_slug(htext);
+                            tag = ("h" + String(hlvl));
+                            out = (((out + (((("<" + String(tag)) + " id=\"") + String(hid)) + "\">")) + md_inline(htext)) + (("</" + String(tag)) + ">"));
+                            i = (i + 1);
+                        } else {
+                            para = md_para_add(para, line);
+                            i = (i + 1);
+                        }
                     } else {
                         para = md_para_add(para, line);
                         i = (i + 1);
                     }
+                } else if (trimmed.startsWith(">")) {
+                    if ((para !== "")) {
+                        out = (((out + "<p>") + md_inline(para)) + "</p>");
+                        para = "";
+                    }
+                    quote = "";
+                    while ((i < n)) {
+                        line = lines[i];
+                        trimmed = line.trim();
+                        if (!trimmed.startsWith(">")) {
+                            break;
+                        }
+                        qline = trimmed.slice(1).trim();
+                        quote = md_para_add(quote, qline);
+                        i = (i + 1);
+                    }
+                    out = (((out + "<blockquote>") + md_inline(quote)) + "</blockquote>");
+                } else if (md_is_list_item(trimmed)) {
+                    if ((para !== "")) {
+                        out = (((out + "<p>") + md_inline(para)) + "</p>");
+                        para = "";
+                    }
+                    ordered = md_is_ordered(trimmed);
+                    want = "ul";
+                    if (ordered) {
+                        want = "ol";
+                    }
+                    if (in_list) {
+                        if ((list_tag !== want)) {
+                            out = (((out + "</") + list_tag) + ">");
+                            out = (((out + "<") + want) + ">");
+                            list_tag = want;
+                        }
+                    } else {
+                        out = (((out + "<") + want) + ">");
+                        list_tag = want;
+                        in_list = true;
+                    }
+                    out = (((out + "<li>") + md_inline(md_list_text(trimmed))) + "</li>");
+                    i = (i + 1);
                 } else {
                     para = md_para_add(para, line);
                     i = (i + 1);
                 }
-            } else if (trimmed.startsWith("> ")) {
-                if ((para !== "")) {
-                    out = (((out + "<p>") + md_inline(para)) + "</p>");
-                    para = "";
-                }
-                out = (((out + "<blockquote>") + md_inline(trimmed.slice(2))) + "</blockquote>");
-                i = (i + 1);
-            } else if (md_is_list_item(trimmed)) {
-                if ((para !== "")) {
-                    out = (((out + "<p>") + md_inline(para)) + "</p>");
-                    para = "";
-                }
-                ordered = md_is_ordered(trimmed);
-                want = "ul";
-                if (ordered) {
-                    want = "ol";
-                }
-                if (in_list) {
-                    if ((list_tag !== want)) {
-                        out = (((out + "</") + list_tag) + ">");
-                        out = (((out + "<") + want) + ">");
-                        list_tag = want;
-                    }
-                } else {
-                    out = (((out + "<") + want) + ">");
-                    list_tag = want;
-                    in_list = true;
-                }
-                out = (((out + "<li>") + md_inline(md_list_text(trimmed))) + "</li>");
-                i = (i + 1);
-            } else {
-                para = md_para_add(para, line);
-                i = (i + 1);
             }
         }
     }
@@ -222,7 +305,7 @@ function md_list_text(t) {
 }
 
 function md_headings(src) {
-    let lvl, i, line, lines, in_code, n, h, norm, heads, htext;
+    let heads, h, i, lvl, line, htext, norm, lines, in_code, n;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;

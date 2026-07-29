@@ -97,12 +97,13 @@ function hide_tabs() {
     btns = document.querySelectorAll(".cm-tabbtn");
     for (const b of btns) {
         b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
     }
     return 0;
 }
 
 function show_tab(name) {
-    let btn, sec;
+    let sec, btn;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -111,6 +112,7 @@ function show_tab(name) {
     btn = document.getElementById(("tabbtn-" + name));
     if (btn) {
         btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
     }
     if ((name === "chat")) {
         load_chat();
@@ -178,7 +180,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, p, inp;
+    let body, inp, p;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -220,7 +222,7 @@ function chat_key_ev(ev) {
 }
 
 function show_thread_list() {
-    let lv, tv;
+    let tv, lv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -244,7 +246,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let host, out, links;
+    let out, host, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -284,7 +286,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, tv, out, t, posts, lv;
+    let head, lv, t, posts, out, tv;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -310,7 +312,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let inp, body, p;
+    let p, inp, body;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -410,7 +412,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let slug, out, host;
+    let host, slug, out;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -428,7 +430,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let p, ui, ni, note, url;
+    let ui, ni, p, url, note;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;

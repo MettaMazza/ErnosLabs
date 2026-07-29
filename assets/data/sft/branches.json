@@ -1,0 +1,170 @@
+{
+  "schema": "ernoslabs-sft-public-branches/1",
+  "source_schema": "sft-v3-branch-census/1",
+  "status_semantics": "Any closed or complete branch status means current-knowledge and evidence closure at an explicit dated inventory only. Every branch remains open to lawful versioned extensions, correction, falsification and new discovery through the unchanged admission protocol.",
+  "final_toe_paper_status": "not_ready",
+  "foundational_branch_program": {
+    "as_of": "2026-07-28",
+    "registered_branch_count": 15,
+    "current_evidence_complete_extension_open_foundation_count": 15,
+    "live_model_admitted_claim_count": 1319,
+    "heavy_complete_verification_status": "passed_2026-07-28_1319_of_1319_runtime_4753_74_seconds",
+    "remote_publication_and_push_authorized": true,
+    "remote_publication_status": "four_remaining_foundation_papers_published_2026-07-28"
+  },
+  "all_foundations_complete": true,
+  "public_status_summary": "All 15 registered scientific branches are foundationally complete. Each branch remains available for versioned additions as the model develops.",
+  "lineage_reconciliation": {
+    "all_branch_specific_v1_v2_reviews_complete_for_foundational_publications": true,
+    "global_single_ledger_merge_remains_required_for_final_toe": true,
+    "historical_or_published_status_is_not_v3_reconstruction": true,
+    "registry": "census/lineage_reconciliation.json",
+    "required_for_final_toe_completion": true,
+    "status": "open_blocking"
+  },
+  "prior_obligation_ownership": {
+    "branch_specific_review_may_close_a_foundation_before_global_merge": true,
+    "foundational_branch_specific_reviews_complete": true,
+    "registry": "census/prior_obligation_ownership.json",
+    "required_for_final_toe_completion": true,
+    "status": "open_blocking"
+  },
+  "publication_inventory_branch_count": 15,
+  "branches": [
+    {
+      "branch_id": "foundation",
+      "inventory_status": "current_evidence_closed_16_of_16_claims_32_of_32_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21591169",
+      "branch_label": "Foundation",
+      "live_census_claims": 16,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "mathematics",
+      "inventory_status": "current_evidence_closed_27_of_27_claims_71_of_71_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.3_doi_10.5281_zenodo.21591170",
+      "branch_label": "Mathematics",
+      "live_census_claims": 27,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "information_science",
+      "inventory_status": "current_evidence_closed_12_of_12_claims_77_of_77_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21591171",
+      "branch_label": "Information science",
+      "live_census_claims": 12,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "computation",
+      "inventory_status": "current_evidence_closed_116_of_116_claims_134_of_134_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21591174",
+      "branch_label": "Classical computation",
+      "live_census_claims": 116,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "quantum_computation",
+      "inventory_status": "current_evidence_closed_22_of_22_claims_29_of_29_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21591175",
+      "branch_label": "Quantum computation",
+      "live_census_claims": 22,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "physics",
+      "inventory_status": "current_evidence_closed_349_of_349_claims_488_of_488_atomic_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.1_doi_10.5281_zenodo.21591791",
+      "branch_label": "Physics",
+      "live_census_claims": 349,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "chemistry",
+      "inventory_status": "foundation_current_evidence_closed_86_of_86_claims_52_of_52_prior_obligations_extension_open__live_surface_176_claims__complete_field_continuation_paused_97_operations_remaining",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21627782",
+      "branch_label": "Chemistry",
+      "live_census_claims": 176,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "materials",
+      "inventory_status": "foundation_current_evidence_closed_92_of_92_claims_56_of_56_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.2_doi_10.5281_zenodo.21629306",
+      "branch_label": "Materials science",
+      "live_census_claims": 92,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "biology",
+      "inventory_status": "foundation_current_evidence_closed_75_of_75_claims_30_of_30_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21630203",
+      "branch_label": "Biology and life sciences",
+      "live_census_claims": 75,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "medicine",
+      "inventory_status": "current_evidence_closed_72_of_72_claims_5_of_5_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21630785",
+      "branch_label": "Medicine and health sciences",
+      "live_census_claims": 72,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "consciousness_cognitive_science",
+      "inventory_status": "current_evidence_closed_72_of_72_claims_46_of_46_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21636397",
+      "branch_label": "Consciousness and cognitive science",
+      "live_census_claims": 72,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "earth_environment",
+      "inventory_status": "foundation_current_evidence_closed_extension_open_74_of_74",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21640810",
+      "branch_label": "Earth and environmental sciences",
+      "live_census_claims": 74,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "astronomy_cosmology",
+      "inventory_status": "foundation_current_evidence_closed_72_of_72_claims_53_of_53_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21640812",
+      "branch_label": "Astronomy and cosmology",
+      "live_census_claims": 72,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "social_collective_systems",
+      "inventory_status": "foundation_current_evidence_closed_72_of_72_claims_5_of_5_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21640814",
+      "branch_label": "Social and collective sciences",
+      "live_census_claims": 72,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    },
+    {
+      "branch_id": "engineering_translation",
+      "inventory_status": "foundation_current_evidence_closed_72_of_72_claims_7_of_7_prior_obligations_extension_open",
+      "paper_status": "published_paper_001_v1.0_doi_10.5281_zenodo.21640816",
+      "branch_label": "Engineering translation",
+      "live_census_claims": 72,
+      "foundation_status": "Foundationally complete",
+      "count_note": "The live whole-model census count is separate from the dated publication inventory encoded in inventory_status."
+    }
+  ]
+}

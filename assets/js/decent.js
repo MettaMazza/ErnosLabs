@@ -26,17 +26,17 @@ function subsystems() {
     l.push(sub("decent_ai", "Local inference, embeddings, speech-to-text, and TTS."));
     l.push(sub("decent_agent", "A ReAct agent — 9 guarded tools, tiered + Hebbian memory, a fail-closed observer audit, a provider router, and a Socratic tutor mode."));
     l.push(sub("decent_search", "A distributed crawler with BM25 + PageRank ranking."));
-    l.push(sub("decent_name", "Decentralised names — a .decent registry resolved via the DHT."));
+    l.push(sub("decent_name", "Shared names — a .decent address book resolved across peer nodes."));
     l.push(sub("decent_pool", "Resource pooling — bandwidth tiers, a compute job queue, the symbiotic mesh."));
     l.push(sub("decent_media", "Voice and video — Opus + VP8 over the mesh, no media server."));
-    l.push(sub("decent_host", "Decentralised hosting — publish sites and apps straight from nodes."));
+    l.push(sub("decent_host", "Peer hosting — publish sites and apps directly from participating nodes."));
     l.push(sub("decent_web", "The node's own dashboard — a full web UI served from the daemon."));
     l.push(sub("decent_cli", "The local control client — drive every subsystem from the terminal."));
     return l;
 }
 
 function draw_subs() {
-    let subs, i, s, cards, card, fn, html, host, j;
+    let s, i, cards, fn, card, host, subs, j, html;
     host = document.getElementById("subs");
     if (!host) {
         return 0;
@@ -62,7 +62,7 @@ function draw_subs() {
 }
 
 function sub_card_click(ev) {
-    let target, name, descs, archSection, descEl, desc, nameEl;
+    let desc, descEl, nameEl, descs, archSection, target, name;
     target = ev.currentTarget;
     name = target.getAttribute("data-name");
     archSection = document.getElementById("arch-canvas");
@@ -92,7 +92,7 @@ function hex2(n) {
 }
 
 function mesh_build() {
-    let count, nd, nodes, ang, i;
+    let nodes, count, nd, ang, i;
     nodes = [];
     count = 14;
     i = 0;
@@ -111,7 +111,7 @@ function mesh_build() {
 }
 
 function mesh_render() {
-    let k, i, path, canvas, nodes, size, dpr, nd, on_path, a, n, ctx, j, xor, b;
+    let ctx, size, path, canvas, n, i, xor, nd, on_path, k, nodes, dpr, b, j, a;
     canvas = document.getElementById("dht-canvas");
     if (!canvas) {
         return 0;
@@ -199,7 +199,7 @@ function index_in(arr, v) {
 }
 
 function bitxor(a, b) {
-    let result, place, bbit, abit;
+    let abit, bbit, result, place;
     result = 0;
     place = 1;
     while (((a > 0) || (b > 0))) {
@@ -216,7 +216,7 @@ function bitxor(a, b) {
 }
 
 function mesh_route() {
-    let best_d, best, nodes, path, cand, src, cur_id, j, n, guard, current, d, target;
+    let d, nodes, target, src, guard, current, best_d, path, n, cur_id, best, j, cand;
     nodes = window.meshNodes;
     n = nodes.length;
     src = Math.floor((Math.random() * n));
@@ -271,7 +271,7 @@ function heb_concepts() {
 }
 
 function heb_init() {
-    let nd, i, ang, nodes, names, n;
+    let names, n, i, nd, nodes, ang;
     names = heb_concepts();
     nodes = [];
     n = names.length;
@@ -299,7 +299,7 @@ function heb_key(a, b) {
 }
 
 function heb_get(a, b) {
-    let k, w;
+    let w, k;
     k = heb_key(a, b);
     w = window.hebW[k];
     if (w) {
@@ -328,7 +328,7 @@ function heb_reinforce(a, b) {
 }
 
 function heb_sweep() {
-    let nodes, i, n, j, w;
+    let i, j, nodes, n, w;
     nodes = window.hebNodes;
     n = nodes.length;
     i = 0;
@@ -354,7 +354,7 @@ function heb_sweep() {
 }
 
 function heb_render() {
-    let dpr, b, canvas, size, j, w, sel, i, n, nd, nodes, a, ctx;
+    let i, dpr, size, j, ctx, a, sel, canvas, b, nodes, nd, n, w;
     canvas = document.getElementById("heb-canvas");
     if (!canvas) {
         return 0;
@@ -417,7 +417,7 @@ function heb_render() {
 }
 
 function heb_click(ev) {
-    let rect, i, nd, dy, mx, sel, canvas, n, nodes, dx, my, hit;
+    let mx, rect, nodes, hit, i, my, nd, n, dx, sel, canvas, dy;
     canvas = document.getElementById("heb-canvas");
     rect = canvas.getBoundingClientRect();
     mx = (ev.clientX - rect.left);
@@ -452,7 +452,7 @@ function heb_click(ev) {
 }
 
 function raft_init() {
-    let i, nodes, nd;
+    let nd, nodes, i;
     nodes = [];
     i = 0;
     while ((i < 5)) {
@@ -471,7 +471,7 @@ function raft_init() {
 }
 
 function raft_leader() {
-    let nd, i, nodes;
+    let i, nodes, nd;
     nodes = window.raftNodes;
     i = 0;
     while ((i < nodes.length)) {
@@ -487,7 +487,7 @@ function raft_leader() {
 }
 
 function raft_count_up() {
-    let i, nodes, c;
+    let nodes, i, c;
     nodes = window.raftNodes;
     c = 0;
     i = 0;
@@ -501,7 +501,7 @@ function raft_count_up() {
 }
 
 function raft_step() {
-    let leader, newterm, nodes, lt, nd, needed, c, votes, i, cand;
+    let votes, lt, cand, newterm, needed, nd, nodes, leader, c, i;
     nodes = window.raftNodes;
     leader = raft_leader();
     if ((leader >= 0)) {
@@ -556,7 +556,7 @@ function raft_pick_up() {
 }
 
 function raft_partition() {
-    let b, a, nodes;
+    let nodes, b, a;
     nodes = window.raftNodes;
     a = nodes[3];
     b = nodes[4];
@@ -580,7 +580,7 @@ function raft_partition() {
 }
 
 function raft_render() {
-    let nd, i, out, logel, k, html, cls, label, nodes, host, lines, shown;
+    let i, cls, out, nd, host, logel, lines, k, shown, label, nodes, html;
     host = document.getElementById("raft-nodes");
     if (!host) {
         return 0;
@@ -624,7 +624,7 @@ function raft_log(msg) {
 }
 
 function draw_stats() {
-    let html, stats, i, v, host, labels, lb;
+    let host, stats, html, v, lb, labels, i;
     host = document.getElementById("stats-banner");
     if (!host) {
         return 0;
@@ -654,14 +654,14 @@ function draw_stats() {
 }
 
 function arch_descriptions() {
-    let d, fn;
+    let fn, d;
     d = new_obj();
     fn = Reflect["set"];
     fn.call(Reflect, d, "decent_id", "Cryptographic identity — Ed25519 keypairs, W3C DIDs, and capability-based delegation. The foundation everything else trusts.");
     fn.call(Reflect, d, "decent_net", "P2P networking — Noise-protocol encrypted handshakes, Kademlia DHT for peer discovery, and NAT-traversal relays.");
     fn.call(Reflect, d, "decent_relay", "Relay infrastructure — circuit relays and hole-punching helpers for peers behind restrictive NATs.");
     fn.call(Reflect, d, "decent_store", "Content-addressed storage with BLAKE3 hashing, automatic deduplication, and CRDT-based sync.");
-    fn.call(Reflect, d, "decent_name", "Decentralised naming — a .decent registry resolved via DHT, mapping human-readable names to DIDs.");
+    fn.call(Reflect, d, "decent_name", "Shared naming — a .decent registry resolved across peers, mapping readable names to portable identifiers.");
     fn.call(Reflect, d, "decent_consensus", "Raft consensus — leader election, replicated log, term-based voting, and state rollback.");
     fn.call(Reflect, d, "decent_money", "HD wallets, a UTXO ledger, Proof-of-Stake consensus, and a hybrid AMM/orderbook DEX.");
     fn.call(Reflect, d, "decent_msg", "End-to-end encrypted direct and group messaging using Signal-style ratchets.");
@@ -674,7 +674,7 @@ function arch_descriptions() {
 }
 
 function draw_arch() {
-    let modGap, ctx, leftMargin, my, mx, modsStr, rightMargin, startY, layerMods, layerColor, mods, layerCount, li, lw, modCount, colors, lh, mr, layerLabels, r, ly, region, modW, modName, gap, canvas, ch, dpr, lx, regions, cw, highlight, mi, mh, totalH;
+    let region, startY, highlight, dpr, layerCount, mr, modsStr, modW, gap, leftMargin, cw, r, modGap, modName, mi, ctx, layerLabels, lw, mx, mods, ch, canvas, layerColor, my, regions, lh, colors, layerMods, rightMargin, li, totalH, lx, modCount, mh, ly;
     canvas = document.getElementById("arch-canvas");
     if (!canvas) {
         return 0;
@@ -807,7 +807,7 @@ function draw_arch() {
 }
 
 function arch_click(ev) {
-    let nameEl, descs, rect, scaleY, r, canvas, mx, i, desc, descEl, scaleX, my, regions;
+    let mx, i, scaleY, regions, rect, r, nameEl, descs, desc, descEl, my, canvas, scaleX;
     canvas = document.getElementById("arch-canvas");
     rect = canvas.getBoundingClientRect();
     mx = (ev.clientX - rect.left);
@@ -850,7 +850,7 @@ function arch_click(ev) {
 }
 
 function draw_flow() {
-    let label, host, html, desc, stageLabels, stageDescs, stages, sub, i;
+    let html, stageDescs, i, desc, sub, stageLabels, stages, label, host;
     host = document.getElementById("flow-vis");
     if (!host) {
         return 0;
@@ -890,7 +890,7 @@ function draw_flow() {
 }
 
 function flow_play() {
-    let i, stages;
+    let stages, i;
     stages = document.querySelectorAll(".flow-stage");
     i = 0;
     while ((i < stages.length)) {
@@ -902,7 +902,7 @@ function flow_play() {
 }
 
 function flow_activate(idx) {
-    let stages, cb, next;
+    let stages, next, cb;
     stages = document.querySelectorAll(".flow-stage");
     if ((idx >= stages.length)) {
         return 0;
@@ -917,7 +917,7 @@ function flow_activate(idx) {
 }
 
 function flow_next_factory(idx) {
-    let callback, wrapper, fn;
+    let fn, callback, wrapper;
     fn = Reflect["set"];
     wrapper = new_obj();
     fn.call(Reflect, wrapper, "idx", idx);
@@ -941,7 +941,7 @@ function fmt(x, places) {
 }
 
 function amm_update(ev) {
-    let lbl, eff, new_y, amt, spot, new_x, k, host, x0, html, y0, impact, got;
+    let html, new_x, k, lbl, x0, y0, amt, got, spot, eff, impact, new_y, host;
     x0 = 10000;
     y0 = 10000;
     k = (x0 * y0);
@@ -975,14 +975,14 @@ function roll_hash(s, mult) {
 }
 
 function cas_addr(s) {
-    let h1, h2;
+    let h2, h1;
     h1 = roll_hash(s, 31);
     h2 = roll_hash(s, 131);
     return ((h1.toString(16) + "-") + h2.toString(16));
 }
 
 function cas_update(ev) {
-    let host, text, html, addr, dedup, ta, store;
+    let addr, dedup, text, store, host, ta, html;
     ta = document.getElementById("cas-in");
     text = ta.value;
     addr = cas_addr(text);

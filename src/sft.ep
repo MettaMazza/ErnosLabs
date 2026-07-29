@@ -1,0 +1,286 @@
+# Ernos Labs — public SFT platform and knowledge-tree interface.
+# The scientific source remains the SFT repository. This module renders only
+# the validated static projection emitted by tools/sync_sft_site.py.
+
+define sft_esc with value:
+    set text to value
+    if not text:
+        return ""
+    set text to text.split("&").join("&amp;")
+    set text to text.split("<").join("&lt;")
+    set text to text.split(">").join("&gt;")
+    set text to text.split("\"").join("&quot;")
+    return text
+
+define sft_words with value:
+    set text to value
+    if not text:
+        return "Not declared"
+    return text.split("_").join(" ")
+
+define sft_status_text with value:
+    set text to value
+    if not text:
+        return "Not declared"
+    if text.indexOf("superseded_adverse_evidence") >= 0:
+        return "Superseded after adverse evidence"
+    if text.indexOf("pending") >= 0:
+        return "Registered; awaiting its declared external test"
+    if text.indexOf("empirically_tested") >= 0:
+        return "Empirically tested and independently reproduced"
+    if text.indexOf("independently_replicated") >= 0:
+        return "Independently reproduced"
+    if text equals "depth_independent":
+        return "Does not depend on search depth"
+    if text equals "finite_complete":
+        return "Complete within its declared finite scope"
+    return sft_words(text)
+
+define sft_provenance_text with value:
+    if value equals "direct_forcing":
+        return "Directly derived from declared inputs"
+    if value equals "forward_forcing":
+        return "Derived forward from declared inputs"
+    if value equals "observational_derivation":
+        return "Derived through a registered observation"
+    if value equals "target_value_blind_derivation":
+        return "Derived without access to the comparison value"
+    if value equals "complete_external_record_reconstruction":
+        return "Reconstructed from the complete external record"
+    if value equals "first_failure_distinct_route_retry":
+        return "Retried by a separate route after the first failure"
+    if value equals "constitutional_relation":
+        return "Relationship defined by the model's starting rules"
+    return sft_words(value)
+
+define sft_json with resp:
+    return resp.json()
+
+define sft_error with err:
+    set hosts to document.querySelectorAll("[data-sft-loading]")
+    for each host in hosts:
+        set host.innerHTML to "<p class=\"sft-error\">The current scientific record could not be loaded. The published papers and source repository remain available through the links on this page.</p>"
+    return 0
+
+define sft_set_text with id and value:
+    set el to document.getElementById(id)
+    if el:
+        set el.textContent to value
+    return 0
+
+define sft_manifest with data:
+    set window.sftManifest to data
+    sft_set_text("sft-claim-count" and data.whole_model_claim_count)
+    sft_set_text("sft-paper-count" and data.publication_count)
+    sft_set_text("sft-branch-count" and data.publication_inventory_branch_count)
+    sft_set_text("sft-revision" and data.source_revision.slice(0 and 12))
+    set date to data.generated_at
+    if date:
+        set d to Reflect.construct(window.Date and [date])
+        sft_set_text("sft-updated" and d.toLocaleString())
+    set mode to document.getElementById("sft-snapshot-mode")
+    if mode:
+        if data.source_dirty:
+            set mode.textContent to "Live development snapshot"
+            mode.classList.add("is-preview")
+        else:
+            set mode.textContent to "Committed model snapshot"
+    return 0
+
+define sft_branch_card with branch:
+    set label to sft_esc(branch.branch_label)
+    set count to branch.live_census_claims
+    set inventory to sft_esc(sft_words(branch.inventory_status))
+    set paper to sft_esc(sft_words(branch.paper_status))
+    set href to "knowledge-tree.html?branch=" + window.encodeURIComponent(branch.branch_id)
+    set status to sft_esc(branch.foundation_status)
+    set out to f"<article class=\"sft-branch\"><div><span class=\"sft-branch__kind\">Scientific branch</span><h3>{label}</h3><span class=\"sft-branch__status\">{status}</span></div>"
+    set out to out + f"<strong class=\"sft-branch__count\">{count}<small> current claims in this branch</small></strong>"
+    set out to out + f"<a href=\"{href}\">Browse this branch →</a>"
+    set out to out + f"<details><summary>Publication record</summary><p>{inventory}</p><p>{paper}</p></details></article>"
+    return out
+
+define sft_branches with data:
+    set window.sftBranches to data
+    set host to document.getElementById("sft-branches")
+    if host:
+        set html to ""
+        for each branch in data.branches:
+            set html to html + sft_branch_card(branch)
+        set host.innerHTML to html
+        host.removeAttribute("data-sft-loading")
+    set semantics to document.getElementById("sft-status-semantics")
+    if semantics:
+        set semantics.textContent to data.public_status_summary
+    return 0
+
+define sft_publication_card with paper:
+    set out to f"<article class=\"sft-paper-card\"><span>{paper.branch_label}</span>"
+    set out to out + f"<h3>{sft_esc(paper.short_title)}</h3><p>{sft_esc(paper.summary)}</p>"
+    set out to out + "<div class=\"sft-paper-card__meta\">"
+    set out to out + f"<small>Version {sft_esc(paper.version)}</small><a href=\"{paper.doi_url}\" target=\"_blank\" rel=\"noopener\">{paper.doi} ↗</a></div>"
+    set out to out + f"<a class=\"sft-paper-card__read\" href=\"papers.html#{paper.branch}\">Read publication →</a></article>"
+    return out
+
+define sft_publications with data:
+    set host to document.getElementById("sft-publications")
+    if host:
+        set html to ""
+        for each paper in data.publications:
+            set html to html + sft_publication_card(paper)
+        set host.innerHTML to html
+        host.removeAttribute("data-sft-loading")
+    return 0
+
+define sft_claim_by_id with id:
+    if not window.sftClaims:
+        return 0
+    for each claim in window.sftClaims:
+        if claim.claim_id equals id:
+            return claim
+    return 0
+
+define sft_claim_card with claim:
+    set href to "knowledge-tree.html?claim=" + window.encodeURIComponent(claim.claim_id)
+    set out to f"<a class=\"claim-row\" href=\"{href}\"><span class=\"claim-row__branch\">{sft_esc(claim.branch_label)}</span>"
+    set out to out + f"<strong>{sft_esc(claim.title)}</strong><span class=\"claim-row__id\">{sft_esc(claim.claim_id)}</span>"
+    set out to out + f"<p>{sft_esc(claim.statement)}</p><span class=\"claim-row__status\">{sft_esc(sft_status_text(claim.external_status))}</span></a>"
+    return out
+
+define sft_render_claims:
+    set host to document.getElementById("claim-results")
+    if not host:
+        return 0
+    set search_el to document.getElementById("claim-search")
+    set branch_el to document.getElementById("claim-branch")
+    set query to ""
+    set branch to ""
+    if search_el:
+        set query to search_el.value.toLowerCase()
+    if branch_el:
+        set branch to branch_el.value
+    set html to ""
+    set matched to 0
+    set shown to 0
+    for each claim in window.sftClaims:
+        set ok to true
+        if branch:
+            if not (claim.branch equals branch):
+                set ok to false
+        if query:
+            set hay to (claim.claim_id + " " + claim.title + " " + claim.statement).toLowerCase()
+            if hay.indexOf(query) < 0:
+                set ok to false
+        if ok:
+            set matched to matched + 1
+            if shown < 72:
+                set html to html + sft_claim_card(claim)
+                set shown to shown + 1
+    if shown equals 0:
+        set html to "<div class=\"sft-empty\"><h3>No matching claims</h3><p>Try a broader phrase or choose another branch.</p></div>"
+    set host.innerHTML to html
+    sft_set_text("claim-result-count" and f"Showing {shown} of {matched} matching claims")
+    return 0
+
+define sft_dependency_html with id:
+    set claim to sft_claim_by_id(id)
+    set title to id
+    if claim:
+        set title to claim.title
+    set href to "knowledge-tree.html?claim=" + window.encodeURIComponent(id)
+    return f"<a class=\"claim-dependency\" href=\"{href}\"><strong>{sft_esc(title)}</strong><small>{sft_esc(id)}</small></a>"
+
+define sft_evidence_link with item and label:
+    if item:
+        if item.available:
+            set url to "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/main/" + item.path
+            return f"<a href=\"{url}\" target=\"_blank\" rel=\"noopener\"><span>{label}</span><small>{sft_esc(item.sha256)}</small></a>"
+    return f"<span class=\"is-unavailable\">{label} is not present in this snapshot</span>"
+
+define sft_render_detail with claim:
+    set explorer to document.getElementById("claim-explorer")
+    set detail to document.getElementById("claim-detail")
+    if explorer:
+        explorer.classList.add("hidden")
+    if not detail:
+        return 0
+    detail.classList.remove("hidden")
+    set deps to ""
+    if claim.dependencies.length > 0:
+        for each dep in claim.dependencies:
+            set deps to deps + sft_dependency_html(dep)
+    else:
+        set deps to "<p>This claim declares no earlier claim dependency.</p>"
+    set provenance to ""
+    for each item in claim.provenance_classes:
+        set provenance to provenance + f"<span>{sft_esc(sft_provenance_text(item))}</span>"
+    set excluded to ""
+    for each item in claim.excluded_inputs:
+        set excluded to excluded + f"<li>{sft_esc(item)}</li>"
+    set controls to ""
+    for each item in claim.required_controls:
+        set controls to controls + f"<li>{sft_esc(sft_words(item))}</li>"
+    set evidence to sft_evidence_link(claim.registration and "Registration")
+    set evidence to evidence + sft_evidence_link(claim.controls and "Controls")
+    set evidence to evidence + sft_evidence_link(claim.certificate and "Certificate")
+    set evidence to evidence + sft_evidence_link(claim.receipt and "Admission receipt")
+    set html to "<a class=\"claim-back\" href=\"knowledge-tree.html\">← Back to the knowledge tree</a>"
+    set html to html + f"<header class=\"claim-detail__head\"><p class=\"eyebrow\">{sft_esc(claim.branch_label)}</p><h1>{sft_esc(claim.title)}</h1><p class=\"claim-detail__id\">{sft_esc(claim.claim_id)}</p><p class=\"lead\">{sft_esc(claim.statement)}</p></header>"
+    set html to html + "<div class=\"claim-facts\">"
+    set html to html + f"<div><span>Current status</span><strong>{sft_esc(sft_status_text(claim.registration_status))}</strong></div>"
+    set html to html + f"<div><span>Completion boundary</span><strong>{sft_esc(sft_status_text(claim.closure_status))}</strong></div>"
+    set html to html + f"<div><span>Independent record</span><strong>{sft_esc(sft_status_text(claim.external_status))}</strong></div></div>"
+    set html to html + f"<section class=\"claim-section\"><h2>What this claim depends on</h2><div class=\"claim-dependencies\">{deps}</div></section>"
+    set html to html + f"<section class=\"claim-section claim-section--split\"><div><h2>What was kept outside the derivation</h2><ul>{excluded}</ul></div><div><h2>Required controls</h2><ul>{controls}</ul></div></section>"
+    set html to html + f"<section class=\"claim-section\"><h2>How this result was produced</h2><div class=\"claim-provenance\">{provenance}</div></section>"
+    set html to html + f"<section class=\"claim-section\"><h2>Inspect the record</h2><p>These links open the exact files named by this model snapshot.</p><div class=\"claim-evidence\">{evidence}</div></section>"
+    set detail.innerHTML to html
+    return 0
+
+define sft_claims with data:
+    set window.sftClaims to data.claims
+    set detail_id to ""
+    set params to Reflect.construct(window.URLSearchParams and [window.location.search])
+    set detail_id to params.get("claim")
+    if detail_id:
+        set claim to sft_claim_by_id(detail_id)
+        if claim:
+            sft_render_detail(claim)
+            return 0
+    set select to document.getElementById("claim-branch")
+    if select:
+        set html to "<option value=\"\">Every branch in the current model</option>"
+        for each group in data.claim_groups:
+            set selected to ""
+            if params.get("branch") equals group.branch:
+                set selected to " selected"
+            set html to html + f"<option value=\"{sft_esc(group.branch)}\"{selected}>{sft_esc(group.branch_label)} · {group.live_census_claims}</option>"
+        set select.innerHTML to html
+        select.addEventListener("change" and sft_filter_event)
+    set search to document.getElementById("claim-search")
+    if search:
+        search.addEventListener("input" and sft_filter_event)
+    set groups to document.getElementById("claim-groups")
+    if groups:
+        set html to ""
+        for each group in data.claim_groups:
+            set href to "knowledge-tree.html?branch=" + window.encodeURIComponent(group.branch)
+            set html to html + f"<a href=\"{href}\"><span>{sft_esc(group.branch_label)}</span><strong>{group.live_census_claims}</strong></a>"
+        set groups.innerHTML to html
+    sft_render_claims()
+    return 0
+
+define sft_filter_event with ev:
+    sft_render_claims()
+    return 0
+
+define main:
+    if document.getElementById("sft-claim-count"):
+        fetch("assets/data/sft/manifest.json").then(sft_json).then(sft_manifest).catch(sft_error)
+    if document.getElementById("sft-branches"):
+        fetch("assets/data/sft/branches.json").then(sft_json).then(sft_branches).catch(sft_error)
+    if document.getElementById("sft-publications"):
+        fetch("assets/data/sft/publications.json").then(sft_json).then(sft_publications).catch(sft_error)
+    if document.getElementById("claim-results"):
+        fetch("assets/data/sft/claims.json").then(sft_json).then(sft_claims).catch(sft_error)
+    return 0

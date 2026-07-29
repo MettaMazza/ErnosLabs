@@ -132,14 +132,14 @@ define nav_set_open with open:
         if burger:
             burger.setAttribute("aria-expanded" and "true")
             burger.setAttribute("aria-label" and "Close menu")
-            set burger.textContent to "×"
+            set burger.textContent to "Close"
     else:
         links.classList.remove("open")
         document.body.classList.remove("nav-open")
         if burger:
             burger.setAttribute("aria-expanded" and "false")
             burger.setAttribute("aria-label" and "Menu")
-            set burger.textContent to "≡"
+            set burger.textContent to "Menu"
     return 0
 
 define nav_toggle with ev:

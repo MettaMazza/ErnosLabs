@@ -921,22 +921,11 @@ def _projects_loop():
 threading.Thread(target=_projects_loop, daemon=True).start()
 
 
-# ---- Background watcher: keep Papers & Library synced with her sources -------
-# Curation is preserved: tools/{papers,library}_registry.json holds the intro,
-# the sections, and per-work {title, sub, collection, source}. This watcher
-# copies each work's source file into content/{papers,library}/ when it changes,
-# refreshes the word count, auto-discovers NEW papers/books in the known
-# directories (adding them under a "new" section so they appear immediately,
-# ready for her to curate), regenerates the *-data.js catalog, and pushes —
-# exactly like the archive/videos/projects watchers. So editing a book or
-# pushing a paper updates the site hands-free.
-_PAPER_DIRS = [
-    "~/.ernos/projects-mirror/repos/Smithian-Fold-Theory-Of-Everything/papers",
-    "~/.ernos/projects-mirror/repos/UnisonAI/papers",
-    "~/.ernos/projects-mirror/repos/Fold-Go/papers",
-    "~/.ernos/projects-mirror/repos/FoldBot-Chess/papers",
-    "~/.ernos/projects-mirror/repos/Fold-Protein/papers",
-]
+# ---- Background watcher: keep the Library synced with its source ---------
+# Library curation remains in tools/library_registry.json. Scientific papers
+# are deliberately excluded: the public catalogue is now generated from the
+# versioned SFT repository and validated before deployment, so an older folder
+# watcher must never overwrite it.
 _BOOK_DIRS = ["~/Desktop/Civ/Library"]
 
 
@@ -1058,8 +1047,6 @@ def _content_loop():
         first = False
         try:
             changed = []
-            changed += _content_sync("papers", os.path.join(SITE_ROOT, "tools", "papers_registry.json"),
-                                     "papers", "papers.html", _PAPER_DIRS)
             changed += _content_sync("library", os.path.join(SITE_ROOT, "tools", "library_registry.json"),
                                      "library", "library.html", _BOOK_DIRS)
             if changed:
@@ -1067,7 +1054,7 @@ def _content_loop():
                 _sh(["git", "add"] + changed)
                 _sh(["git", "-c", "user.name=Maria Smith",
                      "-c", "user.email=maria.smith.xo@outlook.com",
-                     "commit", "-q", "-m", "chore(content): sync papers & library from source [auto]"])
+                     "commit", "-q", "-m", "chore(content): sync library from source [auto]"])
                 push = _sh(["git", "push", "-q", "origin", "main"])
                 print(f"{tag} push rc={push.returncode} {push.stderr.strip()[:200]}", flush=True)
         except Exception as e:

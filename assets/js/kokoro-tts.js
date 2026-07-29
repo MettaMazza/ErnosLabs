@@ -380,7 +380,12 @@
         const buf = ready[i];
         ready[i] = null;
         if (buf === "error" || !buf) { segStart[i] = clock; scheduled = i + 1; continue; }
-        if (!started) { clock = audioCtx.currentTime + 0.12; started = true; }
+        if (!started) {
+          clock = audioCtx.currentTime + 0.12;
+          started = true;
+          const voiceInfo = getVoices().find((item) => item.id === v);
+          setStatus("speaking", "Kokoro · " + (voiceInfo ? voiceInfo.name : v));
+        }
         else { clock = Math.max(clock, audioCtx.currentTime + 0.02); }
         const node = audioCtx.createBufferSource();
         node.buffer = buf; node.connect(audioCtx.destination);

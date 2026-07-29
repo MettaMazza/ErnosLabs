@@ -9,6 +9,42 @@ SRC="$ROOT/src"
 OUT="$ROOT/assets/js"
 mkdir -p "$OUT"
 
+# Refresh the public SFT snapshot whenever its source repository is available.
+# A deployed build sets SFT_ROOT to a clean checkout and SFT_REQUIRE_CLEAN=1.
+# Offline builds retain the last validated static snapshot already in the site.
+SFT_SYNC="$ROOT/tools/sync_sft_site.py"
+SFT_DEFAULT="/Users/mettamazza/Desktop/Smithian Fold Theory Of Everything"
+if [ -n "${SFT_ROOT:-}" ] || [ -d "$SFT_DEFAULT/.git" ]; then
+  echo "[*] generating SFT knowledge and publication snapshot"
+  sft_args=()
+  if [ -n "${SFT_ROOT:-}" ]; then
+    sft_args+=(--sft-root "$SFT_ROOT")
+  fi
+  if [ "${SFT_REQUIRE_CLEAN:-0}" = "1" ]; then
+    sft_args+=(--require-clean)
+  fi
+  if [ "${#sft_args[@]}" -gt 0 ]; then
+    python3 "$SFT_SYNC" "${sft_args[@]}"
+    sft_status=$?
+  else
+    python3 "$SFT_SYNC"
+    sft_status=$?
+  fi
+  if [ "$sft_status" -ne 0 ]; then
+    echo "[-] SFT snapshot generation failed"; exit 1
+  fi
+  if ! python3 "$ROOT/tools/validate_site_snapshot.py"; then
+    echo "[-] SFT snapshot validation failed"; exit 1
+  fi
+elif [ -f "$ROOT/assets/data/sft/manifest.json" ]; then
+  echo "[*] SFT source unavailable — retaining the validated static snapshot"
+  if ! python3 "$ROOT/tools/validate_site_snapshot.py"; then
+    echo "[-] retained SFT snapshot is invalid"; exit 1
+  fi
+else
+  echo "[-] no SFT source repository or validated static snapshot is available"; exit 1
+fi
+
 if [ ! -x "$ERNOS" ]; then
   echo "[-] ernos compiler not found at $ERNOS (set ERNOS=/path/to/ernos)"; exit 1
 fi
@@ -108,23 +144,5 @@ fi
 # --- cache-busting: stamp a content hash on every asset reference in the HTML
 # so a fresh deploy is fetched immediately instead of a stale cached copy.
 echo "[*] stamping cache-busting versions on asset references"
-python3 - "$ROOT" <<'PY'
-import sys, os, re, hashlib, glob
-root = sys.argv[1]
-def short_hash(path):
-    with open(path, "rb") as fh:
-        return hashlib.sha1(fh.read()).hexdigest()[:8]
-assets = [os.path.relpath(p, root) for p in
-          glob.glob(os.path.join(root, "assets/js/*.js")) +
-          glob.glob(os.path.join(root, "assets/css/*.css"))]
-for html in glob.glob(os.path.join(root, "*.html")):
-    s = open(html, encoding="utf-8").read()
-    orig = s
-    for asset in assets:
-        h = short_hash(os.path.join(root, asset))
-        s = re.sub(re.escape(asset) + r'(\?v=[0-9a-f]+)?', asset + '?v=' + h, s)
-    if s != orig:
-        open(html, "w", encoding="utf-8").write(s)
-        print("    stamped " + os.path.basename(html))
-PY
+python3 "$ROOT/tools/stamp_assets.py"
 echo "[+] done"

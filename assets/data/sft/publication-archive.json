@@ -1,0 +1,377 @@
+{
+  "schema": "ernoslabs-sft-publication-archive/1",
+  "works": [
+    {
+      "concept_id": "20590855",
+      "title": "Solving Chess Completely",
+      "doi": "10.5281/zenodo.20590855",
+      "doi_url": "https://doi.org/10.5281/zenodo.20590855",
+      "published_versions": "unnumbered; 2.0.0",
+      "successors": [
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21026312",
+      "title": "Smithium",
+      "doi": "10.5281/zenodo.21026312",
+      "doi_url": "https://doi.org/10.5281/zenodo.21026312",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Chemistry",
+          "doi": "10.5281/zenodo.21627782"
+        },
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21026490",
+      "title": "The Continuum Was the Bug",
+      "doi": "10.5281/zenodo.21026490",
+      "doi_url": "https://doi.org/10.5281/zenodo.21026490",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Mathematics",
+          "doi": "10.5281/zenodo.21627708"
+        },
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21026617",
+      "title": "The Constants Are One Object",
+      "doi": "10.5281/zenodo.21026617",
+      "doi_url": "https://doi.org/10.5281/zenodo.21026617",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21028523",
+      "title": "No Dice",
+      "doi": "10.5281/zenodo.21028523",
+      "doi_url": "https://doi.org/10.5281/zenodo.21028523",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Quantum Computation",
+          "doi": "10.5281/zenodo.21627748"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21028591",
+      "title": "Why There Is Uncertainty",
+      "doi": "10.5281/zenodo.21028591",
+      "doi_url": "https://doi.org/10.5281/zenodo.21028591",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Quantum Computation",
+          "doi": "10.5281/zenodo.21627748"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21028645",
+      "title": "Entanglement Without Spookiness",
+      "doi": "10.5281/zenodo.21028645",
+      "doi_url": "https://doi.org/10.5281/zenodo.21028645",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Quantum Computation",
+          "doi": "10.5281/zenodo.21627748"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21035460",
+      "title": "There Is No Nothing",
+      "doi": "10.5281/zenodo.21035460",
+      "doi_url": "https://doi.org/10.5281/zenodo.21035460",
+      "published_versions": "1.0; 2.0; 3.0",
+      "successors": [
+        {
+          "label": "Methods",
+          "doi": "10.5281/zenodo.21627646"
+        },
+        {
+          "label": "Foundation",
+          "doi": "10.5281/zenodo.21627656"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21035786",
+      "title": "Determined and Unforeseeable",
+      "doi": "10.5281/zenodo.21035786",
+      "doi_url": "https://doi.org/10.5281/zenodo.21035786",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Consciousness",
+          "doi": "10.5281/zenodo.21636397"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21035854",
+      "title": "What a Self Is",
+      "doi": "10.5281/zenodo.21035854",
+      "doi_url": "https://doi.org/10.5281/zenodo.21035854",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Consciousness",
+          "doi": "10.5281/zenodo.21636397"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21182468",
+      "title": "The Smithian Fold Theory of Everything",
+      "doi": "10.5281/zenodo.21182468",
+      "doi_url": "https://doi.org/10.5281/zenodo.21182468",
+      "published_versions": "unnumbered; 2; 2.1; 2.0; 43.0; 44.0; 2; 3; 4; 5; 6.0",
+      "successors": [],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21217278",
+      "title": "UnisonAI",
+      "doi": "10.5281/zenodo.21217278",
+      "doi_url": "https://doi.org/10.5281/zenodo.21217278",
+      "published_versions": "0.2; 1.1–1.9; 2.0–2.2; 3.0–3.4; 4.0–4.3; 4.6; 4.7; 5.0; 6.0–6.5",
+      "successors": [
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        },
+        {
+          "label": "Consciousness",
+          "doi": "10.5281/zenodo.21636397"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21276950",
+      "title": "Fold Protein sequence-only lineage",
+      "doi": "10.5281/zenodo.21276950",
+      "doi_url": "https://doi.org/10.5281/zenodo.21276950",
+      "published_versions": "unnumbered; 2.0; 3.0–3.9-final-status",
+      "successors": [
+        {
+          "label": "Biology",
+          "doi": "10.5281/zenodo.21630203"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21278563",
+      "title": "FoldBot Chess",
+      "doi": "10.5281/zenodo.21278563",
+      "doi_url": "https://doi.org/10.5281/zenodo.21278563",
+      "published_versions": "1.1; 2.0–2.4",
+      "successors": [
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21279102",
+      "title": "Fine-Structure Constant",
+      "doi": "10.5281/zenodo.21279102",
+      "doi_url": "https://doi.org/10.5281/zenodo.21279102",
+      "published_versions": "1.0; 2.0; 2.1; 3.0",
+      "successors": [
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21279104",
+      "title": "Hubble Calibration Ratio and Cosmological Constant",
+      "doi": "10.5281/zenodo.21279104",
+      "doi_url": "https://doi.org/10.5281/zenodo.21279104",
+      "published_versions": "1.0; 2.0; 2.1; 3.0",
+      "successors": [
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        },
+        {
+          "label": "Astronomy and Cosmology",
+          "doi": "10.5281/zenodo.21640812"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21279106",
+      "title": "Discrete Fluid Regularity",
+      "doi": "10.5281/zenodo.21279106",
+      "doi_url": "https://doi.org/10.5281/zenodo.21279106",
+      "published_versions": "1.0; 2.0; 3.0",
+      "successors": [
+        {
+          "label": "Physics",
+          "doi": "10.5281/zenodo.21627765"
+        },
+        {
+          "label": "Earth and Environmental Sciences",
+          "doi": "10.5281/zenodo.21640810"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21283968",
+      "title": "Fold Go",
+      "doi": "10.5281/zenodo.21283968",
+      "doi_url": "https://doi.org/10.5281/zenodo.21283968",
+      "published_versions": "1.0; 2.0–2.4",
+      "successors": [
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21284529",
+      "title": "Don't Be Evil: The Freedom of Knowledge",
+      "doi": "10.5281/zenodo.21284529",
+      "doi_url": "https://doi.org/10.5281/zenodo.21284529",
+      "published_versions": "1.0; 2.0",
+      "successors": [
+        {
+          "label": "Methods",
+          "doi": "10.5281/zenodo.21627646"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21368944",
+      "title": "Fold Protein Super Parity lineage",
+      "doi": "10.5281/zenodo.21368944",
+      "doi_url": "https://doi.org/10.5281/zenodo.21368944",
+      "published_versions": "1.5–2.1-final-status",
+      "successors": [
+        {
+          "label": "Biology",
+          "doi": "10.5281/zenodo.21630203"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21396742",
+      "title": "The Fold Decode Campaign",
+      "doi": "10.5281/zenodo.21396742",
+      "doi_url": "https://doi.org/10.5281/zenodo.21396742",
+      "published_versions": "1.0–1.3",
+      "successors": [
+        {
+          "label": "Information Science",
+          "doi": "10.5281/zenodo.21627717"
+        },
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21482127",
+      "title": "Blind Protein Structure",
+      "doi": "10.5281/zenodo.21482127",
+      "doi_url": "https://doi.org/10.5281/zenodo.21482127",
+      "published_versions": "unnumbered; 2.0; 2.1; 2.2",
+      "successors": [
+        {
+          "label": "Biology",
+          "doi": "10.5281/zenodo.21630203"
+        }
+      ],
+      "application_rebuild_pending": true,
+      "status": "Deprecated and replaced by V3"
+    },
+    {
+      "concept_id": "21512798",
+      "title": "After Turing: The Fold Machine",
+      "doi": "10.5281/zenodo.21512798",
+      "doi_url": "https://doi.org/10.5281/zenodo.21512798",
+      "published_versions": "1.0",
+      "successors": [
+        {
+          "label": "Classical Computation",
+          "doi": "10.5281/zenodo.21627721"
+        },
+        {
+          "label": "Quantum Computation",
+          "doi": "10.5281/zenodo.21627748"
+        }
+      ],
+      "application_rebuild_pending": false,
+      "status": "Deprecated and replaced by V3"
+    }
+  ]
+}

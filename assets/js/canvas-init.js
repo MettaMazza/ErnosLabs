@@ -59,7 +59,7 @@
         .then(function (html) { frame.srcdoc = html; })  // load handler hides the spinner
         .catch(function () {
           showOverlay(false); busy = false;
-          setStatus("is-offline", "🌙 <strong>The host went offline mid-thought.</strong> Try again when it's back.");
+          setStatus("is-offline", "<strong>The Canvas host went offline.</strong> Your page is unchanged; try the action again when the service returns.");
         });
     }
 
@@ -67,13 +67,13 @@
     fetch(BASE + "/ping").then(function (r) { if (!r.ok) throw 0; }).then(function () {
       frame.style.display = "block";
       if (off) off.style.display = "none";
-      setStatus("is-online", "🟢 <strong>Live</strong> — every pixel below is built by a local model and streamed as raw HTML.");
+      setStatus("is-online", "<strong>Canvas online.</strong> The interface below is generated locally and displayed inside a restricted frame.");
       go("GET", null);
     }).catch(function () {
       frame.style.display = "none";
       showOverlay(false);
       if (off) off.style.display = "block";
-      setStatus("is-offline", "🌙 <strong>The host is asleep.</strong> The canvas runs live on Maria's machine — come back when it's online.");
+      setStatus("is-offline", "<strong>Canvas offline.</strong> This service runs on Maria's machine; return when the host is online.");
     });
   }
 

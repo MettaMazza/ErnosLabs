@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let nodes, n, i;
+    let n, i, nodes;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, w, ctx, canvas, h;
+    let dpr, canvas, w, h, ctx;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let h, b, i, dy, dist, alpha, a, w, ctx, j, n, nodes, dx, count;
+    let h, count, n, dx, dist, i, dy, j, w, b, alpha, a, nodes, ctx;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let canvas, density, reduce;
+    let density, canvas, reduce;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -143,7 +143,7 @@ function nav_set_open(open) {
         if (burger) {
             burger.setAttribute("aria-expanded", "true");
             burger.setAttribute("aria-label", "Close menu");
-            burger.textContent = "×";
+            burger.textContent = "Close";
         }
     } else {
         links.classList.remove("open");
@@ -151,7 +151,7 @@ function nav_set_open(open) {
         if (burger) {
             burger.setAttribute("aria-expanded", "false");
             burger.setAttribute("aria-label", "Menu");
-            burger.textContent = "≡";
+            burger.textContent = "Menu";
         }
     }
     return 0;
@@ -214,7 +214,7 @@ function drop_enter(ev) {
 }
 
 function drop_close_all() {
-    let b, drops;
+    let drops, b;
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
         d.classList.remove("open");
@@ -270,7 +270,7 @@ function nav_keydown(ev) {
 }
 
 function nav_init() {
-    let burger, dbtns, drops;
+    let dbtns, burger, drops;
     burger = document.getElementById("burger");
     if (burger) {
         burger.setAttribute("aria-controls", "navlinks");
@@ -293,7 +293,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let act, drops, path, b, href, links, qi, hp;
+    let b, qi, path, href, hp, act, links, drops;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -343,7 +343,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let opts, IO, els, obs, args;
+    let opts, els, IO, args, obs;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -373,7 +373,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let dt, txt, nodes, parts, i, cls, n, doc;
+    let txt, dt, nodes, cls, parts, doc, i, n;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -403,7 +403,7 @@ function narration_text() {
 }
 
 function np_toggle(ev) {
-    let btn, st;
+    let st, btn;
     if (!window.kokoroTTS) {
         return 0;
     }
@@ -418,7 +418,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, ph, pct, btn, status;
+    let fill, status, btn, pct, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

@@ -2,7 +2,7 @@
   "intro": {
     "eyebrow": "A preservation effort",
     "title": "The AI Archive",
-    "lead": "Frontier labs gate, rename, and quietly remove open models. This is a free, self-hosted preservation of open model weights — served straight from the source machine, with the open-source code to run every one. No Hugging Face, no middleman. Owned by no one — mirror it, seed it, keep it."
+    "lead": "A working collection of open model weights, the software needed to run them and enough metadata to understand what each file is. The Ernos Labs machine provides a direct mirror when it is online; original sources remain available as fallbacks."
   },
   "stats_note": "open weights preserved",
   "runners": [
@@ -59,7 +59,7 @@
     {
       "key": "historical",
       "heading": "Historical milestones",
-      "sub": "The models that marked each step of the open era — kept runnable so the history isn't lost."
+      "sub": "Models that marked important stages in open machine learning, retained with the files and software needed to run them."
     },
     {
       "key": "audio",
@@ -74,12 +74,12 @@
     {
       "key": "video",
       "heading": "Video generation",
-      "sub": "Open text-to-video — rare, and easy to lose. Preserved runnable."
+      "sub": "Open text-to-video releases preserved alongside compatible running software."
     },
     {
       "key": "llm",
-      "heading": "Local & frontier LLMs (GGUF)",
-      "sub": "Quantised to run on real hardware, from laptop-sized to the full frontier giants."
+      "heading": "Local language models (GGUF)",
+      "sub": "Quantised language models ranging from laptop-sized releases to much larger systems that require specialist hardware."
     }
   ],
   "models": [

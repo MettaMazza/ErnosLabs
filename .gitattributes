@@ -1,0 +1,3 @@
+# Versioned publication manuscripts preserve Markdown hard line breaks from
+# their authoritative SFT sources; two trailing spaces are intentional bytes.
+content/publications/*.md whitespace=-trailing-space

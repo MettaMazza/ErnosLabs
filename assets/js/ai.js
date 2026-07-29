@@ -35,7 +35,7 @@ function runner_html(r) {
 }
 
 function model_card_html(m) {
-    let machine, out, ab, hf;
+    let hf, ab, out, machine;
     ab = window.__ab;
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (((("<div class=\"ai-card__top\"><h3>" + String(esc(m.name))) + "</h3><span class=\"ai-size\">") + String(m.size)) + "</span></div>"));
@@ -60,7 +60,7 @@ function model_card_html(m) {
 }
 
 function section_html(key) {
-    let m, i, models, out;
+    let out, m, i, models;
     models = window.AI_MODELS;
     out = "";
     i = 0;
@@ -75,7 +75,7 @@ function section_html(key) {
 }
 
 function render_ai() {
-    let host, runners, intro, j, stats, html, s, ab, cards, sections, sec;
+    let j, sections, html, intro, host, runners, s, sec, ab, cards, stats;
     host = document.getElementById("ai-content");
     if (!host) {
         return 0;
@@ -124,7 +124,7 @@ function render_ai() {
     html = (html + "</div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:0\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin:34px 0 26px\"><p class=\"eyebrow\">Roll your own</p><h2>Build your own archive</h2>");
-    html = (html + "<p class=\"lead\" style=\"margin-bottom:18px\">This whole library was built with one open script &mdash; written in <a href=\"ernosplain.html\" style=\"color:var(--ink-0)\">ErnosPlain</a>, the same language as everything else here. No Python, no huggingface_hub: it compiles to a native binary and drives <code>curl</code> to pull every model straight from source. Take it, edit the model list and the archive path, and make your own preservation copy.</p>");
+    html = (html + "<p class=\"lead\" style=\"margin-bottom:18px\">The archive can be rebuilt with an open script written in <a href=\"ernosplain.html\" style=\"color:var(--ink-0)\">ErnosPlain</a>. It compiles to a native program, reads the declared model list and retrieves the files from their original sources. Change the list and destination to create an independent copy.</p>");
     html = (html + "<div class=\"ai-run\" style=\"max-width:640px\"><span class=\"ai-run__label\">Compile it, then run it</span>");
     html = (html + "<code>ernos download_archive.ep\n./download_archive</code></div>");
     html = (html + "<div class=\"ai-card__actions\" style=\"margin-top:16px\">");
@@ -133,7 +133,7 @@ function render_ai() {
     html = (html + "</div></div></section>");
     html = (html + "<section class=\"section\" style=\"padding-top:10px\"><div class=\"wrap\">");
     html = (html + "<hr class=\"divider\" style=\"margin-bottom:26px\"><p class=\"eyebrow\">How this survives</p><h2>Help preserve it</h2>");
-    html = (html + "<p class=\"lead\">These weights are served straight from the source machine — not from Hugging Face or GitHub, so they outlive any of those going down or pulling a model. That means a download works when the machine is online. Real permanence is redundancy: if you pull a model, keep it; if you can host one, mirror it; seed it to others. The whole point is that no one owns it and no one can quietly delete it.</p>");
+    html = (html + "<p class=\"lead\">A single mirror is not permanent. The direct archive improves availability and keeps a second copy, while the original model sources remain linked whenever they are still present. Long-term preservation comes from many complete, verified copies that retain licences, formats and compatible runners—not from dependence on one machine.</p>");
     html = (html + "</div></section>");
     host.innerHTML = html;
     return 0;
@@ -164,7 +164,7 @@ function use_machine() {
 function status_ok(resp) {
     if (resp.ok) {
         use_machine();
-        status_set("ai-status is-online", "🟢 <strong>Archive online</strong> — downloads come straight from the source machine.");
+        status_set("ai-status is-online", "<strong>Direct archive online.</strong> Downloads can be served from the Ernos Labs mirror.");
     } else {
         status_fail(resp);
     }
@@ -172,7 +172,7 @@ function status_ok(resp) {
 }
 
 function status_fail(err) {
-    status_set("ai-status is-offline", "🔴 <strong>The source machine is offline.</strong> Downloads fall back to the original open source for now.");
+    status_set("ai-status is-offline", "<strong>Original sources available.</strong> The direct mirror is offline, so downloads use each model’s public source.");
     return 0;
 }
 
@@ -197,7 +197,7 @@ function apply_catalog(data) {
             window.AI_INTRO = data.intro;
             render_ai();
             use_machine();
-            status_set("ai-status is-online", "🟢 <strong>Archive online</strong> — live from the source machine, always up to date.");
+            status_set("ai-status is-online", "<strong>Direct archive online.</strong> This catalogue was refreshed from the Ernos Labs mirror.");
             return 0;
         }
     }

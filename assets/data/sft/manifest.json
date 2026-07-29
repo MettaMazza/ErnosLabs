@@ -1,0 +1,105 @@
+{
+  "schema": "ernoslabs-sft-site-snapshot/1",
+  "generated_at": "2026-07-29T10:55:22.320077+00:00",
+  "source_repository": "https://github.com/MettaMazza/ernos-labs-sft-platform",
+  "source_revision": "587c54bd8a7a5f584e38de778c60e0d8345fc14b",
+  "source_dirty": false,
+  "source_catalogue": "committed-publication-pointers-with-retained-versioned-metadata",
+  "source_catalogue_sha256": "sha256:39cbbd7cc175a6f5208af22a2e133dcc876b0e06217984f66e15e00687d1eec5",
+  "publication_count": 16,
+  "historical_publication_count": 23,
+  "whole_model_claim_count": 1319,
+  "publication_inventory_branch_count": 15,
+  "validation": {
+    "claim_count": 1319,
+    "unique_claim_ids": 1319,
+    "missing_claim_packages": [],
+    "claims_with_dependencies_outside_live_census": {}
+  },
+  "files": [
+    {
+      "path": "assets/data/sft/branches.json",
+      "sha256": "sha256:4a8b2b39213d98ad8183731ae7a464b654b70eb10430b0dfdedcdb6887c89f86"
+    },
+    {
+      "path": "assets/data/sft/claims.json",
+      "sha256": "sha256:dd47117c491fbd75457fe7e1c71a51ed2d2ca2ce06fb23e0c7105625c66c8b1e"
+    },
+    {
+      "path": "assets/data/sft/publication-archive.json",
+      "sha256": "sha256:cc3c8ee22aca2470f41189a84e724db99f009873e41a5d3989817e028384f4da"
+    },
+    {
+      "path": "assets/data/sft/publications.json",
+      "sha256": "sha256:8de05ae565ac74a44404c9bc4872581f560713c0602a838389941eff364a7880"
+    },
+    {
+      "path": "content/publications/astronomy-cosmology.md",
+      "sha256": "sha256:135b2ada93caf788571b9e7c0d384d60ec0851d9c47a85fe432d6ad2618ef643"
+    },
+    {
+      "path": "content/publications/biology.md",
+      "sha256": "sha256:af18711f0520f03a6d2e7fe5004166856d2203ad370a4932178c59eb00abddb5"
+    },
+    {
+      "path": "content/publications/chemistry.md",
+      "sha256": "sha256:0428c3d71b0d2dca249baa89818167137487f1cb9a5c170d2a4bd371652c6905"
+    },
+    {
+      "path": "content/publications/computation.md",
+      "sha256": "sha256:310a60acc27a188f753c5c16ec3f3c09646170e8317b80da44cf574525f6ce56"
+    },
+    {
+      "path": "content/publications/consciousness-cognitive-science.md",
+      "sha256": "sha256:62f473b326aa9cf0ecfab2dcaaf763aa752df468210aef52b0d12c40f3aebaf9"
+    },
+    {
+      "path": "content/publications/earth-environment.md",
+      "sha256": "sha256:044d381d988635cb69a368ff9dbfe2fad8d87b31cec7f4edd76faee959c60354"
+    },
+    {
+      "path": "content/publications/engineering-translation.md",
+      "sha256": "sha256:e232febfafdd820c6ac4557b42bf9b9fcf0b894c316c272e87e19b34a6bc44d0"
+    },
+    {
+      "path": "content/publications/foundation.md",
+      "sha256": "sha256:a07c69fe80aedf917065df383aa98e48b6da124ce74a4d81ead93b7d2cc4646d"
+    },
+    {
+      "path": "content/publications/information-science.md",
+      "sha256": "sha256:aa8115fe4581a4a08b8e9a3301ddf3f9a5c2fd4e8b56a77e22f756493bd768b6"
+    },
+    {
+      "path": "content/publications/materials.md",
+      "sha256": "sha256:88f707a38abdba4b5968ce9e7a3cf6ec3947480cbb63b9b8295134376bd88448"
+    },
+    {
+      "path": "content/publications/mathematics.md",
+      "sha256": "sha256:a6a5464e818e478bcf899b61fcb3bc726b80b47ce6df3dcfb178df53b40e4b00"
+    },
+    {
+      "path": "content/publications/medicine.md",
+      "sha256": "sha256:1f3acb2f7b0100da9e2530779f0a8e556570ae2bab46302554af8ef3fb15fd22"
+    },
+    {
+      "path": "content/publications/methods.md",
+      "sha256": "sha256:d427d9803b04001ec6b83fd0612ea7ee7c894d172d8970bd3dc46c17bb4ea19f"
+    },
+    {
+      "path": "content/publications/physics.md",
+      "sha256": "sha256:9efdb0f5c941af556e4e486699c2b39feca510bbb328fdc1d99f688ed2d1f8a0"
+    },
+    {
+      "path": "content/publications/quantum-computation.md",
+      "sha256": "sha256:756acb3e1dc3a9c9a59fce7f5af1d9c73c850869b61be3a2ec2d61a46302c9ff"
+    },
+    {
+      "path": "content/publications/social-collective-systems.md",
+      "sha256": "sha256:83105339ba4dd4f419f06935ff7926264510e62588f78bc58bdd79d1788c9ef8"
+    },
+    {
+      "path": "assets/js/publications-data.js",
+      "sha256": "sha256:ee9261a4c5f79f102adad8dc54199383c741e19ec9a210c1ae49b48ee8788e60"
+    }
+  ]
+}

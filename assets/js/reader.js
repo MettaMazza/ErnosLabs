@@ -56,7 +56,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let cards, intro, works, s, cards0, sections, html, cat, i;
+    let intro, cat, html, sections, s, cards, cards0, works, i;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -107,7 +107,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let toc0, w, dl, rtitle, rd, url, doc;
+    let w, dl, rd, url, doc, rtitle, toc0, source_link;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -123,6 +123,15 @@ function open_work(id) {
     if (dl) {
         dl.href = w.file;
     }
+    source_link = document.getElementById("reader-source");
+    if (source_link) {
+        if (w.source_url) {
+            source_link.href = w.source_url;
+            source_link.classList.remove("hidden");
+        } else {
+            source_link.classList.add("hidden");
+        }
+    }
     doc = document.getElementById("doc");
     doc.innerHTML = (("<p class=\"loading\">Loading " + w.title) + "…</p>");
     toc0 = document.getElementById("toc");
@@ -137,19 +146,96 @@ function resp_text(resp) {
     return resp.text();
 }
 
-function render_doc(text) {
-    let doc, html;
+function reader_absolute_url(href, raw) {
+    let base;
+    base = window.curWork.source_root_url;
+    if (raw) {
+        base = window.curWork.raw_root_url;
+    }
+    if (href.startsWith("./")) {
+        base = window.curWork.source_url;
+        if (raw) {
+            base = window.curWork.raw_source_url;
+        }
+    } else if (href.startsWith("../")) {
+        base = window.curWork.source_url;
+        if (raw) {
+            base = window.curWork.raw_source_url;
+        }
+    }
+    return Reflect.construct(window.URL, [href, base]).href;
+}
+
+function resolve_reader_resources() {
+    let links, src, href, doc, images;
+    if (!window.curWork) {
+        return 0;
+    }
+    if (!window.curWork.source_root_url) {
+        return 0;
+    }
     doc = document.getElementById("doc");
-    html = md_render(text);
+    links = doc.querySelectorAll("a[href]");
+    for (const link of links) {
+        href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+            link.removeAttribute("target");
+            link.removeAttribute("rel");
+        } else if (!href.startsWith("http://")) {
+            if (!href.startsWith("https://")) {
+                if (!href.startsWith("mailto:")) {
+                    if (!href.startsWith("tel:")) {
+                        link.href = reader_absolute_url(href, false);
+                        link.target = "_blank";
+                        link.rel = "noopener";
+                    }
+                }
+            }
+        }
+    }
+    images = doc.querySelectorAll("img[src]");
+    for (const img of images) {
+        src = img.getAttribute("src");
+        if (!src.startsWith("http://")) {
+            if (!src.startsWith("https://")) {
+                if (!src.startsWith("data:")) {
+                    img.src = reader_absolute_url(src, true);
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+function prepare_reader_text(text) {
+    if (window.curWork) {
+        if ((window.curWork.id === "methods")) {
+            return text.replace("[Inspect the two inaugural claims]", "[Inspect this methods paper's two founding proofs]");
+        }
+    }
+    return text;
+}
+
+function render_doc(text) {
+    let html, reader_text, doc;
+    doc = document.getElementById("doc");
+    reader_text = prepare_reader_text(text);
+    html = md_render(reader_text);
+    if (window.curWork) {
+        if (window.curWork.context) {
+            html = (window.curWork.context + html);
+        }
+    }
     window.docHtml = html;
     doc.innerHTML = html;
-    build_toc(text);
+    resolve_reader_resources();
+    build_toc(reader_text);
     apply_font();
     return 0;
 }
 
 function build_toc(text) {
-    let toc, heads, out, i, h, cls, links;
+    let out, i, toc, heads, h, cls, links;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -173,7 +259,7 @@ function build_toc(text) {
 }
 
 function toc_jump(ev) {
-    let id, el;
+    let el, id;
     id = ev.currentTarget.getAttribute("data-target");
     el = document.getElementById(id);
     if (el) {
@@ -208,7 +294,7 @@ function reset_copy_label() {
     let btn;
     btn = document.getElementById("copy-link");
     if (btn) {
-        btn.textContent = "🔗 Copy link";
+        btn.textContent = "Copy link";
     }
     return 0;
 }
@@ -237,12 +323,13 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let re, hl, q, doc, esc, marks, count;
+    let marks, re, doc, esc, q, count, hl;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
     if ((q === "")) {
         doc.innerHTML = window.docHtml;
+        resolve_reader_resources();
         count.textContent = "";
         return 0;
     }
@@ -253,6 +340,7 @@ function do_search(ev) {
     re = md_rx((esc + "(?![^<]*>)"), "gi");
     hl = window.docHtml.replace(re, "<mark>$&</mark>");
     doc.innerHTML = hl;
+    resolve_reader_resources();
     marks = doc.querySelectorAll("mark");
     count.textContent = (String(marks.length) + " matches");
     if ((marks.length > 0)) {
@@ -277,16 +365,13 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let doc, text, btn, u, voice_sel, voice;
+    let u, doc, voice_sel, text, voice, btn;
     if (window.ttsOn) {
         stop_tts();
         return 0;
     }
     doc = document.getElementById("doc");
     text = doc.textContent;
-    if ((text.length > 15000)) {
-        text = text.slice(0, 15000);
-    }
     window.ttsOn = true;
     btn = document.getElementById("tts");
     btn.textContent = "■ Stop";
@@ -325,7 +410,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let voices, container, html, v, i;
+    let voices, html, container, i, v;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
