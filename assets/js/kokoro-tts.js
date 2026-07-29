@@ -53,10 +53,14 @@
   function resolveEndpoint() {
     try {
       if (typeof window !== "undefined" && window.KOKORO_ENDPOINT) return String(window.KOKORO_ENDPOINT);
-      const s = localStorage.getItem("kokoroEndpoint");
-      if (s) return s;
+      // The health-checked production API is authoritative. A persisted
+      // development address must never strand a returning visitor on a dead
+      // server and silently replace Kokoro with a browser voice.
+      if (window.ERNOS_API) return window.ERNOS_API;
+      const saved = localStorage.getItem("kokoroEndpoint");
+      if (saved) return saved;
     } catch (e) {}
-    return window.ERNOS_API || KOKORO_ENDPOINT;
+    return window.ERNOS_API || window.ERNOS_FUNNEL || KOKORO_ENDPOINT;
   }
 
   // ---- text sanitisation: never speak markdown or stray symbols ----------
@@ -329,10 +333,10 @@
     const chunks = chunkText(clean);
     readAlong = buildReadAlong(chunks);
 
-    // api-base resolves the public source machine asynchronously. A very fast
-    // tap after page load must wait for that health check instead of mistaking
-    // "not resolved yet" for "offline" and choosing a browser voice.
-    if (!ep && window.ernosApiReady && typeof window.ernosApiReady.then === "function") {
+    // api-base resolves the public source machine asynchronously. Always wait
+    // for that health check (unless the page explicitly supplied an endpoint)
+    // so a stale saved development address cannot win a race at page load.
+    if (!window.KOKORO_ENDPOINT && window.ernosApiReady && typeof window.ernosApiReady.then === "function") {
       emit("loading", 0, 0);
       setStatus("loading", "Finding Kokoro…");
       try { await window.ernosApiReady; } catch (e) {}

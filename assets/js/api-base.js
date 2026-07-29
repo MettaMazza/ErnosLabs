@@ -25,12 +25,14 @@
   }
 
   window.ernosApiReady = (async function () {
+    var saved = null;
     try {
-      var saved = localStorage.getItem("ernosArchiveBase");
-      if (saved) { window.ERNOS_API = saved.replace(/\/+$/, ""); return window.ERNOS_API; }
+      saved = localStorage.getItem("ernosArchiveBase");
+      if (saved) saved = saved.replace(/\/+$/, "");
     } catch (e) {}
     if (await ping(location.origin, 2500)) window.ERNOS_API = location.origin;
     else if (await ping(window.ERNOS_FUNNEL, 4000)) window.ERNOS_API = window.ERNOS_FUNNEL;
+    else if (saved && await ping(saved, 2500)) window.ERNOS_API = saved;
     else window.ERNOS_API = null;
     return window.ERNOS_API;
   })();
