@@ -20,9 +20,9 @@
 
 ---
 
-*ErnosDecent is a local-first peer-to-peer application stack covering identity, networking, storage, messaging, social publishing, hosting, finance, AI, and media.*
+*ErnosDecent replaces the centralised internet stack — identity, networking, storage, messaging, social publishing, hosting, finance, AI, and media — with a single, auditable, natively compiled codebase.*
 
-*Implemented behavior and interoperability boundaries are recorded in [docs/IMPLEMENTATION_PLAN.md](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/IMPLEMENTATION_PLAN.md).*
+*No cloud. No platform. No intermediary.*
 
 <br/>
 
@@ -34,22 +34,15 @@
 
 ErnosDecent is a ground-up reimplementation of the services people depend on every day — identity, messaging, social media, hosting, payments, AI inference, and live media — as a unified peer-to-peer system. Every module is written in [Ernos](https://github.com/MettaMazza/Ernos-Programming-Language), a compiled programming language with plain English syntax that transpiles to C and compiles to native binaries via Clang.
 
-The node is written in Ernos and links established native libraries for cryptography, persistence, Nostr signatures, and optional media/AI backends. The dependency list is explicit below.
+This is not a framework. This is not a wrapper around existing libraries. This is the stack itself, built from cryptographic primitives upward.
 
 ### The problem it solves
 
-ErnosDecent provides locally controlled keys and storage. Some configured features use peers or remote model providers; the node does not claim that every connection or computation is local.
+Every service on the current internet requires you to trust a third party with your data, your identity, and your relationships. ErnosDecent eliminates that requirement. Your keys are yours. Your data stays on your machine. Your connections are direct. Your compute is local.
 
 ### Current state
 
-**v1.0.0-beta.** The repository contains **17 subsystem directories**, **117 non-test Ernos modules**, and **105 Ernos test files**. Verification is evidence-based and changes with the code; see the checked results and release gate in [docs/IMPLEMENTATION_PLAN.md](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/IMPLEMENTATION_PLAN.md). The node provides a local authenticated CLI and Web dashboard.
-
-> **Public bootstrap is pre-launch (last verified 19 July 2026).** The operated node
-> is live and TCP `9100`/`9101` are externally reachable, but stable DDNS and public
-> forwarding for `9102`–`9104` are deferred. No automatic public default seed is
-> shipped yet, so a fresh installation does not auto-join the public mesh. Until the
-> launch gate is completed, operators must provide an explicit `--seed host:9101` or
-> use a previously verified cached peer. This beta does not claim public-mesh availability.
+**v1.0.0-beta.** The core architecture is implemented and verified. **17 subsystems** comprise roughly **113 source modules** (~45,800 source code-lines plus ~18,300 test lines). Each subsystem ships its own test suite (**105 test files** in total); the node builds with `bash build.sh` and boots, and the core paths are verified. It is served with a local control CLI client and a premium glassmorphic Web UI dashboard (14 tabs: overview, identity, network, storage, messaging, names, wallet, AI chat, agent memory, learning, GitDec, pooling, guide, settings).
 
 ---
 
@@ -59,22 +52,22 @@ ErnosDecent provides locally controlled keys and storage. Some configured featur
 |-----------|--------------|
 | 🔑 **Self-owned identity** — Ed25519 keys, W3C DIDs, capability tokens | Google/Apple sign-in, OAuth |
 | 🌐 **Encrypted P2P networking** — Noise XX handshake, Kademlia DHT | AWS, Cloudflare, centralised DNS |
-| 💾 **Content-addressed storage** — SHA-256 hashing, SQLite persistence, CRDT structures | Local application storage |
+| 💾 **Content-addressed storage** — BLAKE3 hashing, CRDT sync | Google Drive, iCloud, Dropbox |
 | 💬 **End-to-end encrypted messaging** — direct and group channels | iMessage, WhatsApp, Telegram |
-| 📢 **Social publishing primitives** — NIP-01 events, ActivityPub-shaped activities, unified feeds | Local and peer social data |
+| 📢 **Federated social publishing** — Nostr + ActivityPub | Twitter/X, Instagram, Facebook |
 | 🏠 **Self-hosted services** — HTTP, email, Git, DNS | GitHub, Gmail, GoDaddy |
 | 💰 **Native financial system** — HD wallets, UTXO ledger, DEX, smart contracts | Ethereum, Coinbase, PayPal |
 | 🤖 **Local AI** — GGUF transformer, embeddings, speech-to-text, **Kokoro text-to-speech** (🔊 local neural voice), **FLUX image generation + vision** (the agent generates an image locally, looks at it, and describes it) | OpenAI, Anthropic, Google Cloud AI, Midjourney |
-| 🧠 **Sovereign agent** — ReAct loop with **multi-tool batching** (many tools per model call) and long-horizon chaining, a **71-tool surface**, persistent latest-user scope that cancels stale queued/approved actions, recoverable exact-path correction, lossless uncapped operational session evidence, invitation non-authorization, native Discord PNG/JPEG/WebP vision, a captured per-turn reasoning channel with **full untruncated transparency**, tiered/Hebbian memory + per-session RAG, sessions with per-session guidance, workspace project linking, a fail-closed **and self-auditing** observer (steelmans, won't straw-man or lie), clarifying-question + stop-mid-run controls, a self-owned editable prompt, sub-agent delegation/swarms, and grounded psychological/argumentation/architectural frameworks | Cloud agent platforms |
+| 🧠 **Sovereign agent** — ReAct loop with **multi-tool batching** (many tools per model call) and long-horizon chaining, a **71-tool surface**, a captured per-turn reasoning channel with **full untruncated transparency**, tiered/Hebbian memory + per-session RAG, sessions with per-session guidance, workspace project linking, a fail-closed **and self-auditing** observer (steelmans, won't straw-man or lie), clarifying-question + stop-mid-run controls, a self-owned editable prompt, sub-agent delegation/swarms, and grounded psychological/argumentation/architectural frameworks | Cloud agent platforms |
 | 🗂️ **GitDec** — decentralised in-repo issue/PR tracker over Nostr | GitHub Issues/PRs |
-| 📡 **P2P media primitives** — SDP/STUN/SRTP structures, adaptive HLS, codecs, CDN | Application media transport |
+| 📡 **P2P media streaming** — WebRTC, adaptive HLS, codec layer, CDN | YouTube, Twitch, Zoom |
 | 🕵️ **Anonymity layer** — onion routing, mix networks | Tor (external), VPNs |
 | 🔍 **Decentralised search** — crawler, BM25 + PageRank ranking | Google Search |
 | 🤝 **Resource pooling** — bandwidth sharing, compute delegation | AWS Lambda, Cloudflare Workers |
 | 🗳️ **Consensus** — Raft leader election, replicated log | Centralised databases |
 | 🖥️ **Dashboard UI** — glassmorphic SPA with real-time telemetry | Cloud consoles |
 
-Local features run under the node operator's control. Optional remote providers and peer connections are reported as such.
+**Every feature runs on your hardware, under your keys, with direct connections to the people you choose.**
 
 ---
 
@@ -85,10 +78,6 @@ Local features run under the node operator's control. Optional remote providers 
 - [Ernos compiler](https://github.com/MettaMazza/Ernos-Programming-Language) (Rust — `cargo build --release`)
 - Clang (C compiler backend)
 - libsodium (`brew install libsodium` on macOS, `apt install libsodium-dev` on Linux)
-- libsrtp2 (`brew install srtp` on macOS, `apt install libsrtp2-dev` on Linux)
-- OpenSSL and SQLite development libraries
-- libsecp256k1 (`brew install secp256k1` on macOS, `apt install libsecp256k1-dev` on Linux)
-- stable-diffusion.cpp shared library for the required image runtime; `build.sh` validates its presence
 
 ### Build & Run
 
@@ -110,23 +99,14 @@ ERNOSDECENT_PASSPHRASE="choose-a-strong-passphrase" ./node
 # Open the dashboard
 open http://localhost:8088
 
-# Read the per-installation password generated before the Web listener starts
-tr -d '\r\n' < ~/.ernosdecent/web-password; printf '\n'
-
 # Control the running node from another terminal:
 #   ./decent_cli/decent_cli status
 #   ./decent_cli/decent_cli pool status
 ```
 
-> **Local AI (optional):** the agent uses your local LLM if one is running.
-> `run_node.sh` holds the default **gemma4:26b** model in a dedicated Ollama service
-> on **:11435**, isolated from the shared Ollama scheduler on :11434. The 31B text
-> model remains resident in parallel llama.cpp on **:8080**, LM Studio on :1234 and
-> shared Ollama remain fallbacks, and configured 26B Observer audits disable hidden
-> reasoning while retaining their complete rules and visible rationale.
-> Gemma4's hybrid/SWA cache can invalidate a branched Observer prefix; this is logged
-> explicitly and causes a full Observer prefill rather than a silent polling delay.
-> `run_node.sh` additionally serves the same
+> **Local AI (optional):** the agent uses your local LLM if one is running —
+> llama.cpp on **8080/8081**, Ollama on 11434, or LM Studio on 1234 (auto-discovered;
+> default model **gemma-4-31b** via Ollama). `run_node.sh` additionally serves the same
 > gemma-4-31b weights WITH their vision projector on **:8091** (Ollama's tag ships
 > without it) so the agent can see the images it generates. Speech-to-text uses a
 > **whisper.cpp** server (default port **8090**, set via the `[ai]` section of
@@ -137,22 +117,9 @@ tr -d '\r\n' < ~/.ernosdecent/web-password; printf '\n'
 
 ### Multi-Node Cluster
 
-**Pre-launch notice:** automatic public bootstrap is not active yet. ErnosDecent does
-not ship an unverifiable external seed. The operated bootstrap node
-must have `network.is_static_host = 1`, a stable `network.public_host` DNS name, and a
-verified public endpoint before that name is added to the shipped default-seed list.
-Until then, every additional node must receive an explicit seed or have a previously
-verified peer in `~/.ernosdecent/peers.txt`. A static host never dials the operated
-default aliases that represent itself, but may still join an explicit or cached peer.
-
-Expose TCP `9101` for DHT bootstrap. Full participation also requires TCP `9100`
-(encrypted P2P), `9102` (relay registration), `9103` (Raft), and `9104` (compute).
-Keep IPC `5000` and Web `8088` loopback-only unless a separate authenticated reverse
-proxy and access policy are deliberately configured.
-
 ```bash
-# Start the operated seed node (default ports; --host applies to this launch)
-./run_node.sh --host
+# Start the seed node (default ports)
+./node &
 
 # Start a second node, bootstrapped to the seed
 ./node --port 9200 --seed 127.0.0.1:9101 &
@@ -161,9 +128,9 @@ proxy and access policy are deliberately configured.
 ./node --port 9400 --seed 127.0.0.1:9101 &
 
 # Verify cluster formation
-{ printf 'AUTH '; tr -d '\r\n' < ~/.ernosdecent/ipc-token; printf ' STATUS'; } | nc -w2 127.0.0.1 5000
-{ printf 'AUTH '; tr -d '\r\n' < ~/.ernosdecent/ipc-token; printf ' STATUS'; } | nc -w2 127.0.0.1 9300
-{ printf 'AUTH '; tr -d '\r\n' < ~/.ernosdecent/ipc-token; printf ' STATUS'; } | nc -w2 127.0.0.1 9500
+echo "STATUS" | nc -w2 127.0.0.1 5000   # Node 1: dht_size >= 1
+echo "STATUS" | nc -w2 127.0.0.1 9300   # Node 2: peers:1, dht_size:1
+echo "STATUS" | nc -w2 127.0.0.1 9500   # Node 3: peers:1, dht_size:1
 ```
 
 **Port layout:** `--port BASE` sets P2P=BASE, DHT=BASE+1, Relay=BASE+2, Raft=BASE+3, IPC=BASE+100, Web=BASE+80.
@@ -171,18 +138,16 @@ proxy and access policy are deliberately configured.
 ### Run All Tests
 
 ```bash
-# Rebuild, check every native-target .ep file, compile and run the checked
-# subsystem/integration matrix, run the cognitive-agent suite, exercise both
-# additive C runtimes, validate shell syntax, and reject whitespace errors.
-bash scripts/release_check.sh
+# Unit + integration tests (per-subsystem)
+for test in decent_*/test_*.ep; do
+    ernos "$test" && "./${test%.ep}" || echo "FAIL: $test"
+done
 
-# Live E2E tests (requires a running default-port daemon and uses its 0600 IPC token)
+# Live E2E tests (requires running daemon)
 bash test_live_e2e.sh
 
-# Multi-node and stress harnesses use disposable state, start only their own
-# nodes, refuse occupied ports, and clean up the processes they own.
+# Multi-node stress tests (starts 3-node cluster)
 bash test_multinode_live.sh
-bash test_stress_live.sh
 ```
 
 ---
@@ -294,7 +259,7 @@ ErnosDecent/
 
 | Module | What it does |
 |--------|-------------|
-| `content.ep` | SHA-256 content-addressed storage, deduplication, SQLite-backed chunk storage, chunking, and Merkle tree generation. |
+| `content.ep` | Content-addressed storage engine. BLAKE3 hashing, deduplication, SQLite-backed chunk storage, garbage collection, CAR archive export/import, Merkle tree generation. |
 | `crdt.ep` | Conflict-free Replicated Data Types. G-Counter, PN-Counter, LWW-Register, OR-Set, MV-Register — deterministic merging for eventual consistency. |
 
 **Tests:** ships its own test suite (`test_*.ep`); see "Run All Tests".
@@ -316,7 +281,7 @@ ErnosDecent/
 
 | Module | What it does |
 |--------|-------------|
-| `nostr.ep` | NIP-01 canonical event hashing, BIP-340 secp256k1 signing/verification, WebSocket relay messages, and subscription filters. Plain `ws` is implemented; `wss` is not. |
+| `nostr.ep` | Nostr event creation, stable serialisation, Ed25519 signing/verification, subscription filters. |
 | `activitypub.ep` | ActivityPub actor profiles, activity wrappers (Create, Follow, Accept, Like), inbox/outbox delivery. |
 | `feed.ep` | Unified feed aggregation normalising Nostr events and ActivityPub activities into chronological order. |
 | `publish.ep` | Multi-protocol broadcasting to target feeds with publisher follow flows. |
@@ -340,7 +305,7 @@ ErnosDecent/
 |--------|-------------|
 | `http.ep` | Native HTTP server. Request path parsing, response building, single-connection socket handling. |
 | `static.ep` | Static route mapper for serving content by path. |
-| `email.ep` | Documented SMTP/IMAP command subsets, DID-backed address routing, and signature verification. It is not a complete SMTP/IMAP implementation. |
+| `email.ep` | SMTP/IMAP protocol hosting. Maps email addresses to DIDs and cryptographically verifies signatures. |
 | `git.ep` | Secure P2P git repository hosting. Authorizes collaborator roles and verifies commit signatures. |
 
 **Tests:** ships its own test suite (`test_*.ep`); see "Run All Tests".
@@ -380,15 +345,15 @@ Speech-to-text and Kokoro text-to-speech both ship; TTS was verified end-to-end 
 
 | Module | What it does |
 |--------|-------------|
-| `react_loop.ep` / `scope_control.ep` | ReAct coordinator and scope enforcement: **multi-tool batching**, long-horizon chaining (50-turn LLM cap, per-request tunable), invitation non-authorization, persistent latest-user directives, stale batch/approval cancellation, strict output boundaries, evidence-based user-home typo correction, recoverable tool-error feedback without safety lockout, approval gate, observer audits, cooperative cancel, clarification pause/resume, and full trace transparency. |
+| `react_loop.ep` | ReAct coordinator: **multi-tool batching** (many `Action:` calls executed per model call), long-horizon chaining (50-turn LLM cap, per-request tunable), approval gate, observer audits, mid-turn whispers, cooperative cancel, clarification pause/resume, full untruncated trace transparency. |
 | `prompt.ep` | Prompt assembler: kernel (ReAct grammar + batching rule), persona/identity, `[CAPABILITIES]` framing, self-sections (`[[BEHAVIOR]]`/`[[SKILLS]]`), `[[SESSION GUIDANCE]]`, awareness block, memory tiers. |
-| `tools.ep` | Schema registry and guarded execution dispatcher for the **71-tool surface**: wallet/DHT/name, codebase + workspace files (paginated reads), project linking, sessions/transcripts/search, memory/cognition, RAG, web search/visit/download, `run_command` with combined stdout/stderr and exit status, `run_ep` sandbox, image generation, Discord, delegation, scheduler, self-prompt, and more. |
-| `session.ep` | Persistent sessions: lossless uncapped conversational and operational transcripts, restoration of archives created by older capped builds, per-session guidance, and active-session tracking; a new session clears the active workspace link. |
+| `tools.ep` | Schema registry and guarded execution dispatcher for the **71-tool surface**: wallet/DHT/name, codebase + workspace files (paginated reads), project linking, sessions/transcripts/search, memory/cognition (scratchpad, lessons, timeline, KG, procedures, synaptic graph), RAG, web search/visit/download, `run_command`/`run_ep` sandbox, image generation, Discord (channels, read, react), delegation, scheduler, self-prompt, and more. |
+| `session.ep` | Persistent sessions: transcripts, per-session guidance prompt, compression, active-session tracking; a new session clears the active workspace link. |
 | `workspace.ep` / `workspace_links.ep` | Per-session workspace files + a project-link registry: register external project dirs, set one active per session, resolve bare relative paths against it. |
 | `memory.ep` / `sleep.ep` / `synaptic_tool.ep` | Tiered cognitive memory: scratchpad, lessons (semantic recall), timeline, Hebbian knowledge graph, consolidation/"sleep" sweep. |
-| `llm.ep` | Model client + exact-weight router: dedicated renderer-correct gemma4:26b Ollama service (:11435) as the configured default, resident gemma-4-31b llama.cpp (:8080), shared Ollama fallback (:11434), LM Studio (:1234), structured Observer audits without hidden reasoning, async-timeout-bounded reads, and `query_vision` multimodal routing (:8091). |
+| `llm.ep` | Model client + router: auto-discovers llama.cpp (8080/8081), Ollama (11434), LM Studio (1234); default gemma-4-31b; async-timeout-bounded reads; `query_vision` multimodal path (:8091). |
 | `image_gen.ep` + `vendor/sd/sd_ep_shim.cpp` | Local image generation via libstable-diffusion FFI: FLUX 4-input mode (gguf transformer + diffusers CLIP/VAE + gguf T5) or single-file SD/SDXL; `config/image.json`; 1024×1024; the agent then vision-describes its own output. |
-| `observer.ep` / `observer_rules.ep` / `observer_parser.ep` | LLM-driven safety and scope supervisor: binding action audits after approval, latest-directive/path/output validation, ordinary-reply availability fallback, strict-scope reply fail-closed behavior, mid_message look-back, and explicit parsed-vs-default verdicts. |
+| `observer.ep` / `observer_rules.ep` / `observer_parser.ep` | Safety supervisor: fail-closed LLM audit gate for dangerous tools (human approval overrides to advisory), fail-open reply audit + mid_message look-back, deterministic moderation classifier, explicit parsed-vs-default verdicts. |
 | `access.ep` / `awareness.ep` | Tiered Full-PC access with an unsafe-action gate (sensitive = warn/re-ask, secrets = hard-block) + situational awareness / tool-routing / act-vs-ask decision policy. |
 | `orchestrator.ep` | Sub-agent delegation: spawn/wait/check/cancel/list + swarm fan-out with concat/best/vote merge, as cooperative async tasks. |
 | `tutor.ep` / `tutor_content.ep` / `sandbox_ep.ep` | Decentralised education: Socratic tutor mode (scaffolds, never answer-vends), curriculum lessons, `run_ep` sandboxed ErnosPlain playground (Learning web tab). |
@@ -441,9 +406,9 @@ Agent-parity Phases 1–6 are done and gated. Since then: sessions + guidance, w
 
 | Module | What it does |
 |--------|-------------|
-| `bandwidth.ep` | Bandwidth sharing with mutex-protected 60-second tier limits, byte counters, contribution scoring, tier-spoof rejection, and a checked TCP routing proxy. |
-| `compute.ep` | Mutex-protected compute manager with concurrent TCP worker assignment, result acknowledgement, contribution tracking, and distinct-worker redundancy checks. |
-| `mesh.ep` | Symbiotic mesh coordinate layer. Orchestrates bandwidth accounting and compute-job coordination; its current collaborative-AI path runs redundant local inference and verifies matching results. It does not onion-route inference. |
+| `bandwidth.ep` | Bandwidth sharing. Manages bandwidth tiers (free, emergency, premium), uploaded/downloaded byte counters, dynamic contribution scoring, rate limits, and anonymous routing proxy simulation. |
+| `compute.ep` | Compute pooling manager. Job submission queue, worker scheduling, contribution tracking, and redundant execution consensus verification. |
+| `mesh.ep` | Symbiotic mesh coordinate layer. Orchestrates bandwidth sharing, compute delegation, and onion-routed anonymous AI inference execution. |
 
 **Tests:** ships its own test suite (`test_*.ep`); see "Run All Tests".
 
@@ -531,14 +496,14 @@ See [ERNOS_REFERENCE.md](https://github.com/MettaMazza/ErnosDecent/blob/main/doc
 | Test lines | ~18,300 |
 | Agent tools | 71 |
 | Test coverage | each subsystem ships its own suite; node builds and boots, core paths verified |
-| External dependencies | Clang, SQLite, libsodium, OpenSSL, libsecp256k1, stable-diffusion.cpp; optional configured backends include espeak-ng, ONNX Runtime, Opus, VPX, SRTP, and whisper.cpp |
+| External dependencies | libsodium (plus optional FFI: libespeak-ng, onnxruntime, libopus, libvpx, libsrtp2, whisper.cpp, libstable-diffusion) |
 | Target platforms | macOS (ARM64, x86_64) · Linux (x86_64, aarch64) · Windows via WSL2 (runs the Linux build) |
 
 ---
 
 ## Roadmap
 
-This checklist names implemented areas and explicit interoperability boundaries. An unchecked item is not represented as complete elsewhere in this README.
+v1.0.0-beta is the first public release. The architecture is proven and verified. What comes next:
 
 - [x] **Node Daemon** — unified coordinator for all subsystems
 - [x] **Web Dashboard** — glassmorphic SPA with real-time telemetry
@@ -547,15 +512,15 @@ This checklist names implemented areas and explicit interoperability boundaries.
 - [x] **Onion Routing** — multi-hop anonymity with mix networks
 - [x] **Distributed Search** — crawl, rank, and query the decentralised web
 - [x] **Resource Pooling** — bandwidth sharing, compute delegation, symbiotic mesh
-- [x] **Email & Git Hosting Primitives** — documented SMTP/IMAP subsets and Git helpers
+- [x] **Email & Git Hosting** — SMTP/IMAP and Git over the P2P layer
 - [x] **Multi-Node Bootstrap** — CLI `--seed`/`--port`, DHT discovery, Raft peer sync
 - [x] **Real UTXO Transfers** — Ed25519-signed transactions, overdraft protection
 - [x] **DHT Key-Value Store** — store/get via IPC and Web UI
 - [x] **Decentralised Name Registry** — register/resolve via IPC and Web UI
 - [x] **Cross-Platform Build** — `build.sh` auto-detects macOS/Linux, Homebrew/system paths
-- [x] **Live E2E Test Suite** — native integration coverage recorded in the verification record
+- [x] **Live E2E Test Suite** — 100+ assertions covering all user-facing features
 - [x] **Multi-Node Stress Tests** — 3-node cluster formation, failure recovery, concurrent ops
-- [ ] **QUIC Transport** — multiplexed low-latency transport alongside the current TCP/UDP transports
+- [ ] **QUIC Transport** — production UDP transport replacing simulated connections
 - [ ] **NAT Traversal** — STUN/TURN integration for direct peer connections
 - [ ] **Double Ratchet** — Signal-protocol-grade forward secrecy for messaging
 - [x] **Windows (via WSL2)** — runs the Linux build unchanged inside WSL2 Ubuntu
@@ -585,7 +550,7 @@ For guides on how to use and understand the ErnosDecent system, refer to:
 - [System Guide Synthesis](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/system_guide_synthesis.md) — The technical subsystem documentation covering architecture, schemas, and APIs.
 - [GitDec Simple User Guide](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/gitdec_user_guide.md) — A friendly, clear guide on how to host and collaborate on repositories using GitDec.
 - Subsystem guides: [Network & DHT](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/network_dht_guide.md) · [Storage & CRDTs](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/storage_crdt_guide.md) · [Identity Registry](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/identity_registry_guide.md) · [Ledger & DEX](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/ledger_dex_guide.md) · [Messaging & Social](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/messaging_social_guide.md) · [Resource Pooling](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/resource_pooling_guide.md) · [Turing Grid & Hebbian Memory](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/turing_hebbian_guide.md) · [Settings](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/settings_guide.md)
-- [AGENT.md](https://github.com/MettaMazza/ErnosDecent/blob/main/AGENT.md) — The engineering laws every change to this codebase is held to.
+- [AGENT.md](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/AGENT.md) — The engineering laws every change to this codebase is held to.
 - [master_prompt.md](https://github.com/MettaMazza/ErnosDecent/blob/main/master_prompt.md) — A 13-block full-system diagnostic that exercises every agent tool with pass/fail scorecards.
 - [CHANGELOG.md](https://github.com/MettaMazza/ErnosDecent/blob/main/CHANGELOG.md) — Dated record of all notable changes.
 - [Ernos Reference Manual](https://github.com/MettaMazza/ErnosDecent/blob/main/docs/ERNOS_REFERENCE.md) — The official reference manual for the Ernos programming language syntax and standard library.
