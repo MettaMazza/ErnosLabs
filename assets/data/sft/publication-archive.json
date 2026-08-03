@@ -10,7 +10,7 @@
       "successors": [
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         }
       ],
       "application_rebuild_pending": false,
@@ -25,11 +25,11 @@
       "successors": [
         {
           "label": "Chemistry",
-          "doi": "10.5281/zenodo.21627782"
+          "doi": "10.5281/zenodo.21688899"
         },
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         }
       ],
       "application_rebuild_pending": false,
@@ -44,11 +44,11 @@
       "successors": [
         {
           "label": "Mathematics",
-          "doi": "10.5281/zenodo.21627708"
+          "doi": "10.5281/zenodo.21688766"
         },
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         }
       ],
       "application_rebuild_pending": false,
@@ -63,7 +63,7 @@
       "successors": [
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         }
       ],
       "application_rebuild_pending": false,
@@ -78,7 +78,7 @@
       "successors": [
         {
           "label": "Quantum Computation",
-          "doi": "10.5281/zenodo.21627748"
+          "doi": "10.5281/zenodo.21688860"
         }
       ],
       "application_rebuild_pending": false,
@@ -93,7 +93,7 @@
       "successors": [
         {
           "label": "Quantum Computation",
-          "doi": "10.5281/zenodo.21627748"
+          "doi": "10.5281/zenodo.21688860"
         }
       ],
       "application_rebuild_pending": false,
@@ -108,7 +108,7 @@
       "successors": [
         {
           "label": "Quantum Computation",
-          "doi": "10.5281/zenodo.21627748"
+          "doi": "10.5281/zenodo.21688860"
         }
       ],
       "application_rebuild_pending": false,
@@ -182,7 +182,7 @@
       "successors": [
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         },
         {
           "label": "Consciousness",
@@ -216,7 +216,7 @@
       "successors": [
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         }
       ],
       "application_rebuild_pending": true,
@@ -231,7 +231,7 @@
       "successors": [
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         }
       ],
       "application_rebuild_pending": false,
@@ -246,7 +246,7 @@
       "successors": [
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         },
         {
           "label": "Astronomy and Cosmology",
@@ -265,7 +265,7 @@
       "successors": [
         {
           "label": "Physics",
-          "doi": "10.5281/zenodo.21627765"
+          "doi": "10.5281/zenodo.21688879"
         },
         {
           "label": "Earth and Environmental Sciences",
@@ -284,7 +284,7 @@
       "successors": [
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         }
       ],
       "application_rebuild_pending": true,
@@ -329,11 +329,11 @@
       "successors": [
         {
           "label": "Information Science",
-          "doi": "10.5281/zenodo.21627717"
+          "doi": "10.5281/zenodo.21688817"
         },
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         }
       ],
       "application_rebuild_pending": true,
@@ -363,11 +363,11 @@
       "successors": [
         {
           "label": "Classical Computation",
-          "doi": "10.5281/zenodo.21627721"
+          "doi": "10.5281/zenodo.21688837"
         },
         {
           "label": "Quantum Computation",
-          "doi": "10.5281/zenodo.21627748"
+          "doi": "10.5281/zenodo.21688860"
         }
       ],
       "application_rebuild_pending": false,

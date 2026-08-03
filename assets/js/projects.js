@@ -65,7 +65,7 @@ function pj_esc(s) {
 }
 
 function pj_use_machine() {
-    let links, repo;
+    let repo, links;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -123,7 +123,7 @@ function pj_meta_line(p) {
 }
 
 function pj_card(p) {
-    let out, page;
+    let page, out;
     page = pj_page(p.repo);
     out = "<div class=\"ai-card reveal in\">";
     out = (out + (("<div class=\"ai-card__top\"><h3>" + String(pj_esc(p.title))) + "</h3></div>"));
@@ -188,7 +188,7 @@ function pj_page(repo) {
 }
 
 function pj_section(key, heading, sub) {
-    let cards, out, include;
+    let out, cards, include;
     cards = "";
     for (const p of window.ERNOS_PROJECTS) {
         include = false;
@@ -226,7 +226,7 @@ function pj_section(key, heading, sub) {
 }
 
 function pj_render_grid() {
-    let html, host;
+    let host, html;
     host = document.getElementById("projects-grid");
     if (!host) {
         return 0;

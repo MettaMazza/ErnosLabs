@@ -97,7 +97,7 @@ function sft_set_text(id, value) {
 }
 
 function sft_manifest(data) {
-    let mode, date, d;
+    let date, d, mode;
     window.sftManifest = data;
     sft_set_text("sft-claim-count", data.whole_model_claim_count);
     sft_set_text("sft-paper-count", data.publication_count);
@@ -121,7 +121,7 @@ function sft_manifest(data) {
 }
 
 function sft_branch_card(branch) {
-    let status, inventory, count, href, paper, out, label;
+    let status, count, inventory, href, label, paper, out;
     label = sft_esc(branch.branch_label);
     count = branch.live_census_claims;
     inventory = sft_esc(sft_words(branch.inventory_status));
@@ -200,7 +200,7 @@ function sft_claim_card(claim) {
 }
 
 function sft_render_claims() {
-    let branch_el, branch, ok, html, hay, query, search_el, host, shown, matched;
+    let shown, host, branch, hay, branch_el, html, ok, search_el, query, matched;
     host = document.getElementById("claim-results");
     if (!host) {
         return 0;
@@ -248,7 +248,7 @@ function sft_render_claims() {
 }
 
 function sft_dependency_html(id) {
-    let href, title, claim;
+    let href, claim, title;
     claim = sft_claim_by_id(id);
     title = id;
     if (claim) {
@@ -270,7 +270,7 @@ function sft_evidence_link(item, label) {
 }
 
 function sft_render_detail(claim) {
-    let detail, controls, excluded, provenance, evidence, explorer, deps, html;
+    let deps, html, detail, controls, evidence, provenance, explorer, excluded;
     explorer = document.getElementById("claim-explorer");
     detail = document.getElementById("claim-detail");
     if (explorer) {
@@ -319,7 +319,7 @@ function sft_render_detail(claim) {
 }
 
 function sft_claims(data) {
-    let search, claim, href, params, selected, groups, html, select, detail_id;
+    let select, claim, params, html, groups, selected, search, detail_id, href;
     window.sftClaims = data.claims;
     detail_id = "";
     params = Reflect.construct(window.URLSearchParams, [window.location.search]);

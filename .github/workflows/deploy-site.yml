@@ -49,6 +49,9 @@ jobs:
       - name: Validate publications, claims, dependencies, receipts and hashes
         run: python3 tools/validate_site_snapshot.py
 
+      - name: Validate the generated Blog snapshot
+        run: python3 tools/sync_blog.py
+
       - name: Refresh browser cache versions
         run: python3 tools/stamp_assets.py
 

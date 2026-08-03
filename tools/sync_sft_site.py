@@ -26,6 +26,26 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SFT_ROOT = Path.home() / "Desktop" / "Smithian Fold Theory Of Everything"
 DATA_DIR = ROOT / "assets" / "data" / "sft"
 PUBLICATION_DIR = ROOT / "content" / "publications"
+EDUCATION_DIR = ROOT / "content" / "education"
+
+EDUCATION_STAGES = {
+    "early_years": ("Early Years / Foundation", "Shared reading, noticing, sorting, building and honest checking."),
+    "ages_5_7": ("Ages 5–7", "A first primary route through exact parts, patterns, records and simple machines."),
+    "ages_7_11": ("Ages 7–11", "Illustrated explanations, worked examples, practical activities and cumulative review."),
+    "ages_11_14": ("Ages 11–14", "Branch primers that introduce derivation, evidence, dependencies and open boundaries."),
+    "gcse_age": ("GCSE-age · roughly 14–16", "Structured derivation, practical checks and evidence questions. GCSE-style, not an accredited qualification."),
+    "post_16": ("Post-16 · roughly 16–18", "Proof, modelling, receipts, uncertainty and extended investigation."),
+    "undergraduate": ("Undergraduate introduction", "Repository-facing reconstruction, independent certificates and critical audit."),
+    "advanced": ("Advanced study", "Living handbooks for lawful extension, certification and frontier investigation."),
+}
+
+EDUCATION_PROGRAMME_DOCUMENTS = (
+    ("README.md", "education-overview", "Open Education Library", "How the education library relates to the scientific model and its current knowledge boundary."),
+    ("SFT_MASTER_SYLLABUS.md", "master-syllabus", "Master syllabus", "The complete learning progression from Early Years through advanced independent reconstruction."),
+    ("SFT_EDUCATIONAL_CHARTER.md", "educational-charter", "Educational charter", "Authority, provenance, accessibility, safety, licensing and release rules for every educational work."),
+    ("CURRENT_KNOWLEDGE_BRANCH_MAP.md", "knowledge-branch-map", "Current knowledge branch map", "The dated teaching boundary for every scientific branch, including what is complete, bounded or still open."),
+    ("VERSIONING_AND_RELEASES.md", "education-versioning", "Versioning and releases", "How live, review, superseded and withdrawn educational editions are identified and preserved."),
+)
 
 BRANCHES = (
     "methods",
@@ -452,6 +472,391 @@ def build_reader_data(
     return output
 
 
+def education_source_root(sft_root: Path) -> Path | None:
+    matches = [path for path in sft_root.iterdir() if path.is_dir() and path.name.casefold() == "edu"]
+    if len(matches) > 1:
+        raise SyncError("The SFT repository contains more than one case-variant Edu directory")
+    return matches[0] if matches else None
+
+
+def source_is_committed(sft_root: Path, source: Path) -> bool:
+    relative = source.relative_to(sft_root).as_posix()
+    result = subprocess.run(
+        ["git", "-C", str(sft_root), "ls-files", "--error-unmatch", relative],
+        text=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    return result.returncode == 0
+
+
+def source_link_fields(sft_root: Path, source_revision: str, source: Path) -> dict[str, str]:
+    if not source_is_committed(sft_root, source):
+        return {}
+    source_path = source.relative_to(sft_root).as_posix()
+    return {
+        "source_url": (
+            "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/"
+            f"{source_revision}/{source_path}"
+        ),
+        "source_root_url": (
+            "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/"
+            f"{source_revision}/"
+        ),
+        "raw_source_url": (
+            "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/"
+            f"{source_revision}/{source_path}"
+        ),
+        "raw_root_url": (
+            "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/"
+            f"{source_revision}/"
+        ),
+    }
+
+
+def education_word_count(path: Path, content_format: str) -> int:
+    text = path.read_text(encoding="utf-8")
+    if content_format == "html":
+        text = re.sub(r"<(?:script|style)\b[^>]*>.*?</(?:script|style)>", " ", text, flags=re.DOTALL | re.IGNORECASE)
+        text = re.sub(r"<[^>]+>", " ", text)
+        text = html.unescape(text)
+    return len(re.findall(r"\b[\w’'-]+\b", text))
+
+
+def safe_education_artifact(sft_root: Path, artifact_path: str) -> Path:
+    source = (sft_root / artifact_path).resolve()
+    try:
+        source.relative_to(sft_root.resolve())
+    except ValueError as exc:
+        raise SyncError(f"Educational artifact escapes the SFT repository: {artifact_path}") from exc
+    if not source.is_file():
+        raise SyncError(f"Educational artifact is missing: {artifact_path}")
+    return source
+
+
+def render_picture_book(source: Path, manifest: dict[str, Any], output: Path) -> None:
+    book = read_json(source)
+    if book.get("schema") != "sft-education-picture-book/1" or not isinstance(book.get("pages"), list):
+        raise SyncError(f"Unsupported canonical educational JSON: {source}")
+    lines = [
+        f"# {manifest['title']}",
+        "",
+        str(manifest.get("subtitle") or ""),
+        "",
+    ]
+    for page in book["pages"]:
+        number = page.get("page")
+        badge = str(page.get("badge") or "Page")
+        lines.extend([f"## Page {number} — {badge.title()}", ""])
+        text = str(page.get("text") or "").strip()
+        if text:
+            lines.extend([text.replace("\n", "\n\n"), ""])
+        subtext = str(page.get("subtext") or "").strip()
+        if subtext:
+            lines.extend([f"**Reading prompt:** {subtext}", ""])
+        alt = str(page.get("alt") or "").strip()
+        if alt:
+            lines.extend([f"**Illustration description:** {alt}", ""])
+    output.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
+
+
+def validate_education_manifest(manifest: dict[str, Any], path: Path) -> None:
+    required = ("book_id", "title", "version", "status", "stage", "branches", "author", "artifacts")
+    missing = [key for key in required if not manifest.get(key)]
+    licence = manifest.get("license") or (manifest.get("licenses") or {}).get("text")
+    if not licence:
+        missing.append("license or licenses.text")
+    if manifest.get("schema") != "sft-education-book-manifest/1" or missing:
+        raise SyncError(f"Educational manifest is incomplete at {path}: {', '.join(missing)}")
+    if not re.fullmatch(r"\d+\.\d+\.\d+", str(manifest["version"])):
+        raise SyncError(f"Educational version is not semantic at {path}: {manifest['version']}")
+    if manifest["status"] not in {"planning", "draft", "review", "live", "superseded", "withdrawn"}:
+        raise SyncError(f"Unknown educational status at {path}: {manifest['status']}")
+    if manifest["stage"] not in EDUCATION_STAGES:
+        raise SyncError(f"Unknown educational stage at {path}: {manifest['stage']}")
+    if manifest["author"] != "Maria Smith" or str(licence).replace("-", " ").upper() != "CC BY 4.0":
+        raise SyncError(f"Educational authorship or licence is inconsistent at {path}")
+
+
+def education_version(value: str) -> tuple[int, int, int]:
+    return tuple(int(part) for part in value.split("."))  # type: ignore[return-value]
+
+
+def education_context(manifest: dict[str, Any], stage_label: str, current: bool) -> str:
+    status = html.escape(str(manifest["status"]).replace("_", " ").title())
+    boundary = manifest.get("knowledge_boundary") or {}
+    inspected = html.escape(str(boundary.get("inspected_date") or "Not stated"))
+    claims = html.escape(str(boundary.get("census_claim_count") or "Not stated"))
+    branches = ", ".join(str(branch).replace("_", " ").title() for branch in manifest.get("branches", []))
+    status_note = {
+        "planning": "This catalogue entry is planned and is not yet a teaching release.",
+        "draft": "This is an incomplete working draft and is not yet a teaching release.",
+        "review": "This complete candidate is still undergoing scientific, educational, accessibility or safety review.",
+        "live": "This is the current verified educational edition.",
+        "superseded": "This preserved edition has been replaced by a later version.",
+        "withdrawn": "This edition is preserved for custody but should not be used for teaching.",
+    }[manifest["status"]]
+    edition_note = "Current edition in this snapshot." if current else "Preserved earlier edition."
+    return (
+        '<aside class="education-context">'
+        f'<strong>{html.escape(stage_label)} · {status}</strong>'
+        f'<h2>{html.escape(manifest["title"])} · Version {html.escape(manifest["version"])}</h2>'
+        f'<p>{html.escape(status_note)} {html.escape(edition_note)}</p>'
+        '<dl>'
+        f'<div><dt>Scientific branches</dt><dd>{html.escape(branches)}</dd></div>'
+        f'<div><dt>Knowledge inspected</dt><dd>{inspected}</dd></div>'
+        f'<div><dt>Claim census at edition boundary</dt><dd>{claims}</dd></div>'
+        '<div><dt>Licence</dt><dd>CC BY 4.0</dd></div>'
+        '</dl></aside>'
+    )
+
+
+def build_education(
+    sft_root: Path, source_revision: str, source_dirty: bool
+) -> tuple[dict[str, Any], Path]:
+    edu_root = education_source_root(sft_root)
+    EDUCATION_DIR.mkdir(parents=True, exist_ok=True)
+    for stale in EDUCATION_DIR.iterdir():
+        if stale.is_file():
+            stale.unlink()
+
+    works: list[dict[str, Any]] = []
+    programme_count = 0
+    edition_records: list[dict[str, Any]] = []
+    if edu_root:
+        for filename, work_id, title, summary in EDUCATION_PROGRAMME_DOCUMENTS:
+            source = edu_root / filename
+            if not source.is_file():
+                continue
+            output = EDUCATION_DIR / (work_id + ".md")
+            shutil.copyfile(source, output)
+            works.append(
+                {
+                    "id": work_id,
+                    "file": output.relative_to(ROOT).as_posix(),
+                    "title": title,
+                    "sub": summary,
+                    "words": education_word_count(output, "markdown"),
+                    "collection": "programme",
+                    "format": "markdown",
+                    "source_path": source.relative_to(sft_root).as_posix(),
+                    "source_sha256": sha256(source),
+                    "content_sha256": sha256(output),
+                    **source_link_fields(sft_root, source_revision, source),
+                }
+            )
+            programme_count += 1
+
+        manifests: list[dict[str, Any]] = []
+        seen_editions: set[tuple[str, str]] = set()
+        for manifest_path in sorted(edu_root.glob("books/**/book-manifest.json")):
+            manifest = read_json(manifest_path)
+            validate_education_manifest(manifest, manifest_path)
+            key = (manifest["book_id"], manifest["version"])
+            if key in seen_editions:
+                raise SyncError(f"Duplicate educational edition {key[0]} {key[1]}")
+            seen_editions.add(key)
+            manifests.append({**manifest, "_manifest_path": manifest_path})
+
+        groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for manifest in manifests:
+            groups[manifest["book_id"]].append(manifest)
+
+        for book_id, editions in sorted(groups.items()):
+            usable = [edition for edition in editions if edition["status"] not in {"superseded", "withdrawn"}]
+            current_edition = max(usable or editions, key=lambda edition: education_version(edition["version"]))
+            for manifest in sorted(editions, key=lambda edition: education_version(edition["version"]), reverse=True):
+                manifest_path: Path = manifest["_manifest_path"]
+                is_current = manifest is current_edition
+                artifacts = {item.get("role"): item.get("path") for item in manifest.get("artifacts", [])}
+                source: Path | None = None
+                content_format = "markdown"
+                semantic = artifacts.get("semantic_accessible_edition")
+                canonical = artifacts.get("canonical_student_source")
+                if semantic:
+                    source = safe_education_artifact(sft_root, str(semantic))
+                    content_format = "html" if source.suffix.lower() in {".html", ".htm"} else "markdown"
+                elif canonical:
+                    source = safe_education_artifact(sft_root, str(canonical))
+                    content_format = "json" if source.suffix.lower() == ".json" else "markdown"
+                elif manifest["status"] != "planning":
+                    raise SyncError(f"Educational edition has no accessible student source: {manifest_path}")
+
+                safe_id = re.sub(r"[^a-z0-9]+", "-", book_id.lower()).strip("-")
+                version_slug = manifest["version"].replace(".", "-")
+                content_path: Path | None = None
+                work: dict[str, Any] | None = None
+                if source:
+                    suffix = ".html" if content_format == "html" else ".md"
+                    content_path = EDUCATION_DIR / f"{safe_id}-v{version_slug}{suffix}"
+                    if content_format == "json":
+                        render_picture_book(source, manifest, content_path)
+                        content_format = "markdown"
+                    else:
+                        shutil.copyfile(source, content_path)
+                    stage_label = EDUCATION_STAGES[manifest["stage"]][0]
+                    work = {
+                        "id": safe_id if is_current else f"{safe_id}-v{version_slug}",
+                        "file": content_path.relative_to(ROOT).as_posix(),
+                        "title": manifest["title"],
+                        "sub": (
+                            f"{stage_label} · Version {manifest['version']} · {manifest['status'].title()}. "
+                            f"{manifest.get('subtitle') or 'An open SFT educational edition.'}"
+                        ),
+                        "words": education_word_count(content_path, content_format),
+                        "collection": f"stage:{manifest['stage']}" if is_current else "education-history",
+                        "format": content_format,
+                        "download_label": "Download accessible HTML" if content_format == "html" else "Download text",
+                        "context": education_context(manifest, stage_label, is_current),
+                        "source_path": source.relative_to(sft_root).as_posix(),
+                        "source_sha256": sha256(source),
+                        "content_sha256": sha256(content_path),
+                        "book_id": book_id,
+                        "version": manifest["version"],
+                        "status": manifest["status"],
+                        "stage": manifest["stage"],
+                        "current": is_current,
+                        **source_link_fields(sft_root, source_revision, source),
+                    }
+                    works.append(work)
+
+                adult_guide = manifest_path.parent / "adult-guide.md"
+                if is_current and adult_guide.is_file():
+                    adult_output = EDUCATION_DIR / f"{safe_id}-adult-guide-v{version_slug}.md"
+                    shutil.copyfile(adult_guide, adult_output)
+                    works.append(
+                        {
+                            "id": f"{safe_id}-adult-guide",
+                            "file": adult_output.relative_to(ROOT).as_posix(),
+                            "title": f"{manifest['title']} — adult guide",
+                            "sub": f"Guidance, activities, answers, accessibility and the exact scientific boundary for Version {manifest['version']}.",
+                            "words": education_word_count(adult_output, "markdown"),
+                            "collection": "adult-guidance",
+                            "format": "markdown",
+                            "download_label": "Download guide",
+                            "context": education_context(manifest, EDUCATION_STAGES[manifest["stage"]][0], True),
+                            "source_path": adult_guide.relative_to(sft_root).as_posix(),
+                            "source_sha256": sha256(adult_guide),
+                            "content_sha256": sha256(adult_output),
+                            "book_id": book_id,
+                            "version": manifest["version"],
+                            "status": manifest["status"],
+                            "stage": manifest["stage"],
+                            "current": True,
+                            **source_link_fields(sft_root, source_revision, adult_guide),
+                        }
+                    )
+
+                public_manifest = {key: value for key, value in manifest.items() if not key.startswith("_")}
+                edition_records.append(
+                    {
+                        "book_id": book_id,
+                        "title": manifest["title"],
+                        "subtitle": manifest.get("subtitle"),
+                        "version": manifest["version"],
+                        "status": manifest["status"],
+                        "stage": manifest["stage"],
+                        "branches": manifest["branches"],
+                        "current": is_current,
+                        "manifest_path": manifest_path.relative_to(sft_root).as_posix(),
+                        "manifest_sha256": sha256(manifest_path),
+                        "content_path": content_path.relative_to(ROOT).as_posix() if content_path else None,
+                        "content_sha256": sha256(content_path) if content_path else None,
+                        "manifest": public_manifest,
+                    }
+                )
+
+    status_counts = Counter(record["status"] for record in edition_records)
+    stage_counts = Counter(record["stage"] for record in edition_records if record["current"])
+    current_book_count = sum(record["current"] for record in edition_records)
+    sections = [
+        {
+            "collection": "programme",
+            "heading": "Start with the programme",
+            "sub": "Read the master syllabus, educational charter, current knowledge boundary and versioning rules.",
+        }
+    ]
+    sections.extend(
+        {
+            "collection": f"stage:{stage}",
+            "heading": label,
+            "sub": description,
+        }
+        for stage, (label, description) in EDUCATION_STAGES.items()
+    )
+    sections.extend(
+        [
+            {
+                "collection": "adult-guidance",
+                "heading": "For parents, carers and teachers",
+                "sub": "Practical guidance, expected reasoning, accessibility choices, safety and answers.",
+            },
+            {
+                "collection": "education-history",
+                "heading": "Preserved earlier editions",
+                "sub": "Superseded and withdrawn versions remain available with their exact scientific boundary.",
+            },
+        ]
+    )
+    stage_cards = "".join(
+        '<article class="education-stage-card">'
+        f'<span>{html.escape(label)}</span><strong>{stage_counts.get(stage, 0)}</strong>'
+        f'<p>{html.escape(description)}</p></article>'
+        for stage, (label, description) in EDUCATION_STAGES.items()
+    )
+    source_state = "working preview" if source_dirty else "committed source"
+    extra = (
+        '<section class="education-path" aria-labelledby="education-path-title">'
+        '<div class="education-path__intro"><p class="eyebrow">One route, many entry points</p>'
+        '<h2 id="education-path-title">A syllabus that grows with the model.</h2>'
+        '<p>Each shelf is generated from the versioned manifests and accessible editions in the SFT Edu directory. '
+        'When a new edition becomes current, the previous edition moves into preserved history instead of disappearing.</p></div>'
+        f'<div class="education-stage-grid">{stage_cards}</div>'
+        '<aside class="education-qualification-note"><strong>Clear qualification boundary</strong>'
+        '<p>GCSE-age materials use familiar learning and assessment styles, but they are not an approved GCSE specification or an accredited qualification. Exam-board mappings are navigation aids only.</p></aside>'
+        '<div class="education-provenance"><div><span>Source revision</span>'
+        f'<strong>{html.escape(source_revision[:12])}</strong></div><div><span>Projection</span><strong>{html.escape(source_state.title())}</strong></div>'
+        f'<div><span>Current books</span><strong>{current_book_count}</strong></div></div></section>'
+    )
+    reader_output = ROOT / "assets" / "js" / "education-data.js"
+    reader_output.write_text(
+        "// Generated by tools/sync_sft_site.py from the versioned SFT Edu library.\n"
+        + "window.READER_INTRO = "
+        + json.dumps(
+            {
+                "eyebrow": "Open education · automatically updated",
+                "title": "Syllabus",
+                "lead": "A free learning route through Smithian Fold Theory, from shared early-years reading to GCSE-style study, university reconstruction and advanced independent audit. Every available work keeps its version, scientific boundary and accessibility status visible.",
+            },
+            ensure_ascii=False,
+        )
+        + ";\nwindow.READER_SECTIONS = "
+        + json.dumps(sections, ensure_ascii=False)
+        + ";\nwindow.READER_WORKS = "
+        + json.dumps(works, ensure_ascii=False)
+        + ";\nwindow.READER_EXTRA_HTML = "
+        + json.dumps(extra, ensure_ascii=False)
+        + ";\n",
+        encoding="utf-8",
+    )
+    document = {
+        "schema": "ernoslabs-sft-education/1",
+        "source_present": edu_root is not None,
+        "source_path": edu_root.relative_to(sft_root).as_posix() if edu_root else None,
+        "source_revision": source_revision,
+        "source_dirty": source_dirty,
+        "programme_document_count": programme_count,
+        "book_count": len({record["book_id"] for record in edition_records}),
+        "edition_count": len(edition_records),
+        "current_book_count": current_book_count,
+        "status_counts": dict(sorted(status_counts.items())),
+        "stage_counts": dict(sorted(stage_counts.items())),
+        "editions": edition_records,
+        "works": works,
+    }
+    return document, reader_output
+
+
 def safe_relative(path_value: str | None, root: Path) -> dict[str, Any] | None:
     if not path_value:
         return None
@@ -632,14 +1037,21 @@ def main() -> int:
     reader_data = build_reader_data(publications, archive, source_revision)
     claims, claim_validation = build_claims(sft_root)
     branches = build_branches(sft_root, claims)
+    education, education_reader_data = build_education(sft_root, source_revision, source_dirty)
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     write_json(DATA_DIR / "publications.json", {"schema": "ernoslabs-sft-publications/1", "publications": publications})
     write_json(DATA_DIR / "publication-archive.json", {"schema": "ernoslabs-sft-publication-archive/1", "works": archive})
     write_json(DATA_DIR / "claims.json", claims)
     write_json(DATA_DIR / "branches.json", branches)
+    write_json(DATA_DIR / "education.json", education)
 
-    generated_files = sorted(DATA_DIR.glob("*.json")) + sorted(PUBLICATION_DIR.glob("*.md")) + [reader_data]
+    generated_files = (
+        sorted(DATA_DIR.glob("*.json"))
+        + sorted(PUBLICATION_DIR.glob("*.md"))
+        + sorted(path for path in EDUCATION_DIR.iterdir() if path.is_file())
+        + [reader_data, education_reader_data]
+    )
     manifest = {
         "schema": "ernoslabs-sft-site-snapshot/1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -650,6 +1062,10 @@ def main() -> int:
         "source_catalogue_sha256": catalogue_sha256,
         "publication_count": len(publications),
         "historical_publication_count": len(archive),
+        "education_source_present": education["source_present"],
+        "education_book_count": education["book_count"],
+        "education_current_book_count": education["current_book_count"],
+        "education_edition_count": education["edition_count"],
         "whole_model_claim_count": claims["whole_model_claim_count"],
         "publication_inventory_branch_count": branches["publication_inventory_branch_count"],
         "validation": claim_validation,
@@ -662,6 +1078,7 @@ def main() -> int:
     write_json(DATA_DIR / "manifest.json", manifest)
     print(
         f"Generated {len(publications)} current publications, {len(archive)} historical records, "
+        f"{education['current_book_count']} current education books from {education['edition_count']} editions, "
         f"{claims['whole_model_claim_count']} whole-model claims and "
         f"{branches['publication_inventory_branch_count']} branch publication inventories "
         f"from SFT {source_revision[:12]}{' (working preview)' if source_dirty else ''}."

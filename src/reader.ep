@@ -40,7 +40,10 @@ define work_card_html with w:
     set out to out + f"<h3>{w.title}</h3>"
     set out to out + f"<p>{w.sub}</p>"
     set out to out + "<span class=\"go\">Read →</span></button>"
-    set out to out + f"<a class=\"work-dl\" href=\"{w.file}\" download>⬇ Download</a>"
+    set download_label to "Download"
+    if w.download_label:
+        set download_label to w.download_label
+    set out to out + f"<a class=\"work-dl\" href=\"{w.file}\" download>⬇ {download_label}</a>"
     set out to out + "</div>"
     return out
 
@@ -66,9 +69,10 @@ define render_catalog:
     repeat while i < sections.length:
         set s to get_list(sections and i)
         set cards0 to section_cards(works and s.collection)
-        set html to html + f"<h2 style=\"margin-top:54px\">{s.heading}</h2>"
-        set html to html + f"<p class=\"lead\" style=\"margin-bottom:24px\">{s.sub}</p>"
-        set html to html + "<div class=\"grid grid--2\">" + cards0 + "</div>"
+        if cards0:
+            set html to html + f"<h2 style=\"margin-top:54px\">{s.heading}</h2>"
+            set html to html + f"<p class=\"lead\" style=\"margin-bottom:24px\">{s.sub}</p>"
+            set html to html + "<div class=\"grid grid--2\">" + cards0 + "</div>"
         set i to i + 1
     if window.READER_EXTRA_HTML:
         set html to html + window.READER_EXTRA_HTML
@@ -114,6 +118,9 @@ define open_work with id:
     set dl to document.getElementById("reader-dl")
     if dl:
         set dl.href to w.file
+        set dl.textContent to "Download text"
+        if w.download_label:
+            set dl.textContent to w.download_label
     set source_link to document.getElementById("reader-source")
     if source_link:
         if w.source_url:
@@ -188,6 +195,24 @@ define prepare_reader_text with text:
 
 define render_doc with text:
     set doc to document.getElementById("doc")
+    if window.curWork:
+        if window.curWork.format equals "html":
+            set parsed to Reflect.construct(window.DOMParser and []).parseFromString(text and "text/html")
+            set unsafe to parsed.querySelectorAll("script, style, link, meta, iframe, object, embed, form")
+            for each element in unsafe:
+                element.remove()
+            set content to parsed.querySelector("main")
+            if not content:
+                set content to parsed.body
+            set html to content.innerHTML
+            if window.curWork.context:
+                set html to window.curWork.context + html
+            set window.docHtml to html
+            set doc.innerHTML to html
+            resolve_reader_resources()
+            build_toc_from_doc()
+            apply_font()
+            return 0
     set reader_text to prepare_reader_text(text)
     set html to md_render(reader_text)
     if window.curWork:
@@ -198,6 +223,26 @@ define render_doc with text:
     resolve_reader_resources()
     build_toc(reader_text)
     apply_font()
+    return 0
+
+define build_toc_from_doc:
+    set heads to document.querySelectorAll("#doc h1, #doc h2, #doc h3, #doc h4")
+    set toc to document.getElementById("toc")
+    if heads.length < 2:
+        set toc.innerHTML to ""
+        return 0
+    set out to "<div class=\"toc__title\">Contents</div>"
+    set i to 0
+    for each h in heads:
+        if not h.id:
+            set h.id to f"reader-section-{i + 1}"
+        set lvl to h.tagName.slice(1)
+        set out to out + f"<a class=\"toc__link toc__lvl{lvl}\" data-target=\"{h.id}\">{h.textContent}</a>"
+        set i to i + 1
+    set toc.innerHTML to out
+    set links to toc.querySelectorAll(".toc__link")
+    for each a in links:
+        a.addEventListener("click" and toc_jump)
     return 0
 
 define build_toc with text:

@@ -28,7 +28,7 @@ function fmt_words(words) {
 }
 
 function work_card_html(w) {
-    let out, mins;
+    let download_label, mins, out;
     mins = read_minutes(w.words);
     out = "<div class=\"work-item\">";
     out = (out + (("<button class=\"card work-card reveal in\" data-id=\"" + String(w.id)) + "\">"));
@@ -36,13 +36,17 @@ function work_card_html(w) {
     out = (out + (("<h3>" + String(w.title)) + "</h3>"));
     out = (out + (("<p>" + String(w.sub)) + "</p>"));
     out = (out + "<span class=\"go\">Read →</span></button>");
-    out = (out + (("<a class=\"work-dl\" href=\"" + String(w.file)) + "\" download>⬇ Download</a>"));
+    download_label = "Download";
+    if (w.download_label) {
+        download_label = w.download_label;
+    }
+    out = (out + (((("<a class=\"work-dl\" href=\"" + String(w.file)) + "\" download>⬇ ") + String(download_label)) + "</a>"));
     out = (out + "</div>");
     return out;
 }
 
 function section_cards(works, collection) {
-    let out, w, i;
+    let out, i, w;
     out = "";
     i = 0;
     while ((i < works.length)) {
@@ -56,7 +60,7 @@ function section_cards(works, collection) {
 }
 
 function render_catalog() {
-    let intro, cat, html, sections, s, cards, cards0, works, i;
+    let cards0, html, s, works, intro, i, cards, cat, sections;
     works = catalog();
     intro = window.READER_INTRO;
     sections = window.READER_SECTIONS;
@@ -67,9 +71,11 @@ function render_catalog() {
     while ((i < sections.length)) {
         s = sections[i];
         cards0 = section_cards(works, s.collection);
-        html = (html + (("<h2 style=\"margin-top:54px\">" + String(s.heading)) + "</h2>"));
-        html = (html + (("<p class=\"lead\" style=\"margin-bottom:24px\">" + String(s.sub)) + "</p>"));
-        html = (((html + "<div class=\"grid grid--2\">") + cards0) + "</div>");
+        if (cards0) {
+            html = (html + (("<h2 style=\"margin-top:54px\">" + String(s.heading)) + "</h2>"));
+            html = (html + (("<p class=\"lead\" style=\"margin-bottom:24px\">" + String(s.sub)) + "</p>"));
+            html = (((html + "<div class=\"grid grid--2\">") + cards0) + "</div>");
+        }
         i = (i + 1);
     }
     if (window.READER_EXTRA_HTML) {
@@ -93,7 +99,7 @@ function open_from_event(ev) {
 }
 
 function find_work(id) {
-    let i, w, works;
+    let works, w, i;
     works = catalog();
     i = 0;
     while ((i < works.length)) {
@@ -107,7 +113,7 @@ function find_work(id) {
 }
 
 function open_work(id) {
-    let w, dl, rd, url, doc, rtitle, toc0, source_link;
+    let rtitle, toc0, url, source_link, dl, w, doc, rd;
     w = find_work(id);
     if (!w) {
         return 0;
@@ -122,6 +128,10 @@ function open_work(id) {
     dl = document.getElementById("reader-dl");
     if (dl) {
         dl.href = w.file;
+        dl.textContent = "Download text";
+        if (w.download_label) {
+            dl.textContent = w.download_label;
+        }
     }
     source_link = document.getElementById("reader-source");
     if (source_link) {
@@ -167,7 +177,7 @@ function reader_absolute_url(href, raw) {
 }
 
 function resolve_reader_resources() {
-    let links, src, href, doc, images;
+    let doc, links, href, images, src;
     if (!window.curWork) {
         return 0;
     }
@@ -217,8 +227,31 @@ function prepare_reader_text(text) {
 }
 
 function render_doc(text) {
-    let html, reader_text, doc;
+    let unsafe, reader_text, parsed, doc, content, html;
     doc = document.getElementById("doc");
+    if (window.curWork) {
+        if ((window.curWork.format === "html")) {
+            parsed = Reflect.construct(window.DOMParser, []).parseFromString(text, "text/html");
+            unsafe = parsed.querySelectorAll("script, style, link, meta, iframe, object, embed, form");
+            for (const element of unsafe) {
+                element.remove();
+            }
+            content = parsed.querySelector("main");
+            if (!content) {
+                content = parsed.body;
+            }
+            html = content.innerHTML;
+            if (window.curWork.context) {
+                html = (window.curWork.context + html);
+            }
+            window.docHtml = html;
+            doc.innerHTML = html;
+            resolve_reader_resources();
+            build_toc_from_doc();
+            apply_font();
+            return 0;
+        }
+    }
     reader_text = prepare_reader_text(text);
     html = md_render(reader_text);
     if (window.curWork) {
@@ -234,8 +267,34 @@ function render_doc(text) {
     return 0;
 }
 
+function build_toc_from_doc() {
+    let lvl, toc, links, heads, i, out;
+    heads = document.querySelectorAll("#doc h1, #doc h2, #doc h3, #doc h4");
+    toc = document.getElementById("toc");
+    if ((heads.length < 2)) {
+        toc.innerHTML = "";
+        return 0;
+    }
+    out = "<div class=\"toc__title\">Contents</div>";
+    i = 0;
+    for (const h of heads) {
+        if (!h.id) {
+            h.id = ("reader-section-" + String((i + 1)));
+        }
+        lvl = h.tagName.slice(1);
+        out = (out + (((((("<a class=\"toc__link toc__lvl" + String(lvl)) + "\" data-target=\"") + String(h.id)) + "\">") + String(h.textContent)) + "</a>"));
+        i = (i + 1);
+    }
+    toc.innerHTML = out;
+    links = toc.querySelectorAll(".toc__link");
+    for (const a of links) {
+        a.addEventListener("click", toc_jump);
+    }
+    return 0;
+}
+
 function build_toc(text) {
-    let out, i, toc, heads, h, cls, links;
+    let i, h, cls, toc, out, links, heads;
     heads = md_headings(text);
     toc = document.getElementById("toc");
     if ((heads.length < 2)) {
@@ -323,7 +382,7 @@ function regex_escape(s) {
 }
 
 function do_search(ev) {
-    let marks, re, doc, esc, q, count, hl;
+    let esc, re, hl, doc, count, marks, q;
     q = document.getElementById("search").value;
     doc = document.getElementById("doc");
     count = document.getElementById("search-count");
@@ -365,7 +424,7 @@ function stop_tts() {
 }
 
 function toggle_tts(ev) {
-    let u, doc, voice_sel, text, voice, btn;
+    let voice, doc, text, voice_sel, btn, u;
     if (window.ttsOn) {
         stop_tts();
         return 0;
@@ -410,7 +469,7 @@ function tts_status_handler(status, detail) {
 }
 
 function build_voice_selector() {
-    let voices, html, container, i, v;
+    let container, i, voices, html, v;
     container = document.getElementById("voice-container");
     if (!container) {
         return 0;
@@ -432,7 +491,7 @@ function build_voice_selector() {
 }
 
 function main() {
-    let clink, hash;
+    let hash, clink;
     window.readerFont = 19;
     window.ttsOn = false;
     render_catalog();

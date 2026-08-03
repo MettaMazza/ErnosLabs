@@ -25,7 +25,7 @@ function sc_status_set(cls, msg) {
 }
 
 function sc_use_machine() {
-    let links, repo;
+    let repo, links;
     links = document.querySelectorAll(".pj-dl");
     for (const a of links) {
         repo = a.getAttribute("data-repo");
@@ -101,7 +101,7 @@ function sc_wire_controls(render_fn, total) {
 }
 
 function sc_goto(n) {
-    let pc, c, p, fill;
+    let p, fill, pc, c;
     p = n;
     if ((p < 0)) {
         p = 0;
@@ -206,7 +206,7 @@ function go_col(ch) {
 }
 
 function go_dead_group(board, start, size) {
-    let cur, col, stack, row, neigh, libs, group, i, seen, v, total, colour;
+    let total, col, group, seen, colour, row, v, stack, libs, cur, i, neigh;
     colour = board[start];
     total = (size * size);
     seen = [];
@@ -257,7 +257,7 @@ function go_dead_group(board, start, size) {
 }
 
 function go_position_at(n) {
-    let col, i, neigh, board, size, idx, coord, d, dead, k, playable, colour, enemy, mv, rownum, row, moves, side;
+    let board, d, moves, dead, side, rownum, colour, idx, neigh, mv, i, col, row, coord, playable, enemy, k, size;
     d = window.scData;
     size = d.boardsize;
     moves = d.moves;
@@ -318,7 +318,7 @@ function go_position_at(n) {
 }
 
 function go_render(n) {
-    let i, rownum, turn, cy, cell, lastmove, lastn, size, dim, side, signal, edge, numlbl, pad, a1, marky, stage, board, letter, coord, dims, current, svg, d, idx, nextside, a0, cx, row, total, col, p, stars, moves, mv, v;
+    let marky, numlbl, row, p, lastmove, signal, nextside, pad, stars, rownum, size, total, moves, dims, svg, a1, edge, side, col, v, letter, mv, a0, cell, turn, cy, i, board, lastn, coord, cx, d, idx, dim, stage, current;
     d = window.scData;
     size = d.boardsize;
     board = go_position_at(n);
@@ -430,7 +430,7 @@ function go_render(n) {
 }
 
 function go_init() {
-    let stage, total, nmoves;
+    let nmoves, total, stage;
     stage = document.getElementById("showcase-stage");
     total = window.scData.moves.length;
     nmoves = String(total);
@@ -440,7 +440,7 @@ function go_init() {
 }
 
 function chess_row(letters, colour) {
-    let ch, i, arr;
+    let ch, arr, i;
     arr = [];
     i = 0;
     while ((i < 8)) {
@@ -470,7 +470,7 @@ function chess_fresh_board() {
 }
 
 function chess_piece_svg(kind, x, y, side) {
-    let strokec, out, fillc;
+    let fillc, out, strokec;
     fillc = "#fffaf0";
     strokec = "#25313f";
     if ((side === "b")) {
@@ -505,7 +505,7 @@ function chess_file(ch) {
 }
 
 function chess_board_at(n) {
-    let filediff, kind, target, fr, promo, k, moves, tr, piece, board, tf, fromrow, ff, rook, caprow, side, uci, diff, torow, negtwo;
+    let promo, tf, rook, caprow, side, ff, filediff, moves, piece, torow, target, uci, tr, negtwo, k, board, fr, diff, fromrow, kind;
     board = chess_fresh_board();
     moves = window.scData.moves;
     k = 0;
@@ -574,7 +574,7 @@ function chess_board_at(n) {
 }
 
 function chess_render(n) {
-    let lastn, hfr, ishl, piecex, parity, hlfrom, board, i, fillc, cells, played, kind, row, signal, piecey, hff, y, pyrow, current, f, flabel, stage, svg, dim, htf, ry, hlto, turn, htr, x, piece, dims, uci, cell, sqidx, fx, r, fy, nextturn, rlabel, yrow, pad;
+    let piece, stage, yrow, fillc, hlto, hlfrom, pad, y, fx, ry, x, pyrow, kind, turn, signal, hff, r, nextturn, current, i, hfr, played, flabel, svg, parity, cells, piecex, board, piecey, dim, f, sqidx, lastn, uci, dims, htr, ishl, rlabel, row, fy, htf, cell;
     board = chess_board_at(n);
     cell = 56;
     pad = 26;
@@ -690,7 +690,7 @@ function chess_render(n) {
 }
 
 function chess_init() {
-    let plies, total, d, stage, sidename, elostr, caption;
+    let total, stage, caption, plies, sidename, elostr, d;
     stage = document.getElementById("showcase-stage");
     d = window.scData;
     total = d.moves.length;
@@ -710,7 +710,7 @@ function chess_init() {
 }
 
 function protein_render(step) {
-    let z, p, degrees, b, maxz, pz, pr, proj, span, ang, x, ratio, colour, isnode, nx, minx, turn, miny, y, depth, ca, minz, n, px, scale, py, spy, maxx, i, svg, ay, by, bx, pnode, ny, maxy, sxn, signal, sx, sy, sp, syn, stage, sw, current, cosa, a, pair, screen, ax, sina;
+    let y, z, minz, sina, ax, current, signal, proj, syn, a, px, svg, ang, ca, i, maxy, x, depth, colour, py, pair, sy, b, cosa, sxn, scale, sp, p, maxx, sw, by, pnode, ny, turn, miny, maxz, spy, pr, n, ay, bx, isnode, minx, pz, screen, stage, degrees, nx, span, ratio, sx;
     ca = window.scData.ca;
     n = ca.length;
     ang = (step * 0.045);
@@ -843,7 +843,7 @@ function protein_spin() {
 }
 
 function protein_init() {
-    let stage, play, n, src;
+    let src, play, stage, n;
     stage = document.getElementById("showcase-stage");
     n = String(window.scData.ca.length);
     src = window.scData.source;
@@ -879,7 +879,7 @@ function boot_append(line) {
 }
 
 function boot_finish() {
-    let state, shell, prompt;
+    let shell, prompt, state;
     shell = document.getElementById("ern-shell");
     if (shell) {
         shell.classList.add("is-ready");
@@ -898,7 +898,7 @@ function boot_finish() {
 }
 
 function boot_step() {
-    let line, term;
+    let term, line;
     term = document.getElementById("sc-term");
     if (!term) {
         return 0;
@@ -915,7 +915,7 @@ function boot_step() {
 }
 
 function boot_answer(command) {
-    let cmd, files;
+    let files, cmd;
     cmd = command.toLowerCase().trim();
     if ((cmd === "help")) {
         return "Try: where am i · show my files · make a folder called letters · go to letters · write a note called hello saying good morning · read hello · what is running · rebuild the system";
@@ -1016,7 +1016,7 @@ function boot_key(ev) {
 }
 
 function boot_init() {
-    let stage, form, quicks, commandbox;
+    let commandbox, stage, quicks, form;
     stage = document.getElementById("showcase-stage");
     stage.innerHTML = "<div class=\"ern-shell\" id=\"ern-shell\"><div class=\"ern-windowbar\"><span class=\"ern-window-dots\"><i></i><i></i><i></i></span><strong>Ern‑OS Desktop</strong><span class=\"ern-window-state\" id=\"ern-state\">BOOTING</span></div><div class=\"ern-desktop\"><aside class=\"ern-dock\" aria-label=\"Ern-OS apps\"><span class=\"is-active\">›_</span><span>▤</span><span>◫</span><span>⌁</span></aside><div class=\"ern-terminal\"><div class=\"ern-terminal-head\"><span>Conversation</span><small>maria@ern-os · offline</small></div><pre class=\"sc-term\" id=\"sc-term\"></pre><form class=\"ern-prompt\" id=\"ern-prompt\"><label for=\"ern-command\">/home/maria &gt;</label><input id=\"ern-command\" type=\"text\" autocomplete=\"off\" disabled placeholder=\"Type a sentence…\"><button type=\"submit\">Run</button></form></div></div><div class=\"ern-quick\" aria-label=\"Command suggestions\"><span>Try a command</span><button data-command=\"make a folder called letters\">Make a folder</button><button data-command=\"write a note called hello saying good morning\">Write a note</button><button data-command=\"what is running\">Running services</button><button data-command=\"rebuild the system\">Rebuild itself</button></div></div>";
     window.bootLines = window.scData.lines.slice(0, 31);
@@ -1078,7 +1078,7 @@ function sc_data_fail(err) {
 }
 
 function lab_go_group(start) {
-    let value, i, stack, colour, col, cur, row, seen, board, out, ns;
+    let board, colour, seen, i, stack, cur, ns, row, out, col, value;
     board = window.labGoBoard;
     colour = board[start];
     out = JSON.parse("{\"group\":[],\"libs\":[]}");
@@ -1129,7 +1129,7 @@ function lab_go_group(start) {
 }
 
 function lab_go_click(ev) {
-    let idx, value;
+    let value, idx;
     idx = window.parseInt(ev.currentTarget.getAttribute("data-i"), 10);
     value = window.labGoBoard[idx];
     value = ((value + 1) % 3);
@@ -1154,7 +1154,7 @@ function lab_go_preset(ev) {
 }
 
 function lab_go_render() {
-    let label, v, html, colour, found, cls, i, host, points;
+    let html, found, host, colour, points, label, i, v, cls;
     host = document.getElementById("go-lab");
     if (!host) {
         return 0;
@@ -1206,7 +1206,7 @@ function lab_go_init() {
 }
 
 function lab_chess_moves(square, piece) {
-    let r, cc, rr, moves, jumps, dirs, c;
+    let dirs, moves, c, r, cc, jumps, rr;
     moves = [];
     r = Math.floor((square / 8));
     c = (square % 8);
@@ -1264,7 +1264,7 @@ function lab_chess_piece(ev) {
 }
 
 function lab_chess_render() {
-    let pieces, squares, moves, cc, rr, html, content, active, kind, cls, i, host, title, picks, glyph;
+    let i, pieces, cls, host, active, moves, picks, cc, content, html, title, squares, kind, rr, glyph;
     host = document.getElementById("chess-lab");
     moves = lab_chess_moves(window.labChessSquare, window.labChessPiece);
     kind = "N";
@@ -1329,7 +1329,7 @@ function lab_chess_init() {
 }
 
 function lab_protein_distance(a, b) {
-    let dx, dy, dz;
+    let dy, dz, dx;
     dx = (a[0] - b[0]);
     dy = (a[1] - b[1]);
     dz = (a[2] - b[2]);
@@ -1337,7 +1337,7 @@ function lab_protein_distance(a, b) {
 }
 
 function lab_protein_render() {
-    let n, ctx, canvas, coords, cell, dist, stat, contacts, focus, i, j, copy, nearest;
+    let stat, dist, contacts, focus, ctx, coords, canvas, nearest, i, copy, cell, j, n;
     coords = window.labProteinCoords;
     focus = window.labProteinFocus;
     canvas = document.getElementById("protein-map");
@@ -1417,7 +1417,7 @@ function lab_protein_init() {
 }
 
 function lab_unison_clean(text) {
-    let marks, clean;
+    let clean, marks;
     clean = text.toLowerCase();
     marks = [".", ",", "!", "?", ";", ":", "—", "\n"];
     for (const mark of marks) {
@@ -1427,7 +1427,7 @@ function lab_unison_clean(text) {
 }
 
 function lab_unison_run(ev) {
-    let options, counts, total, old, html, text, count, raw, next, pct, result, i, held, best, words, pos;
+    let result, best, next, count, text, html, pos, held, options, words, raw, old, counts, total, pct, i;
     text = document.getElementById("unison-corpus").value;
     held = document.getElementById("unison-held").value.toLowerCase();
     raw = lab_unison_clean(text);
@@ -1504,7 +1504,7 @@ function project_labs_init() {
 }
 
 function main() {
-    let page, dl, repo, file, stage, gh;
+    let repo, dl, stage, gh, file, page;
     page = document.getElementById("project-page");
     if (!page) {
         return 0;

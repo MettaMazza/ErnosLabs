@@ -89,7 +89,7 @@ function check_status() {
 }
 
 function hide_tabs() {
-    let secs, btns;
+    let btns, secs;
     secs = document.querySelectorAll(".cm-tab");
     for (const sec of secs) {
         sec.classList.add("hidden");
@@ -103,7 +103,7 @@ function hide_tabs() {
 }
 
 function show_tab(name) {
-    let sec, btn;
+    let btn, sec;
     hide_tabs();
     sec = document.getElementById(("tab-" + name));
     if (sec) {
@@ -161,7 +161,7 @@ function chat_recv(resp) {
 }
 
 function chat_apply(data) {
-    let add, log;
+    let log, add;
     log = document.getElementById("chat-log");
     if (!log) {
         return 0;
@@ -180,7 +180,7 @@ function chat_apply(data) {
 }
 
 function send_chat() {
-    let body, inp, p;
+    let p, inp, body;
     inp = document.getElementById("chat-input");
     if (!inp) {
         return 0;
@@ -246,7 +246,7 @@ function threads_recv(resp) {
 }
 
 function threads_apply(data) {
-    let out, host, links;
+    let host, out, links;
     host = document.getElementById("forum-threads");
     if (!host) {
         return 0;
@@ -286,7 +286,7 @@ function thread_recv(resp) {
 }
 
 function thread_apply(data) {
-    let head, lv, t, posts, out, tv;
+    let head, tv, t, lv, posts, out;
     lv = document.getElementById("forum-list-view");
     tv = document.getElementById("forum-thread-view");
     if (lv) {
@@ -312,7 +312,7 @@ function thread_apply(data) {
 }
 
 function send_reply() {
-    let p, inp, body;
+    let inp, p, body;
     inp = document.getElementById("reply-body");
     if (!inp) {
         return 0;
@@ -350,7 +350,7 @@ function back_ev(ev) {
 }
 
 function create_thread() {
-    let p, ti, bo, body, title;
+    let bo, body, ti, p, title;
     ti = document.getElementById("new-title");
     bo = document.getElementById("new-body");
     if (!ti) {
@@ -412,7 +412,7 @@ function link_note_html(l) {
 }
 
 function links_apply(data) {
-    let host, slug, out;
+    let out, slug, host;
     host = document.getElementById("links-list");
     if (!host) {
         return 0;
@@ -430,7 +430,7 @@ function links_apply(data) {
 }
 
 function submit_link() {
-    let ui, ni, p, url, note;
+    let ni, note, p, ui, url;
     ui = document.getElementById("link-url");
     if (!ui) {
         return 0;
@@ -456,7 +456,7 @@ function submit_link() {
 }
 
 function link_sent(resp) {
-    let ni, ui;
+    let ui, ni;
     go_online();
     if (resp.ok) {
         ui = document.getElementById("link-url");

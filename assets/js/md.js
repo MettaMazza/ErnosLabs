@@ -72,7 +72,7 @@ function md_table_cells(line) {
 }
 
 function md_is_table_separator(line) {
-    let cell, cells, i;
+    let cells, cell, i;
     cells = md_table_cells(line);
     if ((cells.length < 1)) {
         return false;
@@ -89,7 +89,7 @@ function md_is_table_separator(line) {
 }
 
 function md_table_row(line, tag) {
-    let i, out, cells, cell;
+    let i, cell, cells, out;
     cells = md_table_cells(line);
     out = "<tr>";
     i = 0;
@@ -102,7 +102,7 @@ function md_table_row(line, tag) {
 }
 
 function md_render(src) {
-    let ordered, code_buf, in_code, out, list_tag, hlvl, n, i, htext, line, hid, tag, next_line, want, qline, in_list, para, quote, trimmed, norm, lines;
+    let i, hid, qline, line, trimmed, htext, ordered, n, want, in_code, out, para, hlvl, in_list, quote, list_tag, tag, next_line, lines, norm, code_buf;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;
@@ -305,7 +305,7 @@ function md_list_text(t) {
 }
 
 function md_headings(src) {
-    let heads, h, i, lvl, line, htext, norm, lines, in_code, n;
+    let lvl, lines, norm, line, n, in_code, i, htext, heads, h;
     norm = src.replace(md_rx("\r", "g"), "");
     lines = norm.split("\n");
     n = lines.length;

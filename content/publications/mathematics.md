@@ -3,36 +3,114 @@
 **Maria Smith**<br>
 Independent researcher and founder, Ernos Labs<br>
 Maria.Smith.Sftoe@gmail.com<br>
-25 July 2026
+29 July 2026
 
-Mathematics Branch Paper 001 - Version 1.3 - Smithian Fold Theory V3 Clean-Room Reconstruction
+Mathematics Branch Paper 001 - Version 1.5 - Smithian Fold Theory V3 Clean-Room Reconstruction
 
-DOI: [10.5281/zenodo.21591170](https://doi.org/10.5281/zenodo.21591170)
+Previous version DOI: [10.5281/zenodo.21627708](https://doi.org/10.5281/zenodo.21627708)  
+Existing concept DOI: [10.5281/zenodo.21516145](https://doi.org/10.5281/zenodo.21516145)<br>
+Version 1.5 DOI: pending deposit as a new version of that existing record
 
-Copyright (c) 2026 Maria Smith. Licensed under CC BY 4.0. Repository code is
+**FINAL PUBLICATION CANDIDATE — NOT YET APPROVED OR DEPOSITED.** Version 1.5
+must be published only through Zenodo's new-version route for the existing
+concept DOI above. It must not be deposited as a new record or paper.
+
+Copyright © 2026 Maria Smith. Licensed under CC BY 4.0. Repository code is
 licensed separately under Apache-2.0. The Ernos Labs designation is governed by
 the published conformance policy.
 
 ## Abstract
 
-This paper reports the current-evidence-complete Mathematics branch of the third clean-room reconstruction of Smithian Fold Theory (SFT). Starting only from the sixteen model-admitted Foundation receipts, it derives exact arithmetic and number structure; discrete mathematics; combinatorics; graph and network theory; algebraic structures; order and lattice structure; finite computational geometry and topology; exact probability and statistics; optimization; finite dynamical systems; logic and proof theory; and category, type and compositional structure. It then reconciles all Mathematics-owned V1/V2 observations through exact relation composition, Fold number theory, potential infinity, algebraic-balance certificates, native n-body recurrence, floored-fluid regularity, bounded prime-pair and Collatz censuses, the Riemann mirror boundary and self-similar convergence. Version 1.2 added the complete Smithian Fold Scientific Calculator; version 1.3 preserves that scientific record while moving the branch's discoveries, meaning and public admission standard to the front. The calculator is an exact, proof-producing, cross-platform application whose ordinary calculator surface is bound to the admitted mathematical laws, whose local web interface works on computers and same-network phones, and whose prohibited outputs halt transactionally. No conventional mathematical axiom system, semantic numerical zero, negative quantity, irrational or imaginary proof value, floating-point proof quantity, completed infinity, ungenerated continuum, stochastic cause, fitted parameter, pretrained model or application result is admitted as a premise.
+This paper reports the complete-field Mathematics branch of the third clean-room reconstruction of Smithian Fold Theory (SFT), complete to the frozen dated census and explicitly open to lawful extension. The census contains **323 obligations in 24 dependency-ordered families**. Every obligation now has an untouched-engine model-admission receipt, an exact candidate census, one unique survivor, four adverse controls, a depth-independent finite-successor or explicit boundary certificate, an implementation-distinct reconstruction, and post-registry observation custody. Together the branch preserves **97,280 generated candidates, 323 unique survivors and 1,292 passed controls**. The final reconciliation identity is `sha256:526c6d78a3ff77c21c6d4dd71c266499f5b234a7763cb223e5d009fa9f101c64`.
 
-The twenty-two foundational claim grammars execute 9,984 generated candidate structures. Five calculator records execute a further 11,520 structures: the first is preserved as superseded adverse evidence after a parity defect was found, and claims 004 through 007 form the corrected active lineage. Across all twenty-seven registered Mathematics records, 21,504 candidate structures are preserved; the twenty-six current non-superseded claims account for 20,480. Every generated candidate receives an exact decision; each grammar has exactly one all-preserving survivor. Every claim passes minimality, named-shape uniqueness, a depth-independent base/successor certificate, false-premise, source-tamper, artifact-tamper and boundary controls, cryptographic sealing and implementation-distinct recomputation. The branch therefore contains twenty-seven depth-independent engine receipts with the supersession boundary explicit. The complete 763-entry V1/V2 source surface is reviewed for categorical ownership; 71 atomic Mathematics obligations are reconstructed or explicitly corrected, with none left open.
+The field reconstruction covers exact arithmetic and number structure; algebraic extensions; combinatorics; graphs, networks and matroids; linear, multilinear and tensor structure; algebraic systems; order, lattices and domains; geometry; topology; calculus correspondence; analysis correspondence; equation structures; measure and integration; deterministic-support probability and statistics; optimisation and operations research; dynamical systems; logic and foundations; category, type and compositional structures; numerical mathematics; symbolic and constructive mathematics; cross-disciplinary interfaces; the complete validation vector; and one-owner handoffs. The previously admitted Smithian Fold Scientific Calculator remains the accessible translation surface and does not become an alternate admission route.
 
-The contribution is not a relabelling of standard mathematics. Familiar terms enter only after each SFT derivation seals, as correspondence vocabulary. The primary objects are complete generated traces, exact held/whole parts, pair cells, held labels, canonical finite forms, relations and proof traces. Empty and identity cases use structural empty One rather than numerical zero; direction and opposition use held orientation rather than signed magnitude; uncertainty is a relation between deterministic support and observation rather than an imported random cause. Every prose claim is linked to machine-readable census, elimination, control, certificate and receipt evidence.
+The proof domain admits no conventional axiom as an SFT premise, no fitted or free parameter, no semantic numerical zero, negative proof magnitude, irrational or imaginary proof scalar, floating proof quantity, completed infinity, ungenerated continuum or ontic randomness. Displayed `0` denotes structural absence; opposition is typed orientation; non-rational conventional objects enter only through exact constructions or certified enclosures. The Validation Grand Lock partitions all 305 pre-validation receipts exactly once across 22 families and preserves all 305 favourable, adverse, absent, unresolved and boundary records. The final six handoffs bring the branch to 323/323 without transferring empirical ownership to Mathematics or claiming permanent closure.
 
-**Keywords:** Smithian Fold Theory; foundations of mathematics; exact arithmetic; scientific calculator; computational proof; exact rational enclosure; structural empty One; fail-closed computation; cross-platform software; discrete mathematics; combinatorics; graph theory; algebra; probability; proof theory; open computational science.
+Version 1.5 preserves the complete version 1.4 paper and its foundational, prior-corpus and calculator derivations, then executes the roadmap that version 1.4 registered. No application selected these laws. No engine or protected-verifier source was modified. Every later extension must enter as a new registered question and pass the same public protocol.
 
+**Keywords:** Smithian Fold Theory; complete-field mathematics; exact arithmetic; algebra; combinatorics; graph theory; geometry; topology; calculus; analysis; probability; optimisation; dynamics; logic; category theory; numerical mathematics; symbolic mathematics; scientific calculator; computational proof; open science.
 ## Results first: what this branch changes
 
-| Headline result | Exact SFT result | Scientific consequence |
+| Headline result | Exact executed result | Scientific consequence |
 |---|---|---|
-| Arithmetic without a signed or continuum carrier | Addition is disjoint trace junction; multiplication is complete pair-cell refinement; exact quotient is common-refinement pairing; unmatched magnitude is a positive held orientation. | Numerical zero, negative proof magnitude, irrational and imaginary proof values are not hidden primitives. Empty and opposite cases remain exact typed structures. |
-| Deterministic probability and statistics | A probability is an exact held/whole part of complete generated support; statistics retain source rows, ties and provenance. | Randomness is not imported as an uncaused premise. Later probabilistic claims must expose the entire deterministic support and observation boundary. |
-| Finite geometry, topology and dynamics | Incidence, adjacency, boundary, path, recurrence and return are generated relations over exact finite carriers. | Continuum language may be used only at a sealed correspondence boundary; it cannot select a proof object. |
-| Potential rather than completed infinity | Every claimed general law carries a structural-One base and a positive-finite successor certificate. | Generality is executable at every supplied finite depth without assuming a completed infinite set. |
-| Smithian Fold Scientific Calculator | Ordinary expressions use the same exact law carrier: displayed `0` is structural empty One; a result below the admitted boundary halts; decimals are rational parts; non-rational correspondences are certified rational enclosures; orthogonal results are typed Fold fibres. | A general user can calculate through the SFT mathematical constitution without silently falling back to floating, signed, irrational or complex host arithmetic. |
-| Complete current evidence surface | 27 preserved records execute 21,504 candidate structures; 26 are current and one defective calculator record remains visible as superseded adverse evidence; all 71 Mathematics-owned prior obligations are resolved. | Correction is preserved rather than erased, and the branch is complete to its dated known-question boundary while remaining open to lawful extension. |
+| Complete-field Mathematics | 323/323 frozen obligations are receipt-backed across 24 families, with 97,280 enumerated candidates, 323 unique survivors and 1,292 passed controls. | The former roadmap is now an executed, independently replayable mathematical corpus rather than a statement of future intent. |
+| Arithmetic without hidden continuum primitives | Exact positive finite generation, normalised fractions, ordered gaps, interval enclosures and structural absence replace semantic zero, negative proof magnitude and floating proof values. | Ordinary notation remains available at the interface, but every proof value retains an exact Fold construction or certified enclosure. |
+| Full structural span | Combinatorics, graphs, linear and algebraic structures, order, geometry, topology, calculus, analysis, equations, measure, probability, optimisation, dynamics, logic, category, numerical and symbolic mathematics are separately owned and dependency ordered. | No familiar discipline name imports its conventional axioms; each law has its own generated grammar, eliminations, survivor and certificate. |
+| Numerical and symbolic computation | Exact rounding custody, interval propagation, stability, conditioning, convergence, root isolation, solvers, quadrature, recurrences, canonical syntax, rewrite provenance, transforms and constructive certificates are admitted. | Numerical and symbolic tools can be audited without hiding floating, signed, imaginary or oracle-selected proof values. |
+| Validation Grand Lock | All 305 pre-validation claims are partitioned exactly once across 22 families, with 305 adverse and boundary records retained. | Completeness is a reproducible reconciliation claim, not a label applied after favourable results. |
+| Dated, extension-open completion | Six final handoffs distinguish mathematical structure from downstream meaning, measurement, conventional correspondence and engineering use. | Mathematics is 100.0% complete to this frozen census while remaining open to correction, falsification and lawful new discoveries. |
+| Public proof surface | Every claim exposes its registration, candidate census, decisions, controls, certificate, external record, receipt and executable entry point. | Independent researchers can reproduce or challenge the work without credential, paywall or institutional permission selecting the outcome. |
+## Current status, evidence language and reader map
+
+| Status field | Current position |
+|---|---|
+| Branch and completion boundary | Mathematics: 323/323 frozen obligations; 323 live claims. This is dated, versioned completion and remains open to lawful extension. |
+| Formal status | Every live claim represented here has a current model-admitted receipt. Formal admission does not by itself imply empirical confirmation. |
+| Empirical status | Claim-specific. Blind, non-blind, development-observed, holdout, adverse, unresolved, unavailable and formal-only distinctions remain exactly as recorded in the claim ledger and evidence packages. |
+| Chronology | Claim-specific registration, seal, custody and observation order governs. Later evidence does not retroactively become an earlier prediction. |
+| Publication status | Version 1.5.0 is a final publication candidate awaiting Maria Smith's approval. It is not yet deposited. |
+| Existing record lineage | Current record DOI `10.5281/zenodo.21627708`; concept DOI `10.5281/zenodo.21516145`. Publication is permitted only through the existing record's new-version route. |
+| What is not claimed | Permanent closure of science, universal empirical confirmation, transfer of another branch's ownership or permission to replace an adverse or unresolved record. |
+
+### Corpus-wide terminology and evidence key
+
+| Term | Reserved meaning in this paper |
+|---|---|
+| Theorem | A formally closed proposition at its declared grammar and dependency boundary. |
+| Law | An admitted branch relation with its declared carrier, boundary, dependencies and extension rule. |
+| Claim | The registered unit judged by the engine and bound to one immutable receipt. |
+| Constitution | The rules governing admissible objects, derivations, evidence and publication; not an empirical result. |
+| Derivation | Generation and elimination of the declared candidate space to its surviving structure. |
+| Prediction | A consequence sealed before the matching target is released under the registered custody protocol. |
+| Observation | A source-bound external record; it does not enter candidate generation. |
+| Measurement | An instrument-, method-, condition- and uncertainty-bound observed value. |
+| Reconstruction | A separately implemented regeneration or an explicitly identified inference of a retained state or history. |
+| Exact numerical correspondence | Equality or registered interval relation between exact numerical objects at the declared boundary. |
+| Structural correspondence | A post-derivation relation between forms without a claim of exact numerical prediction. |
+| Boundary correspondence | Agreement restricted to the named interface, limit or ownership boundary. |
+| Compatibility | Non-adverse but non-discriminating evidence. |
+| Support | Relevant evidence that is not unique confirmation. |
+| Confirmation | Used only when the current registered evidence protocol warrants that classification. |
+| Validation | Successful execution of the specified formal, computational or empirical test; its kind must be named. |
+| Adverse result | A registered test result that conflicts with the tested claim at its declared boundary. |
+| Unresolved result | Required evidence remains unavailable, incomplete, disputed or insufficiently classified. |
+| Implementation identity | The hash-bound identity of executable material; implementation success is not empirical confirmation. |
+| Formal, empirical and publication status | Three independent classifications. None silently substitutes for another. |
+| Foundational closure | Completion of the registered foundation only. It does not imply field-wide closure. |
+| Field-wide closure | Completion of the frozen or registered dated field census named in this paper. |
+| Current-evidence closure | Closure only to the evidence surface presently registered and preserved. |
+| Extension openness | New questions may be added by a later version without rewriting existing receipts or history. |
+
+Proof language is reserved for formal closure; derivation for generated
+structure; implementation for executable demonstration; prediction for a
+correctly sealed prospective consequence; observation and measurement for
+source-bound external records; reconstruction for separately regenerated or
+inferred states; correspondence for post-derivation relationships;
+compatibility and support for non-unique evidence; confirmation only where the
+registered protocol authorises it; adverse for conflict; and unresolved where
+required evidence remains incomplete.
+
+### Three reading levels
+
+1. **Conceptual paper.** The abstract, headline findings, branch narrative,
+   major derivations, evidence synthesis, limitations and conclusion provide
+   the readable scientific argument.
+2. **Scientific audit layer.** Family and claim sections preserve exact status,
+   dependencies, candidate and survivor counts, controls, chronology, sources,
+   corrections, adverse evidence and reconciliation.
+3. **Machine archive.** The cited repository packages preserve complete
+   candidates, decisions, hashes, receipts, executable traces, source snapshots
+   and certificates. Those files remain authoritative where prose abbreviates
+   their display.
+
+### Editorial change control
+
+This version may improve expression, order, typography and navigation. It may
+not change scientific meaning, scope, chronology, evidence class, ownership,
+claim status or machine identity. Any apparent conflict between authoritative
+records must be traced and either resolved by explicit supersession or recorded
+for Maria Smith; prose alone cannot manufacture agreement.
 
 ## Public scientific mission and admission boundary
 
@@ -50,10 +128,10 @@ institutional research employment and conventional grant funding. That fact is
 not offered as evidence for a theorem; the derivations and observations carry
 the entire scientific burden. It is evidence about access. A credential-first
 system loses more than individual opportunity: it loses unknown questions,
-methods and discoveries from minds that capital and status never authorize.
+methods and discoveries from minds that capital and status never authorise.
 This work therefore treats Maria Smith's authorship neither as exceptionalism
 nor as a reason for dismissal, but as an indictment of every scientific
-contribution lost when financial gatekeeping is presented as rigor.
+contribution lost when financial gatekeeping is presented as rigour.
 
 The institutional argument is empirical, not a claim that every institution or
 funded researcher acts in bad faith. Published studies document sponsor-linked
@@ -86,12 +164,13 @@ inspect the public project at https://github.com/MettaMazza.
 
 ## 1. Central scientific claim
 
-The exact claim of this paper is:
+The exact claim of this version is:
 
-> Within the SFT V3 Mathematics version 1.3 current-knowledge inventory, every one of the twenty-two mathematical-foundation obligations and every one of the five preserved calculator records has a depth-independent engine receipt. Claim 003 remains visibly superseded by the corrected 004 law; claims 004 through 007 form the active exact calculator lineage. The inventory contains no unclassified or frontier obligation at this evidence date and remains open to lawful future extensions.
+> Within the frozen SFT V3 Mathematics census dated 29 July 2026, all 323 obligations in all 24 registered families are individually admitted through the untouched engine, independently reconstructed, controlled, observed after target-free registration and exactly reconciled. The current closed count is 323, the open count is structural absence, and completion remains open to lawful versioned extension.
 
-The inventory identity is `sha256:773faaad16dc29dc99fe2c401d8b15fe7d77000262bdb1ecfe2ce739056bf4d4`. It fixes the version 1.3 branch boundary and claim order before the paper is evaluated. Current-evidence completion means closure of these generated-finite mathematical kernels and calculator translations. It does not assert a completed infinite universe or permit a familiar named structure to inherit properties without its own generated witness. Applications in computation, physics, biology, engineering, Fold Protein, Fold Chess, Fold Go and Unison AI did not select any law in this paper. A new generated omission, counterexample or lawful extension must be registered and published in a later version rather than excluded by a permanent lock.
+The frozen census identity is `sha256:10e2399fbecd99ae9106436660edbc8c0f84fad6b9dde75139099d202d58c36c`. The final reconciliation identity is `sha256:526c6d78a3ff77c21c6d4dd71c266499f5b234a7763cb223e5d009fa9f101c64`. The branch contains 97,280 candidate decisions, 323 unique survivors and 1,292 passing controls. Every registration has an empty axiom list and an empty free-parameter list. Each dependency chain reaches `SFT-ROOT-THERE-IS-NO-NOTHING` through actual admitted receipts rather than through narrative citation.
 
+This claim is bounded precisely. It does not assert a completed infinite universe, convert structural absence into a numerical object, import irrational or imaginary proof scalars, or assign measured physical meaning to a mathematical structure. Completion means every question in the frozen dated census has passed the full protocol. A new question, counterexample or stronger certificate remains admissible only as a visible versioned extension.
 ## 2. Standalone dependency foundation
 
 This paper is standalone in exposition but not dependency-free in the scientific census. The prior Foundation branch supplies sixteen exact receipts, including operational occurrence, structural One, complete positive finite count, exact held/whole part coordinates, the minimal Fold, cross-partition equivalence, Fold assembly, finite form grammar, canonical identity, exact cast/Fold/Take, half-One, Fold dynamics, extended primitive-map uniqueness, root-bound replay, admission enforcement and the one-way measurement boundary. Those are cited as admitted dependencies, not copied assumptions. The published Foundation paper remains a separate work and is not modified by this paper.
@@ -112,7 +191,9 @@ Closure then requires more than the finite run. Minimality shows that replacing 
 
 Four controls are mandatory. A false premise must be rejected; a changed official source identity must be detected; a missing, duplicated or additional survivor must fail; and an excluded object or answer-producing model must halt at the boundary. After the derivation is sealed, a separate Python process whose file hash is not part of the scientific implementation regenerates the literal candidate product, decision vector, unique survivor, closure flags and controls. Only the shared admission engine can add the receipt to the census.
 
-## 5. Dependency order and executed census
+## 5. Foundational and calculator execution preserved from version 1.4
+
+> **Version 1.5 scope note.** The twenty-seven rows in this preserved section are the original foundational and calculator evidence surface, not the current branch denominator. The controlling complete-field census is 323/323 and is documented claim by claim in Section 40.
 
 | Order | Claim | Candidate structures | Dimensions | Closure |
 |---:|---|---:|---:|---|
@@ -187,7 +268,7 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The exact arithmetic kernel is complete positive-trace coverage with disjoint junction, pair-cell product, common-refinement quotient, complete pairing comparison, held-oriented remainder, base/successor generality and no extra rule.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - disjoint junction is associative on mutually disjoint generated traces.
 - pair-cell product distributes over disjoint junction by generated cell provenance.
@@ -195,7 +276,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - exact quotient exists only with a complete refinement-pairing witness.
 - comparison returns same-form or a held positive remainder orientation.
 
-### 6.4 Operational witnesses and unfavorable checks
+### 6.4 Operational witnesses and unfavourable checks
 
 - `junction-associativity` - (a joined b) joined c and a joined (b joined c) retain the same canonical trace. Result: `PASS`.
 - `pair-cell-cardinality` - Two generated cells paired with three generated cells produce the complete six labelled pair cells. Result: `PASS`.
@@ -216,7 +297,7 @@ Base: The structural One supplies the first nonempty trace and exact self-whole.
 
 Successor: Appending one fresh generated occurrence preserves complete trace identity; junction appends it once, pair-cell refinement appends one labelled cell per opposite trace element, and pairing either extends with one mate or records the unmatched held remainder.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 6.6 Meaning and scientific consequence
 
@@ -285,7 +366,7 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The discrete kernel is complete unique canonical collections with retained membership, pair-cell-selected relations, total single-valued maps, held sequence order, One/base-successor induction and no extra constructor.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - canonical membership is decidable for every generated finite collection.
 - held selection never introduces an element outside its source collection.
@@ -293,7 +374,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - map composition preserves total single-valuedness when interfaces agree.
 - structural induction covers every generated finite collection trace.
 
-### 7.4 Operational witnesses and unfavorable checks
+### 7.4 Operational witnesses and unfavourable checks
 
 - `unique-collection` - A generated collection retains each canonical member once. Result: `PASS`.
 - `held-membership` - A held selection contains only members of its registered source. Result: `PASS`.
@@ -315,7 +396,7 @@ Base: The structural One is the first canonical generated member and the empty O
 
 Successor: Given a complete unique canonical collection, append one fresh canonical form once; membership, relation pair support, map-image obligation and predecessor order extend by their local generated clauses.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 7.6 Meaning and scientific consequence
 
@@ -384,7 +465,7 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The combinatorial kernel is complete canonical carrier generation by held-choice recurrence with complete choice provenance, canonical deduplication, witnessed symmetry, disjoint class accounting, successor generality and no imported formula.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - every arrangement holds each carrier member exactly once.
 - every selection is produced once by the fresh-member absent/held recurrence.
@@ -392,7 +473,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - disjoint class ledgers conserve the complete generated family.
 - enumerated count is the identity of the complete output trace.
 
-### 8.4 Operational witnesses and unfavorable checks
+### 8.4 Operational witnesses and unfavourable checks
 
 - `arrangement-completeness` - Three distinct held labels generate six unique ordered arrangements. Result: `PASS`.
 - `arrangement-coverage` - Every arrangement holds every carrier label exactly once. Result: `PASS`.
@@ -413,7 +494,7 @@ Base: A one-member carrier has one complete arrangement and two structural selec
 
 Successor: For a fresh carrier member, arrangements partition by its held position and recurse on the prior remainder; selections partition into prior forms and the same forms with the fresh member held. These disjoint generated classes exhaust the successor carrier without an imported formula.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 8.6 Meaning and scientific consequence
 
@@ -483,7 +564,7 @@ The complete product contains 512 candidates. Its completeness-certificate ident
 
 > The graph/network kernel is complete canonical nodes with held ordered pair-cell edges, complete adjacent paths, witnessed reachability and return, held crossing cuts, ingress/egress pairing and no extra rule.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - path concatenation is lawful exactly when the interface node agrees.
 - reachability is reflexive by the retained identity path and transitive by path composition.
@@ -491,7 +572,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - a cut contains every and only relation crossing a held/complementary node partition.
 - network balance preserves token identity rather than cancelling signed magnitudes.
 
-### 9.4 Operational witnesses and unfavorable checks
+### 9.4 Operational witnesses and unfavourable checks
 
 - `valid-path` - The chain retains both required adjacent edges. Result: `PASS`.
 - `missing-edge-control` - An endpoint sequence with a missing adjacency is not a path. Result: `PASS`.
@@ -513,7 +594,7 @@ Base: One canonical node supplies the identity path and contains no nontrivial e
 
 Successor: Appending one fresh node generates exactly its ordered pair cells with prior nodes; any held edge selection extends paths locally, and connectivity, cycle, cut and balance witnesses update only through those new cells.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 9.6 Meaning and scientific consequence
 
@@ -583,7 +664,7 @@ The complete product contains 512 candidates. Its completeness-certificate ident
 
 > The algebraic kernel is a complete canonical carrier and complete closed single-valued operation table, with identity, association, returns, special properties and maps admitted only by exhaustive witnesses.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - closure is exact membership of every operation result in the registered carrier.
 - identity is a two-sided exhaustive preservation witness.
@@ -591,7 +672,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - return is a unique held mate relation and never a negative proof value.
 - homomorphism is complete operation preservation, not resemblance of presentations.
 
-### 10.4 Operational witnesses and unfavorable checks
+### 10.4 Operational witnesses and unfavourable checks
 
 - `closed-table` - Every complete input pair in the witness table has one carrier result. Result: `PASS`.
 - `identity` - The structural One form preserves both witness carrier forms. Result: `PASS`.
@@ -613,7 +694,7 @@ Base: The One carrier has one pair cell, its result remains One, and identity an
 
 Successor: Adding one fresh carrier form generates exactly its left, right and self pair cells. A proposed extension is admitted only after results remain in the extended carrier and every newly formed identity, triple, return and map obligation is checked.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 10.6 Meaning and scientific consequence
 
@@ -649,7 +730,7 @@ Claim identity: `SFT-MATH-ORDER-LATTICE-001`
 
 ### 11.1 Question and necessity
 
-Order is needed for comparison, optimization, proof strength and topology. Retaining incomparability prevents a conventional scalar line from being imported where the Fold structure does not force one.
+Order is needed for comparison, optimisation, proof strength and topology. Retaining incomparability prevents a conventional scalar line from being imported where the Fold structure does not force one.
 
 The exact theorem statement is:
 
@@ -683,7 +764,7 @@ The complete product contains 512 candidates. Its completeness-certificate ident
 
 > The order/lattice kernel is a canonical carrier with an exhaustively witnessed partial-order relation, conditional totality, complete bound selections, uniquely witnessed meet/join and monotone maps.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - partial order requires reflexive, antisymmetric and transitive relation closure.
 - incomparability is retained and never forced into a borrowed total scale.
@@ -691,7 +772,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - a finite lattice is exactly an admitted partial order with meet and join for every generated pair.
 - monotonicity is preservation of every registered relation cell.
 
-### 11.4 Operational witnesses and unfavorable checks
+### 11.4 Operational witnesses and unfavourable checks
 
 - `partial-order` - The diamond relation passes all three partial-order obligations. Result: `PASS`.
 - `incomparability-retained` - The diamond retains left and right as incomparable. Result: `PASS`.
@@ -713,7 +794,7 @@ Base: The One carrier has its identity relation and One is both unique lower and
 
 Successor: Adding one fresh canonical form generates all comparisons to prior forms. Order closure, comparability, bounds and extremal uniqueness are rechecked only for pairs and composites touching the fresh form.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 11.6 Meaning and scientific consequence
 
@@ -784,7 +865,7 @@ The complete product contains 1,024 candidates. Its completeness-certificate ide
 
 > The geometry/topology kernel is finite canonical cells with held acyclic incidence, boundary-depth dimension, shared-face adjacency, exact shortest paths, closed finite open families, inverse-image continuity and reversible incidence-preserving deformation.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - cell dimension is determined by complete acyclic boundary descent.
 - path distance retains a shortest generated transition trace and uses empty One at identity.
@@ -792,7 +873,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - continuity is exact inverse-image preservation of every admitted target open.
 - geometric equivalence requires a reversible invariant-preserving transformation trace.
 
-### 12.4 Operational witnesses and unfavorable checks
+### 12.4 Operational witnesses and unfavourable checks
 
 - `incidence` - Every witness face and cell belongs to the finite carrier. Result: `PASS`.
 - `dimension-depth` - The witness triangle has one more boundary layer than its edge. Result: `PASS`.
@@ -814,7 +895,7 @@ Base: One point is a canonical cell; its open family consists of empty One and t
 
 Successor: Adding one fresh cell generates its possible boundary incidences, shared-face adjacencies and path edges; adding one fresh point generates exactly the open selections needed for closure checks. Every new boundary, path, intersection, join and inverse image is then exhaustively tested.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 12.6 Meaning and scientific consequence
 
@@ -884,7 +965,7 @@ The complete product contains 512 candidates. Its completeness-certificate ident
 
 > The probability/statistics kernel is complete deterministic support, held events, exact held/whole weights, observation-class uncertainty, common-refinement conditioning, pair-cell independence, transparent finite summaries and post-seal empirical checking without random parameters.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - event weight is an exact positive part relation; empty event is empty One.
 - conditional weight is exact restriction to a nonempty held condition.
@@ -892,7 +973,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - uncertainty belongs to an observation partition and does not alter deterministic microstate evolution.
 - statistical summaries retain exact provenance and all tied alternatives.
 
-### 13.4 Operational witnesses and unfavorable checks
+### 13.4 Operational witnesses and unfavourable checks
 
 - `exact-weight` - Two held states in four complete states have the exact one-over-two part. Result: `PASS`.
 - `empty-event` - The empty event is structural empty One rather than numerical zero. Result: `PASS`.
@@ -914,7 +995,7 @@ Base: A One-state support has whole certainty; its held-empty event is represent
 
 Successor: Adding one fresh microstate extends whole support once and either extends or leaves each held event. Exact parts, observation classes, intersections and summaries update from that retained membership without a prior.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 13.6 Meaning and scientific consequence
 
@@ -944,7 +1025,7 @@ This closes exact finite probability and descriptive statistics. Inferential cla
 - Engine receipt: `sha256:2a86d644881cdacb757327d5aaca01de41c3458c043980c66a16f5084cdfb45b`.
 - Engine receipt path: `receipts/engine/model_admitted/SFT-MATH-PROBABILITY-STATISTICS-001-2a86d644881cdacb.json`.
 
-## 14. Derivation 9: Exact finite optimization and retained optima
+## 14. Derivation 9: Exact finite optimisation and retained optima
 
 Claim identity: `SFT-MATH-OPTIMIZATION-001`
 
@@ -964,7 +1045,7 @@ Orders supply witnessed preference and incomparability; graphs supply search rel
 
 Generation rule: Generate the complete product of candidate coverage, feasibility, preference, optimum selection, tie retention, constraint provenance, decomposition, approximation and extra-objective status.
 
-Exact grammar boundary: All finite optimization instances generated from canonical candidates, exact predicates, held preference relations, complete dominance checks, interface-preserving decomposition and exact positive part bounds.
+Exact grammar boundary: All finite optimisation instances generated from canonical candidates, exact predicates, held preference relations, complete dominance checks, interface-preserving decomposition and exact positive part bounds.
 
 The complete product contains 512 candidates. Its completeness-certificate identity is `sha256:a15ea2f582138e72734b4421a5d69ae92089f444f70597f7539532587a30ddbe`. The following table gives every grammar axis, its explicit failure alternative and its forced coordinate. Their Cartesian product is the complete candidate census; the full row-level list is preserved in `claims/SFT-MATH-OPTIMIZATION-001/candidate_census.json`.
 
@@ -984,15 +1065,15 @@ The complete product contains 512 candidates. Its completeness-certificate ident
 
 > The optimization kernel is complete canonical candidates, source-bound feasibility, exact preference, complete undominated selection, retained ties, exact constraints and interfaces, and positive-part bounds without an added objective.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
-- optimization may eliminate a candidate only with a retained feasible dominator witness.
+- optimisation may eliminate a candidate only with a retained feasible dominator witness.
 - all undominated candidates survive and uniqueness is a separately checked singleton property.
 - Pareto comparison retains incomparability across exact criteria.
 - decomposition is lawful only with complete shared-interface factorization.
 - approximation is an exact generated part relation rather than a rounded scalar.
 
-### 14.4 Operational witnesses and unfavorable checks
+### 14.4 Operational witnesses and unfavourable checks
 
 - `feasible-selection` - The complete verdict relation retains exactly a and b. Result: `PASS`.
 - `unique-optimum` - A witnessed a-over-b relation leaves a as the singleton optimum. Result: `PASS`.
@@ -1014,11 +1095,11 @@ Base: A One-candidate feasible carrier has that candidate as its unique complete
 
 Successor: Adding one fresh candidate generates its feasibility verdicts and every preference pair with prior feasible forms. It is either eliminated by a retained dominator, eliminates witnessed dominated forms, or joins the retained optimal class; no prior optimum is silently discarded.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 14.6 Meaning and scientific consequence
 
-Optimization is forced as elimination by exact witness rather than maximization of an imported floating score. Every candidate and feasibility verdict is present. A candidate is removed only when a retained feasible dominator exists. The complete undominated selection is the solution; singleton status alone licenses uniqueness. Multiple optimal or Pareto-incomparable forms remain visible rather than being broken by an undeclared convention.
+Optimisation is forced as elimination by exact witness rather than maximization of an imported floating score. Every candidate and feasibility verdict is present. A candidate is removed only when a retained feasible dominator exists. The complete undominated selection is the solution; singleton status alone licenses uniqueness. Multiple optimal or Pareto-incomparable forms remain visible rather than being broken by an undeclared convention.
 
 ### 14.7 Correspondence after sealing
 
@@ -1031,7 +1112,7 @@ Only after the SFT survivor and receipt are fixed may the following established 
 - no tunable regularizer or tie-break parameter.
 - no unenumerated candidate domain.
 
-This closes exact finite optimization structure. Complexity of finding the complete frontier and laws for particular objective families belong to the algorithms and complexity branches.
+This closes exact finite optimisation structure. Complexity of finding the complete frontier and laws for particular objective families belong to the algorithms and complexity branches.
 
 ### 14.9 Evidence identities
 
@@ -1060,7 +1141,7 @@ Admitted dependencies: `SFT-FOUNDATION-FORM-ENFORCEMENT-001`, `SFT-MATH-GRAPH-NE
 
 ### 15.2 Generated grammar and exact boundary
 
-Graph paths supply evolution; optimization supplies complete invariant and basin selection; canonical forms supply state identity. Ten choices force the finite transition-and-record dynamics kernel.
+Graph paths supply evolution; optimisation supplies complete invariant and basin selection; canonical forms supply state identity. Ten choices force the finite transition-and-record dynamics kernel.
 
 Generation rule: Generate the complete product of state coverage, transition provenance, trajectory trace, time, fixed forms, return, basin/recurrence, reversibility, stability and extra-dynamic status.
 
@@ -1085,15 +1166,15 @@ The complete product contains 1,024 candidates. Its completeness-certificate ide
 
 > The dynamical kernel is complete canonical states, held transitions, complete trajectories, transition-count time, witnessed fixed/return/basin structure, retained-record reversibility and registered perturbation stability.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - trajectory composition is lawful exactly at an equal canonical interface state.
 - time is a positive transition trace and identity duration is empty One.
-- fixed, cyclic and recurrent behavior require explicit transition witnesses.
+- fixed, cyclic and recurrent behaviour require explicit transition witnesses.
 - many-to-one evolution loses predecessor distinction unless a source record is retained.
 - stability is quantified only over a complete registered finite perturbation class.
 
-### 15.4 Operational witnesses and unfavorable checks
+### 15.4 Operational witnesses and unfavourable checks
 
 - `well-formed` - Every witness transition remains in the complete state carrier. Result: `PASS`.
 - `trajectory` - The a-to-b-to-terminal trace retains both allowed transitions. Result: `PASS`.
@@ -1116,7 +1197,7 @@ Base: One state supplies its identity trajectory; no transition time or predeces
 
 Successor: Adding one transition appends one exact state pair to every extended trajectory. Fixed, return, basin, predecessor and stability obligations change only for paths that use the new relation and are rechecked completely.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 15.6 Meaning and scientific consequence
 
@@ -1187,7 +1268,7 @@ The complete product contains 1,024 candidates. Its completeness-certificate ide
 
 > The logic/proof kernel is canonical distinguished propositions, complementary held denial, joint and held alternative proof forms, proof-carrying implication, complete inference traces, explicit consistency and soundness, and completeness only over the exhausted registered grammar.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - denial changes held orientation while preserving proposition identity.
 - conjunction and disjunction retain their complete source proof structure.
@@ -1195,7 +1276,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - a valid proof is replayable step by step from its premises and rule registry.
 - completeness is always indexed by an explicit generated grammar boundary.
 
-### 16.4 Operational witnesses and unfavorable checks
+### 16.4 Operational witnesses and unfavourable checks
 
 - `held-denial` - Denial preserves P while changing only its held orientation. Result: `PASS`.
 - `joint-proof` - Conjunction retains both exact constituent proofs. Result: `PASS`.
@@ -1218,7 +1299,7 @@ Base: One proposition form and its two orientations provide the first decidable 
 
 Successor: Adding one proposition or rule generates its complementary orientation, joint and alternative combinations, and all new premise tuples. Consistency and proof replay are rechecked for precisely those new forms and steps.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 16.6 Meaning and scientific consequence
 
@@ -1289,7 +1370,7 @@ The complete product contains 1,024 candidates. Its completeness-certificate ide
 
 > The compositional kernel is canonical Fold objects, proof-carrying arrows, empty-One identity, exact-interface composition, path-flattening association, source-bound types, joint products, held sums, preserving functors and equal-path naturality.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - identity preserves source and target and contributes no nonidentity transition.
 - composition exists exactly at a canonical interface match.
@@ -1297,7 +1378,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - products preserve both coordinates and sums preserve the held source alternative.
 - functoriality and naturality are finite replayable preservation witnesses.
 
-### 17.4 Operational witnesses and unfavorable checks
+### 17.4 Operational witnesses and unfavourable checks
 
 - `interface-composition` - f then g composes from A to C with both traces retained. Result: `PASS`.
 - `identity` - Empty-One return preserves the interface and adds no elementary transition. Result: `PASS`.
@@ -1320,7 +1401,7 @@ Base: One canonical object supplies its empty-One identity arrow and the first s
 
 Successor: Adding one object or arrow generates its identities, every exact interface-compatible composite, product and sum cells, type verdicts and preservation squares. Closure follows by appending its trace to prior flat paths.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 17.6 Meaning and scientific consequence
 
@@ -1389,14 +1470,14 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The unique exact relation kernel is generated-part ratio, held shorter separation, unique complement threshold, Fold-factor transport and least-common-return composition with finite-family induction.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - a positive ratio composed with its reciprocal returns the One.
 - relative views telescope by exact ratio composition.
 - the first common return of finite periods is their iterated least common multiple.
 - count times the corresponding equal part reconstructs the One.
 
-### 18.4 Operational witnesses and unfavorable checks
+### 18.4 Operational witnesses and unfavourable checks
 
 - `reciprocal` - The ratio three-of-two composed with two-of-three returns the One. Result: `PASS`.
 - `count-measure` - Eight equal one-of-eight parts reconstruct the One. Result: `PASS`.
@@ -1417,7 +1498,7 @@ Base: One exact cycle returns after its own generated period.
 
 Successor: Composing one more positive finite cycle replaces the current joint period by its least common return with the new period.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 18.6 Meaning and scientific consequence
 
@@ -1486,14 +1567,14 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > Fold return and binary multiplicative order are one exact remainder identity; odd reduced residues tile into cyclotomic orbits and each binary denominator factor contributes one transient Fold.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - orbit length equals the multiplicative order of the binary generator modulo the reduced odd denominator.
 - the reduced-residue count is the product of orbit length and orbit count.
 - for a prime denominator the period divides one less than that prime.
 - binary valuation is the exact transient depth to the odd recurrent core.
 
-### 19.4 Operational witnesses and unfavorable checks
+### 19.4 Operational witnesses and unfavourable checks
 
 - `orders` - The independently counted orders for denominators three, five, seven, nine and eleven are two, four, three, six and ten. Result: `PASS`.
 - `all-reduced-ranks` - Every reduced rank through odd denominator ninety-nine has orbit length equal to its denominator order. Result: `PASS`.
@@ -1513,7 +1594,7 @@ Base: The first reduced odd denominator above the One executes one complete fini
 
 Successor: For any next supplied odd denominator the finite residue permutation independently partitions into cycles; adjoining one binary factor prepends exactly one transient Fold.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 19.6 Meaning and scientific consequence
 
@@ -1582,17 +1663,17 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > Potential infinity is the never-terminal generated successor process; every reached object is finite and positive, convergence is an exact nested-bound certificate, and completed infinity or continuum is outside the admitted object language.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - every dyadic rung reaches the One in exactly its counted depth.
 - every finite depth has a lawful next depth.
 - exact finite-difference sequences may converge by shrinking positive rational error bounds.
 - no completed continuum cardinality claim is admitted without a generated object.
 
-### 20.4 Operational witnesses and unfavorable checks
+### 20.4 Operational witnesses and unfavourable checks
 
 - `finite-rungs` - Every generated dyadic rung through depth fourteen is positive and returns after its counted depth. Result: `PASS`.
-- `quadratic-curvature` - The centered second difference of x squared is exactly two at every tested rational spacing. Result: `PASS`.
+- `quadratic-curvature` - The centred second difference of x squared is exactly two at every tested rational spacing. Result: `PASS`.
 - `cubic-convergence` - The forward second-difference curvature of x cubed at the One has exact error six times the spacing, halving at each refinement. Result: `PASS`.
 - `finite-closure` - The first five dyadic rungs plus the boundary rung reconstruct the One. Result: `PASS`.
 
@@ -1609,7 +1690,7 @@ Base: The One is the complete finite base and its first refinement is a positive
 
 Successor: Appending one generated Fold depth replaces a positive one-of-b^k rung by the positive one-of-b^(k+1) rung and records one additional return step.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 20.6 Meaning and scientific consequence
 
@@ -1678,13 +1759,13 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The unique admitted algebraic-magnitude representation is a positive polynomial-balance identity with exact rational order-swap bracket and replayable bisection trace; the irrational root is never a proof value.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - separating signed terms into two positive sides preserves the defining balance.
 - an endpoint order swap plus exact bisection yields nested rational enclosures.
 - Vieta relations provide an implementation-distinct coefficient cross-check for a bracketed root family.
 
-### 21.4 Operational witnesses and unfavorable checks
+### 21.4 Operational witnesses and unfavourable checks
 
 - `square-balance` - The positive sides x squared and two swap order across seven-of-five and three-of-two. Result: `PASS`.
 - `exact-midpoints` - Twenty bisections of that bracket retain exact rational endpoints and an order swap. Result: `PASS`.
@@ -1703,7 +1784,7 @@ Base: One exact rational bracket with opposite side order is a complete first en
 
 Successor: The exact midpoint retains the order swap in exactly one half-bracket unless it is itself the exact balance, so the certificate narrows at every supplied finite step.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 21.6 Meaning and scientific consequence
 
@@ -1772,13 +1853,13 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > All finite componentwise Fold tuples are eventually recurrent; their recurrent joint period is the iterated least common multiple of component odd-core periods.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - Fold preserves each reduced odd denominator core.
 - a finite product of finite deterministic component orbits is finite.
 - the first joint recurrent return is the least common component period.
 
-### 22.4 Operational witnesses and unfavorable checks
+### 22.4 Operational witnesses and unfavourable checks
 
 - `three-cycle` - The tuple one-, two- and four-of-seven returns after three componentwise Folds. Result: `PASS`.
 - `four-cycle` - The four ranks over denominator five rotate and return after four Folds. Result: `PASS`.
@@ -1797,7 +1878,7 @@ Base: One rational Fold component is transient-to-periodic by its denominator de
 
 Successor: Appending one component preserves finite product support and replaces the recurrent period by its least common return with the new component period.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 22.6 Meaning and scientific consequence
 
@@ -1866,13 +1947,13 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The native Fold-lattice gradient bound is b^k at depth k, attained by a One velocity gap across one minimum edge; the depth-five value is thirty-two and every finite-depth field remains bounded.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - positive minimum spacing prevents a vanishing denominator.
 - One-bounded velocity separation divided by one-of-b^k is at most b^k.
 - the successor depth multiplies the bound by the generated Fold count.
 
-### 23.4 Operational witnesses and unfavorable checks
+### 23.4 Operational witnesses and unfavourable checks
 
 - `depth-five` - The exact reciprocal of the depth-five binary floor is thirty-two. Result: `PASS`.
 - `depth-table` - Every depth one through fourteen has reciprocal-floor bound two-to-depth. Result: `PASS`.
@@ -1891,7 +1972,7 @@ Base: At the first Fold depth, the positive floor is one-of-b and the edge-gradi
 
 Successor: Refining one Fold divides the floor by b while preserving the One velocity ceiling, so the exact finite bound is multiplied by b.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 23.6 Meaning and scientific consequence
 
@@ -1960,13 +2041,13 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The exhaustive 4 through 10,000 census contains 4,999 even inputs, zero Goldbach failures and exactly 205 twin-prime pairs with upper member at most 10,000.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - every declared even input is partitioned by all positive complementary pairs.
 - prime status is decided by a complete finite divisor certificate.
 - the finite boundary is part of the theorem and cannot be erased.
 
-### 24.4 Operational witnesses and unfavorable checks
+### 24.4 Operational witnesses and unfavourable checks
 
 - `goldbach-range` - Every even whole from four through ten thousand has a generated prime complement pair. Result: `PASS`.
 - `even-count` - The declared range contains exactly four thousand nine hundred ninety-nine even inputs. Result: `PASS`.
@@ -1986,7 +2067,7 @@ Base: The first declared even whole, four, is the junction of two and two.
 
 Successor: The census successor advances to the next even whole, exhausts every complementary split and records either a prime witness or an explicit failure.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 24.6 Meaning and scientific consequence
 
@@ -2055,13 +2136,13 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > Half-One is the unique fixed axis of exact complement; every other positive part is paired. This closes the SFT Riemann-mirroring claim and explicitly does not assert classical complex zero location.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - complement composed twice is identity.
 - self-complementarity uniquely forces the half-One.
 - reflection symmetry does not by itself imply that all points of an invariant set lie on the fixed axis.
 
-### 25.4 Operational witnesses and unfavorable checks
+### 25.4 Operational witnesses and unfavourable checks
 
 - `fixed-half` - Half-One is equal to its exact complement. Result: `PASS`.
 - `off-axis-pairs` - Quarter/three-quarter and one-third/two-thirds are distinct complement pairs. Result: `PASS`.
@@ -2080,11 +2161,11 @@ Base: The Foundation half-One certificate supplies the self-complementary witnes
 
 Successor: Every newly generated non-half part is paired with its exact complement and neither becomes a second fixed point.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 25.6 Meaning and scientific consequence
 
-The complement involution has exactly one fixed point: the half-One. That is the forced SFT mirror corresponding to the one-half axis of the classical functional equation. An unfavorable control constructs an off-axis symmetric pair, proving that symmetry alone cannot locate all members of a symmetric set. This preserves the strongest detailed V1 statement: prime-orbit structure and the mirror close, while classical complex zero location does not.
+The complement involution has exactly one fixed point: the half-One. That is the forced SFT mirror corresponding to the one-half axis of the classical functional equation. An unfavourable control constructs an off-axis symmetric pair, proving that symmetry alone cannot locate all members of a symmetric set. This preserves the strongest detailed V1 statement: prime-orbit structure and the mirror close, while classical complex zero location does not.
 
 ### 25.7 Correspondence after sealing
 
@@ -2149,14 +2230,14 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The complete starts One through 100,000 census has zero failures, start 27 takes 111 steps, the terminal cycle is 1-4-2, and the constant-3/4 pointwise contraction premise is rejected.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - every odd three-times-plus-One result is even.
 - every declared start has a finite replay trace to the terminal cycle.
 - the claim boundary remains finite and does not become the unrestricted Collatz conjecture.
 - a false contraction heuristic cannot serve as proof even when the bounded census passes.
 
-### 26.4 Operational witnesses and unfavorable checks
+### 26.4 Operational witnesses and unfavourable checks
 
 - `odd-even` - Every positive odd start through ten thousand one maps to an even three-times-plus-One result. Result: `PASS`.
 - `bounded-census` - Every start through one hundred thousand reaches the One. Result: `PASS`.
@@ -2176,7 +2257,7 @@ Base: The One lies on the declared 1-4-2 recurrent cycle.
 
 Successor: For each next positive whole start, execute the exact transition until an already certified cycle member appears and retain the full prefix.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 26.6 Meaning and scientific consequence
 
@@ -2245,7 +2326,7 @@ The complete product contains 256 candidates. Its completeness-certificate ident
 
 > The exact Fold rate is binary separation expansion and one closed label per step; unit rank power is the unique Fold-self-similar exponent, m-labelled support is m^d, and decreasing rational terms close convergence without importing their limit as a value.
 
-Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+**Shared claim-record clause `MATH-S001` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 - local uncast separation multiplies by the Fold count.
 - one predecessor label is closed per Fold merge.
@@ -2253,7 +2334,7 @@ Exactly one candidate combines every forced coordinate. Replacing any of those c
 - m-labelled successor support obeys the base/successor count m^d.
 - a geometric rational tail bound proves finite accumulated separation.
 
-### 27.4 Operational witnesses and unfavorable checks
+### 27.4 Operational witnesses and unfavourable checks
 
 - `chaotic-rate` - The separation two-of-thirty-five advances to four-of-thirty-five before cast. Result: `PASS`.
 - `support` - Ternary support has three, nine and twenty-seven states at depths one, two and three. Result: `PASS`.
@@ -2274,7 +2355,7 @@ Base: At depth One an m-labelled successor has m states and one Fold closes one 
 
 Successor: Appending one label multiplies support by m; applying one Fold multiplies an uncast local gap by b and closes one predecessor label; one further rational term preserves the tail bound.
 
-The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
+**Shared claim-record clause `MATH-S002` applies.** The full, unchanged clause is preserved in the shared-clause appendix.
 
 ### 27.6 Meaning and scientific consequence
 
@@ -2539,7 +2620,7 @@ The complete Cartesian product contains 8,192 candidate forms and has completene
 | `trace` | `answer-only` - An answer without provenance cannot be replayed or independently checked. | `complete-proof-resource-trace` - Input translation, operations, result and counted resources are retained. |
 | `addition` | `has-extra-rule` - A fitted constant or answer-selecting rule is not supplied by the dependencies. | `no-extra-rule` - The calculator composes only already-admitted exact structures and proofs. |
 | `scientific_surface` | `partial-basic-function-subset` - A basic subset is not the requested scientific calculator. | `complete-declared-scientific-surface` - Arithmetic, rational/non-rational powers, roots, logs, exponentials, circular/inverse/hyperbolic functions, combinatorics, exact statistics and typed orthogonal operations are all routed through certified kernels. |
-| `session` | `stateless-expression-only` - A stateless expression evaluator lacks terminal equals, answer, memory and history behavior. | `equals-answer-memory-history` - The terminal equals key executes; Ans, memory and ordered history retain explicit typed state without altering laws. |
+| `session` | `stateless-expression-only` - A stateless expression evaluator lacks terminal equals, answer, memory and history behaviour. | `equals-answer-memory-history` - The terminal equals key executes; Ans, memory and ordered history retain explicit typed state without altering laws. |
 | `application` | `terminal-only-opaque-answer` - A terminal-only answer surface is not a clean general-user calculator app and hides evidence. | `cross-platform-app-trace-and-guide` - One standard-library desktop app provides editable display, keypad, angle selector, memory, history, exact detail, proof trace and embedded SFT guidance. |
 
 Unique survivor and exact result:
@@ -2665,7 +2746,7 @@ Replacing any forced coordinate by its enumerated alternative loses a registered
 - a local Mathematics replay can reproduce a registered census but cannot issue or impersonate an engine admission receipt.
 - progressive disclosure changes presentation only and cannot change the exact retained answer.
 - large circular input is equivalent after subtraction of any generated whole number of complete turns.
-- the current expression census is one-to-one with the registered predecessor catalog and halts if that catalog changes without a translation.
+- the current expression census is one-to-one with the registered predecessor catalogue and halts if that catalogue changes without a translation.
 - complete implementation coverage is necessary but remains distinct from engine forcing and independent validation.
 
 Executed witnesses:
@@ -2688,7 +2769,7 @@ Adverse controls:
 - `tampered_artifact` - expected: reject a missing, duplicated or additional survivor Observed: the generated product contains exactly one registered survivor Result: `PASS`; receipt `sha256:b79ac01f095bf293f4d7a736893d30f1c51e9c6a1c5d98b04f5a8cda8f071219`.
 - `boundary` - expected: halt any attempt to import an excluded object or answer-producing model Observed: no numerical zero, negative magnitude, irrational scalar, imaginary scalar or floating proof value; no fitted scientific parameter, host transcendental answer, random oracle, NaN or infinity; no GUI or terminal path may bypass the exact evaluator; no calculator replay is labelled an admission receipt; no claim to future Mathematics families not present in the exact predecessor census; no proprietary calculator-specific surface is claimed beyond the declared expression language Result: `PASS`; receipt `sha256:eefb6e9e942e0a51c61bd23f963e704839a3ef7cb8507308620dae96ab4f04fc`.
 
-Depth-independent base: Claim 005 supplies one exact scalar calculation and one desktop evidence surface; the twenty-four fixed predecessors supply the complete current Mathematics catalog.
+Depth-independent base: Claim 005 supplies one exact scalar calculation and one desktop evidence surface; the twenty-four fixed predecessors supply the complete current Mathematics catalogue.
 
 Depth-independent successor: Adding one expression, interaction, platform view or Mathematics family is lawful only when it maps to an admitted kernel, retains exact typed evidence, adds a generated census coordinate or registered translation, and introduces no uncovered execution branch.
 
@@ -2701,7 +2782,7 @@ Exact exclusions:
 - no claim to future Mathematics families not present in the exact predecessor census.
 - no proprietary calculator-specific surface is claimed beyond the declared expression language.
 
-Limitation: Closure covers the exact current predecessor catalog, declared scientific expression language and application behavior. It does not claim that a calculation is a new theorem, that every future Mathematics discovery is already translated, or that every proprietary calculator button is required. Lawful future additions remain open versioned extensions.
+Limitation: Closure covers the exact current predecessor catalogue, declared scientific expression language and application behaviour. It does not claim that a calculation is a new theorem, that every future Mathematics discovery is already translated, or that every proprietary calculator button is required. Lawful future additions remain open versioned extensions.
 
 Evidence identities:
 
@@ -2746,7 +2827,7 @@ The complete Cartesian product contains 256 candidate forms and has completeness
 | `session_state` | `shared-global-visitor-state` - One visitor or test can contaminate another visitor's landing value. | `fresh-independent-page-session` - Every page load receives a fresh retained controller identity while its own history and memory persist. |
 | `network_reach` | `desktop-loopback-only` - A computer-only default blocks ordinary same-network phone use. | `same-network-default-with-private-option` - The default binds to the local network and displays its phone address; private mode remains explicit. |
 | `dependency_boundary` | `heavy-GUI-or-container-runtime` - A heavy platform runtime violates the accessibility requirement. | `Python-standard-library-and-installed-browser` - HTTP service, exact controller and page assets require no third-party runtime or container. |
-| `validation` | `hidden-widget-dimensions-only` - Widget dimensions did not detect the observed blank window. | `API-render-responsive-adverse-and-complete-coverage` - The corrected route checks HTTP behavior, semantic rendering, mobile structure, prohibited results, session isolation and complete active-file coverage. |
+| `validation` | `hidden-widget-dimensions-only` - Widget dimensions did not detect the observed blank window. | `API-render-responsive-adverse-and-complete-coverage` - The corrected route checks HTTP behaviour, semantic rendering, mobile structure, prohibited results, session isolation and complete active-file coverage. |
 
 Unique survivor and exact result:
 
@@ -2812,7 +2893,7 @@ Evidence identities:
 
 ### 28.6 Exact value translation and fail-closed semantics
 
-| Familiar surface | Exact calculator meaning | Boundary behavior |
+| Familiar surface | Exact calculator meaning | Boundary behaviour |
 |---|---|---|
 | `0` | structural empty One | displayable and usable as the empty/identity form; never stored as a conventional numerical-zero proof scalar |
 | positive integer or decimal | exact positive whole or rational Fold part, parsed character by character | no binary floating conversion is admitted |
@@ -2862,7 +2943,7 @@ calculator_launchers/launch-smithian-fold-calculator.sh         # Linux
 
 Claim 006 records 1,869 executable statements and 696 branches across its declared active calculator implementation, all covered with no missing statement, branch or partial branch. Claim 007 records 293 executable statements and 86 branches across the active browser adapter, again with no missing statement, branch or partial branch. These are statement-and-branch coverage facts over the declared files, not a claim that every physical browser or device in existence has been tested.
 
-The executed checks cover exact values; every operation and parser branch; invalid domains and resource exhaustion; expression-machine, session, memory and history integration; pure controller state; command-line execution; operating-system launchers; server API behavior; request bounds and authorization; fresh-session isolation; full control partition; semantic page structure; phone reflow and focus behavior; exact interval presentation; negative-result rollback; and implementation-distinct HTTP replay. Direct use supplied an additional unfavorable route: the first desktop widget visibly opened blank even though hidden geometry tests passed. That failure is preserved in the 007 false-premise control and is why the standards-rendered route, rather than the deprecated widget path, survives.
+The executed checks cover exact values; every operation and parser branch; invalid domains and resource exhaustion; expression-machine, session, memory and history integration; pure controller state; command-line execution; operating-system launchers; server API behaviour; request bounds and authorisation; fresh-session isolation; full control partition; semantic page structure; phone reflow and focus behaviour; exact interval presentation; negative-result rollback; and implementation-distinct HTTP replay. Direct use supplied an additional unfavourable route: the first desktop widget visibly opened blank even though hidden geometry tests passed. That failure is preserved in the 007 false-premise control and is why the standards-rendered route, rather than the deprecated widget path, survives.
 
 Representative end-to-end outcomes:
 
@@ -2904,7 +2985,7 @@ Four explicit reconciliation outcomes deserve front-page visibility because they
 
 The twenty-two foundational theorems form one dependency chain rather than a list of renamed fields. Exact arithmetic gives lawful trace junction, pair-cell product, refinement and comparison. Discrete mathematics turns those operations into canonical carriers, selections, relations, maps and induction. Combinatorics then generates complete families of choices; graph theory holds a relation from complete pair support and promotes it to path, cycle, cut and network structure. Algebra asks which complete operation relations close, associate, return and map. Order retains only witnessed comparison and derives conditional extremal operations.
 
-Geometry and topology use graph paths, incidence and order closure to derive the finite structures computation actually requires. Probability uses complete combinatorial support and exact parts to quantify observation classes without altering deterministic state. Optimization uses order to preserve feasible undominated alternatives. Dynamics uses graph transitions to define trajectory, return, basin and record-dependent reversal. Logic then turns distinguished forms and relations into proof-carrying inference. Category, type and composition close the chain by showing how exact objects and transformations compose without losing interface provenance.
+Geometry and topology use graph paths, incidence and order closure to derive the finite structures computation actually requires. Probability uses complete combinatorial support and exact parts to quantify observation classes without altering deterministic state. Optimisation uses order to preserve feasible undominated alternatives. Dynamics uses graph transitions to define trajectory, return, basin and record-dependent reversal. Logic then turns distinguished forms and relations into proof-carrying inference. Category, type and composition close the chain by showing how exact objects and transformations compose without losing interface provenance.
 
 No result licenses backward importation. Because category-like composition is derived last, it cannot be an axiom used to select arithmetic. Because probability is downstream of complete deterministic support, it cannot install an ontic random cause in the earlier state law. Because geometry is finite incidence before continuum correspondence, an irrational coordinate cannot retroactively become foundational proof evidence.
 
@@ -2926,9 +3007,9 @@ An event is a held support selection. For a nonempty event, probability quantity
 
 Statistical summaries are allowed because they are transparent functions of complete finite records. Ties are retained. A natural-data claim would require a separate empirical registration, frozen source and target custody. The target must remain closed until after the derivation seal; all rows, including failures, must be preserved. No natural dataset was needed or used to admit the formal probability theorem in this paper.
 
-## 33. Formal proof versus empirical validation
+## 33. Formal proof and empirical constitution
 
-The twenty-two foundational claims and five calculator records are formal structural theorems, exhaustive finite mathematical censuses or executable translations. Their empirical content in this paper is computational execution and direct interface testing: the candidate products are actually generated, decisions actually run, controls are deliberately perturbed, separate validator processes execute and receipts are independently replayed. This execution evidence demonstrates that the declared finite grammars and certificates have the reported machine behavior. It is not observational evidence about an external natural system, and the paper does not mislabel it as such.
+The twenty-two foundational claims and five calculator records are formal structural theorems, exhaustive finite mathematical censuses or executable translations. Their empirical content in this paper is computational execution and direct interface testing: the candidate products are actually generated, decisions actually run, controls are deliberately perturbed, separate validator processes execute and receipts are independently replayed. This execution evidence demonstrates that the declared finite grammars and certificates have the reported machine behaviour. It is not observational evidence about an external natural system, and the paper does not mislabel it as such.
 
 When a later branch asserts a relation to natural data, the Foundation measurement boundary applies. Formal law selection and target evaluation are different phases with different custody. A blind opaque predictor cannot replace a derivation chain because a score alone does not identify premises, alternatives, eliminations, source identity, failure conditions or whether the target influenced the law. An empirical SFT claim must expose all of those objects and halt if custody or capability isolation fails.
 
@@ -2941,7 +3022,7 @@ python3 -m sft verify-all   # macOS and most Linux systems
 py -m sft verify-all        # standard Windows Python launcher
 ```
 
-No Docker image, virtual machine, network service or third-party Python package is required for the scientific verification path. The command validates repository structure, runs all unit, unfavorable-control and end-to-end tests under line coverage, requires 100 percent executable-line coverage of the 15-module admission engine, loads the ordered execution manifest, rebuilds each source manifest, reruns every candidate and control, launches every independent validator and compares each new receipt byte-for-structure with the admitted stored receipt.
+No Docker image, virtual machine, network service or third-party Python package is required for the scientific verification path. The command validates repository structure, runs all unit, unfavourable-control and end-to-end tests under line coverage, requires 100 percent executable-line coverage of the 15-module admission engine, loads the ordered execution manifest, rebuilds each source manifest, reruns every candidate and control, launches every independent validator and compares each new receipt byte-for-structure with the admitted stored receipt.
 
 The proportionate local report for this successor paper is:
 
@@ -2967,13 +3048,13 @@ The repository also supports mechanical attacks: alter a source after registrati
 
 The current-evidence-complete branch supplies the exact resources downstream branches may cite: symbols can be canonical distinguished forms; encodings can be complete maps; information quantity can be an exact relation between support distinctions and observation; channels can be relations; entropy and uncertainty must respect deterministic support and exact parts; coding can use combinatorial word families, graph paths and algebraic operations. None of those downstream laws is admitted by this paper merely because its mathematical vocabulary now exists.
 
-Formal computation may build states from canonical forms, transitions from relations, machines from dynamical systems, resource orders from exact positive traces, semantics from proof-carrying composition and quantum support from complete Fold word families. Physics and later natural sciences may use finite geometry, dynamics, exact probability and optimization, but must separately derive their laws and pass blind empirical validation where observation is required. Applications remain frontier translations until the relevant science branches close.
+Formal computation may build states from canonical forms, transitions from relations, machines from dynamical systems, resource orders from exact positive traces, semantics from proof-carrying composition and quantum support from complete Fold word families. Physics and later natural sciences may use finite geometry, dynamics, exact probability and optimisation, but must separately derive their laws and pass blind empirical validation where observation is required. Applications remain frontier translations until the relevant science branches close.
 
 ## 37. Scope, limitations and lawful extension
 
 Current-evidence completion is exact at the versioned generated-finite Mathematics boundary. It does not assert a completed universe of all sets, a real or complex continuum, an infinite-dimensional space or every named theorem of conventional mathematics. It derives the general structural kernels needed to generate and test finite exact instances. Named special structures must still expose their carrier and property evidence. Continuum expressions can enter only through separately registered finite approximation or measurement claims.
 
-No official natural empirical claim is made in this branch. The calculator is an executable mathematical translation and validation surface, not a natural-data experiment. Information Science and the computation branches have their own later papers and receipts; after this Mathematics 1.3 publication the active clean-room programme returns to Physics. None of those downstream results can retroactively select a Mathematics law.
+No official natural empirical claim is made in this branch. The calculator is an executable mathematical translation and validation surface, not a natural-data experiment. Information Science and the computation branches have their own later papers and receipts; after this Mathematics 1.5 publication the active clean-room programme returns to Physics. None of those downstream results can retroactively select a Mathematics law.
 
 ## 38. Open-science status, rights and participation
 
@@ -2991,11 +3072,12 @@ Credentials cannot rescue a failed gate, and lack of credentials cannot prevent 
 
 ## 39. Conclusion
 
-The Mathematics version 1.3 evidence surface preserves twenty-seven dependency-ordered records through 21,504 generated alternatives. Twenty-two foundational claims and calculator claims 004 through 007 are current; calculator claim 003 remains preserved as superseded adverse evidence after its operational parity defect was found. It reconstructs exact arithmetic, finite discrete and combinatorial structure, relations and graphs, witnessed algebra and order, computational geometry and topology, deterministic-support probability, optimization, dynamics, proof and composition without importing conventional answer-producing models.
+Mathematics is complete to its frozen 29 July 2026 census: **323/323 obligations, 24/24 families, 97,280 complete candidate decisions, 323 unique survivors, 1,292 passed adverse controls, 323 implementation-distinct reconstructions and no open registered obligation**. The final reconciliation identity is `sha256:526c6d78a3ff77c21c6d4dd71c266499f5b234a7763cb223e5d009fa9f101c64`. The current lightweight repository status records 2,751 admitted V3 claims across the full platform, while the canonical engine seal and verification-authority seal remain unchanged.
 
-The unification is methodological as well as mathematical: every object has a generated boundary, every elimination has a reason and proof identity, every closure has an induction certificate, every adverse control is preserved and every admitted result can be independently rerun. The branch is accepted within its exact boundary because that complete chain closes - not because a prior authority, application score or familiar notation selects it.
+The scientific result is both mathematical and methodological. Arithmetic, algebra, discrete structure, geometry, topology, analysis, probability, optimisation, dynamics, logic, compositional mathematics, numerical analysis and symbolic construction are expressed through one exact generated constitution. Each familiar correspondence is downstream of a sealed SFT derivation. Each empty case is structural absence, each opposed direction is typed, each non-rational conventional object is represented by an exact construction or enclosure, and every claimed generality has a finite-successor or explicit boundary certificate.
 
-## Appendix A. Authoritative receipt identities
+The Validation Grand Lock does not erase adverse evidence. It preserves all 305 pre-validation boundary records and partitions every receipt exactly once. The final handoff family then prevents Mathematics from absorbing the empirical meanings owned by Physics, Chemistry, Biology, Social Science or Engineering. This is dated completion, not permanent closure: future discoveries remain welcome, but they do not enter by editorial preference, reputation or fit. They enter by registration, enumeration, uniqueness, falsification, independent reconstruction, observation and the unchanged engine.
+## Appendix A. Foundational and calculator receipt identities preserved from version 1.4
 
 | Claim | Engine receipt |
 |---|---|
@@ -3048,6 +3130,3752 @@ Executable law sources are under `sft/mathematics/`. `sft/mathematics/catalog.py
 ## Appendix C. Reproducibility interpretation
 
 A successful rerun proves that the checked sources deterministically reproduce the registered censuses, decisions, closures, controls, independent certificates and receipts on the reviewing host. It does not compel agreement with the grammar boundary. Scientific review therefore has two complementary tasks: reproduce the artifact and scrutinize whether the declared grammar exhausts the stated boundary. The repository makes both tasks explicit.
+
+## Family results, complete claim inventory and claim-level audit records
+
+The dependency-ordered ledger below is the complete human-readable
+Mathematics claim inventory for this version. Each claim section exposes
+its claim identity, family, formal and empirical status, exact statement,
+dependency route, carrier and boundary, candidate grammar and count, unique
+survivor, elimination logic, falsification condition, controls, source and
+custody records, chronology, scientific meaning and receipt identities. Where
+a generic clause is referenced, its full unchanged wording is retained in the
+shared claim-record appendix. The machine packages remain authoritative for
+complete candidates, decisions and executable traces.
+
+## 40. Complete-field Mathematics execution - version 1.5
+
+Version 1.4 froze the complete-field roadmap. Version 1.5 executes it. This section is controlling for the current census and preserves the earlier foundational derivations rather than rewriting their historical receipts.
+
+### 40.1 Complete family census
+
+| Order | Family | Claims | Candidates | Controls | Status |
+|---:|---|---:|---:|---:|---|
+| 1 | `BASE` | 27 | 21,504 | 108 | complete, exact-replayed, extension-open |
+| 2 | `ARITH` | 18 | 4,608 | 72 | complete, exact-replayed, extension-open |
+| 3 | `ALEXT` | 10 | 2,560 | 40 | complete, exact-replayed, extension-open |
+| 4 | `COMB` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 5 | `GRAPH` | 14 | 3,584 | 56 | complete, exact-replayed, extension-open |
+| 6 | `LINEAR` | 14 | 3,584 | 56 | complete, exact-replayed, extension-open |
+| 7 | `ALG` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 8 | `ORDER` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 9 | `GEOM` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 10 | `TOPO` | 14 | 3,584 | 56 | complete, exact-replayed, extension-open |
+| 11 | `CALC` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 12 | `ANAL` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 13 | `EQN` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 14 | `MEAS` | 10 | 2,560 | 40 | complete, exact-replayed, extension-open |
+| 15 | `PROB` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 16 | `OPT` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 17 | `DYN` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 18 | `LOGIC` | 16 | 4,096 | 64 | complete, exact-replayed, extension-open |
+| 19 | `CAT` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 20 | `NUM` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 21 | `SYMB` | 10 | 2,560 | 40 | complete, exact-replayed, extension-open |
+| 22 | `XINT` | 8 | 2,048 | 32 | complete, exact-replayed, extension-open |
+| 23 | `VALID` | 12 | 3,072 | 48 | complete, exact-replayed, extension-open |
+| 24 | `HAND` | 6 | 1,536 | 24 | complete, exact-replayed, extension-open |
+| **Total** | **24 families** | **323** | **97,280** | **1,292** | **323/323** |
+
+### 40.2 Admission constitution applied to every claim
+
+Every entry below records the owned question, exact statement, unique survivor, exhaustive candidate and control counts, post-registry observation, source custody, dependency edge and immutable receipt. The machine-readable packages remain controlling; the paper makes their scientific content visible rather than substituting hashes for findings.
+
+### 40.3 Family `BASE` - 27/27 complete
+
+This family contributes 21,504 completely decided candidates, 27 unique survivors and 108 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-BASE-001` - Exact arithmetic and generated number structure
+
+- **Claim:** `SFT-MATH-EXACT-ARITHMETIC-001` - Exact arithmetic and generated number structure.
+- **Forced law:** Every admitted arithmetic relation on generated positive finite traces and exact parts has one parameter-free structural kernel: disjoint junction for addition, complete pair-cell refinement for product, finite repeated composition for powers, common-refinement pairing for exact quotient and comparison, and held orientation for unmatched remainder; no semantic zero, negative, irrational, floating or completed-infinite value enters the law.
+- **Unique survivor:** The exact arithmetic kernel is complete positive-trace coverage with disjoint junction, pair-cell product, common-refinement quotient, complete pairing comparison, held-oriented remainder, base/successor generality and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-COUNT-001 -> SFT-FOUNDATION-PART-001 -> SFT-FOUNDATION-PART-EQUIVALENCE-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not a value; negative magnitude is replaced by held orientation; irrational, imaginary and floating proof values are excluded; completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:1254abf40a91886525ad8a846896b75a1023fd785907f233bcf817db2c744dc4`; independent `sha256:73b24906c1005bd7f42f36000f396bb5ec88f633a4a69b6159d5cc349bb3be2a`; empirical `sha256:9a05361b10ccce837c8a32def2b24dd0ec714cb2f45d397a9e6b72fedec306a7`; engine receipt `sha256:28252bae62373d8657967ba28f8f2d497c2cf09abbae71609cb05c4f40196418`.
+
+#### `SFT-MATH-OBL-BASE-002` - Generated discrete objects, relations and induction
+
+- **Claim:** `SFT-MATH-DISCRETE-001` - Generated discrete objects, relations and induction.
+- **Forced law:** Every admitted discrete object is a complete canonical generated finite collection or held selection; membership is retained occurrence, relations are held selections of complete pair-cell support, maps are total single-valued relations, sequences retain generated order, and general laws close by structural One/base-successor induction.
+- **Unique survivor:** The discrete kernel is complete unique canonical collections with retained membership, pair-cell-selected relations, total single-valued maps, held sequence order, One/base-successor induction and no extra constructor.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-COUNT-001 -> SFT-FOUNDATION-FORM-GRAMMAR-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-EXACT-ARITHMETIC-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no completed infinite set; no ungenerated universal collection; no semantic numerical zero for the empty selection; no presentation alias may replace canonical form identity.
+- **Certificates:** derivation `sha256:1d3b73c941e235c5ffe473ccafa9cd59b800ddd33d43e4feea7a6821ed8f45c9`; independent `sha256:2f9da4efdc67b6f08074be8d3ddc47595444a9300fd00e507fb04c228686f44b`; empirical `sha256:5dad446dc09d74caf9325f27b314d7f886275164df426cd561a687d9283cd109`; engine receipt `sha256:632de46c995329ed86f8397e8cf2cc493d5074027941a50069df66b4ac9e29bb`.
+
+#### `SFT-MATH-OBL-BASE-003` - Exact finite combinatorial generation
+
+- **Claim:** `SFT-MATH-COMBINATORICS-001` - Exact finite combinatorial generation.
+- **Forced law:** Every admitted finite combinatorial family is generated by an explicit held-choice recurrence over a complete canonical carrier, preserves construction order and provenance, removes duplicates only by canonical form identity, and counts the resulting complete trace; selections include the structural empty One form rather than numerical zero.
+- **Unique survivor:** The combinatorial kernel is complete canonical carrier generation by held-choice recurrence with complete choice provenance, canonical deduplication, witnessed symmetry, disjoint class accounting, successor generality and no imported formula.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-FOLD-ASSEMBLY-001 -> SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DISCRETE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no random sampling as completeness evidence; no factorial or binomial answer table; no negative inclusion-exclusion proof value; no completed infinite combinatorial family.
+- **Certificates:** derivation `sha256:3177572ea372062f65a7969fdf4e498c86c9af558e37c048165e1d950cf1d942`; independent `sha256:ea22b95c87c9f336726c9df87d1e88fb38b1ad27519789c334a5052f5f864ae6`; empirical `sha256:dbfc2711bbabde9be3bf4a4cc3c5de3cd62440c9fbeea20b2fceed6dcfb1275b`; engine receipt `sha256:52e1db94bb7865270bb3387c47c609c438de3338b542cc31d910b981e4250968`.
+
+#### `SFT-MATH-OBL-BASE-004` - Exact finite graph and network structure
+
+- **Claim:** `SFT-MATH-GRAPH-NETWORK-001` - Exact finite graph and network structure.
+- **Forced law:** Every admitted finite graph is a complete canonical node collection plus a held selection of generated ordered node-pair relations; paths retain every adjacent transition, reachability is a complete finite path witness, cycles retain return, trees are connected cycle-free forms, cuts are exact crossing-edge selections, and internal network conservation is complete ingress/egress pairing.
+- **Unique survivor:** The graph/network kernel is complete canonical nodes with held ordered pair-cell edges, complete adjacent paths, witnessed reachability and return, held crossing cuts, ingress/egress pairing and no extra rule.
+- **Enumeration and falsification:** 512 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-FORM-GRAMMAR-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-DISCRETE-001 -> SFT-MATH-COMBINATORICS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no ungenerated vertex or edge; no negative edge or flow quantity; no stochastic graph law; no infinite graph as a completed object.
+- **Certificates:** derivation `sha256:f1f74c52072189f08134293f1f55aaff63aeb73fc045d79ac09a9372554c7ad9`; independent `sha256:531d0c9a5ec7a97b8e97c4a1664d67af65d7fab17127bcf042e76a86386a9210`; empirical `sha256:9f9e2483be55ff773cf570f6fc3aee074f68f44fde118492f152023767fef5c8`; engine receipt `sha256:b4072f93147c8cd9b7233fc96cfeadeb791210239ab4e4ff7dec0ed7462e6d2a`.
+
+#### `SFT-MATH-OBL-BASE-005` - Generated finite algebraic structures
+
+- **Claim:** `SFT-MATH-ALGEBRA-001` - Generated finite algebraic structures.
+- **Forced law:** An admitted finite algebraic structure is a complete canonical carrier with a complete, single-valued, closed pair-cell operation relation. Identity, associative composition, reversible return mates, commutation, substructure and structure-preserving maps are admitted exactly when their exhaustive carrier witnesses pass; none is installed as an ungenerated axiom.
+- **Unique survivor:** The algebraic kernel is a complete canonical carrier and complete closed single-valued operation table, with identity, association, returns, special properties and maps admitted only by exhaustive witnesses.
+- **Enumeration and falsification:** 512 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DISCRETE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no imported group, ring or field axioms; no negative or irrational carrier requirement; no property inferred from a conventional name; no completed infinite carrier.
+- **Certificates:** derivation `sha256:ae92defb9a52942af89734332b791cb1921ae655499b56e808a6250f539d6396`; independent `sha256:b41bcba0ab04cfad3eb95cd55ae4286b9ea1c52748ae444b33e2330ec7b52bf4`; empirical `sha256:5443f0a807dfeff488bfd29b7059fbbd086799f212e974d12867670b9f644654`; engine receipt `sha256:1f08bfaf9f602a3825dc75979070e05f9d51a7d01cdf3c34bab31c06849855bd`.
+
+#### `SFT-MATH-OBL-BASE-006` - Exact finite order and conditional lattice structure
+
+- **Claim:** `SFT-MATH-ORDER-LATTICE-001` - Exact finite order and conditional lattice structure.
+- **Forced law:** An admitted finite order is a held carrier relation whose reflexive, antisymmetric and transitive cells are exhaustively witnessed. Totality is admitted only when every generated pair is comparable. Lower and upper bounds are complete relation selections; meet and join exist only as unique greatest-lower and least-upper witnesses, and monotone maps preserve every retained comparison.
+- **Unique survivor:** The order/lattice kernel is a canonical carrier with an exhaustively witnessed partial-order relation, conditional totality, complete bound selections, uniquely witnessed meet/join and monotone maps.
+- **Enumeration and falsification:** 512 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DISCRETE-001 -> SFT-MATH-ALGEBRA-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no imported real-number line; no assumed total order; no lattice completeness without generated meets and joins; no completed infinite chain.
+- **Certificates:** derivation `sha256:d4421e8aaf34c239bda0fcacfe2a6aa770fac55ec3afe50c0ba5085d83946527`; independent `sha256:f1b8cbb06e153828d4410413baf3b6af6f075df5a5f3f297a1f6dee4d1c51bce`; empirical `sha256:f2b2f4bbab7729985711dbdff1cbc25cd7d16f0423a9752f8abdba8caebdd136`; engine receipt `sha256:d0e20f40782f51cc85c1f572b624570e65b51bbb80135a5e8a6b3cf69f71a5f6`.
+
+#### `SFT-MATH-OBL-BASE-007` - Exact finite geometry and topology for computation
+
+- **Claim:** `SFT-MATH-GEOMETRY-TOPOLOGY-001` - Exact finite geometry and topology for computation.
+- **Forced law:** Computational geometry is forced as canonical finite cells plus an acyclic held boundary-incidence relation; dimension is retained boundary depth, adjacency is shared incidence, and distance is a shortest generated path with self-distance represented by empty One rather than numerical zero. Computational topology is a complete generated open-family closed under generated joins and pairwise intersections; continuity is exact inverse-image preservation.
+- **Unique survivor:** The geometry/topology kernel is finite canonical cells with held acyclic incidence, boundary-depth dimension, shared-face adjacency, exact shortest paths, closed finite open families, inverse-image continuity and reversible incidence-preserving deformation.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-PART-001 -> SFT-MATH-GRAPH-NETWORK-001 -> SFT-MATH-ORDER-LATTICE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no ungenerated continuum; no irrational or floating proof coordinate; no free metric threshold; no completed infinite topological family.
+- **Certificates:** derivation `sha256:7afff182127d9b93f9705212b997801eafd5a3629fd2a8a56753ce674832d0ad`; independent `sha256:8b8595f6ef14fa36929ff546752015da701e4a49af5213d54f0f6a1d4559ce68`; empirical `sha256:35658ed3991ba98df705a53a75bacc5c7e813bde5f0505e5d20b549ed8cf3dd5`; engine receipt `sha256:a04f7de0ede6e2348896cf16e59981eebb5391198e498a1ec546b68a4a8d3a6e`.
+
+#### `SFT-MATH-OBL-BASE-008` - Exact finite probability and statistics from Fold observation
+
+- **Claim:** `SFT-MATH-PROBABILITY-STATISTICS-001` - Exact finite probability and statistics from Fold observation.
+- **Forced law:** Probability is an exact held-support/whole-support part relation over a complete deterministic generated microstate support; uncertainty records distinctions closed by an observation class and is not a causal random premise. Conditional weight is exact common-refinement restriction, independence is complete pair-cell factorization, and statistics are provenance-retaining finite trace summaries. The empty event is empty One, never numerical zero.
+- **Unique survivor:** The probability/statistics kernel is complete deterministic support, held events, exact held/whole weights, observation-class uncertainty, common-refinement conditioning, pair-cell independence, transparent finite summaries and post-seal empirical checking without random parameters.
+- **Enumeration and falsification:** 512 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-PART-EQUIVALENCE-001 -> SFT-FOUNDATION-MEASURED-VALUE-BOUNDARY-001 -> SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-COMBINATORICS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no ontic stochastic premise; no floating probability in proof evidence; no Bayesian or distributional prior parameter; no target data may select a formal law.
+- **Certificates:** derivation `sha256:9ad2c0aa860b03d0fe11c390e7e1fada396f48565fd89d055f06fec28b32ed67`; independent `sha256:d80527e03481be10b16d4765742d717ebcefaa9f1830e2c1c37d6e40869a62e9`; empirical `sha256:39850e79359dbd3ae8e41fe032474bcf197212f6ac0214cdfd90605919561761`; engine receipt `sha256:2a86d644881cdacb757327d5aaca01de41c3458c043980c66a16f5084cdfb45b`.
+
+#### `SFT-MATH-OBL-BASE-009` - Exact finite optimization and retained optima
+
+- **Claim:** `SFT-MATH-OPTIMIZATION-001` - Exact finite optimization and retained optima.
+- **Forced law:** An admitted optimization problem is a complete canonical candidate carrier, a source-bound exact feasibility relation and a witnessed preference relation. Solutions are the complete undominated held selection; uniqueness is claimed only for a singleton, while ties and incomparable Pareto alternatives remain explicit. Constraints, decomposition and approximation are exact trace relations without floating objectives, negative penalties or free tuning parameters.
+- **Unique survivor:** The optimization kernel is complete canonical candidates, source-bound feasibility, exact preference, complete undominated selection, retained ties, exact constraints and interfaces, and positive-part bounds without an added objective.
+- **Enumeration and falsification:** 512 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-GRAPH-NETWORK-001 -> SFT-MATH-ORDER-LATTICE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no floating objective or tolerance; no negative penalty term; no tunable regularizer or tie-break parameter; no unenumerated candidate domain.
+- **Certificates:** derivation `sha256:11d1d87d66d732bca3efc296de283e8e5e11ed9d291dd083c10f86d6801277e9`; independent `sha256:9cb0790543dac4fb7c8ff8bce76f783ccb1c96e84176f8cf59c203060920bfa4`; empirical `sha256:7f6345c8109261bf2f63108a2613767ff27fae5f9d411bace11a33cc9046ddb3`; engine receipt `sha256:3385414ceea0fd4212111e42bd6ce7d6d35556b7c97d66563813d5b8d1531849`.
+
+#### `SFT-MATH-OBL-BASE-010` - Exact generated finite dynamical systems
+
+- **Claim:** `SFT-MATH-DYNAMICAL-SYSTEMS-001` - Exact generated finite dynamical systems.
+- **Forced law:** An admitted dynamical system is a complete canonical state carrier with a held transition relation. A trajectory retains every state and transition; time is the positive transition trace and the identity trajectory is empty One. Fixed forms, returns, recurrence, basins, reversibility and stability are admitted only through exhaustive generated witnesses. Merged predecessors remain recoverable only when their exact records are retained.
+- **Unique survivor:** The dynamical kernel is complete canonical states, held transitions, complete trajectories, transition-count time, witnessed fixed/return/basin structure, retained-record reversibility and registered perturbation stability.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-GRAPH-NETWORK-001 -> SFT-MATH-OPTIMIZATION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no continuous real time premise; no differential equation imported as a law; no stochastic transition cause; no unrecorded predecessor reconstruction.
+- **Certificates:** derivation `sha256:972a41752e953bd0b4d12f5c3c7d8e68c2aa2107a5aacaf9e330a2278b1a3a51`; independent `sha256:c8e806f9f4e6b74927f0bfe79e2c5b4351113323176e59ecde786d4121290172`; empirical `sha256:f93adcb26bb1c7baeec979059b40325d370b5f2f3d5f50cd6885a5159b10362f`; engine receipt `sha256:3e0e44b65fbe660fe2a29b9927b1870a40da25c4b0c786e2adaa3df9a2f7cabe`.
+
+#### `SFT-MATH-OBL-BASE-011` - Exact finite logic, inference and proof boundaries
+
+- **Claim:** `SFT-MATH-LOGIC-PROOF-001` - Exact finite logic, inference and proof boundaries.
+- **Forced law:** An admitted proposition is a canonical distinguished form with a held orientation; denial is the retained complementary orientation, not a negative number. Conjunction retains joint proofs, disjunction retains a chosen generated branch and its alternatives, implication is a registered premise-to-conclusion transition, and a proof is a complete dependency trace of accepted rules. Consistency, soundness and completeness are machine-checkable only relative to the exact registered finite grammar and rule set.
+- **Unique survivor:** The logic/proof kernel is canonical distinguished propositions, complementary held denial, joint and held alternative proof forms, proof-carrying implication, complete inference traces, explicit consistency and soundness, and completeness only over the exhausted registered grammar.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-FOUNDATION-MEASURED-VALUE-BOUNDARY-001 -> SFT-MATH-DISCRETE-001 -> SFT-MATH-ORDER-LATTICE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no imported truth-value arithmetic; no negative truth magnitude; no authority-based proof admission; no global completeness beyond a generated grammar.
+- **Certificates:** derivation `sha256:849294dd48e23a2aefd379804094c01132234adad33b937a3164b3c73f8230bf`; independent `sha256:dfeb338769fcf4b551277891fd7c5576f15ce79e533addbb15e6e4eed87a288a`; empirical `sha256:d3cc342c7a7bf4b50450ae303b15dd250328f761236f869150456ba1550c3cb9`; engine receipt `sha256:3d366d57b26d002cb27a16e74b022a0856e133c616b7da6a83233c84bdd50813`.
+
+#### `SFT-MATH-OBL-BASE-012` - Forced category, type and compositional structure
+
+- **Claim:** `SFT-MATH-CATEGORY-TYPE-COMPOSITION-001` - Forced category, type and compositional structure.
+- **Forced law:** Canonical Fold forms act as objects and proof-carrying transitions as arrows. Identity is the empty-One return, composition is forced exactly by equal interfaces, and association follows from canonical complete path flattening. Types are source-bound predicates over generated carriers; products are complete joint pair support and sums retain held alternative labels. Functors preserve interfaces, identity and composition, while naturality is equality of the two complete composite traces.
+- **Unique survivor:** The compositional kernel is canonical Fold objects, proof-carrying arrows, empty-One identity, exact-interface composition, path-flattening association, source-bound types, joint products, held sums, preserving functors and equal-path naturality.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-NETWORK-001 -> SFT-MATH-ALGEBRA-001 -> SFT-MATH-LOGIC-PROOF-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no imported category axioms; no ungenerated universe of all objects; no impredicative type constructor; no universal property without an exhaustive finite witness.
+- **Certificates:** derivation `sha256:756d7d6dce776fc1fb4b3906e2203e4e2da4e1ded6cf733eb041334eb7cb5c02`; independent `sha256:1d380a6b0d0ce9d32cfdff52fae121315257e3e561da9379ab5509c835680dad`; empirical `sha256:fc7b4ce671b53f4d62da07705c4fc5d92b0195d5218a30f2a40a773a2fb7c981`; engine receipt `sha256:47873a83a90e29fa22d065ff13aa0152edb6212414e35cc0435e8eff2c9ea5a8`.
+
+#### `SFT-MATH-OBL-BASE-013` - Exact ratio, separation, reciprocal, threshold and cycle composition
+
+- **Claim:** `SFT-MATH-EXACT-RELATIONS-002` - Exact ratio, separation, reciprocal, threshold and cycle composition.
+- **Forced law:** Exact generated relations force positive ratios, shorter-part separation, reciprocal return to the One, the unique m-fold holding complement, local Fold separation transport, telescoping relative views, and least-common-return composition for every supplied finite family of exact cycles.
+- **Unique survivor:** The unique exact relation kernel is generated-part ratio, held shorter separation, unique complement threshold, Fold-factor transport and least-common-return composition with finite-family induction.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DYNAMICAL-SYSTEMS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:516d208341bde6e161b32070c8051f089f2d0f11ccc3748c75680c6c4e4d1dc6`; independent `sha256:2ac8d699989a021d04fe3f921d3858795423d28863d83fcfb06542408a254a36`; empirical `None`; engine receipt `sha256:8141546a120b73aa7cac0cd843728bdf3122d1bf3c0048c132760c82fd103238`.
+
+#### `SFT-MATH-OBL-BASE-014` - Fold orbit number theory and exact prime-spectrum structure
+
+- **Claim:** `SFT-MATH-ORBIT-NUMBER-THEORY-002` - Fold orbit number theory and exact prime-spectrum structure.
+- **Forced law:** For every reduced part over an odd positive finite denominator, Fold orbit length is exactly the multiplicative order of the binary generator; reduced residues partition into equal cyclotomic orbits, prime periods divide one-less-than-prime, and a power-of-two factor supplies exactly its counted transient depth.
+- **Unique survivor:** Fold return and binary multiplicative order are one exact remainder identity; odd reduced residues tile into cyclotomic orbits and each binary denominator factor contributes one transient Fold.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DYNAMICAL-SYSTEMS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:8c00984dae257d972ebc6ed4e059a3c958f43e2c29b39f9775f78883dd376086`; independent `sha256:b47923bcf2b3c784ecd0689286d35a111a91faa6f86ec1c1c8971414772bcc6d`; empirical `None`; engine receipt `sha256:8725bce36fe77923288b99b1a978ef3bf84cac9ffe1b172fd67bd221527d19ff`.
+
+#### `SFT-MATH-OBL-BASE-015` - Potential infinity, exact refinement and the continuum boundary
+
+- **Claim:** `SFT-MATH-LIMIT-CONTINUUM-002` - Potential infinity, exact refinement and the continuum boundary.
+- **Forced law:** Every generated rung is a finite exact positive part with a counted successor; refinement can continue without a greatest finite depth, exact rational sequences can carry monotone bounds and convergence certificates, and no completed infinity, unbounded denominator or continuum is admitted as a proof object.
+- **Unique survivor:** Potential infinity is the never-terminal generated successor process; every reached object is finite and positive, convergence is an exact nested-bound certificate, and completed infinity or continuum is outside the admitted object language.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-ORDER-LATTICE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:b4d6ada858b868c1e51dbc259fafd1672b962526efc836f55e2d8e4958729e94`; independent `sha256:cd1fbdbe8cc78f9e9a0ef75dc32657fab1b1173c5a44cb9c1e871dfd05321f3c`; empirical `None`; engine receipt `sha256:a32c6d6ee891f97acadd53cbec922bbcad5a6ad8a928264bb654b4caaf997098`.
+
+#### `SFT-MATH-OBL-BASE-016` - Positive polynomial-balance certificates for algebraic magnitudes
+
+- **Claim:** `SFT-MATH-ALGEBRAIC-BALANCE-002` - Positive polynomial-balance certificates for algebraic magnitudes.
+- **Forced law:** A magnitude not itself admitted as an irrational value may be identified by two positive-coefficient polynomial sides, an exact rational bracket in which their order swaps, and a generated bisection trace that narrows that bracket without ever importing the root as a proof value.
+- **Unique survivor:** The unique admitted algebraic-magnitude representation is a positive polynomial-balance identity with exact rational order-swap bracket and replayable bisection trace; the irrational root is never a proof value.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALGEBRA-001 -> SFT-MATH-ORDER-LATTICE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:5e3dbc95200564d41c0418f508c6fb35eaadfd1a0077f49a9faae4aa1eaeaf14`; independent `sha256:d309c7ff8f819486d4e24671c0e8a7587328436e35e6b0f0343f9d37b6618202`; empirical `None`; engine receipt `sha256:ba975fdfe0c8946cb713eabcd9f48e77284941ec08fc257b9d3bb614b701540d`.
+
+#### `SFT-MATH-OBL-BASE-017` - Exact recurrence of every finite componentwise Fold configuration
+
+- **Claim:** `SFT-MATH-BOUNDED-N-BODY-002` - Exact recurrence of every finite componentwise Fold configuration.
+- **Forced law:** Every supplied positive finite tuple of reduced rational Fold states has a finite exact joint support; after its transient binary depths, the componentwise Fold configuration recurs with period equal to the least common multiple of the odd-core component periods.
+- **Unique survivor:** All finite componentwise Fold tuples are eventually recurrent; their recurrent joint period is the iterated least common multiple of component odd-core periods.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-ORBIT-NUMBER-THEORY-002 -> SFT-MATH-EXACT-RELATIONS-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:847c6bb6921ac26739ce553890f204b1a5b39c3cd085a008554db882434fc93d`; independent `sha256:1d3d888f14db2f03b13c38a139422f63da47c5f5753dfd7483c543aec36280d3`; empirical `None`; engine receipt `sha256:e355bc5aa649df8fe2daf21a3e0ae56d5582680edd7f867a751bb954fca224a4`.
+
+#### `SFT-MATH-OBL-BASE-018` - Depth-independent discrete-gradient bound for floored Fold fluids
+
+- **Claim:** `SFT-MATH-FLOORED-FLUID-REGULARITY-002` - Depth-independent discrete-gradient bound for floored Fold fluids.
+- **Forced law:** At every supplied positive finite Fold depth k, an exact lattice with minimum spacing one-of-b^k and velocity separation at most the One has discrete gradient and vorticity magnitude bounded by b^k; at depth five the exact bound is thirty-two, so no finite-depth Fold-lattice blow-up is expressible.
+- **Unique survivor:** The native Fold-lattice gradient bound is b^k at depth k, attained by a One velocity gap across one minimum edge; the depth-five value is thirty-two and every finite-depth field remains bounded.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOMETRY-TOPOLOGY-001 -> SFT-MATH-LIMIT-CONTINUUM-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:18460e9edef12ead62e6409f1a92e8cc5a6e8dec68cde2e1c44e36aa76d20ff2`; independent `sha256:49330684436f47d6548aa71275bc43bef3c45ca37528b6d574ddf24fb4d430d2`; empirical `None`; engine receipt `sha256:6fb3f40f5631367f23bad6cda58c87b335d33fd212a7c9d37068d8b920ad65e0`.
+
+#### `SFT-MATH-OBL-BASE-019` - Exact bounded Goldbach and twin-prime census
+
+- **Claim:** `SFT-MATH-PRIME-PAIR-CENSUS-002` - Exact bounded Goldbach and twin-prime census.
+- **Forced law:** Exhaustive exact whole-number enumeration proves that every even whole from four through ten thousand has at least one prime complementary pair, that this range contains exactly four-thousand-nine-hundred-ninety-nine tested evens with no failure, and that exactly two-hundred-five twin-prime pairs have upper member at most ten thousand.
+- **Unique survivor:** The exhaustive 4..10,000 census contains 4,999 even inputs, zero Goldbach failures and exactly 205 twin-prime pairs with upper member at most 10,000.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-COMBINATORICS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:670c35bc2174d10dd88d35ee6892f424ce2a6c039ea35b2d1c22652511398f80`; independent `sha256:ef0331a6ee13bc25a810cc2bebef35fb073d1d91c695a60e6963b02fe9b1d572`; empirical `None`; engine receipt `sha256:52fcc090c336360dcdfd4b95919ffa5926d9d8fcd430ff6bb53d7d18cf5db1d6`.
+
+#### `SFT-MATH-OBL-BASE-020` - Unique half-One reflection axis and Riemann correspondence boundary
+
+- **Claim:** `SFT-MATH-RIEMANN-MIRROR-002` - Unique half-One reflection axis and Riemann correspondence boundary.
+- **Forced law:** The exact complement involution on positive parts has one and only one self-partner, the half-One; every other admitted part forms a distinct complementary pair. This forces the unique SFT reflection axis corresponding to the classical zeta functional equation's one-half symmetry, while complex zero location remains outside the no-imaginary proof language.
+- **Unique survivor:** Half-One is the unique fixed axis of exact complement; every other positive part is paired. This closes the SFT Riemann-mirroring claim and explicitly does not assert classical complex zero location.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-RELATIONS-002 -> SFT-FOUNDATION-HALF-ONE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:100e6f21f2a33c3c374d80f8d96672c9351cf1678caed4084e3535e6c0b3d89a`; independent `sha256:e66aa5200f0ef07b92629cd5e0b9b18c210ab9b371a1522e100ed681e7200870`; empirical `None`; engine receipt `sha256:27847629dbd2fb1d1c2f14d05017f8fb9395482d6e6ca001a24622e55364dfc4`.
+
+#### `SFT-MATH-OBL-BASE-021` - Exact bounded Collatz census and contraction-control correction
+
+- **Claim:** `SFT-MATH-COLLATZ-FINITE-CENSUS-002` - Exact bounded Collatz census and contraction-control correction.
+- **Forced law:** Every positive whole start from the One through one-hundred-thousand reaches the 1-4-2 cycle under the declared Collatz transition; start twenty-seven takes exactly one-hundred-eleven steps. The exact census also rejects the prior constant-three-quarter pointwise contraction shortcut: a lawful odd macrostep may rise, so only the bounded execution result is admitted.
+- **Unique survivor:** The complete starts 1..100,000 census has zero failures, start 27 takes 111 steps, the terminal cycle is 1-4-2, and the constant-3/4 pointwise contraction premise is rejected.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DYNAMICAL-SYSTEMS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:e57a27f1b95bade1301c14d5bfc05434c7c63751e8d32cf64aad2e29f8958be8`; independent `sha256:83e49654996c1fc161e8b8d3abfe7e78342759ed823d227809aa1f80e9034eda`; empirical `None`; engine receipt `sha256:3bb3a9fe4790150369defc5b2dc8568fed100b688dbb6a9c1d5cbd40c4f9a045`.
+
+#### `SFT-MATH-OBL-BASE-022` - Exact self-similarity, chaotic rate and convergent-series laws
+
+- **Claim:** `SFT-MATH-SELF-SIMILAR-CONVERGENCE-002` - Exact self-similarity, chaotic rate and convergent-series laws.
+- **Forced law:** Fold forces binary local separation expansion, one closed distinction per step, the unique unit exponent under rank doubling, exact m^d support growth, and rational convergence certificates whose tails shrink by a generated factor without importing logarithms or irrational limit values.
+- **Unique survivor:** The exact Fold rate is binary separation expansion and one closed label per step; unit rank power is the unique Fold-self-similar exponent, m-labelled support is m^d, and decreasing rational terms close convergence without importing their limit as a value.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-RELATIONS-002 -> SFT-MATH-LIMIT-CONTINUUM-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero is not an admitted value; negative magnitude is represented only by held orientation; irrational, imaginary and floating proof values are excluded; a completed infinity and an ungenerated continuum are excluded.
+- **Certificates:** derivation `sha256:3b5b67ae9a24eac5e74f0b60feb92e8f66224134eb397f911876b3e37eec91d1`; independent `sha256:ace930a00105674c923aa54768e10d198ce879d8b3cf8828c92b2eb5bd27363d`; empirical `None`; engine receipt `sha256:0abf8d557108f37f4d9cfe735db3fd6e0d79a3d9405129f0a40ae86fb606d5b1`.
+
+#### `SFT-MATH-OBL-BASE-023` - Exact traced SFT-native scientific calculator
+
+- **Claim:** `SFT-MATH-SCIENTIFIC-CALCULATOR-003` - Exact traced SFT-native scientific calculator.
+- **Forced law:** A scientific-calculator interface is admitted in SFT only when every entered decimal is translated character-by-character to an exact rational part, displayed zero is structural empty-One, subtraction uses held orientation, all algebraic and transcendental non-rational results remain exact rational enclosures with replayable bounds, orthogonal values remain typed Fold fibres, every operation is traced, and every undefined or uncertified operation halts.
+- **Unique survivor:** The unique admitted calculator semantics uses exact character-generated rational parts, structural empty-One, held orientation, generated exact kernels, certified rational enclosures, finite rational recurrences with explicit remainder bounds, typed orthogonal fibres, mandatory domain halts, complete proof/resource traces and no extra rule.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-COMBINATORICS-001 -> SFT-MATH-ALGEBRAIC-BALANCE-002 -> SFT-MATH-LIMIT-CONTINUUM-002 -> SFT-MATH-DYNAMICAL-SYSTEMS-001 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-CATEGORY-TYPE-COMPOSITION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero, NaN and infinity are not admitted values; negative, irrational and imaginary scalars are replaced by typed Fold structures; binary floating-point and opaque host-library answers are excluded from proof; uncertified roots, series, singularities and exhausted resource bounds halt; decimal projections are correspondence displays only.
+- **Certificates:** derivation `sha256:8c6a64e9113e32d23e6bf5c08a1fad24692788433b322c7d4b55f7828f81ee18`; independent `sha256:f26d7f99675fa8d4bd035214d0817ca65309d23fe4d4bb53b71b907fa9a46b22`; empirical `None`; engine receipt `sha256:f95ac235ac96429b36b10e8331478f110ed074e98a338c6f015d3f8874dc787c`.
+
+#### `SFT-MATH-OBL-BASE-024` - Exact traced SFT-native scientific calculator with corrected enclosure parity
+
+- **Claim:** `SFT-MATH-SCIENTIFIC-CALCULATOR-004` - Exact traced SFT-native scientific calculator with corrected enclosure parity.
+- **Forced law:** A scientific-calculator interface is admitted in SFT only when every entered decimal is translated character-by-character to an exact rational part, displayed zero is structural empty-One, subtraction uses held orientation, all algebraic and transcendental non-rational results remain exact rational enclosures with replayable bounds, orthogonal values remain typed Fold fibres, every operation is traced, and every undefined or uncertified operation halts.
+- **Unique survivor:** The unique admitted calculator semantics uses exact character-generated rational parts, structural empty-One, held orientation, generated exact kernels, certified rational enclosures, finite rational recurrences with explicit remainder bounds, typed orthogonal fibres, mandatory domain halts, complete proof/resource traces and no extra rule.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-COMBINATORICS-001 -> SFT-MATH-ALGEBRAIC-BALANCE-002 -> SFT-MATH-LIMIT-CONTINUUM-002 -> SFT-MATH-DYNAMICAL-SYSTEMS-001 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-CATEGORY-TYPE-COMPOSITION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero, NaN and infinity are not admitted values; negative, irrational and imaginary scalars are replaced by typed Fold structures; binary floating-point and opaque host-library answers are excluded from proof; uncertified roots, series, singularities and exhausted resource bounds halt; decimal projections are correspondence displays only.
+- **Certificates:** derivation `sha256:4fea624cffb8780f8e96d0a85eccb81c8fb609c1e712983a339a6f3f9b57d0d9`; independent `sha256:500be40f0488c5003ebf92841385cec6f50ef8405b48e0d02288c7d7726f56c9`; empirical `None`; engine receipt `sha256:2d243dbd08260c483e79009067051239f1304ad3998006c1ff82c301062ba28b`.
+
+#### `SFT-MATH-OBL-BASE-025` - Complete exact SFT scientific calculator and cross-platform learning app
+
+- **Claim:** `SFT-MATH-SCIENTIFIC-CALCULATOR-005` - Complete exact SFT scientific calculator and cross-platform learning app.
+- **Forced law:** The admitted exact calculator core extends uniquely to the declared mainstream scientific-calculator surface: terminal equals execution; editable expressions; exact and certified general powers, roots, logarithmic, exponential, trigonometric, inverse-trigonometric, hyperbolic, combinatorial and statistical operations; radian, degree and gradian modes; retained answer, memory and history; and one cross-platform desktop application exposing decimal projection, exact evidence, proof trace and SFT learning guidance. No interface action may bypass the same exact fail-closed evaluator.
+- **Unique survivor:** The unique expanded calculator is the exact core plus the complete declared scientific-function surface, terminal equals/Ans/memory/history state, RAD/DEG/GRAD translation, and one cross-platform desktop app whose buttons and keyboard invoke only the same fail-closed evaluator. Every exact result retains its Fold type; every non-rational result remains a certified rational enclosure; decimal output is display only.
+- **Enumeration and falsification:** 8,192 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-COMBINATORICS-001 -> SFT-MATH-ALGEBRAIC-BALANCE-002 -> SFT-MATH-LIMIT-CONTINUUM-002 -> SFT-MATH-DYNAMICAL-SYSTEMS-001 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-CATEGORY-TYPE-COMPOSITION-001 -> SFT-MATH-SCIENTIFIC-CALCULATOR-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: semantic numerical zero, NaN and infinity are not admitted values; negative, irrational and imaginary scalars are replaced by typed Fold structures; binary floating-point and opaque host-library answers are excluded from proof; uncertified roots, series, singularities and exhausted resource bounds halt; decimal projections are correspondence displays only; no GUI button, memory action, angle mode or display conversion may bypass the exact evaluator; no host random generator, floating transcendental library, silent complex promotion or hidden calculator state; no claim to functions outside the explicit feature manifest without a new versioned extension.
+- **Certificates:** derivation `sha256:2fd07cdc7dc1f857c209c3814c709f68ab21def91f3dee750f097614add757d9`; independent `sha256:1e9b190d79b01ebaa1a13c76556fd3d0ad80e9bac8e7cf65570bd0e1e07b1db2`; empirical `None`; engine receipt `sha256:75b0b5df0397c0aeaba035272561fd0e62949b0ef75580a153c8a109e84a06bb`.
+
+#### `SFT-MATH-OBL-BASE-026` - Fully realised SFT scientific calculator and complete Mathematics law explorer
+
+- **Claim:** `SFT-MATH-SCIENTIFIC-CALCULATOR-006` - Fully realised SFT scientific calculator and complete Mathematics law explorer.
+- **Forced law:** The admitted exact calculator extends uniquely to a familiar, progressively disclosed and cross-platform application that evaluates the complete declared scientific expression language, exposes every currently registered predecessor Mathematics family, emits engine-comparable but explicitly non-admission proof output, halts at every exact value/domain/resource boundary, and is completely statement-and-branch tested.
+- **Unique survivor:** The unique completion is the familiar cross-platform app whose ordinary input invokes only exact SFT runtime types; whose advanced view exposes the complete current Mathematics census and engine-comparable proof; whose large circular inputs are certified by whole-turn reduction; and whose declared active implementation records no missing statement or branch.
+- **Enumeration and falsification:** 1,024 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-MATH-DISCRETE-001 -> SFT-MATH-COMBINATORICS-001 -> SFT-MATH-GRAPH-NETWORK-001 -> SFT-MATH-ALGEBRA-001 -> SFT-MATH-ORDER-LATTICE-001 -> SFT-MATH-GEOMETRY-TOPOLOGY-001 -> SFT-MATH-PROBABILITY-STATISTICS-001 -> SFT-MATH-OPTIMIZATION-001 -> SFT-MATH-DYNAMICAL-SYSTEMS-001 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-CATEGORY-TYPE-COMPOSITION-001 -> SFT-MATH-EXACT-RELATIONS-002 -> SFT-MATH-ORBIT-NUMBER-THEORY-002 -> SFT-MATH-LIMIT-CONTINUUM-002 -> SFT-MATH-ALGEBRAIC-BALANCE-002 -> SFT-MATH-BOUNDED-N-BODY-002 -> SFT-MATH-FLOORED-FLUID-REGULARITY-002 -> SFT-MATH-PRIME-PAIR-CENSUS-002 -> SFT-MATH-RIEMANN-MIRROR-002 -> SFT-MATH-COLLATZ-FINITE-CENSUS-002 -> SFT-MATH-SELF-SIMILAR-CONVERGENCE-002 -> SFT-MATH-SCIENTIFIC-CALCULATOR-004 -> SFT-MATH-SCIENTIFIC-CALCULATOR-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no numerical zero, negative magnitude, irrational scalar, imaginary scalar or floating proof value; no fitted scientific parameter, host transcendental answer, random oracle, NaN or infinity; no GUI or terminal path may bypass the exact evaluator; no calculator replay is labelled an admission receipt; no claim to future Mathematics families not present in the exact predecessor census; no proprietary calculator-specific surface is claimed beyond the declared expression language.
+- **Certificates:** derivation `sha256:e14a12e172dab6232491cb9591dc4b82928760b721e3a99aaabba68a2857b054`; independent `sha256:1a5a1a0a29eae41f6822d1f1184279361ad4058e9b1afdb83baa9089c6a3a62e`; empirical `None`; engine receipt `sha256:addeb561438c9913313824ba43eb8fceccb53c574f5a9853b3c9c1fac4e4e4b7`.
+
+#### `SFT-MATH-OBL-BASE-027` - Accessible SFT-native scientific calculator application
+
+- **Claim:** `SFT-MATH-SCIENTIFIC-CALCULATOR-007` - Accessible SFT-native scientific calculator application.
+- **Forced law:** The admitted exact calculator extends to one dependency-free standards-rendered application whose familiar calculator notation never selects the mathematics: displayed zero retains empty-One semantics; negative-result attempts halt transactionally; certified intervals and orthogonal fibres remain typed exact objects; every page has an independent session; the conventional standard pad remains structurally coherent; scientific functions are progressively disclosed; and the same application is reachable on macOS, Windows, Linux and same-network phones.
+- **Unique survivor:** The unique completion is a familiar calculator-first local web application with a coherent standard pad, optional scientific and proof panels, fresh per-page state, same-network default access and one immutable exact SFT evaluation route.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `independently_replicated`.
+- **Root lineage:** `SFT-MATH-SCIENTIFIC-CALCULATOR-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** the preserved foundational package carries its versioned external-validation identity; no later target was imported into its historical source manifest.
+- **Sources and boundaries:** registered internal exact observation corpus. Exclusions: no edit to the frozen engine or immutable claim-006 source; no browser-side arithmetic or alternate evaluator; no displayed negative, irrational scalar, imaginary scalar, NaN or infinity; no counter-held result retained in answer, memory or history; no shared landing-state contamination between page sessions; no automatic expression focus on a touch-width calculator; no heavy GUI framework, container or network service beyond the user's local network.
+- **Certificates:** derivation `sha256:fdb9d7eb5203c03e24df26187742b0650bfef090233f9f4fcbd46331a29b2fa6`; independent `sha256:9576ee0eee57fe8d2ab6e7245012100ddfbbb25d4eefe3b1b3cd761952fa80fb`; empirical `None`; engine receipt `sha256:feeb1879d97191edc8827be6da5421a2c78aba56ba2d3e0fe5dbf0882aac9867`.
+
+### 40.4 Family `ARITH` - 18/18 complete
+
+This family contributes 4,608 completely decided candidates, 18 unique survivors and 72 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-ARITH-001` - Generated whole succession and exact induction
+
+- **Claim:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001` - Generated whole succession and exact induction.
+- **Forced law:** Every generated whole is a finite counted trace beginning at the One; adjoining one complete new unit is the unique successor and preserves exact induction.
+- **Unique survivor:** ARITH-001 uniquely retains generated-one-successor-trace with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-001: successor; exact observation: [1,2,3,4,5,6,7,8]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e5137a26ec62099fffe783b950bd43a0440b99cd63c208abd2912f18b857b4d4`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:d3291e5807001f8a01f8b19f4a09dff9ae1e18ed782d85dd690c55d2a0e007a1`; engine receipt `sha256:d3229eb70862bcc3a5d03f42c9abfc650ab90781d45fc2d5090abf8322d2ca08`.
+
+#### `SFT-MATH-OBL-ARITH-002` - Addition and disjoint-junction arithmetic
+
+- **Claim:** `SFT-MATH-ARITH-JUNCTION-ADDITION-002` - Addition and disjoint-junction arithmetic.
+- **Forced law:** Addition is the complete junction of two held-disjoint generated traces, with every source unit retained exactly once.
+- **Unique survivor:** ARITH-002 uniquely retains complete-disjoint-junction with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-GENERATED-SUCCESSION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-002: junction; exact observation: {"left":3,"right":5,"whole":8}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4ffd74e6676430a4c3c039d2a0c0b706ad4b810be8f486212f54bc33f85a11cc`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:b1027c7eaea0f8db1fe062f008a04b1e98ddb61fdf311717d93bdc2fa34997e9`; engine receipt `sha256:ecbb32a37fb10022315429bb39d88f49437fc856396d0b8db42fca49b2032493`.
+
+#### `SFT-MATH-OBL-ARITH-003` - Multiplication and complete pair-cell arithmetic
+
+- **Claim:** `SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003` - Multiplication and complete pair-cell arithmetic.
+- **Forced law:** Multiplication is the complete product of every unit of one generated trace with every unit of the other, producing one pair cell per ordered incidence.
+- **Unique survivor:** ARITH-003 uniquely retains complete-pair-cell-product with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-003: pair_cells; exact observation: {"cells":12,"columns":4,"rows":3}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f02cbeef4cb6ef18af4d1f5a8dad8709ffa696231ab05092bf60c7fc1a2c29b5`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:556adfc964a4cec9c3db61903a2bedf75c78b71812540c77fb263d8e14fd9965`; engine receipt `sha256:e25cde93469d6d813be366bc228e55cb13e704a965e60711ab396c6f7a36f476`.
+
+#### `SFT-MATH-OBL-ARITH-004` - Divisibility, common divisors and common multiples
+
+- **Claim:** `SFT-MATH-ARITH-DIVISIBILITY-GCD-LCM-004` - Divisibility, common divisors and common multiples.
+- **Forced law:** Divisibility is exact complete grouping; greatest common grouping and least common return are forced by exhaustive positive divisor and multiple ledgers.
+- **Unique survivor:** ARITH-004 uniquely retains complete-divisor-common-return-ledger with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-004: common_structure; exact observation: {"gcd_18_24":6,"lcm_18_24":72}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:242eaa8be1c6ad19a2e95419505bd3536e46862466de72da225e749b84cabd85`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:8752fe2d56e45cd94c015b46d99d503411bfe33f5c020c2d4f580a3cac3afb3e`; engine receipt `sha256:e02b5bc7444746ceaf5a115853d012583abae63804f6531b39727fc504424e7e`.
+
+#### `SFT-MATH-OBL-ARITH-005` - Exact quotient and oriented remainder
+
+- **Claim:** `SFT-MATH-ARITH-QUOTIENT-REMAINDER-005` - Exact quotient and oriented remainder.
+- **Forced law:** Exact quotient is the maximal count of complete divisor groups, with any unmatched positive part retained as a held remainder and structural absence displayed by host 0 only.
+- **Unique survivor:** ARITH-005 uniquely retains maximal-complete-groups-held-remainder with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-DIVISIBILITY-GCD-LCM-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-005: quotient_remainder; exact observation: {"part":5,"quotient":3,"remainder":2,"whole":17}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ce3cadef25ffadd3d9bb765504c1effb735fd36fb3e304bdc242195ed65c862c`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:2b13431564a6cff71b9d362331053a4d6927e12f37db2c0644927f8bd2301820`; engine receipt `sha256:4b082b2a5fd4bed326e2ebaa180ff23aa3d7bcb0475947732bedf9d65f821af6`.
+
+#### `SFT-MATH-OBL-ARITH-006` - Prime and irreducible whole structure
+
+- **Claim:** `SFT-MATH-ARITH-PRIME-IRREDUCIBLE-006` - Prime and irreducible whole structure.
+- **Forced law:** A prime whole is exactly a generated whole above the One whose complete positive divisor ledger retains only the One and itself.
+- **Unique survivor:** ARITH-006 uniquely retains only-one-and-self-complete-divisors with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-QUOTIENT-REMAINDER-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-006: primes_through_30; exact observation: [2,3,5,7,11,13,17,19,23,29]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bfa9c3c6f6e17be8158753387137dc211af47e8419b959fcdc5d5841381988b1`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:cd82e1fdd851c2716987331f81e42ab87b2a6056561d30168ec8bfd94b761141`; engine receipt `sha256:d74f03c498a284dcb6a576786ce45a09c87dd921ac78db3ce71bcd54247bc018`.
+
+#### `SFT-MATH-OBL-ARITH-007` - Unique finite factorization certificate
+
+- **Claim:** `SFT-MATH-ARITH-UNIQUE-FACTORIZATION-007` - Unique finite factorization certificate.
+- **Forced law:** Repeated least complete divisor extraction forces a finite prime-factor trace whose product reconstructs the original whole; any distinct trace is eliminated by the first least-divisor disagreement.
+- **Unique survivor:** ARITH-007 uniquely retains least-divisor-prime-factor-trace with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-PRIME-IRREDUCIBLE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-007: factorizations_2_20; exact observation: {"10":[2,5],"11":[11],"12":[2,2,3],"13":[13],"14":[2,7],"15":[3,5],"16":[2,2,2,2],"17":[17],"18":[2,3,3],"19":[19],"2":[2],"20":[2,2,5],"3":[3],"4":[2,2],"5":[5],"6":[2,3],"7":[7],"8":[2,2,2],"9":[3,3]}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:67799fe8f79b955973a8d2eb3c26b026504328a73c03bbf72febf1a4982114b8`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:294512563c572bf4834ef96585bb0ec57a833c6d3278008adf496442d624afa6`; engine receipt `sha256:12882efe837fb967097e5f5540d48077cd12b48bb0c37662fbdd6e0052c797ac`.
+
+#### `SFT-MATH-OBL-ARITH-008` - Canonical exact fractions and common refinement
+
+- **Claim:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008` - Canonical exact fractions and common refinement.
+- **Forced law:** An exact fraction is a held part of a generated whole in lowest terms; equality and arithmetic are forced by common refinement and canonical reduction.
+- **Unique survivor:** ARITH-008 uniquely retains reduced-parts-common-refinement with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-UNIQUE-FACTORIZATION-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-008: fractions; exact observation: {"reduced_6_8":[3,4],"sum_1_3_1_4":[7,12]}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a9f1a0d04583152c75b6ec6276b0d5f6d9247117c76952d447c9429af9408c01`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:6527e06bb4a4287c6dfefc1a163c324e8e9bf0c6c75c3cef958ff2559842b31e`; engine receipt `sha256:45b93a4d1bb7a137599e21c74e7e9522054f6b741433365d957dd06fc703a3a1`.
+
+#### `SFT-MATH-OBL-ARITH-009` - Finite continued-fraction correspondence
+
+- **Claim:** `SFT-MATH-ARITH-CONTINUED-FRACTION-009` - Finite continued-fraction correspondence.
+- **Forced law:** Every supplied exact fraction has a finite quotient-remainder expansion; its coefficient trace reconstructs the same part without importing an irrational limit.
+- **Unique survivor:** ARITH-009 uniquely retains finite-quotient-remainder-expansion with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-009: continued_fraction_355_113; exact observation: [3,7,16]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2fba324171a5a5fa66783899a7e8f4aa2c7c8f975c4fb78cf2d0a7cf4f009cbb`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:194553afefe2203bc3a75c8b7615df4223999d6d54b16489ec07377efbd7ab98`; engine receipt `sha256:b18a07076f76362a892ce1ed995e8b67e1af5c41ecdde90b16ea34a35dfa886d`.
+
+#### `SFT-MATH-OBL-ARITH-010` - Residue classes and congruence
+
+- **Claim:** `SFT-MATH-ARITH-CONGRUENCE-010` - Residue classes and congruence.
+- **Forced law:** Two wholes are congruent at a generated modulus exactly when complete grouping leaves the same held remainder class.
+- **Unique survivor:** ARITH-010 uniquely retains same-held-remainder-class with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-CONTINUED-FRACTION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-010: residue_mod_5; exact observation: {"17":2,"18":3,"2":2}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f743ef14d4215122f5f65c2c32d2439647a222d44ba6a74ce336c5b4351144f2`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:7c0e40454c392c3b91ffac9cc4a59805a224b0151b779e6fdbf72260567110fb`; engine receipt `sha256:dfc025633b4bc068fab1d51dd8596eaf531d428a8b8d83d5c49b015b1311b62a`.
+
+#### `SFT-MATH-OBL-ARITH-011` - Compatible congruence composition
+
+- **Claim:** `SFT-MATH-ARITH-COMPATIBLE-CONGRUENCE-011` - Compatible congruence composition.
+- **Forced law:** A compatible finite family of congruence records forces one residue class over the least common return; incompatibility remains an explicit halt.
+- **Unique survivor:** ARITH-011 uniquely retains least-common-period-compatible-residue with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-CONGRUENCE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-011: compatible_congruence; exact observation: [23]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3c65c79f55fbecb36aba96a0a6dcec3020784315b34fb95ce45669a00785d233`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:115e6a0305cc20f054c011aed21ff8302c1e15c38e107f1f5481956ec180ac88`; engine receipt `sha256:f15dd91147438a821fcedb1cd0abcab032151e1393fea1766f02d97fe5d4d64f`.
+
+#### `SFT-MATH-OBL-ARITH-012` - Prime-power valuation and divisibility depth
+
+- **Claim:** `SFT-MATH-ARITH-VALUATION-012` - Prime-power valuation and divisibility depth.
+- **Forced law:** Prime-power valuation is the exact number of successive complete prime groupings before divisibility ceases, with no logarithm or continuum premise.
+- **Unique survivor:** ARITH-012 uniquely retains counted-prime-factor-depth with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-COMPATIBLE-CONGRUENCE-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-012: valuations; exact observation: {"v2_40":3,"v3_81":4}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:81a14c2fca1602fdae4a8b7ae95d639812887b471d16ec4b28a633bb4bbe21a2`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:842d1d86b7fead857e5744795de55a71f7237a77e6285c2e5ce26359f07925d0`; engine receipt `sha256:3f73120fde18553beedeec0de54e9ee4834b9eb9ebe19976ddb38b251d1bffac`.
+
+#### `SFT-MATH-OBL-ARITH-013` - Diophantine relation enumeration
+
+- **Claim:** `SFT-MATH-ARITH-DIOPHANTINE-ENUMERATION-013` - Diophantine relation enumeration.
+- **Forced law:** A Diophantine relation is closed only by a complete declared positive-whole candidate census, exact substitution and retention of every satisfying tuple.
+- **Unique survivor:** ARITH-013 uniquely retains complete-positive-whole-solution-census with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-VALUATION-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-013: diophantine; exact observation: {"positive_x_plus_y_8":7,"three_four_five":true}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:21f1cd588434c90fbc4b854759d3fcda183147d8d61b823eb259b94a15b0c38a`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:a4db244f6a7fd7cdc721b332be3b800ff720a5dabd2756a0479cf639c85f7bdf`; engine receipt `sha256:2a078b638cd00e98a59fb4ccd6a47e9b691c4a713710bdbb4112062441c41085`.
+
+#### `SFT-MATH-OBL-ARITH-014` - Recurrence laws and exact sequences
+
+- **Claim:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014` - Recurrence laws and exact sequences.
+- **Forced law:** An exact sequence is forced by a complete initial record plus one generated recurrence rule; each next term retains the entire prior dependency trace.
+- **Unique survivor:** ARITH-014 uniquely retains initial-record-rule-successor-sequence with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-DIOPHANTINE-ENUMERATION-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-014: recurrence; exact observation: [1,1,2,3,5,8,13,21,34,55]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:63cbd919dd71af239017beb4af757a841c56b69ba63a7e6c7b71969eddf83f77`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:730e7e284286b7ca41cc300415321a660c034d7b90dbbce8c01047f6993fcef0`; engine receipt `sha256:a8a9c91bf09055eafe7c8946783af33d8cbf408241c7a0cc65b022fc8a85393d`.
+
+#### `SFT-MATH-OBL-ARITH-015` - Finite generating-function correspondence
+
+- **Claim:** `SFT-MATH-ARITH-GENERATING-FUNCTION-015` - Finite generating-function correspondence.
+- **Forced law:** A generating expression is an exact finite support ledger whose product coefficients count complete compositional incidences; no infinite formal sum is admitted as an object.
+- **Unique survivor:** ARITH-015 uniquely retains coefficient-support-composition with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-015: geometric_pair_coefficients; exact observation: [1,2,3,4,5,6,7,8]; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b2e94f4ac6398ab601e78a9d206a58a9a7e495f9dc55400618f0f2cbee87a7e1`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:b244016840493249a89133375749ba8318ac1fdc5164e48bf8e3252136fe2c8f`; engine receipt `sha256:18143d49ddbc35dfaa29e6333b0529d9c93c269483c06206f79a2bd465d2bbfb`.
+
+#### `SFT-MATH-OBL-ARITH-016` - Whole partitions and ordered compositions
+
+- **Claim:** `SFT-MATH-ARITH-PARTITION-COMPOSITION-016` - Whole partitions and ordered compositions.
+- **Forced law:** Partitions and compositions are complete positive-part decompositions of one generated whole, distinguished respectively by erased or retained order.
+- **Unique survivor:** ARITH-016 uniquely retains complete-partition-composition-census with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-GENERATING-FUNCTION-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-016: decompositions_8; exact observation: {"compositions":128,"partitions":22}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:48a46a0a2357fbff856317659c45853708153347627832c2b04d96127b3521cf`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:31a2e8fa29dba26f037c7e336d34f178ed3a6c1bbe3458c6f0b7cb16ac2e2f83`; engine receipt `sha256:322408091620c6dfed8b960578f5744a202f7f05536bc0b348f9e62cccb1b9fb`.
+
+#### `SFT-MATH-OBL-ARITH-017` - Arithmetic functions and divisor ledgers
+
+- **Claim:** `SFT-MATH-ARITH-ARITHMETIC-FUNCTIONS-017` - Arithmetic functions and divisor ledgers.
+- **Forced law:** Divisor count, divisor accumulation and coprime count are exact functions of the complete positive divisor and residue ledgers.
+- **Unique survivor:** ARITH-017 uniquely retains complete-divisor-derived-functions with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-PARTITION-COMPOSITION-016`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-017: arithmetic_functions_12; exact observation: {"phi":4,"sigma":28,"tau":6}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:51e10a837a5c3e859bc1a4f82f9b8d40fd00005900b96bd4579c01491ef20de7`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:0e24b98f71a5878df7b28bf9523fae42127e7fa3aa8af145ed8705bffbe15798`; engine receipt `sha256:a0126b838d3f636788373c0a95adc8ff48e8a9d9b1d7c0797aae6403fda8473e`.
+
+#### `SFT-MATH-OBL-ARITH-018` - Finite prime-distribution and growth enclosures
+
+- **Claim:** `SFT-MATH-ARITH-PRIME-DISTRIBUTION-ENCLOSURE-018` - Finite prime-distribution and growth enclosures.
+- **Forced law:** Prime distribution is admitted as exact finite censuses and proved successor enclosures at each generated bound; no unsupported completed asymptotic object enters.
+- **Unique survivor:** ARITH-018 uniquely retains finite-prime-census-successor-enclosures with canonical identity, complete enumeration, root-bound forcing, post-registry exact observation, finite-successor closure and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-EXACT-ARITHMETIC-001 -> SFT-FOUNDATION-FORM-ENFORCEMENT-001 -> SFT-MATH-ARITH-ARITHMETIC-FUNCTIONS-017`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ARITH-018: prime_enclosures; exact observation: {"between_n_2n_through_50":true,"prime_count_100":25}; complete family observation custody: 18 records; all rows preserved; structural absence display and artifact counters remain outside admitted proof values
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ARITHMETIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no semantic numerical zero, negative magnitude, irrational, imaginary or floating proof scalar; structural absence is empty One; host 0 may only display absence or count artifacts; no completed infinity, ungenerated continuum or infinite formal series is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ee28441ff7a60f8dfb90d921b866cc07ec6475a946bfc5e688adff9f993964f6`; independent `sha256:3ce99c3aec4dd29e95f3520ab1b94246996525755a977bd1dbdf03c1a2a4ca0f`; empirical `sha256:f533f200dab5bde6d5c8f1e83c9dca7e4abdd9a67de85cfe52e3610f8c9e3985`; engine receipt `sha256:2d9cb180af9554925c3ff156e2b05d1545b9dba2206a24b60c0e17023e0e9fe2`.
+
+### 40.5 Family `ALEXT` - 10/10 complete
+
+This family contributes 2,560 completely decided candidates, 10 unique survivors and 40 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-ALEXT-001` - Polynomial identity and exact root isolation
+
+- **Claim:** `SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001` - Polynomial identity and exact root isolation.
+- **Forced law:** A polynomial root is admitted through an exact defining balance and nested rational brackets whose endpoint order swaps, never as an imported irrational scalar.
+- **Unique survivor:** ALEXT-001 uniquely retains positive-polynomial-side-order-swap, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-001: square_root_two_bracket; exact observation: {"lower":[7,5],"upper":[3,2]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3bd3c47022683ec450823b0288cc689829085d70394a7503edb2e3858f531162`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:166fd480bad9c76fe70038e0f62717850cc5ae98eb39c2007b8bda15ca5fb691`; engine receipt `sha256:37fd63da2da1d8bff586bea60bebad91ef43d0115437e9efd7e360dbf05b94f0`.
+
+#### `SFT-MATH-OBL-ALEXT-002` - Algebraic-magnitude balance certificates
+
+- **Claim:** `SFT-MATH-ALEXT-ALGEBRAIC-BALANCE-002` - Algebraic-magnitude balance certificates.
+- **Forced law:** An algebraic magnitude is the exact equality condition between two positive polynomial sides plus a replayable rational enclosure certificate.
+- **Unique survivor:** ALEXT-002 uniquely retains exact-algebraic-balance-enclosure, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-002: cube_root_two_bracket; exact observation: {"lower":[5,4],"upper":[4,3]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:abab55524337c48c1be35aac53cfe92ea32362af118d7ada40faf510f0f0917b`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:7453b8deea57bf6af44addcaa61eb8578d5550176ce56a42ce8eacd12601c5fa`; engine receipt `sha256:41100b9b02e60bc1321f4ffa7590f3f2c5ef6223f3983e323a4177d53bde4a4e`.
+
+#### `SFT-MATH-OBL-ALEXT-003` - Exact finite extension towers
+
+- **Claim:** `SFT-MATH-ALEXT-EXTENSION-TOWER-003` - Exact finite extension towers.
+- **Forced law:** A finite extension is a generated basis-label carrier with exact reduction identities and complete coefficient custody at every composition.
+- **Unique survivor:** ALEXT-003 uniquely retains finite-basis-reduction-tower, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-ALGEBRAIC-BALANCE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-003: beta_square_two_product; exact observation: {"left":[1,1],"result":[3,2],"right":[1,1]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3a8a62cbcb132f9b8460b3c89d6e6b517480e6c76707de7bbd150a6d250ae03a`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:c7487379e9500b2adacaca4dc332e7e914201856bb58d3b5f10c62d3db9d0cb8`; engine receipt `sha256:b4db0d57fd93d9489c8d94fe9bae1167b9ffa29c775db04f909dc9c707cdb922`.
+
+#### `SFT-MATH-OBL-ALEXT-004` - Finite-field correspondence
+
+- **Claim:** `SFT-MATH-ALEXT-FINITE-FIELD-004` - Finite-field correspondence.
+- **Forced law:** A finite-field correspondence requires complete addition and multiplication tables, one identity, exact closure and one inverse for every nonabsence label.
+- **Unique survivor:** ALEXT-004 uniquely retains finite-label-field-table, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-EXTENSION-TOWER-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-004: field_mod_five; exact observation: {"labels":5,"nonabsence_inverses":[1,3,2,4]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f2d21fa1e9e0b6f98ca6c955dfcc96a4897471f4b30bb562aeeff0a85783138b`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:e537681880946b9983cc42e684f3bbf56e23cf52887b36dd2efcd1e8feca4ada`; engine receipt `sha256:3e417f42c092e58b78ceda9477a4d4c3303b8a1cb0896c6d3623f387edc24824`.
+
+#### `SFT-MATH-OBL-ALEXT-005` - Finite Galois-orbit correspondence
+
+- **Claim:** `SFT-MATH-ALEXT-GALOIS-ORBIT-005` - Finite Galois-orbit correspondence.
+- **Forced law:** A finite Galois correspondence is the complete orbit of exact root labels under structure-preserving finite permutations, not an imported theorem name.
+- **Unique survivor:** ALEXT-005 uniquely retains root-label-automorphism-orbit, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-FINITE-FIELD-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-005: finite_root_orbit; exact observation: {"labels":[1,2,4],"square_action":[1,4,2]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:865352dc86625e7642c37fbec07c1321954afd4b352342b6aefbc4770cfa4fc2`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:aabc680b24f95f944df0997efc23ef0482fe779c8b4d26796a60b5f3236b9d4c`; engine receipt `sha256:2dff8bb2232a8572a0c20e34c05fc873f83f2e9cb74d008cc32b7b8ff2d3d26b`.
+
+#### `SFT-MATH-OBL-ALEXT-006` - Cyclotomic and root-of-unity correspondence
+
+- **Claim:** `SFT-MATH-ALEXT-CYCLOTOMIC-CORRESPONDENCE-006` - Cyclotomic and root-of-unity correspondence.
+- **Forced law:** Roots of unity are represented by exact periodic phase labels whose generated action returns after the counted period; no imaginary scalar is admitted.
+- **Unique survivor:** ALEXT-006 uniquely retains periodic-phase-label-cycle, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-GALOIS-ORBIT-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-006: five_phase_cycle; exact observation: [1,2,3,4,0]; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:336b4c8409c8ace2569f6a6d2f6a26896b4fddf2744a3f8354cc6c00e9955e8a`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:2457a1efde05513902286a69eaf3e9b2015897a230ea11646dd3bd382e27e60e`; engine receipt `sha256:81f843b80e1f07e44b1f212eeefd448f604aef89255cfe08dd26ff5fd8c5c253`.
+
+#### `SFT-MATH-OBL-ALEXT-007` - Held-pair complex-number correspondence
+
+- **Claim:** `SFT-MATH-ALEXT-HELD-PAIR-COMPLEX-007` - Held-pair complex-number correspondence.
+- **Forced law:** Complex correspondence is an ordered pair of exact magnitudes with held orthogonal orientation and exact pair composition; structural absence replaces numerical zero.
+- **Unique survivor:** ALEXT-007 uniquely retains held-orthogonal-pair-arithmetic, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-CYCLOTOMIC-CORRESPONDENCE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-007: held_pair_product; exact observation: {"imaginary_orientation_magnitude":2,"left":[1,1],"real":"structural-absence","right":[1,1]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:8679b9f81cc22074cbd29db0fe6377cc5d2120a93f966f17724c4ed564b3ed7e`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:3c3c4577ead2d585bd95ce8ecb0570fc8a9ad2d3f2a83d4417ad9a0b047015eb`; engine receipt `sha256:ccaaa6636f523d2e6bc6cd13996d49a0c748dbc4378568188f6e307de4bfc48d`.
+
+#### `SFT-MATH-OBL-ALEXT-008` - Exact real-algebraic ordering
+
+- **Claim:** `SFT-MATH-ALEXT-REAL-ALGEBRAIC-ORDER-008` - Exact real-algebraic ordering.
+- **Forced law:** Real-algebraic order is forced by disjoint exact rational enclosures and polynomial-side comparisons, without evaluating an irrational proof scalar.
+- **Unique survivor:** ALEXT-008 uniquely retains disjoint-rational-enclosure-order, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-HELD-PAIR-COMPLEX-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-008: algebraic_order; exact observation: {"cube_root_two_upper":[4,3],"disjoint":true,"square_root_two_lower":[7,5]}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:01957d2b92163d4c8796addce43e30ff4156cd23f9624accb5db5a521c6532fe`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:85e0a543862759662f1b4d73622cde3be4f617b525fb886e483bf31ef3f02311`; engine receipt `sha256:1492db9e71b8fbd66da325cd1c27997d144df3e1674818eda01f3b9e11547d2b`.
+
+#### `SFT-MATH-OBL-ALEXT-009` - Prime-adic valuation correspondence
+
+- **Claim:** `SFT-MATH-ALEXT-PRIME-ADIC-VALUATION-009` - Prime-adic valuation correspondence.
+- **Forced law:** Prime-adic closeness is the counted prime-power divisibility depth of a held difference, not a negative, infinite or continuum-valued distance.
+- **Unique survivor:** ALEXT-009 uniquely retains prime-power-closeness-depth, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-REAL-ALGEBRAIC-ORDER-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-009: ternary_valuation; exact observation: {"depth":4,"held_difference":81}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a317a46521b2221cd956eda2c542824e6074e9f77be587f9eae5999cdbf83a7a`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:b8feb2741aba195ced03be9c30380e55eeba5e1862ccb9b99e8a71e3733b4b69`; engine receipt `sha256:c38b6cbec7e61e8fbfa7be7ca0a1ab4eb3af572576521a37c9cf03acde3bb413`.
+
+#### `SFT-MATH-OBL-ALEXT-010` - Transcendental and nonrepresentability boundary
+
+- **Claim:** `SFT-MATH-ALEXT-TRANSCENDENTAL-BOUNDARY-010` - Transcendental and nonrepresentability boundary.
+- **Forced law:** When no registered finite rational or algebraic certificate exists, the value remains an explicit unrepresented boundary; finite search never licenses an unsupported transcendence claim.
+- **Unique survivor:** ALEXT-010 uniquely retains explicit-unrepresented-scalar-boundary, exact identity, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-ARITH-VALUATION-012 -> SFT-MATH-ALEXT-PRIME-ADIC-VALUATION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALEXT-010: nonrepresentability_boundary; exact observation: {"exact_match_present":false,"rational_square_search_denominator_bound":20,"transcendence_claimed":false}; complete family observation custody: 10 records; all rows preserved; irrational and imaginary scalars remain outside admitted proof values; exact structures and enclosures are retained
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRAIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; no irrational or imaginary object enters as a proof scalar; negative magnitude is held orientation and structural absence is typed empty One; no completed infinite extension, continuum or unbounded field is admitted; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:43099af77c8b4467b77a71bda5c0d7ff2b85ca61013528e8e178708d920ddd2e`; independent `sha256:e0b858bd749c311a8878f32a66dec94a8545ff67ec81619032b95dce4e7ffee0`; empirical `sha256:349dc2fb17d85705868c581df4f90e545c4a2cb52e9956da64f9c4e96d255bf8`; engine receipt `sha256:674c5e710359cd7da9382006ad39c9539591fc9f0ba8d7bd9728ca3eb804a010`.
+
+### 40.6 Family `COMB` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-COMB-001` - Product, sum and bijection counting laws
+
+- **Claim:** `SFT-MATH-COMB-COUNTING-LAWS-001` - Product, sum and bijection counting laws.
+- **Forced law:** Finite counting is forced by complete disjoint junction, complete pair incidence and exact reversible pairing; no object is omitted or counted twice.
+- **Unique survivor:** COMB-001 uniquely retains disjoint-sum-product-bijection-count, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-001: sum_product; exact observation: {"product":12,"sum":7}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d8804c8b8d02d716adfd440b178c87c38e745288cb15638ff2da7950eea8cd23`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:c7cfd31bcaedf3f490350f678282b8d3f233cc5772f97cc35f6e336e50dfbd9e`; engine receipt `sha256:afca8ab23f33cbad39e5aa6e51d5df24bfddd946cfa5568f46e6c781b5503d4f`.
+
+#### `SFT-MATH-OBL-COMB-002` - Permutation and combination enumeration
+
+- **Claim:** `SFT-MATH-COMB-PERMUTATION-COMBINATION-002` - Permutation and combination enumeration.
+- **Forced law:** Permutations retain every order distinction while combinations quotient only order; both require complete generated selection censuses.
+- **Unique survivor:** COMB-002 uniquely retains ordered-and-unordered-selection-census, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-COUNTING-LAWS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-002: permutation_combination; exact observation: {"combinations_5_2":10,"permutations_5":120}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a948c4fc828429807eaf8b84f56b598ff887bfb613caf648b9f8bbe43c5333c5`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:bb7cd6c1af3fc9f1be1eb4ca4c3a9a23cdaee1f5cb1000d27961e5921d8ed4c0`; engine receipt `sha256:9b95112577a4816525ad072bf79acf3c8a573c98847872d16c79f5161d11625a`.
+
+#### `SFT-MATH-OBL-COMB-003` - Inclusion-exclusion with complete overlap custody
+
+- **Claim:** `SFT-MATH-COMB-INCLUSION-EXCLUSION-003` - Inclusion-exclusion with complete overlap custody.
+- **Forced law:** Union count is the complete support ledger with each overlap retained and corrected exactly once at every finite depth.
+- **Unique survivor:** COMB-003 uniquely retains overlap-corrected-support-ledger, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-PERMUTATION-COMBINATION-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-003: inclusion_exclusion; exact observation: {"left":6,"overlap":2,"right":4,"union":8}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f84451c1b4f9347d6ba1ecd8ddd95b7d9b0561f1f0280b00f04e59ef21c4f790`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:3332737c4e62c5a6b89b190bb6df658719c916214c1bb5705f77ec8658b3acac`; engine receipt `sha256:5d43c44b342b930315faa5159e3ab7ec026fc538d9b3f77bdd56ff7826ce098e`.
+
+#### `SFT-MATH-OBL-COMB-004` - Pigeonhole and occupancy forcing
+
+- **Claim:** `SFT-MATH-COMB-PIGEONHOLE-OCCUPANCY-004` - Pigeonhole and occupancy forcing.
+- **Forced law:** When more generated carriers occupy fewer boxes, complete enumeration forces a box whose occupancy reaches the exact quotient ceiling correspondence.
+- **Unique survivor:** COMB-004 uniquely retains complete-occupancy-lower-bound, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-INCLUSION-EXCLUSION-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-004: occupancy; exact observation: {"boxes":3,"forced_minimum_maximum":3,"objects":7}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f15b3d7b997a61e4188e1032cbe3212746d2a1de728829539e57e7333f6a8439`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:60ce883be389759d13178b1d0c8b05ccfded798646c22a18fd781331fab97ca0`; engine receipt `sha256:c40a635564aae5ef85402c7b69e06ec78ed0024112d2084b58fcc0a2ccf7e004`.
+
+#### `SFT-MATH-OBL-COMB-005` - Recurrence and generating-function counting
+
+- **Claim:** `SFT-MATH-COMB-RECURRENCE-GENERATING-005` - Recurrence and generating-function counting.
+- **Forced law:** A combinatorial recurrence is a disjoint compositional decomposition whose successor counts exactly reconstruct the next generated family.
+- **Unique survivor:** COMB-005 uniquely retains compositional-count-recurrence, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-PIGEONHOLE-OCCUPANCY-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-005: binary_recurrence; exact observation: [2,4,8,16,32,64,128,256]; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5c2ad967cb2ae85ece7ed7e905379b2beb4194b571de18ae1f4d0bdbbc3d063a`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:ced245e087bb65cc89b2a4cb8799a615635ced18d08a7d2db0d2716550e11383`; engine receipt `sha256:ba8380cefcf6fd4b157b57674588bacdf9c5565bc3e848f3638882df1bcc3a1f`.
+
+#### `SFT-MATH-OBL-COMB-006` - Integer partitions and Young-type incidence
+
+- **Claim:** `SFT-MATH-COMB-PARTITION-INCIDENCE-006` - Integer partitions and Young-type incidence.
+- **Forced law:** An integer partition is a complete unordered positive-part decomposition with every cell and incidence retained.
+- **Unique survivor:** COMB-006 uniquely retains unordered-positive-part-incidence, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-RECURRENCE-GENERATING-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-006: partitions_five; exact observation: {"cell_count":5,"count":7}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c3acbdfd5e41e2171fb5ab37408defd78183f6d33cdf87a92eab6257ef6c69b4`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:3f2b44350fea9286d4d257f2c67dde35922cde4739eecb96f35035ab78595d7a`; engine receipt `sha256:2d097fe60b69c55a86accb8d417c083c3bdbe07041e0eb058081887689943664`.
+
+#### `SFT-MATH-OBL-COMB-007` - Extremal finite-set systems
+
+- **Claim:** `SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007` - Extremal finite-set systems.
+- **Forced law:** An extremal set result requires exhaustive feasible-family generation, exact constraint testing and retention of every maximizing witness.
+- **Unique survivor:** COMB-007 uniquely retains complete-feasible-family-extremum, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-PARTITION-INCIDENCE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-007: antichain_four; exact observation: {"maximum":6,"middle_layer":6}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a192869192fb3a1ed54b9cfda1fc325f2785a5348ab3866e95aed13b2fa1285e`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:5df089c3c43e0518edc953fdcfccff2e2892f3ec5101f69e854e6ab0662f020c`; engine receipt `sha256:e01c8059812a3e920d2f722ef9f47e2e3375ae255da534d20c5efcab589e17c2`.
+
+#### `SFT-MATH-OBL-COMB-008` - Probabilistic-method correspondence without ontic randomness
+
+- **Claim:** `SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008` - Probabilistic-method correspondence without ontic randomness.
+- **Forced law:** An average over a complete deterministic support forces existence of a member at least as large as the exact average; no ontic randomness is required.
+- **Unique survivor:** COMB-008 uniquely retains complete-support-average-existence, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-008: deterministic_support_average; exact observation: {"average":[3,2],"existence_at_least":2,"support":8,"total_held_labels":12}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:803050b5cc73b64b0a53fb149db319a917420b1b649787be5f1dc086b2978cbe`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:5e7f26ab0153b28366e287c07b76cc49e153f144cc771c1c07c2068856d162c7`; engine receipt `sha256:d650fb44b26a7778b1431e877854dbcbaed78f8612c57d47d6e80118fc5f37d6`.
+
+#### `SFT-MATH-OBL-COMB-009` - Design, block and incidence structures
+
+- **Claim:** `SFT-MATH-COMB-DESIGN-INCIDENCE-009` - Design, block and incidence structures.
+- **Forced law:** A finite design is a complete block-incidence carrier whose point and subset multiplicities satisfy one exact balanced ledger.
+- **Unique survivor:** COMB-009 uniquely retains balanced-complete-incidence-design, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-009: fano_incidence; exact observation: {"block_size":3,"blocks":7,"pair_degree":1,"point_degree":3,"points":7}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bfe1086309fada9224fa6cbe2cb9702f7de1c502e55dff3ffd6e4fd7e44a3eb1`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:6dcb8817650fa6725e231f09288b06e82d8ffcd7bf179d9863513894e92f799c`; engine receipt `sha256:d1e03a25a63c3099f5d2a8f414ad7815c8471db3b30581e48a08d58a39dcf982`.
+
+#### `SFT-MATH-OBL-COMB-010` - Coding and packing combinatorics
+
+- **Claim:** `SFT-MATH-COMB-CODING-PACKING-010` - Coding and packing combinatorics.
+- **Forced law:** A finite code bound is the exact maximum of the complete word-subset census under the registered distinguishability distance.
+- **Unique survivor:** COMB-010 uniquely retains complete-distance-packing-census, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-DESIGN-INCIDENCE-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-010: binary_code; exact observation: {"maximum_size":2,"minimum_distance":3,"word_length":3}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:acb913996b198ea4a667443568563d841a0306a98207d9ab79c6cc6b8bfd1fce`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:cf362ef2d305105021a6385196c0fd5c29b2d93db1a4579602936822971ad755`; engine receipt `sha256:b5ede9884b69fb563c6774eacd7bd3df38cd803bb164cb775e000e7d1cb8c2ac`.
+
+#### `SFT-MATH-OBL-COMB-011` - Ramsey-type finite forcing boundaries
+
+- **Claim:** `SFT-MATH-COMB-RAMSEY-FORCING-011` - Ramsey-type finite forcing boundaries.
+- **Forced law:** A Ramsey boundary is closed only when every colouring in the declared finite census contains the registered monochromatic substructure and the preceding boundary has a counterexample where claimed.
+- **Unique survivor:** COMB-011 uniquely retains complete-colouring-forced-substructure, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-CODING-PACKING-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-011: ramsey_six; exact observation: {"edge_colourings":32768,"monochromatic_triangle_forced":true}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1c27db22f7f053a18874e51e7ee493d2ad5a88177ab27988b999ce9c1af23d82`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:1ebffece285129cd85bbd56109aa25a2fb87ccd2d2d71d9c67e7eeec5180ec34`; engine receipt `sha256:2a8c17b72cdefc363e819e2019edbffaecf13d12ea569b64b0bee4dfa8f01cf2`.
+
+#### `SFT-MATH-OBL-COMB-012` - Species and compositional enumeration
+
+- **Claim:** `SFT-MATH-COMB-SPECIES-COMPOSITION-012` - Species and compositional enumeration.
+- **Forced law:** A combinatorial species is the complete set of structures transported by label bijections, with composition retaining every component and symmetry quotient.
+- **Unique survivor:** COMB-012 uniquely retains structure-species-composition-census, declared symmetry, complete enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-GENERATED-SUCCESSION-001 -> SFT-MATH-ARITH-JUNCTION-ADDITION-002 -> SFT-MATH-ARITH-PAIR-CELL-MULTIPLICATION-003 -> SFT-MATH-COMB-RAMSEY-FORCING-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** COMB-012: set_partition_species_four; exact observation: {"structures":15}; complete family observation custody: 12 records; all rows preserved; complete deterministic enumeration supplies the observation; no ontic-random premise or fitted count enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMBINATORICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target count, imported theorem answer, fitted parameter or probabilistic oracle selects the law; host 0 only displays absence or counts artifacts; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite family or continuum sample space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:210239200288cd66ef188e2d64ebdd85ed3322b3adf981f87a7997a496187c77`; independent `sha256:948188852db8153c34954a43aa68c6c3424f72a8d52bee5d2699fe75ac3bf1c6`; empirical `sha256:d58cf8390986a10d7e5455ce57b64dda0bd19f873009d87aa51ae81c890f6210`; engine receipt `sha256:c7ab86cf76ff13e5c47488f640d8d34afa30fb2008fc16e4a273562b3f4e2c98`.
+
+### 40.7 Family `GRAPH` - 14/14 complete
+
+This family contributes 3,584 completely decided candidates, 14 unique survivors and 56 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-GRAPH-001` - Graph identity, adjacency and isomorphism
+
+- **Claim:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001` - Graph identity, adjacency and isomorphism.
+- **Forced law:** A graph is the exact carrier-incidence Fold structure; isomorphism is a reversible carrier relabelling that preserves every adjacency and non-adjacency distinction.
+- **Unique survivor:** GRAPH-001 uniquely retains exact-adjacency-bijection-isomorphism, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-001: graph_identity_isomorphism; exact observation: {"edges":4,"isomorphic_relabellings":8,"vertices":4}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:72ff6381941027ad0ef2a51d7acb40351acc6d404cafd311fa2553fb47cfee26`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:9840f74199987617039af73e2310ee58ed75b581b5b74327097f8ba4661f1c97`; engine receipt `sha256:489635c31e29a277498395071437690e60c00fd3287af337754ed86cd2d1c9a8`.
+
+#### `SFT-MATH-OBL-GRAPH-002` - Paths, walks, reachability and cycles
+
+- **Claim:** `SFT-MATH-GRAPH-PATH-REACHABILITY-CYCLE-002` - Paths, walks, reachability and cycles.
+- **Forced law:** Paths are composable adjacent distinctions, reachability is their finite closure, and a cycle is a nonempty closed path with retained intermediate carriers.
+- **Unique survivor:** GRAPH-002 uniquely retains generated-incidence-path-closure, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-002: path_reachability_cycle; exact observation: {"least_cycle_length":4,"reachable_order":[1,2,3,4]}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4da989b3f4dc9fae1e5e31a0e88f7358ca5527adfcb58fb38e9c52d51ea8d3ec`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:56cf52b7395fb9d6d3bffc0b45a7d1b7ba94cf819639f9da631f77d3a533ec3e`; engine receipt `sha256:164d8d5708f6238d6c7864f2b2261dea4a4097d12c335f68d56765cea778cc01`.
+
+#### `SFT-MATH-OBL-GRAPH-003` - Connectivity, cuts and flow support
+
+- **Claim:** `SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003` - Connectivity, cuts and flow support.
+- **Forced law:** Connection, separation and flow are forced by the same complete incidence ledger: every transported unit crosses every separating cut exactly once.
+- **Unique survivor:** GRAPH-003 uniquely retains cut-flow-dual-custody, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-PATH-REACHABILITY-CYCLE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-003: connectivity_cut_flow; exact observation: {"maximum_integral_flow":3,"minimum_cut_capacity":3}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:13e49cf9371e8afacd373f9ed1091429ddb3503ccc9b44e8e53155fd56085279`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:8d81978bc666c0e0b2c7896042f546193be806344bf60ae9dfe76a564ce3f688`; engine receipt `sha256:383274c9576c7f228b386a5eb969fb995d051ca71d963c8068014712304be26c`.
+
+#### `SFT-MATH-OBL-GRAPH-004` - Trees, forests and spanning structure
+
+- **Claim:** `SFT-MATH-GRAPH-TREE-FOREST-SPANNING-004` - Trees, forests and spanning structure.
+- **Forced law:** A tree is the unique conjunction of connected carrier support and cycle absence; forests and spanning structures retain the same incidence boundary componentwise.
+- **Unique survivor:** GRAPH-004 uniquely retains acyclic-connected-spanning-incidence, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-004: tree_forest_spanning; exact observation: {"complete_graph_vertices":4,"edges_per_tree":3,"spanning_trees":16}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:287777e7449516de3013535504d80a29638f42d81b29c2ec0d797149d183d7dc`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:78e17ec40a5ccca26b63d799109230f4f55377ab3ccdb9498e18580e62cd17c2`; engine receipt `sha256:f81889343d13708d3cc085df21f33b4636619dea455cbf58cd4df9abada48e57`.
+
+#### `SFT-MATH-OBL-GRAPH-005` - Planarity and embedding correspondence
+
+- **Claim:** `SFT-MATH-GRAPH-PLANARITY-EMBEDDING-005` - Planarity and embedding correspondence.
+- **Forced law:** A finite embedding retains cyclic incidence and face custody; planarity is admitted only with an exact embedding witness or an exact obstruction at the declared boundary.
+- **Unique survivor:** GRAPH-005 uniquely retains face-edge-vertex-embedding-custody, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-TREE-FOREST-SPANNING-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-005: planarity_embedding; exact observation: {"euler_total":2,"k4_edges":6,"k4_faces":4,"k4_vertices":4,"k5_edge_bound_exceeded":true}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3e0e4217fe0ba244b29bb431baac87bd1983b7a230fd4ee50c74d782cb1857b6`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:5305ac98dbf2c285a0535e923e8d678bc4d84932191c3d520cbf9b36adce571a`; engine receipt `sha256:9b310cbbfe57e1eca969de9a2e73c7136ce86428d741a10cff9e7e1170fa24c4`.
+
+#### `SFT-MATH-OBL-GRAPH-006` - Colouring and constraint partitions
+
+- **Claim:** `SFT-MATH-GRAPH-COLOURING-CONSTRAINT-006` - Colouring and constraint partitions.
+- **Forced law:** A colouring is an exact label partition whose adjacent carriers remain distinguishable; the chromatic boundary is the least complete label support that survives every constraint.
+- **Unique survivor:** GRAPH-006 uniquely retains least-lawful-distinction-partition, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-PLANARITY-EMBEDDING-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-006: colouring_constraints; exact observation: {"chromatic_number":3,"cycle_vertices":5}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:98ebbcf6456abfb3a6dcce68736b71ab67c1e7a24c928b11446f90399f0df394`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:f0dee66e8a412527916a6b16c998f36daa9bef0f88d38e439a70ddebe711a236`; engine receipt `sha256:361fb44c8f989543dacde61ce4b3d03f6f6096ab9fba773664b339627f275671`.
+
+#### `SFT-MATH-OBL-GRAPH-007` - Matching, covering and packing
+
+- **Claim:** `SFT-MATH-GRAPH-MATCHING-COVERING-PACKING-007` - Matching, covering and packing.
+- **Forced law:** Matching packs pairwise disjoint incidences while covering touches every incidence; exact extrema require complete candidate enumeration and retained witnesses.
+- **Unique survivor:** GRAPH-007 uniquely retains disjoint-incidence-packing-cover-duality, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-COLOURING-CONSTRAINT-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-007: matching_covering_packing; exact observation: {"bipartite_part_size":3,"maximum_matching":3,"minimum_vertex_cover":3}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2f9271892d41ef7cb7cb4d2d9415f2e4a6f4ffbd643929cbb7f986c031a64b07`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:bef029b06bdf103257d0a6a116a72653b6f45646dcbe1fd06923dc0792ccea26`; engine receipt `sha256:283c65166202c674101581fbcf1b718bab3f5ad45ddcf38b4375f34480fa11f9`.
+
+#### `SFT-MATH-OBL-GRAPH-008` - Directed graphs and causal reachability
+
+- **Claim:** `SFT-MATH-GRAPH-DIRECTED-CAUSAL-REACHABILITY-008` - Directed graphs and causal reachability.
+- **Forced law:** Directed incidence retains source and target labels, so causal reachability composes only orientation-compatible transitions.
+- **Unique survivor:** GRAPH-008 uniquely retains orientation-retained-causal-closure, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-MATCHING-COVERING-PACKING-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-008: directed_causal_reachability; exact observation: {"causal_pairs":9,"topological_order":[1,2,3,4,5],"vertices":5}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ddc1e1b21eeb795b860d7ee38912000586b692f3a1ca11ee7282dd76b950c864`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:cf2d7d512d3066a55bb5e20ddc7d0e874409f5e34600cf99988159d19628e519`; engine receipt `sha256:a3ea7e43de3c0a16186153b9855e4b9f90acc8b096a2767bc84d0002b4f5e66c`.
+
+#### `SFT-MATH-OBL-GRAPH-009` - Weighted network correspondence with exact parts
+
+- **Claim:** `SFT-MATH-GRAPH-WEIGHTED-NETWORK-EXACT-PARTS-009` - Weighted network correspondence with exact parts.
+- **Forced law:** A weighted network assigns lawful exact parts to incidences and compares paths only by exact accumulation without floating approximation.
+- **Unique survivor:** GRAPH-009 uniquely retains exact-part-path-accumulation, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-DIRECTED-CAUSAL-REACHABILITY-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-009: weighted_exact_parts; exact observation: {"alternative_weight":{"denominator":3,"numerator":4},"path_weight":{"denominator":6,"numerator":7}}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d312cdeb42c0f9eed26d0ffd024d5cc72c47018e89f9a9588b53afa5f1734803`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:d206e2841f91345e04992ba075426429420fcd8812b8c7ae832119f5c51765f5`; engine receipt `sha256:95711a8c91c539d061e323813786738ecf6f65f5b4d800ce7a7619e1a64bc993`.
+
+#### `SFT-MATH-OBL-GRAPH-010` - Hypergraphs and higher incidence
+
+- **Claim:** `SFT-MATH-GRAPH-HYPERGRAPH-HIGHER-INCIDENCE-010` - Hypergraphs and higher incidence.
+- **Forced law:** A hyperedge is one held incidence over a generated carrier subset; rank and degree follow from complete higher-incidence custody.
+- **Unique survivor:** GRAPH-010 uniquely retains multi-carrier-incidence-custody, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-WEIGHTED-NETWORK-EXACT-PARTS-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-010: hypergraph_higher_incidence; exact observation: {"hyperedges":4,"rank":3,"vertex_degree":2,"vertices":6}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:21a970469487805e0e6841839950d3ddd1f018507c531c24945b8e024a5afef1`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:2ad2463f9eca076c919e998f2fcf3b71cc2e3e8bd564330754456f922b3c10e8`; engine receipt `sha256:9ce82e3125329f6738cca2ab5b89ef6bbd92f237af6cf1619160351d5d220b69`.
+
+#### `SFT-MATH-OBL-GRAPH-011` - Matroids and independence systems
+
+- **Claim:** `SFT-MATH-GRAPH-MATROID-INDEPENDENCE-011` - Matroids and independence systems.
+- **Forced law:** A matroid is the uniquely retained finite independence structure satisfying nonempty support, heredity and exact exchange across unequal independent carriers.
+- **Unique survivor:** GRAPH-011 uniquely retains hereditary-exchange-independence, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-HYPERGRAPH-HIGHER-INCIDENCE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-011: matroid_independence; exact observation: {"basis_count":6,"ground_size":4,"independent_sets":11,"rank":2}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:79008ce7f60b8ac644403613cdfbfae3d6154aae97f94cc37b611586fe4bd286`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:077cd80c2b38fa6ce2bb0a184b5495bb7ca867079f5a53a209ec4b495d0b511d`; engine receipt `sha256:6bf043d86d7d1d7a8a860124bf51cdb5f9bb780586d937880377b4fe0175c65e`.
+
+#### `SFT-MATH-OBL-GRAPH-012` - Network reliability and failure custody
+
+- **Claim:** `SFT-MATH-GRAPH-RELIABILITY-FAILURE-CUSTODY-012` - Network reliability and failure custody.
+- **Forced law:** Reliability is the exact retained fraction of lawful states in the complete failure-mask support; every favorable and adverse mask remains in custody.
+- **Unique survivor:** GRAPH-012 uniquely retains complete-failure-mask-support, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-MATROID-INDEPENDENCE-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-012: reliability_failure_custody; exact observation: {"connected_masks":4,"edge_masks":8,"exact_reliability":{"denominator":2,"numerator":1}}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bd1aacb7ed1308c8096094ba3f2cd9e2418a2bdab62cf36684a1b0b0995fed7b`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:3eca83aa54f99db594ddc8cdf5ac785aac6599d9d9615b977b4081ea25ce5040`; engine receipt `sha256:a2827845f35854c3fc3774078d4e794b651ee10ec65995f2cbb14a31c50f72ab`.
+
+#### `SFT-MATH-OBL-GRAPH-013` - Spectral graph correspondence
+
+- **Claim:** `SFT-MATH-GRAPH-SPECTRAL-CORRESPONDENCE-013` - Spectral graph correspondence.
+- **Forced law:** Spectral correspondence is reconstructed through exact graph operators and held/opposed distinction modes; even-walk operators keep proof scalars nonnegative and exact.
+- **Unique survivor:** GRAPH-013 uniquely retains even-walk-mode-correspondence, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-RELIABILITY-FAILURE-CUSTODY-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-013: spectral_even_walk_correspondence; exact observation: {"distinction_mode":1,"operator":"adjacency-square-k4","trace":12,"uniform_mode":9}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cacdc1a92c4a4e250ce4d11fb8968c4cfe80fcf910caf4272aa68b552b8ea9f9`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:6913fc000747d0d4bb9169f21c8c1a15cfba7d98e12b5541804650b8323d5edd`; engine receipt `sha256:dfd637109db6dfdc9a1ebd98dff9ce928782ddec159f8310428d7154178d4ce5`.
+
+#### `SFT-MATH-OBL-GRAPH-014` - Dynamic and temporal networks
+
+- **Claim:** `SFT-MATH-GRAPH-DYNAMIC-TEMPORAL-NETWORK-014` - Dynamic and temporal networks.
+- **Forced law:** A temporal path composes incidences only in nondecreasing transition order; static reachability cannot erase temporal custody.
+- **Unique survivor:** GRAPH-014 uniquely retains time-ordered-incidence-composition, complete incidence, exact enumeration, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-COMB-COUNTING-LAWS-001 -> SFT-MATH-COMB-RAMSEY-FORCING-011 -> SFT-MATH-GRAPH-SPECTRAL-CORRESPONDENCE-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GRAPH-014: dynamic_temporal_network; exact observation: {"arrival_time":3,"static_but_time_forbidden_path":[1,4,3],"time_respecting_path":[1,2,3,4]}; complete family observation custody: 14 records; all rows and the adverse predecessor are preserved; complete deterministic graph enumeration supplies the observation; no random, fitted or imported theorem answer enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GRAPH-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target value, imported graph theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite graph family or continuum embedding; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:39cd84af37143dc5e3535cf6bf8e7b7f540ecbcb3da5aa58aa1acd46f51a9bd0`; independent `sha256:8e325e12630a9ab2da42f0ee63866f32388d33ce85b759994a5fb4441eb7b743`; empirical `sha256:20febd6db42e6fb308a4fa7dceacfa0089fea5e0a9052bc56aa1dc50e3b505f8`; engine receipt `sha256:fb1a3980a9e3273950f1ad3d9426d228287085c3cba62162735538726bde0626`.
+
+### 40.8 Family `LINEAR` - 14/14 complete
+
+This family contributes 3,584 completely decided candidates, 14 unique survivors and 56 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-LINEAR-001` - Vectors as exact generated coordinate carriers
+
+- **Claim:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001` - Vectors as exact generated coordinate carriers.
+- **Forced law:** A vector is an ordered generated coordinate carrier whose components remain individually addressable under lawful junction and exact-part scaling.
+- **Unique survivor:** LINEAR-001 uniquely retains coordinate-identity-preserving-junction, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-001: vector_coordinates; exact observation: {"junction":[3,3,4],"left":[1,2,3],"right":[2,1,1]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6df296385ffc1bee86de4232202b01a80cd3e8c553aeffecf05c630093ebcb40`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:b5d205abdae1b157303b76c4b28fee0b00f8cec58aa5ea0fc7bb9dfd3e7cfd82`; engine receipt `sha256:61163023459ed332dfc906e44bcb647778587e2db0c85e32b9390334de8675e9`.
+
+#### `SFT-MATH-OBL-LINEAR-002` - Linear maps and composition
+
+- **Claim:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002` - Linear maps and composition.
+- **Forced law:** A linear map is forced by preservation of exact junction and scaling, and composition retains the ordered action of both maps.
+- **Unique survivor:** LINEAR-002 uniquely retains junction-scaling-preserving-map-composition, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-002: linear_map_composition; exact observation: {"composed_output":[8,6],"input":[1,2]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:355edd57d0180af80cce98dc6da4611e68da7c469cefdb45597643b8019f0050`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:6266493aedb50b9da494f31994bc244e002e2e5aface8990be1e506386acfd02`; engine receipt `sha256:b0ff81fb4f50d49ba8e11c1e0dc7f414ff7711bf5ba1ec4d70cd9af6cdf7f5fe`.
+
+#### `SFT-MATH-OBL-LINEAR-003` - Matrix representation and exact row operations
+
+- **Claim:** `SFT-MATH-LINEAR-MATRIX-ROW-OPERATIONS-003` - Matrix representation and exact row operations.
+- **Forced law:** A matrix is the coordinate incidence of a map; lawful row operations are exact reversible relation transformations with full operation custody.
+- **Unique survivor:** LINEAR-003 uniquely retains reversible-row-relation-custody, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-MAP-COMPOSITION-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-003: matrix_row_operations; exact observation: {"input_rows":[[1,2],[3,4]],"relation_preserved":true,"swapped_rows":[[3,4],[1,2]]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7b2c77c8def1abd4b13bff0e0a4fb38f5ab1faf0b2ee2ee5a154b66d43976915`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:0eba202734aa28173c9ce52ad197dd373951255772397af93684ccc45fd74dcd`; engine receipt `sha256:a069bdc5521cb9dabf4978a906631c9f795c332771bfd6ee7f7bad56b0d37e07`.
+
+#### `SFT-MATH-OBL-LINEAR-004` - Rank, nullity and retained distinctions
+
+- **Claim:** `SFT-MATH-LINEAR-RANK-NULLITY-004` - Rank, nullity and retained distinctions.
+- **Forced law:** Rank counts retained independent image distinctions while nullity counts source distinctions merged to absence; together they exhaust the finite source dimension.
+- **Unique survivor:** LINEAR-004 uniquely retains image-kernel-distinction-ledger, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-MATRIX-ROW-OPERATIONS-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-004: rank_nullity; exact observation: {"columns":3,"field_support":2,"nullity":1,"rank":2}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c49a530091e69518ae8886b32534de89ddcb43d1286e03b1ec39219024af5d5d`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:742cf4ef2bd8942c72fb866d34d54e0f872fa5bddb5a8a4fa4a68bd5ed35a908`; engine receipt `sha256:a1111d9fdee741f94a9f57268078c4f8935bdc8fcddec9419a2f858d67418bc9`.
+
+#### `SFT-MATH-OBL-LINEAR-005` - Determinants and orientation custody
+
+- **Claim:** `SFT-MATH-LINEAR-DETERMINANT-ORIENTATION-005` - Determinants and orientation custody.
+- **Forced law:** Determinant structure is the exact excess between held and opposed permutation products, recorded as an orientation label and nonnegative magnitude.
+- **Unique survivor:** LINEAR-005 uniquely retains held-opposed-volume-orientation, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-RANK-NULLITY-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-005: determinant_orientation; exact observation: {"held_product":4,"magnitude":2,"opposed_product":6,"orientation":"opposed"}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:37ed07457eb59c096ccff782a271491e04191b77225f739a91e2917a935de00d`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:5b3de428e72c8240f571749090bcbfc855274d488e1e18419c0744aafbaf38c3`; engine receipt `sha256:1eb50aad30609be2adbf13fd7589e8fdb3013d5a4e0e25292b4c27d2cda0587d`.
+
+#### `SFT-MATH-OBL-LINEAR-006` - Exact systems of linear relations
+
+- **Claim:** `SFT-MATH-LINEAR-EXACT-SYSTEMS-006` - Exact systems of linear relations.
+- **Forced law:** A linear system is closed by generating every lawful coordinate candidate and retaining exactly the candidates satisfying every relation.
+- **Unique survivor:** LINEAR-006 uniquely retains complete-solution-support-census, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-DETERMINANT-ORIENTATION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-006: exact_linear_system; exact observation: {"relations":[3,4],"solution":[2,1]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6bb9729d649ff522569dea22ef8f154799a93a977770690d31ed481f6e83da18`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:7a5ac55126c0a9bf45f56abaf8a84eb407bfd7fcdf35eebfde23b7e94d411cf4`; engine receipt `sha256:df388656cff7ee3d4afa27c2c5efb2dad840fb0abfbdebc457eb2eb6f3e22a10`.
+
+#### `SFT-MATH-OBL-LINEAR-007` - Basis, dimension and change of basis
+
+- **Claim:** `SFT-MATH-LINEAR-BASIS-DIMENSION-007` - Basis, dimension and change of basis.
+- **Forced law:** A basis is a minimal independent spanning carrier; dimension is its exact cardinality and change of basis is a reversible coordinate relabelling.
+- **Unique survivor:** LINEAR-007 uniquely retains reversible-independent-coordinate-frame, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-EXACT-SYSTEMS-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-007: basis_dimension; exact observation: {"ambient_dimension":2,"basis":[[1,0],[1,1]],"coordinates":[1,2]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3e7eaa7e5ce437bfc38f41e24761c2f305044c2e2e8c00dc6e8c4e42a7d25629`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:fc5d19197d64bdc031e6cb34e59d1b1d77c4be066861966410ead86ac73b715d`; engine receipt `sha256:f9cc18b562f233e53210a5788786195759321f2d9484faa0188a05c46c192de9`.
+
+#### `SFT-MATH-OBL-LINEAR-008` - Inner-product and metric correspondence
+
+- **Claim:** `SFT-MATH-LINEAR-INNER-PRODUCT-METRIC-008` - Inner-product and metric correspondence.
+- **Forced law:** Inner-product correspondence is an exact symmetric bilinear pairing; metric correspondence uses exact squared separation when roots are not lawful proof scalars.
+- **Unique survivor:** LINEAR-008 uniquely retains exact-bilinear-pairing-squared-distance, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-BASIS-DIMENSION-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-008: inner_product_metric; exact observation: {"inner_product":5,"squared_distance":5}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3ad0a974b8d4bda3db7890713be601bf1b04630e24b820d61055472eeb28755d`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:374227e7bd487ed65126f5b659e4364afcd7f54e872fc8fcd8feb47b388a9784`; engine receipt `sha256:bf412fb7caf2d4fe721ab9d01381a552a490d1b789b8469eb534a287de9da355`.
+
+#### `SFT-MATH-OBL-LINEAR-009` - Eigenvalue and invariant-support correspondence
+
+- **Claim:** `SFT-MATH-LINEAR-EIGEN-INVARIANT-SUPPORT-009` - Eigenvalue and invariant-support correspondence.
+- **Forced law:** An invariant mode is a held coordinate relation reproduced by an operator up to one exact lawful scale, with opposed distinctions represented structurally rather than negatively.
+- **Unique survivor:** LINEAR-009 uniquely retains invariant-mode-exact-scaling, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-INNER-PRODUCT-METRIC-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-009: eigen_invariant_support; exact observation: {"distinction_mode":1,"uniform_mode":3}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ce5211d932e87ed2b831cf1a14466643b259e7f389cd67f9080ff08fa211f808`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:5728068f2bb8669dd948a262e357688455ec039a644533b17f10526ffe549d93`; engine receipt `sha256:f4dd00fe4be2cb27fec953298d56913b6299c2c17cf34cec00a7fcd1d71ccb33`.
+
+#### `SFT-MATH-OBL-LINEAR-010` - Exact rational spectral enclosures
+
+- **Claim:** `SFT-MATH-LINEAR-RATIONAL-SPECTRAL-ENCLOSURE-010` - Exact rational spectral enclosures.
+- **Forced law:** A non-rational conventional spectral value is represented only by nested exact rational bounds with a proved exclusion and refinement rule.
+- **Unique survivor:** LINEAR-010 uniquely retains nested-rational-mode-enclosure, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-EIGEN-INVARIANT-SUPPORT-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-010: rational_spectral_enclosure; exact observation: {"lower":[8,5],"relation":"x*x=x+1","upper":[13,8]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5c5892582b824b1585a41b97e989cfdc3e49cf205760c4d0eeaa145e35941660`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:aa23b2604d95e5564d66a765227044917965df7dd1ba972f495ae33112a50252`; engine receipt `sha256:78bfa64c5f59b2314c1137839cdb8e8cef9778d056a094837ec553a1c5ddffc2`.
+
+#### `SFT-MATH-OBL-LINEAR-011` - Multilinear maps and tensor products
+
+- **Claim:** `SFT-MATH-LINEAR-MULTILINEAR-TENSOR-PRODUCT-011` - Multilinear maps and tensor products.
+- **Forced law:** A tensor product is the complete coordinate product that converts separately linear multi-input action into one exact linear carrier.
+- **Unique survivor:** LINEAR-011 uniquely retains universal-multicarrier-coordinate-product, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-RATIONAL-SPECTRAL-ENCLOSURE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-011: multilinear_tensor_product; exact observation: {"left_dimension":2,"outer_product":[[3,4,5],[6,8,10]],"product_dimension":6,"right_dimension":3}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4b99fbff5a16be85950d2f528716299e1d9499e6b8459bad97dbbb64e936ac30`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:79c5c2ecba964057d2e8d3141be6a9819118149e454acc0438a28334e6410d25`; engine receipt `sha256:9a0648891c36fa2004a4130cf182de9f9aed20f746ed391c30dd8b657c6a2b53`.
+
+#### `SFT-MATH-OBL-LINEAR-012` - Tensor contraction and index custody
+
+- **Claim:** `SFT-MATH-LINEAR-TENSOR-CONTRACTION-012` - Tensor contraction and index custody.
+- **Forced law:** Contraction pairs exactly the declared dual indices, sums their complete incidence support and retains every uncontracted index identity.
+- **Unique survivor:** LINEAR-012 uniquely retains paired-index-junction-custody, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-MULTILINEAR-TENSOR-PRODUCT-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-012: tensor_contraction; exact observation: {"contracted_matrix":[[6,8],[10,12]],"tensor_shape":[2,2,2]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3266d1f12a50e166fe4890d2e6ac9cd9a3dfdd7159aa7653f05555d46151605d`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:3eb38b7d9e4b216845a4baa6025ee6c65210682ef0f8a672344b76b95f1c6191`; engine receipt `sha256:144d72725402644b443e0674b9a7d36c0ac3759527fb55ae4a664fbf31be1016`.
+
+#### `SFT-MATH-OBL-LINEAR-013` - Exterior and symmetric composition
+
+- **Claim:** `SFT-MATH-LINEAR-EXTERIOR-SYMMETRIC-013` - Exterior and symmetric composition.
+- **Forced law:** Exterior composition retains orientation and makes repeated direction absent; symmetric composition quotients order alone while retaining multiplicity.
+- **Unique survivor:** LINEAR-013 uniquely retains orientation-and-symmetry-quotient, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-TENSOR-CONTRACTION-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-013: exterior_symmetric; exact observation: {"distinct_wedge_orientation":"held","repeated_wedge":"absence","symmetric_pair_count":3}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cf9bf59b57b93c2b0e2a4e12d67ca3c407f8dca9d7ef75091c8659ac830c0abe`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:0aac9b1a2b1fa57a514383e733c8249c39ea93f10c129acbe8a83223aca3b6be`; engine receipt `sha256:7514349b966d1a39444e5f841909f6e00a777c31d426db7a12a91da6e9013351`.
+
+#### `SFT-MATH-OBL-LINEAR-014` - Finite-dimensional operator decomposition
+
+- **Claim:** `SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014` - Finite-dimensional operator decomposition.
+- **Forced law:** A finite operator decomposition is lawful when exact invariant components reconstruct the operator and each component has an independently witnessed action.
+- **Unique survivor:** LINEAR-014 uniquely retains exact-invariant-component-decomposition, exact coordinates, structural orientation, complete enumeration, root forcing and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GRAPH-IDENTITY-ISOMORPHISM-001 -> SFT-MATH-ARITH-CANONICAL-FRACTION-008 -> SFT-MATH-LINEAR-EXTERIOR-SYMMETRIC-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LINEAR-014: operator_decomposition; exact observation: {"component_weights":[2,1],"idempotent_components":true,"operator":[[2,0],[0,1]]}; complete family observation custody: 14 records; all rows preserved; all scalars are exact lawful parts or nonnegative integers; orientation is structural and no fitted value enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LINEAR-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no target coordinate, imported linear-algebra theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite-dimensional or continuum space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e27955bfe827c82d6ba147d3f4b286e52797402f9b520af1213367375efa03d8`; independent `sha256:215057257b829acb9bdd277b28a1fce045fde73971d91391f73eb980fbaebce7`; empirical `sha256:4b3f355ec02ff9781addcd3c06c865faa15bf5c9026b382bec2c081fbb65d170`; engine receipt `sha256:52a0d942eb72cefecec9a693af78189036fe049d1da9a5ab8b2f1c85c61ce74a`.
+
+### 40.9 Family `ALG` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-ALG-001` - Magma and closed operation structure
+
+- **Claim:** `SFT-MATH-ALG-MAGMA-CLOSED-OPERATION-001` - Magma and closed operation structure.
+- **Forced law:** A magma is forced when every ordered carrier pair has exactly one operation image inside the generated carrier support.
+- **Unique survivor:** ALG-001 uniquely retains closed-generated-binary-operation, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-001: magma; exact observation: {"carrier_count":2,"closed":true,"table_cells":4}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:9c3cf0654d79424e723b0950f0eff16bf6d98d4ebe6b98d7a132129f0a0c75d5`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:03bb7b5fe3c9b8a2a5cfaf7fe4ffcfa7c8ad6fd6a2f376002af02e363a033df4`; engine receipt `sha256:c5e93e05277ffeb172cc3a7003518d9210ad7be5ad8771ba88a6dd397f067b80`.
+
+#### `SFT-MATH-OBL-ALG-002` - Semigroup associativity witnesses
+
+- **Claim:** `SFT-MATH-ALG-SEMIGROUP-ASSOCIATIVITY-002` - Semigroup associativity witnesses.
+- **Forced law:** A semigroup is a closed operation whose two three-input bracketings agree on the complete carrier census.
+- **Unique survivor:** ALG-002 uniquely retains complete-associativity-census, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-MAGMA-CLOSED-OPERATION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-002: semigroup; exact observation: {"associative_triples":27,"carrier_count":3}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c2e0bf41b4b5309a05f97c50ec4d2e68b476afe59b95c5b174436a9478839e99`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:10cc721c8d1a0beee12792510a3852e2c2ecb98be664ad81738ecac0d621a0fb`; engine receipt `sha256:cf47d05b924a577416959ddc022d305c6aa02509046c37239b125f1e0fe13ab4`.
+
+#### `SFT-MATH-OBL-ALG-003` - Monoid identity witnesses
+
+- **Claim:** `SFT-MATH-ALG-MONOID-IDENTITY-003` - Monoid identity witnesses.
+- **Forced law:** A monoid adds one uniquely forced two-sided identity carrier to an associative operation.
+- **Unique survivor:** ALG-003 uniquely retains unique-two-sided-identity, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-SEMIGROUP-ASSOCIATIVITY-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-003: monoid; exact observation: {"identity_carrier":1,"two_sided":true}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4907c9ea806a0b50fad2b2e8445cd827311d01b8ed5b5fb095f970a9b2ba6bea`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:b04565e6a08b99d19c4443c3c2581301d6f27455fb8d3e25b1e09f0c2b376025`; engine receipt `sha256:beb8f7c7965680020a19391958ee25ec44998ca6b33feb9978f7adfda74a1fe5`.
+
+#### `SFT-MATH-OBL-ALG-004` - Group inverse as held reversal
+
+- **Claim:** `SFT-MATH-ALG-GROUP-HELD-INVERSE-004` - Group inverse as held reversal.
+- **Forced law:** A group requires one held reversal for every carrier whose ordered composition returns the identity.
+- **Unique survivor:** ALG-004 uniquely retains held-reversal-to-identity, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-MONOID-IDENTITY-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-004: group; exact observation: {"carrier_count":3,"unique_inverses":3}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b1f096a4bcdff504ddb0e7f91eb52a6bf7c567e32473018dd7b85c14bf7b6777`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:ff8d8f38b87e68e61a27ab56d25d2594b79f4255040e999f65942449dcadbd72`; engine receipt `sha256:94ea42e4036ab10f3e1eb8cdab2e194e18a1a053c664f1070fbac6a7a7c73152`.
+
+#### `SFT-MATH-OBL-ALG-005` - Permutation-group action
+
+- **Claim:** `SFT-MATH-ALG-PERMUTATION-GROUP-ACTION-005` - Permutation-group action.
+- **Forced law:** A permutation action is a reversible relabelling composition that preserves the acted carrier support.
+- **Unique survivor:** ALG-005 uniquely retains reversible-carrier-action, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-GROUP-HELD-INVERSE-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-005: permutation_action; exact observation: {"actions":6,"carriers":3}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ca19fef83e3c15a8e76521d4851582d2d33858ecd56d84f7cf0bd42b1b54604e`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:dc8c7e5b0d156fb7480e113fdf7ed54524dc6deb2f0ecb310724dee399455237`; engine receipt `sha256:4fe452d169159708a9cb65c9f42edfba611f0d86fc6143026a5122b839fba278`.
+
+#### `SFT-MATH-OBL-ALG-006` - Quotient and normal-substructure correspondence
+
+- **Claim:** `SFT-MATH-ALG-QUOTIENT-NORMAL-SUBSTRUCTURE-006` - Quotient and normal-substructure correspondence.
+- **Forced law:** A quotient identifies exactly the cosets forced by a normal held substructure and retains all distinct classes.
+- **Unique survivor:** ALG-006 uniquely retains normal-coset-equivalence, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-PERMUTATION-GROUP-ACTION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-006: quotient; exact observation: {"cosets":2,"normal_substructure":2,"parent_carriers":4}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3a41a3eb29bc36d2a1c2f1258473d89b1672eff16a32b390fd0bef73d48f2089`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:b8e192de22211517657da1385f1539f43bfa8e1d55f951e61b9876d0a34cdd32`; engine receipt `sha256:d468d9fb67765ecaa8c7b3f2e1e0404a27e07bbdb5843f943e01c62ac2d4f7b6`.
+
+#### `SFT-MATH-OBL-ALG-007` - Ring distributive structure
+
+- **Claim:** `SFT-MATH-ALG-RING-DISTRIBUTIVE-007` - Ring distributive structure.
+- **Forced law:** A ring couples junction and product operations through complete left and right distributivity witnesses.
+- **Unique survivor:** ALG-007 uniquely retains dual-operation-distribution, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-QUOTIENT-NORMAL-SUBSTRUCTURE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-007: ring; exact observation: {"distributive_triples":27,"modulus":3}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2787c480e07b430d7317101d9bc09a660828710264214520de5779f9fe47761a`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:41457482a162fe1345ac8d439bd9212e1c552cb1cffa73eb9ad36e41519c9f92`; engine receipt `sha256:2207ec02691fbc1989e0ae93e324ebb034047996b14277b521774ae634cac4fd`.
+
+#### `SFT-MATH-OBL-ALG-008` - Integral-domain boundary
+
+- **Claim:** `SFT-MATH-ALG-INTEGRAL-DOMAIN-008` - Integral-domain boundary.
+- **Forced law:** An integral-domain boundary forbids two nonabsence carriers from composing to multiplicative absence.
+- **Unique survivor:** ALG-008 uniquely retains nonabsence-product-retention, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-RING-DISTRIBUTIVE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-008: domain; exact observation: {"modulus":5,"nonabsence_pairs":16,"zero_divisors":"absence"}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e11219489f9b1483f55375af57343a7274dce1c9180dd213b69c4be43de5c68f`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:d727cd9fe244caa1e4fd8757befe697dbf0dcfbe58122919b49388cae1ce94d5`; engine receipt `sha256:69176d3a233e9eaa708fbbf5517c30b9cb3b7148f4f6cf12562d35d788b4f6b1`.
+
+#### `SFT-MATH-OBL-ALG-009` - Field correspondence under exact division
+
+- **Claim:** `SFT-MATH-ALG-FIELD-EXACT-DIVISION-009` - Field correspondence under exact division.
+- **Forced law:** A field correspondence requires one exact multiplicative reversal for every nonabsence carrier.
+- **Unique survivor:** ALG-009 uniquely retains unique-nonabsence-division, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-INTEGRAL-DOMAIN-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-009: field; exact observation: {"modulus":5,"nonabsence_inverses":4}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:70132aa0aaf92ea0546a67d05428eb78097226837462082f9b8729f52e17bd35`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:fac9542a32facdc9aad33338981fe908b9cb348ccbb501003ef5e4dc9a9c4244`; engine receipt `sha256:d1e1bc506263760193b0b99b66e3f7669ec9a2581ab2e4e10bb3f5ac656dd7ee`.
+
+#### `SFT-MATH-OBL-ALG-010` - Modules and scalar-action structure
+
+- **Claim:** `SFT-MATH-ALG-MODULE-SCALAR-ACTION-010` - Modules and scalar-action structure.
+- **Forced law:** A module is a carrier junction with scalar action preserving both scalar and carrier composition laws.
+- **Unique survivor:** ALG-010 uniquely retains compatible-scalar-carrier-action, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-FIELD-EXACT-DIVISION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-010: module; exact observation: {"coordinate_dimension":2,"field_support":2}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:022df7fb50d7a224ce4ab2c9178bc8124764199c79fe976743011238830f9de5`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:0c395f0a4f081722255fa4b5f2fa1af6eda5a9cde1077f05c3a42942eced4979`; engine receipt `sha256:bb21a886d6f54b9c232c9e4c6abb37c78d20372f1b3aa8c3a30b7e9795cc5fdf`.
+
+#### `SFT-MATH-OBL-ALG-011` - Algebras and compatible products
+
+- **Claim:** `SFT-MATH-ALG-COMPATIBLE-ALGEBRA-PRODUCT-011` - Algebras and compatible products.
+- **Forced law:** An algebra adds an internal product compatible with exact scalar action through bilinearity.
+- **Unique survivor:** ALG-011 uniquely retains bilinear-internal-product, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-MODULE-SCALAR-ACTION-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-011: algebra; exact observation: {"bilinear":true,"coordinate_dimension":2}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1518b936f8dacbc914653f1c30815a674ac4f4280c0505566869610ce2948e10`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:4725df72c1930e8eff5213f66080905b73ae2bd61e71256ef778a5b15d12a48e`; engine receipt `sha256:2170e5d46c51d5cac7879b84b7466bad4f891683985fa16d920f0a0f1f4b3a6f`.
+
+#### `SFT-MATH-OBL-ALG-012` - Ideals and quotient structures
+
+- **Claim:** `SFT-MATH-ALG-IDEAL-QUOTIENT-012` - Ideals and quotient structures.
+- **Forced law:** An ideal is a junction-closed absorbing substructure whose cosets carry a lawful quotient operation.
+- **Unique survivor:** ALG-012 uniquely retains absorbing-substructure-quotient, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-COMPATIBLE-ALGEBRA-PRODUCT-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-012: ideal; exact observation: {"ideal_carriers":2,"quotient_classes":3,"ring_carriers":6}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c025b2af3872140d509882dc692a06e982c3464f3a5a051838d8ede2e8c47319`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:9481b2cee4f9b26959c22ab2d06d55126d874f29b357a477a7645224fdbce4d0`; engine receipt `sha256:51014e51baa2db97fcb3c486c521aa813b08e33541a38c791abf465958ecfc3e`.
+
+#### `SFT-MATH-OBL-ALG-013` - Representation and action decomposition
+
+- **Claim:** `SFT-MATH-ALG-REPRESENTATION-ACTION-DECOMPOSITION-013` - Representation and action decomposition.
+- **Forced law:** A representation turns abstract composition into exact reversible linear action and decomposes only along witnessed invariant supports.
+- **Unique survivor:** ALG-013 uniquely retains invariant-action-components, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-IDEAL-QUOTIENT-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-013: representation; exact observation: {"action":"swap","distinction_mode":"held-opposed","uniform_mode":"held"}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3f25c3b5b4cfb4398c3ede25e416b677e2677c476d336e3fd93973bf382d94c4`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:0a774bbd416b49454a260429451c9b1d20e8ac1232f7219bb99f3543d2396163`; engine receipt `sha256:57cbe383561e1219e2ebae0731dba20a8a73b7f2961313cd20ff89c3af3ca2e8`.
+
+#### `SFT-MATH-OBL-ALG-014` - Exact sequence and homological correspondence
+
+- **Claim:** `SFT-MATH-ALG-EXACT-SEQUENCE-HOMOLOGICAL-014` - Exact sequence and homological correspondence.
+- **Forced law:** Exactness is the pointwise equality of one map image with the next map kernel, with every absence and retained distinction recorded.
+- **Unique survivor:** ALG-014 uniquely retains image-kernel-equality, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-REPRESENTATION-ACTION-DECOMPOSITION-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-014: exact_sequence; exact observation: {"equal":true,"image_size":2,"kernel_size":2}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f3f7c6de976c7dcc48dc2533b559931adaf84fe0923064a8099c19c9677bedcf`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:f0113ef2727db6c761b75c06cf2bb301fc8d7b518b72414838889df4df76f68b`; engine receipt `sha256:22db8eceff3c0225e195f7d08ed2011e187177df110bb9220cd2aa76d4337380`.
+
+#### `SFT-MATH-OBL-ALG-015` - Universal algebra and identities
+
+- **Claim:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015` - Universal algebra and identities.
+- **Forced law:** A universal-algebra identity survives only when every valuation over the declared operation signature satisfies it.
+- **Unique survivor:** ALG-015 uniquely retains signature-wide-identity-census, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-EXACT-SEQUENCE-HOMOLOGICAL-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-015: universal_algebra; exact observation: {"carrier_count":3,"identity":"associative-commutative-idempotent"}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:28f19c887d0a9df5beca581222dc5a33beb70f9d43f6e2f2af0f8c7aa2a8fdd7`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:505f6ea78c4323603a5f9a1dd280895936aef36ba7fa290f86581472e97711b8`; engine receipt `sha256:88a76935879afa29f6f647396afa0711a5626baae4107b68e4538a57f03c1a73`.
+
+#### `SFT-MATH-OBL-ALG-016` - Operadic algebraic composition interface
+
+- **Claim:** `SFT-MATH-ALG-OPERADIC-COMPOSITION-016` - Operadic algebraic composition interface.
+- **Forced law:** Operadic composition is typed substitution of multi-input operations with leaf identity and association retained.
+- **Unique survivor:** ALG-016 uniquely retains typed-substitution-association, complete operation custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-MAP-COMPOSITION-002 -> SFT-MATH-ARITH-CONGRUENCE-010 -> SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ALG-016: operad; exact observation: {"leaf_count":4,"substitution_associative":true}; complete family observation custody: 16 records; all rows preserved; complete finite operation enumeration supplies the observation; no fitted table, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ALGEBRA-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported algebraic axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite algebraic carrier; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f985509941927723abf8a6e34a74e4139e61e4bf32c258ec3c41d705176e293f`; independent `sha256:3e795c9ed31b2ce2bd9006e7964e508aac1c46498d50a317f1117e4012088927`; empirical `sha256:c1ff19b22d7316e33ddbdb58d8a2bf954dc0ad095989f9ba261cffd81c2591b7`; engine receipt `sha256:c45a860ee26cca756e9d1120e40d217d8255f5d68495e8cd9b3b275311081f7a`.
+
+### 40.10 Family `ORDER` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-ORDER-001` - Preorder and distinguishability quotient
+
+- **Claim:** `SFT-MATH-ORDER-PREORDER-QUOTIENT-001` - Preorder and distinguishability quotient.
+- **Forced law:** A preorder is forced by reflexive composable reachability; mutually reachable carriers quotient only when observation cannot distinguish them.
+- **Unique survivor:** ORDER-001 uniquely retains reflexive-transitive-distinguishability-quotient, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-001: preorder_quotient; exact observation: {"depth":3,"length_classes":4,"reflexive_transitive":true}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ca5091f295da823f0d7477f643f6943e69b6a55283e242442f86d08e6508d01e`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:314590fddb9cc1ffeb727476907c27c46bfbe56b1fa6e804ce26c5186486ed1d`; engine receipt `sha256:62b8a349524faaad77513549e980c4f3d9f3960dfea1aea5df04bd0f7338e4cb`.
+
+#### `SFT-MATH-OBL-ORDER-002` - Partial order and antisymmetry
+
+- **Claim:** `SFT-MATH-ORDER-PARTIAL-ANTISYMMETRY-002` - Partial order and antisymmetry.
+- **Forced law:** A partial order adds the law that mutual reachability of distinguished carriers forces their identity.
+- **Unique survivor:** ORDER-002 uniquely retains antisymmetric-reachability-order, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-PREORDER-QUOTIENT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-002: partial_order; exact observation: {"antisymmetric":true,"carrier_support":8}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f7f36ba29a4c41aed3d2f34fc5c48fb32ebcc62299baf60c4394788be397605d`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:927538266b0087ce6d39ead45e670d6ee765ef41a77b2f3f9817c262aa75040b`; engine receipt `sha256:90737e2dd2e996533513d1d6b2dedb0453101ced5dbf1972fd12672d7eb09ee2`.
+
+#### `SFT-MATH-OBL-ORDER-003` - Conditional total order
+
+- **Claim:** `SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003` - Conditional total order.
+- **Forced law:** A total order is lawful only on a registered carrier domain where every pair has an exact comparison witness.
+- **Unique survivor:** ORDER-003 uniquely retains exact-comparability-boundary, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-PARTIAL-ANTISYMMETRY-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-003: conditional_totality; exact observation: {"all_pairs_comparable":true,"exact_fraction_carriers":4}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ba62044ea076d2ed9392b4b05976d8233a461be7db4b7d0ff811d0ab76ad1cde`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:d5fa5d47d65c2d65a3311d9ef87735ec3a5eaff70d9d1ed586148fef062f9b0a`; engine receipt `sha256:fa8f185e14ec8d4e621b22db29f13bcf50d9c9a3b1101e434b148b6bc25ac5f3`.
+
+#### `SFT-MATH-OBL-ORDER-004` - Meet, join and lattice structure
+
+- **Claim:** `SFT-MATH-ORDER-MEET-JOIN-LATTICE-004` - Meet, join and lattice structure.
+- **Forced law:** Meet and join are uniquely forced greatest-lower and least-upper carriers under the complete order relation.
+- **Unique survivor:** ORDER-004 uniquely retains greatest-lower-least-upper-custody, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-004: meet_join; exact observation: {"carrier_support":8,"ordered_pairs":64,"unique_meet_join":true}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c99a1533fdaa38c5ff7041d1e463722a641c9b9fe5db0acd3099c1f52503d144`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:d1f3e4a6b89d3099100d59e888efa48c492df45a88297028359fee9e3cb1f128`; engine receipt `sha256:ef972980b97f3eae7b7060fcca7ce8f6b2d49f86cabc6f3ddd23852195c7b44d`.
+
+#### `SFT-MATH-OBL-ORDER-005` - Distributive and modular lattice correspondence
+
+- **Claim:** `SFT-MATH-ORDER-DISTRIBUTIVE-MODULAR-005` - Distributive and modular lattice correspondence.
+- **Forced law:** Distributive and modular correspondence is admitted by complete finite identity censuses over meet and join.
+- **Unique survivor:** ORDER-005 uniquely retains lattice-distribution-modularity, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-MEET-JOIN-LATTICE-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-005: distributive_modular; exact observation: {"distributive":true,"modular":true,"ordered_triples":512}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2203ad25cb0aec3062938ce27f394b9b6014eb109b32481ba51b3d09fc6917ad`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:c7d8a1d174d1b76f91637d61f907e0652709b73f0f09501dda26c060d764d200`; engine receipt `sha256:c67a3e785599e9dd49003227fef98d588bc99d2a18d7d267e1ea1e7646eacf89`.
+
+#### `SFT-MATH-OBL-ORDER-006` - Boolean-like complement correspondence
+
+- **Claim:** `SFT-MATH-ORDER-BOOLEAN-COMPLEMENT-006` - Boolean-like complement correspondence.
+- **Forced law:** Complement is a carrier whose meet is absence and join is the declared universe, with uniqueness tested over complete support.
+- **Unique survivor:** ORDER-006 uniquely retains relative-complement-boundary, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-DISTRIBUTIVE-MODULAR-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-006: complement; exact observation: {"carrier_support":8,"unique_complements":8}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f720b975401f1ceac55f60981f6a09f3c5156a71704b8d5c5b473ece035cd0b0`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:2b2d1b98a29cd095a42896c4012eba4882f0df4a25ad44f909c6a1bd9b9b2e07`; engine receipt `sha256:bab7103a46409d68b5275b3e60e12a6b7457763dbbc8cbf5b18d859d44d652f2`.
+
+#### `SFT-MATH-OBL-ORDER-007` - Closure operators and closure systems
+
+- **Claim:** `SFT-MATH-ORDER-CLOSURE-SYSTEM-007` - Closure operators and closure systems.
+- **Forced law:** A closure operator is uniquely characterized by extensivity, monotonicity and idempotence; its fixed carriers form the closure system.
+- **Unique survivor:** ORDER-007 uniquely retains extensive-monotone-idempotent-closure, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-BOOLEAN-COMPLEMENT-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-007: closure; exact observation: {"carrier_support":8,"extensive_monotone_idempotent":true}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:51f16c12aff75dd5d9122d2239315ed23a8041ccb05e850f1292fa150c1ccd87`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:34c059972df7500aebcd64c5acd22974450a454becdb3b6f06dbb05ec6dc8893`; engine receipt `sha256:8c63e67ef5d6b6d785dbfb1bcebe0df202af2908650236db7902c13e7ef0171a`.
+
+#### `SFT-MATH-OBL-ORDER-008` - Galois connections between orders
+
+- **Claim:** `SFT-MATH-ORDER-GALOIS-CONNECTION-008` - Galois connections between orders.
+- **Forced law:** A Galois connection is the exact equivalence between one order comparison and its reversed adjoint comparison.
+- **Unique survivor:** ORDER-008 uniquely retains adjoint-order-equivalence, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-008: galois_connection; exact observation: {"equivalence_pairs":32,"left_subsets":8,"right_subsets":4}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:71532050dc9ac057cf3dd44897543313570590231586850860c7e853617b0520`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:c1277ff524e7c17b6f03ded0d931d384eeeddcf5f54718b06cee02f78bb45096`; engine receipt `sha256:e68701f93b8bc3b1b2994f1701d31f2a56e3ed49d54306f13f605e7b9cfb2fd2`.
+
+#### `SFT-MATH-OBL-ORDER-009` - Domain approximation correspondence
+
+- **Claim:** `SFT-MATH-ORDER-DOMAIN-APPROXIMATION-009` - Domain approximation correspondence.
+- **Forced law:** Domain approximation is reconstructed by directed finite approximants whose exact join recovers the retained carrier.
+- **Unique survivor:** ORDER-009 uniquely retains finite-approximant-directed-join, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-GALOIS-CONNECTION-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-009: domain_approximation; exact observation: {"chain_carriers":4,"recovered_by_approximants":4}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7358b757170350efcc5fcdefab8c9220c1e5deacf9816fe50f0de3a4262f1dd9`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:9599a6a4a9836426c0991365e53b08c6226c1766a019829e51c007d60d3a1ca1`; engine receipt `sha256:94ae3c06d59a7cc4fd1de2f6db35ceb1fad52c343e8622360f94e14f65ec5087`.
+
+#### `SFT-MATH-OBL-ORDER-010` - Monotone maps and order preservation
+
+- **Claim:** `SFT-MATH-ORDER-MONOTONE-MAP-010` - Monotone maps and order preservation.
+- **Forced law:** A monotone map preserves every registered comparison and cannot reverse a retained order distinction.
+- **Unique survivor:** ORDER-010 uniquely retains order-preserving-map, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-DOMAIN-APPROXIMATION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-010: monotone_map; exact observation: {"chain_carriers":4,"comparison_pairs":16,"preserved":true}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:982b932b5b04926149592045111bcf0d0f8cb587947e0416abe6f2d38b2d7389`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:c3f1fc963141d43048db64dc1bb784437cbe548ee9fbb58cc8e453619394288b`; engine receipt `sha256:053130750729ea82310b9c55b17d1d9113d05666aaac6d2639b86863c497b8d5`.
+
+#### `SFT-MATH-OBL-ORDER-011` - Fixed-point existence on finite orders
+
+- **Claim:** `SFT-MATH-ORDER-FINITE-FIXED-POINT-011` - Fixed-point existence on finite orders.
+- **Forced law:** A monotone self-map on a finite complete order reaches a witnessed fixed point by exact iteration from a boundary carrier.
+- **Unique survivor:** ORDER-011 uniquely retains finite-monotone-iteration-fixed-point, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-MONOTONE-MAP-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-011: fixed_point; exact observation: {"iterations":1,"least_fixed_support":[1]}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:745b054628489b5bb249b805e46d2641e18198dabddd9898624265494b073160`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:1d57ce514aba4f3acaf837d2fb2d1e756e663c0f3f3aa9afca3c37dadb3973ff`; engine receipt `sha256:d81be77c0466b0b27fc0c703c9e40c284f2052c4663d8ae491bf23f7e1f2e7bc`.
+
+#### `SFT-MATH-OBL-ORDER-012` - Complete-lattice correspondence boundary
+
+- **Claim:** `SFT-MATH-ORDER-COMPLETE-LATTICE-BOUNDARY-012` - Complete-lattice correspondence boundary.
+- **Forced law:** Finite complete-lattice correspondence requires a meet and join for every generated subfamily, including empty-family boundary conventions.
+- **Unique survivor:** ORDER-012 uniquely retains all-generated-family-meet-join, complete comparison custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ALG-UNIVERSAL-IDENTITIES-015 -> SFT-MATH-COMB-EXTREMAL-SET-SYSTEM-007 -> SFT-MATH-ORDER-FINITE-FIXED-POINT-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ORDER-012: complete_lattice; exact observation: {"all_meets_joins_present":true,"carrier_support":8,"generated_subfamilies":256}; complete family observation custody: 12 records; all rows preserved; complete finite comparison enumeration supplies the observation; no fitted order, imported axiom list or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ORDER-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported order axiom list, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite lattice or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:153e71c96065e2214f5fc25301bc6b66bb268d12f72344bda67971f4a3aecb8d`; independent `sha256:0e9530f3c571a1dbf4c3b89e3ef812de846ddd049df78264f02b3f7f094b3b94`; empirical `sha256:6618c7a9c962748fdcc18efce98a3099ed679a384cd7a5b054df151872b6f19c`; engine receipt `sha256:c058a971d9c63aea9690da203a2bafd33ff1a85c3b456ed893c0fbc483d1df96`.
+
+### 40.11 Family `GEOM` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-GEOM-001` - Point, incidence and exact coordinate identity
+
+- **Claim:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001` - Point, incidence and exact coordinate identity.
+- **Forced law:** A point is a named coordinate carrier and incidence is an exact relation that preserves every point identity.
+- **Unique survivor:** GEOM-001 uniquely retains named-point-incidence-custody, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-001: point_incidence; exact observation: {"collinear":true,"held_total":11,"opposed_total":11,"points":3}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6e54fdc1b6bd55e00c33a86e75a9d3252348b1aaf6dde36346d5493506dd39d1`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:6604c33d4c9b36327baa70c264daaa218a4b83e88c2b2dce6eed051465d9f5e5`; engine receipt `sha256:6e21c474249b5f7416086cffdfa67b0dc82ae3b3b5ec3e085f966a51923489c2`.
+
+#### `SFT-MATH-OBL-GEOM-002` - Finite Euclidean-distance correspondence
+
+- **Claim:** `SFT-MATH-GEOM-EUCLIDEAN-DISTANCE-002` - Finite Euclidean-distance correspondence.
+- **Forced law:** Euclidean distance correspondence is carried by exact squared coordinate separation when a conventional root would be irrational.
+- **Unique survivor:** GEOM-002 uniquely retains exact-squared-distance, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-002: euclidean_distance; exact observation: {"root_imported":false,"squared_distance":25}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1bff82d89d227affa2d7ba04e408d04ccad713488fadc4010d4efff0ad681c2a`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:c11a850832b3b543e18b06dd050a10cc01b1f747789da5eb32f071377662ea48`; engine receipt `sha256:476f77266580be2d60d3958a6ac59279ff4c0f30757ec7a0034dc792cf4a0b3b`.
+
+#### `SFT-MATH-OBL-GEOM-003` - Affine combinations and affine invariance
+
+- **Claim:** `SFT-MATH-GEOM-AFFINE-INVARIANCE-003` - Affine combinations and affine invariance.
+- **Forced law:** Affine combinations use exact parts summing to the whole and remain invariant under common translation.
+- **Unique survivor:** GEOM-003 uniquely retains exact-part-affine-combination, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-EUCLIDEAN-DISTANCE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-003: affine_invariance; exact observation: {"midpoint":[2,3],"translated_midpoint":[4,4]}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:097686c0b372ed45ed1f75ec467dda0caab5f62b0fc7d294ef418b20a02de0c7`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:208ab747f41a94756a58468cfa4329b4af0e10bd8ee79fb2c154bfa366b9d452`; engine receipt `sha256:10e679a7ee169bd7d4db58480e7b08a4db29a2bcce9a0071775a143ea077fbf6`.
+
+#### `SFT-MATH-OBL-GEOM-004` - Projective incidence and perspective
+
+- **Claim:** `SFT-MATH-GEOM-PROJECTIVE-PERSPECTIVE-004` - Projective incidence and perspective.
+- **Forced law:** Projective correspondence retains point-line incidence under homogeneous relabelling without importing continuum coordinates.
+- **Unique survivor:** GEOM-004 uniquely retains projective-incidence-custody, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-AFFINE-INVARIANCE-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-004: projective_incidence; exact observation: {"line_per_pair":1,"lines":7,"points":7,"points_per_line":3}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3e65d69cd106fecd0337c68752e6215ecbe514e1f862fb5bec66e3e2b29455b6`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:a1cd2801ca5d152846617b12cd62477bea4c715e4dfd13821bf7b01303d9be7a`; engine receipt `sha256:aa1b4a590e43ae08efb84276484f8e9bf0bd6fa76611eea1d1dff07ccb996a88`.
+
+#### `SFT-MATH-OBL-GEOM-005` - Convex hulls and separation
+
+- **Claim:** `SFT-MATH-GEOM-CONVEX-HULL-SEPARATION-005` - Convex hulls and separation.
+- **Forced law:** A convex hull contains exactly the lawful exact-part combinations; separation is witnessed by an exact support comparison.
+- **Unique survivor:** GEOM-005 uniquely retains exact-convex-combination-separation, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-PROJECTIVE-PERSPECTIVE-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-005: convex_separation; exact observation: {"centre":[[1,2],[1,2]],"external_coordinate":2,"separated":true}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f66ff5f987206e1f420e59f5b24166886ef870695326a70c6fb866a2312ccc44`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:4d10622170d80b61aceaeee6f0ec43e310ca33fab2a6c2522329d45c80ff02af`; engine receipt `sha256:6c66327e91dff8df94b11eddc42778bb8ab3d86e174401333decd8bd3d033aa5`.
+
+#### `SFT-MATH-OBL-GEOM-006` - Discrete geometry and lattice polytopes
+
+- **Claim:** `SFT-MATH-GEOM-DISCRETE-LATTICE-POLYTOPE-006` - Discrete geometry and lattice polytopes.
+- **Forced law:** A lattice polytope is the finite hull of exact coordinate carriers with boundary and interior custody.
+- **Unique survivor:** GEOM-006 uniquely retains lattice-point-polytope-incidence, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-CONVEX-HULL-SEPARATION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-006: lattice_polytope; exact observation: {"area":1,"boundary_points":4,"interior":"absence"}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5d8402cc0938770edc52a0250fbc25efd67c79aa2cfa9e1c552a60d7e008932a`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:3419b3406b8fdd4e6a5410d4e053298750e50147bdcd6ae7f35c39048a3b89df`; engine receipt `sha256:5f1da049f9226f536b49893ca4fa13e2f7f454f53bbcb2f6ec3ec46ec650e7d1`.
+
+#### `SFT-MATH-OBL-GEOM-007` - Polyhedral faces and Euler-type incidence
+
+- **Claim:** `SFT-MATH-GEOM-POLYHEDRAL-EULER-INCIDENCE-007` - Polyhedral faces and Euler-type incidence.
+- **Forced law:** Polyhedral structure is the complete face-edge-vertex incidence ledger and Euler correspondence follows from its exact alternating orientation labels.
+- **Unique survivor:** GEOM-007 uniquely retains face-edge-vertex-ledger, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-DISCRETE-LATTICE-POLYTOPE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-007: polyhedral_incidence; exact observation: {"edges":12,"euler_total":2,"faces":6,"vertices":8}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e549b11c36647af1778811717707a4b198cc1dbdd8757a59a2e7e75d799cd786`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:d018845e5e28326ebb9c1ea5501c4cbb21b5ebbf85c5d1dcabd358e59d11c7b7`; engine receipt `sha256:f7150f1b221d7610f49c7e175d12578d3c5e646cf4834b803f2fd87254335532`.
+
+#### `SFT-MATH-OBL-GEOM-008` - Computational geometry predicates
+
+- **Claim:** `SFT-MATH-GEOM-COMPUTATIONAL-PREDICATES-008` - Computational geometry predicates.
+- **Forced law:** A computational geometry predicate is an exact finite comparison whose boundary and tie behavior are registered before evaluation.
+- **Unique survivor:** GEOM-008 uniquely retains exact-geometric-decision-predicates, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-POLYHEDRAL-EULER-INCIDENCE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-008: computational_predicates; exact observation: {"nearest":[1,1],"query":[2,2],"unique":true}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bb3633c499cdab0f79db56fca6086d15b0db2d27d3aec1b06b2c74c0ed3bdb89`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:fc5b7dfba1882d6ac0a8bc404df25087432a2750c502a2a455a8e56cada61de5`; engine receipt `sha256:88bd71da009f553ffc0ea404616ad3a4269dffd0c2e3d233ed1f24b8abb30774`.
+
+#### `SFT-MATH-OBL-GEOM-009` - Exact orientation and intersection tests
+
+- **Claim:** `SFT-MATH-GEOM-ORIENTATION-INTERSECTION-009` - Exact orientation and intersection tests.
+- **Forced law:** Orientation is a held/opposed product comparison, and intersection retains the exact common carrier or exact-part coordinate.
+- **Unique survivor:** GEOM-009 uniquely retains held-opposed-orientation-intersection, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-COMPUTATIONAL-PREDICATES-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-009: orientation_intersection; exact observation: {"intersection":[2,2],"orientation":"held"}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:fb03dc30cd87ee867a8e048701cae94c1038221da4b73baa94b155fd5b26f0f2`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:c38caa404f3beefc43eed1cc86145828d94130921fc0fd714a474019160e6d72`; engine receipt `sha256:24596a0663ce622201d42208bb517558807fa73ee356f40d32ea7466a6045b93`.
+
+#### `SFT-MATH-OBL-GEOM-010` - Algebraic-geometry solution-set correspondence
+
+- **Claim:** `SFT-MATH-GEOM-ALGEBRAIC-SOLUTION-SET-010` - Algebraic-geometry solution-set correspondence.
+- **Forced law:** Algebraic geometry correspondence is the complete exact solution-set census of registered polynomial relations over lawful carriers.
+- **Unique survivor:** GEOM-010 uniquely retains finite-polynomial-solution-census, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-ORIENTATION-INTERSECTION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-010: algebraic_solution_set; exact observation: {"ordered_solutions":4,"relation":"x*y=6"}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b7dba10a2e1694d1d37413939c9c06ba63922e68ae8c9473a82d6bb1744ae37a`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:65d5a1df85c8cd8603f64405bfcdc6584bc9ba1bbe9590e7fc8c51ac681e7a90`; engine receipt `sha256:cfa6ae0f410c735a5d4a2a782ae80bd70e149682beec68d45bb58fa3a740b1d2`.
+
+#### `SFT-MATH-OBL-GEOM-011` - Differential-geometry finite-chart correspondence
+
+- **Claim:** `SFT-MATH-GEOM-DIFFERENTIAL-FINITE-CHART-011` - Differential-geometry finite-chart correspondence.
+- **Forced law:** A finite chart correspondence retains local coordinate relations and exact transition maps without presuming a continuum manifold.
+- **Unique survivor:** GEOM-011 uniquely retains finite-chart-transition-custody, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-ALGEBRAIC-SOLUTION-SET-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-011: finite_charts; exact observation: {"adjacency_preserved":true,"chart_points":4,"transition":[2,3]}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:02781279644241e82edbabd7be750755f5d0c9dbdc91a17d4d3ea4be63cc4e22`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:3c91e4b6b27515f732aafc470df0329b0a8b5cc2cd52230befc3316141d7c6b5`; engine receipt `sha256:f3e05eae5cba1877fe920845cfd8b489897d358f61b57737840d3266a4d89fb6`.
+
+#### `SFT-MATH-OBL-GEOM-012` - Curvature by exact finite transport
+
+- **Claim:** `SFT-MATH-GEOM-CURVATURE-FINITE-TRANSPORT-012` - Curvature by exact finite transport.
+- **Forced law:** Curvature is reconstructed as the exact retained discrepancy after closed finite transport or incidence-angle custody.
+- **Unique survivor:** GEOM-012 uniquely retains finite-transport-curvature-ledger, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-DIFFERENTIAL-FINITE-CHART-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-012: finite_curvature; exact observation: {"curvature_each":[1,2],"total":2,"vertices":4}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4f80c4c4ba3e66ad69eb2a991482f2ec32410ba53db7d7ec8222be33a02fb4dd`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:283d2e14420eaca43660d015383edf98c9f8b0a9b626b4109b4fc70fa929ea72`; engine receipt `sha256:c402bd060dc95d06eef218f4ecbbeea4cb2d907e73d3d0208703f4cbeba24f34`.
+
+#### `SFT-MATH-OBL-GEOM-013` - Metric geometry and geodesic correspondence
+
+- **Claim:** `SFT-MATH-GEOM-METRIC-GEODESIC-013` - Metric geometry and geodesic correspondence.
+- **Forced law:** A geodesic is the least exact path separation in the complete generated path support.
+- **Unique survivor:** GEOM-013 uniquely retains least-exact-path-separation, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-CURVATURE-FINITE-TRANSPORT-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-013: metric_geodesic; exact observation: {"end":[3,3],"length":4,"start":[1,1]}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:87fe3a57cad1740f60f19fc8e4c214d3136c9edbca713c4dad25744ebf4af613`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:3136951163bb18af5a64df9cf7cfed31fcc0997bcc35b1e17d7d8b3680397c48`; engine receipt `sha256:09605a920fde7f770e6951a2b9d2d1ec641a89dd55fb2a7c00ad3ae9c7766007`.
+
+#### `SFT-MATH-OBL-GEOM-014` - Fractal and self-similar geometry
+
+- **Claim:** `SFT-MATH-GEOM-FRACTAL-SELF-SIMILAR-014` - Fractal and self-similar geometry.
+- **Forced law:** Self-similar geometry is an exact replacement recursion with every finite depth certified; irrational dimension labels are not proof scalars.
+- **Unique survivor:** GEOM-014 uniquely retains finite-depth-self-similar-replacement, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-METRIC-GEODESIC-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-014: self_similarity; exact observation: {"depth_counts":[1,3,9,27],"exact_part_scale":[1,2]}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2ee776d7c96c7b4066306af623208a4565a82df1a603ac62a7efdd861e15692d`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:c635a0935bd8620e40d6cba6e643acbe930e36e72870b9abd4c0e8fe43eba2c1`; engine receipt `sha256:695c16a32dd6cc22ac2f0fca7817a89088b58cd1a88b7f6d1c7b3d1c7d104a60`.
+
+#### `SFT-MATH-OBL-GEOM-015` - Packing, covering and tessellation
+
+- **Claim:** `SFT-MATH-GEOM-PACKING-COVERING-TESSELLATION-015` - Packing, covering and tessellation.
+- **Forced law:** Packing retains disjoint interiors, covering retains complete support, and tessellation requires both at the declared boundary.
+- **Unique survivor:** GEOM-015 uniquely retains disjoint-interior-complete-cover, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-FRACTAL-SELF-SIMILAR-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-015: tessellation; exact observation: {"cells":9,"columns":3,"complete_cover":true,"rows":3}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:671d0328bd3999b0c7a8aec8396f3198e58ef882c6a60f465e269099971dd124`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:5bd06c72774516b21f112bf26e22bde7b50d77a1e7a2cbe0c51e9b0236a5a30b`; engine receipt `sha256:f0e9e9bfb4de8cec2f7419c8a96325a040497b09b4cfa3457fc6fe4b2799ec25`.
+
+#### `SFT-MATH-OBL-GEOM-016` - Geometric transformation groups
+
+- **Claim:** `SFT-MATH-GEOM-TRANSFORMATION-GROUPS-016` - Geometric transformation groups.
+- **Forced law:** A geometric transformation group is the complete reversible action preserving the registered incidence or metric relation.
+- **Unique survivor:** GEOM-016 uniquely retains reversible-incidence-transformations, complete configuration custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LINEAR-VECTOR-COORDINATE-CARRIERS-001 -> SFT-MATH-ORDER-CONDITIONAL-TOTALITY-003 -> SFT-MATH-GEOM-PACKING-COVERING-TESSELLATION-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** GEOM-016: transformation_group; exact observation: {"square_symmetries":8}; complete family observation custody: 16 records; all rows preserved; complete finite configuration enumeration supplies the observation; no fitted coordinate, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-GEOMETRY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum geometry, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum manifold or infinite tessellation; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2b91d1ba542627875c747b1328d59bb42daba8c7e6f19c66df5dd8ab3eb7e385`; independent `sha256:c05b253043fdd4dccbc518c94010e9e82f42994dde21ca5696d46c43fa49b9a9`; empirical `sha256:cc03a3a3009394fe833342adea0e57ba8e3a578d44262fd151edcbc979a94e1c`; engine receipt `sha256:f601584092d818d2180fa5b6b32aff5089152b8a2b29d31a826ad2f106658c2e`.
+
+### 40.12 Family `TOPO` - 14/14 complete
+
+This family contributes 3,584 completely decided candidates, 14 unique survivors and 56 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-TOPO-001` - Open-set correspondence on generated supports
+
+- **Claim:** `SFT-MATH-TOPO-OPEN-SET-SUPPORT-001` - Open-set correspondence on generated supports.
+- **Forced law:** An open-set correspondence is a generated observation family containing absence and whole and closed under declared unions and finite intersections.
+- **Unique survivor:** TOPO-001 uniquely retains finite-open-support-closure, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-001: open_support; exact observation: {"carriers":2,"closed_under_required_operations":true,"open_sets":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:dcd17c115e1b3efb60d0af8e6944eb20b42713999141330dffd32f9ea7825eea`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:7a427bfd46ec1d1c578718eb43a0e3d7185725e56ff04a3b374785d95c37136c`; engine receipt `sha256:087501b54410e5b0cc2582c58f56e0ae422ff60ae8e112669ad6257904b828f6`.
+
+#### `SFT-MATH-OBL-TOPO-002` - Continuity as distinction-preserving transport
+
+- **Claim:** `SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002` - Continuity as distinction-preserving transport.
+- **Forced law:** A transport is continuous when every observable open distinction has an open preimage, so no hidden discontinuity is introduced.
+- **Unique survivor:** TOPO-002 uniquely retains open-preimage-continuity, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-OPEN-SET-SUPPORT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-002: continuity; exact observation: {"continuous":true,"open_preimages":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:56813a2b0da0dcab7c07323466756483211a4cfc96c318df7437e4a6578e7ba5`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:0786269f18283f635ed697d46b241576f410fcd9ba7eb5844b7f0b42d9478628`; engine receipt `sha256:573c965f1d7c4ca35f06606ef420cbd243824da0a33ef5239ed3eeda9b39bc11`.
+
+#### `SFT-MATH-OBL-TOPO-003` - Compactness finite-subcover correspondence
+
+- **Claim:** `SFT-MATH-TOPO-COMPACT-FINITE-SUBCOVER-003` - Compactness finite-subcover correspondence.
+- **Forced law:** Compactness correspondence requires every generated open cover to retain a finite subcover; finite supports close by complete cover enumeration.
+- **Unique survivor:** TOPO-003 uniquely retains finite-cover-subcover-custody, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-003: compactness; exact observation: {"cover_sets":2,"finite_subcover":2,"support":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f57a62ebfc8fa2ee43b7c8c13666b1caef4f93b9484137f9e085a03158d76654`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:77ba0c8eca8de509feb9c02e73567b1af000c9eaf2e2e3e5f7ec5f1918a1c408`; engine receipt `sha256:093d2d6a7de58e145ed538bc8ca98e21197f57236c9895ecc688896aef4f0da1`.
+
+#### `SFT-MATH-OBL-TOPO-004` - Connectedness and component structure
+
+- **Claim:** `SFT-MATH-TOPO-CONNECTED-COMPONENT-004` - Connectedness and component structure.
+- **Forced law:** Components are the unique maximal carriers linked by composable incidence paths.
+- **Unique survivor:** TOPO-004 uniquely retains maximal-connected-components, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-COMPACT-FINITE-SUBCOVER-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-004: connectedness; exact observation: {"components":2,"vertices":5}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6ea0fe4f16b9e1fb9e019f92e79246ed217296980acfa86e18e7242671bd26fd`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:45838a9db3115c844e18f029884eb3c41b53214d79e4fe1e823a41f2946b6d5a`; engine receipt `sha256:15563c18cf9cbc4909fed4801546848b883a4a532e5b92a19d7f865abb66942a`.
+
+#### `SFT-MATH-OBL-TOPO-005` - Separation properties on finite observations
+
+- **Claim:** `SFT-MATH-TOPO-SEPARATION-FINITE-005` - Separation properties on finite observations.
+- **Forced law:** Separation properties are exact statements about which generated observations distinguish each carrier pair.
+- **Unique survivor:** TOPO-005 uniquely retains finite-observation-separation, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-CONNECTED-COMPONENT-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-005: separation; exact observation: {"carriers":3,"ordered_distinct_pairs":6,"separated":true}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e9604fa3013eccc168e818dc331919b92f3a703d2fe253d514a3ccb4dbb97051`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:b61eaf89b292e9f1cf013689c72493d1f4a1ce99d2965712a06ded591ed00376`; engine receipt `sha256:c5e7396091b5d6f67fbda3a6b709c3c2e0a65a549376de10eb271a3bc52e5f40`.
+
+#### `SFT-MATH-OBL-TOPO-006` - Product, quotient and subspace topology correspondence
+
+- **Claim:** `SFT-MATH-TOPO-PRODUCT-QUOTIENT-SUBSPACE-006` - Product, quotient and subspace topology correspondence.
+- **Forced law:** Product, subspace and quotient topology are forced by paired observations, exact restriction and class-saturated projection.
+- **Unique survivor:** TOPO-006 uniquely retains product-restriction-quotient-observation, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-SEPARATION-FINITE-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-006: product_quotient_subspace; exact observation: {"product_carriers":6,"quotient_classes":2}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d37eae95cca3b615d75dfd41389793852e22654e08b521be3747577fd624f468`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:05021d14c5140a8af8b9d4d9e2476599cbec9e931b3c659a0a7438e1912a0412`; engine receipt `sha256:a82e2923c6b54b8bc343741e75582056e2c37a5058376ca947c0c07d15cff42b`.
+
+#### `SFT-MATH-OBL-TOPO-007` - Simplicial complexes and incidence
+
+- **Claim:** `SFT-MATH-TOPO-SIMPLICIAL-INCIDENCE-007` - Simplicial complexes and incidence.
+- **Forced law:** A simplicial complex is a generated face family closed under every retained subface.
+- **Unique survivor:** TOPO-007 uniquely retains downward-closed-simplex-incidence, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-PRODUCT-QUOTIENT-SUBSPACE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-007: simplicial_complex; exact observation: {"downward_closed":true,"nonempty_faces":7,"vertices":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:536cb7a681400b4738f3080640ef9cd31393d6d96a7687ee81ea9eb7178662af`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:76cbbf0bed7639b42a72c2c10676940f1c318cdfbc321df0a4d4d015b801449c`; engine receipt `sha256:8ab47bcdc0b0a32ffe001651b90b87a33462ee55f203ffa30300664c917ee346`.
+
+#### `SFT-MATH-OBL-TOPO-008` - Homotopy path-deformation correspondence
+
+- **Claim:** `SFT-MATH-TOPO-HOMOTOPY-PATH-DEFORMATION-008` - Homotopy path-deformation correspondence.
+- **Forced law:** Finite homotopy correspondence is an endpoint-preserving sequence of exact face-supported path deformations.
+- **Unique survivor:** TOPO-008 uniquely retains finite-face-path-deformation, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-SIMPLICIAL-INCIDENCE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-008: homotopy; exact observation: {"endpoints_preserved":true,"face_moves":1,"paths":2}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:74865fe0e1e40e293a417c43bfe7542fe36dccc9c632149181a3284329eae504`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:600b707b48f918839923d05ff7978383b6301232578f70b4cc537cfa6a0db543`; engine receipt `sha256:e9a150b12a6b2c46ae0e816f04f943af98073118526fbdc446d96bf870f1d580`.
+
+#### `SFT-MATH-OBL-TOPO-009` - Fundamental-cycle and group correspondence
+
+- **Claim:** `SFT-MATH-TOPO-FUNDAMENTAL-CYCLE-GROUP-009` - Fundamental-cycle and group correspondence.
+- **Forced law:** Fundamental-cycle correspondence retains closed paths under composition and held reversal modulo witnessed face deformation.
+- **Unique survivor:** TOPO-009 uniquely retains cycle-composition-reversal, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-HOMOTOPY-PATH-DEFORMATION-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-009: fundamental_cycle; exact observation: {"components":1,"cycle_rank":1,"edges":3,"vertices":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:114651158da3821832333b3c5b8ea59c265498b0330dc866e91666a9fc4d8c9a`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:ab28c2bce8aab0ef29b5d04b9e02072b4f7492d5ee9b8d3ec8bd81fffde8ba90`; engine receipt `sha256:70093215c70da4bb5253edf8b7a016a6788c5158c670ce96b24413a952a81ff4`.
+
+#### `SFT-MATH-OBL-TOPO-010` - Homology and boundary composition
+
+- **Claim:** `SFT-MATH-TOPO-HOMOLOGY-BOUNDARY-010` - Homology and boundary composition.
+- **Forced law:** Homology correspondence follows from exact chains and a boundary operation whose second application is structural absence.
+- **Unique survivor:** TOPO-010 uniquely retains boundary-of-boundary-absence, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-FUNDAMENTAL-CYCLE-GROUP-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-010: homology; exact observation: {"second_boundary":"absence","triangle_boundary_edges":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:805c1a2a02c4d5698adb8e9e878ce151740c7d36ec55a97fce6d5a5f8e4b46df`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:3414b74272f4ad28ffda4dee14c8c19a29dcc36104e743367cb689b90b8db31e`; engine receipt `sha256:01fa67cf3367f6ba1401e220a59a69e8e81be36b53ae713f95149e6638f3286b`.
+
+#### `SFT-MATH-OBL-TOPO-011` - Cohomology and dual-observation correspondence
+
+- **Claim:** `SFT-MATH-TOPO-COHOMOLOGY-DUAL-OBSERVATION-011` - Cohomology and dual-observation correspondence.
+- **Forced law:** Cohomology correspondence is the dual observation of retained cycles modulo observations generated by lower boundaries.
+- **Unique survivor:** TOPO-011 uniquely retains dual-cycle-observation, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-HOMOLOGY-BOUNDARY-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-011: cohomology; exact observation: {"cycle_edges":3,"dual_evaluations":3}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a65cfc85eff403898cf77f55aca2f5c895ce537dc470dfa2d00768aaa26e83c5`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:c39c7a5b7a07935e7928e8a02a55605ddc94bddadbaf6a7da3cfdf5a4d7e1a6a`; engine receipt `sha256:daa2f48449e9a9b802fa8193d8a7298683680fc55118d1963caa2ecf2037475a`.
+
+#### `SFT-MATH-OBL-TOPO-012` - Manifold finite-atlas correspondence
+
+- **Claim:** `SFT-MATH-TOPO-MANIFOLD-FINITE-ATLAS-012` - Manifold finite-atlas correspondence.
+- **Forced law:** A finite-atlas correspondence requires local chart carriers and exact compatible overlap transports without presuming a continuum manifold.
+- **Unique survivor:** TOPO-012 uniquely retains finite-local-chart-overlap, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-COHOMOLOGY-DUAL-OBSERVATION-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-012: finite_atlas; exact observation: {"charts":4,"local_carriers":3,"overlaps_compatible":true}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:708b4c037915938361a6dbcbd0e4a7196dfa7d1d382b1ed29bd29a466f7cd871`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:44a43ed4db4c4cded76afd9bed74609acff22b38920c13ba756cb50dfce32d89`; engine receipt `sha256:06b0bd43fcc4ff33c4522a44cd3425d14dab1d0c833e8f5993f553567abf6865`.
+
+#### `SFT-MATH-OBL-TOPO-013` - Knot and link finite-diagram invariants
+
+- **Claim:** `SFT-MATH-TOPO-KNOT-LINK-INVARIANTS-013` - Knot and link finite-diagram invariants.
+- **Forced law:** A knot or link invariant is admitted only when retained across every registered local diagram move and relabelling.
+- **Unique survivor:** TOPO-013 uniquely retains finite-diagram-move-invariant, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-MANIFOLD-FINITE-ATLAS-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-013: knot_link; exact observation: {"crossings":3,"cyclic_invariant":true,"gauss_word_length":6}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e498e3f245455fb09ee7e33a543861b4b83c12a0c0a766ee0e17d62f176dab2c`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:d3785e4ad344acab3ed71e7f59bbb33d7a8175d9fc69a2019d3e6654a0b7f9b7`; engine receipt `sha256:5896d19c43946aaf7ea803a46d656d83877e3a33bfe835fb25652e7d6b0a0cc0`.
+
+#### `SFT-MATH-OBL-TOPO-014` - Computational topology and persistent-feature custody
+
+- **Claim:** `SFT-MATH-TOPO-PERSISTENT-FEATURE-CUSTODY-014` - Computational topology and persistent-feature custody.
+- **Forced law:** Persistent topology retains every feature birth, continuation and merge across an exact filtration without resurrecting lost distinctions.
+- **Unique survivor:** TOPO-014 uniquely retains filtered-feature-birth-merge-ledger, complete topological custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-GEOM-POINT-INCIDENCE-COORDINATE-001 -> SFT-MATH-ORDER-CLOSURE-SYSTEM-007 -> SFT-MATH-TOPO-KNOT-LINK-INVARIANTS-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** TOPO-014: persistence; exact observation: {"component_counts":[4,2,1],"resurrection":false}; complete family observation custody: 14 records; all rows preserved; complete deterministic topology enumeration supplies the observation; no fitted invariant, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-TOPOLOGY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum topology, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite cover or continuum manifold; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b9a16c4e3e0bab0df705a0d96ce2833c70d1e01e6c8bfd7925792744ec1b4e12`; independent `sha256:a16f6c730aeee097503a93d340a6412194787efcf19b204b94e3f1d4f8e150cb`; empirical `sha256:96fe7e722fc273784e6c9afd5897dfd1320195eb971c2895ca0e3ed9da8fe7c1`; engine receipt `sha256:cb7338023bc31ad5a784693d1b348ba04c7808a83dd59d02d8bb91602176fe4a`.
+
+### 40.13 Family `CALC` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-CALC-001` - Exact finite difference and local change
+
+- **Claim:** `SFT-MATH-CALC-FINITE-DIFFERENCE-001` - Exact finite difference and local change.
+- **Forced law:** Finite difference is the exact held/opposed change between adjacent generated values, with magnitude represented nonnegatively.
+- **Unique survivor:** CALC-001 uniquely retains oriented-local-change, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-001: finite_difference; exact observation: {"changes":[3,5,7],"values":[1,4,9,16]}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a68728bd6cd24096c6a4568c5a13e9d040247874c68533443d1fb21a83fb6d93`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:d8ae66d6bccfac64dc0a67e6d0e8d040f413276b5e4c2ba17554e8c2cdd296ff`; engine receipt `sha256:507dcb047bbe74bb826a5e6ed551568a04827638d7e02341b616ed21b9441a74`.
+
+#### `SFT-MATH-OBL-CALC-002` - Higher finite differences and polynomial degree
+
+- **Claim:** `SFT-MATH-CALC-HIGHER-DIFFERENCE-DEGREE-002` - Higher finite differences and polynomial degree.
+- **Forced law:** Higher differences iterate exact local change; constant depth certifies the registered finite polynomial-degree correspondence.
+- **Unique survivor:** CALC-002 uniquely retains iterated-difference-degree, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-FINITE-DIFFERENCE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-002: higher_difference; exact observation: {"sequence":[1,8,27,64,125],"third_difference":[6,6]}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:94eab315ef54ad0ed5cb2bdd00ecd3e52af1964a8145b8607020a743d12e9f86`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:4c7348bf3b711c425ea50522420a9771098274240fa995d293b4496a0e2fa120`; engine receipt `sha256:06e93214674f5a4c1ee6bea0c9670845143bb157b4562a64c80028e916a297fd`.
+
+#### `SFT-MATH-OBL-CALC-003` - Accumulation and exact finite sums
+
+- **Claim:** `SFT-MATH-CALC-ACCUMULATION-SUMS-003` - Accumulation and exact finite sums.
+- **Forced law:** Accumulation is the complete junction of every generated local contribution with none omitted or duplicated.
+- **Unique survivor:** CALC-003 uniquely retains complete-finite-accumulation, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-HIGHER-DIFFERENCE-DEGREE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-003: accumulation; exact observation: {"sum":15,"terms":5}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:601a53686ea2699e202f1abf713ef061f2d741512d5b9561222b60bba48ea46c`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:ed5f1548ba6d6a791d8d0f42dc00293adbb0db37db2264e26e477b1c68f53ff2`; engine receipt `sha256:64ca281a0dcc6cc417fdc9a401001f9ca15e65053726e2f599a1b8dbfd183d1e`.
+
+#### `SFT-MATH-OBL-CALC-004` - Fundamental difference-accumulation correspondence
+
+- **Claim:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004` - Fundamental difference-accumulation correspondence.
+- **Forced law:** Difference and accumulation are exact reversals when every intermediate held/opposed change is retained.
+- **Unique survivor:** CALC-004 uniquely retains telescoping-reconstruction, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-ACCUMULATION-SUMS-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-004: fundamental_correspondence; exact observation: {"change_sum":15,"initial":1,"terminal":16}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:39dfdf64bf8a9d9dc8b66b63bd3e5095a099a5a090f2c44d941cf717a919473d`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:238e6275deba0d69e42118130aa621d0676c557a6006eabb2d059fe4f9d4f56d`; engine receipt `sha256:e6035a82d486ed59b79d120ed341ccaeee17ab11c8e492b828ce58dec5f17579`.
+
+#### `SFT-MATH-OBL-CALC-005` - Product and composition difference laws
+
+- **Claim:** `SFT-MATH-CALC-PRODUCT-COMPOSITION-LAWS-005` - Product and composition difference laws.
+- **Forced law:** Product and composition difference laws follow by complete expansion and regrouping of lawful exact changes.
+- **Unique survivor:** CALC-005 uniquely retains exact-product-composition-change, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-005: product_composition; exact observation: {"law_reconstruction":6,"product_change":6}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f79fc82d27cbbd11b5f9ac00b32a0ccf785a855b3c5b84bac0fd75df2b6c31ee`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:67ac6f9b050c01dab291c1e32d3572f0860d6fb9ce917aeb937e364b991d7931`; engine receipt `sha256:0b230f54b347912d403b5661a468156a48a9d79b28c09053b666552ff4980873`.
+
+#### `SFT-MATH-OBL-CALC-006` - Rational enclosure convergence
+
+- **Claim:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006` - Rational enclosure convergence.
+- **Forced law:** Convergence correspondence is a nested exact rational enclosure whose width refines toward structural absence under a certified rule.
+- **Unique survivor:** CALC-006 uniquely retains nested-rational-width-refinement, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-PRODUCT-COMPOSITION-LAWS-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-006: rational_convergence; exact observation: {"nested":true,"refinements":8,"width_rule":"1/n"}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:252ebf5ab958410028efc7f8f1366514e42662368cf26238880653ab6a3b192e`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:a07ae9bf16eae3071eb2e5880d1dbfd37e5d5a259c3a03b0405866e081315e8e`; engine receipt `sha256:09ae9608a9587eadc2d1fe6741cd1840ccb16bf9d0cb4eb8cedb0ca11b35bf24`.
+
+#### `SFT-MATH-OBL-CALC-007` - Derivative correspondence through shrinking exact parts
+
+- **Claim:** `SFT-MATH-CALC-DERIVATIVE-SHRINKING-PARTS-007` - Derivative correspondence through shrinking exact parts.
+- **Forced law:** Derivative correspondence is the stable exact component of local change ratios under a registered shrinking-part family.
+- **Unique survivor:** CALC-007 uniquely retains shrinking-part-local-ratio, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-007: derivative_correspondence; exact observation: {"base_component":4,"retained_part_rule":"1/n"}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d6f39db303cf8ece43b7674666a8591e410b26f9a0aef63601bafa6625a25a59`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:933fa2bbfdbab257a19f6122771a5acdd39e7ea5f51021b0d2f94fc0c6451868`; engine receipt `sha256:0df975977b5212414b32cf5991f27778c811c0d19b9c4640a377ef2748077376`.
+
+#### `SFT-MATH-OBL-CALC-008` - Integral correspondence through refinement sums
+
+- **Claim:** `SFT-MATH-CALC-INTEGRAL-REFINEMENT-SUMS-008` - Integral correspondence through refinement sums.
+- **Forced law:** Integral correspondence is the common exact enclosure of lower and upper finite accumulation sums under certified refinement.
+- **Unique survivor:** CALC-008 uniquely retains lower-upper-refinement-accumulation, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-DERIVATIVE-SHRINKING-PARTS-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-008: integral_correspondence; exact observation: {"enclosed_value":[1,2],"refinements":7,"width_rule":"1/n"}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1db1677c90434f8c3aab1c796224269e93c48f874eb50d7f856c663fa1dd166c`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:5566d9a0e58cc2b880581e2a6e6d4dd041d938033fa20d1e5c5ba57b1d00c5c2`; engine receipt `sha256:9dae94ea1c1bb7f5cc021fc5a5e54daa799b2b96cefbab47d0ce3c089b95e3d3`.
+
+#### `SFT-MATH-OBL-CALC-009` - Multivariable difference and directional change
+
+- **Claim:** `SFT-MATH-CALC-MULTIVARIABLE-DIRECTIONAL-009` - Multivariable difference and directional change.
+- **Forced law:** Multivariable change retains the varied coordinate and holds every other coordinate fixed before composition.
+- **Unique survivor:** CALC-009 uniquely retains coordinate-directional-change, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-INTEGRAL-REFINEMENT-SUMS-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-009: multivariable_change; exact observation: {"x_direction":3,"y_direction":2}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:84007ef3d8ef65b11770d3703ba527a36072302b51ee38f3ada34354d4a4431e`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:80155898785cbc97a30315c6e1a37a73d6c0e849d38a89e9bb332c379f892f12`; engine receipt `sha256:cd9c565f4ff93e6039bb09ff0e461c6f3a0ebb1201efc18962274d45d27eb633`.
+
+#### `SFT-MATH-OBL-CALC-010` - Discrete divergence and flux correspondence
+
+- **Claim:** `SFT-MATH-CALC-DIVERGENCE-FLUX-010` - Discrete divergence and flux correspondence.
+- **Forced law:** Discrete divergence accumulates local held/opposed flux; internal faces cancel structurally and the boundary record remains.
+- **Unique survivor:** CALC-010 uniquely retains internal-cancellation-boundary-flux, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-MULTIVARIABLE-DIRECTIONAL-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-010: divergence_flux; exact observation: {"boundary_magnitude":2,"local_changes":[1,1]}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f65611afa61dd3d1a85050ee001091dd152a74eb2dfeea3277f7578ab8b2e7ec`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:d9cd3b1379183ee1be96f0665e3052f3385fcd4cc7d7b7a059e08bc00ef5e93e`; engine receipt `sha256:d5e9fa1ad6b35ecd29795a2de9d3edda147d6cb081b7eb4bda68b5734e410bfb`.
+
+#### `SFT-MATH-OBL-CALC-011` - Variational difference and stationary structure
+
+- **Claim:** `SFT-MATH-CALC-VARIATIONAL-STATIONARY-011` - Variational difference and stationary structure.
+- **Forced law:** A stationary structure survives every registered local variation and exact extremum comparison in the complete candidate support.
+- **Unique survivor:** CALC-011 uniquely retains complete-variation-stationarity, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-DIVERGENCE-FLUX-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-011: variational_stationary; exact observation: {"candidates":5,"unique_stationary":3}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:01b2151339c534839ee08abd78b33c5035a6b26ce0b940b85356be5495cd94f7`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:657320344d0914208c203e8bbf942cd3e825100b776fbdbff1da4478a0eb4faa`; engine receipt `sha256:def0ef022d70876425bc65b54b4bdd196317d3acb4961a76190a959ca54a02dd`.
+
+#### `SFT-MATH-OBL-CALC-012` - Continuum-limit admissibility boundary
+
+- **Claim:** `SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012` - Continuum-limit admissibility boundary.
+- **Forced law:** A continuum-limit statement is admissible only as a finite-successor enclosure certificate; no completed continuum object is imported.
+- **Unique survivor:** CALC-012 uniquely retains certified-enclosure-only-limit, complete refinement custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ARITH-RECURRENCE-SEQUENCE-014 -> SFT-MATH-TOPO-CONTINUITY-TRANSPORT-002 -> SFT-MATH-CALC-VARIATIONAL-STATIONARY-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CALC-012: continuum_boundary; exact observation: {"completed_continuum_claimed":false,"exact_enclosures":8,"nested":true}; complete family observation custody: 12 records; all rows preserved; complete finite refinement enumeration supplies the observation; no fitted limit, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-CALCULUS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported infinitesimal, continuum theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite limit or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:67579e0da5051d8a1c69f2a52dd2f752d07e069c2d29138344f3269232937bd4`; independent `sha256:01c1c959afbdf233f79d9220fb7ebaa838df986886f61f4383b1dbe04c044d6a`; empirical `sha256:3c6e95f71d361eec6b903108c292e986d7a3b44598df646736570686e6842b2d`; engine receipt `sha256:f5917674c7af39fbe08ef5fad2ea7bdd850218b38b72af99fa3d3c75b81b348b`.
+
+### 40.14 Family `ANAL` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-ANAL-001` - Exact sequence convergence certificates
+
+- **Claim:** `SFT-MATH-ANAL-SEQUENCE-CONVERGENCE-001` - Exact sequence convergence certificates.
+- **Forced law:** Sequence convergence is an exact nested enclosure certificate with a lawful refinement rule and no completed continuum premise.
+- **Unique survivor:** ANAL-001 uniquely retains nested-sequence-enclosure, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-001: sequence_convergence; exact observation: {"enclosed_carrier":1,"refinements":8,"width_rule":"1/n"}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:21646a365877c34d6ac720aadbdf598847f0e2f2b5225e227f2267663fc1bfa0`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:f4d69628ffdd3c1581b6bf8953e4414fd91d25bfebd0c06603ae327aa434c126`; engine receipt `sha256:ab97f2a13f8e91555f3f654b3d1fce419aaca2e71b6964550a971abe5aa5073b`.
+
+#### `SFT-MATH-OBL-ANAL-002` - Cauchy-type generated support correspondence
+
+- **Claim:** `SFT-MATH-ANAL-CAUCHY-SUPPORT-002` - Cauchy-type generated support correspondence.
+- **Forced law:** Cauchy correspondence requires every generated tail pair to lie within the registered exact tail bound.
+- **Unique survivor:** ANAL-002 uniquely retains tail-pair-distance-bound, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-SEQUENCE-CONVERGENCE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-002: cauchy_support; exact observation: {"pair_bounds_preserved":true,"tail_depths":6}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1b24e1206d8076a0574f07574f3854bc9256501d25e18073ee4167398cc6b4a0`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:dadf83988beb832f6ade7541483f9ee03df3f7498ca2de4f6670b65bb5a16ca0`; engine receipt `sha256:75b3fde9dbd4c94ec57c3214b75bc6956a83af140ea077502b3613a8f2161cb2`.
+
+#### `SFT-MATH-OBL-ANAL-003` - Completeness correspondence without completed continuum
+
+- **Claim:** `SFT-MATH-ANAL-COMPLETENESS-CORRESPONDENCE-003` - Completeness correspondence without completed continuum.
+- **Forced law:** Completeness correspondence is a certified retained carrier common to every nested exact enclosure, without importing a completed continuum.
+- **Unique survivor:** ANAL-003 uniquely retains nested-carrier-intersection-certificate, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-CAUCHY-SUPPORT-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-003: completeness; exact observation: {"common_exact_carrier":1,"completed_continuum_claimed":false,"nested_enclosures":8}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a69a30d7a87aec55e1cf740b8e600991fc4b55fd524529cc482bb1de5191b0f6`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:189004648c5b1afb3511b1b60803fc1da006d543064c191612657765394dbcb8`; engine receipt `sha256:096b603a26d7963ec79cbd3a02212e6051b0183db3a19933de1a1bfbfe1dbfe7`.
+
+#### `SFT-MATH-OBL-ANAL-004` - Series convergence and remainder enclosures
+
+- **Claim:** `SFT-MATH-ANAL-SERIES-REMAINDER-004` - Series convergence and remainder enclosures.
+- **Forced law:** A series certificate retains every partial term and an exact remainder enclosure whose refinement is independently witnessed.
+- **Unique survivor:** ANAL-004 uniquely retains partial-sum-remainder-ledger, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-COMPLETENESS-CORRESPONDENCE-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-004: series_remainder; exact observation: {"remainder_rule":"1/2^n","truncations":8}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:673aa1810d41d48e4413e1c4db9d5025cf1296710f295c4a5e83d320c347d00c`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:d3c425772e8232c7db525be1081d9721f322b4427ee16c490a4fd3a3288d73a8`; engine receipt `sha256:9ed9ee5292bcc297c39b1079e4de4067f14d8b23cb72f38fb0be39ae8e78bf14`.
+
+#### `SFT-MATH-OBL-ANAL-005` - Power-series finite truncation custody
+
+- **Claim:** `SFT-MATH-ANAL-POWER-SERIES-TRUNCATION-005` - Power-series finite truncation custody.
+- **Forced law:** Power-series correspondence retains coefficients, exact powers, truncation depth and tail enclosure separately.
+- **Unique survivor:** ANAL-005 uniquely retains coefficient-term-tail-custody, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-SERIES-REMAINDER-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-005: power_series; exact observation: {"terms":5,"truncation":[31,16]}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:262a869409452ad48d4761192a2bd23f64ac29462c1f217c640d59441c753dde`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:974573221a43ceff8d285c3e10f590059e546cca47eabd616f740dfe32435d0a`; engine receipt `sha256:b1c09495ffe4a58ae36b3f567a88ed80ddb8ef6a08deba96278aefc38688a0c8`.
+
+#### `SFT-MATH-OBL-ANAL-006` - Functional-space finite-representation correspondence
+
+- **Claim:** `SFT-MATH-ANAL-FUNCTIONAL-SPACE-REPRESENTATION-006` - Functional-space finite-representation correspondence.
+- **Forced law:** A function space is represented by complete exact value carriers on a generated domain and pointwise lawful operations.
+- **Unique survivor:** ANAL-006 uniquely retains finite-function-value-carrier, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-POWER-SERIES-TRUNCATION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-006: functional_space; exact observation: {"binary_functions":8,"domain_carriers":3}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:597bbebeae6183688409ab1bb859a48676a8112f5745e693ef7a8597d177b1a5`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:ce4090fa76b82159c1b295d5fc74f4b1fc6e4cfa57894662b59e46269693e1ce`; engine receipt `sha256:084a51e26bac975e955191ce1370b9f77e05fa555c1685d6b7b93879e027177c`.
+
+#### `SFT-MATH-OBL-ANAL-007` - Norm, seminorm and metric correspondence
+
+- **Claim:** `SFT-MATH-ANAL-NORM-SEMINORM-METRIC-007` - Norm, seminorm and metric correspondence.
+- **Forced law:** Norm, seminorm and metric correspondence is admitted through complete exact size, degeneracy and triangle-relation censuses.
+- **Unique survivor:** ANAL-007 uniquely retains exact-size-separation-relations, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-FUNCTIONAL-SPACE-REPRESENTATION-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-007: norm_metric; exact observation: {"metric_triangle":true,"one_norm":6}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3abe0bfc69ced4c77786b44a2eecb4f1058b2cdbea9c9df2bda73c8046415b5d`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:9d4566a493803c4c8a179ce7304b280d6080577bec7f1d7c47a58d24be245975`; engine receipt `sha256:07d66c5b288d72dcfae3829b10af6fa129b261c4171007ad7ea387dbe1d56eb2`.
+
+#### `SFT-MATH-OBL-ANAL-008` - Bounded and compact operator correspondence
+
+- **Claim:** `SFT-MATH-ANAL-BOUNDED-COMPACT-OPERATOR-008` - Bounded and compact operator correspondence.
+- **Forced law:** Bounded and compact operator correspondence retains an exact action bound and the complete finite generated image support.
+- **Unique survivor:** ANAL-008 uniquely retains finite-operator-bound-image-custody, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-NORM-SEMINORM-METRIC-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-008: bounded_operator; exact observation: {"all_generated_inputs_pass":true,"bound":2,"input_dimension":2}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:47bce95dd708eb146f55c9d95101425f9b6093e828da388b15787fdd3a762950`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:6a97594a336a16d977b9837634d989845bdb4aa3c0cc36c59187bb857328e77a`; engine receipt `sha256:0770111ad74222f7d56d86d7798010faa49c9ae065c1b83282848d5792005267`.
+
+#### `SFT-MATH-OBL-ANAL-009` - Harmonic and Fourier finite-support correspondence
+
+- **Claim:** `SFT-MATH-ANAL-HARMONIC-FOURIER-SUPPORT-009` - Harmonic and Fourier finite-support correspondence.
+- **Forced law:** Finite harmonic correspondence decomposes a generated signal into exact held/opposed phase components without imaginary proof scalars.
+- **Unique survivor:** ANAL-009 uniquely retains held-opposed-harmonic-components, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-BOUNDED-COMPACT-OPERATOR-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-009: harmonic_support; exact observation: {"alternating_orientation":"opposed","magnitude":2,"points":4}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:88c70f6f524a13dd9c4409c128e914a6bc78eaaf5a4a35fecab9dea29c344353`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:55d1b67105de7ec494f1e744654a3c76d2550d514895a96dd77f5f62c24311f7`; engine receipt `sha256:963056642837c7794301e5fb6787e9a61f3d61eba474eeaae6be0b67ad63449f`.
+
+#### `SFT-MATH-OBL-ANAL-010` - Transform inversion on generated supports
+
+- **Claim:** `SFT-MATH-ANAL-TRANSFORM-INVERSION-010` - Transform inversion on generated supports.
+- **Forced law:** A transform is admissible when its exact held/opposed component ledger reconstructs every input carrier without loss.
+- **Unique survivor:** ANAL-010 uniquely retains exact-transform-reconstruction, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-HARMONIC-FOURIER-SUPPORT-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-010: transform_inversion; exact observation: {"exact_reconstruction":true,"input":[3,1],"transformed":[4,2]}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5c812699d25f1dc8cad094f5fdc3856f358ca4a19ba8d724cca5424f6aa6d681`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:93cddba344b7048aa3235fb3eaef4476c718ab023b4e654d42b5b4fc7f8e2b1d`; engine receipt `sha256:d5504ccb27de0398792565ba73813476b426919a9c01fe1490c799478bbb2946`.
+
+#### `SFT-MATH-OBL-ANAL-011` - Convolution and correlation identities
+
+- **Claim:** `SFT-MATH-ANAL-CONVOLUTION-CORRELATION-011` - Convolution and correlation identities.
+- **Forced law:** Convolution and correlation are complete shifted pair accumulations with every cyclic or bounded index retained.
+- **Unique survivor:** ANAL-011 uniquely retains complete-shift-pair-accumulation, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-TRANSFORM-INVERSION-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-011: convolution; exact observation: {"identity_support":[1,0,0],"reconstructed":true,"signal":[1,2,3]}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:564488f25726bf5dba043e99d26b38b32111981d4f1cd8670b727b70d0157ac2`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:5df3f76fa5bff847a9d79d5575eeef03bf1bfe5147cd288a764cdfa57d1fcbe1`; engine receipt `sha256:e9d6cff64a2340ae44d6c448e4c3f2f21b13b5401fb80abffd6a9c15a3f6f0a7`.
+
+#### `SFT-MATH-OBL-ANAL-012` - Orthogonality and basis expansion correspondence
+
+- **Claim:** `SFT-MATH-ANAL-ORTHOGONAL-BASIS-EXPANSION-012` - Orthogonality and basis expansion correspondence.
+- **Forced law:** Orthogonal expansion correspondence requires absent cross-pairing and exact reconstruction from all retained basis coordinates.
+- **Unique survivor:** ANAL-012 uniquely retains orthogonal-coordinate-reconstruction, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-CONVOLUTION-CORRELATION-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-012: orthogonal_expansion; exact observation: {"coordinates":[3,2],"cross_pairing":"absence"}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:93aef7bbc63f395f1fd29e514f0dce2a10b56f7d4f9027ee9929fe1b496a291f`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:7e2cce1a4282be3558ab2812a2fef41f64479971565ceb4babf91108e70f4955`; engine receipt `sha256:be232594554c9502d6329fe8b147c2ad5c13efb6f0aa44a1fb6cce82be5be7ec`.
+
+#### `SFT-MATH-OBL-ANAL-013` - Distributional and weak-observation correspondence
+
+- **Claim:** `SFT-MATH-ANAL-DISTRIBUTIONAL-WEAK-OBSERVATION-013` - Distributional and weak-observation correspondence.
+- **Forced law:** Weak or distributional correspondence is only an exact action on registered test-function carriers, not an imported generalized object.
+- **Unique survivor:** ANAL-013 uniquely retains exact-test-function-pairing, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-ORTHOGONAL-BASIS-EXPANSION-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-013: weak_observation; exact observation: {"pairing":[5,3],"weights":[[1,3],[2,3]]}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1466516610bf70f88aee6de2f16a74542ee29c86bf34fbd1ec3e9d8fb83cf620`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:c8e601c7fa2a5535614275bc2f49dc8791257400ea9d56f8c4e286be255b1b7e`; engine receipt `sha256:45c9743262487c3681ba1a4d8b290e0a4ccee29cdeae06ef19dfe4e2d66f203a`.
+
+#### `SFT-MATH-OBL-ANAL-014` - Nonlinear analysis and contraction boundaries
+
+- **Claim:** `SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014` - Nonlinear analysis and contraction boundaries.
+- **Forced law:** A contraction boundary is an exact pair-distance reduction law with a separately witnessed fixed carrier.
+- **Unique survivor:** ANAL-014 uniquely retains exact-contraction-fixed-carrier, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-DISTRIBUTIONAL-WEAK-OBSERVATION-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-014: contraction; exact observation: {"factor":[1,2],"fixed_carrier":1}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:50ea47c1d824894769941ce4ff35efd4782d3fbf39b4557e1191fce6ca98733d`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:02ac2d77e8cd816528a60ad46a24d103954729fbdb3d8e3f168c9f31236c8b64`; engine receipt `sha256:beaae3861d939920aa65210f3279a53acd8d0416166a75c5f5caa7758ad0d638`.
+
+#### `SFT-MATH-OBL-ANAL-015` - Complex-analysis held-pair correspondence
+
+- **Claim:** `SFT-MATH-ANAL-COMPLEX-HELD-PAIR-015` - Complex-analysis held-pair correspondence.
+- **Forced law:** Complex correspondence uses exact held phase-labelled pairs and structural opposition; no imaginary or negative proof scalar is admitted.
+- **Unique survivor:** ANAL-015 uniquely retains period-four-held-phase-pair, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-015: held_phase_pair; exact observation: {"imaginary_scalar_used":false,"quarter_phase_magnitude":2,"real_orientation":"absence"}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:031e1373016d701f609aa14ef0591d23fdb8334339a4533635e24d422ad0fb2e`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:fa7859100ba289da3706308eaf976b05c9b0ec2981340b0ae046c1d4081d3439`; engine receipt `sha256:5d105963b77ef66e5184e30d31c9be4a513602bd2544b90ec59258defa6fad5d`.
+
+#### `SFT-MATH-OBL-ANAL-016` - Operator spectral-measure correspondence
+
+- **Claim:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016` - Operator spectral-measure correspondence.
+- **Forced law:** Spectral-measure correspondence is a positive exact weight ledger over independently witnessed invariant operator modes.
+- **Unique survivor:** ANAL-016 uniquely retains positive-invariant-weight-ledger, complete analytic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-RATIONAL-ENCLOSURE-CONVERGENCE-006 -> SFT-MATH-LINEAR-OPERATOR-DECOMPOSITION-014 -> SFT-MATH-ANAL-COMPLEX-HELD-PAIR-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** ANAL-016: spectral_measure; exact observation: {"first_moment":14,"modes":[2,3],"total":5,"weights":[1,4]}; complete family observation custody: 16 records; all rows preserved; complete finite support and truncation enumeration supplies the observation; no fitted limit, imaginary scalar, imported continuum or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-ANALYSIS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum, infinity, imaginary scalar, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite sequence space or continuum function space; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:96a3a861bb62a3c33cc5ff17171f536d587278fe7b2f5e91961754b2d941bae9`; independent `sha256:66fef03aa56dea86cf65267ee9f3b98103e1e38e3f5d76cedd8b8082452b8c8b`; empirical `sha256:3eb01a43ea2dbbb344f2c2bd8ea31ee2b056bb296392a20b5ea4bacc464ef733`; engine receipt `sha256:2b900f3b430de0fcb8c0be9b27c90e8fa9d99b870d3cb197a23db3ad0449a7a5`.
+
+### 40.15 Family `EQN` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-EQN-001` - Ordinary difference-equation structure
+
+- **Claim:** `SFT-MATH-EQN-ORDINARY-DIFFERENCE-001` - Ordinary difference-equation structure.
+- **Forced law:** An ordinary difference equation is a registered one-step state relation whose complete finite solution path is generated from initial custody.
+- **Unique survivor:** EQN-001 uniquely retains one-step-state-relation, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-001: ordinary_difference; exact observation: {"initial":1,"solution":[1,2,4,8,16],"transition":"twice-current"}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e49c012e72b33711ea4a1daf2b860410328257bfc04eb376c2bdf8b5ff692c1c`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:c52154b7030329339f2cc916415a4784d55dd772a33fc279e7883857cc816c64`; engine receipt `sha256:4fc9003cf83d90dcf955003cca7001e1547e5d7e1602af161870186ae1fcf66b`.
+
+#### `SFT-MATH-OBL-EQN-002` - Ordinary differential-equation correspondence
+
+- **Claim:** `SFT-MATH-EQN-ORDINARY-DIFFERENTIAL-002` - Ordinary differential-equation correspondence.
+- **Forced law:** Ordinary differential correspondence is admitted only through exact shrinking-step local-ratio enclosures and finite successor certificates.
+- **Unique survivor:** EQN-002 uniquely retains finite-step-local-ratio-correspondence, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-002: ordinary_differential_correspondence; exact observation: {"carriers":["1","3/2","2"],"local_ratio_equals_carrier":true,"step_denominators":[1,2,3,4,5,6]}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:819de58fa53dd0b9340f0c5bacb04568df2cebc1ed3382954e9f51a2cacb29f5`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:ece92f0035d519406c5106aac1890c3b9dbfae821cd0d9b721c7a48ce253064a`; engine receipt `sha256:3c2ca60887577a62c86587512cec9143f1cb08293ac1e0267f4a4c5466be5511`.
+
+#### `SFT-MATH-OBL-EQN-003` - Partial difference-equation structure
+
+- **Claim:** `SFT-MATH-EQN-PARTIAL-DIFFERENCE-003` - Partial difference-equation structure.
+- **Forced law:** A partial difference equation retains every coordinate direction and applies exact local change only along the declared direction.
+- **Unique survivor:** EQN-003 uniquely retains multi-coordinate-local-relation, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-ORDINARY-DIFFERENTIAL-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-003: partial_difference; exact observation: {"change_each_direction":1,"grid_rule":"i-plus-j","i_domain":[1,2,3],"j_domain":[1,2,3]}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1f985366b3183b28299470d0d294a9b8d1cf4e28246b391fd87746daf9e3c2eb`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:0ad58c04e4b31ffe959424b5fc606cc2c42feb8b62f6304ee0a86c6e5b7f0f7e`; engine receipt `sha256:78591458da34ac31e6419e6670802ae5100128e808c08b987cf5b34cc3324e59`.
+
+#### `SFT-MATH-OBL-EQN-004` - Partial differential-equation correspondence
+
+- **Claim:** `SFT-MATH-EQN-PARTIAL-DIFFERENTIAL-004` - Partial differential-equation correspondence.
+- **Forced law:** Partial differential correspondence is a compatible family of exact multidirectional difference relations under certified refinement.
+- **Unique survivor:** EQN-004 uniquely retains refined-multidirectional-enclosure, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-PARTIAL-DIFFERENCE-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-004: partial_differential_correspondence; exact observation: {"all_grid_rows_preserved":true,"grid_rule":"i-plus-j","second_difference_each_direction":"absence"}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:9b00e448373a030051da4e97bad87623d6018d127101890ebfdd06382f676b17`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:2eea74718e317db4e1a1f324c1526b8b16ddad00d09d25a4c749eaeabe819909`; engine receipt `sha256:6e4130baf805346be5ab289307002290c2f9b6833686c72a85f987be1e25e51a`.
+
+#### `SFT-MATH-OBL-EQN-005` - Boundary and initial record well-posedness
+
+- **Claim:** `SFT-MATH-EQN-BOUNDARY-INITIAL-WELL-POSED-005` - Boundary and initial record well-posedness.
+- **Forced law:** Well-posedness requires a retained initial or boundary record, at least one generated solution, uniqueness in the complete solution census and perturbation custody.
+- **Unique survivor:** EQN-005 uniquely retains existence-uniqueness-record-custody, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-PARTIAL-DIFFERENTIAL-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-005: boundary_initial_well_posedness; exact observation: {"initial":1,"transition":"successor","unique_solution":[1,2,3,4,5,6]}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:efcdcfde51147f72a98c7454dd1c4d31364a86277e778eda64b0e417824f15d6`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:92fb3aaaaea5c9d0f2bb70ab3e41592553b97cf2625cf62dca9ad0c2a24b6591`; engine receipt `sha256:201f70839a8f800c9b62f6fc4cb957e2d3330533c87533ea6d83b19d30027900`.
+
+#### `SFT-MATH-OBL-EQN-006` - Integral-equation correspondence
+
+- **Claim:** `SFT-MATH-EQN-INTEGRAL-CORRESPONDENCE-006` - Integral-equation correspondence.
+- **Forced law:** Integral-equation correspondence is a finite accumulation relation with exact kernel, source and refinement custody.
+- **Unique survivor:** EQN-006 uniquely retains finite-accumulation-equation, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-BOUNDARY-INITIAL-WELL-POSED-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-006: integral_equation_correspondence; exact observation: {"finite_volterra_solution":[1,2,4,8],"kernel":"unit-retained","source":1}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7ba76da3ebb5ba2b7919404a0247e7bf2db414154e601e688759620f1113af8a`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:2842dcab66c347a7fe5223e9ba54dd1e689da48d3261a1b2036831b8922384e2`; engine receipt `sha256:82ade58665afc230884f81bd940a5ef39596e8c5015fbb861185f237547a1adc`.
+
+#### `SFT-MATH-OBL-EQN-007` - Functional-equation structure
+
+- **Claim:** `SFT-MATH-EQN-FUNCTIONAL-STRUCTURE-007` - Functional-equation structure.
+- **Forced law:** A functional equation is closed only by testing every generated argument composition in its declared domain.
+- **Unique survivor:** EQN-007 uniquely retains complete-argument-composition-census, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-INTEGRAL-CORRESPONDENCE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-007: functional_equation; exact observation: {"composition_identity_passed":true,"domain":[1,2,3,4],"function":"two-to-generated-power"}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:02a1798a980ecd51992998621bb1eaa167a02edb5c09005e5b12782e69292fbd`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:f9d4925cae05b60c82c26dc9c17c6014a31c285e56c93bdc1887368b45f9ad58`; engine receipt `sha256:23a0f72d36f5d6653020722360e364cd157fdce162fb6eaf881713a12936432d`.
+
+#### `SFT-MATH-OBL-EQN-008` - Recurrence-equation solution spaces
+
+- **Claim:** `SFT-MATH-EQN-RECURRENCE-SOLUTION-SPACE-008` - Recurrence-equation solution spaces.
+- **Forced law:** A recurrence solution space is the complete family generated from every lawful initial record under one fixed transition relation.
+- **Unique survivor:** EQN-008 uniquely retains initial-record-recurrence-space, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-FUNCTIONAL-STRUCTURE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-008: recurrence_solution_space; exact observation: {"initial_record":[1,1],"solution":[1,1,2,3,5,8]}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:29347520d64a9eaef7ea3c8b3b1d94b471b9db5e12d8788c22fc7a581bcc66fc`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:7d5015c3e8805c3fc5e39eca27cf9b67913a7d75fd5f8bc42f9ab8dad5b78ffa`; engine receipt `sha256:23579f5dbdd465547c8cce50c194a49101b72e8c30cd8dbd336ad962e8d2e802`.
+
+#### `SFT-MATH-OBL-EQN-009` - Green-response finite correspondence
+
+- **Claim:** `SFT-MATH-EQN-GREEN-RESPONSE-009` - Green-response finite correspondence.
+- **Forced law:** Finite Green correspondence is the exact response to each generated impulse and its lawful accumulation reconstructs every source response.
+- **Unique survivor:** EQN-009 uniquely retains impulse-response-superposition, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-RECURRENCE-SOLUTION-SPACE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-009: green_response; exact observation: {"exact_difference_reconstruction":true,"response":[1,1,3,3],"source":[1,0,2,0]}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5ff4a7d4187853d686641beb6536e7c649eaccde9fa9bb762d00d78277dbd03a`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:5c945e7b1afd425cec143eecc7b04aeae55b45e838285f19d9a1fd862f8cbb59`; engine receipt `sha256:9dcd5a3ee4736a56455470116d2c72297f47e59f886ce1950e123bdcf2565225`.
+
+#### `SFT-MATH-OBL-EQN-010` - Conservation-law weak correspondence
+
+- **Claim:** `SFT-MATH-EQN-CONSERVATION-WEAK-010` - Conservation-law weak correspondence.
+- **Forced law:** Weak conservation correspondence retains total content while internal held/opposed flux cancels structurally and boundary flux remains.
+- **Unique survivor:** EQN-010 uniquely retains boundary-flux-conservation-ledger, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-GREEN-RESPONSE-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-010: conservation_weak_correspondence; exact observation: {"after":[3,2],"before":[2,3],"retained_total":5}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:9d32c0bbdc29a0c72ae6078b3dc1a8299fb704c214cff444a9eb281f4eb2a8dd`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:634a0e8ec8cfc283d98cff9c9464ad87792ba80f7690ecc2480a12164b7064bd`; engine receipt `sha256:4fbb4a7f64ef3694210546883ed3742b90e0a11c995f921e5d3e9269b94522d3`.
+
+#### `SFT-MATH-OBL-EQN-011` - Stability and perturbation enclosures
+
+- **Claim:** `SFT-MATH-EQN-STABILITY-PERTURBATION-011` - Stability and perturbation enclosures.
+- **Forced law:** Stability is an exact bound transporting every registered input perturbation to its solution separation.
+- **Unique survivor:** EQN-011 uniquely retains exact-solution-perturbation-bound, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-CONSERVATION-WEAK-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-011: stability_perturbation; exact observation: {"distance_ratio":"1/2","input_carriers":["1/4","1/2","3/4","1"],"solution_map":"half-contraction"}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5ceabf7977354e2848d73022829628efbaf8bdf0d0aee9b1cf3278b4e02d87d5`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:072dad909d2735c9aba5c84ad37d93a436223eb385a059d2327e5084d1d07487`; engine receipt `sha256:b5862177e99aea7b7d3f1f03e5d062b99b4072dcfde36163dc8ed7f07544c36f`.
+
+#### `SFT-MATH-OBL-EQN-012` - Existence, uniqueness and blow-up boundaries
+
+- **Claim:** `SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012` - Existence, uniqueness and blow-up boundaries.
+- **Forced law:** Existence and uniqueness are certified at every registered finite depth; blow-up claims require a separate depth-independent enclosure and cannot be inferred from growth alone.
+- **Unique survivor:** EQN-012 uniquely retains finite-depth-existence-uniqueness-boundary, complete solution custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CALC-DIFFERENCE-ACCUMULATION-004 -> SFT-MATH-ANAL-NONLINEAR-CONTRACTION-014 -> SFT-MATH-EQN-STABILITY-PERTURBATION-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** EQN-012: existence_uniqueness_blowup_boundary; exact observation: {"finite_solution":[2,4,16,256,65536],"initial":2,"transition":"square-current","unrestricted_blowup_claimed":false}; complete family observation custody: 12 records; all rows preserved; complete finite equation and solution enumeration supplies the observation; no fitted parameter, imported continuum theorem or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-EQUATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no imported continuum equation, theorem answer, fitted parameter or opaque solver selects the law; host 0 displays absence or counts artifacts only; it is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed infinite solution trajectory or continuum domain; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d0e86bcc2c77a9b246965b9e9e747ec46b52a9f304b78d285bbd46c2b203bb47`; independent `sha256:001ce4143fa695176d2daae0582c2aa2f5ade841883fc056923d9098e6414851`; empirical `sha256:27b0716f13e096e67e9958a6c17477947f9d908a4f2d9949b2c84cb3f1cfe24d`; engine receipt `sha256:a5b9056f828669049f5d02eb1c9493657a229b7da2454f7cea9353b1b7665579`.
+
+### 40.16 Family `MEAS` - 10/10 complete
+
+This family contributes 2,560 completely decided candidates, 10 unique survivors and 40 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-MEAS-001` - Finite measure and exact support weight
+
+- **Claim:** `SFT-MATH-MEAS-FINITE-SUPPORT-WEIGHT-001` - Finite measure and exact support weight.
+- **Forced law:** Finite measure is the exact positive weight assigned to every generated support with the complete carrier normalized to one.
+- **Unique survivor:** MEAS-001 uniquely retains exact-finite-support-weight, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-001: finite_support_weight; exact observation: {"complete_weight":1,"support":[1,2,3],"weights":["1/6","2/6","3/6"]}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:752122ae353ece3b0d4dea7ac7b460d43bae20a433daf850abf688349ddb9a7b`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:99ac4155fd96cab1af9d0e4a788b2e91745469a1f926bd9f5ed48641592b8009`; engine receipt `sha256:14d25ad66d068b2319cec859ce7d94be7d66cefda1b4721b2ec5719b124b3e1f`.
+
+#### `SFT-MATH-OBL-MEAS-002` - Additivity on disjoint generated support
+
+- **Claim:** `SFT-MATH-MEAS-DISJOINT-ADDITIVITY-002` - Additivity on disjoint generated support.
+- **Forced law:** Disjoint additivity is forced by retaining each support distinction once and composing their exact weights without overlap.
+- **Unique survivor:** MEAS-002 uniquely retains disjoint-support-additivity, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-FINITE-SUPPORT-WEIGHT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-002: disjoint_additivity; exact observation: {"all_additive":true,"all_disjoint_pairs_tested":true,"support_count":8}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0e2c78d95ff25639d174434cf8e1a09722b5440c5f85bfdce81d3fe8d2b84bb5`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:2f754f5fb92ab299dcf29c943dd7d16da6cb3d106c99b5f538dbdd23e77e4f01`; engine receipt `sha256:c2c5612d75dce3a55857b1e506e47f3b86496117aabcc4e83cb8b0b6d5a8aaf0`.
+
+#### `SFT-MATH-OBL-MEAS-003` - Outer-measure and covering correspondence
+
+- **Claim:** `SFT-MATH-MEAS-OUTER-COVERING-003` - Outer-measure and covering correspondence.
+- **Forced law:** Finite outer-measure correspondence is the least exact weight among every generated cover of the target support.
+- **Unique survivor:** MEAS-003 uniquely retains complete-cover-minimum-weight, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-DISJOINT-ADDITIVITY-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-003: outer_covering; exact observation: {"all_covers_tested":true,"least_cover_weight":"4/6","target":[1,3]}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:65bac06bd516adf5b8e3bab10d23d6ac0a863098c4a42fbe7894b066cf128fac`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:761f5d791041be9edc294a9cff04586d1d31b34a4a4ee007f3b0cf8ad799aeb1`; engine receipt `sha256:0ee9c394f47d86ec4a0cb0e8812e82aaa1df94bf7739b6360a4e0fb257a1a95e`.
+
+#### `SFT-MATH-OBL-MEAS-004` - Measurable-boundary correspondence
+
+- **Claim:** `SFT-MATH-MEAS-MEASURABLE-BOUNDARY-004` - Measurable-boundary correspondence.
+- **Forced law:** A boundary is measurable when every generated test support decomposes exactly into its retained inside and outside parts.
+- **Unique survivor:** MEAS-004 uniquely retains exact-boundary-decomposition, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-OUTER-COVERING-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-004: measurable_boundary; exact observation: {"all_exact_decompositions":true,"boundary":[1,2],"test_support_count":8}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:8d23f61e3d718cf6863ef63785aef5dcf87b8412cd9a661a3a2a2058c4572583`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:11068841afae99369fb268e36e5780f0aacd6ce92781ebe11bd24bf9805ddc64`; engine receipt `sha256:fc75d7acb7ac063472a62ef61784d3b2464536f8938410cea68282dd69f5936d`.
+
+#### `SFT-MATH-OBL-MEAS-005` - Exact integration over finite support
+
+- **Claim:** `SFT-MATH-MEAS-FINITE-SUPPORT-INTEGRATION-005` - Exact integration over finite support.
+- **Forced law:** Exact integration over finite support is the complete accumulation of each retained value composed with its exact support weight.
+- **Unique survivor:** MEAS-005 uniquely retains weighted-support-accumulation, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-MEASURABLE-BOUNDARY-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-005: finite_support_integration; exact observation: {"integral":"7/3","values":[1,2,3],"weights":["1/6","2/6","3/6"]}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b78c9b623a0d03aa4121dd37d8dcdb73cbcba27ef43d8ff2024d3a8d14dc3108`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:f0e2560fb3d10088c62a105cd4c341dfcac5f9a921e7ee47e13cf614000ecbbc`; engine receipt `sha256:d0b85a891e495ff46031d96111dd3c424206599b9def8efaa67a60bb8929fc04`.
+
+#### `SFT-MATH-OBL-MEAS-006` - Refinement-sum integration correspondence
+
+- **Claim:** `SFT-MATH-MEAS-REFINEMENT-SUM-INTEGRATION-006` - Refinement-sum integration correspondence.
+- **Forced law:** Integration correspondence under refinement is admitted through an exact successor family of finite sums with every cell and weight retained.
+- **Unique survivor:** MEAS-006 uniquely retains exact-refinement-sum-correspondence, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-FINITE-SUPPORT-INTEGRATION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-006: refinement_sum_integration; exact observation: {"midpoint_sum_each":"1/2","refinement_counts":[1,2,3,4,5,6,7,8]}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1b2f8f42db11734e2c9a8cfa787d907877f7e31c8026c6ddca916bb90a43d0ce`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:e8fdd5b3bec10369a6fbc7f4fbc8b0c400d3fd33b45b8331d63d4f1144f2fc75`; engine receipt `sha256:22c4fe37ebac4cc637920ff3872ba28f8ed7011a639014be2aaa6760ac71581b`.
+
+#### `SFT-MATH-OBL-MEAS-007` - Product measure and conditional support
+
+- **Claim:** `SFT-MATH-MEAS-PRODUCT-CONDITIONAL-SUPPORT-007` - Product measure and conditional support.
+- **Forced law:** Product weight composes coordinate weights exactly; conditional support is the retained joint weight relative to its declared nonempty conditioning support.
+- **Unique survivor:** MEAS-007 uniquely retains product-and-conditional-support-law, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-REFINEMENT-SUM-INTEGRATION-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-007: product_conditional_support; exact observation: {"conditional_second":"3/4","first_weights":["1/3","2/3"],"product_total":1,"second_weights":["1/4","3/4"]}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c4bf3667cb3b7415bfef9cde2889fac1d2adc588f45ef36b56738231f8940b17`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:cc9fa9b235fe39e8c48652f6638bb893c193dc5ac22c280af12061895969418a`; engine receipt `sha256:eaffbc9318e599b402acbdba1cc51cd4dd49fb27e7f009d1d17fb2c09befc06f`.
+
+#### `SFT-MATH-OBL-MEAS-008` - Signed-measure replacement by held orientation
+
+- **Claim:** `SFT-MATH-MEAS-HELD-ORIENTATION-SIGNED-008` - Signed-measure replacement by held orientation.
+- **Forced law:** Signed-measure correspondence uses separate held and opposed positive ledgers; cancellation is an exact relation and never a negative proof scalar.
+- **Unique survivor:** MEAS-008 uniquely retains held-opposed-measure-ledger, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-PRODUCT-CONDITIONAL-SUPPORT-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-008: held_orientation_signed; exact observation: {"held":"3/4","negative_scalar_used":false,"opposed":"1/4","retained_held":"1/2"}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e943902355ec71fd674aa435b47734a1e00b13c5bc21e7d76b612c4705be4d41`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:c20030d28a7eec0d32efde7e303d2d06e5881b92d491c8a757188d72f4d63f6b`; engine receipt `sha256:5d84b3dbf7725037c1ec28db61b83139d79504335292b4357a74539f98745017`.
+
+#### `SFT-MATH-OBL-MEAS-009` - Distribution and generalized-observation correspondence
+
+- **Claim:** `SFT-MATH-MEAS-DISTRIBUTION-OBSERVATION-009` - Distribution and generalized-observation correspondence.
+- **Forced law:** A distributional correspondence is an exact action on every generated test function, with composition and observation custody retained.
+- **Unique survivor:** MEAS-009 uniquely retains exact-test-function-action, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-HELD-ORIENTATION-SIGNED-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-009: distribution_observation; exact observation: {"composed_action":4,"first_action":"7/3","linearity_exact":true,"second_action":"5/3"}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c9762d0e559e3eae1d45f1922b90563949447cc90bf7cb1dfea97b93914db51d`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:9a7ba4ce521cf134b868385dc02d25dbfb2c375ceffe34e38c169846763d6d1c`; engine receipt `sha256:f72e9d297fdc79cbd7e4ffa47e81d163a42965e347157648cefef1ea11934a22`.
+
+#### `SFT-MATH-OBL-MEAS-010` - Convergence-of-measures finite witness boundary
+
+- **Claim:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010` - Convergence-of-measures finite witness boundary.
+- **Forced law:** Convergence-of-measures correspondence requires exact finite witness widths at every registered successor; completed infinite equality remains outside the certificate.
+- **Unique survivor:** MEAS-010 uniquely retains successor-refined-measure-enclosure, complete support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-ANAL-SPECTRAL-MEASURE-016 -> SFT-MATH-EQN-EXISTENCE-UNIQUENESS-BLOWUP-012 -> SFT-MATH-MEAS-DISTRIBUTION-OBSERVATION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** MEAS-010: convergence_finite_witness; exact observation: {"completed_infinite_equality_claimed":false,"strictly_refined":true,"successors":8,"width_rule":"1/(n+1)"}; complete family observation custody: 10 records; all rows preserved; exact generated supports, fractions and structural orientation are retained; no continuum measure, fitted parameter or forbidden scalar is imported
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-MEASURE-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported theorem answer or target outcome selects the law; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no completed continuum support, sigma-totality or infinite convergence object; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f07b92f49ae9b09aefbf8ede5d863681f0f777b335954dec5b0ce6094cbce376`; independent `sha256:47bc7f3d6c3cc4a22f09e15e3629c5fbf0367620965ec9f50421bcbf74192580`; empirical `sha256:a9665d54fc05d024526ce8d5bee4ce792abf62e45603ad8e4b8531e956787c9b`; engine receipt `sha256:a4f38ba621f479ce435299b06099cc716d53db25ee31cb5307d354573e3c1992`.
+
+### 40.17 Family `PROB` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-PROB-001` - Exact support-based probability correspondence
+
+- **Claim:** `SFT-MATH-PROB-SUPPORT-CORRESPONDENCE-001` - Exact support-based probability correspondence.
+- **Forced law:** Probability correspondence is the exact retained weight or count ratio of an event inside a completely generated support; it does not assert ontic randomness.
+- **Unique survivor:** PROB-001 uniquely retains exact-support-count-ratio, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-001: support_probability; exact observation: {"event_count":2,"exact_weight":"1/2","ontic_randomness_claimed":false,"support_count":4}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e9329e6539c046dd1782e2b030fd54b12d360017f1ef47d878a5d805ebcf33e3`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:791b794c33e6139800f48ce7cbbe335bd9a1e604c5a0d5b1396fd1e02c9a904c`; engine receipt `sha256:2f7e63c215ef725afbaed9e153dc0e9afbac2ae30fa90237c27aaa18c463d71e`.
+
+#### `SFT-MATH-OBL-PROB-002` - Conditional support and Bayes correspondence
+
+- **Claim:** `SFT-MATH-PROB-CONDITIONAL-BAYES-002` - Conditional support and Bayes correspondence.
+- **Forced law:** Conditional support is the exact joint support relative to a declared nonempty support, and Bayes correspondence is the same joint custody read in the opposite order.
+- **Unique survivor:** PROB-002 uniquely retains conditional-support-composition, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-SUPPORT-CORRESPONDENCE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-002: conditional_bayes; exact observation: {"a_count":3,"a_given_b":"1/2","b_count":4,"b_given_a":"2/3","joint_count":2,"support_count":6}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3d2a6c0add91bc72f2bafea9d1edd14b748dacb7e3fff6f7960dc97c6f2c6861`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:0a65841dc585afd67e13a7a7f0e7caec15f4e3e8407095131c2de0f4d5ba1fa5`; engine receipt `sha256:3de32cd0f017cd9829917e109c48bf5510084b96451c28f5f1af69c3059ec3d8`.
+
+#### `SFT-MATH-OBL-PROB-003` - Independence and factorization witnesses
+
+- **Claim:** `SFT-MATH-PROB-INDEPENDENCE-FACTORIZATION-003` - Independence and factorization witnesses.
+- **Forced law:** Independence correspondence holds when complete joint-support enumeration equals the exact product of the retained marginal supports.
+- **Unique survivor:** PROB-003 uniquely retains complete-product-factorization, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-CONDITIONAL-BAYES-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-003: independence_factorization; exact observation: {"joint":"1/6","marginals":["1/2","1/3"],"product_shape":[2,3]}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4b0026f954c992cee946a78880da9d3468311c867850b81706b0f2425bdd3639`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:69e4f4d53737baca35fe31e0d9fc620c0085933968ad8ea730d2f512e083cff8`; engine receipt `sha256:c9f382194e21c74dc4838e29a2e6edf7e17fc470b5a171283dc88a7f94004469`.
+
+#### `SFT-MATH-OBL-PROB-004` - Expectation as exact support accumulation
+
+- **Claim:** `SFT-MATH-PROB-EXPECTATION-004` - Expectation as exact support accumulation.
+- **Forced law:** Expectation is the exact finite accumulation of each generated value with its retained support weight.
+- **Unique survivor:** PROB-004 uniquely retains exact-weighted-expectation, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-INDEPENDENCE-FACTORIZATION-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-004: expectation; exact observation: {"expectation":"5/2","values":[1,2,3,4],"weights":["1/4","1/4","1/4","1/4"]}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:de23f5314fab9a365086d3d9d3d60b214cd58768282bb0ad5858f1bccee9f567`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:e39bb69f335737be7f594c15a1b15dcce2e8bb18c084db3898dbd9500833ee1f`; engine receipt `sha256:b87c57beb9072c476180b813248201c2b22f3f7f98112c1e3069194cba7836d3`.
+
+#### `SFT-MATH-OBL-PROB-005` - Variance and dispersion without negative magnitudes
+
+- **Claim:** `SFT-MATH-PROB-VARIANCE-DISPERSION-005` - Variance and dispersion without negative magnitudes.
+- **Forced law:** Dispersion accumulates squared positive held distances from the exact centre; no negative magnitude is admitted.
+- **Unique survivor:** PROB-005 uniquely retains held-distance-dispersion, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-EXPECTATION-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-005: variance_dispersion; exact observation: {"centre":"5/2","dispersion":"5/4","negative_magnitude_used":false}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:86f29dc56d4e5f05cad4967d89af3a9f92919b9b4d07583b649f7e185342fe45`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:7dde247d4e80baa333a6eaaa8ecf2da941a3c29b0f18a07eb8861ff5cc8e05eb`; engine receipt `sha256:c20397f6b4dc7c33323fb18b25e87efcca673139404ef7103796a07479418a9a`.
+
+#### `SFT-MATH-OBL-PROB-006` - Finite distribution families
+
+- **Claim:** `SFT-MATH-PROB-FINITE-DISTRIBUTION-006` - Finite distribution families.
+- **Forced law:** A finite distribution is a complete exact support-weight family whose weights compose to one and whose absent labels remain structural absence.
+- **Unique survivor:** PROB-006 uniquely retains complete-finite-distribution, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-VARIANCE-DISPERSION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-006: finite_distribution; exact observation: {"binary_width":3,"complete_weight":1,"multiplicities":[1,3,3,1]}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:3d27090c467675e0f6e70cc809ec6f66ab2360ddec471d031e7e4cd9f13c12c0`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:0434c05034e2b0e062c754692ffdddb027b37310fc9e9bec25257b0e86e75c7b`; engine receipt `sha256:4e219f4e7826997fb21e65bba1e98f924b6ab6e847ef699dea331542e76eba86`.
+
+#### `SFT-MATH-OBL-PROB-007` - Law-of-large-count correspondence under deterministic enumeration
+
+- **Claim:** `SFT-MATH-PROB-LARGE-COUNT-007` - Law-of-large-count correspondence under deterministic enumeration.
+- **Forced law:** Large-count correspondence is derived from complete deterministic word enumeration and exact frequencies, never from an ontic randomness premise.
+- **Unique survivor:** PROB-007 uniquely retains deterministic-complete-word-frequency, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-FINITE-DISTRIBUTION-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-007: large_count; exact observation: {"complete_enumeration":true,"held_label_frequency_each":"1/2","word_widths":[1,2,3,4,5,6,7,8]}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cfecc4b5879e2c88e8dc28dbc30e8ba2da2a62dbbfe26e8513a0b81c86219603`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:02606527b1751538623f245b0127e2c732ae07c2a70542a8a9a1ccc8bd463828`; engine receipt `sha256:e9c8cd3b6e51c3a20e1640ce3b5815b87771a4f2b94f1d99e6b5aa02878d078c`.
+
+#### `SFT-MATH-OBL-PROB-008` - Central-limit enclosure correspondence
+
+- **Claim:** `SFT-MATH-PROB-CENTRAL-LIMIT-ENCLOSURE-008` - Central-limit enclosure correspondence.
+- **Forced law:** Central-limit correspondence is admitted only through exact finite count families and certified rational tail enclosures; no Gaussian or irrational scalar selects the result.
+- **Unique survivor:** PROB-008 uniquely retains exact-central-tail-enclosure, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-LARGE-COUNT-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-008: central_limit_enclosure; exact observation: {"all_rows_pass":true,"count_widths":[2,3,4,5,6,7,8],"enclosure":"1/n","tail_rule":"2/(2^n)"}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:55a2a31f67298ad5a6d8a1bccff77cedab4cc9ab098ac511c8a692377914017f`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:0e73f7922483aacb497a741170ab36dcf9410692e8338c0fac50296d0c9a5956`; engine receipt `sha256:1f4ece1dc9dcffc4ab540bcf7cd3dcf29d5bda76255a47b96ec80f3286808977`.
+
+#### `SFT-MATH-OBL-PROB-009` - Estimation and sufficient-record structure
+
+- **Claim:** `SFT-MATH-PROB-ESTIMATION-SUFFICIENT-RECORD-009` - Estimation and sufficient-record structure.
+- **Forced law:** A record is sufficient when every generated observation sharing it has the same exact parameter-dependent likelihood factor and no discarded distinction changes inference.
+- **Unique survivor:** PROB-009 uniquely retains likelihood-preserving-sufficient-record, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-CENTRAL-LIMIT-ENCLOSURE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-009: sufficient_record; exact observation: {"multiplicities":[1,4,6,4,1],"record":"held-label-count","word_width":4}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4e22e8d897e4361229a8c58a5e250910ba26c674c5e016824edbcd156613b612`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:6a6a35b007ba8d9e19402df53f32f535c96fbcc6eccd14ea887ac73ca41e2e8e`; engine receipt `sha256:b10c05e8a85e8e31388d8b3fd77717a82dbb17564bb8841164daee3def78682f`.
+
+#### `SFT-MATH-OBL-PROB-010` - Confidence and credible-region correspondence
+
+- **Claim:** `SFT-MATH-PROB-CONFIDENCE-CREDIBLE-REGION-010` - Confidence and credible-region correspondence.
+- **Forced law:** A confidence or credible-region correspondence is a complete candidate region selected by a preregistered exact coverage or evidence rule with all exclusions retained.
+- **Unique survivor:** PROB-010 uniquely retains preregistered-exact-region-rule, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-ESTIMATION-SUFFICIENT-RECORD-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-010: confidence_credible_region; exact observation: {"candidates":["1/4","1/2","3/4"],"retained":["1/2","3/4"],"rule":"at-least-half-maximum"}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:88a4e937d913bfa286b8538cc1dfecfeacdd447b9b98b61362210814a584f803`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:1edc41a18e349efd345f56944d06038b80bad02a77c9b4156ddf1abfef3dfccb`; engine receipt `sha256:f264d01b3cb82e643590415a53b9ea4b9b0bac5e818de89426b4ceba2e0242b2`.
+
+#### `SFT-MATH-OBL-PROB-011` - Hypothesis testing and error custody
+
+- **Claim:** `SFT-MATH-PROB-HYPOTHESIS-ERROR-CUSTODY-011` - Hypothesis testing and error custody.
+- **Forced law:** Hypothesis testing is a complete decision-support partition with type-one, type-two and unresolved error supports separately retained.
+- **Unique survivor:** PROB-011 uniquely retains complete-decision-error-ledger, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-CONFIDENCE-CREDIBLE-REGION-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-011: hypothesis_error_custody; exact observation: {"both_ledgers_retained":true,"decision_support":8,"type_one":"1/4","type_two":"1/4"}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4ad0c48ad7314efba0341f121f7de1493fde8ad66ed811a1e49e585b6e8ac316`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:25453b7fed665374f95b8d0e6a8c479bc21ffa39ecee57a66c2657c659ecab57`; engine receipt `sha256:21aadee13d2df1e2737ad5c4cd7ba4ee10b6636b3810cf6458450ae67cd060b6`.
+
+#### `SFT-MATH-OBL-PROB-012` - Likelihood and evidence ratios
+
+- **Claim:** `SFT-MATH-PROB-LIKELIHOOD-EVIDENCE-RATIO-012` - Likelihood and evidence ratios.
+- **Forced law:** Likelihood and evidence ratios compare exact observation support under every generated candidate without turning the ratio into a fitted prior.
+- **Unique survivor:** PROB-012 uniquely retains exact-likelihood-ratio, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-HYPOTHESIS-ERROR-CUSTODY-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-012: likelihood_ratio; exact observation: {"candidates":["3/4","1/2"],"observation":"three-of-four-held","ratio":"27/16"}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2465fbdacf973bd4172b0cc8bd143f39fec1664493805b022b01927b5a804a98`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:93f89a823248f6e32f17cf2316fce283e2807853ffc3360506330686f12b5a56`; engine receipt `sha256:2a7a74ff1432e3aa098187148f14b63b47977082f22f28848036374dcb971858`.
+
+#### `SFT-MATH-OBL-PROB-013` - Bayesian update as exact conditional support
+
+- **Claim:** `SFT-MATH-PROB-BAYESIAN-UPDATE-013` - Bayesian update as exact conditional support.
+- **Forced law:** Bayesian update is exact conditioning of a declared prior support by registered observation weights, with normalization and source custody explicit.
+- **Unique survivor:** PROB-013 uniquely retains exact-prior-observation-conditioning, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-LIKELIHOOD-EVIDENCE-RATIO-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-013: bayesian_update; exact observation: {"observation_weights":["3/4","1/4"],"posterior":["3/5","2/5"],"prior":["1/3","2/3"]}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:83dc756736fa02c04a78d3988e2afaab102c94f39bf2ba46ff95aeefc8d0d69c`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:d05816d99fb1afbb0c70288739405f0511b47c2d2e646ba85950810b30ffa1db`; engine receipt `sha256:c239b75f04ae9b064f3a6178ed377874ca563585c6e751956e1ea995fcfc0b5d`.
+
+#### `SFT-MATH-OBL-PROB-014` - Finite stochastic-process correspondence
+
+- **Claim:** `SFT-MATH-PROB-FINITE-STOCHASTIC-PROCESS-014` - Finite stochastic-process correspondence.
+- **Forced law:** A finite stochastic-process correspondence is the complete deterministic path grammar plus exact path weights and transition custody; stochasticity is not ontic indeterminism.
+- **Unique survivor:** PROB-014 uniquely retains deterministic-path-weight-process, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-BAYESIAN-UPDATE-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-014: finite_stochastic_process; exact observation: {"ontic_randomness_claimed":false,"path_count":4,"path_length":2,"states":2,"total_path_weight":1}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bbb27b2d9b7d207d826634004270c330ba16bb0bb5da9ac5e2ea2c8e822ecba9`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:1d5c5b9037716e4085e990c4991e32184aff0ef40af565c0e59cb85d35ac3db5`; engine receipt `sha256:686defbd4442ac15c71a3bc349175da32ba506f8cfcec565be22b6813e24d50a`.
+
+#### `SFT-MATH-OBL-PROB-015` - Martingale-like conditional conservation
+
+- **Claim:** `SFT-MATH-PROB-CONDITIONAL-CONSERVATION-015` - Martingale-like conditional conservation.
+- **Forced law:** Martingale-like correspondence is exact branchwise conditional conservation of a retained value across the complete successor support.
+- **Unique survivor:** PROB-015 uniquely retains branchwise-conditional-conservation, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-FINITE-STOCHASTIC-PROCESS-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-015: conditional_conservation; exact observation: {"branchwise_conserved":true,"children":[1,3],"grandchildren":["1/2","3/2","5/2","7/2"],"root":2}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:42891223a1fda0efebbabe8ae5521900f6495a5250ffa0d7b95c1e673e3522e8`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:41aa92305473ea1762a7da8d4e362dee145f8a31442f39bf783227ee561ebaf7`; engine receipt `sha256:467057cb14cfa1b348de39f0916d99f257be84b5c7ce10de85fd3932e5fb6e32`.
+
+#### `SFT-MATH-OBL-PROB-016` - Statistical identifiability and nonidentifiability
+
+- **Claim:** `SFT-MATH-PROB-IDENTIFIABILITY-016` - Statistical identifiability and nonidentifiability.
+- **Forced law:** A parameter is identifiable exactly when distinct generated parameter records induce distinct complete observation records; merged records certify nonidentifiability.
+- **Unique survivor:** PROB-016 uniquely retains observation-map-identifiability-boundary, complete deterministic support custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-MEAS-CONVERGENCE-FINITE-WITNESS-010 -> SFT-MATH-COMB-PROBABILISTIC-METHOD-CORRESPONDENCE-008 -> SFT-MATH-PROB-CONDITIONAL-CONSERVATION-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** PROB-016: identifiability; exact observation: {"identifiable_with_latent_custody":true,"latent_records":[["1/4","3/4"],["1/2","1/2"]],"merged_observation_weight":1,"nonidentifiable_after_merge":true}; complete family observation custody: 16 records; all rows preserved; complete deterministic path and support enumeration supplies the correspondence; no ontic randomness, fitted limit, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-PROBABILITY-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted parameter, imported stochastic law or target outcome selects the result; probability is exact generated-support correspondence and never an ontic randomness premise; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no asymptotic distribution or completed infinite trial sequence is admitted without a separate successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a9b306094f70cf6480eba061afcb227df5c9d4c23b4b5a7b053dca2d25be6bf0`; independent `sha256:54713dc80a9b0fe3fc0195dcd051c54852bf8749ddf1d7c5a122d1c7abaa0ed6`; empirical `sha256:14cc5ea81f1d682c595b02490218b76650319f7862c6641559db8eee65974914`; engine receipt `sha256:dfe162067f03fbfafd04d35e28dfc9de7e45e7e4fff14c9de674c9e7d3721d40`.
+
+### 40.18 Family `OPT` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-OPT-001` - Feasible set and objective-order structure
+
+- **Claim:** `SFT-MATH-OPT-FEASIBLE-OBJECTIVE-ORDER-001` - Feasible set and objective-order structure.
+- **Forced law:** Optimization begins with a completely generated feasible support and an exact objective preorder; no preferred candidate is imported.
+- **Unique survivor:** OPT-001 uniquely retains feasible-objective-order, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-001: feasible_objective_order; exact observation: {"feasible":[2,3,4],"generated":[1,2,3,4],"minimum":2}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:565bb4084d62ddb81a4ddc6b563b5f2c640249d3b9efc95ec62affb1d37a787b`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:fbe64bb1502ac7f9317acd35874f528ea679db586e9428cf6bad9b6236660322`; engine receipt `sha256:a13f3cdb8b9906ebb0792c32ddaf516caf949ad77b0f00c032b8782cf7c15cc7`.
+
+#### `SFT-MATH-OBL-OPT-002` - Exact minimum and maximum on finite support
+
+- **Claim:** `SFT-MATH-OPT-FINITE-EXTREMA-002` - Exact minimum and maximum on finite support.
+- **Forced law:** Finite extrema are the objective-equivalent classes surviving complete comparison across every feasible candidate.
+- **Unique survivor:** OPT-002 uniquely retains complete-finite-extrema, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-FEASIBLE-OBJECTIVE-ORDER-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-002: finite_extrema; exact observation: {"maximum":4,"minimum":1,"values":[4,1,3,2]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:54cfc810383c88330bc455a04ffa7cc90bcb538f73dc0049af02de3d0e3224fc`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:2f649dd0e310944ddd99e9f9562fd448c06d323ee242a121af2ed6f08a280a63`; engine receipt `sha256:74b8e6f8afd76a490c34438b20b360709ad22fbe39887630bd2b72e79d8fa4a2`.
+
+#### `SFT-MATH-OBL-OPT-003` - Pareto dominance and multiobjective order
+
+- **Claim:** `SFT-MATH-OPT-PARETO-DOMINANCE-003` - Pareto dominance and multiobjective order.
+- **Forced law:** The Pareto frontier contains exactly those feasible candidates not dominated in every registered objective coordinate.
+- **Unique survivor:** OPT-003 uniquely retains complete-pareto-frontier, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-FINITE-EXTREMA-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-003: pareto_frontier; exact observation: {"nondominated":[[1,4],[2,2],[4,1]],"points":[[1,4],[2,2],[4,1],[3,3]]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c11da6b42904697a12efcb052ad54aadd32c16c30d8adf712ca2ccba0577332a`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:791c4087ae7a05b77279ffee8d5b3c0bcaae88650bba8edbbea60466d61163f8`; engine receipt `sha256:0d581ec125db13d24f596f7cdbd8f656a244678a63441c9d71c17a24e36a2e52`.
+
+#### `SFT-MATH-OBL-OPT-004` - Linear-program correspondence
+
+- **Claim:** `SFT-MATH-OPT-LINEAR-PROGRAM-004` - Linear-program correspondence.
+- **Forced law:** Linear-program correspondence is exact affine feasibility and objective ordering over a generated rational support, with relaxation boundaries explicit.
+- **Unique survivor:** OPT-004 uniquely retains exact-linear-feasible-enumeration, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-PARETO-DOMINANCE-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-004: linear_program; exact observation: {"constraint":"x+y<=4","optimum":4,"optimum_set":[[1,3],[2,2],[3,1]],"positive_grid_extent":3}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:8997faeae9090423b4c0e37e415b75d25a8c8ebd44c811f2f853fcca0a78cf65`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:efc6ebd3b88aeb1dca4ef52d9fde87df61cdcf0115a899c57bacd7d5a972f03f`; engine receipt `sha256:6323878558e3eb3fb4d0d8b2726dbda5fdcc0ab9a40aa57d9cd54748cc4e30da`.
+
+#### `SFT-MATH-OBL-OPT-005` - Integer and combinatorial optimization
+
+- **Claim:** `SFT-MATH-OPT-INTEGER-COMBINATORIAL-005` - Integer and combinatorial optimization.
+- **Forced law:** Integer and combinatorial optimization is complete exact enumeration or a separately certified structure-preserving reduction over discrete feasible forms.
+- **Unique survivor:** OPT-005 uniquely retains complete-discrete-feasible-search, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-LINEAR-PROGRAM-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-005: integer_combinatorial; exact observation: {"capacity":3,"optimum_value":5,"unique_optimum_items":[1,2],"values":[2,3,4],"weights":[1,2,3]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ca53440b562c9cc05848732ff31a2cd5e53f9ed6227e8c67b37fd628722bcc81`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:98064d65c3a9332d88d5e7d879d6dae2cf6a35479c2cc63700705008df1dd3aa`; engine receipt `sha256:bc3ef7947c9f9f489114c474b3c03d08c674e9ea91aef48a1e509b0088cf8a22`.
+
+#### `SFT-MATH-OBL-OPT-006` - Convex optimization correspondence
+
+- **Claim:** `SFT-MATH-OPT-CONVEX-CORRESPONDENCE-006` - Convex optimization correspondence.
+- **Forced law:** Convex correspondence is exact midpoint or held-distance ordering over generated rational supports, not an imported continuum theorem.
+- **Unique survivor:** OPT-006 uniquely retains held-distance-convex-minimum, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-INTEGER-COMBINATORIAL-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-006: convex_correspondence; exact observation: {"candidates":[1,2,3,4,5],"objective":"held-distance-square-to-three","unique_minimizer":3}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6760c33825de4266bb977ee8253e686311b042f36a1accd91e13a5d7e83ad805`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:addcd8353740de580437cef1e254a1129b041dbe7ed019f25dc7fa8b4f8c6905`; engine receipt `sha256:e39890906deedccecea769f9e59b8e73d8a82683178f00471f69ce7cb347cc64`.
+
+#### `SFT-MATH-OBL-OPT-007` - Duality and certificate structure
+
+- **Claim:** `SFT-MATH-OPT-DUAL-CERTIFICATE-007` - Duality and certificate structure.
+- **Forced law:** A dual certificate is an independently checkable exact bound matching a feasible primal value; equality closes optimality.
+- **Unique survivor:** OPT-007 uniquely retains matching-primal-dual-certificate, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-CONVEX-CORRESPONDENCE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-007: duality_certificate; exact observation: {"dual_bound":4,"exact_match":true,"primal_optimum":4}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:66dd072426a7dc60c84c45cb77dc132f910e01ac625e35a9e97fc077c63cb43e`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:ebb916a31c0a525d27c1e5b2d98e1051b4dbba32503b707145b25b3329c937bb`; engine receipt `sha256:62c27ebb5829a3dad3f7fabc9647f4a7bdccc2bfdb1241574b8c9eb4cecf8625`.
+
+#### `SFT-MATH-OBL-OPT-008` - Variational optimization correspondence
+
+- **Claim:** `SFT-MATH-OPT-VARIATIONAL-CORRESPONDENCE-008` - Variational optimization correspondence.
+- **Forced law:** Variational correspondence compares the exact action of every generated finite path and retains all boundary records.
+- **Unique survivor:** OPT-008 uniquely retains complete-path-action-minimum, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-DUAL-CERTIFICATE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-008: variational_correspondence; exact observation: {"action":"sum-of-squares","positive_parts":3,"total":6,"unique_path":[2,2,2]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6c32a2bf7f0622308628b142e785cc182dfeb33b4943b73d71be31a35c0b93e6`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:76bf47c00ce7d3e7c65e5f6c5b8aa33f7560a1e85e25b96b1efb8f215ec794c8`; engine receipt `sha256:fee2c183cf7b4f34029a2606dddf3491a9b3c85ecb6d2f2d44b9afa49446ed91`.
+
+#### `SFT-MATH-OBL-OPT-009` - Dynamic programming as compositional optimization
+
+- **Claim:** `SFT-MATH-OPT-DYNAMIC-PROGRAMMING-009` - Dynamic programming as compositional optimization.
+- **Forced law:** Dynamic programming is lawful when locally retained subproblem optima compose to the same result as complete path enumeration.
+- **Unique survivor:** OPT-009 uniquely retains subproblem-optimum-composition, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-VARIATIONAL-CORRESPONDENCE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-009: dynamic_programming; exact observation: {"backward_recurrence":3,"complete_minimum":3,"path_costs":[3,3,6]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a3ca55cfc6de342162fd7861ef7ee8363ad086e9040e4451cd6634fbac29c5fa`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:c72ba62c88886dc22835555fadb94359fee7bd3107d8223f3d1a266ab6f6e832`; engine receipt `sha256:94a6507475f5b899b0280eda449cdac26c23fafe729038b5c35eb257b3a1f4c1`.
+
+#### `SFT-MATH-OBL-OPT-010` - Optimal control on generated state paths
+
+- **Claim:** `SFT-MATH-OPT-GENERATED-STATE-CONTROL-010` - Optimal control on generated state paths.
+- **Forced law:** Optimal control is exact ordering of every generated admissible state-action path under fixed dynamics and boundary custody.
+- **Unique survivor:** OPT-010 uniquely retains complete-control-path-optimum, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-DYNAMIC-PROGRAMMING-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-010: optimal_control; exact observation: {"controls":[1,2],"goal":5,"initial":1,"unique_least_step_path":[2,2]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e30fc51f7aef489ec85cb719ec6473e4d948f432065d547c62caa267c9703f82`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:642c16095f01d21b82adba9d3a8528918ea9210d664956d2511c515d1d8af532`; engine receipt `sha256:359e651b661d88d22d7602a0249f90c1b82a16d3eb9485f9ed59c3183bed13bf`.
+
+#### `SFT-MATH-OBL-OPT-011` - Game equilibrium finite correspondence
+
+- **Claim:** `SFT-MATH-OPT-GAME-EQUILIBRIUM-011` - Game equilibrium finite correspondence.
+- **Forced law:** A finite game equilibrium is a complete action profile whose every unilateral alternative fails to improve the acting participant's exact order.
+- **Unique survivor:** OPT-011 uniquely retains mutual-best-response-census, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-GENERATED-STATE-CONTROL-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-011: game_equilibrium; exact observation: {"actions":2,"profiles":4,"unique_mutual_best_response":[2,2]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:9cf4ef4bafbd786c2ad9fca9c7e3ce1a24aec9a9dc73f84838699c23ec0fefed`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:95b28b61a4e845bb985d4aa24f481cd1e84452df15907068fb97d69a1e750fd2`; engine receipt `sha256:df50833d973d90601e8d47ddca56172fc4e914d0e8fa925b1e9121759ee7a738`.
+
+#### `SFT-MATH-OBL-OPT-012` - Decision theory and loss ordering
+
+- **Claim:** `SFT-MATH-OPT-DECISION-LOSS-012` - Decision theory and loss ordering.
+- **Forced law:** Decision theory orders complete action-state loss records under declared exact support weights without importing utility scales or priors.
+- **Unique survivor:** OPT-012 uniquely retains exact-decision-loss-order, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-GAME-EQUILIBRIUM-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-012: decision_loss; exact observation: {"actions":["A","B","C"],"exact_losses":["3/2","2","5/2"],"minimum":"A"}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bec5b52e046cfd17b226e30f548cc5ed29b7837102a07f6b21a785a9e25ce3ff`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:c962d9f6d0a6a260000f93277fe19bed2fef1890cf31600df16aed4e643eb381`; engine receipt `sha256:92b812df5237a10f034bf74974cb664dd25c0074fdd4c6186c7f802896823f6a`.
+
+#### `SFT-MATH-OBL-OPT-013` - Operations-research flow and scheduling
+
+- **Claim:** `SFT-MATH-OPT-FLOW-SCHEDULING-013` - Operations-research flow and scheduling.
+- **Forced law:** Flow and scheduling retain capacity, conservation, precedence and resource custody across every generated route or schedule.
+- **Unique survivor:** OPT-013 uniquely retains flow-schedule-conservation, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-DECISION-LOSS-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-013: flow_scheduling; exact observation: {"makespan":3,"maximum_flow":3,"single_machine_lengths":[2,1]}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e7bbedbae805d67cf01fd22b2ed07a0bea980d92900f5a72fd63a0f720b112d5`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:3bab44052684910af32c4e8b46efd9993d8889fa6fb27d11c0fff07fd304b24e`; engine receipt `sha256:0f7c3d3f7d1c43f2abf11d7c21970c7f941446520ab41893ef35f49dac67aa29`.
+
+#### `SFT-MATH-OBL-OPT-014` - Robust optimization under bounded uncertainty
+
+- **Claim:** `SFT-MATH-OPT-ROBUST-BOUNDED-UNCERTAINTY-014` - Robust optimization under bounded uncertainty.
+- **Forced law:** Robust optimization orders each candidate by its complete declared scenario family, with no hidden distribution or fitted uncertainty radius.
+- **Unique survivor:** OPT-014 uniquely retains complete-worst-case-scenario-order, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-FLOW-SCHEDULING-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-014: robust_optimization; exact observation: {"unique_choice":"B","worst_case_losses":{"A":5,"B":4,"C":6}}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:b94f91b47cb1bbd9359dc77da0177b571e4a4dadd0cdf4b6da5dd4be7ccaf28d`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:3689ed18e70e4b2ed63099fb93682d946df8d34142857168743382b54968a911`; engine receipt `sha256:03925760f19f50746faf61b93c7b164b58d424f52d585f6bcdc32f87c21e42fb`.
+
+#### `SFT-MATH-OBL-OPT-015` - Approximation guarantees and gaps
+
+- **Claim:** `SFT-MATH-OPT-APPROXIMATION-GAP-015` - Approximation guarantees and gaps.
+- **Forced law:** An approximation guarantee requires an exact candidate value and independent optimum bound whose ratio or additive gap is explicitly certified.
+- **Unique survivor:** OPT-015 uniquely retains exact-certified-approximation-gap, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-ROBUST-BOUNDED-UNCERTAINTY-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-015: approximation_gap; exact observation: {"candidate":8,"gap":2,"optimum_bound":10,"ratio":"4/5"}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:16ada288d1df25f508965aed8af4b4e642108a6dd97525c0a4b914db728e4326`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:b4e93c52c97188029765b70b768ee60b9e6de6af603e3d1e61b4e986345c0df4`; engine receipt `sha256:28224fd21eff9d40657483e3aceb4019904f841d9786da73c2ec59d114a16a08`.
+
+#### `SFT-MATH-OBL-OPT-016` - Infeasibility and unboundedness boundaries
+
+- **Claim:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016` - Infeasibility and unboundedness boundaries.
+- **Forced law:** Infeasibility requires elimination of every feasible candidate; unboundedness requires a successor construction exceeding every supplied finite bound.
+- **Unique survivor:** OPT-016 uniquely retains complete-infeasible-or-successor-unbounded-certificate, complete candidate custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-PROB-IDENTIFIABILITY-016 -> SFT-MATH-ORDER-MONOTONE-MAP-010 -> SFT-MATH-GRAPH-CONNECTIVITY-CUT-FLOW-003 -> SFT-MATH-OPT-APPROXIMATION-GAP-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** OPT-016: infeasible_unbounded_boundary; exact observation: {"feasible_count":0,"opposed_bounds":["at-most-two","at-least-three"],"successor_exceeds_every_supplied_bound":true}; complete family observation custody: 16 records; all rows preserved; complete feasible-set, path and scenario enumeration supplies the result; no fitted objective, hidden tie breaker, forbidden scalar or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-OPTIMIZATION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted objective, imported optimizer answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque solver, sampled feasible subset or unregistered tie breaker; no unrestricted continuum optimum without a separate exact successor or enclosure certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:daace4f7a8d583c59446124a5f2be2ef102ac423fb83d526e989b8532de47b2c`; independent `sha256:98a6eaf0d6d2ad7fcfc3e420b9c594b9300c114ef67861d6655bb400f14ced72`; empirical `sha256:bd584a24c6f24f4faeb94627f99a379f3609bd2d93b12821eb54b9ff4765bf08`; engine receipt `sha256:e8e4a46874d1eb0f42b931300512437b8f1015e1de41ebc4c1a1b4a63a9b6080`.
+
+### 40.19 Family `DYN` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-DYN-001` - State maps and exact orbit structure
+
+- **Claim:** `SFT-MATH-DYN-STATE-ORBIT-001` - State maps and exact orbit structure.
+- **Forced law:** A dynamical system is a generated state support with one fixed transition relation; its orbit is the exact successor trace from a retained initial record.
+- **Unique survivor:** DYN-001 uniquely retains exact-state-orbit-generation, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-001: state_orbit; exact observation: {"initial":1,"map":{"1":2,"2":3,"3":2,"4":4},"orbit":[1,2,3,2,3]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:82ad05bad12b9bc5c29f54198739c8f84322b6b7ed024bf5b0f3545364467c8b`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:37a6eb2b823533f009e708b81bfe91288ac8f39354fe18b7f76667f4af206c96`; engine receipt `sha256:aeb9921e8e40d6d59f313577666482b543ef5624f9061cbf22b2f79c176b6633`.
+
+#### `SFT-MATH-OBL-DYN-002` - Fixed points and periodic cycles
+
+- **Claim:** `SFT-MATH-DYN-FIXED-PERIODIC-002` - Fixed points and periodic cycles.
+- **Forced law:** Fixed points and periodic cycles are exactly the states returning after the least registered positive transition count.
+- **Unique survivor:** DYN-002 uniquely retains complete-fixed-cycle-census, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-STATE-ORBIT-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-002: fixed_periodic; exact observation: {"fixed":[4],"period_two":[2,3]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:aa2cc07d5839579a57f85b9256ef207388cfc19ab8071613e94551d284d4f97f`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:9487cd05c82b80e324fe3b376fa64661749260a1055a047927969739818515b0`; engine receipt `sha256:9ae62db5ffdd31c07fea2a614bbbe9e5ba587bde5a38daa921fe0ba58c7e9a70`.
+
+#### `SFT-MATH-OBL-DYN-003` - Recurrence and return-time structure
+
+- **Claim:** `SFT-MATH-DYN-RECURRENCE-RETURN-003` - Recurrence and return-time structure.
+- **Forced law:** Recurrence is an exact return to a retained state identity, and return time is the least counted successor depth producing it.
+- **Unique survivor:** DYN-003 uniquely retains exact-first-return-record, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-FIXED-PERIODIC-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-003: recurrence_return; exact observation: {"state_four_return_time":1,"state_two_return_time":2}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:c9bd8ed7dbca1189e1c25b380072255626a1e1a69dae6cfd0571c5fa72d95509`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:b818bc280a2fa082f18cf019da7a54376a6d75f7595009b3b776105718338b15`; engine receipt `sha256:9c18019e9f20d1d1b810243cd7d08875312668c2bc99c216adeceb8e22f9c664`.
+
+#### `SFT-MATH-OBL-DYN-004` - Invariant sets and conserved records
+
+- **Claim:** `SFT-MATH-DYN-INVARIANT-CONSERVED-004` - Invariant sets and conserved records.
+- **Forced law:** A support is invariant when its complete transition image remains the same support; a record is conserved when every transition retains its exact value.
+- **Unique survivor:** DYN-004 uniquely retains invariant-support-custody, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-RECURRENCE-RETURN-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-004: invariant_conserved; exact observation: {"image":[2,3],"retained_cardinality":2,"support":[2,3]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e4aa8fc344bfd186bc50a87e4a530aa0e4168c6156cebb05f8fecebe30020091`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:adec834d7f2ea3086ea35fd3b75aa351cdc1aedfaee7c777a457a16aed237fa9`; engine receipt `sha256:2df3a6cbc61017a6eef83e76253575b6bff962865cdc1002c7f77b00d2fba89c`.
+
+#### `SFT-MATH-OBL-DYN-005` - Stability and attraction correspondence
+
+- **Claim:** `SFT-MATH-DYN-STABILITY-ATTRACTION-005` - Stability and attraction correspondence.
+- **Forced law:** Stability and attraction correspondence is an exact successor bound on held state separation throughout the generated orbit family.
+- **Unique survivor:** DYN-005 uniquely retains exact-distance-contraction, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-INVARIANT-CONSERVED-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-005: stability_attraction; exact observation: {"distance_ratio":"1/2","fixed_carrier":1,"map":"(x+1)/2"}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:08c6c5638614b655de9e90d71fb612cc5621f84e540361d6ed29e7019d4ef10b`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:2acbeffe9333ae16a391f2240fdb66641252e2c0dccbd70445cf63cae29573db`; engine receipt `sha256:520a680b3349364ef71665582583a1f3bced6cd9411a4fd11f9de14a8adba730`.
+
+#### `SFT-MATH-OBL-DYN-006` - Bifurcation as finite distinction change
+
+- **Claim:** `SFT-MATH-DYN-BIFURCATION-DISTINCTION-006` - Bifurcation as finite distinction change.
+- **Forced law:** Bifurcation is a forced change in the number or relation of invariant distinctions between generated transition labels, not an imported continuum parameter.
+- **Unique survivor:** DYN-006 uniquely retains finite-invariant-count-change, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-STABILITY-ATTRACTION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-006: bifurcation_distinction; exact observation: {"distinction_change":true,"first_transition_attractors":1,"second_transition_attractors":2}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d8cf49aad6135847123f0369cd9fb4690f6d50a8b11185d8d89ec729550b5700`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:3a76ed3d78ecf5b3141d9353eaea4fca472784bb8c8bb69c7c70871722e6bc4f`; engine receipt `sha256:8c84d60f21d282875750592142e7f749065029afeac13da0dc9ad38b11ecec93`.
+
+#### `SFT-MATH-OBL-DYN-007` - Symbolic dynamics and shift correspondence
+
+- **Claim:** `SFT-MATH-DYN-SYMBOLIC-SHIFT-007` - Symbolic dynamics and shift correspondence.
+- **Forced law:** Symbolic dynamics is exact transition over generated Fold words; shift correspondence retains symbol identity, word support and return depth.
+- **Unique survivor:** DYN-007 uniquely retains exact-word-shift-orbit, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-BIFURCATION-DISTINCTION-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-007: symbolic_shift; exact observation: {"multiset_preserved":true,"return_shifts":4,"word":[1,1,2,2]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:26e243425509829818576170d28906afcdf4b029b15034140bda26dea01cc2d7`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:2f8603c8e87784c8d2138d20b63574a88811218249f700d7f6ab8a2f869b3938`; engine receipt `sha256:d5d7b98dac7aa6e91704f5a82154ce0e5498d0e00fc67b1db7afa2a87e79cbb6`.
+
+#### `SFT-MATH-OBL-DYN-008` - Chaos through exact sensitivity witnesses
+
+- **Claim:** `SFT-MATH-DYN-EXACT-SENSITIVITY-008` - Chaos through exact sensitivity witnesses.
+- **Forced law:** Sensitivity is witnessed when one retained distinction outside the current observation class becomes observable after a counted transition depth.
+- **Unique survivor:** DYN-008 uniquely retains finite-shift-sensitivity, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-SYMBOLIC-SHIFT-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-008: exact_sensitivity; exact observation: {"first_observed_distinction_depth":3,"first_word":[1,1,1,1],"second_word":[1,1,1,2]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:04164da05ca66bde7c4cee1320fe3e82bc66269f04b1ee81696d146dcdd62eff`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:aac7655535f8fa974e88ad2004443bbdda18cef54fb5c1fc552c35f01a877f85`; engine receipt `sha256:73d7f19de7ba19d7987c99282739818524e9b29c547ad8b7a21838768e9f6f2a`.
+
+#### `SFT-MATH-OBL-DYN-009` - Ergodic-average finite correspondence
+
+- **Claim:** `SFT-MATH-DYN-ERGODIC-AVERAGE-009` - Ergodic-average finite correspondence.
+- **Forced law:** Finite ergodic-average correspondence is equality of exact full-orbit averages across every starting state in the same generated cycle.
+- **Unique survivor:** DYN-009 uniquely retains complete-orbit-average, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-EXACT-SENSITIVITY-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-009: ergodic_average; exact observation: {"all_start_full_cycle_average":2,"cycle":[1,3]}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:38d62b7bdba53748c21fdc6f121303df624ca66322d474de9d31c6443166ced9`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:5d68a76f000d489b3214d498edf88da4fc9b1fffb24f7f2fe0a3c0b098814ccd`; engine receipt `sha256:7f8777dd8e7f792ca65148f4a8015f93681cdd890936577821113af0b6d8b052`.
+
+#### `SFT-MATH-OBL-DYN-010` - Hamiltonian and reversible-map correspondence
+
+- **Claim:** `SFT-MATH-DYN-HAMILTONIAN-REVERSIBLE-010` - Hamiltonian and reversible-map correspondence.
+- **Forced law:** Hamiltonian correspondence requires an exact reversible state map and preserved generated invariant, without importing continuum phase space.
+- **Unique survivor:** DYN-010 uniquely retains reversible-invariant-map, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-ERGODIC-AVERAGE-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-010: hamiltonian_reversible; exact observation: {"map":"pair-swap","self_inverse":true,"total_preserved":true}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:96174a936f1809b4b980aebd7eba158ceb5318debd985abeeb60c7819143c39d`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:66ca7bc21a6913291c3f1a8b362b0f3662becd1339ade293e00efa6ca7a6882d`; engine receipt `sha256:ffa0ecb0ca362a3a6bd0a2c0033e0033b4addf071ca9c2a1316125debcd19474`.
+
+#### `SFT-MATH-OBL-DYN-011` - Dissipative dynamics and retained loss
+
+- **Claim:** `SFT-MATH-DYN-DISSIPATIVE-RETAINED-LOSS-011` - Dissipative dynamics and retained loss.
+- **Forced law:** Dissipative correspondence is predecessor merging; exact reversal requires the retained fibre distinction identifying the lost predecessor.
+- **Unique survivor:** DYN-011 uniquely retains many-to-one-loss-ledger, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-HAMILTONIAN-REVERSIBLE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-011: dissipative_retained_loss; exact observation: {"images":2,"predecessors":4,"reconstructed_predecessors":4,"retained_fibre_labels":2}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:542f0702f246ec68c46cc17e726c083c5e7aa266ab62469ad55b8526e04b1b15`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:ec3a7d3f512f2e0dc01dd8497ac27234742394d8ab74408a23d79ac38b649e51`; engine receipt `sha256:013899ed0283322e5ec156198a2845d00447a602ebe224bbaefc5e984d6cf950`.
+
+#### `SFT-MATH-OBL-DYN-012` - Coupled and networked dynamical systems
+
+- **Claim:** `SFT-MATH-DYN-COUPLED-NETWORKED-012` - Coupled and networked dynamical systems.
+- **Forced law:** A coupled dynamical system is a product state whose local successor depends only on registered neighbours, with complete network-orbit and invariant custody.
+- **Unique survivor:** DYN-012 uniquely retains local-coupling-network-orbit, complete orbit custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-OPT-INFEASIBLE-UNBOUNDED-BOUNDARY-016 -> SFT-MATH-EQN-ORDINARY-DIFFERENCE-001 -> SFT-MATH-DYN-DISSIPATIVE-RETAINED-LOSS-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** DYN-012: coupled_networked; exact observation: {"initial":[1,3],"orbit":[[1,3],[3,1],[1,3]],"period":2,"total_preserved":true}; complete family observation custody: 12 records; all rows preserved; complete finite state, transition and orbit enumeration supplies the observation; no fitted dynamics, imported continuum phase space or opaque solver enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-DYNAMICS-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, fitted transition, imported dynamical theorem or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque trajectory, continuum phase space or ungenerated infinite orbit; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:8b7c44e0be715c35534e04fd2a38c03a86c43a4deee2024a31966275f038cb7a`; independent `sha256:d0d4046e8dd2f6397651daad54df525a028027c5e6c59f448b720bbaa5362674`; empirical `sha256:f068d3369535c2826d5384f5b0eac2d3412dd8ae0ddde60763082d4e7dc9ac1f`; engine receipt `sha256:c525a01d63f6eeb62552b3058ed34808c261032dae7b3553d61adfabf872780e`.
+
+### 40.20 Family `LOGIC` - 16/16 complete
+
+This family contributes 4,096 completely decided candidates, 16 unique survivors and 64 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-LOGIC-001` - Propositions as generated distinctions
+
+- **Claim:** `SFT-MATH-LOGIC-PROPOSITION-DISTINCTION-001` - Propositions as generated distinctions.
+- **Forced law:** A proposition is a generated distinction whose declared interpretation returns exactly one held or opposed observation label.
+- **Unique survivor:** LOGIC-001 uniquely retains generated-proposition-valuation, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-001: proposition_distinction; exact observation: {"complete":true,"exclusive":true,"labels":["held","opposed"]}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bd98e9368e15a033c206fc96a5d85e33dc745397a17bd6ba3ed3f0f867240a78`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:d8595b6cb3a2c8cfe3c643db42589bcdb275db5e4b6fd916a31e401ed182a62f`; engine receipt `sha256:f85f9e844e3ec3f9581c1d9302dbea00e5791f1c4d11df0a41e3ef0bce2bbbf7`.
+
+#### `SFT-MATH-OBL-LOGIC-002` - Inference and consequence preservation
+
+- **Claim:** `SFT-MATH-LOGIC-INFERENCE-CONSEQUENCE-002` - Inference and consequence preservation.
+- **Forced law:** An inference is lawful when every completely generated valuation holding its premises also holds its conclusion.
+- **Unique survivor:** LOGIC-002 uniquely retains valuation-preserving-inference, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-PROPOSITION-DISTINCTION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-002: inference_consequence; exact observation: {"all_preserved":true,"rule":"modus-ponens","valuations":4}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:13d4da445f9989d41f98abebbbb0bdd7f609da48d0cb4d853c977e13ec45442e`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:ec5e615f55d614d524158049596dd32200d119a35f5f039692c9e67b48f88eb0`; engine receipt `sha256:153966835981d27d4115b986d3dfa5519147893171304aa9224ace83a36e2f94`.
+
+#### `SFT-MATH-OBL-LOGIC-003` - Soundness and completeness correspondence
+
+- **Claim:** `SFT-MATH-LOGIC-SOUND-COMPLETE-CORRESPONDENCE-003` - Soundness and completeness correspondence.
+- **Forced law:** Finite soundness and completeness correspondence is exact equality between generated proof reachability and truth in every generated interpretation.
+- **Unique survivor:** LOGIC-003 uniquely retains finite-proof-model-equivalence, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-INFERENCE-CONSEQUENCE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-003: sound_complete_correspondence; exact observation: {"proof_model_rows_equal":true,"propositions":2,"valuations":4}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cd793da0824c4802bb6cafb14ae7386da8baa38baaceeaf171f92dc8a598db11`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:e5c84fd906171cfe2a9e97f8cf55d172353d914b1afe4dda64dccea72767e7ef`; engine receipt `sha256:340d97010a3dea95fd4339a6ad816685c90466027c866d62e45d4760ac2692c7`.
+
+#### `SFT-MATH-OBL-LOGIC-004` - Formal proof objects and checking
+
+- **Claim:** `SFT-MATH-LOGIC-PROOF-OBJECT-CHECK-004` - Formal proof objects and checking.
+- **Forced law:** A proof is an exact finite object recording every premise, rule and predecessor; checking reconstructs each step without oracle access.
+- **Unique survivor:** LOGIC-004 uniquely retains explicit-proof-object-check, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-SOUND-COMPLETE-CORRESPONDENCE-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-004: proof_object_check; exact observation: {"checked":true,"conclusion":"Q","premises":["P","P-implies-Q"],"rule":"modus-ponens"}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0e973f803e425573be9a077fafd7e119b71d7675ac3c4d77379438262d5ee8b5`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:e7efe31bc9598dde3ec2642b18beae62bc91cfe1ef98d40762a03725f22d6dc2`; engine receipt `sha256:e1d02e00afb9f4bf37ce78131e933afe4a71ef346cafef5ac815e8788d6ec4aa`.
+
+#### `SFT-MATH-OBL-LOGIC-005` - First-order quantifier finite-support correspondence
+
+- **Claim:** `SFT-MATH-LOGIC-QUANTIFIER-FINITE-SUPPORT-005` - First-order quantifier finite-support correspondence.
+- **Forced law:** Universal and existential quantifier correspondence is complete conjunction or disjunction over every label in a generated finite domain.
+- **Unique survivor:** LOGIC-005 uniquely retains complete-domain-quantifier-census, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-PROOF-OBJECT-CHECK-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-005: finite_quantifier; exact observation: {"domain":[1,2,3],"exists":"held","forall":"opposed","predicate":"equals-two"}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:daab2419fab10b343411bdd387ec0c21938815a46621dc6ea278a1f20a12dc0c`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:f6898aa661e7e685014fb61a21a68e897629913c29dd4f5a9a2370bcf421798c`; engine receipt `sha256:53083a9fef5c6ab7df19ad3708e04c0c47900087047ac48893d4163c5db51cf1`.
+
+#### `SFT-MATH-OBL-LOGIC-006` - Model and interpretation structure
+
+- **Claim:** `SFT-MATH-LOGIC-MODEL-INTERPRETATION-006` - Model and interpretation structure.
+- **Forced law:** A model is a generated domain plus a total interpretation record for every declared symbol, relation and formula.
+- **Unique survivor:** LOGIC-006 uniquely retains complete-symbol-interpretation, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-QUANTIFIER-FINITE-SUPPORT-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-006: model_interpretation; exact observation: {"domain":[1,2,3],"existential":"held","predicate_extension":[2]}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:8ef532b84599da966ca10515cd8d7b1f75624617f0dd1cb626cc705e1968e32f`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:3c57b09a9757e6038da40c57bcd36fefc98e154b4f8ceeae2c00bcaf52bb4895`; engine receipt `sha256:c0ebbe707ae0dca10b94d1b69b5122c3e881de668df7bee5bbafef8d9678c03e`.
+
+#### `SFT-MATH-OBL-LOGIC-007` - Compactness correspondence boundary
+
+- **Claim:** `SFT-MATH-LOGIC-COMPACTNESS-BOUNDARY-007` - Compactness correspondence boundary.
+- **Forced law:** Finite compactness correspondence is complete intersection custody across generated constraint families; unrestricted compactness requires a separate successor certificate.
+- **Unique survivor:** LOGIC-007 uniquely retains finite-intersection-witness-boundary, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-MODEL-INTERPRETATION-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-007: compactness_boundary; exact observation: {"complete_exclusion_family_satisfied":false,"proper_exclusion_families_satisfied":4,"support":[1,2,3,4],"unrestricted_claimed":false}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f6beee4ae508cb18ce195c7448d25482d3eb9888b410f5446e1dcc2c2b8237f6`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:0a65924831e2bd816abcb812b969f02d38d0d12b8189dce5b515457082108180`; engine receipt `sha256:2f79e69c848156a49ac98efd70d86967895b4d2af23b30ea9d35b65f2099d888`.
+
+#### `SFT-MATH-OBL-LOGIC-008` - Decidability and computability interface
+
+- **Claim:** `SFT-MATH-LOGIC-DECIDABILITY-INTERFACE-008` - Decidability and computability interface.
+- **Forced law:** A generated finite formula grammar is decidable when exact evaluation halts with one interpretation label for every formula and input record.
+- **Unique survivor:** LOGIC-008 uniquely retains finite-formula-total-decision, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-COMPACTNESS-BOUNDARY-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-008: decidability_interface; exact observation: {"all_halted":true,"evaluations":24,"formulas":6,"valuations":4}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cb93cac95efee3679b5ba94d18fd319e8ed48bd49c5298d441904b04e3330dd9`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:7c79a1da17e790edaa8b5af44669893028a4a1b0c17983e9998dbec4d5ab2549`; engine receipt `sha256:1fc8005aaf5441ebd0362d84d9b1e0a6521f9306dcdfbfc0299abe3f549f4ced`.
+
+#### `SFT-MATH-OBL-LOGIC-009` - Incompleteness and self-reference boundary
+
+- **Claim:** `SFT-MATH-LOGIC-INCOMPLETENESS-SELF-REFERENCE-009` - Incompleteness and self-reference boundary.
+- **Forced law:** Self-reference reaches an incompleteness boundary when a generated sentence requires a label opposed to its own assigned label, so no consistent total internal assignment exists.
+- **Unique survivor:** LOGIC-009 uniquely retains self-negating-fixed-point-boundary, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-DECIDABILITY-INTERFACE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-009: incompleteness_self_reference; exact observation: {"host_zero_is_count_only":true,"labels":["held","opposed"],"self_negating_fixed_labels":0}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0917eb85428a55cea8625ecd7d708b6702e81843b068fa0ae0b0b74f6ec79010`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:f1ea9f4d0a2462e8dd6aded320f25bfd9bbfc88063ec54e97e1ca3f3f286f436`; engine receipt `sha256:a93e6a3917e8b56002318a4cb9bdc381988b70aa3431a940655ed4d4d371f794`.
+
+#### `SFT-MATH-OBL-LOGIC-010` - Set-like finite collection theory
+
+- **Claim:** `SFT-MATH-LOGIC-FINITE-COLLECTION-010` - Set-like finite collection theory.
+- **Forced law:** Finite collection theory is generated membership custody with exact extensional identity and complete union, intersection and subcollection enumeration.
+- **Unique survivor:** LOGIC-010 uniquely retains generated-finite-collection-algebra, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-INCOMPLETENESS-SELF-REFERENCE-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-010: finite_collection; exact observation: {"base_labels":3,"intersection_closed":true,"subcollections":8,"union_closed":true}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:58af0aa4f235739b3dafee3a54fcddfc53f94e1f705fb2f7a8f51818968ca61c`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:1c2f19f680c6faf6013ab76a60b3eabde7177c6db93ef960df7c1f3d9be630c1`; engine receipt `sha256:66e9c9d47b3364b32c328570ccb83fa0a7f094cc7adac043ccb30c42e25c9799`.
+
+#### `SFT-MATH-OBL-LOGIC-011` - Class, universe and size boundaries
+
+- **Claim:** `SFT-MATH-LOGIC-SIZE-BOUNDARY-011` - Class, universe and size boundaries.
+- **Forced law:** Collection ranks are generated one finite successor at a time; no collection containing every possible future rank is admitted.
+- **Unique survivor:** LOGIC-011 uniquely retains ranked-size-extension-boundary, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-FINITE-COLLECTION-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-011: size_boundary; exact observation: {"ranks":[1,2,3,4],"sizes":[2,4,8,16],"universal_totality_claimed":false}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f523b2334ac7643d9d1db314202cb00f8aa7a290500490c9e7e3e03ae5105004`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:bbde267a34bc7dae2d54e84666a8773ac03ab7511ecfaa9ad84098f0112b0b53`; engine receipt `sha256:ae93deb5f11e14001d83c1afd20e2cd8e90246dd8dc4d9a0c605f4b9877d5823`.
+
+#### `SFT-MATH-OBL-LOGIC-012` - Constructive and intuitionistic correspondence
+
+- **Claim:** `SFT-MATH-LOGIC-CONSTRUCTIVE-CORRESPONDENCE-012` - Constructive and intuitionistic correspondence.
+- **Forced law:** Constructive correspondence admits a proposition only with an explicit proof object and admits a disjunction only with the retained chosen-side witness.
+- **Unique survivor:** LOGIC-012 uniquely retains witness-bearing-construction, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-SIZE-BOUNDARY-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-012: constructive_correspondence; exact observation: {"conjunction_witnesses":["proof-A","proof-B"],"disjunction_side":"left","disjunction_witness":"proof-A"}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7d457244f5ba9c737af68201d7db91252b4d9d866ed4bc97a288b9bea372525b`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:54834ac57fd5586314ac7fe03945116e6559910d4e74d8c2f94306f81ceacd02`; engine receipt `sha256:be1fa0f7ed9298f961e099db5213007d9c7a556e85756207024813bcea2cee41`.
+
+#### `SFT-MATH-OBL-LOGIC-013` - Modal and temporal logic correspondence
+
+- **Claim:** `SFT-MATH-LOGIC-MODAL-TEMPORAL-013` - Modal and temporal logic correspondence.
+- **Forced law:** Modal and temporal operators are exact quantifications over registered successor paths and counted transition positions.
+- **Unique survivor:** LOGIC-013 uniquely retains transition-indexed-modal-temporal-law, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-CONSTRUCTIVE-CORRESPONDENCE-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-013: modal_temporal; exact observation: {"necessary_at_state_one":true,"possible_at_state_two":true,"states":4,"transition_custody":true}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f5bd3ef6e50a2fa477386dc8442915095568655980880d7f09f574d0be124ac5`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:c2cdcaa50be9a43bae77442161de82ee129fffb76eae910534f80b5672c52ec0`; engine receipt `sha256:b2428380ee59ac674bd574be852e1168aaa1a392cb49f8e8879f82ae34cb95e5`.
+
+#### `SFT-MATH-OBL-LOGIC-014` - Nonclassical many-valued correspondence
+
+- **Claim:** `SFT-MATH-LOGIC-MANY-VALUED-014` - Nonclassical many-valued correspondence.
+- **Forced law:** Many-valued correspondence is a generated finite valuation algebra with complete operation tables and explicit interpretation boundaries.
+- **Unique survivor:** LOGIC-014 uniquely retains finite-ordered-valuation-algebra, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-MODAL-TEMPORAL-013`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-014: many_valued; exact observation: {"complete_binary_rows":9,"labels":["opposed","unresolved","held"],"reversal_preserves_unresolved":true}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e54ba8cbefbef47b9f5122468fdc0d697068ceddb01702d9c0492b41fbdd9bbb`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:0fc294b7459c9048507462dbfdffad3676a67747968a60f5b5efc10e06563363`; engine receipt `sha256:571b131341ecd1ad9d2fc2f3b131487f8e060e1a05e51af274793f8d3327a562`.
+
+#### `SFT-MATH-OBL-LOGIC-015` - Proof-theoretic normalization
+
+- **Claim:** `SFT-MATH-LOGIC-NORMALIZATION-015` - Proof-theoretic normalization.
+- **Forced law:** Normalization is exact proof-object rewriting whose registered complexity measure strictly decreases until no reduction applies.
+- **Unique survivor:** LOGIC-015 uniquely retains strict-proof-reduction-normalization, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-MANY-VALUED-014`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-015: normalization; exact observation: {"measure_strictly_decreased":true,"normal_form":"A","redex":"identity-applied-to-A"}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:f99dd7358106257d10c44a25fc86bb55ec8a5e002fccc1e19be61d238a192b62`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:b52af9f580b77385d69c619354d435bcef12e5e0f38f8411b9c8ab6cb9779b6c`; engine receipt `sha256:5af25a62e0f550c27d7dde1ff7314806f74aa97c6908f98c8e9753bad2654b76`.
+
+#### `SFT-MATH-OBL-LOGIC-016` - Foundational consistency and self-verification limits
+
+- **Claim:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016` - Foundational consistency and self-verification limits.
+- **Forced law:** Consistency is certified by complete proof enumeration inside the declared grammar; no finite kernel may extend that certificate to arbitrary unregistered self-modifications.
+- **Unique survivor:** LOGIC-016 uniquely retains finite-consistency-unrestricted-self-limit, complete proof-model custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-DYN-COUPLED-NETWORKED-012 -> SFT-MATH-LOGIC-PROOF-001 -> SFT-MATH-LOGIC-NORMALIZATION-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** LOGIC-016: consistency_self_verification; exact observation: {"declared_closure":["P","P-implies-Q","Q"],"opposed_P_derived":false,"unrestricted_self_verification_claimed":false}; complete family observation custody: 16 records; all rows preserved; complete finite syntax, valuation, proof and model enumeration supplies the result; no imported logical axiom, oracle or unregistered self-extension enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-LOGIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported logical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; truth orientation is held or opposed structure and never a negative numerical scalar; no unrestricted infinite language, universe, compactness or self-consistency claim; no opaque theorem prover or proof step lacking explicit premises and rule custody; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2899d5fc7e46c6daefed02e69f99288d36017cacbf1164af42327590b70f17a7`; independent `sha256:d9ad3e44fe6cff49a05239c9cc8a3e824fc66eab53c7cd3bcdb8f489d226cf6b`; empirical `sha256:1547cdbd0960253cd455c9267e79fc87e5e06e93433677fd23b818d2203523f1`; engine receipt `sha256:5717d448290a1af7fbbd8ad6a85c473c68b28abce0799711809f5538cb14d055`.
+
+### 40.21 Family `CAT` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-CAT-001` - Objects, arrows and typed composition
+
+- **Claim:** `SFT-MATH-CAT-OBJECT-ARROW-COMPOSITION-001` - Objects, arrows and typed composition.
+- **Forced law:** Objects are generated type boundaries; arrows retain source and target, and composition exists exactly when adjacent boundaries match.
+- **Unique survivor:** CAT-001 uniquely retains typed-arrow-composition, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-001: typed_composition; exact observation: {"arrows":["A-to-B","B-to-C"],"composite":"A-to-C","mismatched_rejected":true,"objects":["A","B","C"]}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0a4fb13ab60a6fd29b051109a9bb76beb4597d9ab804805e77661930afce911f`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:63d66f6032095493e3ab73cca160ef52207fdd3fcbfb16b5e634a760d9461c1a`; engine receipt `sha256:71c69fc458b52088e7c1dc218452b99d29ef3a4e9634d60c261a7a69cfbb0394`.
+
+#### `SFT-MATH-OBL-CAT-002` - Identity and associativity witnesses
+
+- **Claim:** `SFT-MATH-CAT-IDENTITY-ASSOCIATIVITY-002` - Identity and associativity witnesses.
+- **Forced law:** Every object has a generated identity arrow, and every completely typed triple of arrows composes associatively.
+- **Unique survivor:** CAT-002 uniquely retains identity-associative-composition, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-OBJECT-ARROW-COMPOSITION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-002: identity_associativity; exact observation: {"associativity":true,"finite_maps":3,"left_identity":true,"right_identity":true}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:728ece9a6f622cf845d13f93325428db035ae552a9d953e17e6414dde537a51f`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:d97683a012869ea9e3946378b72725cf8cf332ce713a99623a7b163424eb3045`; engine receipt `sha256:807ed10ff532e9c607cd05e5b289cae65eaef4fef96cfec772ce1eaf6bd64c89`.
+
+#### `SFT-MATH-OBL-CAT-003` - Functorial structure preservation
+
+- **Claim:** `SFT-MATH-CAT-FUNCTOR-PRESERVATION-003` - Functorial structure preservation.
+- **Forced law:** A functor is a total object-and-arrow translation preserving types, identities and composition across the complete generated category.
+- **Unique survivor:** CAT-003 uniquely retains identity-composition-preserving-map, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-IDENTITY-ASSOCIATIVITY-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-003: functor_preservation; exact observation: {"all_rows_equal":true,"mapped_composite":"two-times-x-plus-one","source_composite":"plus-one-then-times-two"}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:abf63322046724108546d7f7c82c9b81843bec79d39ea349817ca566b92e508b`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:52656f0a2f211be47829f355e9a5e98bf144de85e1b7bb067a8e787cec8702e3`; engine receipt `sha256:45effaf6d8da98e393865ea391af69e936c277b99614dac177e4f0d14d850900`.
+
+#### `SFT-MATH-OBL-CAT-004` - Natural transformation correspondence
+
+- **Claim:** `SFT-MATH-CAT-NATURAL-TRANSFORMATION-004` - Natural transformation correspondence.
+- **Forced law:** A natural transformation is a typed component arrow at every source object whose complete generated naturality squares commute.
+- **Unique survivor:** CAT-004 uniquely retains commuting-component-family, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-FUNCTOR-PRESERVATION-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-004: natural_transformation; exact observation: {"all_commute":true,"naturality_rows":2,"source_labels":[1,2]}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4c4cf959c4fa4d84312eda66735a345ef41b1b40ea2c4538c83e8c6746d3d733`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:9bb9750893d9922512e58650ab9f455ea4f95c01383754e8ff7a3ff7e2efa248`; engine receipt `sha256:5dead80b1c237c637d35f6c43379a65812c2117954f77d5e9390cd3806c3e0e1`.
+
+#### `SFT-MATH-OBL-CAT-005` - Products, coproducts and universal constructions
+
+- **Claim:** `SFT-MATH-CAT-PRODUCT-COPRODUCT-005` - Products, coproducts and universal constructions.
+- **Forced law:** Products and coproducts are generated records whose projection or injection equations force one unique mediating map for each supplied cone or cocone.
+- **Unique survivor:** CAT-005 uniquely retains product-coproduct-universal-record, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-NATURAL-TRANSFORMATION-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-005: product_coproduct; exact observation: {"injections_distinct":true,"product_pairs":4,"projection_reconstruction":true,"tagged_coproduct_values":4}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:78be3dde2442eb6f53191d40f840c50642e15cc01fc4a6d501dfc40f6568fac1`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:a8d84cead61d921446c409ad15603d76aa2fb9ca076bf0b9bc2c6c18881dd711`; engine receipt `sha256:7d7a98b46c34532e47b6a37fcd19c87883fe3b009a0fc6059173309712bac821`.
+
+#### `SFT-MATH-OBL-CAT-006` - Limits and colimits on generated diagrams
+
+- **Claim:** `SFT-MATH-CAT-LIMIT-COLIMIT-006` - Limits and colimits on generated diagrams.
+- **Forced law:** A limit or colimit is admitted through complete finite diagram enumeration and a unique universal mediating record.
+- **Unique survivor:** CAT-006 uniquely retains finite-diagram-universal-construction, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-PRODUCT-COPRODUCT-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-006: limit_colimit; exact observation: {"coequalizer_classes":[[1],[2,3]],"equalizer":[1,3]}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:a73250bb9a0df7b60893d542b6f59075159b13daf6a019d7b6fbedba92f33557`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:5568a2fd5066d47902f1df6cf6c59d650aeda3c1258aada22fcab17d29df6565`; engine receipt `sha256:66e3d06fc4a7b84928e089f02b4a5e7151461520b6c96327b5fbf9627f2eb11e`.
+
+#### `SFT-MATH-OBL-CAT-007` - Adjunction and paired universal maps
+
+- **Claim:** `SFT-MATH-CAT-ADJUNCTION-007` - Adjunction and paired universal maps.
+- **Forced law:** Adjunction correspondence is an exact reversible pairing between two completely generated hom-supports, natural in every retained object.
+- **Unique survivor:** CAT-007 uniquely retains exact-hom-pairing-bijection, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-LIMIT-COLIMIT-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-007: adjunction; exact observation: {"bijection":true,"curried_maps":16,"uncurried_maps":16}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cbf9506ab93904cc49db75897eefe3de13dc2673b2f2072566de96d8b22fa5f5`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:d1120ae9e22f6ea350f46373a6d441a5a65d8214e9c913db0468880bf7914a73`; engine receipt `sha256:bc77d0449dd3b2b490aff2c45dc27e9552a8798c49bad32cff6dc021dd25b247`.
+
+#### `SFT-MATH-OBL-CAT-008` - Monoidal composition and tensor interface
+
+- **Claim:** `SFT-MATH-CAT-MONOIDAL-TENSOR-008` - Monoidal composition and tensor interface.
+- **Forced law:** Monoidal structure is a typed binary composition with explicit associativity and unit witnesses; structural absence supplies the empty unit form.
+- **Unique survivor:** CAT-008 uniquely retains associative-unitary-tensor, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-ADJUNCTION-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-008: monoidal_tensor; exact observation: {"associative":true,"structural_empty_unit":true,"tensor":"word-concatenation"}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:58603d9df9afb3f5bb854fbdc9d34cdad895ee13e90b03b49c798fc857164090`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:d8fab2f375e3a262e80eaa104f73f049c944d4d0a8e719e359cff11f452bb43e`; engine receipt `sha256:1d46e43677dbab4705723767d4134bba4f59a0c6b60e6d45ae97057bfcfa7c5b`.
+
+#### `SFT-MATH-OBL-CAT-009` - Closed structure and internal maps
+
+- **Claim:** `SFT-MATH-CAT-CLOSED-INTERNAL-MAP-009` - Closed structure and internal maps.
+- **Forced law:** Closed structure internalizes the complete map support and is forced by exact evaluation and reversible currying correspondence.
+- **Unique survivor:** CAT-009 uniquely retains internal-map-evaluation-currying, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-MONOIDAL-TENSOR-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-009: closed_internal_map; exact observation: {"evaluation_currying_reconstruction":true,"four_entry_tables":16,"internal_maps":4}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:bb8c927166bc35fce9b7391b12726541149996360041a5f2036dfdabd5df3381`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:70c0719676973cba81e9913fd93082ac84ec43c4d435b6abd194bd48a8b0c678`; engine receipt `sha256:f68143ffe290ff07df3f325ad9af23893914b6dc1e8b02018f5ee5bf8fa9f8fd`.
+
+#### `SFT-MATH-OBL-CAT-010` - Type correspondence and dependent records
+
+- **Claim:** `SFT-MATH-CAT-TYPE-DEPENDENT-RECORD-010` - Type correspondence and dependent records.
+- **Forced law:** A dependent type is a generated fibre over each base label; a lawful record retains its base label and a value from exactly that fibre.
+- **Unique survivor:** CAT-010 uniquely retains dependent-fibre-record, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-CLOSED-INTERNAL-MAP-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-010: dependent_record; exact observation: {"base_labels":2,"fibre_sizes":[1,2],"well_typed_pairs":3}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7b3d24f378953f941aeb312762461ed34efe71479c4728abc7f6396bf8c530f1`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:642e9719ddd2e714d499c3c9e9067de5d403d1215088926bce1e33b6bcfc95bb`; engine receipt `sha256:ff7742d564cdc04c75e692c5642100b378945b08fcdc9d11c0150af30e3a71e3`.
+
+#### `SFT-MATH-OBL-CAT-011` - Sheaf-like local-to-global custody
+
+- **Claim:** `SFT-MATH-CAT-SHEAF-LOCAL-GLOBAL-011` - Sheaf-like local-to-global custody.
+- **Forced law:** Sheaf-like correspondence retains every local section and overlap; compatible sections glue to one unique generated global record.
+- **Unique survivor:** CAT-011 uniquely retains compatible-local-unique-gluing, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-TYPE-DEPENDENT-RECORD-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-011: sheaf_local_global; exact observation: {"left_patch":{"1":"a","2":"b"},"overlap_agrees":true,"right_patch":{"2":"b","3":"a"},"unique_global":{"1":"a","2":"b","3":"a"}}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:88fdd3d2f45c65e2bb3c5f2b122e2291520f9a550e805583a721339fa6984990`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:ddff67d39a14897e95a96a695c052ebedf73307cbdba582283f6e97129aaf146`; engine receipt `sha256:73d7dd3a53e88a69cd63d2147afab60c9fce360c065b5f813ffc82b508bdfbfa`.
+
+#### `SFT-MATH-OBL-CAT-012` - Operadic and higher-composition boundary
+
+- **Claim:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012` - Operadic and higher-composition boundary.
+- **Forced law:** Operadic composition is exact typed substitution into generated finite input slots; higher composition is admitted only at registered arity and coherence depth.
+- **Unique survivor:** CAT-012 uniquely retains finite-arity-substitution-associativity, complete typed-diagram custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-LOGIC-CONSISTENCY-SELF-VERIFICATION-016 -> SFT-MATH-ALG-OPERADIC-COMPOSITION-016 -> SFT-MATH-CAT-SHEAF-LOCAL-GLOBAL-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** CAT-012: operad_higher_boundary; exact observation: {"registered_total_arity":5,"substitution_associative":true,"unrestricted_higher_coherence_claimed":false}; complete family observation custody: 12 records; all rows preserved; complete finite object, arrow, diagram and dependent-record enumeration supplies the observation; no imported categorical axiom, opaque universal construction or unregistered higher coherence enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-COMPOSITION-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported categorical system, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no untyped composition, opaque universal construction or ungenerated infinite category; no unrestricted higher coherence beyond the registered arity and successor certificate; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:209c79cea714d80cfdd0a0a901d3bd40d5db60708d9ac94e433ccd64a930f0a2`; independent `sha256:e3677780a1671cfb8d7da7009721edb9f6c31c16d04668f6ea416a4bdc21fae2`; empirical `sha256:88d9a6cff7443304f557261b8c79c8c732c643a7062c81f3ba3ba93e25607f6c`; engine receipt `sha256:212418e46bfbec20e1f9b404cd43fb40fc13d180de2ab99bc0a8971017fd2197`.
+
+### 40.22 Family `NUM` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-NUM-001` - Exact numerical representation and rounding custody
+
+- **Claim:** `SFT-MATH-NUM-EXACT-REPRESENTATION-ROUNDING-001` - Exact numerical representation and rounding custody.
+- **Forced law:** Every numerical approximation retains its exact rational source, enclosing neighbours, selected display and the comparison that selected it.
+- **Unique survivor:** NUM-001 uniquely retains exact-representation-rounding-custody, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-001: exact_representation_rounding; exact observation: {"lower":2,"lower_gap":"1/3","selected_display":2,"source_fraction":"7/3","upper":3,"upper_gap":"2/3"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:aa0439e8c4b6e462ca753a6844d4aa196c310cfbb5c0d07373c695b0d2464eae`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:48ca7c06d874184181820fa8dc72b64fc64bf9edfed5d4c3b6a1e3a306620d9f`; engine receipt `sha256:8e0f6ddf5bc90fef46eefc32a535fa9fae3d8fc45d3a0f0dd93f657d8c1836c4`.
+
+#### `SFT-MATH-OBL-NUM-002` - Interval and rational enclosure arithmetic
+
+- **Claim:** `SFT-MATH-NUM-INTERVAL-RATIONAL-ENCLOSURE-002` - Interval and rational enclosure arithmetic.
+- **Forced law:** Interval arithmetic propagates exact rational lower and upper witnesses without admitting an unrepresented continuum scalar.
+- **Unique survivor:** NUM-002 uniquely retains outward-rational-enclosure, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-EXACT-REPRESENTATION-ROUNDING-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-002: interval_rational_enclosure; exact observation: {"left":["1/2","2/3"],"positive_product":["1/6","1/3"],"right":["1/3","1/2"],"sum":["5/6","7/6"]}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:60d0bcb86ea1c81400cc47dad3679e84e8507fb221c3c7dda45607931e4f7959`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:3563c47b3a299007ae41ea52717625bbaa3d7f45f1caa67dbb895721ef12b73c`; engine receipt `sha256:8c13117d2033b4657174a69f0dae9093d27277e74ea89abe10609bb463cc5072`.
+
+#### `SFT-MATH-OBL-NUM-003` - Truncation and discretization error
+
+- **Claim:** `SFT-MATH-NUM-TRUNCATION-DISCRETIZATION-ERROR-003` - Truncation and discretization error.
+- **Forced law:** Truncation error is the exact retained residual required to reconstruct the untruncated generated relation.
+- **Unique survivor:** NUM-003 uniquely retains retained-residual-error, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-INTERVAL-RATIONAL-ENCLOSURE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-003: truncation_residual; exact observation: {"all_rows_reconstruct":true,"generated_parts":8,"identity":"partial(n)+1/(2^n)=One"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:932c87c84b67c0c943d68fedd3136e84045a6cad846f4475ee033ead1e83f89e`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:debf82ec63866f975266d65876158f140b7f27fac19c4afd1cbb974152085db7`; engine receipt `sha256:259b72ccea62db62192f6788cc51d7c5e54c21e36eb8a5099148c0f1b6b98b38`.
+
+#### `SFT-MATH-OBL-NUM-004` - Forward and backward stability
+
+- **Claim:** `SFT-MATH-NUM-FORWARD-BACKWARD-STABILITY-004` - Forward and backward stability.
+- **Forced law:** Forward and backward stability are separate exact gaps between retained problem, result and reconstructed input records.
+- **Unique survivor:** NUM-004 uniquely retains forward-backward-exact-gap, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-TRUNCATION-DISCRETIZATION-ERROR-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-004: forward_backward_stability; exact observation: {"approximate_result":"23/10","backward_gap":"1/23","exact_result":"7/3","forward_gap":"1/30","reconstructed_coefficient":"70/23"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1ee8f586ef8ebe536dc6f6f06773216ae174eda6396e61b7239d2f1392d76630`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:9c7569f18cec8cf9a86286af1661b8e29612d3b39ccbd265d3365d1648eff595`; engine receipt `sha256:6929ba74b44f626e8ea7e3b5af82fd3c97e5a4375aa27f1ba050eab41fa2b9be`.
+
+#### `SFT-MATH-OBL-NUM-005` - Conditioning and sensitivity
+
+- **Claim:** `SFT-MATH-NUM-CONDITIONING-SENSITIVITY-005` - Conditioning and sensitivity.
+- **Forced law:** Conditioning is an exact relation between a registered input distinction and the output distinction transported by the generated map.
+- **Unique survivor:** NUM-005 uniquely retains input-output-gap-ratio, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-FORWARD-BACKWARD-STABILITY-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-005: conditioning_sensitivity; exact observation: {"exact_gap_ratio":5,"input_gap":"1/100","output_gap":"1/20"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:d98f9fd32723582e2b8256c8ea09d08b1fc65bb747e36cc04a0d1635cb19bf31`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:a2064617cdf4c01da9ee896e599512d7abef2d126577a9519c1a26fbaa0fcd7b`; engine receipt `sha256:d426bb53ef24834bf45d6ff67e99cbcd3d4b1eb55e300e460138fe2907ab1b34`.
+
+#### `SFT-MATH-OBL-NUM-006` - Convergence order with exact bounds
+
+- **Claim:** `SFT-MATH-NUM-CONVERGENCE-ORDER-BOUND-006` - Convergence order with exact bounds.
+- **Forced law:** Convergence order is a certified successor relation among exact enclosure widths, not an assumed limiting scalar.
+- **Unique survivor:** NUM-006 uniquely retains successor-error-contraction, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-CONDITIONING-SENSITIVITY-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-006: convergence_order; exact observation: {"all_bounds_exact":true,"error_family":"1/(2^n)","generated_successors":8,"successor_ratio":"1/2"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:98647d07766af438c7d97cbc21d595bc2bfbaa0a397030300ce4cc5b649848b6`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:4330fd88bba32d5c979d1eb0e6185528a92e728da2ca44ca99246130683f7db9`; engine receipt `sha256:eb7d30b58833016ecf2928e7ddc354f8d5e428bfe0ef3ca80a56a815d3706757`.
+
+#### `SFT-MATH-OBL-NUM-007` - Root isolation and equation solving
+
+- **Claim:** `SFT-MATH-NUM-ROOT-ISOLATION-EQUATION-SOLVING-007` - Root isolation and equation solving.
+- **Forced law:** Equation solving retains exact rational brackets and structural comparison labels when the conventional solution is not an admissible proof scalar.
+- **Unique survivor:** NUM-007 uniquely retains ordered-rational-root-bracket, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-CONVERGENCE-ORDER-BOUND-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-007: root_isolation; exact observation: {"equation":"square(x)=2","irrational_scalar_admitted":false,"lower":"7/5","lower_square":"49/25","upper":"3/2","upper_square":"9/4"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5760c094164dbc5df8e097a1ec6ef8a333341c87a2d1e3391da65237d575703e`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:bee7b2d4f814eb6804fa4ce3197cb5b1a0f93bc7da24233450b85cf238a8665d`; engine receipt `sha256:cdde0b0bd96c982f20d5f2caa6227c8dcc5a56338f8efd7e8a08fff00df49ecd`.
+
+#### `SFT-MATH-OBL-NUM-008` - Linear-system exact and approximate solvers
+
+- **Claim:** `SFT-MATH-NUM-LINEAR-SYSTEM-SOLVERS-008` - Linear-system exact and approximate solvers.
+- **Forced law:** A finite linear system is solved by complete exact candidate enumeration or a certified enclosure with residual custody.
+- **Unique survivor:** NUM-008 uniquely retains complete-positive-system-enumeration, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-ROOT-ISOLATION-EQUATION-SOLVING-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-008: linear_system_solver; exact observation: {"equations":["x+y=5","x+2y=8"],"positive_candidate_pairs":64,"unique_solution":[2,3]}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4b2e7cceeb5a03da1f2ab693e04a89152af135185be610fd262cb3c1d2669b86`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:ebe7775a4944dcbbc6703b1aac1095d27602f27bb87401f81a92e42171472e46`; engine receipt `sha256:8b2b0f1ba1f2834f192150342fb2c319be37ff34289dbc4150edf24e092d4a0a`.
+
+#### `SFT-MATH-OBL-NUM-009` - Interpolation and approximation
+
+- **Claim:** `SFT-MATH-NUM-INTERPOLATION-APPROXIMATION-009` - Interpolation and approximation.
+- **Forced law:** Interpolation is an exact weighted reconstruction from registered support; approximation retains its enclosure and residual.
+- **Unique survivor:** NUM-009 uniquely retains exact-weighted-interpolation, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-LINEAR-SYSTEM-SOLVERS-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-009: interpolation; exact observation: {"endpoints":[[1,2],[3,6]],"midpoint":2,"value":4,"weights":["1/2","1/2"]}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:eabe204efc324a286f77669f21ecfa443e1972311effeb90172c531454a2b12e`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:757599e5b908da9793011d6d86e6a0f8318628700e347834efca9fd922256d24`; engine receipt `sha256:e751920f65b81f5cc2649abdfcd11aa0c1dfae51c10f4d888d4415716d4d2b09`.
+
+#### `SFT-MATH-OBL-NUM-010` - Quadrature and accumulation enclosures
+
+- **Claim:** `SFT-MATH-NUM-QUADRATURE-ACCUMULATION-010` - Quadrature and accumulation enclosures.
+- **Forced law:** Quadrature is a finite exact cell accumulation whose refinement relation and enclosure are retained.
+- **Unique survivor:** NUM-010 uniquely retains exact-cell-accumulation, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-INTERPOLATION-APPROXIMATION-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-010: quadrature_accumulation; exact observation: {"identity_values":true,"interval":[1,3],"midpoint_result":4,"trapezoid_result":4}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e383afc423b6a6f2534d1c803dfe48bb6cdeb7159f4f54163ba1218a37b46325`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:5e3768489c04d6f43b56f7532a67a88fed6c7dfb3bc8cd4c85873e297e7a33db`; engine receipt `sha256:648b6d3a1e7459deb29c93bf36fbb8f428b743ff0045f05f36cac4f6712a1910`.
+
+#### `SFT-MATH-OBL-NUM-011` - Differential-equation numerical correspondence
+
+- **Claim:** `SFT-MATH-NUM-DIFFERENTIAL-EQUATION-CORRESPONDENCE-011` - Differential-equation numerical correspondence.
+- **Forced law:** Numerical differential-equation correspondence is an exact generated recurrence with every state, part width and residual recorded.
+- **Unique survivor:** NUM-011 uniquely retains exact-recurrence-state-trace, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-QUADRATURE-ACCUMULATION-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-011: differential_equation_recurrence; exact observation: {"initial":"1","part_width":"1/2","steps":2,"trace":["1","3/2","9/4"]}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:6b4ea28c4ad8b8ca0fbe4e7f4e15079c5bf968e461bf400e14c8c1ec9ec73dc4`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:51dd4c37f946a726d71d905b30d208cd48c1e76b9405fcaa6802715b6446b06a`; engine receipt `sha256:00a35c5c34967fc4c562146e871ba053dd4af162aef69f61a6122d5222fd789e`.
+
+#### `SFT-MATH-OBL-NUM-012` - Verified computation and certificate extraction
+
+- **Claim:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012` - Verified computation and certificate extraction.
+- **Forced law:** Verified computation emits an independently replayable certificate containing exact inputs, operations, result, reduction and boundary conditions.
+- **Unique survivor:** NUM-012 uniquely retains replayable-arithmetic-certificate, exact numerical custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-CAT-OPERAD-HIGHER-BOUNDARY-012 -> SFT-MATH-CALC-CONTINUUM-LIMIT-BOUNDARY-012 -> SFT-MATH-ALEXT-POLYNOMIAL-ROOT-ISOLATION-001 -> SFT-MATH-NUM-DIFFERENTIAL-EQUATION-CORRESPONDENCE-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** NUM-012: verified_computation_certificate; exact observation: {"cross_denominator":6,"cross_numerator":5,"expression":"1/2+1/3","gcd":1,"reduced_result":"5/6"}; complete family observation custody: 12 records; all rows preserved; complete exact rational inputs, operations, residuals, enclosures and refinement records supply the observation; no imported continuum scalar, opaque numerical routine or unrecorded rounding choice enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-NUMERICAL-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported numerical-analysis theorem, conventional library result or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no unrecorded rounding, truncation, residual, conditioning or discretization distinction; no continuum limit is imported where only finite refinement or rational enclosure is proved; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:08e8ba8b220bdd807ed1e7aa653443d223999831a5fe284b392823bfb7c42d73`; independent `sha256:d360ddc9fc6c7e39f0001fe57fed5dfdca1d1b9ea964975dc5bd35ec0a1775de`; empirical `sha256:5d7c521770235c7bac20bced8d3b424809f5b3422510cb341f80eb39d5276baa`; engine receipt `sha256:0696ffb60057ca05592a019bc74437c233e398d8e3ed8633d13122917999105d`.
+
+### 40.23 Family `SYMB` - 10/10 complete
+
+This family contributes 2,560 completely decided candidates, 10 unique survivors and 40 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-SYMB-001` - Symbolic expression identity and canonical form
+
+- **Claim:** `SFT-MATH-SYMB-CANONICAL-EXPRESSION-001` - Symbolic expression identity and canonical form.
+- **Forced law:** Symbolic identity is equality of exact canonical generated syntax after only registered unit, ordering and association rules.
+- **Unique survivor:** SYMB-001 uniquely retains canonical-symbolic-record, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-001: canonical_expression; exact observation: {"canonical_record":["add","x","y"],"inputs":2,"unit_and_order_paths_agree":true}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1cfd2330329d4771b9ace9fee6ba8e6290c044b23382eae1856cae5fa1b40a3c`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:dcdad5d3cd2109d4e117d9d7c5c0310aebd4f2bf96351d27f87d666b58df1152`; engine receipt `sha256:1fc6dbd6b91cb7dac6d70badd5ab5bee41c63de626a6abd2a076fb40f3f2a407`.
+
+#### `SFT-MATH-OBL-SYMB-002` - Exact simplification with provenance
+
+- **Claim:** `SFT-MATH-SYMB-SIMPLIFICATION-PROVENANCE-002` - Exact simplification with provenance.
+- **Forced law:** Every simplification retains its input, ordered rewrite steps, output and independently replayable provenance.
+- **Unique survivor:** SYMB-002 uniquely retains trace-retaining-simplification, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-CANONICAL-EXPRESSION-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-002: simplification_provenance; exact observation: {"input":"add(mul(x,One),EmptyOne)","ordered_trace":["remove-multiplicative-One","remove-structural-absence"],"output":"x"}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:75b99b507b9bb07155f9b211a897b94c3185b53e04901b48f0fe59e06a476b0f`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:7b5236f3cb8b641fe80932f05c8973f38e25073247bd84784e3b081ed4297614`; engine receipt `sha256:9cf05501f0c8844ef8a38799f148078b8458cc4e42582114034220672d1183cf`.
+
+#### `SFT-MATH-OBL-SYMB-003` - Polynomial factorization and expansion
+
+- **Claim:** `SFT-MATH-SYMB-POLYNOMIAL-FACTOR-EXPAND-003` - Polynomial factorization and expansion.
+- **Forced law:** Polynomial expansion and factorization are inverse exact coefficient organizations over a completely enumerated declared degree and coefficient support.
+- **Unique survivor:** SYMB-003 uniquely retains coefficient-convolution-factorization, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-SIMPLIFICATION-PROVENANCE-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-003: polynomial_factor_expand; exact observation: {"degree_support_complete":true,"expanded_coefficients":[2,3,1],"factors":[[1,1],[2,1]]}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7129e709446befc1e84ec9fe18c9a1a7c78da0d13b1b888b06948ed5063ecac0`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:08bfdd57dc5fc53787c79f866ac7d2c23fce35a901590a726d0074140eaab9ee`; engine receipt `sha256:532d8d3fe185773057827ec65c5ede613f674b27e0ffdbe8fdc49a9a419be9ff`.
+
+#### `SFT-MATH-OBL-SYMB-004` - Symbolic equation solving
+
+- **Claim:** `SFT-MATH-SYMB-EQUATION-SOLVING-004` - Symbolic equation solving.
+- **Forced law:** A symbolic solution is the complete generated support of exact values satisfying the registered equality, with absence distinguished from an unsearched domain.
+- **Unique survivor:** SYMB-004 uniquely retains complete-symbolic-solution-support, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-POLYNOMIAL-FACTOR-EXPAND-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-004: symbolic_equation; exact observation: {"candidate_labels":8,"complete_solution_support":[4],"equation":"x+3=7"}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:886163eb7799f1c7fd9a2cd36f0406398c0681516d2690b5b7526544003dbf8b`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:c1dcd4c8fde361ea531093d15a64d2b1405db8e858479aa9d92beb3268bb6f8a`; engine receipt `sha256:30c7bffc4bfa23e1bb4bbb549fd04f89c9cb1f72be967384b53be228a266d015`.
+
+#### `SFT-MATH-OBL-SYMB-005` - Rewrite termination and confluence interface
+
+- **Claim:** `SFT-MATH-SYMB-REWRITE-TERMINATION-CONFLUENCE-005` - Rewrite termination and confluence interface.
+- **Forced law:** A rewriting system closes only with a decreasing termination witness and agreement of every declared critical rewrite path.
+- **Unique survivor:** SYMB-005 uniquely retains decreasing-confluent-rewrite-record, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-EQUATION-SOLVING-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-005: rewrite_termination_confluence; exact observation: {"both_terminate":true,"common_normal_form":"x","declared_critical_paths":2}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4ff975d36fc8def113f7a56489e3bd05257956be5126fbcc8bfbc458cb435ffb`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:eb5954216e7ddf4dcfcbbb9e55fa78fefb8dde45c2430dff85cfcb95daff47cd`; engine receipt `sha256:ab851259d84f0c5b760b72589e8b6695d2b3e44efc11dd4b503e839d4647b37f`.
+
+#### `SFT-MATH-OBL-SYMB-006` - Generating-function transforms
+
+- **Claim:** `SFT-MATH-SYMB-GENERATING-FUNCTION-TRANSFORM-006` - Generating-function transforms.
+- **Forced law:** A generating function is a finite exact coefficient record whose product is forced by complete degree-wise convolution.
+- **Unique survivor:** SYMB-006 uniquely retains finite-coefficient-transform, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-REWRITE-TERMINATION-CONFLUENCE-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-006: generating_function_transform; exact observation: {"convolution":[1,2,2,1],"left":[1,1,1],"right":[1,1]}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:cbcf798deb2d45034b996ceb91c4b1d1cea3cf0340cb2d7e8ec36d9ad9c73ff3`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:c2b996ba3c4a118c9722084597fb05ee3ef6293b26e5f52b32d3172e71772370`; engine receipt `sha256:8c88175914327cf3786f3f8b238fa3ec9d4b5a872a2c54beafc9f759d7f0732a`.
+
+#### `SFT-MATH-OBL-SYMB-007` - Fourier and Laplace correspondence transforms
+
+- **Claim:** `SFT-MATH-SYMB-FOURIER-LAPLACE-CORRESPONDENCE-007` - Fourier and Laplace correspondence transforms.
+- **Forced law:** Transform correspondence uses finite held/opposed phase labels and positive exact weight records; conventional imaginary or transcendental scalars are not proof values.
+- **Unique survivor:** SYMB-007 uniquely retains held-phase-positive-weight-transform, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-GENERATING-FUNCTION-TRANSFORM-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-007: fourier_laplace_correspondence; exact observation: {"held_walsh_output":[2,"EmptyOne"],"imaginary_scalar_admitted":false,"positive_weighted_support":"11/4"}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:79e489fd6a084f9a966d806bdc7d0f6a6b3f0874454ae6160b4e7fab7a3dbaa7`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:897acbe4c1229b2294c1135e2a4d6c6d5030509b571e4ab54edda3a1df4abebb`; engine receipt `sha256:78a40cfd8bef40d4c2979e7fcf85c1ff31f0b49925a73452d2bd3619bbf8e731`.
+
+#### `SFT-MATH-OBL-SYMB-008` - Special-function recurrence representation
+
+- **Claim:** `SFT-MATH-SYMB-SPECIAL-FUNCTION-RECURRENCE-008` - Special-function recurrence representation.
+- **Forced law:** A special-function correspondence is admitted through an exact base record, successor recurrence and complete generated trace.
+- **Unique survivor:** SYMB-008 uniquely retains successor-recurrence-special-function, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-FOURIER-LAPLACE-CORRESPONDENCE-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-008: special_function_recurrence; exact observation: {"generated_trace":[1,2,6,24],"recurrence":"Gamma-successor=label*Gamma"}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:585130b72396e89fb825782884d60ebfa9a89a1f513f5256867848aa2d94ae11`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:098d9fab79b3703af63993ee63c7afa26bf792ac6e84ffb7fd27775dc0d5f47d`; engine receipt `sha256:86d0c48ae5b12195f37496629db40327bed840d8bbfe1fea05830f68540f6152`.
+
+#### `SFT-MATH-OBL-SYMB-009` - Automated theorem search boundary
+
+- **Claim:** `SFT-MATH-SYMB-THEOREM-SEARCH-BOUNDARY-009` - Automated theorem search boundary.
+- **Forced law:** Automated theorem search is complete only for a registered grammar and depth, returning every proof or an explicit bounded absence record.
+- **Unique survivor:** SYMB-009 uniquely retains bounded-complete-proof-search, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-SPECIAL-FUNCTION-RECURRENCE-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-009: theorem_search_boundary; exact observation: {"A_to_C_proofs":1,"premises":["A-to-B","B-to-C"],"registered_depth":2,"unbounded_completion_claimed":false}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:5c8562e9629f7546c3889a158c752082ee8656e1dd5479ec86ba33f147988ac2`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:8feb6351cced8216d854d87cb86f3840fe601c09a7f2ccab25adf3a1b3e53a94`; engine receipt `sha256:f30bfc00ab43dc67ac366865b093161f74729273113b2e2a6361b45e80901069`.
+
+#### `SFT-MATH-OBL-SYMB-010` - Constructive witness and certificate generation
+
+- **Claim:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010` - Constructive witness and certificate generation.
+- **Forced law:** A constructive conclusion carries an exact generated witness and a certificate that independently reconstructs the claimed relation.
+- **Unique survivor:** SYMB-010 uniquely retains constructive-witness-certificate, complete symbolic custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-NUM-VERIFIED-COMPUTATION-CERTIFICATE-012 -> SFT-MATH-LOGIC-NORMALIZATION-015 -> SFT-MATH-SYMB-THEOREM-SEARCH-BOUNDARY-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** SYMB-010: constructive_certificate; exact observation: {"positive_witness":3,"relation":"x+x=6","replay":"3+3=6"}; complete family observation custody: 10 records; all rows preserved; complete exact syntax, rewrite paths, coefficient supports, recurrence traces, bounded proof searches and constructive witnesses supply the observation; no opaque algebra oracle or unrecorded rewrite enters
+- **Sources and boundaries:** SFT-V3-INDEPENDENT-EXACT-SYMBOLIC-OBSERVER, SFT-V1-V2-MATHEMATICS-OBSERVATION-CORPUS. Exclusions: no axiom, imported computer-algebra rule, theorem answer or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no opaque simplifier, unrecorded rewrite, assumed confluence or silent branch deletion; no unbounded theorem-search completion is claimed from a finite search; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:aa235bf258e525c947871c23cc24ab06fb20127e1e694e3380673cec55435ed2`; independent `sha256:8e47dac0a1f0aee7f83b21d46d7b20d05e90f74659638d21fa8b0d25d46e0d74`; empirical `sha256:cc71af9468e36537af4fbee56c301470d21a1576a26d417b10494a8771dff184`; engine receipt `sha256:fda3df9ae9119867ecd3cef93e2affb43dc0dd8596f37043767c6a45b3cf617a`.
+
+### 40.24 Family `XINT` - 8/8 complete
+
+This family contributes 2,048 completely decided candidates, 8 unique survivors and 32 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-XINT-001` - Mathematics-to-Information exact-structure handoff
+
+- **Claim:** `SFT-MATH-XINT-INFORMATION-HANDOFF-001` - Mathematics-to-Information exact-structure handoff.
+- **Forced law:** Mathematics supplies exact support and relation structures; Information Science alone owns their informational interpretation and observation laws.
+- **Unique survivor:** XINT-001 uniquely retains typed-information-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-001: information; exact observation: {"downstream_owns":["semantic-information-quantity","channel-observation"],"mathematics_owns":["exact-support","distinguishability-structure"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:40d25e999ac7752e415624327ac08c87a500b9a78a135bb4962bc567e579f2da`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:fa3132dce9f2aba376be0a6c286d5f07c31c23c98c51fc40d30de3e3bf6cc62c`; engine receipt `sha256:6ffddc69383435d029cf280ab5d376838c88e0747f4d47ab9bb5db8157b66f68`.
+
+#### `SFT-MATH-OBL-XINT-002` - Mathematics-to-Computation model handoff
+
+- **Claim:** `SFT-MATH-XINT-COMPUTATION-HANDOFF-002` - Mathematics-to-Computation model handoff.
+- **Forced law:** Mathematics supplies state and relation structures; Computation alone owns their execution, machine and resource interpretation.
+- **Unique survivor:** XINT-002 uniquely retains typed-computation-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-INFORMATION-HANDOFF-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-002: computation; exact observation: {"downstream_owns":["execution","resource-law","machine-behaviour"],"mathematics_owns":["state-set","relation","proof-structure"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4424d36cbe3d27f42413a8d5a636214924dcd781741bb29f6801f845a7cae8e9`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:5f85b3d20ad268bec907fbf651c056c5a529b26cd9667a780fecf4e2f934b5bf`; engine receipt `sha256:3c14d83ea82bd2caaadcdd4e8f83f2d9cfa2ceca3bd433ec8a9036382e43b450`.
+
+#### `SFT-MATH-OBL-XINT-003` - Mathematics-to-Physics quantity and geometry handoff
+
+- **Claim:** `SFT-MATH-XINT-PHYSICS-HANDOFF-003` - Mathematics-to-Physics quantity and geometry handoff.
+- **Forced law:** Mathematics supplies exact quantity and geometry structures; Physics alone owns physical identity, unit realization and measurement.
+- **Unique survivor:** XINT-003 uniquely retains typed-physics-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-COMPUTATION-HANDOFF-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-003: physics; exact observation: {"downstream_owns":["physical-identification","measured-value","unit-realization"],"mathematics_owns":["exact-quantity-record","geometry","symmetry-structure"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ac19b09cf848c60b9cc452adfe3ff8aee4974c6369459e6bb5cb9b317deae078`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:d1a85242537e338ec244c7fba0c2eff4d988fb48ee50dbd686f81ab528111e6e`; engine receipt `sha256:a8886f024818e308656ead69f4cd4aaab32762944ace0d4e6bc2892a6f8062de`.
+
+#### `SFT-MATH-OBL-XINT-004` - Mathematics-to-Chemistry structure handoff
+
+- **Claim:** `SFT-MATH-XINT-CHEMISTRY-HANDOFF-004` - Mathematics-to-Chemistry structure handoff.
+- **Forced law:** Mathematics supplies graph and algebraic structures; Chemistry alone owns chemical identity, reaction meaning and chemical measurement.
+- **Unique survivor:** XINT-004 uniquely retains typed-chemistry-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-PHYSICS-HANDOFF-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-004: chemistry; exact observation: {"downstream_owns":["chemical-identity","reaction-measurement","material-context"],"mathematics_owns":["graph","algebraic-relation","enumeration"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7241230f88a4ebdc31a9a1d4c99192ecf3bc082249f65107dda67a0a64468763`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:66c92430ecea6663f18bac6c021bbb5695e71c1081e1d114be4584e20830766b`; engine receipt `sha256:7d8ff0f49eec26d921585ff950f2f0a0361059515d99ef868dac5147078db211`.
+
+#### `SFT-MATH-OBL-XINT-005` - Mathematics-to-Biology organization handoff
+
+- **Claim:** `SFT-MATH-XINT-BIOLOGY-HANDOFF-005` - Mathematics-to-Biology organization handoff.
+- **Forced law:** Mathematics supplies network, order and inference structures; Biology alone owns biological function, organism observation and history.
+- **Unique survivor:** XINT-005 uniquely retains typed-biology-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-CHEMISTRY-HANDOFF-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-005: biology; exact observation: {"downstream_owns":["biological-function","organism-observation","evolutionary-history"],"mathematics_owns":["network","order","probability-correspondence"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:1491275b9ab8b5bb67edc1f3e2d40854686d7e9273f5eee03a59740de74d6e69`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:75ad17d34d720beb05e5e54a0889ed38e3f571d1b349e986ec40b72336458d64`; engine receipt `sha256:ccdcf95d6ac30220d49853eed9c196f15fdc6a4cf578a555811714099d5dc038`.
+
+#### `SFT-MATH-OBL-XINT-006` - Mathematics-to-Social inference handoff
+
+- **Claim:** `SFT-MATH-XINT-SOCIAL-HANDOFF-006` - Mathematics-to-Social inference handoff.
+- **Forced law:** Mathematics supplies inference, game and network structures; Social Science alone owns population observation and institutional meaning.
+- **Unique survivor:** XINT-006 uniquely retains typed-social-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-BIOLOGY-HANDOFF-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-006: social; exact observation: {"downstream_owns":["population-observation","institutional-meaning","behavioural-claim"],"mathematics_owns":["inference-structure","game-relation","network"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:70552cf87ac63a4f6a0d133b5e441bf4f11b6c93b71e10bd0c0515581bef9143`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:490ae6c106301a7b5e017db1025c3363f280540ead11804d65e593c0dbfb224a`; engine receipt `sha256:b404e098c202044f424847255966dc5938d54a3ee47c96cb75031d6074c6216f`.
+
+#### `SFT-MATH-OBL-XINT-007` - Mathematics-to-Engineering calculation handoff
+
+- **Claim:** `SFT-MATH-XINT-ENGINEERING-HANDOFF-007` - Mathematics-to-Engineering calculation handoff.
+- **Forced law:** Mathematics supplies calculation, optimization and certificates; Engineering alone owns design choices, performance tests and safety acceptance.
+- **Unique survivor:** XINT-007 uniquely retains typed-engineering-structure-handoff, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-SOCIAL-HANDOFF-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-007: engineering; exact observation: {"downstream_owns":["design-choice","performance-test","safety-acceptance"],"mathematics_owns":["calculation","optimization-structure","certificate"]}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:873b36dae06a947885b5828573e77b560fcb53d1621955d807ec9803c4251556`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:93b90de5d5206de111f243a83e0375df71e164f02e603293d37ec1255663c060`; engine receipt `sha256:26cb9935ef8d7b4deeecc3475b0347694990abe929c4b3dd8d123afa8a1f6a98`.
+
+#### `SFT-MATH-OBL-XINT-008` - Shared mathematical identity without duplicate ownership
+
+- **Claim:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008` - Shared mathematical identity without duplicate ownership.
+- **Forced law:** A shared mathematical object has exactly one owning Mathematics identity and downstream branches cite it without duplicating or silently changing it.
+- **Unique survivor:** XINT-008 uniquely retains single-owner-cross-reference, one-owner custody, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-SYMB-CONSTRUCTIVE-CERTIFICATE-010 -> SFT-MATH-XINT-ENGINEERING-HANDOFF-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** XINT-008: one_owner_identity; exact observation: {"duplicate_owners":[],"registered_interfaces":7,"typed_references_only":true,"unique_branch_labels":7}; complete family observation custody: 8 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** SFT-V3-CROSS-BRANCH-OWNERSHIP-OBSERVER, SFT-V3-BRANCH-ROADMAP-CORPUS. Exclusions: no axiom, imported branch conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, silent semantic import or untyped handoff; no downstream measurement is recast as a mathematical premise; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:421c95bd73557f39ef14352206b1f7f2094bc613e83bc2a21318794a0c2b097e`; independent `sha256:fe9b61ff20c1199c64e2f1b991041a8aeed4aba1147db501142fb5efdaad5c0b`; empirical `sha256:ab492d320948ee342bd56b6e57f6f9c778f9605a6baaa8bb3501c77f427f89e3`; engine receipt `sha256:ae8b83e55ba8150ddafe5fc01cae15e7e7d880da1556b1946704ef737060cd80`.
+
+### 40.25 Family `VALID` - 12/12 complete
+
+This family contributes 3,072 completely decided candidates, 12 unique survivors and 48 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-VALID-001` - Arithmetic and algebra complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-ARITHMETIC-ALGEBRA-001` - Arithmetic and algebra complete validation vector.
+- **Forced law:** Arithmetic and algebra complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-001 uniquely retains complete-arithmetic-algebra-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-001: arithmetic_algebra; exact observation: {"all_external_statuses":["independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":55,"families":["BASE","ARITH","ALEXT"],"receipt_hashes":["sha256:28252bae62373d8657967ba28f8f2d497c2cf09abbae71609cb05c4f40196418","sha256:632de46c995329ed86f8397e8cf2cc493d5074027941a50069df66b4ac9e29bb","sha256:52e1db94bb7865270bb3387c47c609c438de3338b542cc31d910b981e4250968","sha256:b4072f93147c8cd9b7233fc96cfeadeb791210239ab4e4ff7dec0ed7462e6d2a","sha256:1f08bfaf9f602a3825dc75979070e05f9d51a7d01cdf3c34bab31c06849855bd","sha256:d0e20f40782f51cc85c1f572b624570e65b51bbb80135a5e8a6b3cf69f71a5f6","sha256:a04f7de0ede6e2348896cf16e59981eebb5391198e498a1ec546b68a4a8d3a6e","sha256:2a86d644881cdacb757327d5aaca01de41c3458c043980c66a16f5084cdfb45b","sha256:3385414ceea0fd4212111e42bd6ce7d6d35556b7c97d66563813d5b8d1531849","sha256:3e0e44b65fbe660fe2a29b9927b1870a40da25c4b0c786e2adaa3df9a2f7cabe","sha256:3d366d57b26d002cb27a16e74b022a0856e133c616b7da6a83233c84bdd50813","sha256:47873a83a90e29fa22d065ff13aa0152edb6212414e35cc0435e8eff2c9ea5a8","sha256:8141546a120b73aa7cac0cd843728bdf3122d1bf3c0048c132760c82fd103238","sha256:8725bce36fe77923288b99b1a978ef3bf84cac9ffe1b172fd67bd221527d19ff","sha256:a32c6d6ee891f97acadd53cbec922bbcad5a6ad8a928264bb654b4caaf997098","sha256:ba975fdfe0c8946cb713eabcd9f48e77284941ec08fc257b9d3bb614b701540d","sha256:e355bc5aa649df8fe2daf21a3e0ae56d5582680edd7f867a751bb954fca224a4","sha256:6fb3f40f5631367f23bad6cda58c87b335d33fd212a7c9d37068d8b920ad65e0","sha256:52fcc090c336360dcdfd4b95919ffa5926d9d8fcd430ff6bb53d7d18cf5db1d6","sha256:27847629dbd2fb1d1c2f14d05017f8fb9395482d6e6ca001a24622e55364dfc4","sha256:3bb3a9fe4790150369defc5b2dc8568fed100b688dbb6a9c1d5cbd40c4f9a045","sha256:0abf8d557108f37f4d9cfe735db3fd6e0d79a3d9405129f0a40ae86fb606d5b1","sha256:f95ac235ac96429b36b10e8331478f110ed074e98a338c6f015d3f8874dc787c","sha256:2d243dbd08260c483e79009067051239f1304ad3998006c1ff82c301062ba28b","sha256:75b0b5df0397c0aeaba035272561fd0e62949b0ef75580a153c8a109e84a06bb","sha256:addeb561438c9913313824ba43eb8fceccb53c574f5a9853b3c9c1fac4e4e4b7","sha256:feeb1879d97191edc8827be6da5421a2c78aba56ba2d3e0fe5dbf0882aac9867","sha256:d3229eb70862bcc3a5d03f42c9abfc650ab90781d45fc2d5090abf8322d2ca08","sha256:ecbb32a37fb10022315429bb39d88f49437fc856396d0b8db42fca49b2032493","sha256:e25cde93469d6d813be366bc228e55cb13e704a965e60711ab396c6f7a36f476","sha256:e02b5bc7444746ceaf5a115853d012583abae63804f6531b39727fc504424e7e","sha256:4b082b2a5fd4bed326e2ebaa180ff23aa3d7bcb0475947732bedf9d65f821af6","sha256:d74f03c498a284dcb6a576786ce45a09c87dd921ac78db3ce71bcd54247bc018","sha256:12882efe837fb967097e5f5540d48077cd12b48bb0c37662fbdd6e0052c797ac","sha256:45b93a4d1bb7a137599e21c74e7e9522054f6b741433365d957dd06fc703a3a1","sha256:b18a07076f76362a892ce1ed995e8b67e1af5c41ecdde90b16ea34a35dfa886d","sha256:dfc025633b4bc068fab1d51dd8596eaf531d428a8b8d83d5c49b015b1311b62a","sha256:f15dd91147438a821fcedb1cd0abcab032151e1393fea1766f02d97fe5d4d64f","sha256:3f73120fde18553beedeec0de54e9ee4834b9eb9ebe19976ddb38b251d1bffac","sha256:2a078b638cd00e98a59fb4ccd6a47e9b691c4a713710bdbb4112062441c41085","sha256:a8a9c91bf09055eafe7c8946783af33d8cbf408241c7a0cc65b022fc8a85393d","sha256:18143d49ddbc35dfaa29e6333b0529d9c93c269483c06206f79a2bd465d2bbfb","sha256:322408091620c6dfed8b960578f5744a202f7f05536bc0b348f9e62cccb1b9fb","sha256:a0126b838d3f636788373c0a95adc8ff48e8a9d9b1d7c0797aae6403fda8473e","sha256:2d9cb180af9554925c3ff156e2b05d1545b9dba2206a24b60c0e17023e0e9fe2","sha256:37fd63da2da1d8bff586bea60bebad91ef43d0115437e9efd7e360dbf05b94f0","sha256:41100b9b02e60bc1321f4ffa7590f3f2c5ef6223f3983e323a4177d53bde4a4e","sha256:b4db0d57fd93d9489c8d94fe9bae1167b9ffa29c775db04f909dc9c707cdb922","sha256:3e417f42c092e58b78ceda9477a4d4c3303b8a1cb0896c6d3623f387edc24824","sha256:2dff8bb2232a8572a0c20e34c05fc873f83f2e9cb74d008cc32b7b8ff2d3d26b","sha256:81f843b80e1f07e44b1f212eeefd448f604aef89255cfe08dd26ff5fd8c5c253","sha256:ccaaa6636f523d2e6bc6cd13996d49a0c748dbc4378568188f6e307de4bfc48d","sha256:1492db9e71b8fbd66da325cd1c27997d144df3e1674818eda01f3b9e11547d2b","sha256:c38b6cbec7e61e8fbfa7be7ca0a1ab4eb3af572576521a37c9cf03acde3bb413","sha256:674c5e710359cd7da9382006ad39c9539591fc9f0ba8d7bd9728ca3eb804a010"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:4917a2c00132f9176c975843d65de40635617a9741d2364c3edac73b6b4bbfc5`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:d5be3a231c2f94025acc23c34eb7020292416dd6f2da1d031ee26ebf6b5970c9`; engine receipt `sha256:f7793e7fbdbdaf18783503febe565e6a2f87706cf66df942752963520d0d7378`.
+
+#### `SFT-MATH-OBL-VALID-002` - Combinatorics and graph complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-COMBINATORICS-GRAPH-002` - Combinatorics and graph complete validation vector.
+- **Forced law:** Combinatorics and graph complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-002 uniquely retains complete-combinatorics-graph-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-ARITHMETIC-ALGEBRA-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-002: combinatorics_graph; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":26,"families":["COMB","GRAPH"],"receipt_hashes":["sha256:afca8ab23f33cbad39e5aa6e51d5df24bfddd946cfa5568f46e6c781b5503d4f","sha256:9b95112577a4816525ad072bf79acf3c8a573c98847872d16c79f5161d11625a","sha256:5d43c44b342b930315faa5159e3ab7ec026fc538d9b3f77bdd56ff7826ce098e","sha256:c40a635564aae5ef85402c7b69e06ec78ed0024112d2084b58fcc0a2ccf7e004","sha256:ba8380cefcf6fd4b157b57674588bacdf9c5565bc3e848f3638882df1bcc3a1f","sha256:2d097fe60b69c55a86accb8d417c083c3bdbe07041e0eb058081887689943664","sha256:e01c8059812a3e920d2f722ef9f47e2e3375ae255da534d20c5efcab589e17c2","sha256:d650fb44b26a7778b1431e877854dbcbaed78f8612c57d47d6e80118fc5f37d6","sha256:d1e03a25a63c3099f5d2a8f414ad7815c8471db3b30581e48a08d58a39dcf982","sha256:b5ede9884b69fb563c6774eacd7bd3df38cd803bb164cb775e000e7d1cb8c2ac","sha256:2a8c17b72cdefc363e819e2019edbffaecf13d12ea569b64b0bee4dfa8f01cf2","sha256:c7ab86cf76ff13e5c47488f640d8d34afa30fb2008fc16e4a273562b3f4e2c98","sha256:489635c31e29a277498395071437690e60c00fd3287af337754ed86cd2d1c9a8","sha256:164d8d5708f6238d6c7864f2b2261dea4a4097d12c335f68d56765cea778cc01","sha256:383274c9576c7f228b386a5eb969fb995d051ca71d963c8068014712304be26c","sha256:f81889343d13708d3cc085df21f33b4636619dea455cbf58cd4df9abada48e57","sha256:9b310cbbfe57e1eca969de9a2e73c7136ce86428d741a10cff9e7e1170fa24c4","sha256:361fb44c8f989543dacde61ce4b3d03f6f6096ab9fba773664b339627f275671","sha256:283c65166202c674101581fbcf1b718bab3f5ad45ddcf38b4375f34480fa11f9","sha256:a3ea7e43de3c0a16186153b9855e4b9f90acc8b096a2767bc84d0002b4f5e66c","sha256:95711a8c91c539d061e323813786738ecf6f65f5b4d800ce7a7619e1a64bc993","sha256:9ce82e3125329f6738cca2ab5b89ef6bbd92f237af6cf1619160351d5d220b69","sha256:6bf043d86d7d1d7a8a860124bf51cdb5f9bb780586d937880377b4fe0175c65e","sha256:a2827845f35854c3fc3774078d4e794b651ee10ec65995f2cbb14a31c50f72ab","sha256:dfd637109db6dfdc9a1ebd98dff9ce928782ddec159f8310428d7154178d4ce5","sha256:fb1a3980a9e3273950f1ad3d9426d228287085c3cba62162735538726bde0626"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:07396e36975ee752022f86826c53e27862aa6f592c5f112881e449917f48ed24`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:98aa79c6b906e120b4ff0298e950419feb859a7c2f2247d26c8843f8401385ed`; engine receipt `sha256:a8db169be7fb482b1aa32a8a38915111fc9663128124afb60a00528023449460`.
+
+#### `SFT-MATH-OBL-VALID-003` - Linear and algebraic-structure validation vector
+
+- **Claim:** `SFT-MATH-VALID-LINEAR-ALGEBRAIC-003` - Linear and algebraic-structure validation vector.
+- **Forced law:** Linear and algebraic-structure validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-003 uniquely retains complete-linear-algebraic-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-COMBINATORICS-GRAPH-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-003: linear_algebraic; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":30,"families":["LINEAR","ALG"],"receipt_hashes":["sha256:61163023459ed332dfc906e44bcb647778587e2db0c85e32b9390334de8675e9","sha256:b0ff81fb4f50d49ba8e11c1e0dc7f414ff7711bf5ba1ec4d70cd9af6cdf7f5fe","sha256:a069bdc5521cb9dabf4978a906631c9f795c332771bfd6ee7f7bad56b0d37e07","sha256:a1111d9fdee741f94a9f57268078c4f8935bdc8fcddec9419a2f858d67418bc9","sha256:1eb50aad30609be2adbf13fd7589e8fdb3013d5a4e0e25292b4c27d2cda0587d","sha256:df388656cff7ee3d4afa27c2c5efb2dad840fb0abfbdebc457eb2eb6f3e22a10","sha256:f9cc18b562f233e53210a5788786195759321f2d9484faa0188a05c46c192de9","sha256:bf412fb7caf2d4fe721ab9d01381a552a490d1b789b8469eb534a287de9da355","sha256:f4dd00fe4be2cb27fec953298d56913b6299c2c17cf34cec00a7fcd1d71ccb33","sha256:78bfa64c5f59b2314c1137839cdb8e8cef9778d056a094837ec553a1c5ddffc2","sha256:9a0648891c36fa2004a4130cf182de9f9aed20f746ed391c30dd8b657c6a2b53","sha256:144d72725402644b443e0674b9a7d36c0ac3759527fb55ae4a664fbf31be1016","sha256:7514349b966d1a39444e5f841909f6e00a777c31d426db7a12a91da6e9013351","sha256:52a0d942eb72cefecec9a693af78189036fe049d1da9a5ab8b2f1c85c61ce74a","sha256:c5e93e05277ffeb172cc3a7003518d9210ad7be5ad8771ba88a6dd397f067b80","sha256:cf47d05b924a577416959ddc022d305c6aa02509046c37239b125f1e0fe13ab4","sha256:beb8f7c7965680020a19391958ee25ec44998ca6b33feb9978f7adfda74a1fe5","sha256:94ea42e4036ab10f3e1eb8cdab2e194e18a1a053c664f1070fbac6a7a7c73152","sha256:4fe452d169159708a9cb65c9f42edfba611f0d86fc6143026a5122b839fba278","sha256:d468d9fb67765ecaa8c7b3f2e1e0404a27e07bbdb5843f943e01c62ac2d4f7b6","sha256:2207ec02691fbc1989e0ae93e324ebb034047996b14277b521774ae634cac4fd","sha256:69176d3a233e9eaa708fbbf5517c30b9cb3b7148f4f6cf12562d35d788b4f6b1","sha256:d1e1bc506263760193b0b99b66e3f7669ec9a2581ab2e4e10bb3f5ac656dd7ee","sha256:bb21a886d6f54b9c232c9e4c6abb37c78d20372f1b3aa8c3a30b7e9795cc5fdf","sha256:2170e5d46c51d5cac7879b84b7466bad4f891683985fa16d920f0a0f1f4b3a6f","sha256:51014e51baa2db97fcb3c486c521aa813b08e33541a38c791abf465958ecfc3e","sha256:57cbe383561e1219e2ebae0731dba20a8a73b7f2961313cd20ff89c3af3ca2e8","sha256:22db8eceff3c0225e195f7d08ed2011e187177df110bb9220cd2aa76d4337380","sha256:88a76935879afa29f6f647396afa0711a5626baae4107b68e4538a57f03c1a73","sha256:c45a860ee26cca756e9d1120e40d217d8255f5d68495e8cd9b3b275311081f7a"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7430d76bdc8bfd68090de60bc52fe2fbb4110f0cf3e9284aba83005496db0afa`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:9e4720df6b675b71566ec87018f0dcd242e70bea82377b6b89ad990ff70e9b38`; engine receipt `sha256:923631359a6f87d1ffd3e994ea3f27d4789e01732aa0efaeaeea462bb3407667`.
+
+#### `SFT-MATH-OBL-VALID-004` - Order and geometry complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-ORDER-GEOMETRY-004` - Order and geometry complete validation vector.
+- **Forced law:** Order and geometry complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-004 uniquely retains complete-order-geometry-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-LINEAR-ALGEBRAIC-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-004: order_geometry; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":28,"families":["ORDER","GEOM"],"receipt_hashes":["sha256:62b8a349524faaad77513549e980c4f3d9f3960dfea1aea5df04bd0f7338e4cb","sha256:90737e2dd2e996533513d1d6b2dedb0453101ced5dbf1972fd12672d7eb09ee2","sha256:fa8f185e14ec8d4e621b22db29f13bcf50d9c9a3b1101e434b148b6bc25ac5f3","sha256:ef972980b97f3eae7b7060fcca7ce8f6b2d49f86cabc6f3ddd23852195c7b44d","sha256:c67a3e785599e9dd49003227fef98d588bc99d2a18d7d267e1ea1e7646eacf89","sha256:bab7103a46409d68b5275b3e60e12a6b7457763dbbc8cbf5b18d859d44d652f2","sha256:8c63e67ef5d6b6d785dbfb1bcebe0df202af2908650236db7902c13e7ef0171a","sha256:e68701f93b8bc3b1b2994f1701d31f2a56e3ed49d54306f13f605e7b9cfb2fd2","sha256:94ae3c06d59a7cc4fd1de2f6db35ceb1fad52c343e8622360f94e14f65ec5087","sha256:053130750729ea82310b9c55b17d1d9113d05666aaac6d2639b86863c497b8d5","sha256:d81be77c0466b0b27fc0c703c9e40c284f2052c4663d8ae491bf23f7e1f2e7bc","sha256:c058a971d9c63aea9690da203a2bafd33ff1a85c3b456ed893c0fbc483d1df96","sha256:6e21c474249b5f7416086cffdfa67b0dc82ae3b3b5ec3e085f966a51923489c2","sha256:476f77266580be2d60d3958a6ac59279ff4c0f30757ec7a0034dc792cf4a0b3b","sha256:10e679a7ee169bd7d4db58480e7b08a4db29a2bcce9a0071775a143ea077fbf6","sha256:aa1b4a590e43ae08efb84276484f8e9bf0bd6fa76611eea1d1dff07ccb996a88","sha256:6c66327e91dff8df94b11eddc42778bb8ab3d86e174401333decd8bd3d033aa5","sha256:5f1da049f9226f536b49893ca4fa13e2f7f454f53bbcb2f6ec3ec46ec650e7d1","sha256:f7150f1b221d7610f49c7e175d12578d3c5e646cf4834b803f2fd87254335532","sha256:88bd71da009f553ffc0ea404616ad3a4269dffd0c2e3d233ed1f24b8abb30774","sha256:24596a0663ce622201d42208bb517558807fa73ee356f40d32ea7466a6045b93","sha256:cfa6ae0f410c735a5d4a2a782ae80bd70e149682beec68d45bb58fa3a740b1d2","sha256:f3e05eae5cba1877fe920845cfd8b489897d358f61b57737840d3266a4d89fb6","sha256:c402bd060dc95d06eef218f4ecbbeea4cb2d907e73d3d0208703f4cbeba24f34","sha256:09605a920fde7f770e6951a2b9d2d1ec641a89dd55fb2a7c00ad3ae9c7766007","sha256:695c16a32dd6cc22ac2f0fca7817a89088b58cd1a88b7f6d1c7b3d1c7d104a60","sha256:f0e9e9bfb4de8cec2f7419c8a96325a040497b09b4cfa3457fc6fe4b2799ec25","sha256:f601584092d818d2180fa5b6b32aff5089152b8a2b29d31a826ad2f106658c2e"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:64fb185dd5df70143effc664f582e1750e77264524e3d772bcd8bb4353eae4e2`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:8613e2fa16d80d726431f4780abd77f5781eb51fdf26836c0ed85faaefc7692f`; engine receipt `sha256:c2640e5e3f66fe60919039e8c8a2f775c2f913c951f5cec77bc9b8924b5d317f`.
+
+#### `SFT-MATH-OBL-VALID-005` - Topology and analysis complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-TOPOLOGY-ANALYSIS-005` - Topology and analysis complete validation vector.
+- **Forced law:** Topology and analysis complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-005 uniquely retains complete-topology-calculus-analysis-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-ORDER-GEOMETRY-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-005: topology_analysis; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":42,"families":["TOPO","CALC","ANAL"],"receipt_hashes":["sha256:087501b54410e5b0cc2582c58f56e0ae422ff60ae8e112669ad6257904b828f6","sha256:573c965f1d7c4ca35f06606ef420cbd243824da0a33ef5239ed3eeda9b39bc11","sha256:093d2d6a7de58e145ed538bc8ca98e21197f57236c9895ecc688896aef4f0da1","sha256:15563c18cf9cbc4909fed4801546848b883a4a532e5b92a19d7f865abb66942a","sha256:c5e7396091b5d6f67fbda3a6b709c3c2e0a65a549376de10eb271a3bc52e5f40","sha256:a82e2923c6b54b8bc343741e75582056e2c37a5058376ca947c0c07d15cff42b","sha256:8ab47bcdc0b0a32ffe001651b90b87a33462ee55f203ffa30300664c917ee346","sha256:e9a150b12a6b2c46ae0e816f04f943af98073118526fbdc446d96bf870f1d580","sha256:70093215c70da4bb5253edf8b7a016a6788c5158c670ce96b24413a952a81ff4","sha256:01fa67cf3367f6ba1401e220a59a69e8e81be36b53ae713f95149e6638f3286b","sha256:daa2f48449e9a9b802fa8193d8a7298683680fc55118d1963caa2ecf2037475a","sha256:06b0bd43fcc4ff33c4522a44cd3425d14dab1d0c833e8f5993f553567abf6865","sha256:5896d19c43946aaf7ea803a46d656d83877e3a33bfe835fb25652e7d6b0a0cc0","sha256:cb7338023bc31ad5a784693d1b348ba04c7808a83dd59d02d8bb91602176fe4a","sha256:507dcb047bbe74bb826a5e6ed551568a04827638d7e02341b616ed21b9441a74","sha256:06e93214674f5a4c1ee6bea0c9670845143bb157b4562a64c80028e916a297fd","sha256:64ca281a0dcc6cc417fdc9a401001f9ca15e65053726e2f599a1b8dbfd183d1e","sha256:e6035a82d486ed59b79d120ed341ccaeee17ab11c8e492b828ce58dec5f17579","sha256:0b230f54b347912d403b5661a468156a48a9d79b28c09053b666552ff4980873","sha256:09ae9608a9587eadc2d1fe6741cd1840ccb16bf9d0cb4eb8cedb0ca11b35bf24","sha256:0df975977b5212414b32cf5991f27778c811c0d19b9c4640a377ef2748077376","sha256:9dae94ea1c1bb7f5cc021fc5a5e54daa799b2b96cefbab47d0ce3c089b95e3d3","sha256:cd9c565f4ff93e6039bb09ff0e461c6f3a0ebb1201efc18962274d45d27eb633","sha256:d5e9fa1ad6b35ecd29795a2de9d3edda147d6cb081b7eb4bda68b5734e410bfb","sha256:def0ef022d70876425bc65b54b4bdd196317d3acb4961a76190a959ca54a02dd","sha256:f5917674c7af39fbe08ef5fad2ea7bdd850218b38b72af99fa3d3c75b81b348b","sha256:ab97f2a13f8e91555f3f654b3d1fce419aaca2e71b6964550a971abe5aa5073b","sha256:75b3fde9dbd4c94ec57c3214b75bc6956a83af140ea077502b3613a8f2161cb2","sha256:096b603a26d7963ec79cbd3a02212e6051b0183db3a19933de1a1bfbfe1dbfe7","sha256:9ed9ee5292bcc297c39b1079e4de4067f14d8b23cb72f38fb0be39ae8e78bf14","sha256:b1c09495ffe4a58ae36b3f567a88ed80ddb8ef6a08deba96278aefc38688a0c8","sha256:084a51e26bac975e955191ce1370b9f77e05fa555c1685d6b7b93879e027177c","sha256:07d66c5b288d72dcfae3829b10af6fa129b261c4171007ad7ea387dbe1d56eb2","sha256:0770111ad74222f7d56d86d7798010faa49c9ae065c1b83282848d5792005267","sha256:963056642837c7794301e5fb6787e9a61f3d61eba474eeaae6be0b67ad63449f","sha256:d5504ccb27de0398792565ba73813476b426919a9c01fe1490c799478bbb2946","sha256:e9d6cff64a2340ae44d6c448e4c3f2f21b13b5401fb80abffd6a9c15a3f6f0a7","sha256:be232594554c9502d6329fe8b147c2ad5c13efb6f0aa44a1fb6cce82be5be7ec","sha256:45c9743262487c3681ba1a4d8b290e0a4ccee29cdeae06ef19dfe4e2d66f203a","sha256:beaae3861d939920aa65210f3279a53acd8d0416166a75c5f5caa7758ad0d638","sha256:5d105963b77ef66e5184e30d31c9be4a513602bd2544b90ec59258defa6fad5d","sha256:2b900f3b430de0fcb8c0be9b27c90e8fa9d99b870d3cb197a23db3ad0449a7a5"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e89899a9e0c3316e71a80dcf06ed83867f7aea2853e7b541c0e0e98c9e173d18`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:fc020818c97bd330afd9fdf9c964761631ef3c0227c9d77d1631dd5576690f86`; engine receipt `sha256:ad81f85b9b3f94edde0402935da86a255c85544a99f4180c07651921d2e471a0`.
+
+#### `SFT-MATH-OBL-VALID-006` - Equation and measure complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-EQUATION-MEASURE-006` - Equation and measure complete validation vector.
+- **Forced law:** Equation and measure complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-006 uniquely retains complete-equation-measure-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-TOPOLOGY-ANALYSIS-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-006: equation_measure; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":22,"families":["EQN","MEAS"],"receipt_hashes":["sha256:4fc9003cf83d90dcf955003cca7001e1547e5d7e1602af161870186ae1fcf66b","sha256:3c2ca60887577a62c86587512cec9143f1cb08293ac1e0267f4a4c5466be5511","sha256:78591458da34ac31e6419e6670802ae5100128e808c08b987cf5b34cc3324e59","sha256:6e4130baf805346be5ab289307002290c2f9b6833686c72a85f987be1e25e51a","sha256:201f70839a8f800c9b62f6fc4cb957e2d3330533c87533ea6d83b19d30027900","sha256:82ade58665afc230884f81bd940a5ef39596e8c5015fbb861185f237547a1adc","sha256:23a0f72d36f5d6653020722360e364cd157fdce162fb6eaf881713a12936432d","sha256:23579f5dbdd465547c8cce50c194a49101b72e8c30cd8dbd336ad962e8d2e802","sha256:9dcd5a3ee4736a56455470116d2c72297f47e59f886ce1950e123bdcf2565225","sha256:4fbb4a7f64ef3694210546883ed3742b90e0a11c995f921e5d3e9269b94522d3","sha256:b5862177e99aea7b7d3f1f03e5d062b99b4072dcfde36163dc8ed7f07544c36f","sha256:a5b9056f828669049f5d02eb1c9493657a229b7da2454f7cea9353b1b7665579","sha256:14d25ad66d068b2319cec859ce7d94be7d66cefda1b4721b2ec5719b124b3e1f","sha256:c2c5612d75dce3a55857b1e506e47f3b86496117aabcc4e83cb8b0b6d5a8aaf0","sha256:0ee9c394f47d86ec4a0cb0e8812e82aaa1df94bf7739b6360a4e0fb257a1a95e","sha256:fc75d7acb7ac063472a62ef61784d3b2464536f8938410cea68282dd69f5936d","sha256:d0b85a891e495ff46031d96111dd3c424206599b9def8efaa67a60bb8929fc04","sha256:22c4fe37ebac4cc637920ff3872ba28f8ed7011a639014be2aaa6760ac71581b","sha256:eaffbc9318e599b402acbdba1cc51cd4dd49fb27e7f009d1d17fb2c09befc06f","sha256:5d84b3dbf7725037c1ec28db61b83139d79504335292b4357a74539f98745017","sha256:f72e9d297fdc79cbd7e4ffa47e81d163a42965e347157648cefef1ea11934a22","sha256:a4f38ba621f479ce435299b06099cc716d53db25ee31cb5307d354573e3c1992"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:ed2c6c88df11caa2005cca4128567bb5c34b6ac577c001de66bed3d547695de6`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:274d444bbd2f9094b1097be69e0d194cd7279e27bf81f859304122bd19d50e8e`; engine receipt `sha256:65d0fbfca9c893839c453cca668a393d086cc8407c5b6b9b6bceda06ed2be95d`.
+
+#### `SFT-MATH-OBL-VALID-007` - Probability and statistics complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-PROBABILITY-STATISTICS-007` - Probability and statistics complete validation vector.
+- **Forced law:** Probability and statistics complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-007 uniquely retains complete-probability-statistics-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-EQUATION-MEASURE-006`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-007: probability_statistics; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":16,"families":["PROB"],"receipt_hashes":["sha256:2f7e63c215ef725afbaed9e153dc0e9afbac2ae30fa90237c27aaa18c463d71e","sha256:3de32cd0f017cd9829917e109c48bf5510084b96451c28f5f1af69c3059ec3d8","sha256:c9f382194e21c74dc4838e29a2e6edf7e17fc470b5a171283dc88a7f94004469","sha256:b87c57beb9072c476180b813248201c2b22f3f7f98112c1e3069194cba7836d3","sha256:c20397f6b4dc7c33323fb18b25e87efcca673139404ef7103796a07479418a9a","sha256:4e219f4e7826997fb21e65bba1e98f924b6ab6e847ef699dea331542e76eba86","sha256:e9c8cd3b6e51c3a20e1640ce3b5815b87771a4f2b94f1d99e6b5aa02878d078c","sha256:1f4ece1dc9dcffc4ab540bcf7cd3dcf29d5bda76255a47b96ec80f3286808977","sha256:b10c05e8a85e8e31388d8b3fd77717a82dbb17564bb8841164daee3def78682f","sha256:f264d01b3cb82e643590415a53b9ea4b9b0bac5e818de89426b4ceba2e0242b2","sha256:21aadee13d2df1e2737ad5c4cd7ba4ee10b6636b3810cf6458450ae67cd060b6","sha256:2a7a74ff1432e3aa098187148f14b63b47977082f22f28848036374dcb971858","sha256:c239b75f04ae9b064f3a6178ed377874ca563585c6e751956e1ea995fcfc0b5d","sha256:686defbd4442ac15c71a3bc349175da32ba506f8cfcec565be22b6813e24d50a","sha256:467057cb14cfa1b348de39f0916d99f257be84b5c7ce10de85fd3932e5fb6e32","sha256:dfe162067f03fbfafd04d35e28dfc9de7e45e7e4fff14c9de674c9e7d3721d40"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:42db8a4d09a5d0afd2c9599c6ba226a1a5594986fe99526aefc7129354dc39a1`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:54a1173aea7ae8d16f6d02a8c8aaad51caf3a337cf5a85ec261e0ba00afb7891`; engine receipt `sha256:c9179fff3bc77f7f13003ce25ed099bf0e6f557d2cbe7606dab7ab66c7dc68fd`.
+
+#### `SFT-MATH-OBL-VALID-008` - Optimization and dynamics complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-OPTIMIZATION-DYNAMICS-008` - Optimization and dynamics complete validation vector.
+- **Forced law:** Optimization and dynamics complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-008 uniquely retains complete-optimization-dynamics-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-PROBABILITY-STATISTICS-007`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-008: optimization_dynamics; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":28,"families":["OPT","DYN"],"receipt_hashes":["sha256:a13f3cdb8b9906ebb0792c32ddaf516caf949ad77b0f00c032b8782cf7c15cc7","sha256:74b8e6f8afd76a490c34438b20b360709ad22fbe39887630bd2b72e79d8fa4a2","sha256:0d581ec125db13d24f596f7cdbd8f656a244678a63441c9d71c17a24e36a2e52","sha256:6323878558e3eb3fb4d0d8b2726dbda5fdcc0ab9a40aa57d9cd54748cc4e30da","sha256:bc3ef7947c9f9f489114c474b3c03d08c674e9ea91aef48a1e509b0088cf8a22","sha256:e39890906deedccecea769f9e59b8e73d8a82683178f00471f69ce7cb347cc64","sha256:62c27ebb5829a3dad3f7fabc9647f4a7bdccc2bfdb1241574b8c9eb4cecf8625","sha256:fee2c183cf7b4f34029a2606dddf3491a9b3c85ecb6d2f2d44b9afa49446ed91","sha256:94a6507475f5b899b0280eda449cdac26c23fafe729038b5c35eb257b3a1f4c1","sha256:359e651b661d88d22d7602a0249f90c1b82a16d3eb9485f9ed59c3183bed13bf","sha256:df50833d973d90601e8d47ddca56172fc4e914d0e8fa925b1e9121759ee7a738","sha256:92b812df5237a10f034bf74974cb664dd25c0074fdd4c6186c7f802896823f6a","sha256:0f7c3d3f7d1c43f2abf11d7c21970c7f941446520ab41893ef35f49dac67aa29","sha256:03925760f19f50746faf61b93c7b164b58d424f52d585f6bcdc32f87c21e42fb","sha256:28224fd21eff9d40657483e3aceb4019904f841d9786da73c2ec59d114a16a08","sha256:e8e4a46874d1eb0f42b931300512437b8f1015e1de41ebc4c1a1b4a63a9b6080","sha256:aeb9921e8e40d6d59f313577666482b543ef5624f9061cbf22b2f79c176b6633","sha256:9ae62db5ffdd31c07fea2a614bbbe9e5ba587bde5a38daa921fe0ba58c7e9a70","sha256:9c18019e9f20d1d1b810243cd7d08875312668c2bc99c216adeceb8e22f9c664","sha256:2df3a6cbc61017a6eef83e76253575b6bff962865cdc1002c7f77b00d2fba89c","sha256:520a680b3349364ef71665582583a1f3bced6cd9411a4fd11f9de14a8adba730","sha256:8c84d60f21d282875750592142e7f749065029afeac13da0dc9ad38b11ecec93","sha256:d5d7b98dac7aa6e91704f5a82154ce0e5498d0e00fc67b1db7afa2a87e79cbb6","sha256:73d7f19de7ba19d7987c99282739818524e9b29c547ad8b7a21838768e9f6f2a","sha256:7f8777dd8e7f792ca65148f4a8015f93681cdd890936577821113af0b6d8b052","sha256:ffa0ecb0ca362a3a6bd0a2c0033e0033b4addf071ca9c2a1316125debcd19474","sha256:013899ed0283322e5ec156198a2845d00447a602ebe224bbaefc5e984d6cf950","sha256:c525a01d63f6eeb62552b3058ed34808c261032dae7b3553d61adfabf872780e"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e7a571170c5d4ccb9b3b7e4b2afa253525cb371ae0b1f9e99ee5b2b9b5329e41`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:e92e83ce3496196e8342021a6e4f0521af2778582176fd7bc37b605e9ce98b26`; engine receipt `sha256:ca131191272d09d2ab262915de7f0b11ee564d86a207e61494b6761cc341426d`.
+
+#### `SFT-MATH-OBL-VALID-009` - Logic and compositional complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-LOGIC-COMPOSITIONAL-009` - Logic and compositional complete validation vector.
+- **Forced law:** Logic and compositional complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-009 uniquely retains complete-logic-compositional-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-OPTIMIZATION-DYNAMICS-008`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-009: logic_compositional; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":28,"families":["LOGIC","CAT"],"receipt_hashes":["sha256:f85f9e844e3ec3f9581c1d9302dbea00e5791f1c4d11df0a41e3ef0bce2bbbf7","sha256:153966835981d27d4115b986d3dfa5519147893171304aa9224ace83a36e2f94","sha256:340d97010a3dea95fd4339a6ad816685c90466027c866d62e45d4760ac2692c7","sha256:e1d02e00afb9f4bf37ce78131e933afe4a71ef346cafef5ac815e8788d6ec4aa","sha256:53083a9fef5c6ab7df19ad3708e04c0c47900087047ac48893d4163c5db51cf1","sha256:c0ebbe707ae0dca10b94d1b69b5122c3e881de668df7bee5bbafef8d9678c03e","sha256:2f79e69c848156a49ac98efd70d86967895b4d2af23b30ea9d35b65f2099d888","sha256:1fc8005aaf5441ebd0362d84d9b1e0a6521f9306dcdfbfc0299abe3f549f4ced","sha256:a93e6a3917e8b56002318a4cb9bdc381988b70aa3431a940655ed4d4d371f794","sha256:66e9c9d47b3364b32c328570ccb83fa0a7f094cc7adac043ccb30c42e25c9799","sha256:ae93deb5f11e14001d83c1afd20e2cd8e90246dd8dc4d9a0c605f4b9877d5823","sha256:be1fa0f7ed9298f961e099db5213007d9c7a556e85756207024813bcea2cee41","sha256:b2428380ee59ac674bd574be852e1168aaa1a392cb49f8e8879f82ae34cb95e5","sha256:571b131341ecd1ad9d2fc2f3b131487f8e060e1a05e51af274793f8d3327a562","sha256:5af25a62e0f550c27d7dde1ff7314806f74aa97c6908f98c8e9753bad2654b76","sha256:5717d448290a1af7fbbd8ad6a85c473c68b28abce0799711809f5538cb14d055","sha256:71c69fc458b52088e7c1dc218452b99d29ef3a4e9634d60c261a7a69cfbb0394","sha256:807ed10ff532e9c607cd05e5b289cae65eaef4fef96cfec772ce1eaf6bd64c89","sha256:45effaf6d8da98e393865ea391af69e936c277b99614dac177e4f0d14d850900","sha256:5dead80b1c237c637d35f6c43379a65812c2117954f77d5e9390cd3806c3e0e1","sha256:7d7a98b46c34532e47b6a37fcd19c87883fe3b009a0fc6059173309712bac821","sha256:66e3d06fc4a7b84928e089f02b4a5e7151461520b6c96327b5fbf9627f2eb11e","sha256:bc77d0449dd3b2b490aff2c45dc27e9552a8798c49bad32cff6dc021dd25b247","sha256:1d46e43677dbab4705723767d4134bba4f59a0c6b60e6d45ae97057bfcfa7c5b","sha256:f68143ffe290ff07df3f325ad9af23893914b6dc1e8b02018f5ee5bf8fa9f8fd","sha256:ff7742d564cdc04c75e692c5642100b378945b08fcdc9d11c0150af30e3a71e3","sha256:73d7dd3a53e88a69cd63d2147afab60c9fce360c065b5f813ffc82b508bdfbfa","sha256:212418e46bfbec20e1f9b404cd43fb40fc13d180de2ab99bc0a8971017fd2197"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0c5f0d887021455b6ad409e8963a6ed7b65d7cbb0cd7cf501c5b4e4316cdf897`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:7cb228476f9cc1d2429a340419527c66ddf5c9cc8296528dbabd3ad1846f8f13`; engine receipt `sha256:6afbb8bf15ef954c25d276f3b9e654737b824419855ef250a8e6fa7100873657`.
+
+#### `SFT-MATH-OBL-VALID-010` - Numerical and symbolic complete validation vector
+
+- **Claim:** `SFT-MATH-VALID-NUMERICAL-SYMBOLIC-010` - Numerical and symbolic complete validation vector.
+- **Forced law:** Numerical and symbolic complete validation vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-010 uniquely retains complete-numerical-symbolic-vector, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-LOGIC-COMPOSITIONAL-009`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-010: numerical_symbolic; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"claim_count":22,"families":["NUM","SYMB"],"receipt_hashes":["sha256:8e0f6ddf5bc90fef46eefc32a535fa9fae3d8fc45d3a0f0dd93f657d8c1836c4","sha256:8c13117d2033b4657174a69f0dae9093d27277e74ea89abe10609bb463cc5072","sha256:259b72ccea62db62192f6788cc51d7c5e54c21e36eb8a5099148c0f1b6b98b38","sha256:6929ba74b44f626e8ea7e3b5af82fd3c97e5a4375aa27f1ba050eab41fa2b9be","sha256:d426bb53ef24834bf45d6ff67e99cbcd3d4b1eb55e300e460138fe2907ab1b34","sha256:eb7d30b58833016ecf2928e7ddc354f8d5e428bfe0ef3ca80a56a815d3706757","sha256:cdde0b0bd96c982f20d5f2caa6227c8dcc5a56338f8efd7e8a08fff00df49ecd","sha256:8b2b0f1ba1f2834f192150342fb2c319be37ff34289dbc4150edf24e092d4a0a","sha256:e751920f65b81f5cc2649abdfcd11aa0c1dfae51c10f4d888d4415716d4d2b09","sha256:648b6d3a1e7459deb29c93bf36fbb8f428b743ff0045f05f36cac4f6712a1910","sha256:00a35c5c34967fc4c562146e871ba053dd4af162aef69f61a6122d5222fd789e","sha256:0696ffb60057ca05592a019bc74437c233e398d8e3ed8633d13122917999105d","sha256:1fc6dbd6b91cb7dac6d70badd5ab5bee41c63de626a6abd2a076fb40f3f2a407","sha256:9cf05501f0c8844ef8a38799f148078b8458cc4e42582114034220672d1183cf","sha256:532d8d3fe185773057827ec65c5ede613f674b27e0ffdbe8fdc49a9a419be9ff","sha256:30c7bffc4bfa23e1bb4bbb549fd04f89c9cb1f72be967384b53be228a266d015","sha256:ab851259d84f0c5b760b72589e8b6695d2b3e44efc11dd4b503e839d4647b37f","sha256:8c88175914327cf3786f3f8b238fa3ec9d4b5a872a2c54beafc9f759d7f0732a","sha256:78a40cfd8bef40d4c2979e7fcf85c1ff31f0b49925a73452d2bd3619bbf8e731","sha256:86d0c48ae5b12195f37496629db40327bed840d8bbfe1fea05830f68540f6152","sha256:f30bfc00ab43dc67ac366865b093161f74729273113b2e2a6361b45e80901069","sha256:fda3df9ae9119867ecd3cef93e2affb43dc0dd8596f37043767c6a45b3cf617a"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:7da3bab49ddf336ed36b14627636b331ab577b18363131224b14b29b6dc85990`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:68b41b6655d2bba72b426ad46a3d01e76d07a62cf5246c0b52dc84e4b3ed7b3f`; engine receipt `sha256:2e74a2af4ae929e1b550db41ab49a11f01b5da2a65e5a8ae2c43a6187a70c817`.
+
+#### `SFT-MATH-OBL-VALID-011` - Adverse absent unresolved and boundary vector
+
+- **Claim:** `SFT-MATH-VALID-ADVERSE-BOUNDARY-011` - Adverse absent unresolved and boundary vector.
+- **Forced law:** Adverse absent unresolved and boundary vector is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-011 uniquely retains complete-adverse-boundary-custody, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-NUMERICAL-SYMBOLIC-010`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-011: adverse_absent_unresolved_boundary; exact observation: {"all_external_statuses":["empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated","empirically_tested_and_independently_replicated"],"all_model_admitted":false,"boundary_identity":"sha256:33fca101a49c6f6dfa14b1e93c3ed4217b9683f274ff27d75c87b53159a235b7","boundary_record_count":305,"claim_count":8,"families":["XINT"],"favorable_adverse_absent_unresolved_and_boundary_rows_preserved":true,"receipt_hashes":["sha256:6ffddc69383435d029cf280ab5d376838c88e0747f4d47ab9bb5db8157b66f68","sha256:3c14d83ea82bd2caaadcdd4e8f83f2d9cfa2ceca3bd433ec8a9036382e43b450","sha256:a8886f024818e308656ead69f4cd4aaab32762944ace0d4e6bc2892a6f8062de","sha256:7d8ff0f49eec26d921585ff950f2f0a0361059515d99ef868dac5147078db211","sha256:ccdcf95d6ac30220d49853eed9c196f15fdc6a4cf578a555811714099d5dc038","sha256:b404e098c202044f424847255966dc5938d54a3ee47c96cb75031d6074c6216f","sha256:26cb9935ef8d7b4deeecc3475b0347694990abe929c4b3dd8d123afa8a1f6a98","sha256:ae8b83e55ba8150ddafe5fc01cae15e7e7d880da1556b1946704ef737060cd80"]}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:9559b5329a75e7081096a98c1fa673f8d9c90d7903c868a9f69c55ba17d37785`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:caeb4736e83f5b3f4d2520fd5aea0ff07dc20d02232f786b6e4b7abccb676eb0`; engine receipt `sha256:e24be1ab2cbf3a5f4a04ffaa42e4149e1976508eb8cbe259f63a4556082f0432`.
+
+#### `SFT-MATH-OBL-VALID-012` - Mathematics empirical and formal Grand Lock
+
+- **Claim:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012` - Mathematics empirical and formal Grand Lock.
+- **Forced law:** Mathematics empirical and formal Grand Lock is the complete exact, disjoint, all-outcomes-preserved receipt reconstruction required by the frozen Mathematics census.
+- **Unique survivor:** VALID-012 uniquely retains complete-mathematics-validation-grand-lock, complete disjoint coverage, unchanged authority, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-XINT-ONE-OWNER-IDENTITY-008 -> SFT-MATH-VALID-ADVERSE-BOUNDARY-011`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** VALID-012: empirical_formal_grand_lock; exact observation: {"all_named_groups_and_boundary_rows_present":true,"completed_family_count":22,"covered_pre_validation_claims":305,"frozen_census_count":323,"open_only_valid_and_hand":18,"reconciliation_identity":"sha256:4c8d29e42f67932c4aef3becc5ce63139ea0cb7996f5478e3316a3bc1e2cf486","unique_claim_ids":305,"unique_receipt_hashes":305}; complete family observation custody: 12 records and 305 boundary rows; all preserved; the complete pre-validation Mathematics reconciliation supplies every receipt, outcome class, source and boundary record exactly once; no favorable-only selection or duplicate coverage enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v21.json, census/claims.json, census/execution_manifest.json. Exclusions: no axiom, imported validation conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no favorable, adverse, absent, unresolved, boundary or source row may be omitted; no receipt, family or ownership identity may be duplicated to increase coverage; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:fc61db674aa9004d03826801f5168c1d172615c47289810a3ac988ec9481b43e`; independent `sha256:3789f633aecb3c2e376ba88be8dbc66ed29e04f6254eaf2cfafc5a3c752d8c9c`; empirical `sha256:2347776ab55563fba04933013984d6c718560412e29b88c6151f27b9f2261954`; engine receipt `sha256:822ec7056f4e3dcef00c42fa941fd1fc2f65746649f4f760a119defcda6fd237`.
+
+### 40.26 Family `HAND` - 6/6 complete
+
+This family contributes 1,536 completely decided candidates, 6 unique survivors and 24 passed controls. Its entries are dependency ordered and separately receipt backed.
+
+#### `SFT-MATH-OBL-HAND-001` - Mathematics one-owner downstream handoff
+
+- **Claim:** `SFT-MATH-HAND-DOWNSTREAM-ONE-OWNER-001` - Mathematics one-owner downstream handoff.
+- **Forced law:** Mathematics one-owner downstream handoff retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-001 uniquely retains single-owner-downstream-reference, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-001: downstream_one_owner; exact observation: {"downstream_mode":"typed-reference","duplicate_owner":false,"mathematics_owner":"exact-structure-and-proof-relation","ownership_transfer":false}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:0b1b282196717ecf69cfd7d6c2e9f70231d6f61a1902adfb229ea5fc8540dfb5`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:3b228deb54676606191bc9700f23755561a04bbe4d93da94b0b00ca979fa8178`; engine receipt `sha256:d02a4080f51e56bf936273065de8571ce061fb2475ae408e7ea01690d4fa8b1c`.
+
+#### `SFT-MATH-OBL-HAND-002` - Mathematics measurement-boundary handoff
+
+- **Claim:** `SFT-MATH-HAND-MEASUREMENT-BOUNDARY-002` - Mathematics measurement-boundary handoff.
+- **Forced law:** Mathematics measurement-boundary handoff retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-002 uniquely retains typed-measurement-boundary, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012 -> SFT-MATH-HAND-DOWNSTREAM-ONE-OWNER-001`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-002: measurement_boundary; exact observation: {"boundary_explicit":true,"empirical_branch_owns":["physical-identification","unit-realization","measurement","uncertainty"],"mathematics_owns":"exact-representation"}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:83c80a6b8c3c810b4811439ba2aaedc022514a77ff12b82daf036bd1e70c8f8c`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:053f3e1ef239b7df36bd813793db702112e54bb152d9bfa2bda6b03780886921`; engine receipt `sha256:a962af816adb6cc2256a1f75e91ae932fcdb2ac1bcaade669bb9ea46a008734c`.
+
+#### `SFT-MATH-OBL-HAND-003` - Mathematics formal-to-empirical handoff
+
+- **Claim:** `SFT-MATH-HAND-FORMAL-EMPIRICAL-003` - Mathematics formal-to-empirical handoff.
+- **Forced law:** Mathematics formal-to-empirical handoff retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-003 uniquely retains sealed-formal-empirical-join, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012 -> SFT-MATH-HAND-MEASUREMENT-BOUNDARY-002`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-003: formal_empirical; exact observation: {"empirical_record":"post-seal-observation-and-comparison","formal_record":"root-bound-derivation-and-certificate","joined_only_by_registered_target":true}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:52caafa81c9ac28a64e45d751c2ceacb91b474ae6cc59a2ef7766dad340914f4`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:60f7ac7d9630d4076d7672a547be461d7dde1655d49363cc55725c03b879d14f`; engine receipt `sha256:72d97f8cb655a93d62def7be0f336521322e6b4e7ebf3d6e67fe6dad8853e069`.
+
+#### `SFT-MATH-OBL-HAND-004` - Mathematics conventional-correspondence handoff
+
+- **Claim:** `SFT-MATH-HAND-CONVENTIONAL-CORRESPONDENCE-004` - Mathematics conventional-correspondence handoff.
+- **Forced law:** Mathematics conventional-correspondence handoff retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-004 uniquely retains premise-free-correspondence-translation, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012 -> SFT-MATH-HAND-FORMAL-EMPIRICAL-003`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-004: conventional_correspondence; exact observation: {"conventional_term_role":"comparison-and-translation","correspondence_must_preserve_SFT_boundary":true,"premise_role":false}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e23b6813ad2a78dd075e5a55dd46e7d119f7b9d068aa2223b70749a84cd4b1ba`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:6f9c7a529ba2e972d93ae71a17c3516415c6210bca26b789704607279e621f43`; engine receipt `sha256:970d5376a5beb8c4d8fdd387c12dda90c72e00671e71ea4ef4ee2cbd4289ad38`.
+
+#### `SFT-MATH-OBL-HAND-005` - Mathematics open-extension handoff
+
+- **Claim:** `SFT-MATH-HAND-OPEN-EXTENSION-005` - Mathematics open-extension handoff.
+- **Forced law:** Mathematics open-extension handoff retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-005 uniquely retains dated-complete-extension-open, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012 -> SFT-MATH-HAND-CONVENTIONAL-CORRESPONDENCE-004`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-005: open_extension; exact observation: {"completion":"dated-current-census","lawful_extension_open":true,"new_claim_requires_full_protocol":true,"permanent_lock":false}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:e1c29f614c0c1611f5d4b5a815ccf28460124818aeaf46465f2fa2483d2a8963`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:d5765b4d25a6f78836fa0c85c92232517a1a9d1aa170f42d8c32b063aa322fea`; engine receipt `sha256:55240c646e44e399889211389bc995a80dd78abc23904c0c6a866ec42d02cd80`.
+
+#### `SFT-MATH-OBL-HAND-006` - Mathematics cross-branch one-owner completeness certificate
+
+- **Claim:** `SFT-MATH-HAND-CROSS-BRANCH-COMPLETENESS-006` - Mathematics cross-branch one-owner completeness certificate.
+- **Forced law:** Mathematics cross-branch one-owner completeness certificate retains one-owner lineage, exact boundary custody, unchanged authority and dated extension-open completion.
+- **Unique survivor:** HAND-006 uniquely retains complete-cross-branch-handoff-certificate, one-owner lineage, root forcing, post-registry observation and no extra rule.
+- **Enumeration and falsification:** 256 candidates, one survivor, 4 controls; closure `depth_independent` and external status `empirically_tested_and_independently_replicated`.
+- **Root lineage:** `SFT-MATH-VALID-EMPIRICAL-FORMAL-GRAND-LOCK-012 -> SFT-MATH-HAND-OPEN-EXTENSION-005`; registered root `SFT-ROOT-THERE-IS-NO-NOTHING`; axioms `0`; free parameters `0`.
+- **Post-registry observations:** HAND-006: cross_branch_completeness; exact observation: {"expected_post_handoff_total":323,"frozen_census_total":323,"pre_handoff_closed":317,"registered_handoff_obligations":6,"single_owner_required":true}; complete family observation custody: 6 records; all rows preserved; complete mathematical-owner and downstream-semantic-owner records supply the observation; no duplicate owner, silent semantic import or untyped cross-branch handoff enters
+- **Sources and boundaries:** census/mathematics_discipline_current_reconciliation_v22.json, census/mathematics_discipline_obligations.json, docs/branch_roadmaps/README.md. Exclusions: no axiom, imported downstream conclusion or target outcome selects the result; host 0 denotes structural absence or counts artifacts only and is not an SFT number object; no negative, irrational, imaginary or floating proof scalar; no duplicated ownership, untyped target, measurement import or silent conventional premise; no completion claim suppresses adverse records or lawful future extension; no failed route retires an obligation or changes protected authority.
+- **Certificates:** derivation `sha256:2eb6acb9f7abc12fd2301e44de97ffd7cd68613473380ef4588b848b88980ac7`; independent `sha256:93a8eab573f9e689afc25deb6b3279a747bce09ac5cd8f760565720b531dd22d`; empirical `sha256:4b5b44ea060ca47d2d585ecad0faf09f4a535adfe81b8c42258cee32f1899369`; engine receipt `sha256:d66b4c2094c3e340398bce5fb89aa88a873dfba5f19c67892cc598184f68709d`.
+
+## 41. Complete-field empirical interpretation
+
+Mathematics is empirical here in the ordinary sense that its generated consequences are observed through exact executions and independently reproduced records. Where a mathematical structure is later used to describe nature, the owning empirical science must separately identify the physical target, seal the prediction and compare units, values and uncertainty. The Mathematics handoff forbids a formal identity from impersonating a physical measurement.
+
+The Grand Lock's 305 boundary rows include favourable, adverse, absent, unresolved and excluded cases. Their preservation is essential: the reported 100.0% is the fraction of frozen obligations with complete admitted packages, not the fraction of attempted routes that happened to look favourable. A halted attempt earns no admission; a corrected route remains visible through its versioned evidence chain.
+
+## 42. Reproducibility and publication boundary
+
+The complete branch can be reviewed claim by claim through `census/mathematics_discipline_current_reconciliation_v23.json` and rerun through the repository's documented verification route. The heavy all-branch verification command remains reserved for the final global Grand Lock; this paper was prepared with exact family replay, focused tests, repository validation and both immutable seals. Version 1.5 is locally prepared and is not published until Maria Smith explicitly authorises its GitHub and Zenodo release.
+## Data and code availability
+
+The open repository is
+[`MettaMazza/ernos-labs-sft-platform`](https://github.com/MettaMazza/ernos-labs-sft-platform).
+The live model-admitted index is `census/claims.json`; the Mathematics
+field boundary is `census/mathematics_discipline_obligations.json`. Every represented claim has its own
+package under `claims/<claim-id>/` and its immutable model-admitted receipt
+under `receipts/engine/model_admitted/`.
+
+The publication evidence map is `publications/successors/mathematics/evidence_map_v1_5.json` and the candidate
+manifest is `publications/successors/mathematics/manifest_v1_5.json`. Registered external records and source
+captures are retained under `experiments/external_sources/mathematics/` together with their
+source identities, transport outcomes and hashes. Files too large for ordinary
+Git remain checksum-bound and are distributed through the applicable existing
+Zenodo record rather than omitted or replaced.
+
+Build, render, replay and verification programs are retained under `tools/`,
+with branch implementations under `sft/`, independent reconstructions under
+`generated/` and tests under `tests/`. The final approved Markdown, rendered
+PDF, evidence map, manifest, metadata and checksums must agree before deposit.
+No successful test is treated as empirical confirmation unless the
+claim-specific evidence protocol separately authorises that status.
+
+## Shared claim-record clauses
+
+The clauses below previously appeared verbatim in multiple claim records.
+They are preserved once here to reduce mechanical repetition. Each in-text
+clause reference applies this exact wording at that claim location; no
+scientific statement, status, condition or qualification has been removed.
+
+### `MATH-S001` — applied at 22 claim locations
+
+Exactly one candidate combines every forced coordinate. Replacing any of those coordinates by its generated alternative triggers the corresponding rejection in the table. Adding a rule fails the final addition coordinate. This establishes minimality inside the declared grammar and named-shape uniqueness over the complete product. The survivor entails the following operational laws:
+
+### `MATH-S002` — applied at 22 claim locations
+
+The finite product execution classifies representation rules; this base/successor certificate establishes that the forced rule continues at every generated finite size or depth. It does not posit a completed infinity.
 
 ## References
 

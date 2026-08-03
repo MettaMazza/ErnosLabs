@@ -9,7 +9,7 @@ function rand_between(lo, hi) {
 }
 
 function mesh_make_nodes(count, w, h) {
-    let n, i, nodes;
+    let nodes, n, i;
     nodes = [];
     i = 0;
     while ((i < count)) {
@@ -25,7 +25,7 @@ function mesh_make_nodes(count, w, h) {
 }
 
 function mesh_resize() {
-    let dpr, canvas, w, h, ctx;
+    let dpr, w, ctx, canvas, h;
     canvas = window.ernCanvas;
     if (!canvas) {
         return 0;
@@ -43,7 +43,7 @@ function mesh_resize() {
 }
 
 function mesh_frame() {
-    let h, count, n, dx, dist, i, dy, j, w, b, alpha, a, nodes, ctx;
+    let nodes, w, h, i, dy, b, a, ctx, count, j, alpha, dist, n, dx;
     ctx = window.ernCtx;
     nodes = window.ernNodes;
     w = window.ernW;
@@ -103,7 +103,7 @@ function mesh_frame() {
 }
 
 function mesh_init() {
-    let density, canvas, reduce;
+    let density, reduce, canvas;
     canvas = document.getElementById("mesh");
     if (!canvas) {
         return 0;
@@ -176,7 +176,7 @@ function nav_hover_enabled() {
 }
 
 function drop_open_only(me) {
-    let b, mybtn, drops;
+    let mybtn, drops, b;
     if (window.navCloseTimer) {
         window.clearTimeout(window.navCloseTimer);
         window.navCloseTimer = 0;
@@ -214,7 +214,7 @@ function drop_enter(ev) {
 }
 
 function drop_close_all() {
-    let drops, b;
+    let b, drops;
     drops = document.querySelectorAll(".nav__drop");
     for (const d of drops) {
         d.classList.remove("open");
@@ -270,7 +270,7 @@ function nav_keydown(ev) {
 }
 
 function nav_init() {
-    let dbtns, burger, drops;
+    let burger, dbtns, drops;
     burger = document.getElementById("burger");
     if (burger) {
         burger.setAttribute("aria-controls", "navlinks");
@@ -293,7 +293,7 @@ function nav_init() {
 }
 
 function nav_highlight() {
-    let b, qi, path, href, hp, act, links, drops;
+    let path, qi, href, drops, links, hp, b, act;
     path = window.location.pathname;
     links = document.querySelectorAll(".nav__links a");
     for (const a of links) {
@@ -343,7 +343,7 @@ function reveal_cb(entries, observer) {
 }
 
 function reveal_init() {
-    let opts, els, IO, args, obs;
+    let opts, obs, args, els, IO;
     els = document.querySelectorAll(".reveal");
     IO = window.IntersectionObserver;
     if (!IO) {
@@ -363,7 +363,7 @@ function reveal_init() {
 }
 
 function year_init() {
-    let d, y;
+    let y, d;
     y = document.getElementById("year");
     if (y) {
         d = Reflect.construct(window.Date, []);
@@ -373,7 +373,7 @@ function year_init() {
 }
 
 function narration_text() {
-    let txt, dt, nodes, cls, parts, doc, i, n;
+    let cls, n, txt, doc, dt, parts, nodes, i;
     doc = document.getElementById("doc");
     if (doc) {
         dt = doc.textContent;
@@ -418,7 +418,7 @@ function np_toggle(ev) {
 }
 
 function np_progress(info) {
-    let fill, status, btn, pct, ph;
+    let status, fill, pct, btn, ph;
     fill = document.getElementById("np-fill");
     if (!fill) {
         return 0;

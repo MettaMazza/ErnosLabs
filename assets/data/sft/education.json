@@ -1,0 +1,948 @@
+{
+  "schema": "ernoslabs-sft-education/1",
+  "source_present": true,
+  "source_path": "edu",
+  "source_revision": "b0691f43f76f5584e603eed60536848e798f6c13",
+  "source_dirty": false,
+  "programme_document_count": 5,
+  "book_count": 4,
+  "edition_count": 4,
+  "current_book_count": 4,
+  "status_counts": {
+    "review": 4
+  },
+  "stage_counts": {
+    "early_years": 4
+  },
+  "editions": [
+    {
+      "book_id": "SFT-EDU-E01-SOMETHING-IS-HERE",
+      "title": "Something Is Here",
+      "subtitle": "The Star Door Mystery",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "branches": [
+        "foundation"
+      ],
+      "current": true,
+      "manifest_path": "edu/books/E01-something-is-here/book-manifest.json",
+      "manifest_sha256": "sha256:2f8aaf1014ad16a9778321b4d5e2fa354daf9d7910a19acbe5d2d959e12882d6",
+      "content_path": "content/education/sft-edu-e01-something-is-here-v2-0-0.html",
+      "content_sha256": "sha256:52553f3a40f5a75b4f55af406514b96a196fc8ec488b5e2b792924d42f024e2e",
+      "manifest": {
+        "schema": "sft-education-book-manifest/1",
+        "book_id": "SFT-EDU-E01-SOMETHING-IS-HERE",
+        "title": "Something Is Here",
+        "subtitle": "The Star Door Mystery",
+        "version": "2.0.0",
+        "status": "review",
+        "stage": "early_years",
+        "age_range": "3-5",
+        "branches": [
+          "foundation"
+        ],
+        "medium": "paper_native_picture_book",
+        "series_continuity": {
+          "permanent_team": [
+            "Mia",
+            "Sol",
+            "Tavi"
+          ],
+          "book_guest": "Nori",
+          "works_without_companion_game": true,
+          "game_is_adaptation_not_authority": true
+        },
+        "knowledge_boundary": {
+          "repository_commit": "57e572436c630f8a86b05ecadcc481cebc342a6a",
+          "census_claim_count": 2751,
+          "inspected_date": "2026-07-30",
+          "notes": "The scientific boundary is unchanged. Review 2.0.0 rebuilds the title as a paper-native illustrated story. Repeated learning objects use stable OpenMoji assets; generated illustration supplies only setting, character, emotion and story action. External tools do not enter SFT derivation."
+        },
+        "scientific_sources": [
+          {
+            "claim_id": "SFT-ROOT-THERE-IS-NO-NOTHING",
+            "receipt_hash": "sha256:711864171e4d3a2f2734f0c2890965bcd81a0228349538751a3c80699c27d669",
+            "receipt_path": "receipts/engine/model_admitted/SFT-ROOT-THERE-IS-NO-NOTHING-711864171e4d3a2f.json",
+            "use": "Sole scientific content authority for the operational theorem, complete two-class partition, result and boundary."
+          }
+        ],
+        "provenance_policy": "Children experience each distinction before its short name. The theorem and boundary remain in the adult guide. Generated art and OpenMoji are visual delivery tools only and do not enter derivation.",
+        "external_references": [
+          {
+            "title": "Early years foundation stage statutory framework",
+            "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
+            "use": "Age, activity and learning-area calibration only",
+            "authority_in_sft_derivation": false
+          },
+          {
+            "title": "OpenMoji 16.0",
+            "url": "https://openmoji.org/",
+            "use": "Stable repeated-object illustration vocabulary under CC BY-SA 4.0",
+            "authority_in_sft_derivation": false
+          }
+        ],
+        "author": "Maria Smith",
+        "editorial_assistance": "Educational implementation, original generated illustration direction, accessible edition and reproducible layout prepared with automated tooling under Maria Smith's authority.",
+        "licenses": {
+          "text": "CC-BY-4.0",
+          "openmoji_assets": "CC-BY-SA-4.0"
+        },
+        "artifacts": [
+          {
+            "path": "edu/PICTURE_BOOK_STANDARD.md",
+            "role": "series_picture_book_standard"
+          },
+          {
+            "path": "edu/assets/openmoji/README.md",
+            "role": "emoji_provenance"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/NARRATIVE_AND_LEARNING_DESIGN-v2.0.0.md",
+            "role": "narrative_and_learning_design"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/source/book-v2.0.0.json",
+            "role": "canonical_student_source"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/source/render_e01_v2_0.py",
+            "role": "student_render_source"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/adult-guide-v2.0.0.md",
+            "role": "adult_guidance_and_answers_source"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/source/render_e01_adult_v2_0.py",
+            "role": "adult_render_source"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/claim-map-v2.0.0.json",
+            "role": "scientific_claim_map"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/accessible/student-book-v2.0.0.html",
+            "role": "semantic_accessible_edition"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E01-SOMETHING-IS-HERE/2.0.0/SFT-E01-Something-Is-Here-v2.0.0.pdf",
+            "role": "student_pdf"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E01-SOMETHING-IS-HERE/2.0.0/SFT-E01-Adult-Guide-v2.0.0.pdf",
+            "role": "adult_guide_pdf"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/ILLUSTRATION_AND_ACCESSIBILITY_AUDIT-v2.0.0.md",
+            "role": "visual_and_accessibility_audit"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/editions/2.0.0/RELEASE_RECORD.md",
+            "role": "review_release_record"
+          },
+          {
+            "path": "edu/books/E01-something-is-here/editions/2.0.0/CHECKSUMS.sha256",
+            "role": "versioned_release_checksums"
+          }
+        ],
+        "release_checks": {
+          "manifest_valid": true,
+          "claim_map_verified": true,
+          "student_text_reviewed": true,
+          "adult_guidance_reviewed": true,
+          "semantic_html_generated": true,
+          "pdf_text_extraction_passed": true,
+          "pdf_visual_review_passed": true,
+          "accessibility_review_passed": true,
+          "paper_activity_review_passed": true,
+          "narrative_continuity_review_passed": true,
+          "release_checksums_recorded": true
+        },
+        "final_publication": {
+          "approved": false,
+          "note": "Awaiting Maria Smith's explicit approval of this exact review edition. Nothing has been copied into publications/education."
+        }
+      }
+    },
+    {
+      "book_id": "SFT-EDU-E02-ONE-WHOLE-MANY-PARTS",
+      "title": "One Whole, Many Parts",
+      "subtitle": "The Moon Lantern Workshop",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "branches": [
+        "foundation",
+        "mathematics"
+      ],
+      "current": true,
+      "manifest_path": "edu/books/E02-one-whole-many-parts/book-manifest.json",
+      "manifest_sha256": "sha256:6793003e8ad4e05b615b41bdd2f07c593ae05fc60946da6e195df3d787ae2dfe",
+      "content_path": "content/education/sft-edu-e02-one-whole-many-parts-v2-0-0.html",
+      "content_sha256": "sha256:7d3201c6b4af8b8192e534717b517ab5ea2a3c211e1cdd0cd2136d30191729cd",
+      "manifest": {
+        "schema": "sft-education-book-manifest/1",
+        "book_id": "SFT-EDU-E02-ONE-WHOLE-MANY-PARTS",
+        "title": "One Whole, Many Parts",
+        "subtitle": "The Moon Lantern Workshop",
+        "version": "2.0.0",
+        "status": "review",
+        "stage": "early_years",
+        "age_range": "3-5",
+        "branches": [
+          "foundation",
+          "mathematics"
+        ],
+        "medium": "paper_native_picture_book",
+        "series_continuity": {
+          "permanent_team": [
+            "Mia",
+            "Sol",
+            "Tavi"
+          ],
+          "book_guest": "Pax",
+          "continues_from": "The parcel that arrived visibly at the end of E01",
+          "works_without_companion_game": true,
+          "game_is_adaptation_not_authority": true
+        },
+        "knowledge_boundary": {
+          "repository_commit": "23f3fa73dabab0d24eb760b72f007ef23431c37d",
+          "census_claim_count": 2751,
+          "inspected_date": "2026-07-30",
+          "notes": "Review 2.0.0 rebuilds E02 as a paper-native illustrated story. It uses admitted Structural One, exact positive finite count, exact positive part-coordinate, exact arithmetic and junction-addition results. Fractions, semantic zero and cross-partition equivalence remain outside the book. External tools do not enter SFT derivation."
+        },
+        "scientific_sources": [
+          {
+            "claim_id": "SFT-FOUNDATION-ONE-001",
+            "receipt_hash": "sha256:68332624c276dc5d0ddfd568a26b95e20d7d5665fcdb7e825ff1b7b19bf1d51c",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-ONE-001-68332624c276dc5d.json",
+            "use": "Structural whole, omission boundary and unforced-addition boundary."
+          },
+          {
+            "claim_id": "SFT-FOUNDATION-COUNT-001",
+            "receipt_hash": "sha256:4b2411716cbef2fb9fa7aac58b24ce5eb3c0c59fe7230fd703fd89b5260f6e23",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-COUNT-001-4b2411716cbef2fb.json",
+            "use": "Complete positive finite trace retaining each occurrence once and adding none."
+          },
+          {
+            "claim_id": "SFT-FOUNDATION-PART-001",
+            "receipt_hash": "sha256:87b40affae50458ba5492af91778fbca79a8de0bc3b951e520535093c2b7b728",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-PART-001-87b40affae50458b.json",
+            "use": "One complete, disjoint, equal-fibred positive finite partition and its held/whole count boundary."
+          },
+          {
+            "claim_id": "SFT-MATH-EXACT-ARITHMETIC-001",
+            "receipt_hash": "sha256:28252bae62373d8657967ba28f8f2d497c2cf09abbae71609cb05c4f40196418",
+            "receipt_path": "receipts/engine/model_admitted/SFT-MATH-EXACT-ARITHMETIC-001-28252bae62373d86.json",
+            "use": "Exact arithmetic kernel after the SFT count and part structures are sealed."
+          },
+          {
+            "claim_id": "SFT-MATH-ARITH-JUNCTION-ADDITION-002",
+            "receipt_hash": "sha256:ecbb32a37fb10022315429bb39d88f49437fc856396d0b8db42fca49b2032493",
+            "receipt_path": "receipts/engine/model_admitted/SFT-MATH-ARITH-JUNCTION-ADDITION-002-ecbb32a37fb10022.json",
+            "use": "Join two held-disjoint counted groups while retaining every source part exactly once."
+          }
+        ],
+        "provenance_policy": "Children experience each distinction before its short name. Generated story art and OpenMoji are visual delivery tools only and never enter derivation.",
+        "external_references": [
+          {
+            "title": "Early years foundation stage statutory framework",
+            "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
+            "use": "Age, activity and learning-area calibration only",
+            "authority_in_sft_derivation": false
+          },
+          {
+            "title": "OpenMoji 16.0",
+            "url": "https://openmoji.org/",
+            "use": "Stable repeated-object illustration vocabulary under CC BY-SA 4.0",
+            "authority_in_sft_derivation": false
+          }
+        ],
+        "author": "Maria Smith",
+        "editorial_assistance": "Educational implementation, original generated illustration direction, accessible edition and reproducible layout prepared with automated tooling under Maria Smith's authority.",
+        "licenses": {
+          "text": "CC-BY-4.0",
+          "openmoji_assets": "CC-BY-SA-4.0"
+        },
+        "artifacts": [
+          {
+            "path": "edu/PICTURE_BOOK_STANDARD.md",
+            "role": "series_picture_book_standard"
+          },
+          {
+            "path": "edu/assets/openmoji/README.md",
+            "role": "emoji_provenance"
+          },
+          {
+            "path": "edu/assets/openmoji/build_lantern_parts.py",
+            "role": "mechanical_stable_emoji_quarter_builder"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/NARRATIVE_AND_LEARNING_DESIGN-v2.0.0.md",
+            "role": "narrative_and_learning_design"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/source/book-v2.0.0.json",
+            "role": "canonical_student_source"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/source/render_e02_v2_0.py",
+            "role": "student_render_source"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/adult-guide-v2.0.0.md",
+            "role": "adult_guidance_and_answers_source"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/source/render_e02_adult_v2_0.py",
+            "role": "adult_render_source"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/claim-map-v2.0.0.json",
+            "role": "scientific_claim_map"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/accessible/student-book-v2.0.0.html",
+            "role": "semantic_accessible_edition"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E02-ONE-WHOLE-MANY-PARTS/2.0.0/SFT-E02-One-Whole-Many-Parts-v2.0.0.pdf",
+            "role": "student_pdf"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E02-ONE-WHOLE-MANY-PARTS/2.0.0/SFT-E02-Adult-Guide-v2.0.0.pdf",
+            "role": "adult_guide_pdf"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/ILLUSTRATION_AND_ACCESSIBILITY_AUDIT-v2.0.0.md",
+            "role": "visual_and_accessibility_audit"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/editions/2.0.0/RELEASE_RECORD.md",
+            "role": "review_release_record"
+          },
+          {
+            "path": "edu/books/E02-one-whole-many-parts/editions/2.0.0/CHECKSUMS.sha256",
+            "role": "versioned_release_checksums"
+          }
+        ],
+        "release_checks": {
+          "manifest_valid": true,
+          "claim_map_verified": true,
+          "student_text_reviewed": true,
+          "adult_guidance_reviewed": true,
+          "semantic_html_generated": true,
+          "pdf_text_extraction_passed": true,
+          "pdf_visual_review_passed": true,
+          "accessibility_review_passed": true,
+          "paper_activity_review_passed": true,
+          "narrative_continuity_review_passed": true,
+          "release_checksums_recorded": true
+        },
+        "final_publication": {
+          "approved": false,
+          "note": "Awaiting Maria Smith's explicit approval of this exact review edition. Nothing has been copied into publications/education."
+        }
+      }
+    },
+    {
+      "book_id": "SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN",
+      "title": "The Fold Makes a Pattern",
+      "subtitle": "The Turning-Light Trail",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "branches": [
+        "foundation",
+        "mathematics"
+      ],
+      "current": true,
+      "manifest_path": "edu/books/E03-the-fold-makes-a-pattern/book-manifest.json",
+      "manifest_sha256": "sha256:74e52e4c625698c015e243f77241e830b27e3a4d49d09b65f220017a84acf48e",
+      "content_path": "content/education/sft-edu-e03-the-fold-makes-a-pattern-v2-0-0.html",
+      "content_sha256": "sha256:5e3809457d2c9d838af889c94bd1de746e2fd006225c49dbbca0b40c53f37d34",
+      "manifest": {
+        "schema": "sft-education-book-manifest/1",
+        "book_id": "SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN",
+        "title": "The Fold Makes a Pattern",
+        "subtitle": "The Turning-Light Trail",
+        "version": "2.0.0",
+        "status": "review",
+        "stage": "early_years",
+        "age_range": "3-5",
+        "branches": [
+          "foundation",
+          "mathematics"
+        ],
+        "medium": "paper_native_picture_book",
+        "series_continuity": {
+          "permanent_team": [
+            "Mia",
+            "Sol",
+            "Tavi"
+          ],
+          "book_guest": "Vee",
+          "continues_from": "The Moon Lantern's moon-sun-moon teaser at the end of E02",
+          "works_without_companion_game": true,
+          "game_is_adaptation_not_authority": true
+        },
+        "knowledge_boundary": {
+          "repository_commit": "6720df8d",
+          "census_claim_count": 2751,
+          "inspected_date": "2026-07-30",
+          "notes": "Review 2.0.0 translates the admitted minimal Fold and exact turn-return dynamics into one bounded garden trail. External models and production tools do not enter SFT derivation."
+        },
+        "scientific_sources": [
+          {
+            "claim_id": "SFT-FOUNDATION-FOLD-001",
+            "receipt_hash": "sha256:9e99f91d15e2b68a5c24f825093686863c168595319c2083e6a5b52b0314e003",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-FOLD-001-9e99f91d15e2b68a.json",
+            "use": "Two retained roles and the complete return relation."
+          },
+          {
+            "claim_id": "SFT-FOUNDATION-FOLD-DYNAMICS-001",
+            "receipt_hash": "sha256:ffaa7c3740dd747aecfc858391cec140dd6c1b3c8ab219ca798fccfc1785b675",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-FOLD-DYNAMICS-001-ffaa7c3740dd747a.json",
+            "use": "One declared exact turn, retained roles and first nonstatic recurrence."
+          }
+        ],
+        "provenance_policy": "Children experience each distinction before its short name. Stable OpenMoji items and generated scene art are delivery tools only and never enter derivation.",
+        "external_references": [
+          {
+            "title": "Early years foundation stage statutory framework",
+            "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
+            "use": "Age and activity calibration only",
+            "authority_in_sft_derivation": false
+          },
+          {
+            "title": "OpenMoji 16.0",
+            "url": "https://openmoji.org/",
+            "use": "Stable repeated-object illustration vocabulary under CC BY-SA 4.0",
+            "authority_in_sft_derivation": false
+          }
+        ],
+        "author": "Maria Smith",
+        "editorial_assistance": "Educational implementation, accessible edition and reproducible layout prepared with automated tooling under Maria Smith's authority.",
+        "licenses": {
+          "text": "CC-BY-4.0",
+          "openmoji_assets": "CC-BY-SA-4.0"
+        },
+        "artifacts": [
+          {
+            "path": "edu/PICTURE_BOOK_STANDARD.md",
+            "role": "series_picture_book_standard"
+          },
+          {
+            "path": "edu/assets/openmoji/README.md",
+            "role": "emoji_provenance"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/NARRATIVE_AND_LEARNING_DESIGN-v2.0.0.md",
+            "role": "narrative_and_learning_design"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/source/book-v2.0.0.json",
+            "role": "canonical_student_source"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/source/render_e03_v2_0.py",
+            "role": "student_render_source"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/adult-guide-v2.0.0.md",
+            "role": "adult_guidance_and_answers_source"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/source/render_e03_adult_v2_0.py",
+            "role": "adult_render_source"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/claim-map-v2.0.0.json",
+            "role": "scientific_claim_map"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/accessible/student-book-v2.0.0.html",
+            "role": "semantic_accessible_edition"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN/2.0.0/SFT-E03-The-Fold-Makes-A-Pattern-v2.0.0.pdf",
+            "role": "student_pdf"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN/2.0.0/SFT-E03-Adult-Guide-v2.0.0.pdf",
+            "role": "adult_guide_pdf"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/ILLUSTRATION_AND_ACCESSIBILITY_AUDIT-v2.0.0.md",
+            "role": "visual_and_accessibility_audit"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/editions/2.0.0/RELEASE_RECORD.md",
+            "role": "review_release_record"
+          },
+          {
+            "path": "edu/books/E03-the-fold-makes-a-pattern/editions/2.0.0/CHECKSUMS.sha256",
+            "role": "versioned_release_checksums"
+          }
+        ],
+        "release_checks": {
+          "manifest_valid": true,
+          "claim_map_verified": true,
+          "student_text_reviewed": true,
+          "adult_guidance_reviewed": true,
+          "semantic_html_generated": true,
+          "pdf_text_extraction_passed": true,
+          "pdf_visual_review_passed": true,
+          "accessibility_review_passed": true,
+          "paper_activity_review_passed": true,
+          "stable_emoji_review_passed": true,
+          "narrative_continuity_review_passed": true,
+          "release_checksums_recorded": true
+        },
+        "final_publication": {
+          "approved": false,
+          "note": "Awaiting Maria Smith's explicit approval of this exact review edition. Nothing has been copied into publications/education."
+        }
+      }
+    },
+    {
+      "book_id": "SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK",
+      "title": "Look Again: How We Check",
+      "subtitle": "The Garden Welcome Sign",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "branches": [
+        "foundation",
+        "engineering_translation"
+      ],
+      "current": true,
+      "manifest_path": "edu/books/E04-look-again-how-we-check/book-manifest.json",
+      "manifest_sha256": "sha256:1e8ebb9cf0e215238f1ac255a47a1eb9327fed47d85efc5cd8e15f7a674b3d9c",
+      "content_path": "content/education/sft-edu-e04-look-again-how-we-check-v2-0-0.html",
+      "content_sha256": "sha256:42ea0136e19db72c2461026d3217848976c6d944e22429e3cf218de82abc53ae",
+      "manifest": {
+        "schema": "sft-education-book-manifest/1",
+        "book_id": "SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK",
+        "title": "Look Again: How We Check",
+        "subtitle": "The Garden Welcome Sign",
+        "version": "2.0.0",
+        "status": "review",
+        "stage": "early_years",
+        "age_range": "3-5",
+        "branches": [
+          "foundation",
+          "engineering_translation"
+        ],
+        "medium": "paper_native_picture_book",
+        "series_continuity": {
+          "permanent_team": [
+            "Mia",
+            "Sol",
+            "Tavi"
+          ],
+          "book_guest": "Ivo",
+          "continues_from": "The garden gate teased at the end of E03",
+          "works_without_companion_game": true,
+          "game_is_adaptation_not_authority": true
+        },
+        "knowledge_boundary": {
+          "repository_commit": "59f46297",
+          "census_claim_count": 2751,
+          "inspected_date": "2026-08-01",
+          "notes": "Review 2.0.0 translates registered trace, measurement-boundary, fail-closed admission and bounded implementation-distinct checking results into one garden-sign mission. External models and production tools do not enter SFT derivation."
+        },
+        "scientific_sources": [
+          {
+            "claim_id": "SFT-FOUNDATION-DERIVATION-TRACE-001",
+            "receipt_hash": "sha256:457414dd7e3a14e44b200b1ac329cdc9e2bb3527abe901c3255d7fb6f9233c5e",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-DERIVATION-TRACE-001-457414dd7e3a14e4.json",
+            "use": "A complete ordered source-bound trace retains every registered step."
+          },
+          {
+            "claim_id": "SFT-FOUNDATION-MEASURED-VALUE-BOUNDARY-001",
+            "receipt_hash": "sha256:a4e409f6bb8b203de746bd0c21d3f2566e8052003219490c657249e11f6f2086",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-MEASURED-VALUE-BOUNDARY-001-a4e409f6bb8b203d.json",
+            "use": "Measurement answers only its declared question and may not select or mutate the law."
+          },
+          {
+            "claim_id": "SFT-FOUNDATION-ADMISSION-ENFORCEMENT-001",
+            "receipt_hash": "sha256:0e21ffcb217271ddfab4000901691761c2b7fd423b93d27f81ab757f0300c58c",
+            "receipt_path": "receipts/engine/model_admitted/SFT-FOUNDATION-ADMISSION-ENFORCEMENT-001-0e21ffcb217271dd.json",
+            "use": "Adverse, rejected and unresolved records remain present; incomplete authority paths halt."
+          },
+          {
+            "claim_id": "SFT-ENG-INDEPENDENT-CHECK-001",
+            "receipt_hash": "sha256:927d1b0f871cb92e06ae180a9c1fbcf6b2fe0a024135fb487fbf41a9b082b364",
+            "receipt_path": "receipts/engine/model_admitted/SFT-ENG-INDEPENDENT-CHECK-001-927d1b0f871cb92e.json",
+            "use": "A bounded implementation-distinct reconstruction follows a separately identified path."
+          }
+        ],
+        "provenance_policy": "Children experience each distinction before its short name. Stable OpenMoji items and generated scene art are delivery tools only and never enter derivation.",
+        "external_references": [
+          {
+            "title": "Early years foundation stage statutory framework",
+            "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
+            "use": "Age and activity calibration only",
+            "authority_in_sft_derivation": false
+          },
+          {
+            "title": "OpenMoji 16.0",
+            "url": "https://openmoji.org/",
+            "use": "Stable repeated-object illustration vocabulary under CC BY-SA 4.0",
+            "authority_in_sft_derivation": false
+          }
+        ],
+        "author": "Maria Smith",
+        "editorial_assistance": "Educational implementation, accessible edition and reproducible layout prepared with automated tooling under Maria Smith's authority.",
+        "licenses": {
+          "text": "CC-BY-4.0",
+          "openmoji_assets": "CC-BY-SA-4.0"
+        },
+        "artifacts": [
+          {
+            "path": "edu/PICTURE_BOOK_STANDARD.md",
+            "role": "series_picture_book_standard"
+          },
+          {
+            "path": "edu/assets/openmoji/README.md",
+            "role": "emoji_provenance"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/NARRATIVE_AND_LEARNING_DESIGN-v2.0.0.md",
+            "role": "narrative_and_learning_design"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/source/book-v2.0.0.json",
+            "role": "canonical_student_source"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/source/render_e04_v2_0.py",
+            "role": "student_render_source"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/adult-guide-v2.0.0.md",
+            "role": "adult_guidance_and_answers_source"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/source/render_e04_adult_v2_0.py",
+            "role": "adult_render_source"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/claim-map-v2.0.0.json",
+            "role": "scientific_claim_map"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/accessible/student-book-v2.0.0.html",
+            "role": "semantic_accessible_edition"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK/2.0.0/SFT-E04-Look-Again-How-We-Check-v2.0.0.pdf",
+            "role": "student_pdf"
+          },
+          {
+            "path": "output/pdf/edu/SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK/2.0.0/SFT-E04-Adult-Guide-v2.0.0.pdf",
+            "role": "adult_guide_pdf"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/ILLUSTRATION_AND_ACCESSIBILITY_AUDIT-v2.0.0.md",
+            "role": "visual_and_accessibility_audit"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/editions/2.0.0/RELEASE_RECORD.md",
+            "role": "review_release_record"
+          },
+          {
+            "path": "edu/books/E04-look-again-how-we-check/editions/2.0.0/CHECKSUMS.sha256",
+            "role": "versioned_release_checksums"
+          }
+        ],
+        "release_checks": {
+          "manifest_valid": true,
+          "claim_map_verified": true,
+          "student_text_reviewed": true,
+          "adult_guidance_reviewed": true,
+          "semantic_html_generated": true,
+          "pdf_text_extraction_passed": true,
+          "pdf_visual_review_passed": true,
+          "accessibility_review_passed": true,
+          "paper_activity_review_passed": true,
+          "stable_emoji_review_passed": true,
+          "narrative_continuity_review_passed": true,
+          "release_checksums_recorded": true
+        },
+        "final_publication": {
+          "approved": false,
+          "note": "Awaiting Maria Smith's explicit approval of this exact review edition. Nothing has been copied into publications/education."
+        }
+      }
+    }
+  ],
+  "works": [
+    {
+      "id": "education-overview",
+      "file": "content/education/education-overview.md",
+      "title": "Open Education Library",
+      "sub": "How the education library relates to the scientific model and its current knowledge boundary.",
+      "words": 339,
+      "collection": "programme",
+      "format": "markdown",
+      "source_path": "edu/README.md",
+      "source_sha256": "sha256:7e1230752919f1e58d651426faa387cd7e8d44bdf6d6f81211340aa0a3cbe155",
+      "content_sha256": "sha256:7e1230752919f1e58d651426faa387cd7e8d44bdf6d6f81211340aa0a3cbe155",
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/README.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/README.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "master-syllabus",
+      "file": "content/education/master-syllabus.md",
+      "title": "Master syllabus",
+      "sub": "The complete learning progression from Early Years through advanced independent reconstruction.",
+      "words": 3173,
+      "collection": "programme",
+      "format": "markdown",
+      "source_path": "edu/SFT_MASTER_SYLLABUS.md",
+      "source_sha256": "sha256:53f0228b783a55c8e7d68d8e618ef49874a2fa8fa767aa47cb125a7ebf2bcb2b",
+      "content_sha256": "sha256:53f0228b783a55c8e7d68d8e618ef49874a2fa8fa767aa47cb125a7ebf2bcb2b",
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/SFT_MASTER_SYLLABUS.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/SFT_MASTER_SYLLABUS.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "educational-charter",
+      "file": "content/education/educational-charter.md",
+      "title": "Educational charter",
+      "sub": "Authority, provenance, accessibility, safety, licensing and release rules for every educational work.",
+      "words": 1293,
+      "collection": "programme",
+      "format": "markdown",
+      "source_path": "edu/SFT_EDUCATIONAL_CHARTER.md",
+      "source_sha256": "sha256:29e0d46452dd6b720609b31a93a69fd23afb3d4e47b01972e5e4a1639d17e652",
+      "content_sha256": "sha256:29e0d46452dd6b720609b31a93a69fd23afb3d4e47b01972e5e4a1639d17e652",
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/SFT_EDUCATIONAL_CHARTER.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/SFT_EDUCATIONAL_CHARTER.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "knowledge-branch-map",
+      "file": "content/education/knowledge-branch-map.md",
+      "title": "Current knowledge branch map",
+      "sub": "The dated teaching boundary for every scientific branch, including what is complete, bounded or still open.",
+      "words": 2438,
+      "collection": "programme",
+      "format": "markdown",
+      "source_path": "edu/CURRENT_KNOWLEDGE_BRANCH_MAP.md",
+      "source_sha256": "sha256:9b0ed20dd63c32031360057891e2a5bdd91ea949920f902a17274da279263677",
+      "content_sha256": "sha256:9b0ed20dd63c32031360057891e2a5bdd91ea949920f902a17274da279263677",
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/CURRENT_KNOWLEDGE_BRANCH_MAP.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/CURRENT_KNOWLEDGE_BRANCH_MAP.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "education-versioning",
+      "file": "content/education/education-versioning.md",
+      "title": "Versioning and releases",
+      "sub": "How live, review, superseded and withdrawn educational editions are identified and preserved.",
+      "words": 532,
+      "collection": "programme",
+      "format": "markdown",
+      "source_path": "edu/VERSIONING_AND_RELEASES.md",
+      "source_sha256": "sha256:3175215c593e06d3f8b78c16036d6317fad97079b8a6addd5a400f571e249d38",
+      "content_sha256": "sha256:3175215c593e06d3f8b78c16036d6317fad97079b8a6addd5a400f571e249d38",
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/VERSIONING_AND_RELEASES.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/VERSIONING_AND_RELEASES.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e01-something-is-here",
+      "file": "content/education/sft-edu-e01-something-is-here-v2-0-0.html",
+      "title": "Something Is Here",
+      "sub": "Early Years / Foundation · Version 2.0.0 · Review. The Star Door Mystery",
+      "words": 1342,
+      "collection": "stage:early_years",
+      "format": "html",
+      "download_label": "Download accessible HTML",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>Something Is Here · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E01-something-is-here/accessible/student-book-v2.0.0.html",
+      "source_sha256": "sha256:52553f3a40f5a75b4f55af406514b96a196fc8ec488b5e2b792924d42f024e2e",
+      "content_sha256": "sha256:52553f3a40f5a75b4f55af406514b96a196fc8ec488b5e2b792924d42f024e2e",
+      "book_id": "SFT-EDU-E01-SOMETHING-IS-HERE",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E01-something-is-here/accessible/student-book-v2.0.0.html",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E01-something-is-here/accessible/student-book-v2.0.0.html",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e01-something-is-here-adult-guide",
+      "file": "content/education/sft-edu-e01-something-is-here-adult-guide-v2-0-0.md",
+      "title": "Something Is Here — adult guide",
+      "sub": "Guidance, activities, answers, accessibility and the exact scientific boundary for Version 2.0.0.",
+      "words": 2712,
+      "collection": "adult-guidance",
+      "format": "markdown",
+      "download_label": "Download guide",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>Something Is Here · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E01-something-is-here/adult-guide.md",
+      "source_sha256": "sha256:7b0675a47348173c7e618590982e3fd9fc35101ba8e8d4deb55c5625d0b75904",
+      "content_sha256": "sha256:7b0675a47348173c7e618590982e3fd9fc35101ba8e8d4deb55c5625d0b75904",
+      "book_id": "SFT-EDU-E01-SOMETHING-IS-HERE",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E01-something-is-here/adult-guide.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E01-something-is-here/adult-guide.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e02-one-whole-many-parts",
+      "file": "content/education/sft-edu-e02-one-whole-many-parts-v2-0-0.html",
+      "title": "One Whole, Many Parts",
+      "sub": "Early Years / Foundation · Version 2.0.0 · Review. The Moon Lantern Workshop",
+      "words": 1531,
+      "collection": "stage:early_years",
+      "format": "html",
+      "download_label": "Download accessible HTML",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>One Whole, Many Parts · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Mathematics</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E02-one-whole-many-parts/accessible/student-book-v2.0.0.html",
+      "source_sha256": "sha256:7d3201c6b4af8b8192e534717b517ab5ea2a3c211e1cdd0cd2136d30191729cd",
+      "content_sha256": "sha256:7d3201c6b4af8b8192e534717b517ab5ea2a3c211e1cdd0cd2136d30191729cd",
+      "book_id": "SFT-EDU-E02-ONE-WHOLE-MANY-PARTS",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E02-one-whole-many-parts/accessible/student-book-v2.0.0.html",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E02-one-whole-many-parts/accessible/student-book-v2.0.0.html",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e02-one-whole-many-parts-adult-guide",
+      "file": "content/education/sft-edu-e02-one-whole-many-parts-adult-guide-v2-0-0.md",
+      "title": "One Whole, Many Parts — adult guide",
+      "sub": "Guidance, activities, answers, accessibility and the exact scientific boundary for Version 2.0.0.",
+      "words": 3087,
+      "collection": "adult-guidance",
+      "format": "markdown",
+      "download_label": "Download guide",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>One Whole, Many Parts · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Mathematics</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E02-one-whole-many-parts/adult-guide.md",
+      "source_sha256": "sha256:b762c0fcf06ee4105e83c11e9e012e5219d62afd79b31b3041e16ec65ca3bdf0",
+      "content_sha256": "sha256:b762c0fcf06ee4105e83c11e9e012e5219d62afd79b31b3041e16ec65ca3bdf0",
+      "book_id": "SFT-EDU-E02-ONE-WHOLE-MANY-PARTS",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E02-one-whole-many-parts/adult-guide.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E02-one-whole-many-parts/adult-guide.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e03-the-fold-makes-a-pattern",
+      "file": "content/education/sft-edu-e03-the-fold-makes-a-pattern-v2-0-0.html",
+      "title": "The Fold Makes a Pattern",
+      "sub": "Early Years / Foundation · Version 2.0.0 · Review. The Turning-Light Trail",
+      "words": 1791,
+      "collection": "stage:early_years",
+      "format": "html",
+      "download_label": "Download accessible HTML",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>The Fold Makes a Pattern · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Mathematics</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E03-the-fold-makes-a-pattern/accessible/student-book-v2.0.0.html",
+      "source_sha256": "sha256:5e3809457d2c9d838af889c94bd1de746e2fd006225c49dbbca0b40c53f37d34",
+      "content_sha256": "sha256:5e3809457d2c9d838af889c94bd1de746e2fd006225c49dbbca0b40c53f37d34",
+      "book_id": "SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E03-the-fold-makes-a-pattern/accessible/student-book-v2.0.0.html",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E03-the-fold-makes-a-pattern/accessible/student-book-v2.0.0.html",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e03-the-fold-makes-a-pattern-adult-guide",
+      "file": "content/education/sft-edu-e03-the-fold-makes-a-pattern-adult-guide-v2-0-0.md",
+      "title": "The Fold Makes a Pattern — adult guide",
+      "sub": "Guidance, activities, answers, accessibility and the exact scientific boundary for Version 2.0.0.",
+      "words": 2467,
+      "collection": "adult-guidance",
+      "format": "markdown",
+      "download_label": "Download guide",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>The Fold Makes a Pattern · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Mathematics</dd></div><div><dt>Knowledge inspected</dt><dd>2026-07-30</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E03-the-fold-makes-a-pattern/adult-guide.md",
+      "source_sha256": "sha256:b900c60b6fa223d39483d74d86fb67f073229b23d910270b4d6c4eeb1fdf55c9",
+      "content_sha256": "sha256:b900c60b6fa223d39483d74d86fb67f073229b23d910270b4d6c4eeb1fdf55c9",
+      "book_id": "SFT-EDU-E03-THE-FOLD-MAKES-A-PATTERN",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E03-the-fold-makes-a-pattern/adult-guide.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E03-the-fold-makes-a-pattern/adult-guide.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e04-look-again-how-we-check",
+      "file": "content/education/sft-edu-e04-look-again-how-we-check-v2-0-0.html",
+      "title": "Look Again: How We Check",
+      "sub": "Early Years / Foundation · Version 2.0.0 · Review. The Garden Welcome Sign",
+      "words": 1846,
+      "collection": "stage:early_years",
+      "format": "html",
+      "download_label": "Download accessible HTML",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>Look Again: How We Check · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Engineering Translation</dd></div><div><dt>Knowledge inspected</dt><dd>2026-08-01</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E04-look-again-how-we-check/accessible/student-book-v2.0.0.html",
+      "source_sha256": "sha256:42ea0136e19db72c2461026d3217848976c6d944e22429e3cf218de82abc53ae",
+      "content_sha256": "sha256:42ea0136e19db72c2461026d3217848976c6d944e22429e3cf218de82abc53ae",
+      "book_id": "SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E04-look-again-how-we-check/accessible/student-book-v2.0.0.html",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E04-look-again-how-we-check/accessible/student-book-v2.0.0.html",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    },
+    {
+      "id": "sft-edu-e04-look-again-how-we-check-adult-guide",
+      "file": "content/education/sft-edu-e04-look-again-how-we-check-adult-guide-v2-0-0.md",
+      "title": "Look Again: How We Check — adult guide",
+      "sub": "Guidance, activities, answers, accessibility and the exact scientific boundary for Version 2.0.0.",
+      "words": 3260,
+      "collection": "adult-guidance",
+      "format": "markdown",
+      "download_label": "Download guide",
+      "context": "<aside class=\"education-context\"><strong>Early Years / Foundation · Review</strong><h2>Look Again: How We Check · Version 2.0.0</h2><p>This complete candidate is still undergoing scientific, educational, accessibility or safety review. Current edition in this snapshot.</p><dl><div><dt>Scientific branches</dt><dd>Foundation, Engineering Translation</dd></div><div><dt>Knowledge inspected</dt><dd>2026-08-01</dd></div><div><dt>Claim census at edition boundary</dt><dd>2751</dd></div><div><dt>Licence</dt><dd>CC BY 4.0</dd></div></dl></aside>",
+      "source_path": "edu/books/E04-look-again-how-we-check/adult-guide.md",
+      "source_sha256": "sha256:a06b8af2c4d251019c284a24e6777df4e5407d32aa1670eb090a66644516979d",
+      "content_sha256": "sha256:a06b8af2c4d251019c284a24e6777df4e5407d32aa1670eb090a66644516979d",
+      "book_id": "SFT-EDU-E04-LOOK-AGAIN-HOW-WE-CHECK",
+      "version": "2.0.0",
+      "status": "review",
+      "stage": "early_years",
+      "current": true,
+      "source_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E04-look-again-how-we-check/adult-guide.md",
+      "source_root_url": "https://github.com/MettaMazza/ernos-labs-sft-platform/blob/b0691f43f76f5584e603eed60536848e798f6c13/",
+      "raw_source_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/edu/books/E04-look-again-how-we-check/adult-guide.md",
+      "raw_root_url": "https://raw.githubusercontent.com/MettaMazza/ernos-labs-sft-platform/b0691f43f76f5584e603eed60536848e798f6c13/"
+    }
+  ]
+}

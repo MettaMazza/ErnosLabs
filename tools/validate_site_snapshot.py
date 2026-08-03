@@ -41,6 +41,7 @@ def main() -> int:
     archive = load("publication-archive.json").get("works", [])
     claims_document = load("claims.json")
     branches_document = load("branches.json")
+    education_document = load("education.json")
     claims = claims_document.get("claims", [])
     branches = branches_document.get("branches", [])
 
@@ -112,6 +113,50 @@ def main() -> int:
         "Branch publication inventory and live-census fields must remain separately available",
     )
 
+    require(education_document.get("schema") == "ernoslabs-sft-education/1", "Unknown education snapshot schema")
+    education_works = education_document.get("works", [])
+    education_editions = education_document.get("editions", [])
+    education_ids = [work.get("id") for work in education_works]
+    require(len(education_ids) == len(set(education_ids)), "Educational reader IDs are duplicated")
+    for work in education_works:
+        content = ROOT / str(work.get("file", ""))
+        require(content.is_file(), f"Educational reader content is missing: {work.get('file')}")
+        require(sha256(content) == work.get("content_sha256"), f"Educational content hash mismatch: {content}")
+        require(work.get("format") in {"markdown", "html"}, f"Unknown educational format: {work.get('format')}")
+    if education_document.get("source_present"):
+        require(
+            education_document.get("programme_document_count", 0) >= 1,
+            "The SFT Edu directory is present but has no programme documentation",
+        )
+    book_ids = {edition.get("book_id") for edition in education_editions}
+    require(education_document.get("book_count") == len(book_ids), "Educational book count is stale")
+    require(education_document.get("edition_count") == len(education_editions), "Educational edition count is stale")
+    current_editions = [edition for edition in education_editions if edition.get("current")]
+    require(
+        education_document.get("current_book_count") == len(current_editions),
+        "Current educational book count is stale",
+    )
+    require(
+        len({edition.get("book_id") for edition in current_editions}) == len(current_editions),
+        "An educational book has more than one current edition",
+    )
+    require(
+        all(
+            edition.get("status") in {"planning", "draft", "review", "live", "superseded", "withdrawn"}
+            and edition.get("stage")
+            and edition.get("version")
+            for edition in education_editions
+        ),
+        "Educational edition metadata is incomplete",
+    )
+    education_reader = ROOT / "assets" / "js" / "education-data.js"
+    require(education_reader.is_file(), "The generated education reader catalogue is missing")
+    education_reader_source = education_reader.read_text(encoding="utf-8")
+    require(
+        all(work["file"] in education_reader_source for work in education_works),
+        "An educational work is absent from the Syllabus reader",
+    )
+
     validation = manifest.get("validation", {})
     require(not validation.get("missing_claim_packages"), "The snapshot has missing local claim packages")
     require(
@@ -119,6 +164,18 @@ def main() -> int:
         "The snapshot has claim dependencies outside the whole-model census",
     )
     require(manifest.get("publication_count") == len(publications), "Manifest publication count is stale")
+    require(
+        manifest.get("education_book_count") == education_document.get("book_count"),
+        "Manifest education book count is stale",
+    )
+    require(
+        manifest.get("education_current_book_count") == education_document.get("current_book_count"),
+        "Manifest current education book count is stale",
+    )
+    require(
+        manifest.get("education_edition_count") == education_document.get("edition_count"),
+        "Manifest education edition count is stale",
+    )
     require(manifest.get("whole_model_claim_count") == len(claims), "Manifest claim count is stale")
     require(manifest.get("publication_inventory_branch_count") == len(branches), "Manifest branch count is stale")
 

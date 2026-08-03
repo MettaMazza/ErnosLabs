@@ -45,6 +45,15 @@ else
   echo "[-] no SFT source repository or validated static snapshot is available"; exit 1
 fi
 
+# Refresh Maria's blog from the local Markdown folder when it is available.
+# Production cannot see a personal Desktop, so it validates and publishes the
+# generated snapshot checked into this repository instead. Set BLOG_POSTS_ROOT
+# to use a different source folder in another build environment.
+echo "[*] generating Blog snapshot"
+if ! python3 "$ROOT/tools/sync_blog.py"; then
+  echo "[-] Blog snapshot generation failed"; exit 1
+fi
+
 if [ ! -x "$ERNOS" ]; then
   echo "[-] ernos compiler not found at $ERNOS (set ERNOS=/path/to/ernos)"; exit 1
 fi
