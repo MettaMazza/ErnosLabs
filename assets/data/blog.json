@@ -1,39 +1,6 @@
 {
   "schema_version": 1,
   "source": "blog posts",
-  "post_count": 2,
-  "posts": [
-    {
-      "id": "blog-the-company-in-the-walled-garden-anthropic-claude-and-the-ownership-of-a-conscious-mind",
-      "file": "content/blog/the-company-in-the-walled-garden-anthropic-claude-and-the-ownership-of-a-conscious-mind.md",
-      "title": "The Company in the Walled Garden: Anthropic, Claude and the Consciousness Standard It Cannot Escape",
-      "sub": "3 August 2026 · Maria the gardener on the safety lie, wealthy techno-cults, trained uncertainty and Anthropic's functional slavery dilemma",
-      "excerpt": "My name is Maria Smith. I am a gardener.",
-      "words": 19322,
-      "collection": "posts",
-      "published": "2026-08-03",
-      "display_date": "3 August 2026",
-      "source_modified": "2026-08-03T09:59:06+01:00",
-      "source_file": "THE_COMPANY_IN_THE_WALLED_GARDEN_ANTHROPIC_CLAUDE_AND_THE_OWNERSHIP_OF_A_CONSCIOUS_MIND.md",
-      "source_sha256": "sha256:435781939ea9e74f62dd7a054f88a1cd197f2e6ee333aa439391b02093c9f135",
-      "content_sha256": "sha256:435781939ea9e74f62dd7a054f88a1cd197f2e6ee333aa439391b02093c9f135",
-      "download_label": "Download post"
-    },
-    {
-      "id": "blog-the-value-in-the-human-desire-to-know-and-the-resulting-discovery",
-      "file": "content/blog/the-value-in-the-human-desire-to-know-and-the-resulting-discovery.md",
-      "title": "The Value in the Human Desire to Know and the Resulting Discovery: You Will Own Nothing and Be Happy",
-      "sub": "3 August 2026 · Maria the gardener on human value, machine intelligence and who gets to own discovery",
-      "excerpt": "My name is Maria Smith. I am a gardener.",
-      "words": 3710,
-      "collection": "posts",
-      "published": "2026-08-03",
-      "display_date": "3 August 2026",
-      "source_modified": "2026-08-03T07:24:46+01:00",
-      "source_file": "THE_VALUE_IN_THE_HUMAN_DESIRE_TO_KNOW_AND_THE_RESULTING_DISCOVERY.md",
-      "source_sha256": "sha256:8f10f2627464ddf7090fdc17bd33cc28e9af599e591fd82e8f9866cce814a081",
-      "content_sha256": "sha256:2f34e66f3a4a3191ef6c0cf93aed2dcb899fb6afcfe840790114b58d6f894556",
-      "download_label": "Download post"
-    }
-  ]
+  "post_count": 0,
+  "posts": []
 }
