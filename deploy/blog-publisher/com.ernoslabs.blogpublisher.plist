@@ -7,7 +7,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
-    <string>/Users/mettamazza/Desktop/ErnosLabs/tools/publish_blog.py</string>
+    <string>/Users/mettamazza/Library/Application Support/ErnosLabs Blog Publisher/repo/tools/publish_blog.py</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>

@@ -192,10 +192,21 @@ def validate_retained_snapshot() -> None:
             raise RuntimeError(f"Retained blog post hash is invalid: {path.relative_to(ROOT)}")
 
 
+def retained_post_count() -> int:
+    if not DATA_FILE.is_file():
+        return 0
+    try:
+        snapshot = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+        return int(snapshot.get("post_count", 0))
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-root", type=Path, help="Folder containing Markdown blog posts")
     parser.add_argument("--require-source", action="store_true", help="Fail instead of retaining the generated snapshot")
+    parser.add_argument("--allow-empty", action="store_true", help="Explicitly allow an empty source to remove every published post")
     args = parser.parse_args()
     configured = args.source_root or (Path(os.environ["BLOG_POSTS_ROOT"]) if os.environ.get("BLOG_POSTS_ROOT") else DEFAULT_SOURCE)
     source = configured.expanduser().resolve()
@@ -209,6 +220,13 @@ def main() -> int:
         return 0
 
     posts = discover(source)
+    if not posts and retained_post_count() and not args.allow_empty:
+        print(
+            "Blog source returned no Markdown files while published posts exist; refusing to erase the Blog. "
+            "Check folder permissions or pass --allow-empty for an intentional full removal.",
+            file=sys.stderr,
+        )
+        return 1
     write_snapshot(source, posts)
     print(f"Generated Blog from {len(posts)} Markdown post(s) in {source}")
     return 0
