@@ -106,6 +106,7 @@ def discover(source: Path) -> list[dict[str, object]]:
         excerpt = first_paragraph(text)
         slug = unique_slug(slugify(path.stem), used)
         published, display_date = publication_date(text, path)
+        source_modified = datetime.fromtimestamp(path.stat().st_mtime).astimezone().isoformat(timespec="seconds")
         target = CONTENT_DIR / f"{slug}.md"
         rendered = public_markdown(text).encode("utf-8")
         posts.append({
@@ -118,6 +119,7 @@ def discover(source: Path) -> list[dict[str, object]]:
             "collection": "posts",
             "published": published,
             "display_date": display_date,
+            "source_modified": source_modified,
             "source_file": path.relative_to(source).as_posix(),
             "source_sha256": sha256(raw),
             "content_sha256": sha256(rendered),
@@ -126,7 +128,10 @@ def discover(source: Path) -> list[dict[str, object]]:
             "_target_path": target,
             "_rendered": rendered,
         })
-    posts.sort(key=lambda post: (str(post["published"]), str(post["title"])), reverse=True)
+    posts.sort(
+        key=lambda post: (str(post["published"]), str(post["source_modified"]), str(post["title"])),
+        reverse=True,
+    )
     return posts
 
 

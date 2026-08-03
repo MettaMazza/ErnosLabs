@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ernoslabs.blogpublisher</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/mettamazza/Desktop/ErnosLabs/tools/publish_blog.py</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>BLOG_POSTS_ROOT</key>
+    <string>/Users/mettamazza/Desktop/blog posts</string>
+    <key>BLOG_PUBLISH_CHECKOUT</key>
+    <string>/Users/mettamazza/Library/Application Support/ErnosLabs Blog Publisher/repo</string>
+  </dict>
+  <key>WatchPaths</key>
+  <array>
+    <string>/Users/mettamazza/Desktop/blog posts</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>120</integer>
+  <key>ThrottleInterval</key>
+  <integer>20</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>/Users/mettamazza/Library/Logs/ErnosLabs/blog-publisher.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/mettamazza/Library/Logs/ErnosLabs/blog-publisher.log</string>
+</dict>
+</plist>
