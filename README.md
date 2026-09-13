@@ -1,5 +1,18 @@
 # Ernos Labs
 
+## Public site closed — 13 September 2026
+
+At Maria's direction, ernoslabs.com deploys only the closed-garden splash in
+`deploy/closed/index.html`. Its identical 404 page has no navigation, so old URLs
+do not expose the retained pages or files. `tools/build_closed_site.py` packages
+exactly five files; the automatic six-hour science-publication schedule is removed.
+The previous website remains in this repository and its Git history for restoration.
+Do not restore public content or run the legacy rollback without Maria's explicit
+instruction. The repository remains public to retain the existing Pages hosting;
+this closure removes website access, not access to this source archive.
+
+The remainder of this README describes the preserved, currently unpublished site.
+
 An interactive showcase of Maria Smith's work — a place where visitors **use** the
 projects in the browser, not just read about them. A static site, deployable to GitHub
 Pages or Netlify, with no backend.
