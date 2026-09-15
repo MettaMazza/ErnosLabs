@@ -63,7 +63,41 @@
       const saved = localStorage.getItem("kokoroEndpoint");
       if (saved) return saved;
     } catch (e) {}
-    return window.ERNOS_API || window.ERNOS_FUNNEL || KOKORO_ENDPOINT;
+    return window.ERNOS_API || KOKORO_ENDPOINT;
+  }
+
+  function pingEndpoint(base, timeoutMs) {
+    return new Promise(function (resolve) {
+      if (!base) return resolve(false);
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => { ctrl.abort(); resolve(false); }, timeoutMs || 1500);
+      fetch(String(base).replace(/\/+$/, "") + "/ping", { signal: ctrl.signal })
+        .then(r => { clearTimeout(timer); resolve(!!r.ok); })
+        .catch(() => { clearTimeout(timer); resolve(false); });
+    });
+  }
+
+  // Find Kokoro independently of the shared archive API. The local service is
+  // checked first so Maria's browser uses its real ONNX voice immediately;
+  // public visitors can still use the shared backend or funnel when present.
+  async function discoverEndpoint() {
+    const candidates = [];
+    try {
+      if (window.KOKORO_ENDPOINT) candidates.push(String(window.KOKORO_ENDPOINT));
+      if (window.ERNOS_API) candidates.push(String(window.ERNOS_API));
+      const saved = localStorage.getItem("kokoroEndpoint");
+      if (saved) candidates.push(saved);
+    } catch (e) {}
+    candidates.push(KOKORO_ENDPOINT);
+    try { if (window.ERNOS_FUNNEL) candidates.push(window.ERNOS_FUNNEL); } catch (e) {}
+    const seen = new Set();
+    for (const candidate of candidates) {
+      const base = String(candidate || "").replace(/\/+$/, "");
+      if (!base || seen.has(base)) continue;
+      seen.add(base);
+      if (await pingEndpoint(base, base === KOKORO_ENDPOINT ? 1200 : 2500)) return base;
+    }
+    return null;
   }
 
   // ---- text sanitisation: never speak markdown or stray symbols ----------
@@ -336,15 +370,14 @@
     const chunks = chunkText(clean);
     readAlong = buildReadAlong(chunks);
 
-    // api-base resolves the public source machine asynchronously. Always wait
-    // for that health check (unless the page explicitly supplied an endpoint)
-    // so a stale saved development address cannot win a race at page load.
-    if (!window.KOKORO_ENDPOINT && window.ernosApiReady && typeof window.ernosApiReady.then === "function") {
+    // Resolve Kokoro separately from the shared archive API. This probes the
+    // local server first instead of waiting for an unavailable funnel and then
+    // silently selecting the browser voice.
+    if (!window.KOKORO_ENDPOINT) {
       emit("loading", 0, 0);
       setStatus("loading", "Finding Kokoro…");
-      try { await window.ernosApiReady; } catch (e) {}
+      try { ep = await discoverEndpoint(); } catch (e) { ep = null; }
       if (session !== my) return;
-      ep = resolveEndpoint();
     }
 
     if (!ep) { return speakBrowser(clean, my, chunks); } // no server → instant browser voice
