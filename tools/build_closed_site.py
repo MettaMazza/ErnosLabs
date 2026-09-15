@@ -16,7 +16,9 @@ PUBLIC_ASSETS = (
     "js/kokoro-tts.js",
     "js/site.js",
     "js/decent.js",
+    "js/sft.js",
 )
+PUBLIC_DATA_DIRS = ("sft",)
 
 
 class CheckSplash(HTMLParser):
@@ -39,7 +41,7 @@ def main():
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     OUTPUT.mkdir()
-    shutil.copyfile(source, OUTPUT / "index.html")
+    shutil.copyfile(ROOT / "index.html", OUTPUT / "index.html")
     shutil.copyfile(source, OUTPUT / "404.html")
     shutil.copyfile(ROOT / "CNAME", OUTPUT / "CNAME")
     shutil.copyfile(ROOT / "ernosdecent.html", OUTPUT / "ernosdecent.html")
@@ -47,14 +49,14 @@ def main():
         destination = OUTPUT / "assets" / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / "assets" / relative, destination)
-    (OUTPUT / "robots.txt").write_text(
-        "User-agent: *\nDisallow: /\nAllow: /ernosdecent.html\nAllow: /assets/\n"
-    )
+    for directory in PUBLIC_DATA_DIRS:
+        shutil.copytree(ROOT / "assets" / "data" / directory, OUTPUT / "assets" / "data" / directory)
+    (OUTPUT / "robots.txt").write_text("User-agent: *\nAllow: /\n")
     (OUTPUT / ".nojekyll").write_text("")
     assert {p.name for p in OUTPUT.iterdir()} == EXPECTED
     assert all((OUTPUT / "assets" / relative).is_file() for relative in PUBLIC_ASSETS)
-    assert (OUTPUT / "index.html").read_bytes() == (OUTPUT / "404.html").read_bytes()
-    print("PASS: splash-only root plus the explicitly reopened ErnosDecent page and runtime assets.")
+    assert (OUTPUT / "404.html").read_bytes() == source.read_bytes()
+    print("PASS: reopened landing page and ErnosDecent page; all other paths remain the splash.")
 
 
 if __name__ == "__main__":
