@@ -75,6 +75,12 @@ def health():
     return {"ok": True, "service": "kokoro-local"}
 
 
+@app.get("/ping")
+def ping():
+    """Health route used by the Ernos Labs browser endpoint resolver."""
+    return {"ok": True, "service": "kokoro-local"}
+
+
 @app.post("/v1/audio/speech")
 def speech(req: SpeechRequest):
     # kokoro_onnx shares one inference session. Serialising calls avoids

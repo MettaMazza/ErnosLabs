@@ -22,9 +22,12 @@
   // When it's running, read-aloud uses the real local Fable voice instantly.
   // When it's not (any other visitor), the fetch fails fast and we fall back to
   // the browser voice. Override with setEndpoint()/window.KOKORO_ENDPOINT.
-  // Resolved by api-base.js: same-origin when the source machine serves the
-  // site, else the funnel. Read lazily (at play time) so resolution is done.
-  const KOKORO_ENDPOINT = null;
+  // Resolved by api-base.js when the shared Ernos backend is available. Keep a
+  // loopback endpoint as the owner-machine fallback: the local ONNX server is
+  // deliberately separate from the shared archive backend, so it must not be
+  // inferred from window.ERNOS_API. Visitors without the local service still
+  // fail fast and use the browser voice below.
+  const KOKORO_ENDPOINT = "http://127.0.0.1:8880";
   const DEFAULT_VOICE = "bm_fable";
   // api-base.js already detects a truly offline source machine before play.
   // Give an online Kokoro enough room to queue briefly under concurrent use
