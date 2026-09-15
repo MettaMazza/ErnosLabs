@@ -2838,6 +2838,54 @@ a.pj-dl:not(.btn),
   .blog-page .doc > p:nth-child(3) { margin-bottom:38px; }
 }
 
+/* Reader word actions and personal reading state. */
+.reader-bookmarks {
+  max-width: 210px;
+  color: var(--ink-1);
+  cursor: pointer;
+}
+.reader-bookmarks:disabled { opacity: .62; cursor: default; }
+.reader-word-menu {
+  position: fixed;
+  z-index: 80;
+  min-width: 210px;
+  max-width: min(320px, calc(100vw - 24px));
+  padding: 12px;
+  border: 1px solid rgba(98,243,200,.34);
+  border-radius: 14px;
+  background: rgba(9,14,23,.97);
+  box-shadow: 0 18px 44px -20px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.035);
+  backdrop-filter: blur(18px) saturate(130%);
+}
+.reader-word-menu strong {
+  display: block;
+  margin: 0 4px 10px;
+  color: var(--ink-0);
+  font: 600 .92rem/1.3 var(--font-display);
+  overflow-wrap: anywhere;
+}
+.reader-word-menu__actions { display: flex; gap: 8px; }
+.reader-word-menu button {
+  flex: 1;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid rgba(151,168,196,.22);
+  border-radius: 9px;
+  background: var(--bg-2);
+  color: var(--ink-1);
+  font: 600 .78rem var(--font-display);
+  cursor: pointer;
+}
+.reader-word-menu button:hover,
+.reader-word-menu button:focus-visible { border-color: var(--glow); color: var(--ink-0); }
+
+@media (max-width: 720px) {
+  .reader__bar #reader-bookmark { grid-column: 1 / 3; grid-row: 6; }
+  .reader__bar #reader-bookmarks { grid-column: 3 / -1; grid-row: 6; width: 100%; max-width: none; }
+  .reader__bar #reader-source { grid-row: 7; }
+  .reader-word-menu { position: fixed; }
+}
+
 /* ──────────────────────────────────────────────────────────────────────────
    ERNOS LABS V2 — homepage
    ──────────────────────────────────────────────────────────────────────── */

@@ -43,6 +43,7 @@
   let keepAlive = null;      // browser-voice keep-alive (Chrome long-speech bug)
   let onStatusChange = null; // (status, detail)
   let onProgress = null;     // ({ phase, current, total, fraction })
+  let onPosition = null;     // ({ sourceIndex, word, chunkIndex, wordIndex })
   let readAlong = null;      // DOM word map for the active narration
   let clearHighlightTimer = null;
   let followSuppressedUntil = 0;
@@ -186,6 +187,7 @@
           const spoken = sanitize(match[0]).match(WORD_PATTERN) || [];
           for (const word of spoken) {
             entries.push({
+              sourceIndex: entries.length,
               node,
               start: match.index,
               end: match.index + match[0].length,
@@ -216,10 +218,10 @@
     return words;
   }
 
-  function buildReadAlong(chunks) {
+  function buildReadAlong(chunks, sourceStart) {
     const source = sourceWordMap();
     const mappedChunks = chunks.map(chunkWords);
-    let sourceIndex = 0;
+    let sourceIndex = Math.max(0, Number(sourceStart) || 0);
     for (const words of mappedChunks) {
       for (const word of words) {
         const wanted = normalizedWord(word.text);
@@ -302,7 +304,15 @@
     if (!readAlong) return;
     const words = readAlong.chunks[chunkIndex];
     const word = words && words[Math.max(0, Math.min(wordIndex, words.length - 1))];
-    if (word && word.target) paintWord(word.target, chunkIndex + ":" + wordIndex);
+    if (word && word.target) {
+      paintWord(word.target, chunkIndex + ":" + wordIndex);
+      if (onPosition) onPosition({
+        sourceIndex: word.target.sourceIndex,
+        word: word.target.word,
+        chunkIndex,
+        wordIndex,
+      });
+    }
   }
 
   function showReadProgress(chunkIndex, fraction) {
@@ -358,7 +368,7 @@
   }
 
   // ---- the player --------------------------------------------------------
-  async function play(text, voice) {
+  async function play(text, voice, options) {
     stop();
     const clean = sanitize(text);
     if (!clean) return;
@@ -368,7 +378,8 @@
     let ep = resolveEndpoint();
     const v = voice || DEFAULT_VOICE;
     const chunks = chunkText(clean);
-    readAlong = buildReadAlong(chunks);
+    const opts = options || {};
+    readAlong = buildReadAlong(chunks, opts.sourceStart);
 
     // Resolve Kokoro separately from the shared archive API. This probes the
     // local server first instead of waiting for an unavailable funnel and then
@@ -579,6 +590,17 @@
     hasEndpoint: () => !!resolveEndpoint(),
     setOnStatusChange(fn) { onStatusChange = fn; },
     setOnProgress(fn) { onProgress = fn; },
+    setOnPosition(fn) { onPosition = fn; },
+    getSourcePosition(node, offset) {
+      const source = sourceWordMap();
+      const n = Number(offset) || 0;
+      let nearest = null;
+      for (const entry of source) {
+        if (entry.node === node && n >= entry.start && n <= entry.end) return entry;
+        if (!nearest && entry.node === node && n < entry.start) nearest = entry;
+      }
+      return nearest;
+    },
   };
 
   // A deliberate touch or wheel gesture temporarily wins over auto-follow;
