@@ -2921,7 +2921,8 @@ a.pj-dl:not(.btn),
 @media (max-width: 720px) {
   .reader__bar #reader-bookmark { grid-column: 1 / 3; grid-row: 6; }
   .reader__bar #reader-bookmarks { grid-column: 3 / -1; grid-row: 6; width: 100%; max-width: none; }
-  .reader__bar #reader-source { grid-row: 7; }
+  .reader__bar #reader-bookmark-delete { grid-column: 1 / 3; grid-row: 7; }
+  .reader__bar #reader-source { grid-column: 3 / -1; grid-row: 7; text-align: center; }
   .reader-word-menu { position: fixed; }
 }
 
