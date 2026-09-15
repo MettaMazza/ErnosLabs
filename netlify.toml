@@ -1,13 +1,14 @@
-# Keep alternate deployments closed too; never publish the retained repo root.
+# Ernos Labs — static deploy. The site is prebuilt: src/*.ep is compiled to
+# assets/js/*.js by build.sh before deploying (Netlify does not run the Ernos
+# compiler), so there is no build step here — just publish the repo root.
 [build]
-  publish = "_closed_site"
-  command = "python3 tools/build_closed_site.py"
+  publish = "."
+  command = ""
 
 [[headers]]
-  for = "/*"
+  for = "/assets/*"
   [headers.values]
-    Cache-Control = "no-store"
-    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "public, max-age=3600"
 
 # Cross-Origin isolation for multi-threaded WASM (Kokoro TTS)
 [[headers]]

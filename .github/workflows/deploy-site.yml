@@ -1,9 +1,14 @@
-name: Deploy closed Ernos Labs garden
+name: Build and deploy Ernos Labs
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      sft_ref:
+        description: SFT branch, tag, or commit to publish
+        required: false
+        default: main
 
 permissions:
   contents: read
@@ -12,7 +17,7 @@ permissions:
 
 concurrency:
   group: ernoslabs-production
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -21,16 +26,63 @@ jobs:
       - name: Check out Ernos Labs
         uses: actions/checkout@v4
 
-      - name: Build and validate splash-only site
-        run: python3 tools/build_closed_site.py
+      - name: Select SFT revision
+        id: sft
+        shell: bash
+        run: |
+          requested="${{ inputs.sft_ref }}"
+          if [ -z "$requested" ]; then requested="main"; fi
+          echo "ref=$requested" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the SFT model
+        uses: actions/checkout@v4
+        with:
+          repository: MettaMazza/ernos-labs-sft-platform
+          ref: ${{ steps.sft.outputs.ref }}
+          path: .sft-source
+
+      - name: Generate the current public science snapshot
+        run: python3 tools/sync_sft_site.py --sft-root .sft-source --require-clean
+
+      - name: Validate publications, claims, dependencies, receipts and hashes
+        run: python3 tools/validate_site_snapshot.py
+
+      - name: Validate the generated Blog snapshot
+        run: python3 tools/sync_blog.py
+
+      - name: Refresh browser cache versions
+        run: python3 tools/stamp_assets.py
+
+      - name: Prepare the public site
+        shell: bash
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude='.git/' \
+            --exclude='.gitignore' \
+            --exclude='.github/' \
+            --exclude='.sft-source/' \
+            --exclude='.claude/' \
+            --exclude='_site/' \
+            --exclude='src/' \
+            --exclude='tools/' \
+            --exclude='demos/' \
+            --exclude='deploy/' \
+            --exclude='research/' \
+            --exclude='canvas/' \
+            --exclude='stdlib' \
+            --exclude='build.sh' \
+            --exclude='serve.py' \
+            --exclude='README.md' \
+            --exclude='netlify.toml'
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload only the closed-garden splash
+      - name: Upload the complete static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _closed_site
+          path: _site
 
   deploy:
     environment:
@@ -39,6 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy closed-garden splash
+      - name: Deploy the complete site
         id: deployment
         uses: actions/deploy-pages@v4

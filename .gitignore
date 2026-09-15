@@ -4,4 +4,3 @@ canvas/canvas
 canvas/*_compiled.c
 canvas/*_native.*
 /stdlib
-/_closed_site/

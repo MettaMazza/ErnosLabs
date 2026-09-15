@@ -1,14 +1,9 @@
 # Ernos Labs
 
-## Public site limited — 15 September 2026
+## Public site
 
-At Maria's direction, ernoslabs.com publicly serves the main landing page and
-`ernosdecent.html`, while unknown paths continue to show the closed-garden splash.
-`tools/build_closed_site.py` packages those two pages with only their required
-runtime assets; no other retained site pages are exposed. The repository remains
-public to retain the existing Pages hosting.
-
-The remainder of this README describes the preserved, currently unpublished site.
+Ernos Labs publicly serves the complete validated static site from this repository.
+The repository remains public to retain the existing Pages hosting.
 
 An interactive showcase of Maria Smith's work — a place where visitors **use** the
 projects in the browser, not just read about them. A static site, deployable to GitHub
