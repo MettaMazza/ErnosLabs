@@ -341,7 +341,10 @@
       if (refreshTimer) clearTimeout(refreshTimer);
       refreshTimer = setTimeout(() => { refreshTimer = null; refreshPage(); }, 0);
     });
-    observer.observe(doc, { childList: true, subtree: true });
+    // Only watch direct content replacement (open/search). Observing the
+    // entire subtree makes mobile browsers retain mutation records for every
+    // node in the very large Library books and can stall while they load.
+    observer.observe(doc, { childList: true });
   }
 
   function refreshPage() {
