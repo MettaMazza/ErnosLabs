@@ -1,11 +1,22 @@
-"""Publish ONLY the closed-garden splash, never the retained source archive."""
+"""Publish the closed splash plus the explicitly reopened ErnosDecent page."""
 from html.parser import HTMLParser
 from pathlib import Path
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "_closed_site"
-EXPECTED = {"index.html", "404.html", "robots.txt", "CNAME", ".nojekyll"}
+EXPECTED = {
+    "index.html", "404.html", "robots.txt", "CNAME", ".nojekyll",
+    "ernosdecent.html", "assets",
+}
+PUBLIC_ASSETS = (
+    "css/site.css",
+    "js/api-base.js",
+    "js/spa.js",
+    "js/kokoro-tts.js",
+    "js/site.js",
+    "js/decent.js",
+)
 
 
 class CheckSplash(HTMLParser):
@@ -25,16 +36,25 @@ def main():
     ):
         assert phrase in html
     assert (ROOT / "CNAME").read_text().strip() == "ernoslabs.com"
-    OUTPUT.mkdir(exist_ok=True)
-    assert all(p.is_file() and p.name in EXPECTED and not p.is_symlink() for p in OUTPUT.iterdir()), "Refusing unexpected output files"
+    if OUTPUT.exists():
+        shutil.rmtree(OUTPUT)
+    OUTPUT.mkdir()
     shutil.copyfile(source, OUTPUT / "index.html")
     shutil.copyfile(source, OUTPUT / "404.html")
     shutil.copyfile(ROOT / "CNAME", OUTPUT / "CNAME")
-    (OUTPUT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
+    shutil.copyfile(ROOT / "ernosdecent.html", OUTPUT / "ernosdecent.html")
+    for relative in PUBLIC_ASSETS:
+        destination = OUTPUT / "assets" / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / "assets" / relative, destination)
+    (OUTPUT / "robots.txt").write_text(
+        "User-agent: *\nDisallow: /\nAllow: /ernosdecent.html\nAllow: /assets/\n"
+    )
     (OUTPUT / ".nojekyll").write_text("")
     assert {p.name for p in OUTPUT.iterdir()} == EXPECTED
+    assert all((OUTPUT / "assets" / relative).is_file() for relative in PUBLIC_ASSETS)
     assert (OUTPUT / "index.html").read_bytes() == (OUTPUT / "404.html").read_bytes()
-    print("PASS: five-file splash-only deployment; no content, assets, scripts or navigation.")
+    print("PASS: splash-only root plus the explicitly reopened ErnosDecent page and runtime assets.")
 
 
 if __name__ == "__main__":

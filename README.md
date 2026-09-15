@@ -1,15 +1,12 @@
 # Ernos Labs
 
-## Public site closed — 13 September 2026
+## Public site limited — 15 September 2026
 
-At Maria's direction, ernoslabs.com deploys only the closed-garden splash in
-`deploy/closed/index.html`. Its identical 404 page has no navigation, so old URLs
-do not expose the retained pages or files. `tools/build_closed_site.py` packages
-exactly five files; the automatic six-hour science-publication schedule is removed.
-The previous website remains in this repository and its Git history for restoration.
-Do not restore public content or run the legacy rollback without Maria's explicit
-instruction. The repository remains public to retain the existing Pages hosting;
-this closure removes website access, not access to this source archive.
+At Maria's direction, ernoslabs.com keeps the closed-garden splash at the root and
+on unknown paths while explicitly reopening `ernosdecent.html` as a public project
+page. `tools/build_closed_site.py` packages that page with only its required runtime
+assets; no other retained site pages are exposed. The repository remains public to
+retain the existing Pages hosting.
 
 The remainder of this README describes the preserved, currently unpublished site.
 
