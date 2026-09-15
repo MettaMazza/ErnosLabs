@@ -266,6 +266,12 @@
   function paintWord(target, key) {
     if (!target || !target.node || !target.node.isConnected || !readAlong) return;
     if (readAlong.activeKey === key) return;
+    // Some mobile WebKit versions can retain an old CSS Highlight range after
+    // the reader DOM changes. Remove the previous range before painting the
+    // next word so only the current word remains highlighted.
+    try { if (window.CSS && CSS.highlights) CSS.highlights.delete("ernos-read-word"); } catch (e) {}
+    const previousOverlay = document.getElementById("tts-word-overlay");
+    if (previousOverlay) previousOverlay.remove();
     readAlong.activeKey = key;
     const range = document.createRange();
     try { range.setStart(target.node, target.start); range.setEnd(target.node, target.end); }

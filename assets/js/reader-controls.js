@@ -20,6 +20,7 @@
   let button = null;
   let bookmarkButton = null;
   let bookmarkSelect = null;
+  let bookmarkDelete = null;
   let popover = null;
   let observedDoc = null;
   let observer = null;
@@ -243,14 +244,18 @@
     updateButton();
   }
 
-  function addBookmark(point) {
+  function addBookmark(point, caption) {
     if (!point || !workKey()) return;
+    if (caption === undefined) caption = window.prompt("Caption for this bookmark", point.text || "Bookmark");
+    if (caption === null) return;
+    caption = String(caption || point.text || "Bookmark").trim().slice(0, 120);
+    if (!caption) caption = point.text || "Bookmark";
     const list = storageRead(bookmarkKey(), []);
     const item = {
       id: String(Date.now()),
       sourceIndex: Number.isFinite(point.sourceIndex) ? point.sourceIndex : null,
       word: point.sourceWord || normalize(point.text),
-      label: (point.text || point.sourceWord || "Bookmark").slice(0, 42),
+      label: caption,
       createdAt: new Date().toISOString(),
     };
     list.unshift(item);
@@ -275,6 +280,7 @@
     });
     if (selectedId) bookmarkSelect.value = selectedId;
     bookmarkSelect.disabled = !list.length;
+    if (bookmarkDelete) bookmarkDelete.disabled = !bookmarkSelect.value;
   }
 
   function jumpToBookmark(id) {
@@ -285,7 +291,18 @@
     currentPoint = point;
     savePosition(point);
     point.range.scrollIntoView({ behavior: "smooth", block: "center" });
-    bookmarkSelect.value = "";
+    bookmarkSelect.value = id;
+    if (bookmarkDelete) bookmarkDelete.disabled = false;
+  }
+
+  function deleteBookmark() {
+    if (!bookmarkSelect || !bookmarkSelect.value) return;
+    const id = bookmarkSelect.value;
+    const list = storageRead(bookmarkKey(), []);
+    if (!list.some((item) => item.id === id)) return;
+    if (window.confirm && !window.confirm("Delete this bookmark?")) return;
+    storageWrite(bookmarkKey(), list.filter((item) => item.id !== id));
+    renderBookmarks();
   }
 
   function showPopover(point, x, y) {
@@ -293,10 +310,11 @@
     const panel = document.createElement("div");
     panel.className = "reader-word-menu";
     panel.setAttribute("role", "dialog");
-    panel.innerHTML = "<strong></strong><div class=\"reader-word-menu__actions\"><button type=\"button\" data-action=\"start\">Read from here</button><button type=\"button\" data-action=\"bookmark\">Bookmark</button></div>";
+    panel.innerHTML = "<button class=\"reader-word-menu__close\" type=\"button\" aria-label=\"Close word menu\" data-action=\"close\">×</button><strong></strong><label class=\"reader-word-menu__label\">Bookmark caption<input type=\"text\" data-caption maxlength=\"120\" placeholder=\"A short note\"></label><div class=\"reader-word-menu__actions\"><button type=\"button\" data-action=\"start\">Read from here</button><button type=\"button\" data-action=\"bookmark\">Save bookmark</button></div>";
     panel.querySelector("strong").textContent = "“" + point.text + "”";
+    panel.querySelector("[data-action='close']").addEventListener("click", closePopover);
     panel.querySelector("[data-action='start']").addEventListener("click", () => startFromPoint(point));
-    panel.querySelector("[data-action='bookmark']").addEventListener("click", () => addBookmark(point));
+    panel.querySelector("[data-action='bookmark']").addEventListener("click", () => addBookmark(point, panel.querySelector("[data-caption]").value));
     document.body.appendChild(panel);
     const pad = 12;
     const rect = panel.getBoundingClientRect();
@@ -384,11 +402,20 @@
       bookmarkSelect.id = "reader-bookmarks";
       bookmarkSelect.setAttribute("aria-label", "Saved bookmarks");
       bookmarkSelect.addEventListener("change", () => jumpToBookmark(bookmarkSelect.value));
+      bookmarkDelete = document.createElement("button");
+      bookmarkDelete.className = "r-btn reader-bookmark-delete";
+      bookmarkDelete.id = "reader-bookmark-delete";
+      bookmarkDelete.type = "button";
+      bookmarkDelete.textContent = "Delete";
+      bookmarkDelete.title = "Delete selected bookmark";
+      bookmarkDelete.disabled = true;
+      bookmarkDelete.addEventListener("click", deleteBookmark);
       const bar = document.querySelector(".reader__bar");
       const copy = document.getElementById("copy-link");
       if (bar) {
         bar.insertBefore(bookmarkButton, copy || null);
         bar.insertBefore(bookmarkSelect, copy || null);
+        bar.insertBefore(bookmarkDelete, copy || null);
       }
     }
     renderBookmarks();
@@ -401,6 +428,12 @@
   }
 
   document.addEventListener("pointerup", onDocPointerUp, { passive: true });
+  document.addEventListener("pointerdown", (event) => {
+    if (popover && !popover.contains(event.target) && !event.target.closest("#doc")) closePopover();
+  }, true);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closePopover();
+  });
   window.addEventListener("scroll", () => {
     if (window.kokoroTTS && window.kokoroTTS.isActive()) return;
     closePopover();
