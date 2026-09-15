@@ -45,6 +45,7 @@
   let onProgress = null;     // ({ phase, current, total, fraction })
   let onPosition = null;     // ({ sourceIndex, word, chunkIndex, wordIndex })
   let readAlong = null;      // DOM word map for the active narration
+  let sourceMapCache = null; // reused by tap-to-seek on long papers
   let clearHighlightTimer = null;
   let followSuppressedUntil = 0;
 
@@ -169,6 +170,8 @@
   }
 
   function sourceWordMap() {
+    const activeDoc = document.getElementById("doc");
+    if (sourceMapCache && sourceMapCache.doc === activeDoc) return sourceMapCache.entries;
     const entries = [];
     const skip = "script, style, code, pre, button, select, textarea, [aria-hidden='true']";
     for (const root of narrationRoots()) {
@@ -197,6 +200,7 @@
         }
       }
     }
+    sourceMapCache = { doc: activeDoc, entries };
     return entries;
   }
 
@@ -591,6 +595,7 @@
     setOnStatusChange(fn) { onStatusChange = fn; },
     setOnProgress(fn) { onProgress = fn; },
     setOnPosition(fn) { onPosition = fn; },
+    invalidateSourceMap() { sourceMapCache = null; },
     getSourcePosition(node, offset) {
       const source = sourceWordMap();
       const n = Number(offset) || 0;

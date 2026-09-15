@@ -327,6 +327,7 @@
   }
 
   function refreshPage() {
+    if (window.kokoroTTS && window.kokoroTTS.invalidateSourceMap) window.kokoroTTS.invalidateSourceMap();
     attachObserver();
     const w = work();
     if (w && w.id && w.id !== currentWorkId) {
